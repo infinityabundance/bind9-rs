@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/nsupdate/nsupdate.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],

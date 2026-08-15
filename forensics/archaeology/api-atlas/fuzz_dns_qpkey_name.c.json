@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/dns_qpkey_name.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

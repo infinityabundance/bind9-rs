@@ -1,0 +1,808 @@
+{
+  "files": {
+    "tests/include/tests/dns.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_diffop_t zonechange_t::op",
+          "detailed": "\n        ",
+          "name": "op",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* zonechange_t::owner",
+          "detailed": "\n        ",
+          "name": "owner",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t zonechange_t::ttl",
+          "detailed": "\n        ",
+          "name": "ttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* zonechange_t::type",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* zonechange_t::rdata",
+          "detailed": "\n        ",
+          "name": "rdata",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/include/tests/isc.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_mctx",
+          "detailed": "\n        ",
+          "name": "setup_mctx",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int teardown_mctx",
+          "detailed": "\n        ",
+          "name": "teardown_mctx",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_workers",
+          "detailed": "\n        ",
+          "name": "setup_workers",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_loopmgr",
+          "detailed": "\n        ",
+          "name": "setup_loopmgr",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int teardown_loopmgr",
+          "detailed": "\n        ",
+          "name": "teardown_loopmgr",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_netmgr",
+          "detailed": "\n        ",
+          "name": "setup_netmgr",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int teardown_netmgr",
+          "detailed": "\n        ",
+          "name": "teardown_netmgr",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_managers",
+          "detailed": "\n        ",
+          "name": "setup_managers",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int teardown_managers",
+          "detailed": "\n        ",
+          "name": "teardown_managers",
+          "params": [
+            "state"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TESTS_DIR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "assert_int_in_range",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "assert_uint_in_range",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_ENTRY",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_ENTRY_SETUP",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_ENTRY_TEARDOWN",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_ENTRY_SETUP_TEARDOWN",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_ENTRY_CUSTOM",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_SETUP_TEST_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEARDOWN_TEST_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_CUSTOM_DECLARE",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_TEARDOWN_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_SETUP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEARDOWN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_LIST_START",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_LIST_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_CUSTOM_IMPL",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_DECLARE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_LIST_START",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_LIST_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_MAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_TEST_MAIN_CUSTOM",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* lctx",
+          "detailed": "\n        ",
+          "name": "lctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loop_t* mainloop",
+          "detailed": "\n        ",
+          "name": "mainloop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ncpus",
+          "detailed": "\n        ",
+          "name": "ncpus",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int workers",
+          "detailed": "\n        ",
+          "name": "workers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/include/tests/ns.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns_test_qctx_create_params::qname",
+          "detailed": "\n        ",
+          "name": "qname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdatatype_t ns_test_qctx_create_params::qtype",
+          "detailed": "\n        ",
+          "name": "qtype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int ns_test_qctx_create_params::qflags",
+          "detailed": "\n        ",
+          "name": "qflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns_test_qctx_create_params::with_cache",
+          "detailed": "\n        ",
+          "name": "with_cache",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/include/tests/qp.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uint8_t bit)",
+          "brief": "\n        ",
+          "definition": "uint8_t qp_test_bittoascii",
+          "detailed": "\n        ",
+          "name": "qp_test_bittoascii",
+          "params": [
+            "bit"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qpkey_t key, size_t len)",
+          "brief": "\n        ",
+          "definition": "const char * qp_test_keytoascii",
+          "detailed": "\n        ",
+          "name": "qp_test_keytoascii",
+          "params": [
+            "key",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qp_t *qp)",
+          "brief": "\n        ",
+          "definition": "size_t qp_test_getheight",
+          "detailed": "\n        ",
+          "name": "qp_test_getheight",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qp_t *qp)",
+          "brief": "\n        ",
+          "definition": "size_t qp_test_maxkeylen",
+          "detailed": "\n        ",
+          "name": "qp_test_maxkeylen",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qp_t *qp)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumpqp",
+          "detailed": "\n        ",
+          "name": "qp_test_dumpqp",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qpreadable_t qp)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumpread",
+          "detailed": "\n        ",
+          "name": "qp_test_dumpread",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qpsnap_t *qps)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumpsnap",
+          "detailed": "\n        ",
+          "name": "qp_test_dumpsnap",
+          "params": [
+            "qps"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qpmulti_t *multi)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumpmulti",
+          "detailed": "\n        ",
+          "name": "qp_test_dumpmulti",
+          "params": [
+            "multi"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qp_t *qp)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumpchunks",
+          "detailed": "\n        ",
+          "name": "qp_test_dumpchunks",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qpreadable_t qp)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumptrie",
+          "detailed": "\n        ",
+          "name": "qp_test_dumptrie",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_qp_t *qp)",
+          "brief": "\n        ",
+          "definition": "void qp_test_dumpdot",
+          "detailed": "\n        ",
+          "name": "qp_test_dumpdot",
+          "params": [
+            "qp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const dns_qpkey_t key, size_t keylen)",
+          "brief": "\n        ",
+          "definition": "void qp_test_printkey",
+          "detailed": "\n        ",
+          "name": "qp_test_printkey",
+          "params": [
+            "key",
+            "keylen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/include",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

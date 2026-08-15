@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/named/builtin.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -37,6 +38,7 @@
       ]
     },
     "bin/named/config.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -154,6 +156,7 @@
       ]
     },
     "bin/named/control.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -200,6 +203,7 @@
       "variables": []
     },
     "bin/named/controlconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -254,6 +258,7 @@
       ]
     },
     "bin/named/dlz_dlopen_driver.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -479,6 +484,7 @@
       ]
     },
     "bin/named/fuzz.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -510,6 +516,7 @@
       "variables": []
     },
     "bin/named/geoip.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -573,6 +580,7 @@
       ]
     },
     "bin/named/include/dlz/dlz_dlopen_driver.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -604,6 +612,7 @@
       "variables": []
     },
     "bin/named/include/named/builtin.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -635,6 +644,7 @@
       "variables": []
     },
     "bin/named/include/named/config.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -805,6 +815,7 @@
       "variables": []
     },
     "bin/named/include/named/control.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1298,6 +1309,7 @@
       "variables": []
     },
     "bin/named/include/named/fuzz.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1329,6 +1341,7 @@
       "variables": []
     },
     "bin/named/include/named/geoip.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1392,6 +1405,7 @@
       ]
     },
     "bin/named/include/named/log.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1524,6 +1538,7 @@
       "variables": []
     },
     "bin/named/include/named/logconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1545,6 +1560,7 @@
       "variables": []
     },
     "bin/named/include/named/main.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1611,6 +1627,7 @@
       "variables": []
     },
     "bin/named/include/named/os.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1845,6 +1862,7 @@
       "variables": []
     },
     "bin/named/include/named/server.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2277,6 +2295,7 @@
       ]
     },
     "bin/named/include/named/smf_globals.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2359,6 +2378,7 @@
       ]
     },
     "bin/named/include/named/statschannel.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2414,6 +2434,7 @@
       "variables": []
     },
     "bin/named/include/named/tkeyconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2436,6 +2457,7 @@
       "variables": []
     },
     "bin/named/include/named/transportconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2459,6 +2481,7 @@
       "variables": []
     },
     "bin/named/include/named/tsigconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2482,6 +2505,35 @@
       "variables": []
     },
     "bin/named/include/named/types.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NAMED_RELOAD_DONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NAMED_RELOAD_IN_PROGRESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NAMED_RELOAD_FAILED",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -2598,6 +2650,7 @@
       "variables": []
     },
     "bin/named/include/named/zoneconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2668,6 +2721,7 @@
       "variables": []
     },
     "bin/named/log.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2783,6 +2837,7 @@
       ]
     },
     "bin/named/logconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2828,6 +2883,7 @@
       "variables": []
     },
     "bin/named/main.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2864,6 +2920,7 @@
       ]
     },
     "bin/named/os.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3268,6 +3325,7 @@
       ]
     },
     "bin/named/server.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -3286,6 +3344,7 @@
       ]
     },
     "bin/named/statschannel.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -3349,6 +3408,7 @@
       ]
     },
     "bin/named/tkeyconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3383,6 +3443,7 @@
       "variables": []
     },
     "bin/named/transportconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3508,6 +3569,7 @@
       "variables": []
     },
     "bin/named/tsigconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3544,6 +3606,7 @@
       "variables": []
     },
     "bin/named/xsl.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -3562,6 +3625,7 @@
       ]
     },
     "bin/named/xsl_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -3580,6 +3644,62 @@
       ]
     },
     "bin/named/zoneconf.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "allow_notify",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "allow_query",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "allow_query_on",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "allow_transfer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "allow_update",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "allow_update_forwarding",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",

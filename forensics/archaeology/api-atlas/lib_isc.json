@@ -1,6 +1,7 @@
 {
   "files": {
     "lib/isc/ascii.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -28,6 +29,7 @@
       ]
     },
     "lib/isc/assertions.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -107,6 +109,7 @@
       ]
     },
     "lib/isc/async.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -151,6 +154,7 @@
       "variables": []
     },
     "lib/isc/async_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -182,6 +186,7 @@
       "variables": []
     },
     "lib/isc/backtrace.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -242,6 +247,7 @@
       "variables": []
     },
     "lib/isc/base32.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -323,6 +329,7 @@
       ]
     },
     "lib/isc/base64.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -377,6 +384,7 @@
       ]
     },
     "lib/isc/commandline.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -506,6 +514,7 @@
       ]
     },
     "lib/isc/condition.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -528,6 +537,7 @@
       "variables": []
     },
     "lib/isc/counter.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -582,6 +592,7 @@
       ]
     },
     "lib/isc/crc64.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -636,6 +647,7 @@
       ]
     },
     "lib/isc/errno.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -656,6 +668,7 @@
       "variables": []
     },
     "lib/isc/errno2result.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -679,6 +692,7 @@
       "variables": []
     },
     "lib/isc/errno2result.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -714,6 +728,7 @@
       "variables": []
     },
     "lib/isc/error.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -803,6 +818,7 @@
       "variables": []
     },
     "lib/isc/file.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1228,6 +1244,7 @@
       ]
     },
     "lib/isc/fips.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1259,6 +1276,7 @@
       "variables": []
     },
     "lib/isc/getaddresses.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1283,6 +1301,7 @@
       "variables": []
     },
     "lib/isc/hash.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1407,6 +1426,7 @@
       ]
     },
     "lib/isc/hashmap.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1461,6 +1481,7 @@
       ]
     },
     "lib/isc/heap.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1542,6 +1563,7 @@
       ]
     },
     "lib/isc/hex.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1587,6 +1609,7 @@
       ]
     },
     "lib/isc/histo.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1623,6 +1646,7 @@
       ]
     },
     "lib/isc/hmac.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1755,6 +1779,7 @@
       "variables": []
     },
     "lib/isc/ht.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1809,6 +1834,7 @@
       ]
     },
     "lib/isc/httpd.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1863,6 +1889,7 @@
       ]
     },
     "lib/isc/include/isc/ascii.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2008,6 +2035,44 @@
       ]
     },
     "lib/isc/include/isc/assertions.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_assertiontype_require",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_assertiontype_ensure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_assertiontype_insist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_assertiontype_invariant",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -2129,6 +2194,7 @@
       "variables": []
     },
     "lib/isc/include/isc/async.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2164,6 +2230,7 @@
       "variables": []
     },
     "lib/isc/include/isc/atomic.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -2451,6 +2518,7 @@
       "variables": []
     },
     "lib/isc/include/isc/attributes.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -2591,6 +2659,7 @@
       "variables": []
     },
     "lib/isc/include/isc/backtrace.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2661,6 +2730,7 @@
       "variables": []
     },
     "lib/isc/include/isc/barrier.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -2748,6 +2818,7 @@
       "variables": []
     },
     "lib/isc/include/isc/base32.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2910,6 +2981,7 @@
       "variables": []
     },
     "lib/isc/include/isc/base64.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2958,6 +3030,7 @@
       "variables": []
     },
     "lib/isc/include/isc/buffer.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3060,6 +3133,7 @@
       ]
     },
     "lib/isc/include/isc/commandline.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3152,6 +3226,7 @@
       ]
     },
     "lib/isc/include/isc/condition.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3310,6 +3385,7 @@
       ]
     },
     "lib/isc/include/isc/counter.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3400,6 +3476,7 @@
       "variables": []
     },
     "lib/isc/include/isc/crc64.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3444,6 +3521,7 @@
       "variables": []
     },
     "lib/isc/include/isc/dir.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -3471,6 +3549,7 @@
       ]
     },
     "lib/isc/include/isc/dnsstream.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -3552,6 +3631,7 @@
       ]
     },
     "lib/isc/include/isc/endian.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -3910,6 +3990,7 @@
       "variables": []
     },
     "lib/isc/include/isc/errno.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3930,6 +4011,7 @@
       "variables": []
     },
     "lib/isc/include/isc/error.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4001,12 +4083,13 @@
       ]
     },
     "lib/isc/include/isc/file.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
           "args": "(const char *file, isc_time_t *time)",
           "brief": "\n        ",
-          "definition": "ISC_LANG_BEGINDECLS isc_result_t isc_file_settime",
+          "definition": "isc_result_t isc_file_settime",
           "detailed": "\n        ",
           "name": "isc_file_settime",
           "params": [
@@ -4347,6 +4430,7 @@
       "variables": []
     },
     "lib/isc/include/isc/fips.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4378,6 +4462,7 @@
       "variables": []
     },
     "lib/isc/include/isc/formatcheck.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -4399,6 +4484,62 @@
       "variables": []
     },
     "lib/isc/include/isc/fuzz.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_fuzz_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_fuzz_client",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_fuzz_tcpclient",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_fuzz_resolver",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_fuzz_http",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_fuzz_rndc",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -4417,6 +4558,7 @@
       "variables": []
     },
     "lib/isc/include/isc/getaddresses.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4441,6 +4583,7 @@
       "variables": []
     },
     "lib/isc/include/isc/hash.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4660,6 +4803,7 @@
       "variables": []
     },
     "lib/isc/include/isc/hashmap.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4857,6 +5001,7 @@
       "variables": []
     },
     "lib/isc/include/isc/heap.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5003,6 +5148,7 @@
       ]
     },
     "lib/isc/include/isc/hex.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5073,6 +5219,7 @@
       ]
     },
     "lib/isc/include/isc/histo.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5382,6 +5529,7 @@
       "variables": []
     },
     "lib/isc/include/isc/hmac.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5524,6 +5672,26 @@
       "variables": []
     },
     "lib/isc/include/isc/ht.h": {
+      "enum_values": [
+        {
+          "args": "= 0x00",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_HT_CASE_SENSITIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x01",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_HT_CASE_INSENSITIVE",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -5720,6 +5888,7 @@
       "variables": []
     },
     "lib/isc/include/isc/httpd.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5863,6 +6032,7 @@
       "variables": []
     },
     "lib/isc/include/isc/interfaceiter.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5926,6 +6096,7 @@
       ]
     },
     "lib/isc/include/isc/iterated_hash.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5974,6 +6145,7 @@
       "variables": []
     },
     "lib/isc/include/isc/job.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6019,6 +6191,7 @@
       ]
     },
     "lib/isc/include/isc/lang.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -6046,6 +6219,7 @@
       "variables": []
     },
     "lib/isc/include/isc/lex.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6100,6 +6274,7 @@
       ]
     },
     "lib/isc/include/isc/list.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -6672,6 +6847,7 @@
       "variables": []
     },
     "lib/isc/include/isc/log.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6699,6 +6875,7 @@
       ]
     },
     "lib/isc/include/isc/loop.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -6970,6 +7147,7 @@
       ]
     },
     "lib/isc/include/isc/magic.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6988,6 +7166,7 @@
       ]
     },
     "lib/isc/include/isc/managers.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7034,6 +7213,7 @@
       "variables": []
     },
     "lib/isc/include/isc/md.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7461,6 +7641,7 @@
       ]
     },
     "lib/isc/include/isc/mem.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8275,6 +8456,7 @@
       ]
     },
     "lib/isc/include/isc/meminfo.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8295,6 +8477,7 @@
       "variables": []
     },
     "lib/isc/include/isc/mutex.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -8410,17 +8593,18 @@
         }
       ],
       "structs": [],
-      "typedefs": [],
-      "variables": [
+      "typedefs": [
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "ISC_LANG_BEGINDECLS typedef pthread_mutex_t isc_mutex_t",
+          "definition": "typedef pthread_mutex_t isc_mutex_t",
           "detailed": "\n        ",
           "name": "isc_mutex_t",
           "params": [],
           "static": false
-        },
+        }
+      ],
+      "variables": [
         {
           "args": "",
           "brief": "\n        ",
@@ -8433,6 +8617,7 @@
       ]
     },
     "lib/isc/include/isc/mutexblock.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8466,6 +8651,7 @@
       "variables": []
     },
     "lib/isc/include/isc/net.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8739,6 +8925,7 @@
       "variables": []
     },
     "lib/isc/include/isc/netaddr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -8766,6 +8953,7 @@
       ]
     },
     "lib/isc/include/isc/netmgr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -8838,6 +9026,7 @@
       ]
     },
     "lib/isc/include/isc/netscope.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8861,6 +9050,7 @@
       "variables": []
     },
     "lib/isc/include/isc/nonce.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8882,6 +9072,7 @@
       "variables": []
     },
     "lib/isc/include/isc/once.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -8922,6 +9113,7 @@
       "variables": []
     },
     "lib/isc/include/isc/os.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -8988,6 +9180,7 @@
       "variables": []
     },
     "lib/isc/include/isc/overflow.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -9118,6 +9311,7 @@
       "variables": []
     },
     "lib/isc/include/isc/parseint.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9166,6 +9360,7 @@
       "variables": []
     },
     "lib/isc/include/isc/pause.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -9197,6 +9392,7 @@
       "variables": []
     },
     "lib/isc/include/isc/portset.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9303,6 +9499,7 @@
       "variables": []
     },
     "lib/isc/include/isc/proxy2.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9465,6 +9662,7 @@
       ]
     },
     "lib/isc/include/isc/queue.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9510,6 +9708,7 @@
       ]
     },
     "lib/isc/include/isc/quota.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9603,6 +9802,7 @@
       ]
     },
     "lib/isc/include/isc/radix.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9666,6 +9866,7 @@
       ]
     },
     "lib/isc/include/isc/random.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9731,6 +9932,7 @@
       "variables": []
     },
     "lib/isc/include/isc/ratelimiter.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9797,6 +9999,7 @@
       ]
     },
     "lib/isc/include/isc/refcount.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -10078,6 +10281,7 @@
       ]
     },
     "lib/isc/include/isc/regex.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10098,6 +10302,7 @@
       "variables": []
     },
     "lib/isc/include/isc/region.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -10125,6 +10330,2312 @@
       ]
     },
     "lib/isc/include/isc/result.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "success",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_SUCCESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "out of memory",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOMEMORY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "timed out",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_TIMEDOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "no available threads",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTHREADS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "address not available",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_ADDRNOTAVAIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "address in use",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_ADDRINUSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "permission denied",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOPERM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "no pending connections",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOCONN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "network unreachable",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NETUNREACH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "host unreachable",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_HOSTUNREACH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "network down",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NETDOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "host down",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_HOSTDOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "connection refused",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_CONNREFUSED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not enough free resources",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NORESOURCES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "end of file",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_EOF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "socket already bound",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_BOUND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "reload",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_RELOAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= ISC_R_RELOAD",
+          "brief": "alias of 'reload'",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_SUSPEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "lock busy",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_LOCKBUSY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "already exists",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_EXISTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "ran out of space",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOSPACE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "operation canceled",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_CANCELED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "socket is not bound",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTBOUND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "shutting down",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_SHUTTINGDOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not found",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTFOUND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unexpected end of input",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_UNEXPECTEDEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "generic failure",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_FAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "I/O error.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_IOERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not implemented",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTIMPLEMENTED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unbalanced parentheses",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_UNBALANCED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "no more",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOMORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "invalid file",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_INVALIDFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "bad base64 encoding",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_BADBASE64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unexpected token",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_UNEXPECTEDTOKEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "quota reached",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_QUOTA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unexpected error",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_UNEXPECTED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "already running",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_ALREADYRUNNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "ignore",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_IGNORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "addr mask not contiguous",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_MASKNONCONTIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "file not found",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_FILENOTFOUND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "file already exists",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_FILEEXISTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "socket is not connected",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTCONNECTED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "out of range",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_RANGE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "out of entropy",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOENTROPY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "invalid use of multicast",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_MULTICAST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not a file",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not a directory",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTDIRECTORY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "queue is empty",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_EMPTY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "address family mismatch",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_FAMILYMISMATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "AF not supported.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_FAMILYNOSUPPORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "bad hex encoding",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_BADHEX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "too many open files",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_TOOMANYOPENFILES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not blocking",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NOTBLOCKING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unbalanced quotes",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_UNBALANCEDQUOTES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "operation in progress",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_INPROGRESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "connection reset",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_CONNECTIONRESET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "soft quota reached",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_SOFTQUOTA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "not a valid number",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_BADNUMBER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "disabled",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_DISABLED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "max size",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_MAXSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "invalid address format",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_BADADDRESSFORM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "bad base32 encoding",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_BADBASE32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unset",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_UNSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "multiple",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_MULTIPLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "would block",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_WOULDBLOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "complete",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_COMPLETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "cryptography library failure",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_CRYPTOFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "disc quota",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_DISCQUOTA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "disc full",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_DISCFULL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "default",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_DEFAULT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "IPv4 prefix.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_IPV4PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "TLS error.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_TLSERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "TLS peer certificate verification failed.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_TLSBADPEERCERT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "ALPN for HTTP/2 failed.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_HTTP2ALPNERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "ALPN for DoT failed.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_DOTALPNERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "invalid protocol",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_INVALIDPROTO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "deadlock found",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_DEADLOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_LABELTOOLONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADESCAPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EMPTYLABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADDOTTEDQUAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_INVALIDNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNKNOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADLABELTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADPOINTER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TOOMANYHOPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_DISALLOWED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EXTRATOKEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EXTRADATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TEXTTOOLONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTZONETOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SYNTAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADCKSUM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADAAAA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOOWNER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTTL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADCLASS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NAMETOOLONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_PARTIALMATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NEWORIGIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNCHANGED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADTTL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOREDATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_CONTINUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_DELEGATION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_GLUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_DNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_CNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADDB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_ZONECUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_MOREDATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UPTODATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TSIGVERIFYFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TSIGERRORSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SIGINVALID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SIGEXPIRED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SIGFUTURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_KEYUNAUTHORIZED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_INVALIDTIME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EXPECTEDTSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNEXPECTEDTSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_INVALIDTKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_HINT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_DROP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTLOADED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NCACHENXDOMAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NCACHENXRRSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_WAIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTVERIFIEDYET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOIDENTITY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOJOURNAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_ALIAS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_USETCP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOVALIDSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOVALIDNSEC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTINSECURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNKNOWNSERVICE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_RECOVERABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNKNOWNOPT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNEXPECTEDID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SEENINCLUDE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTEXACT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BLACKHOLED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADALG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_METATYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_CNAMEANDOTHER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SINGLETON",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_HINTNXRRSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOMASTERFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNKNOWNPROTO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_CLOCKSKEW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADIXFR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTAUTHORITATIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOVALIDKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_OBSOLETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_FROZEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNKNOWNFLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EXPECTEDRESPONSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOVALIDDS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NSISADDRESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_REMOTEFORMERR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TRUNCATEDTCP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_LAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNEXPECTEDRCODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNEXPECTEDOPCODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_CHASEDSSERVERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EMPTYNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EMPTYWILD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADBITMAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_FROMWILDCARD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADOWNERNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_DYNAMIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_UNKNOWNCOMMAND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_MUSTBESECURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_COVERINGNSEC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_MXISADDRESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_DUPLICATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_INVALIDNSEC3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTPRIMARY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BROKENCHAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_EXPIRED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTDYNAMIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADEUI",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NTACOVERED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADCDS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADCDNSKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_OPTERR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADDNSTAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADTSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADSIG0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TOOMANYRECORDS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_VERIFYFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_ATZONETOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOKEYMATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_TOOMANYKEYS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_KEYNOTACTIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NSEC3ITERRANGE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NSEC3SALTRANGE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NSEC3BADALG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NSEC3RESALT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_INCONSISTENTRR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_HAVEPARMKEYS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOALPN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NODOHPATH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOSKRFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOSKRBUNDLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_LOOPDETECTED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_MISMATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_UNSUPPORTEDALG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_CRYPTOFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= DST_R_CRYPTOFAILURE",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_OPENSSLFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_NOCRYPTO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_NULLKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_INVALIDPUBLICKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_INVALIDPRIVATEKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_WRITEERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_INVALIDPARAM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_SIGNFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_VERIFYFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_NOTPUBLICKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_NOTPRIVATEKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_KEYCANNOTCOMPUTESECRET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_COMPUTESECRETFAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_NORANDOMNESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_BADKEYTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_NOENGINE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_R_EXTERNALKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_FORMERR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_SERVFAIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NXDOMAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTIMP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_REFUSED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_YXDOMAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_YXRRSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NXRRSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTAUTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_NOTZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_RCODE11",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_RCODE12",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_RCODE13",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_RCODE14",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_RCODE15",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADVERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= DNS_R_NOERROR + 23",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_R_BADCOOKIE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_UNKNOWNVERSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_SYNTAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_BADAUTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_EXPIRED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_CLOCKSKEW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_DUPLICATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISCCC_R_MAXDEPTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_NRESULTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= INT32_MAX",
+          "brief": "The number of results.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_R_MAKE_ENUM_32BIT",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -10176,6 +12687,7 @@
       "variables": []
     },
     "lib/isc/include/isc/rwlock.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -10248,6 +12760,7 @@
       ]
     },
     "lib/isc/include/isc/safe.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10282,6 +12795,7 @@
       "variables": []
     },
     "lib/isc/include/isc/serial.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10363,6 +12877,7 @@
       "variables": []
     },
     "lib/isc/include/isc/signal.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10429,6 +12944,7 @@
       "variables": []
     },
     "lib/isc/include/isc/siphash.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -10510,6 +13026,7 @@
       ]
     },
     "lib/isc/include/isc/sockaddr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10576,6 +13093,7 @@
       ]
     },
     "lib/isc/include/isc/spinlock.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -10683,6 +13201,395 @@
       "variables": []
     },
     "lib/isc/include/isc/stats.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "Socket statistics counters.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4open",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6open",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4open",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6open",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4openfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6openfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4openfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6openfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4close",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6close",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4close",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6close",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4bindfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6bindfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4bindfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6bindfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4connect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6connect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4connect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6connect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4connectfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6connectfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4connectfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6connectfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4accept",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6accept",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4acceptfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6acceptfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4sendfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6sendfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4sendfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6sendfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4recvfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6recvfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4recvfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6recvfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp4active",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_udp6active",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4active",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6active",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp4clients",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_tcp6clients",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_sockstatscounter_max",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -10857,12 +13764,13 @@
       "variables": []
     },
     "lib/isc/include/isc/stdio.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
           "args": "(const char *filename, const char *mode, FILE **fp)",
           "brief": "These functions are wrappers around the corresponding stdio functions.",
-          "definition": "ISC_LANG_BEGINDECLS isc_result_t isc_stdio_open",
+          "definition": "isc_result_t isc_stdio_open",
           "detailed": "They return a detailed error code in the form of an isc_result_t. ANSI C does not guarantee that stdio functions set errno, hence these functions must use platform dependent methods (e.g., the POSIX errno) to construct the error code.\nOpen",
           "name": "isc_stdio_open",
           "params": [
@@ -10967,6 +13875,7 @@
       "variables": []
     },
     "lib/isc/include/isc/stdtime.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -11010,6 +13919,7 @@
       "variables": []
     },
     "lib/isc/include/isc/strerr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -11037,12 +13947,13 @@
       "variables": []
     },
     "lib/isc/include/isc/string.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
           "args": "(char *dst, const char *src, size_t size)",
           "brief": "\n        ",
-          "definition": "size_t strlcpy",
+          "definition": "ISC_LANG_BEGINDECLS size_t strlcpy",
           "detailed": "\n        ",
           "name": "strlcpy",
           "params": [
@@ -11098,6 +14009,7 @@
       "variables": []
     },
     "lib/isc/include/isc/symtab.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -11143,6 +14055,7 @@
       ]
     },
     "lib/isc/include/isc/syslog.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -11164,6 +14077,7 @@
       "variables": []
     },
     "lib/isc/include/isc/thread.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -11272,6 +14186,7 @@
       ]
     },
     "lib/isc/include/isc/tid.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -11345,6 +14260,7 @@
       ]
     },
     "lib/isc/include/isc/time.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -11372,6 +14288,35 @@
       ]
     },
     "lib/isc/include/isc/timer.h": {
+      "enum_values": [
+        {
+          "args": "= -1",
+          "brief": "Undefined.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_timertype_undefined",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "Ticker.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_timertype_ticker",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "Once.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_timertype_once",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -11462,6 +14407,71 @@
       "variables": []
     },
     "lib/isc/include/isc/tls.h": {
+      "enum_values": [
+        {
+          "args": "= 1 << 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_TLS_PROTO_VER_1_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_TLS_PROTO_VER_1_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_TLS_PROTO_VER_UNDEFINED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_tlsctx_cache_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_tlsctx_cache_tls",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_tlsctx_cache_https",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_tlsctx_cache_count",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -12094,6 +15104,7 @@
       "variables": []
     },
     "lib/isc/include/isc/tm.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12127,6 +15138,197 @@
       "variables": []
     },
     "lib/isc/include/isc/types.h": {
+      "enum_values": [
+        {
+          "args": "= -1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_zero_or_more",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_one_or_more",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_statsformat_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_statsformat_xml",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_statsformat_json",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_nonesocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_udpsocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_tcpsocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_tlssocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_httpsocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_streamdnssocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_proxystreamsocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_proxyudpsocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_maxsocket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_udplistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_tcplistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_tlslistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_httplistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_streamdnslistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_proxystreamlistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isc_nm_proxyudplistener",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -12574,6 +15776,7 @@
       "variables": []
     },
     "lib/isc/include/isc/urcu.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -12719,6 +15922,80 @@
       "variables": []
     },
     "lib/isc/include/isc/url.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_SCHEMA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_HOST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_PATH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_QUERY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_FRAGMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_USERINFO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_UF_MAX",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -12771,6 +16048,7 @@
       "variables": []
     },
     "lib/isc/include/isc/utf8.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12804,6 +16082,7 @@
       "variables": []
     },
     "lib/isc/include/isc/util.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -13618,6 +16897,7 @@
       "variables": []
     },
     "lib/isc/include/isc/uv.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13798,6 +17078,35 @@
       "variables": []
     },
     "lib/isc/include/isc/work.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "short, bounded tasks (e.g. crypto)",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_WORKLANE_FAST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "blocking/long tasks (e.g. zone dump)",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_WORKLANE_SLOW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ISC_WORKLANE_COUNT",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -13936,6 +17245,7 @@
       "variables": []
     },
     "lib/isc/include/isc/xml.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13978,6 +17288,7 @@
       "variables": []
     },
     "lib/isc/interfaceiter.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14059,6 +17370,7 @@
       ]
     },
     "lib/isc/iterated_hash.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14107,6 +17419,7 @@
       "variables": []
     },
     "lib/isc/jemalloc_shim.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14134,6 +17447,7 @@
       ]
     },
     "lib/isc/job.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14179,6 +17493,7 @@
       "variables": []
     },
     "lib/isc/job_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14215,6 +17530,7 @@
       ]
     },
     "lib/isc/lex.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14323,6 +17639,7 @@
       ]
     },
     "lib/isc/lib.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14354,6 +17671,7 @@
       "variables": []
     },
     "lib/isc/log.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14381,6 +17699,7 @@
       ]
     },
     "lib/isc/loop.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14839,6 +18158,7 @@
       ]
     },
     "lib/isc/loop_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14902,6 +18222,7 @@
       ]
     },
     "lib/isc/managers.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14938,6 +18259,7 @@
       "variables": []
     },
     "lib/isc/md.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15189,6 +18511,7 @@
       ]
     },
     "lib/isc/mem.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -15216,6 +18539,7 @@
       ]
     },
     "lib/isc/mem_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15270,6 +18594,7 @@
       "variables": []
     },
     "lib/isc/meminfo.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15290,6 +18615,7 @@
       "variables": []
     },
     "lib/isc/mutex.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15351,6 +18677,7 @@
       ]
     },
     "lib/isc/mutex_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15382,6 +18709,7 @@
       "variables": []
     },
     "lib/isc/mutexblock.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15415,6 +18743,7 @@
       "variables": []
     },
     "lib/isc/net.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15672,6 +19001,7 @@
       ]
     },
     "lib/isc/netaddr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15937,6 +19267,7 @@
       "variables": []
     },
     "lib/isc/netmgr/http.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -15973,6 +19304,7 @@
       ]
     },
     "lib/isc/netmgr/netmgr-int.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -16009,6 +19341,7 @@
       ]
     },
     "lib/isc/netmgr/netmgr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -16036,6 +19369,7 @@
       ]
     },
     "lib/isc/netmgr/proxystream.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -16072,6 +19406,7 @@
       ]
     },
     "lib/isc/netmgr/proxyudp.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -16117,6 +19452,7 @@
       ]
     },
     "lib/isc/netmgr/socket.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -16347,6 +19683,7 @@
       "variables": []
     },
     "lib/isc/netmgr/streamdns.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -16383,6 +19720,7 @@
       ]
     },
     "lib/isc/netmgr/tcp.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -16793,6 +20131,7 @@
       ]
     },
     "lib/isc/netmgr/timer.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -16847,6 +20186,7 @@
       ]
     },
     "lib/isc/netmgr/tlsstream.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17493,6 +20833,7 @@
       "variables": []
     },
     "lib/isc/netmgr/udp.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17741,6 +21082,7 @@
       "variables": []
     },
     "lib/isc/netscope.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17764,6 +21106,7 @@
       "variables": []
     },
     "lib/isc/openssl_shim.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17958,6 +21301,7 @@
       "variables": []
     },
     "lib/isc/openssl_shim.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -18295,6 +21639,7 @@
       "variables": []
     },
     "lib/isc/os.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -18470,6 +21815,7 @@
       ]
     },
     "lib/isc/os_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -18501,6 +21847,7 @@
       "variables": []
     },
     "lib/isc/parseint.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -18549,6 +21896,80 @@
       "variables": []
     },
     "lib/isc/picohttpparser.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_CHUNK_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_CHUNK_EXT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_CHUNK_HEADER_EXPECT_LF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_CHUNK_DATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_CHUNK_DATA_EXPECT_CR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_CHUNK_DATA_EXPECT_LF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_TRAILERS_LINE_HEAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CHUNKED_IN_TRAILERS_LINE_MIDDLE",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -18922,6 +22343,7 @@
       ]
     },
     "lib/isc/picohttpparser.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -18967,6 +22389,7 @@
       ]
     },
     "lib/isc/portset.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -18994,6 +22417,7 @@
       ]
     },
     "lib/isc/probes.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -19311,6 +22735,7 @@
       "variables": []
     },
     "lib/isc/proxy2.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -19338,6 +22763,7 @@
       ]
     },
     "lib/isc/quota.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -19473,6 +22899,7 @@
       "variables": []
     },
     "lib/isc/radix.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -19635,6 +23062,7 @@
       "variables": []
     },
     "lib/isc/random.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -19707,6 +23135,7 @@
       ]
     },
     "lib/isc/ratelimiter.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -19806,6 +23235,7 @@
       ]
     },
     "lib/isc/regex.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -19838,6 +23268,7 @@
       "variables": []
     },
     "lib/isc/region.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -19859,6 +23290,7 @@
       "variables": []
     },
     "lib/isc/result.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -19942,6 +23374,7 @@
       ]
     },
     "lib/isc/rwlock.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20231,6 +23664,7 @@
       ]
     },
     "lib/isc/safe.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20265,6 +23699,7 @@
       "variables": []
     },
     "lib/isc/serial.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20346,6 +23781,7 @@
       "variables": []
     },
     "lib/isc/signal.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20425,6 +23861,7 @@
       "variables": []
     },
     "lib/isc/sockaddr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20732,6 +24169,7 @@
       "variables": []
     },
     "lib/isc/stats.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -20786,6 +24224,7 @@
       ]
     },
     "lib/isc/stdio.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20896,6 +24335,7 @@
       "variables": []
     },
     "lib/isc/stdtime.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -20939,6 +24379,7 @@
       "variables": []
     },
     "lib/isc/string.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21000,6 +24441,7 @@
       "variables": []
     },
     "lib/isc/symtab.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21169,6 +24611,7 @@
       "variables": []
     },
     "lib/isc/syslog.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21200,6 +24643,7 @@
       ]
     },
     "lib/isc/thread.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21313,6 +24757,7 @@
       "variables": []
     },
     "lib/isc/tid.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21374,6 +24819,7 @@
       ]
     },
     "lib/isc/time.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21736,6 +25182,7 @@
       ]
     },
     "lib/isc/timer.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21870,6 +25317,7 @@
       "variables": []
     },
     "lib/isc/tls.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -22647,6 +26095,7 @@
       ]
     },
     "lib/isc/tm.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -22779,6 +26228,692 @@
       ]
     },
     "lib/isc/url.c": {
+      "enum_values": [
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_dead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_start_req_or_res",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_or_resp_H",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_start_res",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_H",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_HT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_HTT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_HTTP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_http_major",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_http_dot",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_http_minor",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_http_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_first_status_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_status_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_status_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_status",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_res_line_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_start_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_method",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_spaces_before_url",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_schema",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_schema_slash",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_schema_slash_slash",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_server_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_server",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_server_with_at",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_query_string_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_query_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_fragment_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_fragment",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_H",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_HT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_HTT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_HTTP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_I",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_IC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_major",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_dot",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_minor",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_http_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_req_line_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_field_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_field",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_value_discard_ws",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_value_discard_ws_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_value_discard_lws",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_value_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_value_lws",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_header_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_size_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_parameters",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_size_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_headers_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_headers_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_data_almost_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_chunk_data_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_body_identity",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_body_identity_eof",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_message_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_dead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_userinfo_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_userinfo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_v6_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_v6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_v6_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_v6_zone_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_v6_zone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_port_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "s_http_host_port",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -22936,6 +27071,7 @@
       ]
     },
     "lib/isc/utf8.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -22969,6 +27105,7 @@
       "variables": []
     },
     "lib/isc/uv.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -23082,6 +27219,89 @@
       ]
     },
     "lib/isc/work.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "THREAD_WAITING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 0)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "THREAD_WAKEUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 1)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "THREAD_RUNNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 2)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "THREAD_SHUTDOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 3)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "THREAD_PAUSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 4)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "THREAD_PAUSED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "WORK_QUEUED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "WORK_RUNNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "WORK_CANCELED",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -23104,7 +27324,7 @@
       ],
       "functions": [
         {
-          "args": "(64 >=sizeof(struct cds_wfcq_tail), \"ISC_OS_CACHELINE_SIZE smaller than sizeof(struct \" \"cds_wfcq_tail)\")",
+          "args": "(ISC_OS_CACHELINE_SIZE >=sizeof(struct cds_wfcq_tail), \"ISC_OS_CACHELINE_SIZE smaller than sizeof(struct \" \"cds_wfcq_tail)\")",
           "brief": "\n        ",
           "definition": "STATIC_ASSERT",
           "detailed": "\n        ",
@@ -23116,7 +27336,7 @@
           "static": false
         },
         {
-          "args": "(offsetof(isc__workthread_t, qtail)==64, \"isc__workthread_t.qtail not on second cacheline\")",
+          "args": "(offsetof(isc__workthread_t, qtail)==ISC_OS_CACHELINE_SIZE, \"isc__workthread_t.qtail not on second cacheline\")",
           "brief": "\n        ",
           "definition": "STATIC_ASSERT",
           "detailed": "\n        ",
@@ -23128,7 +27348,7 @@
           "static": false
         },
         {
-          "args": "(sizeof(isc__workthread_t)==2 *64, \"isc__workthread_t is not two cachelines\")",
+          "args": "(sizeof(isc__workthread_t)==2 *ISC_OS_CACHELINE_SIZE, \"isc__workthread_t is not two cachelines\")",
           "brief": "\n        ",
           "definition": "STATIC_ASSERT",
           "detailed": "\n        ",
@@ -23376,6 +27596,7 @@
       "variables": []
     },
     "lib/isc/xml.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

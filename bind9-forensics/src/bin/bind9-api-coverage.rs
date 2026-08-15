@@ -76,8 +76,9 @@ fn run_cmd(cmd: &str, args: &[String]) -> Result<(), String> {
             }
             for e in &hits {
                 println!(
-                    "{:<42} {:<12} {:<18} court={} rust={}",
+                    "{:<42} {:<10} {:<12} {:<18} court={} rust={}",
                     e.function,
+                    e.kind,
                     e.library,
                     e.status,
                     e.courts.join(","),
@@ -101,31 +102,59 @@ fn render_markdown(
     out.push_str("# BIND 9 API Coverage Ledger\n\n");
     out.push_str("Machine-readable form: `api-coverage.json`.  Statuses follow the parity-ledger taxonomy (§47).  A surface is `PROVEN` only with court receipts; `UNKNOWN` entries are tracked in the unknowns ledger.  Regenerate with `bind9-api-coverage regen` after updating `coverage-rules.json`.\n\n");
     out.push_str("## Scope\n\n");
+    out.push_str("Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: nothing C-shaped is left out).  Libraries/tools and their member-kind counts:\n\n");
     let mut total_files = 0;
-    let mut total_funcs = 0;
+    let mut total_members = 0;
+    let mut kind_totals: std::collections::BTreeMap<String, usize> = Default::default();
+    out.push_str("\n| Unit | Files | Functions | Macros | Enum values | Enums | Structs | Typedefs | Variables |\n|---|---|---|---|---|---|---|---|---|\n");
     for inv in invs {
         let nf = inv.files.len();
-        let nfn: usize = inv.files.values().map(|f| f.functions.len()).sum();
+        let mut counts: std::collections::BTreeMap<String, usize> = Default::default();
+        for (_f, af) in &inv.files {
+            for (kind, _m) in af.all_members() {
+                *counts.entry(kind.to_string()).or_insert(0) += 1;
+            }
+        }
+        let per_kind = |k: &str| counts.get(k).copied().unwrap_or(0);
         total_files += nf;
-        total_funcs += nfn;
+        for (k, c) in &counts {
+            *kind_totals.entry(k.clone()).or_insert(0) += c;
+            total_members += c;
+        }
         out.push_str(&format!(
-            "- {}: {} files, {} functions\n",
-            inv.library, nf, nfn
+            "| {} | {} | {} | {} | {} | {} | {} | {} | {} |\n",
+            inv.library,
+            nf,
+            per_kind("function"),
+            per_kind("macro"),
+            per_kind("enum_value"),
+            per_kind("enum"),
+            per_kind("struct"),
+            per_kind("typedef"),
+            per_kind("variable")
         ));
     }
-    out.push_str(&format!("\n**Total: {total_files} files, {total_funcs} functions** (pinned oracle version, see `sources/manifest-*.json`).\n\n"));
+    out.push_str(&format!(
+        "\n**Total: {total_files} files, {total_members} members** (pinned oracle version, see `sources/manifest-*.json`).  Kind totals: {}.\n\n",
+        kind_totals
+            .iter()
+            .map(|(k, c)| format!("{k}={c}"))
+            .collect::<Vec<_>>()
+            .join(", ")
+    ));
     out.push_str("## Status summary\n\n| Status | Count |\n|---|---|\n");
     for (status, count) in bind9_forensics::atlas::summarize(entries) {
         out.push_str(&format!("| {status} | {count} |\n"));
     }
-    out.push_str("\n## Surfaces with court or rust coverage\n\n| Function | Library | Status | Court | Rust module |\n|---|---|---|---|---|\n");
+    out.push_str("\n## Surfaces with court or rust coverage\n\n| Member | Kind | Library | Status | Court | Rust module |\n|---|---|---|---|---|---|\n");
     for e in entries {
         if e.courts.is_empty() && e.rust_module.is_empty() {
             continue;
         }
         out.push_str(&format!(
-            "| `{}` | {} | {} | {} | `{}` |\n",
+            "| `{}` | {} | {} | {} | {} | `{}` |\n",
             e.function,
+            e.kind,
             e.library,
             e.status,
             e.courts.join(", "),

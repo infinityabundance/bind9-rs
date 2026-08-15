@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/dig/dig.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -127,6 +128,7 @@
       ]
     },
     "bin/dig/dighost.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -154,6 +156,7 @@
       ]
     },
     "bin/dig/dighost.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -193,6 +196,7 @@
       ]
     },
     "bin/dig/host.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -220,6 +224,7 @@
       ]
     },
     "bin/dig/nslookup.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -811,6 +816,7 @@
       ]
     },
     "bin/dig/readline.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

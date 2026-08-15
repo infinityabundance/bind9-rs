@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/dnssec/dnssec-cds.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -46,6 +47,7 @@
       ]
     },
     "bin/dnssec/dnssec-dsfromkey.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -260,6 +262,7 @@
       ]
     },
     "bin/dnssec/dnssec-importkey.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -499,6 +502,7 @@
       ]
     },
     "bin/dnssec/dnssec-keyfromlabel.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -578,6 +582,7 @@
       ]
     },
     "bin/dnssec/dnssec-keygen.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1046,6 +1051,7 @@
       ]
     },
     "bin/dnssec/dnssec-ksr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1271,6 +1277,7 @@
       ]
     },
     "bin/dnssec/dnssec-revoke.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1322,6 +1329,7 @@
       ]
     },
     "bin/dnssec/dnssec-settime.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1411,6 +1419,7 @@
       ]
     },
     "bin/dnssec/dnssec-signzone.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1456,6 +1465,7 @@
       ]
     },
     "bin/dnssec/dnssec-verify.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1616,6 +1626,7 @@
       ]
     },
     "bin/dnssec/dnssectool.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1984,6 +1995,7 @@
       ]
     },
     "bin/dnssec/dnssectool.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

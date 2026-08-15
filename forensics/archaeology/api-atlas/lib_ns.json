@@ -1,6 +1,7 @@
 {
   "files": {
     "lib/ns/client.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -886,6 +887,7 @@
       ]
     },
     "lib/ns/hooks.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -958,6 +960,7 @@
       ]
     },
     "lib/ns/include/ns/client.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1075,6 +1078,7 @@
       ]
     },
     "lib/ns/include/ns/hooks.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1120,6 +1124,7 @@
       ]
     },
     "lib/ns/include/ns/interfacemgr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1294,6 +1299,7 @@
       ]
     },
     "lib/ns/include/ns/listenlist.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1333,6 +1339,7 @@
       ]
     },
     "lib/ns/include/ns/log.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1555,6 +1562,7 @@
       ]
     },
     "lib/ns/include/ns/notify.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1576,6 +1584,7 @@
       "variables": []
     },
     "lib/ns/include/ns/query.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1963,6 +1972,7 @@
       ]
     },
     "lib/ns/include/ns/server.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2326,6 +2336,35 @@
       ]
     },
     "lib/ns/include/ns/sortlist.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS_SORTLISTTYPE_NONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS_SORTLISTTYPE_1ELEMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS_SORTLISTTYPE_2ELEMENT",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -2393,6 +2432,638 @@
       "variables": []
     },
     "lib/ns/include/ns/stats.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_requestv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_requestv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_edns0in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_badednsver",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_tsigin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_sig0in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_invalidsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_requesttcp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_authrej",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_recurserej",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_xfrrej",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 11",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updaterej",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_response",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_truncatedresp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_edns0out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_tsigout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_sig0out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 17",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 18",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_authans",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 19",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nonauthans",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 20",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_referral",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 21",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nxrrset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 22",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_servfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 23",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_formerr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 24",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nxdomain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 25",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_recursion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 26",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_duplicate",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 27",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_dropped",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 28",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_failure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 29",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_xfrdone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 30",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updatereqfwd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 31",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updaterespfwd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 32",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updatefwdfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 33",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updatedone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 34",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updatefail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 35",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updatebadprereq",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 36",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_recursclients",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 37",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_dns64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 38",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_ratedropped",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 39",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_rateslipped",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 40",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_rpz_rewrites",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 41",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_udp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 42",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_tcp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 43",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nsidopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 44",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_expireopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 45",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_otheropt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 46",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_ecsopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 47",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_padopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 48",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_keepaliveopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 49",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nxdomainredirect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 50",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nxdomainredirect_rlookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 51",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_cookiein",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 52",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_cookiebadsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 53",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_cookiebadtime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 54",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_cookienomatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 55",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_cookiematch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 56",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_cookienew",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 57",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_badcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 58",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nxdomainsynth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 59",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_nodatasynth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 60",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_wildcardsynth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 61",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_trystale",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 62",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_usedstale",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 63",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_prefetch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 64",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_keytagopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 65",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_tcphighwater",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 66",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_reclimitdropped",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 67",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_updatequota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 68",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_recurshighwater",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 69",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_statscounter_max",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -2508,6 +3179,17 @@
       "variables": []
     },
     "lib/ns/include/ns/types.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ns_cookiealg_siphash24",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -2650,6 +3332,7 @@
       "variables": []
     },
     "lib/ns/include/ns/update.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2672,6 +3355,7 @@
       "variables": []
     },
     "lib/ns/include/ns/xfrout.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2693,6 +3377,7 @@
       "variables": []
     },
     "lib/ns/interfacemgr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2819,6 +3504,7 @@
       ]
     },
     "lib/ns/listenlist.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2962,6 +3648,7 @@
       "variables": []
     },
     "lib/ns/log.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3031,6 +3718,7 @@
       ]
     },
     "lib/ns/notify.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -3078,6 +3766,7 @@
       "variables": []
     },
     "lib/ns/probes.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -3109,6 +3798,35 @@
       "variables": []
     },
     "lib/ns/query.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "qresult_type_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "qresult_type_restart",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "qresult_type_recurse",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -5754,6 +6472,7 @@
       ]
     },
     "lib/ns/server.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5880,6 +6599,7 @@
       "variables": []
     },
     "lib/ns/sortlist.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5927,6 +6647,7 @@
       "variables": []
     },
     "lib/ns/stats.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5972,6 +6693,7 @@
       ]
     },
     "lib/ns/update.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6044,6 +6766,7 @@
       ]
     },
     "lib/ns/xfrout.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

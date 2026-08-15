@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/old.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

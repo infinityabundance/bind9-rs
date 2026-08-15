@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/main.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

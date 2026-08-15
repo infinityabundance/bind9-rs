@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/delv/delv.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

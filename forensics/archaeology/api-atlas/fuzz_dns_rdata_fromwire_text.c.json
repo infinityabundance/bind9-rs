@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/dns_rdata_fromwire_text.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

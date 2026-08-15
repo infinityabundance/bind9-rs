@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/dns_name_fromtext_target.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/isc_lex_gettoken.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

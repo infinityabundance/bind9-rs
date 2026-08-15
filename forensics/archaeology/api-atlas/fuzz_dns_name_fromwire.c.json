@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/dns_name_fromwire.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

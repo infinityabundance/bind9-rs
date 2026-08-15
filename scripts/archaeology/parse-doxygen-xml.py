@@ -14,12 +14,13 @@ bin/*, fuzz/*) becomes one JSON inventory file:
       "sources_generated_at": "...",
       "files": { "<path>": {
            "functions": [ { "name": ..., "static": bool, "definition": "...",
-                            "brief": "...", "detailed": "...", "params": [...] } ],
-           "typedefs": [...],
-           "enums": [...],
-           "structs": [...],
-           "macros": [...],
-           "variables": [...]
+                       "brief": "...", "detailed": "...", "params": [...] } ],
+      "typedefs": [...],
+      "enums": [...],
+      "enum_values": [...],
+      "structs": [...],
+      "macros": [...],
+      "variables": [...]
       } }
     }
 
@@ -105,6 +106,7 @@ def parse_compound(path):
         "functions": [],
         "typedefs": [],
         "enums": [],
+        "enum_values": [],
         "structs": [],
         "macros": [],
         "variables": [],
@@ -142,6 +144,31 @@ def parse_compound(path):
             result["typedefs"].append(entry)
         elif kind == "enum":
             result["enums"].append(entry)
+            # Enum VALUES are compatibility surface too (ISC_R_* result
+            # codes, dns_rcode constants, ...).  Doxygen nests them inside
+            # the enum memberdef; collect each with its initializer.
+            for ev in member:
+                if tag(ev) != "enumvalue":
+                    continue
+                ev_name = ""
+                for c in ev:
+                    if tag(c) == "name":
+                        ev_name = "".join(c.itertext()).strip()
+                ev_init = ""
+                for c in ev:
+                    if tag(c) == "initializer":
+                        ev_init = "".join(c.itertext()).strip()
+                ev_brief = text_of(child(ev, "briefdescription"))
+                ev_entry = {
+                    "name": ev_name,
+                    "static": False,
+                    "definition": "enum value",
+                    "args": ev_init,
+                    "brief": ev_brief,
+                    "detailed": "",
+                    "params": [],
+                }
+                result["enum_values"].append(ev_entry)
         elif kind in ("struct", "union"):
             result["structs"].append(entry)
         elif kind == "define":
@@ -153,11 +180,22 @@ def parse_compound(path):
 
 def library_of(path):
     """Map a source path to its library/tool unit."""
-    for prefix in ("lib/", "bin/", "fuzz/"):
+    for prefix in ("lib/", "bin/", "fuzz/", "tests/"):
         if path.startswith(prefix):
             rest = path[len(prefix):]
             return prefix + rest.split("/")[0]
     return path.split("/")[0]
+
+
+def member_counts(inv):
+    """Per-file member counts for the progress summary."""
+    nfuncs = sum(len(f["functions"]) for f in inv["files"].values())
+    nenum = sum(len(f["enum_values"]) for f in inv["files"].values())
+    nmacro = sum(len(f["macros"]) for f in inv["files"].values())
+    nstruct = sum(len(f["structs"]) for f in inv["files"].values())
+    ntydef = sum(len(f["typedefs"]) for f in inv["files"].values())
+    nvar = sum(len(f["variables"]) for f in inv["files"].values())
+    return nfuncs, nenum, nmacro, nstruct, ntydef, nvar
 
 
 def main():
@@ -167,11 +205,19 @@ def main():
     xml_dir, out_dir, version = sys.argv[1], sys.argv[2], sys.argv[3]
 
     inventories = {}
+    skipped = []
     for fname in sorted(os.listdir(xml_dir)):
         if not fname.endswith(".xml") or fname.startswith("dir_") or fname.startswith("globals"):
             continue
         path = os.path.join(xml_dir, fname)
-        tree = ET.parse(path)
+        try:
+            tree = ET.parse(path)
+        except ET.ParseError as e:
+            # A single malformed XML file must never silently vanish from
+            # the archive (residual primacy).  Record it in the totals
+            # manifest with the reason so it stays visible and fixable.
+            skipped.append({"file": fname, "reason": f"xml parse error: {e}"})
+            continue
         root = tree.getroot()
         compound = None
         for c in root:
@@ -203,16 +249,6 @@ def main():
         inv["files"][srcfile] = data
 
     os.makedirs(out_dir, exist_ok=True)
-    for lib, inv in sorted(inventories.items()):
-        safe = lib.replace("/", "_")
-        out = os.path.join(out_dir, f"{safe}.json")
-        with open(out, "w") as f:
-            json.dump(inv, f, indent=2, sort_keys=True)
-        nfiles = len(inv["files"])
-        nfuncs = sum(len(f["functions"]) for f in inv["files"].values())
-        print(f"{lib}: {nfiles} files, {nfuncs} functions -> {os.path.basename(out)}")
-
-    # Totals manifest.
     totals = {
         "schema_version": SCHEMA_VERSION,
         "version": version,
@@ -221,10 +257,36 @@ def main():
         "function_count": sum(
             len(f["functions"]) for i in inventories.values() for f in i["files"].values()
         ),
+        "enum_value_count": sum(
+            len(f["enum_values"]) for i in inventories.values() for f in i["files"].values()
+        ),
+        "macro_count": sum(
+            len(f["macros"]) for i in inventories.values() for f in i["files"].values()
+        ),
+        "skipped_xml_files": skipped,
     }
+    for lib, inv in sorted(inventories.items()):
+        safe = lib.replace("/", "_")
+        out = os.path.join(out_dir, f"{safe}.json")
+        with open(out, "w") as f:
+            json.dump(inv, f, indent=2, sort_keys=True)
+        nfiles = len(inv["files"])
+        nfuncs, nenum, nmacro, nstruct, ntydef, nvar = member_counts(inv)
+        print(
+            f"{lib}: {nfiles} files, {nfuncs} functions, {nenum} enum values, "
+            f"{nmacro} macros -> {os.path.basename(out)}"
+        )
+
     with open(os.path.join(out_dir, "totals.json"), "w") as f:
         json.dump(totals, f, indent=2, sort_keys=True)
-    print(f"TOTAL: {totals['file_count']} files, {totals['function_count']} functions")
+    print(
+        f"TOTAL: {totals['file_count']} files, {totals['function_count']} functions, "
+        f"{totals['enum_value_count']} enum values, {totals['macro_count']} macros"
+    )
+    if skipped:
+        print(f"WARNING: {len(skipped)} doxygen XML file(s) could not be parsed:")
+        for s in skipped:
+            print(f"  {s['file']}: {s['reason']}")
 
 
 if __name__ == "__main__":

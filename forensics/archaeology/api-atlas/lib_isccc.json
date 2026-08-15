@@ -1,0 +1,2331 @@
+{
+  "files": {
+    "lib/isccc/alist.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_create",
+          "detailed": "\n        ",
+          "name": "isccc_alist_create",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist)",
+          "brief": "\n        ",
+          "definition": "bool isccc_alist_alistp",
+          "detailed": "\n        ",
+          "name": "isccc_alist_alistp",
+          "params": [
+            "alist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist)",
+          "brief": "\n        ",
+          "definition": "bool isccc_alist_emptyp",
+          "detailed": "\n        ",
+          "name": "isccc_alist_emptyp",
+          "params": [
+            "alist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_first",
+          "detailed": "\n        ",
+          "name": "isccc_alist_first",
+          "params": [
+            "alist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_assq",
+          "detailed": "\n        ",
+          "name": "isccc_alist_assq",
+          "params": [
+            "alist",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key)",
+          "brief": "\n        ",
+          "definition": "void isccc_alist_delete",
+          "detailed": "\n        ",
+          "name": "isccc_alist_delete",
+          "params": [
+            "alist",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, isccc_sexpr_t *value)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_define",
+          "detailed": "\n        ",
+          "name": "isccc_alist_define",
+          "params": [
+            "alist",
+            "key",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, const char *str)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_definestring",
+          "detailed": "\n        ",
+          "name": "isccc_alist_definestring",
+          "params": [
+            "alist",
+            "key",
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, isccc_region_t *r)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_definebinary",
+          "detailed": "\n        ",
+          "name": "isccc_alist_definebinary",
+          "params": [
+            "alist",
+            "key",
+            "r"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_lookup",
+          "detailed": "\n        ",
+          "name": "isccc_alist_lookup",
+          "params": [
+            "alist",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, char **strp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_alist_lookupstring",
+          "detailed": "\n        ",
+          "name": "isccc_alist_lookupstring",
+          "params": [
+            "alist",
+            "key",
+            "strp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, isccc_region_t **r)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_alist_lookupbinary",
+          "detailed": "\n        ",
+          "name": "isccc_alist_lookupbinary",
+          "params": [
+            "alist",
+            "key",
+            "r"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr, unsigned int indent, FILE *stream)",
+          "brief": "\n        ",
+          "definition": "void isccc_alist_prettyprint",
+          "detailed": "\n        ",
+          "name": "isccc_alist_prettyprint",
+          "params": [
+            "sexpr",
+            "indent",
+            "stream"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAR",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CDR",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ALIST_TAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_INDENT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[64+1]",
+          "brief": "\n        ",
+          "definition": "char spaces[64+1]",
+          "detailed": "\n        ",
+          "name": "spaces",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/base64.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isccc_region_t *source, int wordlength, const char *wordbreak, isccc_region_t *target)",
+          "brief": "Convert data into base64 encoded text.",
+          "definition": "isc_result_t isccc_base64_encode",
+          "detailed": "Notes: \nThe base64 encoded text in 'target' will be divided into words of at most 'wordlength' characters, separated by the 'wordbreak' string. No parentheses will surround the text.\n\n\nRequires: \n'source' is a region containing binary data. \n\n'target' is a text region containing available space. \n\n'wordbreak' points to a null-terminated string of zero or more whitespace characters. \n\n\n\nThe base64 encoded text in 'target' will be divided into words of at most 'wordlength' characters, separated by the 'wordbreak' string. No parentheses will surround the text.\n'source' is a region containing binary data. \n'target' is a text region containing available space. \n'wordbreak' points to a null-terminated string of zero or more whitespace characters.",
+          "name": "isccc_base64_encode",
+          "params": [
+            "source",
+            "wordlength",
+            "wordbreak",
+            "target"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *cstr, isccc_region_t *target)",
+          "brief": "Decode a null-terminated base64 string.",
+          "definition": "isc_result_t isccc_base64_decode",
+          "detailed": "Requires: \n'cstr' is non-null. \n\n'target' is a valid region.\n\n\nReturns: \nISC_R_SUCCESS  the entire decoded representation of 'cstring' fit in 'target'. \n\nISC_R_BADBASE64  'cstr' is not a valid base64 encoding. \n\nISC_R_NOSPACE  'target' is not big enough. \n\n\n\n'cstr' is non-null. \n'target' is a valid region.\nISC_R_SUCCESS  the entire decoded representation of 'cstring' fit in 'target'. \nISC_R_BADBASE64  'cstr' is not a valid base64 encoding. \nISC_R_NOSPACE  'target' is not big enough.",
+          "name": "isccc_base64_decode",
+          "params": [
+            "cstr",
+            "target"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/cc.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isccc_sexpr_t *alist, isc_buffer_t **buffer)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t table_towire",
+          "detailed": "\n        ",
+          "name": "table_towire",
+          "params": [
+            "alist",
+            "buffer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, isc_buffer_t **buffer)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t list_towire",
+          "detailed": "\n        ",
+          "name": "list_towire",
+          "params": [
+            "alist",
+            "buffer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_sexpr_t *elt, isc_buffer_t **buffer)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t value_towire",
+          "detailed": "\n        ",
+          "name": "value_towire",
+          "params": [
+            "elt",
+            "buffer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *data, unsigned int length, unsigned char *out, uint32_t algorithm, isccc_region_t *secret)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t sign",
+          "detailed": "\n        ",
+          "name": "sign",
+          "params": [
+            "data",
+            "length",
+            "out",
+            "algorithm",
+            "secret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, isc_buffer_t **buffer, uint32_t algorithm, isccc_region_t *secret)",
+          "brief": "Send to Wire.",
+          "definition": "isc_result_t isccc_cc_towire",
+          "detailed": "\n        ",
+          "name": "isccc_cc_towire",
+          "params": [
+            "alist",
+            "buffer",
+            "algorithm",
+            "secret"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, unsigned char *data, unsigned int length, uint32_t algorithm, isccc_region_t *secret)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t verify",
+          "detailed": "\n        ",
+          "name": "verify",
+          "params": [
+            "alist",
+            "data",
+            "length",
+            "algorithm",
+            "secret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_region_t *source, isccc_region_t *secret, uint32_t algorithm, unsigned int depth, isccc_sexpr_t **alistp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t table_fromwire",
+          "detailed": "\n        ",
+          "name": "table_fromwire",
+          "params": [
+            "source",
+            "secret",
+            "algorithm",
+            "depth",
+            "alistp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_region_t *source, unsigned int depth, isccc_sexpr_t **listp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t list_fromwire",
+          "detailed": "\n        ",
+          "name": "list_fromwire",
+          "params": [
+            "source",
+            "depth",
+            "listp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_region_t *source, unsigned int depth, isccc_sexpr_t **valuep)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t value_fromwire",
+          "detailed": "\n        ",
+          "name": "value_fromwire",
+          "params": [
+            "source",
+            "depth",
+            "valuep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_region_t *source, isccc_sexpr_t **alistp, uint32_t algorithm, isccc_region_t *secret)",
+          "brief": "Get From Wire.",
+          "definition": "isc_result_t isccc_cc_fromwire",
+          "detailed": "\n        ",
+          "name": "isccc_cc_fromwire",
+          "params": [
+            "source",
+            "alistp",
+            "algorithm",
+            "secret"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t version, const char *from, const char *to, uint32_t serial, isccc_time_t now, isccc_time_t expires, isccc_sexpr_t **alistp, bool want_expires)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t createmessage",
+          "detailed": "\n        ",
+          "name": "createmessage",
+          "params": [
+            "version",
+            "from",
+            "to",
+            "serial",
+            "now",
+            "expires",
+            "alistp",
+            "want_expires"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t version, const char *from, const char *to, uint32_t serial, isccc_time_t now, isccc_time_t expires, isccc_sexpr_t **alistp)",
+          "brief": "Create Message.",
+          "definition": "isc_result_t isccc_cc_createmessage",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createmessage",
+          "params": [
+            "version",
+            "from",
+            "to",
+            "serial",
+            "now",
+            "expires",
+            "alistp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message, bool ok, isccc_sexpr_t **ackp)",
+          "brief": "Create Acknowledgment.",
+          "definition": "isc_result_t isccc_cc_createack",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createack",
+          "params": [
+            "message",
+            "ok",
+            "ackp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message)",
+          "brief": "Is Ack?",
+          "definition": "bool isccc_cc_isack",
+          "detailed": "\n        ",
+          "name": "isccc_cc_isack",
+          "params": [
+            "message"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message)",
+          "brief": "Is Reply?",
+          "definition": "bool isccc_cc_isreply",
+          "detailed": "\n        ",
+          "name": "isccc_cc_isreply",
+          "params": [
+            "message"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message, isccc_time_t now, isccc_time_t expires, isccc_sexpr_t **alistp)",
+          "brief": "Create Response.",
+          "definition": "isc_result_t isccc_cc_createresponse",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createresponse",
+          "params": [
+            "message",
+            "now",
+            "expires",
+            "alistp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, const char *str)",
+          "brief": "Define String.",
+          "definition": "isccc_sexpr_t * isccc_cc_definestring",
+          "detailed": "\n        ",
+          "name": "isccc_cc_definestring",
+          "params": [
+            "alist",
+            "key",
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, uint32_t i)",
+          "brief": "Define uint 32.",
+          "definition": "isccc_sexpr_t * isccc_cc_defineuint32",
+          "detailed": "\n        ",
+          "name": "isccc_cc_defineuint32",
+          "params": [
+            "alist",
+            "key",
+            "i"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, char **strp)",
+          "brief": "Lookup String.",
+          "definition": "isc_result_t isccc_cc_lookupstring",
+          "detailed": "\n        ",
+          "name": "isccc_cc_lookupstring",
+          "params": [
+            "alist",
+            "key",
+            "strp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, uint32_t *uintp)",
+          "brief": "Lookup uint 32.",
+          "definition": "isc_result_t isccc_cc_lookupuint32",
+          "detailed": "\n        ",
+          "name": "isccc_cc_lookupuint32",
+          "params": [
+            "alist",
+            "key",
+            "uintp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *key, unsigned int type, isccc_symvalue_t value, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void symtab_undefine",
+          "detailed": "\n        ",
+          "name": "symtab_undefine",
+          "params": [
+            "key",
+            "type",
+            "value",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *key, unsigned int type, isccc_symvalue_t value, void *arg)",
+          "brief": "\n        ",
+          "definition": "static bool symtab_clean",
+          "detailed": "\n        ",
+          "name": "symtab_clean",
+          "params": [
+            "key",
+            "type",
+            "value",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_symtab_t **symtabp)",
+          "brief": "Create Symbol Table.",
+          "definition": "isc_result_t isccc_cc_createsymtab",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createsymtab",
+          "params": [
+            "symtabp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, isccc_time_t now)",
+          "brief": "Clean up Symbol Table.",
+          "definition": "void isccc_cc_cleansymtab",
+          "detailed": "\n        ",
+          "name": "isccc_cc_cleansymtab",
+          "params": [
+            "symtab",
+            "now"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static bool has_whitespace",
+          "detailed": "\n        ",
+          "name": "has_whitespace",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, isccc_sexpr_t *message, isccc_time_t now)",
+          "brief": "Check for Duplicates.",
+          "definition": "isc_result_t isccc_cc_checkdup",
+          "detailed": "\n        ",
+          "name": "isccc_cc_checkdup",
+          "params": [
+            "symtab",
+            "message",
+            "now"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_TAGS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DUP_LIFETIME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_MAXDEPTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "21 = 6 + 1 + 4 + 5 + 1 + 4",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HMD5_OFFSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HMD5_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "21 = 6 + 1 + 4 + 5 + 1 + 4 + 1",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HSHA_OFFSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HSHA_LENGTH",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef isccc_sexpr_t* sexpr_ptr",
+          "detailed": "\n        ",
+          "name": "sexpr_ptr",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char auth_hmd5[]",
+          "detailed": "\n        ",
+          "name": "auth_hmd5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char auth_hsha[]",
+          "detailed": "\n        ",
+          "name": "auth_hsha",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/ccmsg.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isccc_ccmsg_t *ccmsg)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t try_parse_message",
+          "detailed": "\n        ",
+          "name": "try_parse_message",
+          "params": [
+            "ccmsg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void recv_data",
+          "detailed": "\n        ",
+          "name": "recv_data",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, isc_nmhandle_t *handle, isccc_ccmsg_t *ccmsg)",
+          "brief": "\n        ",
+          "definition": "void isccc_ccmsg_init",
+          "detailed": "\n        ",
+          "name": "isccc_ccmsg_init",
+          "params": [
+            "mctx",
+            "handle",
+            "ccmsg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, unsigned int maxsize)",
+          "brief": "Associate a cc message state with a given memory context and netmgr handle. (Note that the caller must hold a reference to the handle during asynchronous ccmsg operations; the ccmsg code does not hold the reference itself.).",
+          "definition": "void isccc_ccmsg_setmaxsize",
+          "detailed": "Requires:\n\n\"mctx\" be a valid memory context.\n\n\n\n\"handle\" be a netmgr handle for a stream socket.\n\n\n\n\"ccmsg\" be non-NULL and an uninitialized or invalidated structure.\n\n\nEnsures:\n\"mctx\" be a valid memory context.\n\"handle\" be a netmgr handle for a stream socket.\n\"ccmsg\" be non-NULL and an uninitialized or invalidated structure.\n\n\"ccmsg\" is a valid structure. \n\n\n\n\"ccmsg\" is a valid structure.",
+          "name": "isccc_ccmsg_setmaxsize",
+          "params": [
+            "ccmsg",
+            "maxsize"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, isc_nm_cb_t cb, void *cbarg)",
+          "brief": "Set the maximum packet size to \"maxsize\".",
+          "definition": "void isccc_ccmsg_readmessage",
+          "detailed": "Requires:\n\n\"ccmsg\" be valid.\n\n\n\n512 <= \"maxsize\" <= 4294967296 \n\n\n\n\"ccmsg\" be valid.\n512 <= \"maxsize\" <= 4294967296",
+          "name": "isccc_ccmsg_readmessage",
+          "params": [
+            "ccmsg",
+            "cb",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void ccmsg_senddone",
+          "detailed": "\n        ",
+          "name": "ccmsg_senddone",
+          "params": [
+            "handle",
+            "eresult",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, isc_region_t *region, isc_nm_cb_t cb, void *cbarg)",
+          "brief": "Schedule an event to be delivered when a command channel message is readable, or when an error occurs on the socket.",
+          "definition": "void isccc_ccmsg_sendmessage",
+          "detailed": "Requires:\n\n\"ccmsg\" be valid.\n\n\nNotes:\n\"ccmsg\" be valid.\n\nThe event delivered is a fully generic event. It will contain no actual data. The sender will be a pointer to the isccc_ccmsg_t. The result code inside that structure should be checked to see what the final result was. \n\n\n\nThe event delivered is a fully generic event. It will contain no actual data. The sender will be a pointer to the isccc_ccmsg_t. The result code inside that structure should be checked to see what the final result was.",
+          "name": "isccc_ccmsg_sendmessage",
+          "params": [
+            "ccmsg",
+            "region",
+            "cb",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg)",
+          "brief": "Sends region over the command channel message.",
+          "definition": "void isccc_ccmsg_disconnect",
+          "detailed": "CAVEAT: Only a single send message can be scheduled at the time.",
+          "name": "isccc_ccmsg_disconnect",
+          "params": [
+            "ccmsg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg)",
+          "brief": "Disconnect from the connected netmgr handle associated with a command channel message.",
+          "definition": "void isccc_ccmsg_invalidate",
+          "detailed": "Requires:\n\n\"ccmsg\" to be valid. \n\n\n\n\"ccmsg\" to be valid.",
+          "name": "isccc_ccmsg_invalidate",
+          "params": [
+            "ccmsg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, isccc_region_t *ccregion)",
+          "brief": "Clean up the magic number and the dynamic buffer associated with a command channel message.",
+          "definition": "void isccc_ccmsg_toregion",
+          "detailed": "Requires:\n\n\"ccmsg\" to be valid. \n\n\n\n\"ccmsg\" to be valid.",
+          "name": "isccc_ccmsg_toregion",
+          "params": [
+            "ccmsg",
+            "ccregion"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CCMSG_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VALID_CCMSG",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/include/isccc/alist.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS isccc_sexpr_t * isccc_alist_create",
+          "detailed": "\n        ",
+          "name": "isccc_alist_create",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist)",
+          "brief": "\n        ",
+          "definition": "bool isccc_alist_alistp",
+          "detailed": "\n        ",
+          "name": "isccc_alist_alistp",
+          "params": [
+            "alist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist)",
+          "brief": "\n        ",
+          "definition": "bool isccc_alist_emptyp",
+          "detailed": "\n        ",
+          "name": "isccc_alist_emptyp",
+          "params": [
+            "alist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_first",
+          "detailed": "\n        ",
+          "name": "isccc_alist_first",
+          "params": [
+            "alist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_assq",
+          "detailed": "\n        ",
+          "name": "isccc_alist_assq",
+          "params": [
+            "alist",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key)",
+          "brief": "\n        ",
+          "definition": "void isccc_alist_delete",
+          "detailed": "\n        ",
+          "name": "isccc_alist_delete",
+          "params": [
+            "alist",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, isccc_sexpr_t *value)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_define",
+          "detailed": "\n        ",
+          "name": "isccc_alist_define",
+          "params": [
+            "alist",
+            "key",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, const char *str)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_definestring",
+          "detailed": "\n        ",
+          "name": "isccc_alist_definestring",
+          "params": [
+            "alist",
+            "key",
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, isccc_region_t *r)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_definebinary",
+          "detailed": "\n        ",
+          "name": "isccc_alist_definebinary",
+          "params": [
+            "alist",
+            "key",
+            "r"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_alist_lookup",
+          "detailed": "\n        ",
+          "name": "isccc_alist_lookup",
+          "params": [
+            "alist",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, char **strp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_alist_lookupstring",
+          "detailed": "\n        ",
+          "name": "isccc_alist_lookupstring",
+          "params": [
+            "alist",
+            "key",
+            "strp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, isccc_region_t **r)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_alist_lookupbinary",
+          "detailed": "\n        ",
+          "name": "isccc_alist_lookupbinary",
+          "params": [
+            "alist",
+            "key",
+            "r"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr, unsigned int indent, FILE *stream)",
+          "brief": "\n        ",
+          "definition": "void isccc_alist_prettyprint",
+          "detailed": "\n        ",
+          "name": "isccc_alist_prettyprint",
+          "params": [
+            "sexpr",
+            "indent",
+            "stream"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/include/isccc/base64.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isccc_region_t *source, int wordlength, const char *wordbreak, isccc_region_t *target)",
+          "brief": "Convert data into base64 encoded text.",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t isccc_base64_encode",
+          "detailed": "Notes: \nThe base64 encoded text in 'target' will be divided into words of at most 'wordlength' characters, separated by the 'wordbreak' string. No parentheses will surround the text.\n\n\nRequires: \n'source' is a region containing binary data. \n\n'target' is a text region containing available space. \n\n'wordbreak' points to a null-terminated string of zero or more whitespace characters. \n\n\n\nThe base64 encoded text in 'target' will be divided into words of at most 'wordlength' characters, separated by the 'wordbreak' string. No parentheses will surround the text.\n'source' is a region containing binary data. \n'target' is a text region containing available space. \n'wordbreak' points to a null-terminated string of zero or more whitespace characters.",
+          "name": "isccc_base64_encode",
+          "params": [
+            "source",
+            "wordlength",
+            "wordbreak",
+            "target"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *cstr, isccc_region_t *target)",
+          "brief": "Decode a null-terminated base64 string.",
+          "definition": "isc_result_t isccc_base64_decode",
+          "detailed": "Requires: \n'cstr' is non-null. \n\n'target' is a valid region.\n\n\nReturns: \nISC_R_SUCCESS  the entire decoded representation of 'cstring' fit in 'target'. \n\nISC_R_BADBASE64  'cstr' is not a valid base64 encoding. \n\nISC_R_NOSPACE  'target' is not big enough. \n\n\n\n'cstr' is non-null. \n'target' is a valid region.\nISC_R_SUCCESS  the entire decoded representation of 'cstring' fit in 'target'. \nISC_R_BADBASE64  'cstr' is not a valid base64 encoding. \nISC_R_NOSPACE  'target' is not big enough.",
+          "name": "isccc_base64_decode",
+          "params": [
+            "cstr",
+            "target"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/include/isccc/cc.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isccc_sexpr_t *alist, isc_buffer_t **buffer, uint32_t algorithm, isccc_region_t *secret)",
+          "brief": "Send to Wire.",
+          "definition": "isc_result_t isccc_cc_towire",
+          "detailed": "\n        ",
+          "name": "isccc_cc_towire",
+          "params": [
+            "alist",
+            "buffer",
+            "algorithm",
+            "secret"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_region_t *source, isccc_sexpr_t **alistp, uint32_t algorithm, isccc_region_t *secret)",
+          "brief": "Get From Wire.",
+          "definition": "isc_result_t isccc_cc_fromwire",
+          "detailed": "\n        ",
+          "name": "isccc_cc_fromwire",
+          "params": [
+            "source",
+            "alistp",
+            "algorithm",
+            "secret"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t version, const char *from, const char *to, uint32_t serial, isccc_time_t now, isccc_time_t expires, isccc_sexpr_t **alistp)",
+          "brief": "Create Message.",
+          "definition": "isc_result_t isccc_cc_createmessage",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createmessage",
+          "params": [
+            "version",
+            "from",
+            "to",
+            "serial",
+            "now",
+            "expires",
+            "alistp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message, bool ok, isccc_sexpr_t **ackp)",
+          "brief": "Create Acknowledgment.",
+          "definition": "isc_result_t isccc_cc_createack",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createack",
+          "params": [
+            "message",
+            "ok",
+            "ackp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message)",
+          "brief": "Is Ack?",
+          "definition": "bool isccc_cc_isack",
+          "detailed": "\n        ",
+          "name": "isccc_cc_isack",
+          "params": [
+            "message"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message)",
+          "brief": "Is Reply?",
+          "definition": "bool isccc_cc_isreply",
+          "detailed": "\n        ",
+          "name": "isccc_cc_isreply",
+          "params": [
+            "message"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message, isccc_time_t now, isccc_time_t expires, isccc_sexpr_t **alistp)",
+          "brief": "Create Response.",
+          "definition": "isc_result_t isccc_cc_createresponse",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createresponse",
+          "params": [
+            "message",
+            "now",
+            "expires",
+            "alistp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, const char *str)",
+          "brief": "Define String.",
+          "definition": "isccc_sexpr_t * isccc_cc_definestring",
+          "detailed": "\n        ",
+          "name": "isccc_cc_definestring",
+          "params": [
+            "alist",
+            "key",
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, uint32_t i)",
+          "brief": "Define uint 32.",
+          "definition": "isccc_sexpr_t * isccc_cc_defineuint32",
+          "detailed": "\n        ",
+          "name": "isccc_cc_defineuint32",
+          "params": [
+            "alist",
+            "key",
+            "i"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, char **strp)",
+          "brief": "Lookup String.",
+          "definition": "isc_result_t isccc_cc_lookupstring",
+          "detailed": "\n        ",
+          "name": "isccc_cc_lookupstring",
+          "params": [
+            "alist",
+            "key",
+            "strp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *alist, const char *key, uint32_t *uintp)",
+          "brief": "Lookup uint 32.",
+          "definition": "isc_result_t isccc_cc_lookupuint32",
+          "detailed": "\n        ",
+          "name": "isccc_cc_lookupuint32",
+          "params": [
+            "alist",
+            "key",
+            "uintp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t **symtabp)",
+          "brief": "Create Symbol Table.",
+          "definition": "isc_result_t isccc_cc_createsymtab",
+          "detailed": "\n        ",
+          "name": "isccc_cc_createsymtab",
+          "params": [
+            "symtabp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, isccc_time_t now)",
+          "brief": "Clean up Symbol Table.",
+          "definition": "void isccc_cc_cleansymtab",
+          "detailed": "\n        ",
+          "name": "isccc_cc_cleansymtab",
+          "params": [
+            "symtab",
+            "now"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, isccc_sexpr_t *message, isccc_time_t now)",
+          "brief": "Check for Duplicates.",
+          "definition": "isc_result_t isccc_cc_checkdup",
+          "detailed": "\n        ",
+          "name": "isccc_cc_checkdup",
+          "params": [
+            "symtab",
+            "message",
+            "now"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "The HMAC algorithms supported by isccc_cc_fromwire and isccc_cc_towire as implemented in DST.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_UNKNOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_HMACMD5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_HMACSHA1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_HMACSHA224",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_HMACSHA256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_HMACSHA384",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_ALG_HMACSHA512",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Maximum Datagram Package.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_CC_MAXDGRAMPACKET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Message Type String.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_CCMSGTYPE_STRING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Message Type Binary Data.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_CCMSGTYPE_BINARYDATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Message Type Table.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_CCMSGTYPE_TABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Message Type List.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_CCMSGTYPE_LIST",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/include/isccc/ccmsg.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int isccc_ccmsg::magic",
+          "detailed": "\n        ",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t isccc_ccmsg::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t* isccc_ccmsg::buffer",
+          "detailed": "\n        ",
+          "name": "buffer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int isccc_ccmsg::maxsize",
+          "detailed": "\n        ",
+          "name": "maxsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* isccc_ccmsg::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nmhandle_t* isccc_ccmsg::handle",
+          "detailed": "\n        ",
+          "name": "handle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_cb_t isccc_ccmsg::recv_cb",
+          "detailed": "\n        ",
+          "name": "recv_cb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* isccc_ccmsg::recv_cbarg",
+          "detailed": "\n        ",
+          "name": "recv_cbarg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_cb_t isccc_ccmsg::send_cb",
+          "detailed": "\n        ",
+          "name": "send_cb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* isccc_ccmsg::send_cbarg",
+          "detailed": "\n        ",
+          "name": "send_cbarg",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/include/isccc/sexpr.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int isccc_sexpr::type",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* isccc_sexpr::as_string",
+          "detailed": "\n        ",
+          "name": "as_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_dottedpair_t isccc_sexpr::as_dottedpair",
+          "detailed": "\n        ",
+          "name": "as_dottedpair",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_region_t isccc_sexpr::as_region",
+          "detailed": "\n        ",
+          "name": "as_region",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union isccc_sexpr::@154041103376272052330377036316147020077304027376 isccc_sexpr::value",
+          "detailed": "\n        ",
+          "name": "value",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/include/isccc/symtab.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* isccc_symvalue::as_pointer",
+          "detailed": "\n        ",
+          "name": "as_pointer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int isccc_symvalue::as_integer",
+          "detailed": "\n        ",
+          "name": "as_integer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int isccc_symvalue::as_uinteger",
+          "detailed": "\n        ",
+          "name": "as_uinteger",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/include/isccc/symtype.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SYMTYPE_ZONESTATS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SYMTYPE_CCDUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SYMTYPE_TELLSERVICE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SYMTYPE_TELLRESPONSE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/include/isccc/types.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* isccc_region::rstart",
+          "detailed": "\n        ",
+          "name": "rstart",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* isccc_region::rend",
+          "detailed": "\n        ",
+          "name": "rend",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/include/isccc/util.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET8",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET16",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET24",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET32",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET64",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GETC16",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GETC32",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET_OFFSET",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET_MEM",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GET_TYPE",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT8",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT16",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT24",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT32",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT64",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUTC16",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUTC32",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT_OFFSET",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT_MEM",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REGION_SIZE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REGION_EMPTY",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REGION_FROMSTRING",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "lib/isccc/sexpr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isccc_sexpr_t *car, isccc_sexpr_t *cdr)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_cons",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_cons",
+          "params": [
+            "car",
+            "cdr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_tconst",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_tconst",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_fromstring",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_fromstring",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const isccc_region_t *region)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_frombinary",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_frombinary",
+          "params": [
+            "region"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t **sexprp)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_free",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_free",
+          "params": [
+            "sexprp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_region_t *r)",
+          "brief": "\n        ",
+          "definition": "static bool printable",
+          "detailed": "\n        ",
+          "name": "printable",
+          "params": [
+            "r"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr, FILE *stream)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_print",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_print",
+          "params": [
+            "sexpr",
+            "stream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *list)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_car",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_car",
+          "params": [
+            "list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *list)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_cdr",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_cdr",
+          "params": [
+            "list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *pair, isccc_sexpr_t *car)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_setcar",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_setcar",
+          "params": [
+            "pair",
+            "car"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *pair, isccc_sexpr_t *cdr)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_setcdr",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_setcdr",
+          "params": [
+            "pair",
+            "cdr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t **l1p, isccc_sexpr_t *l2)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_addtolist",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_addtolist",
+          "params": [
+            "l1p",
+            "l2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_listp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_listp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_emptyp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_emptyp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_stringp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_stringp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_binaryp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_binaryp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "char * isccc_sexpr_tostring",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_tostring",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "isccc_region_t * isccc_sexpr_tobinary",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_tobinary",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAR",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CDR",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t sexpr_t",
+          "detailed": "\n        ",
+          "name": "sexpr_t",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "lib/isccc/symtab.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(elt_t)",
+          "brief": "\n        ",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned int size, isccc_symtabundefaction_t undefine_action, void *undefine_arg, bool case_sensitive, isccc_symtab_t **symtabp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_create",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_create",
+          "params": [
+            "size",
+            "undefine_action",
+            "undefine_arg",
+            "case_sensitive",
+            "symtabp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, unsigned int bucket, elt_t *elt)",
+          "brief": "\n        ",
+          "definition": "static void free_elt",
+          "detailed": "\n        ",
+          "name": "free_elt",
+          "params": [
+            "symtab",
+            "bucket",
+            "elt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_symtab_t **symtabp)",
+          "brief": "\n        ",
+          "definition": "void isccc_symtab_destroy",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_destroy",
+          "params": [
+            "symtabp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *key, bool case_sensitive)",
+          "brief": "\n        ",
+          "definition": "static unsigned int hash",
+          "detailed": "\n        ",
+          "name": "hash",
+          "params": [
+            "key",
+            "case_sensitive"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, const char *key, unsigned int type, isccc_symvalue_t *value)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_lookup",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_lookup",
+          "params": [
+            "symtab",
+            "key",
+            "type",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, char *key, unsigned int type, isccc_symvalue_t value, isccc_symexists_t exists_policy)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_define",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_define",
+          "params": [
+            "symtab",
+            "key",
+            "type",
+            "value",
+            "exists_policy"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, const char *key, unsigned int type)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_undefine",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_undefine",
+          "params": [
+            "symtab",
+            "key",
+            "type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, isccc_symtabforeachaction_t action, void *arg)",
+          "brief": "\n        ",
+          "definition": "void isccc_symtab_foreach",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_foreach",
+          "params": [
+            "symtab",
+            "action",
+            "arg"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SYMTAB_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VALID_SYMTAB",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIND",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct elt elt_t",
+          "detailed": "\n        ",
+          "name": "elt_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    }
+  },
+  "library": "lib/isccc",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

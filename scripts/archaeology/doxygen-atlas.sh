@@ -27,6 +27,10 @@ VERSION=$(grep -oE 'PACKAGE_VERSION "[^"]+"' "$BIND_SRC/config.h" | head -1 | cu
 echo "building API atlas for BIND $VERSION from $BIND_SRC"
 
 OUT_DIR="$REPO_ROOT/forensics/oracle/work/doxygen-out"
+# Hermetic regeneration: doxygen does not delete stale output files, so a
+# removed INPUT surface would otherwise linger in the XML and pollute the
+# atlas.  Clean the output tree first (it is gitignored derived data).
+rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
 
 # The doxygen config INPUT paths are relative to the BIND tree; run doxygen

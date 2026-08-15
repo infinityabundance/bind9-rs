@@ -1,6 +1,7 @@
 {
   "files": {
     "lib/dns/acl.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -173,14 +174,47 @@
           "static": true
         },
         {
-          "args": "(dns_acl, dns__acl_destroy)",
+          "args": "(dns_acl_t *ptr)",
           "brief": "\n        ",
-          "definition": "ISC_REFCOUNT_IMPL",
+          "definition": "dns_acl_t * dns_acl_ref",
           "detailed": "\n        ",
-          "name": "ISC_REFCOUNT_IMPL",
+          "name": "dns_acl_ref",
           "params": [
-            "",
-            ""
+            "ptr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_acl_t *ptr)",
+          "brief": "\n        ",
+          "definition": "void dns_acl_unref",
+          "detailed": "\n        ",
+          "name": "dns_acl_unref",
+          "params": [
+            "ptr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_acl_t *ptr, dns_acl_t **ptrp)",
+          "brief": "\n        ",
+          "definition": "void dns_acl_attach",
+          "detailed": "\n        ",
+          "name": "dns_acl_attach",
+          "params": [
+            "ptr",
+            "ptrp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_acl_t **ptrp)",
+          "brief": "\n        ",
+          "definition": "void dns_acl_detach",
+          "detailed": "\n        ",
+          "name": "dns_acl_detach",
+          "params": [
+            "ptrp"
           ],
           "static": false
         },
@@ -281,14 +315,47 @@
           "static": true
         },
         {
-          "args": "(dns_aclenv, dns__aclenv_destroy)",
+          "args": "(dns_aclenv_t *ptr)",
           "brief": "\n        ",
-          "definition": "ISC_REFCOUNT_IMPL",
+          "definition": "dns_aclenv_t * dns_aclenv_ref",
           "detailed": "\n        ",
-          "name": "ISC_REFCOUNT_IMPL",
+          "name": "dns_aclenv_ref",
           "params": [
-            "",
-            ""
+            "ptr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_aclenv_t *ptr)",
+          "brief": "\n        ",
+          "definition": "void dns_aclenv_unref",
+          "detailed": "\n        ",
+          "name": "dns_aclenv_unref",
+          "params": [
+            "ptr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_aclenv_t *ptr, dns_aclenv_t **ptrp)",
+          "brief": "\n        ",
+          "definition": "void dns_aclenv_attach",
+          "detailed": "\n        ",
+          "name": "dns_aclenv_attach",
+          "params": [
+            "ptr",
+            "ptrp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_aclenv_t **ptrp)",
+          "brief": "\n        ",
+          "definition": "void dns_aclenv_detach",
+          "detailed": "\n        ",
+          "name": "dns_aclenv_detach",
+          "params": [
+            "ptrp"
           ],
           "static": false
         },
@@ -376,6 +443,7 @@
       ]
     },
     "lib/dns/adb.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -403,6 +471,7 @@
       ]
     },
     "lib/dns/badcache.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -430,6 +499,7 @@
       ]
     },
     "lib/dns/byaddr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -461,6 +531,7 @@
       ]
     },
     "lib/dns/cache.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -614,6 +685,7 @@
       ]
     },
     "lib/dns/callbacks.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -695,6 +767,7 @@
       "variables": []
     },
     "lib/dns/catz.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -785,6 +858,7 @@
       ]
     },
     "lib/dns/client.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -848,6 +922,7 @@
       ]
     },
     "lib/dns/clientinfo.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -894,6 +969,7 @@
       "variables": []
     },
     "lib/dns/code.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -1067,6 +1143,7 @@
       "variables": []
     },
     "lib/dns/compress.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1280,6 +1357,7 @@
       "variables": []
     },
     "lib/dns/db.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1325,6 +1403,7 @@
       ]
     },
     "lib/dns/db_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1388,6 +1467,7 @@
       ]
     },
     "lib/dns/dbiterator.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1512,6 +1592,7 @@
       "variables": []
     },
     "lib/dns/diff.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1803,6 +1884,7 @@
       "variables": []
     },
     "lib/dns/dispatch.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2010,6 +2092,7 @@
       ]
     },
     "lib/dns/dlz.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2164,6 +2247,7 @@
       "variables": []
     },
     "lib/dns/dns64.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2236,6 +2320,7 @@
       ]
     },
     "lib/dns/dnsrps.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2244,6 +2329,7 @@
       "variables": []
     },
     "lib/dns/dnssec.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2853,6 +2939,7 @@
       ]
     },
     "lib/dns/dnstap.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -2880,6 +2967,7 @@
       ]
     },
     "lib/dns/ds.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -2919,6 +3007,7 @@
       "variables": []
     },
     "lib/dns/dst_api.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4378,6 +4467,7 @@
       ]
     },
     "lib/dns/dst_internal.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -4747,6 +4837,7 @@
       ]
     },
     "lib/dns/dst_openssl.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -4883,6 +4974,7 @@
       "variables": []
     },
     "lib/dns/dst_parse.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -4910,6 +5002,7 @@
       ]
     },
     "lib/dns/dst_parse.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -4946,6 +5039,7 @@
       ]
     },
     "lib/dns/dyndb.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5009,6 +5103,7 @@
       ]
     },
     "lib/dns/ecs.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5054,6 +5149,7 @@
       "variables": []
     },
     "lib/dns/ede.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5155,6 +5251,7 @@
       "variables": []
     },
     "lib/dns/fixedname.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5208,6 +5305,7 @@
       "variables": []
     },
     "lib/dns/forward.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5244,6 +5342,7 @@
       ]
     },
     "lib/dns/gen.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5307,6 +5406,7 @@
       ]
     },
     "lib/dns/geoip2.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5361,6 +5461,7 @@
       ]
     },
     "lib/dns/gssapi_link.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5379,6 +5480,7 @@
       ]
     },
     "lib/dns/gssapictx.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5512,6 +5614,7 @@
       "variables": []
     },
     "lib/dns/hmac_link.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5530,6 +5633,7 @@
       ]
     },
     "lib/dns/include/dns/acl.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -5557,6 +5661,7 @@
       ]
     },
     "lib/dns/include/dns/adb.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5735,6 +5840,7 @@
       ]
     },
     "lib/dns/include/dns/badcache.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5844,6 +5950,7 @@
       "variables": []
     },
     "lib/dns/include/dns/bit.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -5899,6 +6006,7 @@
       "variables": []
     },
     "lib/dns/include/dns/byaddr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -5920,6 +6028,7 @@
       "variables": []
     },
     "lib/dns/include/dns/cache.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -6142,6 +6251,7 @@
       "variables": []
     },
     "lib/dns/include/dns/callbacks.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6250,6 +6360,7 @@
       ]
     },
     "lib/dns/include/dns/catz.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6295,6 +6406,7 @@
       ]
     },
     "lib/dns/include/dns/cert.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -6328,6 +6440,7 @@
       "variables": []
     },
     "lib/dns/include/dns/client.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6391,6 +6504,7 @@
       ]
     },
     "lib/dns/include/dns/clientinfo.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6427,6 +6541,7 @@
       ]
     },
     "lib/dns/include/dns/compress.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6454,6 +6569,7 @@
       ]
     },
     "lib/dns/include/dns/db.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6508,6 +6624,7 @@
       ]
     },
     "lib/dns/include/dns/dbiterator.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6607,6 +6724,7 @@
       ]
     },
     "lib/dns/include/dns/diff.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6643,6 +6761,7 @@
       ]
     },
     "lib/dns/include/dns/dispatch.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6679,6 +6798,7 @@
       ]
     },
     "lib/dns/include/dns/dlz.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -6742,6 +6862,7 @@
       ]
     },
     "lib/dns/include/dns/dlz_dlopen.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -6914,6 +7035,7 @@
       "variables": []
     },
     "lib/dns/include/dns/dns64.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7073,6 +7195,7 @@
       "variables": []
     },
     "lib/dns/include/dns/dnsrps.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -7081,6 +7204,7 @@
       "variables": []
     },
     "lib/dns/include/dns/dnssec.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7255,6 +7379,35 @@
       ]
     },
     "lib/dns/include/dns/dnstap.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dtmode_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dtmode_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dtmode_unix",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -7620,6 +7773,7 @@
       "variables": []
     },
     "lib/dns/include/dns/ds.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7723,6 +7877,7 @@
       "variables": []
     },
     "lib/dns/include/dns/dsdigest.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7779,6 +7934,7 @@
       "variables": []
     },
     "lib/dns/include/dns/dsync.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -7844,6 +8000,7 @@
       "variables": []
     },
     "lib/dns/include/dns/dyndb.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -7925,6 +8082,7 @@
       ]
     },
     "lib/dns/include/dns/ecs.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -7961,6 +8119,7 @@
       ]
     },
     "lib/dns/include/dns/ede.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -8015,6 +8174,7 @@
       ]
     },
     "lib/dns/include/dns/edns.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -8033,6 +8193,125 @@
       "variables": []
     },
     "lib/dns/include/dns/enumclass.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_reserved0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_reserved0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_chaos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_chaos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_ch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_ch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_hs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_hs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 254",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 254",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 255\n#define dns_rdataclass_any",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdataclass_any",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -8115,6 +8394,836 @@
       "variables": []
     },
     "lib/dns/include/dns/enumtype.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_a",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_md",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_mf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_cname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_soa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_mb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_mg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_mr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_null",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 11",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_wks",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ptr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_hinfo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_minfo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_mx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_txt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 17",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_rp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 18",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_afsdb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 19",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_x25",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 20",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_isdn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 21",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_rt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 22",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nsap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 23",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nsap_ptr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 24",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_sig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 25",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 26",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_px",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 27",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_gpos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 28",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_aaaa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 29",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_loc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 30",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nxt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 31",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_eid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 32",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nimloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 33",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_srv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 34",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_atma",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 35",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_naptr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 36",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_kx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 37",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_cert",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 38",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_a6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 39",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_dname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 40",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_sink",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 41",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_opt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 42",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_apl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 43",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 44",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_sshfp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 45",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ipseckey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 46",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_rrsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 47",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nsec",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 48",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_dnskey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 49",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_dhcid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 50",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nsec3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 51",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nsec3param",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 52",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_tlsa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 53",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_smimea",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 55",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_hip",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 56",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ninfo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 57",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_rkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 58",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_talink",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 59",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_cds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 60",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_cdnskey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 61",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_openpgpkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 62",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_csync",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 63",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_zonemd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 64",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_svcb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 65",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_https",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 66",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_dsync",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 67",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_hhit",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 68",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_brid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 99",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_spf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 104",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_nid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 105",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_l32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 106",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_l64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 107",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_lp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 108",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_eui48",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 109",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_eui64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 249",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_tkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 250",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_tsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 256",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_uri",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 257",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_caa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 258",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_avc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 259",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_doa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 260",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_amtrelay",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 261",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_resinfo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 262",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_wallet",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 32768",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ta",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 32769",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_dlv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 65533",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_keydata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 251",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_ixfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 252",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_axfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 253",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_mailb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 254",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_maila",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 255",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_rdatatype_any",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -8962,6 +10071,7 @@
       "variables": []
     },
     "lib/dns/include/dns/fixedname.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9007,6 +10117,7 @@
       ]
     },
     "lib/dns/include/dns/forward.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9061,6 +10172,7 @@
       ]
     },
     "lib/dns/include/dns/geoip.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9069,6 +10181,7 @@
       "variables": []
     },
     "lib/dns/include/dns/ipkeylist.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9141,6 +10254,7 @@
       ]
     },
     "lib/dns/include/dns/iptable.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9198,6 +10312,7 @@
       ]
     },
     "lib/dns/include/dns/journal.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9601,6 +10716,7 @@
       "variables": []
     },
     "lib/dns/include/dns/kasp.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -9646,6 +10762,7 @@
       ]
     },
     "lib/dns/include/dns/keydata.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9684,6 +10801,7 @@
       "variables": []
     },
     "lib/dns/include/dns/keyflags.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9705,6 +10823,7 @@
       "variables": []
     },
     "lib/dns/include/dns/keymgr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9898,6 +11017,7 @@
       "variables": []
     },
     "lib/dns/include/dns/keystore.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -9991,6 +11111,7 @@
       ]
     },
     "lib/dns/include/dns/keytable.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10222,6 +11343,332 @@
       ]
     },
     "lib/dns/include/dns/keyvalues.h": {
+      "enum_values": [
+        {
+          "args": "= 1 << 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYTYPE_NOAUTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYTYPE_NOCONF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_DONOTUSE3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 11",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYOWNER_ENTITY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYOWNER_ZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_REVOKE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED9",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED10",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED11",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED12",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED13",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_RESERVED14",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYFLAG_KSK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "RSA with MD5.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_RSAMD5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "deprecated",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_DH_DEPRECATED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "DSA KEY.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_DSA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_RSASHA1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_NSEC3DSA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_NSEC3RSASHA1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_RSASHA256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_RSASHA512",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_ECCGOST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_ECDSA256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_ECDSA384",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_ED25519",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_ED448",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 252",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_INDIRECT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 253",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_PRIVATEDNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 254",
+          "brief": "Key begins with OID giving alg.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_PRIVATEOID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 255",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYALG_MAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYPROTO_RESERVED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYPROTO_DNSSEC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 255",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_KEYPROTO_ANY",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -10358,6 +11805,7 @@
       "variables": []
     },
     "lib/dns/include/dns/librpz.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -10412,6 +11860,7 @@
       ]
     },
     "lib/dns/include/dns/log.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -10949,6 +12398,7 @@
       ]
     },
     "lib/dns/include/dns/master.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -11012,6 +12462,7 @@
       ]
     },
     "lib/dns/include/dns/masterdump.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -11505,6 +12956,7 @@
       ]
     },
     "lib/dns/include/dns/message.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -11541,6 +12993,7 @@
       ]
     },
     "lib/dns/include/dns/name.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -11676,6 +13129,35 @@
       ]
     },
     "lib/dns/include/dns/nametree.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_NAMETREE_BOOL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_NAMETREE_BITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_NAMETREE_COUNT",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -11783,6 +13265,7 @@
       "variables": []
     },
     "lib/dns/include/dns/ncache.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -11895,6 +13378,7 @@
       "variables": []
     },
     "lib/dns/include/dns/nsec.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12049,6 +13533,7 @@
       "variables": []
     },
     "lib/dns/include/dns/nsec3.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12416,6 +13901,7 @@
       "variables": []
     },
     "lib/dns/include/dns/nta.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12568,6 +14054,7 @@
       "variables": []
     },
     "lib/dns/include/dns/opcode.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12589,6 +14076,7 @@
       "variables": []
     },
     "lib/dns/include/dns/order.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -12662,6 +14150,7 @@
       "variables": []
     },
     "lib/dns/include/dns/peer.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13326,6 +14815,7 @@
       "variables": []
     },
     "lib/dns/include/dns/private.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13372,6 +14862,7 @@
       "variables": []
     },
     "lib/dns/include/dns/qp.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -13417,6 +14908,7 @@
       ]
     },
     "lib/dns/include/dns/rbt.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -13471,6 +14963,7 @@
       ]
     },
     "lib/dns/include/dns/rcode.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13540,6 +15033,7 @@
       "variables": []
     },
     "lib/dns/include/dns/rdata.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13606,6 +15100,7 @@
       ]
     },
     "lib/dns/include/dns/rdataclass.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13674,6 +15169,7 @@
       "variables": []
     },
     "lib/dns/include/dns/rdatalist.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -13751,6 +15247,7 @@
       ]
     },
     "lib/dns/include/dns/rdataset.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -13904,6 +15401,7 @@
       ]
     },
     "lib/dns/include/dns/rdatasetiter.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -13949,6 +15447,7 @@
       ]
     },
     "lib/dns/include/dns/rdataslab.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -13994,6 +15493,7 @@
       ]
     },
     "lib/dns/include/dns/rdatastruct.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14044,6 +15544,7 @@
       ]
     },
     "lib/dns/include/dns/rdatatype.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14157,6 +15658,7 @@
       "variables": []
     },
     "lib/dns/include/dns/remote.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -14247,6 +15749,7 @@
       ]
     },
     "lib/dns/include/dns/request.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14470,6 +15973,7 @@
       "variables": []
     },
     "lib/dns/include/dns/resolver.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14644,6 +16148,7 @@
       ]
     },
     "lib/dns/include/dns/result.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14675,6 +16180,7 @@
       "variables": []
     },
     "lib/dns/include/dns/rootns.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14711,6 +16217,7 @@
       "variables": []
     },
     "lib/dns/include/dns/rpz.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -14932,6 +16439,7 @@
       ]
     },
     "lib/dns/include/dns/rriterator.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -15040,6 +16548,7 @@
       ]
     },
     "lib/dns/include/dns/rrl.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -15067,6 +16576,7 @@
       ]
     },
     "lib/dns/include/dns/sdlz.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -15202,6 +16712,7 @@
       ]
     },
     "lib/dns/include/dns/secalg.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15258,6 +16769,7 @@
       "variables": []
     },
     "lib/dns/include/dns/secproto.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15291,6 +16803,7 @@
       "variables": []
     },
     "lib/dns/include/dns/skr.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15339,6 +16852,7 @@
       ]
     },
     "lib/dns/include/dns/soa.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -15493,6 +17007,7 @@
       "variables": []
     },
     "lib/dns/include/dns/ssu.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -15520,6 +17035,908 @@
       ]
     },
     "lib/dns/include/dns/stats.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "Resolver statistics counters.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_responsev4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_responsev6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_nxdomain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_servfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_formerr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_othererror",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_edns0fail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_mismatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_truncated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 11",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_lame",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_retry",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_gluefetchv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_gluefetchv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_gluefetchv4fail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_gluefetchv6fail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 17",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_val",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 18",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_valsuccess",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 19",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_valnegsuccess",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 20",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_valfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 21",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_dispabort",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 22",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_dispsockfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 23",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_querytimeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 24",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryrtt0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 25",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryrtt1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 26",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryrtt2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 27",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryrtt3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 28",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryrtt4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 29",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_queryrtt5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 30",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_nfetch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 31",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_disprequdp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 32",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_dispreqtcp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 33",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_buckets",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 34",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_refused",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 35",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_cookienew",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 36",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_cookieout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 37",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_cookiein",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 38",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_cookieok",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 39",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_badvers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 40",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_badcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 41",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_zonequota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 42",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_serverquota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 43",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_clientquota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 44",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_nextitem",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 45",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_priming",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 46",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_mismatchtcp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 47",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_resstatscounter_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecstats_asis",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecstats_downcase",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecstats_wildcard",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecstats_fail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecstats_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "Zone statistics counters.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_notifyoutv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_notifyoutv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_notifyinv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_notifyinv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_notifyrej",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_soaoutv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_soaoutv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_axfrreqv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_axfrreqv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_ixfrreqv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_ixfrreqv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 11",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_xfrsuccess",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_xfrfail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestatscounter_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_adbstats_nentries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_adbstats_entriescnt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_adbstats_nnames",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_adbstats_namescnt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_adbstats_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_hits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_misses",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_queryhits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_querymisses",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_deletelru",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_deletettl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_coveringnsec",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_cachestatscounter_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "Query statistics counters (obsolete).",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "Referral result.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_referral",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "NXRRSET result.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_nxrrset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "NXDOMAIN result.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_nxdomain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "Recursion was used.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_recursion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "Some other failure.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_failure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "Duplicate query.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_duplicate",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "Duplicate query (dropped).",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_statscounter_dropped",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "DNSTAP statistics counters.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnstapcounter_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnstapcounter_drop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnstapcounter_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_gluecachestatscounter_hits_present",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_gluecachestatscounter_hits_absent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_gluecachestatscounter_inserts_present",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_gluecachestatscounter_inserts_absent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_gluecachestatscounter_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (288 / 16 )+ 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_sizecounter_in_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (4096 / 16 )+ 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_sizecounter_out_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecsignstats_sign",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_dnssecsignstats_refresh",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -16054,6 +18471,7 @@
       "variables": []
     },
     "lib/dns/include/dns/time.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -16122,6 +18540,7 @@
       "variables": []
     },
     "lib/dns/include/dns/tkey.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -16247,6 +18666,7 @@
       "variables": []
     },
     "lib/dns/include/dns/trace.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -16283,6 +18703,80 @@
       "variables": []
     },
     "lib/dns/include/dns/transport.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_TRANSPORT_NONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_TRANSPORT_UDP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_TRANSPORT_TCP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_TRANSPORT_TLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_TRANSPORT_HTTP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_TRANSPORT_COUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_HTTP_GET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_HTTP_POST",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -16698,6 +19192,7 @@
       "variables": []
     },
     "lib/dns/include/dns/tsig.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17032,6 +19527,7 @@
       ]
     },
     "lib/dns/include/dns/ttl.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17079,6 +19575,7 @@
       "variables": []
     },
     "lib/dns/include/dns/types.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -17106,6 +19603,7 @@
       ]
     },
     "lib/dns/include/dns/update.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -17133,6 +19631,7 @@
       ]
     },
     "lib/dns/include/dns/validator.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -17277,6 +19776,7 @@
       "variables": []
     },
     "lib/dns/include/dns/view.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -18227,6 +20727,7 @@
       "variables": []
     },
     "lib/dns/include/dns/xfrin.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -18406,6 +20907,503 @@
       "variables": []
     },
     "lib/dns/include/dns/zone.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_primary",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_secondary",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_mirror",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_stub",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_staticstub",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_dlz",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zone_redirect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestat_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestat_terse",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "dns_zonestat_full",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 0",
+          "brief": "return many errors on load",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_MANYERRORS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 1",
+          "brief": "calculate differences",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_IXFRFROMDIFFS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 2",
+          "brief": "don't merge journal",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_NOMERGE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 3",
+          "brief": "check if NS's are addresses",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 4",
+          "brief": "DNS_ZONEOPT_CHECKNS is fatal.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_FATALNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 5",
+          "brief": "this zone has multiple primaries",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_MULTIMASTER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 6",
+          "brief": "use alternate transfer sources. Obsoleted.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_USEALTXFRSRC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 7",
+          "brief": "check-names",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKNAMES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 8",
+          "brief": "fatal check-name failures",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKNAMESFAIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 9",
+          "brief": "check for internal wildcards",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKWILDCARD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 10",
+          "brief": "check-mx",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKMX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 11",
+          "brief": "fatal check-mx failures",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKMXFAIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 12",
+          "brief": "perform integrity checks",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKINTEGRITY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 13",
+          "brief": "perform sibling glue checks",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKSIBLING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 14",
+          "brief": "disable IN NS address checks",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_NOCHECKNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 15",
+          "brief": "warn on MX CNAME check",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_WARNMXCNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 16",
+          "brief": "ignore MX CNAME check",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_IGNOREMXCNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 17",
+          "brief": "warn on SRV CNAME check",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_WARNSRVCNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 18",
+          "brief": "ignore SRV CNAME check",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_IGNORESRVCNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 19",
+          "brief": "check dnskey KSK flag",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_UPDATECHECKKSK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 20",
+          "brief": "try tcp refresh on udp failure",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_TRYTCPREFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 21",
+          "brief": "Notify the SOA MNAME.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_NOTIFYTOSOA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 22",
+          "brief": "nsec3-test-zone",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_NSEC3TESTZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 24",
+          "brief": "dnssec-dnskey-kskonly",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_DNSKEYKSKONLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 25",
+          "brief": "check-dup-records",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKDUPRR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 26",
+          "brief": "fatal check-dup-records failures",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKDUPRRFAIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 27",
+          "brief": "check SPF records",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKSPF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 28",
+          "brief": "check max-zone-ttl",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKTTL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 29",
+          "brief": "automatic empty zone",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_AUTOEMPTY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 30",
+          "brief": "check SVBC records",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_CHECKSVCB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1ULL << 31",
+          "brief": "force keymgr step",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT_FORCEKEYMGR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= UINT64_MAX",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEOPT___MAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000001U",
+          "brief": "fetch keys on command",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEKEY_ALLOW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000002U",
+          "brief": "publish/sign on schedule",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEKEY_MAINTAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000004U",
+          "brief": "make keys when needed",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEKEY_CREATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000008U",
+          "brief": "roll to new keys immediately",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEKEY_FULLSIGN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= UINT64_MAX",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEKEY___MAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONESTATE_XFERRUNNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONESTATE_XFERDEFERRED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONESTATE_XFERFIRSTREFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONESTATE_SOAQUERY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONESTATE_ANY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONESTATE_AUTOMATIC",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -21507,6 +24505,7 @@
       "variables": []
     },
     "lib/dns/include/dns/zonekey.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21527,6 +24526,7 @@
       "variables": []
     },
     "lib/dns/include/dns/zoneverify.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -21555,6 +24555,35 @@
       "variables": []
     },
     "lib/dns/include/dns/zt.h": {
+      "enum_values": [
+        {
+          "args": "= 1 << 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZTFIND_EXACT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZTFIND_NOEXACT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZTFIND_MIRROR",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -21777,6 +24806,611 @@
       "variables": []
     },
     "lib/dns/include/dst/dst.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_STATE_HIDDEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_STATE_RUMOURED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_STATE_OMNIPRESENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_STATE_UNRETENTIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_STATE_NA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_UNKNOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_RSA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_RSAMD5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_DH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_DSA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_ECC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_RSASHA1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_NSEC3DSA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_NSEC3RSASHA1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_RSASHA256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_RSASHA512",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_ECCGOST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_ECDSA256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_ECDSA384",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_ED25519",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_ED448",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 157",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMACMD5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= DST_ALG_HMACMD5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMAC_FIRST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 160",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_GSSAPI",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 161",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMACSHA1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 162",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMACSHA224",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 163",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMACSHA256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 164",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMACSHA384",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 165",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMACSHA512",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= DST_ALG_HMACSHA512",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_HMAC_LAST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 252",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_INDIRECT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 254",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_ALG_PRIVATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 256",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_MAX_ALGS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_CREATED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_PUBLISH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_ACTIVATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_REVOKE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_INACTIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_DELETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_DSPUBLISH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_SYNCPUBLISH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_SYNCDELETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_DNSKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_ZRRSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 11",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_KRRSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_DS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_DSDELETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_SIGPUBLISH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_TIME_SIGDELETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_MAX_TIMES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_PREDECESSOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_SUCCESSOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_MAXTTL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_ROLLPERIOD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_LIFETIME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_DSPUBCOUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 6",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_NUM_DSDELCOUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 7",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_MAX_NUMERIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_BOOL_KSK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_BOOL_ZSK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_MAX_BOOLEAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_DNSKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_ZRRSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_KRRSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_DS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_KEY_GOAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DST_MAX_KEYSTATES",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -23109,6 +26743,7 @@
       "variables": []
     },
     "lib/dns/include/dst/gssapi.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -23261,6 +26896,7 @@
       "variables": []
     },
     "lib/dns/include/irs/resconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -23291,6 +26927,7 @@
       ]
     },
     "lib/dns/ipkeylist.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -23349,6 +26986,7 @@
       "variables": []
     },
     "lib/dns/iptable.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -23439,6 +27077,7 @@
       ]
     },
     "lib/dns/journal.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -23520,6 +27159,7 @@
       ]
     },
     "lib/dns/kasp.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -24275,6 +27915,7 @@
       "variables": []
     },
     "lib/dns/key.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -24548,6 +28189,7 @@
       "variables": []
     },
     "lib/dns/keydata.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -24586,6 +28228,7 @@
       "variables": []
     },
     "lib/dns/keymgr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -25296,6 +28939,7 @@
       ]
     },
     "lib/dns/keystore.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -25458,6 +29102,7 @@
       "variables": []
     },
     "lib/dns/keytable.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -25512,6 +29157,7 @@
       ]
     },
     "lib/dns/log.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -25571,6 +29217,7 @@
       ]
     },
     "lib/dns/master.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -25697,6 +29344,7 @@
       ]
     },
     "lib/dns/masterdump.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -25805,6 +29453,7 @@
       ]
     },
     "lib/dns/message.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -25832,6 +29481,71 @@
       ]
     },
     "lib/dns/name.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_init",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_ordinary",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_initialescape",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_escape",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_escdecimal",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ft_at",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -26920,6 +30634,7 @@
       ]
     },
     "lib/dns/nametree.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -26974,6 +30689,7 @@
       ]
     },
     "lib/dns/ncache.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -27219,6 +30935,7 @@
       ]
     },
     "lib/dns/nsec.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -27354,6 +31071,7 @@
       "variables": []
     },
     "lib/dns/nsec3.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -27820,6 +31538,7 @@
       "variables": []
     },
     "lib/dns/nta.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -27901,6 +31620,7 @@
       ]
     },
     "lib/dns/openssl_link.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -28108,6 +31828,7 @@
       ]
     },
     "lib/dns/openssl_shim.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -28262,6 +31983,7 @@
       ]
     },
     "lib/dns/openssl_shim.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -28471,6 +32193,7 @@
       "variables": []
     },
     "lib/dns/opensslecdsa_link.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -28818,6 +32541,7 @@
       ]
     },
     "lib/dns/openssleddsa_link.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -28826,6 +32550,7 @@
       "variables": []
     },
     "lib/dns/opensslrsa_link.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -28916,6 +32641,7 @@
       ]
     },
     "lib/dns/order.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -28961,6 +32687,7 @@
       ]
     },
     "lib/dns/peer.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -28997,6 +32724,7 @@
       ]
     },
     "lib/dns/private.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -29090,6 +32818,7 @@
       "variables": []
     },
     "lib/dns/probes.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -29429,6 +33158,7 @@
       "variables": []
     },
     "lib/dns/qp.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -30482,6 +34212,7 @@
       ]
     },
     "lib/dns/qp_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -30572,6 +34303,7 @@
       ]
     },
     "lib/dns/qpcache.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -30707,6 +34439,7 @@
       ]
     },
     "lib/dns/qpcache_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -30734,6 +34467,7 @@
       "variables": []
     },
     "lib/dns/qpzone.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -30950,6 +34684,7 @@
       ]
     },
     "lib/dns/qpzone_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -30977,6 +34712,7 @@
       "variables": []
     },
     "lib/dns/rbt-cachedb.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -31464,6 +35200,26 @@
       ]
     },
     "lib/dns/rbt-zonedb.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "FORWARD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "BACK",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -31997,6 +35753,7 @@
       ]
     },
     "lib/dns/rbt.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32096,6 +35853,7 @@
       ]
     },
     "lib/dns/rbtdb.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32123,6 +35881,7 @@
       ]
     },
     "lib/dns/rbtdb_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32249,6 +36008,7 @@
       ]
     },
     "lib/dns/rcode.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32285,6 +36045,7 @@
       ]
     },
     "lib/dns/rdata.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32330,6 +36091,7 @@
       ]
     },
     "lib/dns/rdata/any_255/tsig_250.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -32501,6 +36263,7 @@
       "variables": []
     },
     "lib/dns/rdata/any_255/tsig_250.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32519,6 +36282,7 @@
       "variables": []
     },
     "lib/dns/rdata/ch_3/a_1.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -32690,6 +36454,7 @@
       "variables": []
     },
     "lib/dns/rdata/ch_3/a_1.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32735,6 +36500,7 @@
       ]
     },
     "lib/dns/rdata/generic/afsdb_18.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -32906,6 +36672,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/afsdb_18.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -32951,6 +36718,7 @@
       ]
     },
     "lib/dns/rdata/generic/amtrelay_260.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -33122,6 +36890,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/amtrelay_260.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -33221,6 +36990,7 @@
       ]
     },
     "lib/dns/rdata/generic/avc_258.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -33392,6 +37162,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/avc_258.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -33446,6 +37217,7 @@
       ]
     },
     "lib/dns/rdata/generic/brid_68.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -33617,6 +37389,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/brid_68.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -33662,6 +37435,7 @@
       ]
     },
     "lib/dns/rdata/generic/caa_257.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -33843,6 +37617,7 @@
       ]
     },
     "lib/dns/rdata/generic/caa_257.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -33915,6 +37690,7 @@
       ]
     },
     "lib/dns/rdata/generic/cdnskey_60.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -34086,6 +37862,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/cdnskey_60.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -34104,6 +37881,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/cds_59.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -34275,6 +38053,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/cds_59.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -34293,6 +38072,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/cert_37.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -34464,6 +38244,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/cert_37.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -34536,6 +38317,7 @@
       ]
     },
     "lib/dns/rdata/generic/cname_5.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -34707,6 +38489,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/cname_5.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -34743,6 +38526,7 @@
       ]
     },
     "lib/dns/rdata/generic/csync_62.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -34914,6 +38698,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/csync_62.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -34977,6 +38762,7 @@
       ]
     },
     "lib/dns/rdata/generic/dlv_32769.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -35148,6 +38934,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/dlv_32769.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -35166,6 +38953,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/dname_39.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -35337,6 +39125,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/dname_39.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -35373,6 +39162,7 @@
       ]
     },
     "lib/dns/rdata/generic/dnskey_48.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -35544,6 +39334,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/dnskey_48.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -35562,6 +39353,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/doa_259.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -35733,6 +39525,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/doa_259.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -35823,6 +39616,7 @@
       ]
     },
     "lib/dns/rdata/generic/ds_43.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -36049,6 +39843,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/ds_43.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -36121,6 +39916,7 @@
       ]
     },
     "lib/dns/rdata/generic/dsync_66.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -36292,6 +40088,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/dsync_66.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -36355,6 +40152,7 @@
       ]
     },
     "lib/dns/rdata/generic/eui48_108.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -36526,6 +40324,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/eui48_108.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -36553,6 +40352,7 @@
       ]
     },
     "lib/dns/rdata/generic/eui64_109.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -36724,6 +40524,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/eui64_109.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -36751,6 +40552,7 @@
       ]
     },
     "lib/dns/rdata/generic/gpos_27.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -36922,6 +40724,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/gpos_27.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -37003,6 +40806,7 @@
       ]
     },
     "lib/dns/rdata/generic/hhit_67.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -37174,6 +40978,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/hhit_67.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -37219,6 +41024,7 @@
       ]
     },
     "lib/dns/rdata/generic/hinfo_13.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -37381,6 +41187,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/hinfo_13.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -37444,6 +41251,7 @@
       ]
     },
     "lib/dns/rdata/generic/hip_55.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -37640,6 +41448,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/hip_55.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -37739,6 +41548,7 @@
       ]
     },
     "lib/dns/rdata/generic/ipseckey_45.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -37910,6 +41720,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/ipseckey_45.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -38009,6 +41820,7 @@
       ]
     },
     "lib/dns/rdata/generic/isdn_20.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -38180,6 +41992,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/isdn_20.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -38243,6 +42056,7 @@
       ]
     },
     "lib/dns/rdata/generic/key_25.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -38492,6 +42306,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/key_25.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -38564,6 +42379,7 @@
       ]
     },
     "lib/dns/rdata/generic/keydata_65533.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -38735,6 +42551,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/keydata_65533.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -38834,6 +42651,7 @@
       ]
     },
     "lib/dns/rdata/generic/l32_105.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -39005,6 +42823,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/l32_105.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -39041,6 +42860,7 @@
       ]
     },
     "lib/dns/rdata/generic/l64_106.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -39212,6 +43032,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/l64_106.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -39248,6 +43069,7 @@
       ]
     },
     "lib/dns/rdata/generic/loc_29.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -39614,6 +43436,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/loc_29.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -39686,6 +43509,7 @@
       ]
     },
     "lib/dns/rdata/generic/lp_107.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -39857,6 +43681,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/lp_107.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -39902,6 +43727,7 @@
       ]
     },
     "lib/dns/rdata/generic/mb_7.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -40073,6 +43899,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/mb_7.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -40109,6 +43936,7 @@
       ]
     },
     "lib/dns/rdata/generic/md_3.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -40280,6 +44108,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/md_3.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -40316,6 +44145,7 @@
       ]
     },
     "lib/dns/rdata/generic/mf_4.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -40487,6 +44317,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/mf_4.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -40523,6 +44354,7 @@
       ]
     },
     "lib/dns/rdata/generic/mg_8.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -40694,6 +44526,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/mg_8.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -40730,6 +44563,7 @@
       ]
     },
     "lib/dns/rdata/generic/minfo_14.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -40901,6 +44735,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/minfo_14.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -40946,6 +44781,7 @@
       ]
     },
     "lib/dns/rdata/generic/mr_9.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -41117,6 +44953,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/mr_9.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -41153,6 +44990,7 @@
       ]
     },
     "lib/dns/rdata/generic/mx_15.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -41363,6 +45201,7 @@
       ]
     },
     "lib/dns/rdata/generic/mx_15.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -41408,6 +45247,7 @@
       ]
     },
     "lib/dns/rdata/generic/naptr_35.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -41590,6 +45430,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/naptr_35.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -41698,6 +45539,7 @@
       ]
     },
     "lib/dns/rdata/generic/nid_104.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -41869,6 +45711,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/nid_104.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -41905,6 +45748,7 @@
       ]
     },
     "lib/dns/rdata/generic/ninfo_56.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -42110,6 +45954,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/ninfo_56.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -42172,6 +46017,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/ns_2.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -42343,6 +46189,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/ns_2.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -42379,6 +46226,7 @@
       ]
     },
     "lib/dns/rdata/generic/nsec3_50.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -42550,6 +46398,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/nsec3_50.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -42658,6 +46507,7 @@
       ]
     },
     "lib/dns/rdata/generic/nsec3param_51.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -42829,6 +46679,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/nsec3param_51.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -42901,6 +46752,7 @@
       ]
     },
     "lib/dns/rdata/generic/nsec_47.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -43072,6 +46924,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/nsec_47.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -43126,6 +46979,7 @@
       ]
     },
     "lib/dns/rdata/generic/null_10.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -43297,6 +47151,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/null_10.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -43342,6 +47197,7 @@
       ]
     },
     "lib/dns/rdata/generic/nxt_30.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -43513,6 +47369,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/nxt_30.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -43567,6 +47424,7 @@
       ]
     },
     "lib/dns/rdata/generic/openpgpkey_61.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -43738,6 +47596,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/openpgpkey_61.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -43783,6 +47642,7 @@
       ]
     },
     "lib/dns/rdata/generic/opt_41.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -43988,6 +47848,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/opt_41.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -44024,6 +47885,7 @@
       ]
     },
     "lib/dns/rdata/generic/proforma.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -44394,6 +48256,7 @@
       ]
     },
     "lib/dns/rdata/generic/proforma.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -44421,6 +48284,7 @@
       ]
     },
     "lib/dns/rdata/generic/ptr_12.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -44674,6 +48538,7 @@
       ]
     },
     "lib/dns/rdata/generic/ptr_12.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -44710,6 +48575,7 @@
       ]
     },
     "lib/dns/rdata/generic/resinfo_261.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -44881,6 +48747,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/resinfo_261.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -44908,6 +48775,7 @@
       ]
     },
     "lib/dns/rdata/generic/rkey_57.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -45079,6 +48947,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/rkey_57.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -45097,6 +48966,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/rp_17.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -45268,6 +49138,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/rp_17.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -45313,6 +49184,7 @@
       ]
     },
     "lib/dns/rdata/generic/rrsig_46.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -45495,6 +49367,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/rrsig_46.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -45612,6 +49485,7 @@
       ]
     },
     "lib/dns/rdata/generic/rt_21.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -45783,6 +49657,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/rt_21.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -45828,6 +49703,7 @@
       ]
     },
     "lib/dns/rdata/generic/sig_24.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -46010,6 +49886,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/sig_24.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -46127,6 +50004,7 @@
       ]
     },
     "lib/dns/rdata/generic/sink_40.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -46298,6 +50176,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/sink_40.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -46370,6 +50249,7 @@
       ]
     },
     "lib/dns/rdata/generic/smimea_53.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -46541,6 +50421,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/smimea_53.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -46559,6 +50440,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/soa_6.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -46740,6 +50622,7 @@
       ]
     },
     "lib/dns/rdata/generic/soa_6.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -46830,6 +50713,7 @@
       ]
     },
     "lib/dns/rdata/generic/spf_99.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -47001,6 +50885,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/spf_99.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -47028,6 +50913,7 @@
       ]
     },
     "lib/dns/rdata/generic/sshfp_44.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -47199,6 +51085,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/sshfp_44.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -47262,6 +51149,7 @@
       ]
     },
     "lib/dns/rdata/generic/ta_32768.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -47433,6 +51321,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/ta_32768.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -47451,6 +51340,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/talink_58.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -47622,6 +51512,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/talink_58.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -47640,6 +51531,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/tkey_249.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -47811,6 +51703,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/tkey_249.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -47829,6 +51722,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/tlsa_52.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -48066,6 +51960,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/tlsa_52.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -48084,6 +51979,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/txt_16.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -48389,6 +52285,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/txt_16.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -48451,6 +52348,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/uri_256.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -48622,6 +52520,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/uri_256.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -48640,6 +52539,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/wallet_262.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -48845,6 +52745,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/wallet_262.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -48907,6 +52808,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/x25_19.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -49078,6 +52980,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/x25_19.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -49096,6 +52999,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/zonemd_63.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -49267,6 +53171,7 @@
       "variables": []
     },
     "lib/dns/rdata/generic/zonemd_63.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -49304,6 +53209,7 @@
       "variables": []
     },
     "lib/dns/rdata/hs_4/a_1.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -49466,6 +53372,7 @@
       "variables": []
     },
     "lib/dns/rdata/hs_4/a_1.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -49493,6 +53400,7 @@
       ]
     },
     "lib/dns/rdata/in_1/a6_38.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -49664,6 +53572,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/a6_38.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -49718,6 +53627,7 @@
       ]
     },
     "lib/dns/rdata/in_1/a_1.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -49889,6 +53799,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/a_1.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -49916,6 +53827,7 @@
       ]
     },
     "lib/dns/rdata/in_1/aaaa_28.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -50087,6 +53999,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/aaaa_28.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -50114,6 +54027,7 @@
       ]
     },
     "lib/dns/rdata/in_1/apl_42.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -50330,6 +54244,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/apl_42.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -50384,6 +54299,7 @@
       ]
     },
     "lib/dns/rdata/in_1/atma_34.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -50555,6 +54471,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/atma_34.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -50609,6 +54526,7 @@
       ]
     },
     "lib/dns/rdata/in_1/dhcid_49.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -50780,6 +54698,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/dhcid_49.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -50825,6 +54744,7 @@
       ]
     },
     "lib/dns/rdata/in_1/eid_31.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -50996,6 +54916,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/eid_31.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -51041,6 +54962,7 @@
       ]
     },
     "lib/dns/rdata/in_1/https_65.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -51237,6 +55159,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/https_65.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -51290,6 +55213,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/kx_36.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -51461,6 +55385,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/kx_36.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -51506,6 +55431,7 @@
       ]
     },
     "lib/dns/rdata/in_1/nimloc_32.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -51677,6 +55603,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/nimloc_32.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -51722,6 +55649,7 @@
       ]
     },
     "lib/dns/rdata/in_1/nsap-ptr_23.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -51893,6 +55821,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/nsap-ptr_23.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -51929,6 +55858,7 @@
       ]
     },
     "lib/dns/rdata/in_1/nsap_22.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -52100,6 +56030,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/nsap_22.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -52145,6 +56076,7 @@
       ]
     },
     "lib/dns/rdata/in_1/px_26.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -52316,6 +56248,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/px_26.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -52370,6 +56303,7 @@
       ]
     },
     "lib/dns/rdata/in_1/srv_33.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -52541,6 +56475,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/srv_33.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -52604,6 +56539,89 @@
       ]
     },
     "lib/dns/rdata/in_1/svcb_64.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_text",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_ipv4s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_ipv6s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_base64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_empty",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_alpn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_keylist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "sbpr_dohpath",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -53143,6 +57161,7 @@
       ]
     },
     "lib/dns/rdata/in_1/svcb_64.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -53196,6 +57215,7 @@
       "variables": []
     },
     "lib/dns/rdata/in_1/wks_11.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -53413,6 +57433,7 @@
       ]
     },
     "lib/dns/rdata/in_1/wks_11.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -53431,6 +57452,7 @@
       "variables": []
     },
     "lib/dns/rdata/rdatastructpre.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [
@@ -53463,6 +57485,7 @@
       "variables": []
     },
     "lib/dns/rdata/rdatastructsuf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -53471,6 +57494,7 @@
       "variables": []
     },
     "lib/dns/rdatalist.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -53669,6 +57693,7 @@
       ]
     },
     "lib/dns/rdataset.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -53696,6 +57721,7 @@
       ]
     },
     "lib/dns/rdatasetiter.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -53750,6 +57776,7 @@
       "variables": []
     },
     "lib/dns/rdataslab.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -53768,6 +57795,7 @@
       ]
     },
     "lib/dns/remote.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -54002,6 +58030,7 @@
       "variables": []
     },
     "lib/dns/request.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -54092,6 +58121,7 @@
       ]
     },
     "lib/dns/resconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -54245,6 +58275,7 @@
       ]
     },
     "lib/dns/resolver.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -54272,6 +58303,7 @@
       ]
     },
     "lib/dns/result.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -54303,6 +58335,7 @@
       "variables": []
     },
     "lib/dns/rootns.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -54339,6 +58372,7 @@
       ]
     },
     "lib/dns/rpz.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -54393,6 +58427,7 @@
       ]
     },
     "lib/dns/rriterator.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -54486,6 +58521,7 @@
       "variables": []
     },
     "lib/dns/rrl.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -54870,6 +58906,7 @@
       "variables": []
     },
     "lib/dns/sdlz.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -54897,6 +58934,7 @@
       ]
     },
     "lib/dns/skr.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -55112,6 +59150,7 @@
       "variables": []
     },
     "lib/dns/soa.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -55304,6 +59343,7 @@
       "variables": []
     },
     "lib/dns/ssu.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -55349,6 +59389,7 @@
       ]
     },
     "lib/dns/ssu_external.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -55409,6 +59450,7 @@
       "variables": []
     },
     "lib/dns/stats.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -55436,6 +59478,7 @@
       ]
     },
     "lib/dns/time.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -55562,6 +59605,7 @@
       ]
     },
     "lib/dns/tkey.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -55757,6 +59801,35 @@
       "variables": []
     },
     "lib/dns/transport.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ter_none",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ter_true",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ter_false",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -56262,6 +60335,7 @@
       "variables": []
     },
     "lib/dns/tsig.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -56948,6 +61022,7 @@
       ]
     },
     "lib/dns/tsig_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -56979,6 +61054,7 @@
       "variables": []
     },
     "lib/dns/ttl.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -57053,6 +61129,7 @@
       "variables": []
     },
     "lib/dns/update.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -57080,6 +61157,152 @@
       ]
     },
     "lib/dns/validator.c": {
+      "enum_values": [
+        {
+          "args": "= 1 << 1",
+          "brief": "Canceled.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_CANCELED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 2",
+          "brief": "We have found a key and have attempted a verify.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_TRIEDVERIFY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 3",
+          "brief": "Completion event sent.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_COMPLETE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 4",
+          "brief": "Attempting proveunsecure.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_INSECURITY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 5",
+          "brief": "Max validations quota.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_MAXVALIDATIONS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 6",
+          "brief": "Max validation fails quota.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_MAXVALIDATIONFAILS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 7",
+          "brief": "The ownership has been passed to offloaded thread.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_OFFLOADED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_NEEDNOQNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 9",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_NEEDNOWILDCARD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 10",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_NEEDNODATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 12",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_FOUNDNOQNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 13",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_FOUNDNOWILDCARD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 14",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_FOUNDNODATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 15",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_FOUNDCLOSEST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_FOUNDOPTOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 17",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "VALATTR_FOUNDUNKNOWN",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -58197,6 +62420,7 @@
       "variables": []
     },
     "lib/dns/view.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -59187,6 +63411,107 @@
       "variables": []
     },
     "lib/dns/xfrin.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_SOAQUERY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_GOTSOA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_ZONEXFRREQUEST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_FIRSTDATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_IXFR_DELSOA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_IXFR_DEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_IXFR_ADDSOA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_IXFR_ADD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_IXFR_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_AXFR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "XFRST_AXFR_END",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -59903,6 +64228,377 @@
       "variables": []
     },
     "lib/dns/zone.c": {
+      "enum_values": [
+        {
+          "args": "= 0x00000001U",
+          "brief": "refresh check in progress",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_REFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000002U",
+          "brief": "zone need consolidation",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NEEDDUMP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000004U",
+          "brief": "use tcp for refresh query",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_USEVC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000008U",
+          "brief": "a dump is in progress",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_DUMPING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000010U",
+          "brief": "$INCLUDE in zone file",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_HASINCLUDE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000020U",
+          "brief": "database has loaded",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_LOADED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000040U",
+          "brief": "zone is being destroyed",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_EXITING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000080U",
+          "brief": "zone has expired",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_EXPIRED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000100U",
+          "brief": "refresh check needed",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NEEDREFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000200U",
+          "brief": "zone contents are up-to-date",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_UPTODATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000400U",
+          "brief": "need to send out notify messages",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NEEDNOTIFY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000800U",
+          "brief": "journal file had recoverable error, needs rewriting",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_FIXJOURNAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00001000U",
+          "brief": "an attempt to refresh a zone with no primaries occurred",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NOPRIMARIES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00002000U",
+          "brief": "load from disk in progress",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_LOADING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00004000U",
+          "brief": "timer values have been set from SOA (if not set, we are still using default timer values)",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_HAVETIMERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00008000U",
+          "brief": "Force a zone xfer.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_FORCEXFER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00010000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NOREFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00020000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_DIALNOTIFY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00040000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_DIALREFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00080000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_SHUTDOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00100000U",
+          "brief": "IXFR failed, force AXFR.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NOIXFR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00200000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_FLUSH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00400000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NOEDNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00800000U",
+          "brief": "Obsoleted.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_USEALTXFRSRC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x01000000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_SOABEFOREAXFR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x02000000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NEEDCOMPACT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x04000000U",
+          "brief": "Refreshing keydata.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_REFRESHING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x08000000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_THAW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x10000000U",
+          "brief": "Loading scheduled.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_LOADPENDING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x20000000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NODELAY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x40000000U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_SENDSECURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x80000000U",
+          "brief": "need to send out notify due to the zone just being loaded for the first time.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NEEDSTARTUPNOTIFY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x100000000U",
+          "brief": "ignore the notify-defer option.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NOTIFYNODEFER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x200000000U",
+          "brief": "notify was deferred according to the notify-defer option.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_NOTIFYDEFERRED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x400000000U",
+          "brief": "First refresh pending.",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG_FIRSTREFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= UINT64_MAX",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONEFLG___MAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000001U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONELOADFLAG_NOSTAT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x00000002U",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_ZONELOADFLAG_THAW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_NOTIFY_NOSOA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_NOTIFY_STARTUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1 << 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DNS_NOTIFY_TCP",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -66829,6 +71525,7 @@
       ]
     },
     "lib/dns/zone_p.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -66874,6 +71571,7 @@
       "variables": []
     },
     "lib/dns/zonekey.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -66894,6 +71592,7 @@
       "variables": []
     },
     "lib/dns/zoneverify.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -67456,6 +72155,7 @@
       "variables": []
     },
     "lib/dns/zt.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

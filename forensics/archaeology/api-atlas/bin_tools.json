@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/tools/arpaname.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -34,6 +35,7 @@
       "variables": []
     },
     "bin/tools/dnstap-read.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -155,11 +157,11 @@
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "bool printmessage",
+          "definition": "static isc_result_t printmessage",
           "detailed": "\n        ",
           "name": "printmessage",
           "params": [],
-          "static": false
+          "static": true
         },
         {
           "args": "",
@@ -200,6 +202,7 @@
       ]
     },
     "bin/tools/mdig.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1111,6 +1114,7 @@
       ]
     },
     "bin/tools/named-journalprint.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1166,6 +1170,7 @@
       ]
     },
     "bin/tools/named-nzd2nzf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1187,6 +1192,7 @@
       "variables": []
     },
     "bin/tools/named-rrchecker.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1270,6 +1276,7 @@
       ]
     },
     "bin/tools/nsec3hash.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

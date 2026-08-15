@@ -1,0 +1,3282 @@
+{
+  "files": {
+    "bin/tests/system/dlzexternal/driver/driver.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[100]",
+          "brief": "\n        ",
+          "definition": "char record::name[100]",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "char record::type[10]",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[200]",
+          "brief": "\n        ",
+          "definition": "char record::data[200]",
+          "detailed": "\n        ",
+          "name": "data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t record::ttl",
+          "detailed": "\n        ",
+          "name": "ttl",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/dlzexternal/driver/driver.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_version_t dlz_version",
+          "detailed": "\n        ",
+          "name": "dlz_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_create_t dlz_create",
+          "detailed": "\n        ",
+          "name": "dlz_create",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_destroy_t dlz_destroy",
+          "detailed": "\n        ",
+          "name": "dlz_destroy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_findzonedb_t dlz_findzonedb",
+          "detailed": "\n        ",
+          "name": "dlz_findzonedb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_lookup_t dlz_lookup",
+          "detailed": "\n        ",
+          "name": "dlz_lookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_allowzonexfr_t dlz_allowzonexfr",
+          "detailed": "\n        ",
+          "name": "dlz_allowzonexfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_allnodes_t dlz_allnodes",
+          "detailed": "\n        ",
+          "name": "dlz_allnodes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_newversion_t dlz_newversion",
+          "detailed": "\n        ",
+          "name": "dlz_newversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_closeversion_t dlz_closeversion",
+          "detailed": "\n        ",
+          "name": "dlz_closeversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_configure_t dlz_configure",
+          "detailed": "\n        ",
+          "name": "dlz_configure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_ssumatch_t dlz_ssumatch",
+          "detailed": "\n        ",
+          "name": "dlz_ssumatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_addrdataset_t dlz_addrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_addrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_subrdataset_t dlz_subrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_subrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_delrdataset_t dlz_delrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_delrdataset",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/dyndb/driver/db.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t sampledb::common",
+          "detailed": "\n        ",
+          "name": "common",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "sample_instance_t* sampledb::inst",
+          "detailed": "\n        ",
+          "name": "inst",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* sampledb::rbtdb",
+          "detailed": "\n        ",
+          "name": "rbtdb",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/dyndb/driver/db.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, const dns_name_t *origin, dns_dbtype_t type, dns_rdataclass_t rdclass, unsigned int argc, char *argv[], void *driverarg, dns_db_t **dbp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t create_db",
+          "detailed": "Database API implementation.",
+          "name": "create_db",
+          "params": [
+            "mctx",
+            "origin",
+            "type",
+            "rdclass",
+            "argc",
+            "argv",
+            "driverarg",
+            "dbp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/driver.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, const char *name, const char *parameters, const char *file, unsigned long line, const dns_dyndbctx_t *dctx, void **instp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dyndb_init",
+          "detailed": "\n        ",
+          "name": "dyndb_init",
+          "params": [
+            "mctx",
+            "name",
+            "parameters",
+            "file",
+            "line",
+            "dctx",
+            "instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **instp)",
+          "brief": "\n        ",
+          "definition": "void dyndb_destroy",
+          "detailed": "\n        ",
+          "name": "dyndb_destroy",
+          "params": [
+            "instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned int *flags)",
+          "brief": "\n        ",
+          "definition": "int dyndb_version",
+          "detailed": "\n        ",
+          "name": "dyndb_version",
+          "params": [
+            "flags"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dyndb_destroy_t dyndb_destroy",
+          "detailed": "\n        ",
+          "name": "dyndb_destroy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dyndb_register_t dyndb_init",
+          "detailed": "\n        ",
+          "name": "dyndb_init",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dyndb_version_t dyndb_version",
+          "detailed": "\n        ",
+          "name": "dyndb_version",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/dyndb/driver/instance.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, int argc, char **argv, dns_name_t *z1, dns_name_t *z2)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_params",
+          "detailed": "\n        ",
+          "name": "parse_params",
+          "params": [
+            "mctx",
+            "argc",
+            "argv",
+            "z1",
+            "z2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, const char *db_name, int argc, char **argv, const dns_dyndbctx_t *dctx, sample_instance_t **sample_instp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t new_sample_instance",
+          "detailed": "\n        ",
+          "name": "new_sample_instance",
+          "params": [
+            "mctx",
+            "db_name",
+            "argc",
+            "argv",
+            "dctx",
+            "sample_instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(sample_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "isc_result_t load_sample_instance_zones",
+          "detailed": "\n        ",
+          "name": "load_sample_instance_zones",
+          "params": [
+            "inst"
+          ],
+          "static": false
+        },
+        {
+          "args": "(sample_instance_t **instp)",
+          "brief": "\n        ",
+          "definition": "void destroy_sample_instance",
+          "detailed": "\n        ",
+          "name": "destroy_sample_instance",
+          "params": [
+            "instp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/instance.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* sample_instance::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* sample_instance::db_name",
+          "detailed": "\n        ",
+          "name": "db_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbimplementation_t* sample_instance::db_imp",
+          "detailed": "\n        ",
+          "name": "db_imp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_view_t* sample_instance::view",
+          "detailed": "\n        ",
+          "name": "view",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zonemgr_t* sample_instance::zmgr",
+          "detailed": "\n        ",
+          "name": "zmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* sample_instance::loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool sample_instance::exiting",
+          "detailed": "\n        ",
+          "name": "exiting",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t* sample_instance::zone1",
+          "detailed": "\n        ",
+          "name": "zone1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t sample_instance::zone1_fn",
+          "detailed": "\n        ",
+          "name": "zone1_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* sample_instance::zone1_name",
+          "detailed": "\n        ",
+          "name": "zone1_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t* sample_instance::zone2",
+          "detailed": "\n        ",
+          "name": "zone2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t sample_instance::zone2_fn",
+          "detailed": "\n        ",
+          "name": "zone2_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* sample_instance::zone2_name",
+          "detailed": "\n        ",
+          "name": "zone2_name",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/dyndb/driver/log.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int level, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void log_write",
+          "detailed": "\n        ",
+          "name": "log_write",
+          "params": [
+            "level",
+            "format",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/log.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int level, const char *format,...) ISC_FORMAT_PRINTF(2",
+          "brief": "\n        ",
+          "definition": "void log_write",
+          "detailed": "\n        ",
+          "name": "log_write",
+          "params": [
+            "level",
+            "format",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "log_error_r",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "log_error",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "log_info",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/syncptr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void syncptr_write",
+          "detailed": "\n        ",
+          "name": "syncptr_write",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(sample_instance_t *inst, dns_rdata_t *rdata, dns_name_t *name, dns_zone_t **zone)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t syncptr_find_zone",
+          "detailed": "\n        ",
+          "name": "syncptr_find_zone",
+          "params": [
+            "inst",
+            "rdata",
+            "name",
+            "zone"
+          ],
+          "static": true
+        },
+        {
+          "args": "(sample_instance_t *inst, dns_name_t *name, dns_rdata_t *addr_rdata, dns_ttl_t ttl, dns_diffop_t op)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t syncptr",
+          "detailed": "\n        ",
+          "name": "syncptr",
+          "params": [
+            "inst",
+            "name",
+            "addr_rdata",
+            "ttl",
+            "op"
+          ],
+          "static": true
+        },
+        {
+          "args": "(sample_instance_t *inst, dns_name_t *name, dns_rdataset_t *rdataset, dns_diffop_t op)",
+          "brief": "\n        ",
+          "definition": "isc_result_t syncptrs",
+          "detailed": "\n        ",
+          "name": "syncptrs",
+          "params": [
+            "inst",
+            "name",
+            "rdataset",
+            "op"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct syncptr syncptr_t",
+          "detailed": "\n        ",
+          "name": "syncptr_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/syncptr.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(sample_instance_t *inst, dns_name_t *name, dns_rdataset_t *rdataset, dns_diffop_t op)",
+          "brief": "\n        ",
+          "definition": "isc_result_t syncptrs",
+          "detailed": "\n        ",
+          "name": "syncptrs",
+          "params": [
+            "inst",
+            "name",
+            "rdataset",
+            "op"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/util.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/dyndb/driver/zone.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(sample_instance_t *const inst, dns_name_t *const name, dns_zone_t **const rawp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t create_zone",
+          "detailed": "\n        ",
+          "name": "create_zone",
+          "params": [
+            "inst",
+            "name",
+            "rawp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(sample_instance_t *inst, dns_zone_t *zone)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t publish_zone",
+          "detailed": "\n        ",
+          "name": "publish_zone",
+          "params": [
+            "inst",
+            "zone"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_zone_t *zone)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t load_zone",
+          "detailed": "\n        ",
+          "name": "load_zone",
+          "params": [
+            "zone"
+          ],
+          "static": true
+        },
+        {
+          "args": "(sample_instance_t *inst, dns_zone_t *raw)",
+          "brief": "\n        ",
+          "definition": "isc_result_t activate_zone",
+          "detailed": "\n        ",
+          "name": "activate_zone",
+          "params": [
+            "inst",
+            "raw"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* impname",
+          "detailed": "\n        ",
+          "name": "impname",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/dyndb/driver/zone.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(sample_instance_t *const inst, dns_name_t *const name, dns_zone_t **const rawp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t create_zone",
+          "detailed": "\n        ",
+          "name": "create_zone",
+          "params": [
+            "inst",
+            "name",
+            "rawp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(sample_instance_t *inst, dns_zone_t *raw)",
+          "brief": "\n        ",
+          "definition": "isc_result_t activate_zone",
+          "detailed": "\n        ",
+          "name": "activate_zone",
+          "params": [
+            "inst",
+            "raw"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/feature-test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/hooks/driver/test-async.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t async_qctx_initialize",
+          "detailed": "\n        ",
+          "name": "async_qctx_initialize",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t async_query_done_begin",
+          "detailed": "\n        ",
+          "name": "async_query_done_begin",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t async_qctx_destroy",
+          "detailed": "\n        ",
+          "name": "async_qctx_destroy",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_hooktable_t *hooktable, isc_mem_t *mctx, async_instance_t *inst)",
+          "brief": "Register the functions to be called at each hook point in 'hooktable', using memory context 'mctx' for allocating copies of stack-allocated structures passed to ns_hook_add(). Make sure 'inst' will be passed as the 'cbdata' argument to every callback.",
+          "definition": "static void install_hooks",
+          "detailed": "\n        ",
+          "name": "install_hooks",
+          "params": [
+            "hooktable",
+            "mctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "static void logmsg",
+          "detailed": "\n        ",
+          "name": "logmsg",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *parameters, const void *cfg, const char *cfg_file, unsigned long cfg_line, isc_mem_t *mctx, isc_log_t *lctx, void *actx, ns_hooktable_t *hooktable, void **instp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t plugin_register",
+          "detailed": "Mandatory plugin API functions:\n\nplugin_destroy\nplugin_register\nplugin_version\nplugin_check \n\n\nplugin_destroy\nplugin_register\nplugin_version\nplugin_check",
+          "name": "plugin_register",
+          "params": [
+            "parameters",
+            "cfg",
+            "cfg_file",
+            "cfg_line",
+            "mctx",
+            "lctx",
+            "actx",
+            "hooktable",
+            "instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *parameters, const void *cfg, const char *cfg_file, unsigned long cfg_line, isc_mem_t *mctx, isc_log_t *lctx, void *actx)",
+          "brief": "\n        ",
+          "definition": "isc_result_t plugin_check",
+          "detailed": "\n        ",
+          "name": "plugin_check",
+          "params": [
+            "parameters",
+            "cfg",
+            "cfg_file",
+            "cfg_line",
+            "mctx",
+            "lctx",
+            "actx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **instp)",
+          "brief": "\n        ",
+          "definition": "void plugin_destroy",
+          "detailed": "\n        ",
+          "name": "plugin_destroy",
+          "params": [
+            "instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int plugin_version",
+          "detailed": "\n        ",
+          "name": "plugin_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const query_ctx_t *qctx, async_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "static state_t * client_state_get",
+          "detailed": "\n        ",
+          "name": "client_state_get",
+          "params": [
+            "qctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const query_ctx_t *qctx, async_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "static void client_state_create",
+          "detailed": "\n        ",
+          "name": "client_state_create",
+          "params": [
+            "qctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const query_ctx_t *qctx, async_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "static void client_state_destroy",
+          "detailed": "\n        ",
+          "name": "client_state_destroy",
+          "params": [
+            "qctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_hookasync_t *hctx)",
+          "brief": "\n        ",
+          "definition": "static void cancelasync",
+          "detailed": "\n        ",
+          "name": "cancelasync",
+          "params": [
+            "hctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_hookasync_t **ctxp)",
+          "brief": "\n        ",
+          "definition": "static void destroyasync",
+          "detailed": "\n        ",
+          "name": "destroyasync",
+          "params": [
+            "ctxp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(query_ctx_t *qctx, isc_mem_t *mctx, void *arg, isc_loop_t *loop, isc_job_cb cb, void *evarg, ns_hookasync_t **ctxp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t doasync",
+          "detailed": "\n        ",
+          "name": "doasync",
+          "params": [
+            "qctx",
+            "mctx",
+            "arg",
+            "loop",
+            "cb",
+            "evarg",
+            "ctxp"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct async_instance async_instance_t",
+          "detailed": "\n        ",
+          "name": "async_instance_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct state state_t",
+          "detailed": "\n        ",
+          "name": "state_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "bin/tests/system/makejournal.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_db_t **db, const char *origin, const char *filename)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t loadzone",
+          "detailed": "\n        ",
+          "name": "loadzone",
+          "params": [
+            "db",
+            "origin",
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* lctx",
+          "detailed": "\n        ",
+          "name": "lctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dst_active",
+          "detailed": "\n        ",
+          "name": "dst_active",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "isc_logcategory_t categories[]",
+          "detailed": "\n        ",
+          "name": "categories",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/pipelined/pipequeries.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void recvresponse",
+          "detailed": "\n        ",
+          "name": "recvresponse",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t sendquery",
+          "detailed": "\n        ",
+          "name": "sendquery",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void sendqueries",
+          "detailed": "\n        ",
+          "name": "sendqueries",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void teardown_view",
+          "detailed": "\n        ",
+          "name": "teardown_view",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void teardown_requestmgr",
+          "detailed": "\n        ",
+          "name": "teardown_requestmgr",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void teardown_dispatchv4",
+          "detailed": "\n        ",
+          "name": "teardown_dispatchv4",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void teardown_dispatchmgr",
+          "detailed": "\n        ",
+          "name": "teardown_dispatchmgr",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKM",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RUNCHECK",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TIMEOUT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_requestmgr_t* requestmgr",
+          "detailed": "\n        ",
+          "name": "requestmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_src",
+          "detailed": "\n        ",
+          "name": "have_src",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t srcaddr",
+          "detailed": "\n        ",
+          "name": "srcaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t dstaddr",
+          "detailed": "\n        ",
+          "name": "dstaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int onfly",
+          "detailed": "\n        ",
+          "name": "onfly",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/rndc/gencheck.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *buf, ssize_t count, size_t *start)",
+          "brief": "\n        ",
+          "definition": "static int check",
+          "detailed": "\n        ",
+          "name": "check",
+          "params": [
+            "buf",
+            "count",
+            "start"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/rpz/dnsrps.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(librpz_emsg_t *emsg)",
+          "brief": "\n        ",
+          "definition": "static bool link_dnsrps",
+          "detailed": "\n        ",
+          "name": "link_dnsrps",
+          "params": [
+            "emsg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tests/system/rpz/testlib/dummylib.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t trpz_rsp_t::idx",
+          "detailed": "\n        ",
+          "name": "idx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "trpz_client_t* trpz_rsp_t::client",
+          "detailed": "\n        ",
+          "name": "client",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_t::have_rd",
+          "detailed": "\n        ",
+          "name": "have_rd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "char trpz_rsp_t::zone[256]",
+          "detailed": "\n        ",
+          "name": "zone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "char trpz_rsp_t::domain[256]",
+          "detailed": "\n        ",
+          "name": "domain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t trpz_rsp_t::zidx",
+          "detailed": "\n        ",
+          "name": "zidx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[3]",
+          "brief": "\n        ",
+          "definition": "trpz_result_t trpz_rsp_t::rstack[3]",
+          "detailed": "\n        ",
+          "name": "rstack",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t trpz_rsp_t::stack_idx",
+          "detailed": "\n        ",
+          "name": "stack_idx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "trpz_zone_t* trpz_rsp_t::all_zones",
+          "detailed": "\n        ",
+          "name": "all_zones",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "trpz_result_t* trpz_rsp_t::all_nodes",
+          "detailed": "\n        ",
+          "name": "all_nodes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t trpz_rsp_t::num_zones",
+          "detailed": "\n        ",
+          "name": "num_zones",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t trpz_rsp_t::num_nodes",
+          "detailed": "\n        ",
+          "name": "num_nodes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ssize_t trpz_rsp_t::last_zone",
+          "detailed": "\n        ",
+          "name": "last_zone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ssize_t* trpz_rsp_t::base_zones",
+          "detailed": "\n        ",
+          "name": "base_zones",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t trpz_rsp_t::nbase_zones",
+          "detailed": "\n        ",
+          "name": "nbase_zones",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/rpz/testlib/test-data.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *str, uint8_t **pbuf, bool downcase)",
+          "brief": "\n        ",
+          "definition": "int wdns_str_to_name",
+          "detailed": "\n        ",
+          "name": "wdns_str_to_name",
+          "params": [
+            "str",
+            "pbuf",
+            "downcase"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "static char * str_printf",
+          "detailed": "\n        ",
+          "name": "str_printf",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *astr, int *pfamily, char *pbuf, const char *optname, char **errp)",
+          "brief": "\n        ",
+          "definition": "int get_address_info",
+          "detailed": "\n        ",
+          "name": "get_address_info",
+          "params": [
+            "astr",
+            "pfamily",
+            "pbuf",
+            "optname",
+            "errp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned char *rdata, size_t rdlen)",
+          "brief": "\n        ",
+          "definition": "rpz_soa_t * parse_serial",
+          "detailed": "\n        ",
+          "name": "parse_serial",
+          "params": [
+            "rdata",
+            "rdlen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *src, size_t src_len, char *dst)",
+          "brief": "\n        ",
+          "definition": "size_t wdns_domain_to_str",
+          "detailed": "\n        ",
+          "name": "wdns_domain_to_str",
+          "params": [
+            "src",
+            "src_len",
+            "dst"
+          ],
+          "static": false
+        },
+        {
+          "args": "(trpz_result_t **results, size_t *pnresults, trpz_zone_t **pzones, const char *node, size_t zidx, uint32_t ttl, librpz_trig_t trigger, librpz_policy_t policy, int *modified, unsigned long flags, char **errp)",
+          "brief": "\n        ",
+          "definition": "static trpz_result_t * apply_update_to_set",
+          "detailed": "\n        ",
+          "name": "apply_update_to_set",
+          "params": [
+            "results",
+            "pnresults",
+            "pzones",
+            "node",
+            "zidx",
+            "ttl",
+            "trigger",
+            "policy",
+            "modified",
+            "flags",
+            "errp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(trpz_result_t *node, const char *rrtype, const char *val, uint32_t ttl, int *modified)",
+          "brief": "\n        ",
+          "definition": "static int add_other_rr",
+          "detailed": "\n        ",
+          "name": "add_other_rr",
+          "params": [
+            "node",
+            "rrtype",
+            "val",
+            "ttl",
+            "modified"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str, char *pbuf)",
+          "brief": "\n        ",
+          "definition": "void reverse_labels",
+          "detailed": "\n        ",
+          "name": "reverse_labels",
+          "params": [
+            "str",
+            "pbuf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "unsigned long parse_zone_options",
+          "detailed": "\n        ",
+          "name": "parse_zone_options",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *updstr, trpz_result_t **presults, size_t *pnresults, trpz_zone_t **pzones, size_t *pnzones, int is_static, unsigned long flags, char **errp)",
+          "brief": "\n        ",
+          "definition": "int apply_update",
+          "detailed": "\n        ",
+          "name": "apply_update",
+          "params": [
+            "updstr",
+            "presults",
+            "pnresults",
+            "pzones",
+            "pnzones",
+            "is_static",
+            "flags",
+            "errp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(trpz_result_t **presults, size_t *pnresults)",
+          "brief": "\n        ",
+          "definition": "static void free_nodes",
+          "detailed": "\n        ",
+          "name": "free_nodes",
+          "params": [
+            "presults",
+            "pnresults"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname, char **errp)",
+          "brief": "\n        ",
+          "definition": "int sanity_check_data_file",
+          "detailed": "\n        ",
+          "name": "sanity_check_data_file",
+          "params": [
+            "fname",
+            "errp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fname, trpz_result_t **presults, size_t *pnresults, trpz_zone_t **pzones, size_t *pnzones, char **errp)",
+          "brief": "\n        ",
+          "definition": "int load_all_updates",
+          "detailed": "\n        ",
+          "name": "load_all_updates",
+          "params": [
+            "fname",
+            "presults",
+            "pnresults",
+            "pzones",
+            "pnzones",
+            "errp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WDNS_MAXLEN_NAME",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const rpz_soa_t g_soa_record",
+          "detailed": "\n        ",
+          "name": "g_soa_record",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/rpz/testlib/test-data.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const uint8_t *src, size_t src_len, char *dst)",
+          "brief": "\n        ",
+          "definition": "size_t wdns_domain_to_str",
+          "detailed": "\n        ",
+          "name": "wdns_domain_to_str",
+          "params": [
+            "src",
+            "src_len",
+            "dst"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str, uint8_t **pbuf, bool downcase)",
+          "brief": "\n        ",
+          "definition": "int wdns_str_to_name",
+          "detailed": "\n        ",
+          "name": "wdns_str_to_name",
+          "params": [
+            "str",
+            "pbuf",
+            "downcase"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str, char *pbuf)",
+          "brief": "\n        ",
+          "definition": "void reverse_labels",
+          "detailed": "\n        ",
+          "name": "reverse_labels",
+          "params": [
+            "str",
+            "pbuf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned char *rdata, size_t rdlen)",
+          "brief": "\n        ",
+          "definition": "rpz_soa_t * parse_serial",
+          "detailed": "\n        ",
+          "name": "parse_serial",
+          "params": [
+            "rdata",
+            "rdlen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fname, trpz_result_t **presults, size_t *pnresults, trpz_zone_t **pzones, size_t *pnzones, char **errp)",
+          "brief": "\n        ",
+          "definition": "int load_all_updates",
+          "detailed": "\n        ",
+          "name": "load_all_updates",
+          "params": [
+            "fname",
+            "presults",
+            "pnresults",
+            "pzones",
+            "pnzones",
+            "errp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *updstr, trpz_result_t **presults, size_t *pnresults, trpz_zone_t **pzones, size_t *pnzones, int is_static, unsigned long flags, char **errp)",
+          "brief": "\n        ",
+          "definition": "int apply_update",
+          "detailed": "\n        ",
+          "name": "apply_update",
+          "params": [
+            "updstr",
+            "presults",
+            "pnresults",
+            "pzones",
+            "pnzones",
+            "is_static",
+            "flags",
+            "errp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fname, char **errp)",
+          "brief": "\n        ",
+          "definition": "int sanity_check_data_file",
+          "detailed": "\n        ",
+          "name": "sanity_check_data_file",
+          "params": [
+            "fname",
+            "errp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "unsigned long parse_zone_options",
+          "detailed": "\n        ",
+          "name": "parse_zone_options",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *astr, int *pfamily, char *pbuf, const char *optname, char **errp)",
+          "brief": "\n        ",
+          "definition": "int get_address_info",
+          "detailed": "\n        ",
+          "name": "get_address_info",
+          "params": [
+            "astr",
+            "pfamily",
+            "pbuf",
+            "optname",
+            "errp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBRPZ_LIB_OPEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_c_in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_t_invalid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_t_a",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_t_cname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_t_txt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_t_aaaa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ns_t_dname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NODE_FLAG_IPV6_ADDRESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NODE_FLAG_STATIC_DATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_PASSTHRU",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_DROP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_TCP_ONLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_NXDOMAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_NODATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_GIVEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_POLICY_DISABLED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_RECURSIVE_ONLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_NOT_RECURSIVE_ONLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_QNAME_AS_NS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_IP_AS_NS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_QNAME_WAIT_RECURSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_NO_QNAME_WAIT_RECURSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPT_NO_NSIP_WAIT_RECURSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DECL_NODE",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NUM_ZONES_SNAPSHOT1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WDNS_PRESLEN_NAME",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const rpz_soa_t g_soa_record",
+          "detailed": "\n        ",
+          "name": "g_soa_record",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/rpz/testlib/trpz.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sockaddr socku::sa",
+          "detailed": "\n        ",
+          "name": "sa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sockaddr_in socku::ipv4",
+          "detailed": "\n        ",
+          "name": "ipv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sockaddr_in6 socku::ipv6",
+          "detailed": "\n        ",
+          "name": "ipv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sockaddr_un socku::sun",
+          "detailed": "\n        ",
+          "name": "sun",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/system/rsabigexponent/bigkey.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DST_KEY_INTERNAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKM",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_key_t* key",
+          "detailed": "\n        ",
+          "name": "key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t fname",
+          "detailed": "\n        ",
+          "name": "fname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int bits",
+          "detailed": "\n        ",
+          "name": "bits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* log_",
+          "detailed": "\n        ",
+          "name": "log_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_logconfig_t* logconfig",
+          "detailed": "\n        ",
+          "name": "logconfig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int level",
+          "detailed": "\n        ",
+          "name": "level",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_logdestination_t destination",
+          "detailed": "\n        ",
+          "name": "destination",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[255]",
+          "brief": "\n        ",
+          "definition": "char filename[255]",
+          "detailed": "\n        ",
+          "name": "filename",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_result_t result",
+          "detailed": "\n        ",
+          "name": "result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t buf",
+          "detailed": "\n        ",
+          "name": "buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "RSA* rsa",
+          "detailed": "\n        ",
+          "name": "rsa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "BIGNUM* e",
+          "detailed": "\n        ",
+          "name": "e",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "EVP_PKEY* pkey",
+          "detailed": "\n        ",
+          "name": "pkey",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/test_client.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "UDP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TCP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DOT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "HTTPS_POST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "HTTPS_GET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "HTTP_POST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "HTTP_GET",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "protocol_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_port",
+          "detailed": "\n        ",
+          "name": "parse_port",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_protocol",
+          "detailed": "\n        ",
+          "name": "parse_protocol",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_address",
+          "detailed": "\n        ",
+          "name": "parse_address",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static int parse_workers",
+          "detailed": "\n        ",
+          "name": "parse_workers",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_timeout",
+          "detailed": "\n        ",
+          "name": "parse_timeout",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_input",
+          "detailed": "\n        ",
+          "name": "parse_input",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_output",
+          "detailed": "\n        ",
+          "name": "parse_output",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void parse_options",
+          "detailed": "\n        ",
+          "name": "parse_options",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void setup",
+          "detailed": "\n        ",
+          "name": "setup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void teardown",
+          "detailed": "\n        ",
+          "name": "teardown",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void waitforsignal",
+          "detailed": "\n        ",
+          "name": "waitforsignal",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void read_cb",
+          "detailed": "\n        ",
+          "name": "read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void send_cb",
+          "detailed": "\n        ",
+          "name": "send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void connect_cb",
+          "detailed": "\n        ",
+          "name": "connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void run",
+          "detailed": "\n        ",
+          "name": "run",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* protocols[]",
+          "detailed": "\n        ",
+          "name": "protocols",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "protocol_t protocol",
+          "detailed": "\n        ",
+          "name": "protocol",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* address",
+          "detailed": "\n        ",
+          "name": "address",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* port",
+          "detailed": "\n        ",
+          "name": "port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int family",
+          "detailed": "\n        ",
+          "name": "family",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t sockaddr_local",
+          "detailed": "\n        ",
+          "name": "sockaddr_local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t sockaddr_remote",
+          "detailed": "\n        ",
+          "name": "sockaddr_remote",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int workers",
+          "detailed": "\n        ",
+          "name": "workers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int timeout",
+          "detailed": "\n        ",
+          "name": "timeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2 *65536]",
+          "brief": "\n        ",
+          "definition": "uint8_t messagebuf[2 *65536]",
+          "detailed": "\n        ",
+          "name": "messagebuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_region_t message",
+          "detailed": "\n        ",
+          "name": "message",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_t* tls_ctx",
+          "detailed": "\n        ",
+          "name": "tls_ctx",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/test_server.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "UDP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TCP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DOT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "HTTPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "HTTP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "protocol_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void read_cb",
+          "detailed": "\n        ",
+          "name": "read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void send_cb",
+          "detailed": "\n        ",
+          "name": "send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_port",
+          "detailed": "\n        ",
+          "name": "parse_port",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_protocol",
+          "detailed": "\n        ",
+          "name": "parse_protocol",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_address",
+          "detailed": "\n        ",
+          "name": "parse_address",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input)",
+          "brief": "\n        ",
+          "definition": "static int parse_workers",
+          "detailed": "\n        ",
+          "name": "parse_workers",
+          "params": [
+            "input"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void parse_options",
+          "detailed": "\n        ",
+          "name": "parse_options",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void setup",
+          "detailed": "\n        ",
+          "name": "setup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void teardown",
+          "detailed": "\n        ",
+          "name": "teardown",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_server_yield",
+          "detailed": "\n        ",
+          "name": "test_server_yield",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t accept_cb",
+          "detailed": "\n        ",
+          "name": "accept_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void run",
+          "detailed": "\n        ",
+          "name": "run",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* protocols[]",
+          "detailed": "\n        ",
+          "name": "protocols",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "protocol_t protocol",
+          "detailed": "\n        ",
+          "name": "protocol",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "in_port_t port",
+          "detailed": "\n        ",
+          "name": "port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_netaddr_t netaddr",
+          "detailed": "\n        ",
+          "name": "netaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t sockaddr ISC_ATTR_UNUSED",
+          "detailed": "\n        ",
+          "name": "ISC_ATTR_UNUSED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int workers",
+          "detailed": "\n        ",
+          "name": "workers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_t* tls_ctx",
+          "detailed": "\n        ",
+          "name": "tls_ctx",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tests/wire_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_buffer_t *source)",
+          "brief": "\n        ",
+          "definition": "static void process_message",
+          "detailed": "\n        ",
+          "name": "process_message",
+          "params": [
+            "source"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t printmessage",
+          "detailed": "\n        ",
+          "name": "printmessage",
+          "params": [
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_result_t result, const char *msg)",
+          "brief": "\n        ",
+          "definition": "static void CHECKRESULT",
+          "detailed": "\n        ",
+          "name": "CHECKRESULT",
+          "params": [
+            "result",
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char c)",
+          "brief": "\n        ",
+          "definition": "static int fromhex",
+          "detailed": "\n        ",
+          "name": "fromhex",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_FLAGS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int parseflags",
+          "detailed": "\n        ",
+          "name": "parseflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool printmemstats",
+          "detailed": "\n        ",
+          "name": "printmemstats",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dorender",
+          "detailed": "\n        ",
+          "name": "dorender",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "bin/tests",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

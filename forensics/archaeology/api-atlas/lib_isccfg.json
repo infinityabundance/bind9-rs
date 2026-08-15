@@ -1,6 +1,7 @@
 {
   "files": {
     "lib/isccfg/aclconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -133,6 +134,7 @@
       "variables": []
     },
     "lib/isccfg/check.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -160,6 +162,7 @@
       ]
     },
     "lib/isccfg/dnsconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -223,6 +226,7 @@
       ]
     },
     "lib/isccfg/duration.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -267,6 +271,7 @@
       "variables": []
     },
     "lib/isccfg/include/isccfg/aclconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -306,6 +311,7 @@
       ]
     },
     "lib/isccfg/include/isccfg/cfg.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1029,6 +1035,7 @@
       "variables": []
     },
     "lib/isccfg/include/isccfg/check.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1119,6 +1126,7 @@
       "variables": []
     },
     "lib/isccfg/include/isccfg/duration.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1155,6 +1163,7 @@
       ]
     },
     "lib/isccfg/include/isccfg/grammar.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1182,6 +1191,7 @@
       ]
     },
     "lib/isccfg/include/isccfg/kaspconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1268,6 +1278,7 @@
       "variables": []
     },
     "lib/isccfg/include/isccfg/log.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1326,6 +1337,7 @@
       ]
     },
     "lib/isccfg/include/isccfg/namedconf.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],
@@ -1425,6 +1437,7 @@
       ]
     },
     "lib/isccfg/kaspconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1598,6 +1611,7 @@
       "variables": []
     },
     "lib/isccfg/log.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -1637,6 +1651,7 @@
       ]
     },
     "lib/isccfg/namedconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -6124,6 +6139,7 @@
       ]
     },
     "lib/isccfg/parser.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [],
       "macros": [],

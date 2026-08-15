@@ -1,0 +1,5349 @@
+{
+  "files": {
+    "tests/dns/acl_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_acl_isinsecure)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BIGBUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/badcache_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(basic)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(expire)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(print)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(flush)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(flushname)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(flushtree)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(purge)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BADCACHE_TEST_FLAG",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/db_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(getoriginnode)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(getsetservestalettl)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_dbfind_staleok)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(class)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dbtype)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(version)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BIGBUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/dbdiff_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *oldfile, dns_db_t **old, const char *newfile, dns_db_t **newdb)",
+          "brief": "\n        ",
+          "definition": "static void test_create",
+          "detailed": "\n        ",
+          "name": "test_create",
+          "params": [
+            "oldfile",
+            "old",
+            "newfile",
+            "newdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(diffx_same)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(diffx_add)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(diffx_remove)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BIGBUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/dbiterator_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *src, dns_name_t *name)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t make_name",
+          "detailed": "\n        ",
+          "name": "make_name",
+          "params": [
+            "src",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "static void test_create",
+          "detailed": "\n        ",
+          "name": "test_create",
+          "params": [
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(create)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(create_nsec3)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, int flags, int nodes)",
+          "brief": "\n        ",
+          "definition": "static void test_walk",
+          "detailed": "\n        ",
+          "name": "test_walk",
+          "params": [
+            "filename",
+            "flags",
+            "nodes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(walk)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(walk_nsec3)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, int flags, int nodes)",
+          "brief": "\n        ",
+          "definition": "static void test_reverse",
+          "detailed": "\n        ",
+          "name": "test_reverse",
+          "params": [
+            "filename",
+            "flags",
+            "nodes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(reverse)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(reverse_nsec3)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, bool nsec3, int flags, int nodes)",
+          "brief": "\n        ",
+          "definition": "static void test_seek_node",
+          "detailed": "\n        ",
+          "name": "test_seek_node",
+          "params": [
+            "filename",
+            "nsec3",
+            "flags",
+            "nodes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(seek_node)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(seek_node_nsec3)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "static void test_seek_empty",
+          "detailed": "\n        ",
+          "name": "test_seek_empty",
+          "params": [
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(seek_empty)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(seek_empty_nsec3)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "static void test_seek_nx",
+          "detailed": "\n        ",
+          "name": "test_seek_nx",
+          "params": [
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(seek_nx)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(seek_nx_nsec3)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BIGBUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/dbversion_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *file, int line, isc_assertiontype_t type, const char *cond)",
+          "brief": "\n        ",
+          "definition": "static void local_callback",
+          "detailed": "\n        ",
+          "name": "local_callback",
+          "params": [
+            "file",
+            "line",
+            "type",
+            "cond"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(attachversion)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(closeversion)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(find)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(allrdatasets)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(findrdataset)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(deleterdataset)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(subtract)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(addrdataset)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(getnsec3parameters)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(rollback)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "check_assertion",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[11]",
+          "brief": "\n        ",
+          "definition": "char tempname[11]",
+          "detailed": "\n        ",
+          "name": "tempname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* db1",
+          "detailed": "\n        ",
+          "name": "db1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t * db2",
+          "detailed": "\n        ",
+          "name": "db2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbversion_t* v1",
+          "detailed": "\n        ",
+          "name": "v1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbversion_t * v2",
+          "detailed": "\n        ",
+          "name": "v2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "jmp_buf assertion",
+          "detailed": "\n        ",
+          "name": "assertion",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/diff_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const dns_diff_t *diff)",
+          "brief": "\n        ",
+          "definition": "static size_t count_elements",
+          "detailed": "\n        ",
+          "name": "count_elements",
+          "params": [
+            "diff"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdata_t *rdata, unsigned char *dest, size_t dest_size)",
+          "brief": "\n        ",
+          "definition": "static void prepare_rdata",
+          "detailed": "\n        ",
+          "name": "prepare_rdata",
+          "params": [
+            "rdata",
+            "dest",
+            "dest_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_diff_size)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char data_1[]",
+          "detailed": "\n        ",
+          "name": "data_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char offsets_1[]",
+          "detailed": "\n        ",
+          "name": "offsets_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t name_1",
+          "detailed": "\n        ",
+          "name": "name_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char data_2[]",
+          "detailed": "\n        ",
+          "name": "data_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char offsets_2[]",
+          "detailed": "\n        ",
+          "name": "offsets_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t name_2",
+          "detailed": "\n        ",
+          "name": "name_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char data_3[]",
+          "detailed": "\n        ",
+          "name": "data_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char offsets_3[]",
+          "detailed": "\n        ",
+          "name": "offsets_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t name_3",
+          "detailed": "\n        ",
+          "name": "name_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char data_dup[]",
+          "detailed": "\n        ",
+          "name": "data_dup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char offsets_dup[]",
+          "detailed": "\n        ",
+          "name": "offsets_dup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t name_dup",
+          "detailed": "\n        ",
+          "name": "name_dup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char data_nodup[]",
+          "detailed": "\n        ",
+          "name": "data_nodup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char offsets_nodup[]",
+          "detailed": "\n        ",
+          "name": "offsets_nodup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t name_nodup",
+          "detailed": "\n        ",
+          "name": "name_nodup",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/dispatch_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatchmgr_t* test_dispatch_t::dispatchmgr",
+          "detailed": "\n        ",
+          "name": "dispatchmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatch_t* test_dispatch_t::dispatch",
+          "detailed": "\n        ",
+          "name": "dispatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispentry_t* test_dispatch_t::dispentry",
+          "detailed": "\n        ",
+          "name": "dispentry",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t test_dispatch_t::id",
+          "detailed": "\n        ",
+          "name": "id",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/dns64_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void multiple_prefixes",
+          "detailed": "\n        ",
+          "name": "multiple_prefixes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns64_findprefix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/dnstap_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup",
+          "detailed": "\n        ",
+          "name": "setup",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown",
+          "detailed": "\n        ",
+          "name": "teardown",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dt_create)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_dt_send)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_dt_totext)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TAPFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TAPSOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TAPSAVED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TAPTEXT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/dst_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path, isc_buffer_t *buf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t sig_fromfile",
+          "detailed": "\n        ",
+          "name": "sig_fromfile",
+          "params": [
+            "path",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *datapath, const char *sigpath, const char *keyname, dns_keytag_t id, dns_secalg_t alg, int type, bool expect)",
+          "brief": "\n        ",
+          "definition": "static void check_sig",
+          "detailed": "\n        ",
+          "name": "check_sig",
+          "params": [
+            "datapath",
+            "sigpath",
+            "keyname",
+            "id",
+            "alg",
+            "type",
+            "expect"
+          ],
+          "static": true
+        },
+        {
+          "args": "(sig_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *key1_name, dns_keytag_t key1_id, const char *key2_name, dns_keytag_t key2_id, dns_secalg_t alg, int type, bool expect)",
+          "brief": "\n        ",
+          "definition": "static void check_cmp",
+          "detailed": "\n        ",
+          "name": "check_cmp",
+          "params": [
+            "key1_name",
+            "key1_id",
+            "key2_name",
+            "key2_id",
+            "alg",
+            "type",
+            "expect"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cmp_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/ede_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t ede_test_expected_t::code",
+          "detailed": "\n        ",
+          "name": "code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ede_test_expected_t::txt",
+          "detailed": "\n        ",
+          "name": "txt",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/geoip_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *dir)",
+          "brief": "\n        ",
+          "definition": "static void load_geoip",
+          "detailed": "\n        ",
+          "name": "load_geoip",
+          "params": [
+            "dir"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void close_geoip",
+          "detailed": "\n        ",
+          "name": "close_geoip",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *dir, const char *dbfile, MMDB_s *mmdb)",
+          "brief": "\n        ",
+          "definition": "static MMDB_s * open_geoip2",
+          "detailed": "\n        ",
+          "name": "open_geoip2",
+          "params": [
+            "dir",
+            "dbfile",
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_geoip_subtype_t subtype, const char *addr)",
+          "brief": "\n        ",
+          "definition": "static bool entry_exists",
+          "detailed": "\n        ",
+          "name": "entry_exists",
+          "params": [
+            "subtype",
+            "addr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(baseline)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *addr, dns_geoip_subtype_t subtype, const char *string)",
+          "brief": "\n        ",
+          "definition": "static bool do_lookup_string",
+          "detailed": "\n        ",
+          "name": "do_lookup_string",
+          "params": [
+            "addr",
+            "subtype",
+            "string"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *addr, dns_geoip_subtype_t subtype, const char *string)",
+          "brief": "\n        ",
+          "definition": "static bool do_lookup_string_v6",
+          "detailed": "\n        ",
+          "name": "do_lookup_string_v6",
+          "params": [
+            "addr",
+            "subtype",
+            "string"
+          ],
+          "static": true
+        },
+        {
+          "args": "(country)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(country_v6)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(city)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(city_v6)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(asnum)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isp)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(org)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(domain)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_geoip_databases_t geoip",
+          "detailed": "\n        ",
+          "name": "geoip",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_s geoip_country",
+          "detailed": "\n        ",
+          "name": "geoip_country",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_s geoip_city",
+          "detailed": "\n        ",
+          "name": "geoip_city",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_s geoip_as",
+          "detailed": "\n        ",
+          "name": "geoip_as",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_s geoip_isp",
+          "detailed": "\n        ",
+          "name": "geoip_isp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_s geoip_domain",
+          "detailed": "\n        ",
+          "name": "geoip_domain",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/keytable_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *namestr)",
+          "brief": "\n        ",
+          "definition": "static dns_name_t * str2name",
+          "detailed": "\n        ",
+          "name": "str2name",
+          "params": [
+            "namestr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint16_t flags, uint8_t proto, uint8_t alg, const char *keystr, dns_rdata_dnskey_t *keystruct)",
+          "brief": "\n        ",
+          "definition": "static void create_keystruct",
+          "detailed": "\n        ",
+          "name": "create_keystruct",
+          "params": [
+            "flags",
+            "proto",
+            "alg",
+            "keystr",
+            "keystruct"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, uint16_t flags, uint8_t proto, uint8_t alg, const char *keystr, unsigned char *digest, dns_rdata_ds_t *dsstruct)",
+          "brief": "\n        ",
+          "definition": "static void create_dsstruct",
+          "detailed": "\n        ",
+          "name": "create_dsstruct",
+          "params": [
+            "name",
+            "flags",
+            "proto",
+            "alg",
+            "keystr",
+            "digest",
+            "dsstruct"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void create_tables",
+          "detailed": "\n        ",
+          "name": "create_tables",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void destroy_tables",
+          "detailed": "\n        ",
+          "name": "destroy_tables",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(add)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(delete)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(deletekey)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(find)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(issecuredomain)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dump)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(nta)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_keytable_t* keytable",
+          "detailed": "\n        ",
+          "name": "keytable",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ntatable_t* ntatable",
+          "detailed": "\n        ",
+          "name": "ntatable",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* keystr1",
+          "detailed": "\n        ",
+          "name": "keystr1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* keystr2",
+          "detailed": "\n        ",
+          "name": "keystr2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_view_t* view",
+          "detailed": "\n        ",
+          "name": "view",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/master_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_rdatacallbacks_t *cb, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "static void nullmsg",
+          "detailed": "\n        ",
+          "name": "nullmsg",
+          "params": [
+            "cb",
+            "fmt",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_zone_t *zone, dns_masterrawheader_t *header)",
+          "brief": "\n        ",
+          "definition": "static void rawdata_callback",
+          "detailed": "\n        ",
+          "name": "rawdata_callback",
+          "params": [
+            "zone",
+            "header"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, const dns_name_t *owner, dns_rdataset_t *dataset, dns_diffop_t op DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_callback",
+          "detailed": "\n        ",
+          "name": "add_callback",
+          "params": [
+            "arg",
+            "owner",
+            "dataset",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void(*warn)(struct dns_rdatacallbacks *, const char *,...), void(*error)(struct dns_rdatacallbacks *, const char *,...))",
+          "brief": "\n        ",
+          "definition": "static isc_result_t setup_master",
+          "detailed": "\n        ",
+          "name": "setup_master",
+          "params": [
+            "warn",
+            "error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *workdir, const char *testfile, dns_masterformat_t format, void(*warn)(struct dns_rdatacallbacks *, const char *,...), void(*error)(struct dns_rdatacallbacks *, const char *,...))",
+          "brief": "\n        ",
+          "definition": "static isc_result_t test_master",
+          "detailed": "\n        ",
+          "name": "test_master",
+          "params": [
+            "workdir",
+            "testfile",
+            "format",
+            "warn",
+            "error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *filename, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void include_callback",
+          "detailed": "\n        ",
+          "name": "include_callback",
+          "params": [
+            "filename",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(load)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(unexpected)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(noowner)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(nottl)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(badclass)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(toobig)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(maxrdata)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnskey)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsnokey)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(include)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(master_includelist)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(includefail)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(blanklines)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(leadingzero)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(totext)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(loadraw)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dumpraw)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct dns_rdatacallbacks *mycallbacks, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "static void warn_expect",
+          "detailed": "\n        ",
+          "name": "warn_expect",
+          "params": [
+            "mycallbacks",
+            "fmt",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(neworigin)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BIGBUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_masterrawheader_t header",
+          "detailed": "\n        ",
+          "name": "header",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool headerset",
+          "detailed": "\n        ",
+          "name": "headerset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t dns_origin",
+          "detailed": "\n        ",
+          "name": "dns_origin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[sizeof(\"test\")]",
+          "brief": "\n        ",
+          "definition": "char origin[sizeof(\"test\")]",
+          "detailed": "\n        ",
+          "name": "origin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[255]",
+          "brief": "\n        ",
+          "definition": "unsigned char name_buf[255]",
+          "detailed": "\n        ",
+          "name": "name_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdatacallbacks_t callbacks",
+          "detailed": "\n        ",
+          "name": "callbacks",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* include_file",
+          "detailed": "\n        ",
+          "name": "include_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* warn_expect_value",
+          "detailed": "\n        ",
+          "name": "warn_expect_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool warn_expect_result",
+          "detailed": "\n        ",
+          "name": "warn_expect_result",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/name_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(fullcompare)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const dns_name_t *name1, const dns_name_t *name2, const dns_name_t *name3, unsigned char *compressed, unsigned int compressed_length, unsigned char *expanded, unsigned int expanded_length, dns_compress_t *cctx, dns_decompress_t dctx, bool rdata)",
+          "brief": "\n        ",
+          "definition": "static void compress_test",
+          "detailed": "\n        ",
+          "name": "compress_test",
+          "params": [
+            "name1",
+            "name2",
+            "name3",
+            "compressed",
+            "compressed_length",
+            "expanded",
+            "expanded_length",
+            "cctx",
+            "dctx",
+            "rdata"
+          ],
+          "static": true
+        },
+        {
+          "args": "(compression)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(collision)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(fromregion)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(fromwire)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(istat)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct dns_name_attrs attributes)",
+          "brief": "\n        ",
+          "definition": "static bool name_attr_zero",
+          "detailed": "\n        ",
+          "name": "name_attr_zero",
+          "params": [
+            "attributes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(init)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(invalidate)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(buffer)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isabsolute)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(hash)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(issubdomain)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(countlabels)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(getlabel)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(getlabelsequence)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(maxlabels)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAME_LO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAME_HI",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "\n        ",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/nametree_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static int setup",
+          "detailed": "\n        ",
+          "name": "setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static int teardown",
+          "detailed": "\n        ",
+          "name": "teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(add_bool)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(add_bits)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(add_count)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(covered_bool)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(covered_bits)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(delete)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(find)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_nametree_t* booltree",
+          "detailed": "\n        ",
+          "name": "booltree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_nametree_t* bitstree",
+          "detailed": "\n        ",
+          "name": "bitstree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_nametree_t* counttree",
+          "detailed": "\n        ",
+          "name": "counttree",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/nsec3_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* nsec3param_salttotext_test_params_t::nsec3param_text",
+          "detailed": "\n        ",
+          "name": "nsec3param_text",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* nsec3param_salttotext_test_params_t::expected_salt",
+          "detailed": "\n        ",
+          "name": "expected_salt",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/nsec3param_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_hash_t nsec3param_rdata_test_params_t::hash",
+          "detailed": "\n        ",
+          "name": "hash",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char nsec3param_rdata_test_params_t::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_iterations_t nsec3param_rdata_test_params_t::iterations",
+          "detailed": "\n        ",
+          "name": "iterations",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char nsec3param_rdata_test_params_t::salt_length",
+          "detailed": "\n        ",
+          "name": "salt_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* nsec3param_rdata_test_params_t::salt",
+          "detailed": "\n        ",
+          "name": "salt",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/private_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char signing_testcase_t::alg",
+          "detailed": "\n        ",
+          "name": "alg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_keytag_t signing_testcase_t::keyid",
+          "detailed": "\n        ",
+          "name": "keyid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool signing_testcase_t::remove",
+          "detailed": "\n        ",
+          "name": "remove",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool signing_testcase_t::complete",
+          "detailed": "\n        ",
+          "name": "complete",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/qp_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* check_qpchain::query",
+          "detailed": "\n        ",
+          "name": "query",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_result_t check_qpchain::result",
+          "detailed": "\n        ",
+          "name": "result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int check_qpchain::length",
+          "detailed": "\n        ",
+          "name": "length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "const char* check_qpchain::names[10]",
+          "detailed": "\n        ",
+          "name": "names",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/qpdb_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_db_t *db, isc_stdtime_t now, int idx, dns_rdatatype_t rtype, size_t rdata_len, bool longname)",
+          "brief": "\n        ",
+          "definition": "static void overmempurge_addrdataset",
+          "detailed": "\n        ",
+          "name": "overmempurge_addrdataset",
+          "params": [
+            "db",
+            "now",
+            "idx",
+            "rtype",
+            "rdata_len",
+            "longname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, isc_stdtime_t now, dns_rdatatype_t rtype, const char *rdatastr, dns_ttl_t ttl, dns_trust_t trust)",
+          "brief": "\n        ",
+          "definition": "static void servestale_addrdataset",
+          "detailed": "\n        ",
+          "name": "servestale_addrdataset",
+          "params": [
+            "db",
+            "name",
+            "now",
+            "rtype",
+            "rdatastr",
+            "ttl",
+            "trust"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *dbmctx, dns_fixedname_t *fname, dns_name_t **namep)",
+          "brief": "\n        ",
+          "definition": "static dns_db_t * servestale_setup",
+          "detailed": "\n        ",
+          "name": "servestale_setup",
+          "params": [
+            "dbmctx",
+            "fname",
+            "namep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(servestale_fresh_over_stale_cname)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(servestale_fresh_cname_over_stale_type)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ncache_add_over_ancient_secure)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(overmempurge_bigrdata)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(overmempurge_longname)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KEEP_BEFORE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "\n        ",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/qpmulti_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void setup_logging",
+          "detailed": "\n        ",
+          "name": "setup_logging",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void item_attach",
+          "detailed": "\n        ",
+          "name": "item_attach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void item_detach",
+          "detailed": "\n        ",
+          "name": "item_detach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpkey_t key, void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t item_makekey",
+          "detailed": "\n        ",
+          "name": "item_makekey",
+          "params": [
+            "key",
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, char *buf, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void testname",
+          "detailed": "\n        ",
+          "name": "testname",
+          "params": [
+            "ctx",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static uint8_t random_byte",
+          "detailed": "\n        ",
+          "name": "random_byte",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void setup_items",
+          "detailed": "\n        ",
+          "name": "setup_items",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpreadable_t qpr, size_t i, bool exists, const char *rubric)",
+          "brief": "\n        ",
+          "definition": "static bool checkkey",
+          "detailed": "\n        ",
+          "name": "checkkey",
+          "params": [
+            "qpr",
+            "i",
+            "exists",
+            "rubric"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpreadable_t qp)",
+          "brief": "\n        ",
+          "definition": "static bool checkallro",
+          "detailed": "\n        ",
+          "name": "checkallro",
+          "params": [
+            "qp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpreadable_t qp)",
+          "brief": "\n        ",
+          "definition": "static bool checkallrw",
+          "detailed": "\n        ",
+          "name": "checkallrw",
+          "params": [
+            "qp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpmulti_t *qpm)",
+          "brief": "\n        ",
+          "definition": "static void one_transaction",
+          "detailed": "\n        ",
+          "name": "one_transaction",
+          "params": [
+            "qpm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void many_transactions",
+          "detailed": "\n        ",
+          "name": "many_transactions",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(qpmulti)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(qpmulti_memusage)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VERBOSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ITEM_COUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRANSACTION_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRANSACTION_COUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRACE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ASSERT",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t refcount",
+          "detailed": "\n        ",
+          "name": "refcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool in_ro",
+          "detailed": "\n        ",
+          "name": "in_ro",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool in_rw",
+          "detailed": "\n        ",
+          "name": "in_rw",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_qpkey_t key",
+          "detailed": "\n        ",
+          "name": "key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_qpkey_t ascii",
+          "detailed": "\n        ",
+          "name": "ascii",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[12345]",
+          "brief": "\n        ",
+          "definition": "struct @331101221220163325372021074233114260247144003001 item[ 12345 ]",
+          "detailed": "\n        ",
+          "name": "item",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_qpmethods_t test_methods",
+          "detailed": "\n        ",
+          "name": "test_methods",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/qpzone_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *str1, const char *str2)",
+          "brief": "\n        ",
+          "definition": "static bool ownercase_test_one",
+          "detailed": "\n        ",
+          "name": "ownercase_test_one",
+          "params": [
+            "str1",
+            "str2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ownercase)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const unsigned char *target_ip, unsigned char(*ips)[16], ssize_t count)",
+          "brief": "\n        ",
+          "definition": "static ssize_t find_ip_index",
+          "detailed": "\n        ",
+          "name": "find_ip_index",
+          "params": [
+            "target_ip",
+            "ips",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *version, const dns_name_t *name, dns_rdatatype_t rdtype, dns_rdataclass_t rdclass, uint32_t ttl, const unsigned char *data, size_t data_len, dns_diffop_t op)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t apply_dns_update",
+          "detailed": "\n        ",
+          "name": "apply_dns_update",
+          "params": [
+            "db",
+            "version",
+            "name",
+            "rdtype",
+            "rdclass",
+            "ttl",
+            "data",
+            "data_len",
+            "op"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *version, const dns_name_t *name, unsigned char(*ips)[16], ssize_t expected_count, uint32_t expected_ttl)",
+          "brief": "\n        ",
+          "definition": "static void verify_aaaa_records",
+          "detailed": "\n        ",
+          "name": "verify_aaaa_records",
+          "params": [
+            "db",
+            "version",
+            "name",
+            "ips",
+            "expected_count",
+            "expected_ttl"
+          ],
+          "static": true
+        },
+        {
+          "args": "(setownercase)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(diffop_add_sub)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(diffop_addresign)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KEEP_BEFORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CASESET",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WITH_NEWVERSION",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[12][2]",
+          "brief": "\n        ",
+          "definition": "const char* ownercase_vectors[12][2]",
+          "detailed": "\n        ",
+          "name": "ownercase_vectors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char example_org_data[]",
+          "detailed": "\n        ",
+          "name": "example_org_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char example_org_offsets[]",
+          "detailed": "\n        ",
+          "name": "example_org_offsets",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t example_org_name",
+          "detailed": "\n        ",
+          "name": "example_org_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[][16]",
+          "brief": "\n        ",
+          "definition": "unsigned char aaaa_test_data[][16]",
+          "detailed": "\n        ",
+          "name": "aaaa_test_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[64]",
+          "brief": "\n        ",
+          "definition": "unsigned char rrsig_signature1[64]",
+          "detailed": "\n        ",
+          "name": "rrsig_signature1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[64]",
+          "brief": "\n        ",
+          "definition": "unsigned char rrsig_signature2[64]",
+          "detailed": "\n        ",
+          "name": "rrsig_signature2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_rrsig_t rrsig_test_data1",
+          "detailed": "\n        ",
+          "name": "rrsig_test_data1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_rrsig_t rrsig_test_data2",
+          "detailed": "\n        ",
+          "name": "rrsig_test_data2",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/rbt_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rbt_t* test_context_t::rbt",
+          "detailed": "\n        ",
+          "name": "rbt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rbt_t* test_context_t::rbt_distances",
+          "detailed": "\n        ",
+          "name": "rbt_distances",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/rbtdb_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, isc_stdtime_t now, dns_rdatatype_t rtype, const char *rdatastr, dns_ttl_t ttl, dns_trust_t trust)",
+          "brief": "\n        ",
+          "definition": "static void cache_addrdataset",
+          "detailed": "\n        ",
+          "name": "cache_addrdataset",
+          "params": [
+            "db",
+            "name",
+            "now",
+            "rtype",
+            "rdatastr",
+            "ttl",
+            "trust"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ncache_add_over_ancient_secure)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ANCIENT",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/rdata_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "unsigned char wire_ok::data[512]",
+          "detailed": "\n        ",
+          "name": "data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t wire_ok::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool wire_ok::ok",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int wire_ok::loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/rdataset_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(trimttl)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/rdatasetstats_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_stats_t *stats, dns_rdatatype_t type)",
+          "brief": "\n        ",
+          "definition": "static void set_typestats",
+          "detailed": "\n        ",
+          "name": "set_typestats",
+          "params": [
+            "stats",
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_stats_t *stats)",
+          "brief": "\n        ",
+          "definition": "static void set_nxdomainstats",
+          "detailed": "\n        ",
+          "name": "set_nxdomainstats",
+          "params": [
+            "stats"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_stats_t *stats, dns_rdatatype_t type, int from, int to)",
+          "brief": "\n        ",
+          "definition": "static void mark_stale",
+          "detailed": "\n        ",
+          "name": "mark_stale",
+          "params": [
+            "stats",
+            "type",
+            "from",
+            "to"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_stats_t *stats, int from, int to)",
+          "brief": "\n        ",
+          "definition": "static void mark_nxdomain_stale",
+          "detailed": "\n        ",
+          "name": "mark_nxdomain_stale",
+          "params": [
+            "stats",
+            "from",
+            "to"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdatastatstype_t which, uint64_t value, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void verify_active_counters",
+          "detailed": "\n        ",
+          "name": "verify_active_counters",
+          "params": [
+            "which",
+            "value",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdatastatstype_t which, uint64_t value, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void verify_stale_counters",
+          "detailed": "\n        ",
+          "name": "verify_stale_counters",
+          "params": [
+            "which",
+            "value",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdatastatstype_t which, uint64_t value, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void verify_ancient_counters",
+          "detailed": "\n        ",
+          "name": "verify_ancient_counters",
+          "params": [
+            "which",
+            "value",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED, bool servestale)",
+          "brief": "\n        ",
+          "definition": "static void rdatasetstats",
+          "detailed": "\n        ",
+          "name": "rdatasetstats",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "servestale"
+          ],
+          "static": true
+        },
+        {
+          "args": "(active_stale_ancient)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(active_ancient)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ATTRIBUTE_SET",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/resconf_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(irs_resconf_t *resconf, const char *expected)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_nameserver",
+          "detailed": "\n        ",
+          "name": "check_nameserver",
+          "params": [
+            "resconf",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_ns4",
+          "detailed": "\n        ",
+          "name": "check_ns4",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_ns6",
+          "detailed": "\n        ",
+          "name": "check_ns6",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_scoped",
+          "detailed": "\n        ",
+          "name": "check_scoped",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int n, unsigned int expected)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_number",
+          "detailed": "\n        ",
+          "name": "check_number",
+          "params": [
+            "n",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_attempts",
+          "detailed": "\n        ",
+          "name": "check_attempts",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_timeout",
+          "detailed": "\n        ",
+          "name": "check_timeout",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_ndots",
+          "detailed": "\n        ",
+          "name": "check_ndots",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t search_example",
+          "detailed": "\n        ",
+          "name": "search_example",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_options",
+          "detailed": "\n        ",
+          "name": "check_options",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_load)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/resolver_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_resolver_t **resolverp)",
+          "brief": "\n        ",
+          "definition": "static void mkres",
+          "detailed": "\n        ",
+          "name": "mkres",
+          "params": [
+            "resolverp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_resolver_t **resolverp)",
+          "brief": "\n        ",
+          "definition": "static void destroy_resolver",
+          "detailed": "\n        ",
+          "name": "destroy_resolver",
+          "params": [
+            "resolverp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(create)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(gettimeout)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(settimeout)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(settimeout_default)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(settimeout_belowmin)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(settimeout_overmax)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatch_t* dispatch",
+          "detailed": "\n        ",
+          "name": "dispatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_view_t* view",
+          "detailed": "\n        ",
+          "name": "view",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_cache_t* tlsctx_cache",
+          "detailed": "\n        ",
+          "name": "tlsctx_cache",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/rsa_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_rsa_verify)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_rsa_fromdns_oversized_exponent)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_rsa_fromdns_even_exponent)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_rsa_fromdns_oversized_modulus)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_rsa_fromdns_short_modulus)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "unsigned char d[10]",
+          "detailed": "\n        ",
+          "name": "d",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "unsigned char sigsha1[256]",
+          "detailed": "\n        ",
+          "name": "sigsha1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "unsigned char sigsha256[256]",
+          "detailed": "\n        ",
+          "name": "sigsha256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "unsigned char sigsha512[512]",
+          "detailed": "\n        ",
+          "name": "sigsha512",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/sigs_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_diffop_t zonediff_t::op",
+          "detailed": "\n        ",
+          "name": "op",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* zonediff_t::owner",
+          "detailed": "\n        ",
+          "name": "owner",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t zonediff_t::ttl",
+          "detailed": "\n        ",
+          "name": "ttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* zonediff_t::type",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/skr_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t skr__testbundle_t::btime",
+          "detailed": "\n        ",
+          "name": "btime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t skr__testbundle_t::inception",
+          "detailed": "\n        ",
+          "name": "inception",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t skr__testbundle_t::expiration",
+          "detailed": "\n        ",
+          "name": "expiration",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::kskbuf[1024]",
+          "detailed": "\n        ",
+          "name": "kskbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::ksk",
+          "detailed": "\n        ",
+          "name": "ksk",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::zsk1buf[1024]",
+          "detailed": "\n        ",
+          "name": "zsk1buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::zsk1",
+          "detailed": "\n        ",
+          "name": "zsk1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::zsk2buf[1024]",
+          "detailed": "\n        ",
+          "name": "zsk2buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::zsk2",
+          "detailed": "\n        ",
+          "name": "zsk2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::cdnskeybuf[1024]",
+          "detailed": "\n        ",
+          "name": "cdnskeybuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::cdnskey",
+          "detailed": "\n        ",
+          "name": "cdnskey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::cdsbuf[1024]",
+          "detailed": "\n        ",
+          "name": "cdsbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::cds",
+          "detailed": "\n        ",
+          "name": "cds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::rrsig1buf[1024]",
+          "detailed": "\n        ",
+          "name": "rrsig1buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::dnskey_rrsig",
+          "detailed": "\n        ",
+          "name": "dnskey_rrsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::rrsig2buf[1024]",
+          "detailed": "\n        ",
+          "name": "rrsig2buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::cdnskey_rrsig",
+          "detailed": "\n        ",
+          "name": "cdnskey_rrsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char skr__testbundle_t::rrsig3buf[1024]",
+          "detailed": "\n        ",
+          "name": "rrsig3buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_t skr__testbundle_t::cds_rrsig",
+          "detailed": "\n        ",
+          "name": "cds_rrsig",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/time_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(epoch_minus_one)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(epoch)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(half_maxint)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(half_plus_one)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(fifty_before)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(some_ago)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/tsig_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dst_context_t *tsigctx, isc_buffer_t *buf)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_mac",
+          "detailed": "\n        ",
+          "name": "add_mac",
+          "params": [
+            "tsigctx",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dst_context_t *tsigctx, dns_tsigkey_t *key, isc_buffer_t *target, isc_stdtime_t now, bool mangle_sig)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_tsig",
+          "detailed": "\n        ",
+          "name": "add_tsig",
+          "params": [
+            "tsigctx",
+            "key",
+            "target",
+            "now",
+            "mangle_sig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg)",
+          "brief": "\n        ",
+          "definition": "static void printmessage",
+          "detailed": "\n        ",
+          "name": "printmessage",
+          "params": [
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_buffer_t *buf, unsigned int flags, dns_tsigkey_t *key, isc_buffer_t **tsigin, isc_buffer_t **tsigout, dst_context_t *tsigctx)",
+          "brief": "\n        ",
+          "definition": "static void render",
+          "detailed": "\n        ",
+          "name": "render",
+          "params": [
+            "buf",
+            "flags",
+            "key",
+            "tsigin",
+            "tsigout",
+            "tsigctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_stdtime_t now, isc_result_t expected_result, bool mangle_sig)",
+          "brief": "\n        ",
+          "definition": "static void tsig_tcp",
+          "detailed": "\n        ",
+          "name": "tsig_tcp",
+          "params": [
+            "now",
+            "expected_result",
+            "mangle_sig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(tsig_tcp)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(tsig_badtime)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(tsig_badsig)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool generated)",
+          "brief": "\n        ",
+          "definition": "static void tsig_delete",
+          "detailed": "\n        ",
+          "name": "tsig_delete",
+          "params": [
+            "generated"
+          ],
+          "static": true
+        },
+        {
+          "args": "(tsig_delete)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(algvalid)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ORIGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/update_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int year, int month, int day)",
+          "brief": "\n        ",
+          "definition": "static void set_mystdtime",
+          "detailed": "\n        ",
+          "name": "set_mystdtime",
+          "params": [
+            "year",
+            "month",
+            "day"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Return the number of seconds since 00:00:00 UTC, January 1, 1970.",
+          "definition": "isc_stdtime_t isc_stdtime_now",
+          "detailed": "\n        ",
+          "name": "isc_stdtime_now",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(increment)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(increment_past_zero)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(past_to_unix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(now_to_unix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(future_to_unix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(undefined_plus1_to_unix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(undefined_minus1_to_unix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(undefined_to_unix)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(unixtime_zero)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(past_to_date)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(now_to_date)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(future_to_date)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *keydir)",
+          "brief": "\n        ",
+          "definition": "static void cleanup_keydir",
+          "detailed": "\n        ",
+          "name": "cleanup_keydir",
+          "params": [
+            "keydir"
+          ],
+          "static": true
+        },
+        {
+          "args": "(find_zone_keys_overflow)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KEEP_BEFORE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t mystdtime",
+          "detailed": "\n        ",
+          "name": "mystdtime",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/dns/zonemgr_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zonemgr_create)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(zonemgr_managezone)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(zonemgr_createzone)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(zonemgr_unreachable)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/dns/zt_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_zone_t *zone, void *uap)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t count_zone",
+          "detailed": "\n        ",
+          "name": "count_zone",
+          "params": [
+            "zone",
+            "uap"
+          ],
+          "static": true
+        },
+        {
+          "args": "(apply)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *uap)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t load_done_last",
+          "detailed": "\n        ",
+          "name": "load_done_last",
+          "params": [
+            "uap"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *uap)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t load_done_new_only",
+          "detailed": "\n        ",
+          "name": "load_done_new_only",
+          "params": [
+            "uap"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *uap)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t load_done_first",
+          "detailed": "\n        ",
+          "name": "load_done_first",
+          "params": [
+            "uap"
+          ],
+          "static": true
+        },
+        {
+          "args": "(asyncload_zone)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t all_done",
+          "detailed": "\n        ",
+          "name": "all_done",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(asyncload_zt)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* db",
+          "detailed": "\n        ",
+          "name": "db",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* zonefile",
+          "detailed": "\n        ",
+          "name": "zonefile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE * origfile",
+          "detailed": "\n        ",
+          "name": "origfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_view_t* view",
+          "detailed": "\n        ",
+          "name": "view",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t* zone1",
+          "detailed": "\n        ",
+          "name": "zone1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t * zone2",
+          "detailed": "\n        ",
+          "name": "zone2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t * zone3",
+          "detailed": "\n        ",
+          "name": "zone3",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/dns",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

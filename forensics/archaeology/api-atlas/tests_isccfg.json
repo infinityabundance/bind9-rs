@@ -1,0 +1,339 @@
+{
+  "files": {
+    "tests/isccfg/duration_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* duration_conf::string",
+          "detailed": "\n        ",
+          "name": "string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t duration_conf::time",
+          "detailed": "\n        ",
+          "name": "time",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* duration_conf::out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/isccfg/grammar_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *closure, const char *text, int textlen)",
+          "brief": "\n        ",
+          "definition": "static void write_to_buffer",
+          "detailed": "\n        ",
+          "name": "write_to_buffer",
+          "params": [
+            "closure",
+            "text",
+            "textlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(group)",
+          "brief": "\n        ",
+          "definition": "ISC_SETUP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_SETUP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *text)",
+          "brief": "\n        ",
+          "definition": "static void assert_text",
+          "detailed": "\n        ",
+          "name": "assert_text",
+          "params": [
+            "text"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_type_t *map, const char *name)",
+          "brief": "\n        ",
+          "definition": "static const cfg_clausedef_t * find_clause",
+          "detailed": "\n        ",
+          "name": "find_clause",
+          "params": [
+            "map",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *clause_name, const char *name, const char *expected)",
+          "brief": "\n        ",
+          "definition": "static void test__querysource",
+          "detailed": "\n        ",
+          "name": "test__querysource",
+          "params": [
+            "clause_name",
+            "name",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(query_source)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(query_source_v6)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(server_query_source)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(server_query_source_v6)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *config, const char *expected)",
+          "brief": "\n        ",
+          "definition": "static void test__query_source_print",
+          "detailed": "\n        ",
+          "name": "test__query_source_print",
+          "params": [
+            "config",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(query_source_print_none)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(query_source_print_addr)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t gbuffer",
+          "detailed": "\n        ",
+          "name": "gbuffer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "char gtext[512]",
+          "detailed": "\n        ",
+          "name": "gtext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cfg_printer_t gprinter",
+          "detailed": "\n        ",
+          "name": "gprinter",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/isccfg/parser_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(group)",
+          "brief": "\n        ",
+          "definition": "ISC_SETUP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_SETUP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(group)",
+          "brief": "\n        ",
+          "definition": "ISC_TEARDOWN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_TEARDOWN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg, const char *str, int len)",
+          "brief": "\n        ",
+          "definition": "static void append",
+          "detailed": "\n        ",
+          "name": "append",
+          "params": [
+            "arg",
+            "str",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(addzoneconf)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(parse_buffer)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cfg_map_firstclause)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cfg_map_nextclause)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "isc_logcategory_t categories[]",
+          "detailed": "\n        ",
+          "name": "categories",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/isccfg",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

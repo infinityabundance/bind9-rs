@@ -1,0 +1,347 @@
+{
+  "files": {
+    "tests/ns/listenlist_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(ns_listenlist_default)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/ns/netmgr_wrap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_nmhandle_t *source, isc_nmhandle_t **targetp)",
+          "brief": "\n        ",
+          "definition": "void isc_nmhandle_attach",
+          "detailed": "\n        ",
+          "name": "isc_nmhandle_attach",
+          "params": [
+            "source",
+            "targetp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t **handlep)",
+          "brief": "\n        ",
+          "definition": "void isc_nmhandle_detach",
+          "detailed": "\n        ",
+          "name": "isc_nmhandle_detach",
+          "params": [
+            "handlep"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ns_client_t *client ISC_ATTR_UNUSED, isc_result_t result ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void ns_client_error",
+          "detailed": "\n        ",
+          "name": "ns_client_error",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLARG",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t client_refs[32]",
+          "detailed": "\n        ",
+          "name": "client_refs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "atomic_uintptr_t client_addrs[32]",
+          "detailed": "\n        ",
+          "name": "client_addrs",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/ns/notify_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_buffer_t *buf)",
+          "brief": "\n        ",
+          "definition": "static void check_response",
+          "detailed": "\n        ",
+          "name": "check_response",
+          "params": [
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(notify_start)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/ns/plugin_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ns_test_id_t ns_plugin_expandpath_test_params_t::id",
+          "detailed": "\n        ",
+          "name": "id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns_plugin_expandpath_test_params_t::input",
+          "detailed": "\n        ",
+          "name": "input",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t ns_plugin_expandpath_test_params_t::output_size",
+          "detailed": "\n        ",
+          "name": "output_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_result_t ns_plugin_expandpath_test_params_t::result",
+          "detailed": "\n        ",
+          "name": "result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns_plugin_expandpath_test_params_t::output",
+          "detailed": "\n        ",
+          "name": "output",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/ns/query_test.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS__QUERY_START_R_INVALID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS__QUERY_START_R_REFUSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS__QUERY_START_R_CACHE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NS__QUERY_START_R_AUTH",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@142372024121044376003310060262125147215156002156",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ns_test_id_t ns__query_start_test_params_t::id",
+          "detailed": "\n        ",
+          "name": "id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns__query_start_test_params_t::qname",
+          "detailed": "\n        ",
+          "name": "qname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdatatype_t ns__query_start_test_params_t::qtype",
+          "detailed": "\n        ",
+          "name": "qtype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int ns__query_start_test_params_t::qflags",
+          "detailed": "\n        ",
+          "name": "qflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns__query_start_test_params_t::disable_name_checks",
+          "detailed": "\n        ",
+          "name": "disable_name_checks",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns__query_start_test_params_t::recursive_service",
+          "detailed": "\n        ",
+          "name": "recursive_service",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns__query_start_test_params_t::auth_zone_origin",
+          "detailed": "\n        ",
+          "name": "auth_zone_origin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns__query_start_test_params_t::auth_zone_path",
+          "detailed": "\n        ",
+          "name": "auth_zone_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum ns__query_start_test_params_t::@142372024121044376003310060262125147215156002156 ns__query_start_test_params_t::expected_result",
+          "detailed": "\n        ",
+          "name": "expected_result",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/ns",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

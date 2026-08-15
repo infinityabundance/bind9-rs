@@ -1,6 +1,80 @@
 {
   "files": {
     "bin/check/check-tool.c": {
+      "enum_values": [
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_IS_CNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_NO_ADDRESSES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_LOOKUP_FAILURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_EXTRA_A",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_EXTRA_AAAA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_MISSING_GLUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_IS_MXCNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ERR_IS_SRVCNAME",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -264,6 +338,7 @@
       ]
     },
     "bin/check/check-tool.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -383,6 +458,7 @@
       ]
     },
     "bin/check/named-checkconf.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -567,6 +643,26 @@
       ]
     },
     "bin/check/named-checkzone.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "progmode_check",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "progmode_compile",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",

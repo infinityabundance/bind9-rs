@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/rndc/rndc.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -445,6 +446,7 @@
       ]
     },
     "bin/rndc/util.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -497,6 +499,7 @@
       ]
     },
     "bin/rndc/util.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

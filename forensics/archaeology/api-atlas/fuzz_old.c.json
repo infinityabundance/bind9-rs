@@ -1,6 +1,35 @@
 {
   "files": {
     "fuzz/old.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fw_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fw_ordinary",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fw_newcurrent",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",

@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/dns_master_load.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

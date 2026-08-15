@@ -1,0 +1,975 @@
+{
+  "files": {
+    "tests/bench/ascii.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(copy_fn *copier, void *a, void *b, const char *name)",
+          "brief": "\n        ",
+          "definition": "static void time_it",
+          "detailed": "\n        ",
+          "name": "time_it",
+          "params": [
+            "copier",
+            "a",
+            "b",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *a, void *b, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void copy_raw",
+          "detailed": "\n        ",
+          "name": "copy_raw",
+          "params": [
+            "a",
+            "b",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void copy_toupper",
+          "detailed": "\n        ",
+          "name": "copy_toupper",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *a, void *b, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void copy_tolower8",
+          "detailed": "\n        ",
+          "name": "copy_tolower8",
+          "params": [
+            "a",
+            "b",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void copy_tolower1",
+          "detailed": "\n        ",
+          "name": "copy_tolower1",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static bool cmp_tolower1",
+          "detailed": "\n        ",
+          "name": "cmp_tolower1",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void cmp_oldskool",
+          "detailed": "\n        ",
+          "name": "cmp_oldskool",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *a, void *b, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void vcmp_tolower1",
+          "detailed": "\n        ",
+          "name": "vcmp_tolower1",
+          "params": [
+            "a",
+            "b",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *a, void *b, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void cmp_swar",
+          "detailed": "\n        ",
+          "name": "cmp_swar",
+          "params": [
+            "a",
+            "b",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void cmp_chunks1",
+          "detailed": "\n        ",
+          "name": "cmp_chunks1",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void cmp_chunks8",
+          "detailed": "\n        ",
+          "name": "cmp_chunks8",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *va, void *vb, unsigned int size)",
+          "brief": "\n        ",
+          "definition": "static void cmp_oldchunks",
+          "detailed": "\n        ",
+          "name": "cmp_oldchunks",
+          "params": [
+            "va",
+            "vb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TOLOWER",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "(void *a, void *b, unsigned int len)",
+          "brief": "\n        ",
+          "definition": "typedef void copy_fn(void *a, void *b, unsigned int len)",
+          "detailed": "\n        ",
+          "name": "copy_fn",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool oldskool_result",
+          "detailed": "\n        ",
+          "name": "oldskool_result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool tolower1_result",
+          "detailed": "\n        ",
+          "name": "tolower1_result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool swar_result",
+          "detailed": "\n        ",
+          "name": "swar_result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool chunk_result",
+          "detailed": "\n        ",
+          "name": "chunk_result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int chunk_size",
+          "detailed": "\n        ",
+          "name": "chunk_size",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/bench/compress.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_result_t result, const char *msg)",
+          "brief": "\n        ",
+          "definition": "static void CHECKRESULT",
+          "detailed": "\n        ",
+          "name": "CHECKRESULT",
+          "params": [
+            "result",
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/bench/dns_name_fromwire.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static uint32_t old_bench",
+          "detailed": "\n        ",
+          "name": "old_bench",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static uint32_t new_bench",
+          "detailed": "\n        ",
+          "name": "new_bench",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void oldnew_bench",
+          "detailed": "\n        ",
+          "name": "oldnew_bench",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMES",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[1024 *1000]",
+          "brief": "\n        ",
+          "definition": "uint8_t buf[1024 *1000]",
+          "detailed": "\n        ",
+          "name": "buf",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/bench/iterated_hash.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const int count, const int iterations, const unsigned char *salt, const int saltlen, const unsigned char *in, const int inlen)",
+          "brief": "\n        ",
+          "definition": "static void time_it",
+          "detailed": "\n        ",
+          "name": "time_it",
+          "params": [
+            "count",
+            "iterations",
+            "salt",
+            "saltlen",
+            "in",
+            "inlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/bench/load-names.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_thread_t thread_s::thread",
+          "detailed": "\n        ",
+          "name": "thread",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fun* thread_s::fun",
+          "detailed": "\n        ",
+          "name": "fun",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* thread_s::map",
+          "detailed": "\n        ",
+          "name": "map",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t thread_s::start",
+          "detailed": "\n        ",
+          "name": "start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t thread_s::end",
+          "detailed": "\n        ",
+          "name": "end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t thread_s::d0",
+          "detailed": "\n        ",
+          "name": "d0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t thread_s::d1",
+          "detailed": "\n        ",
+          "name": "d1",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/bench/qp-dump.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t smallname_length",
+          "detailed": "\n        ",
+          "name": "smallname_length",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t smallname_labels",
+          "detailed": "\n        ",
+          "name": "smallname_labels",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static isc_refcount_t * smallname_refcount",
+          "detailed": "\n        ",
+          "name": "smallname_refcount",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static uint8_t * smallname_ndata",
+          "detailed": "\n        ",
+          "name": "smallname_ndata",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static uint8_t * smallname_offsets",
+          "detailed": "\n        ",
+          "name": "smallname_offsets",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const dns_name_t *name, void **valp, uint32_t *ctxp)",
+          "brief": "\n        ",
+          "definition": "static void smallname_from_name",
+          "detailed": "\n        ",
+          "name": "smallname_from_name",
+          "params": [
+            "name",
+            "valp",
+            "ctxp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void smallname_free",
+          "detailed": "\n        ",
+          "name": "smallname_free",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void name_from_smallname",
+          "detailed": "\n        ",
+          "name": "name_from_smallname",
+          "params": [
+            "name",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpkey_t key, void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t qpkey_from_smallname",
+          "detailed": "\n        ",
+          "name": "qpkey_from_smallname",
+          "params": [
+            "key",
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void smallname_attach",
+          "detailed": "\n        ",
+          "name": "smallname_attach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void smallname_detach",
+          "detailed": "\n        ",
+          "name": "smallname_detach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, char *buf, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void testname",
+          "detailed": "\n        ",
+          "name": "testname",
+          "params": [
+            "ctx",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "print_megabytes",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_qpmethods_t methods",
+          "detailed": "\n        ",
+          "name": "methods",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/bench/qplookups.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t smallname_length",
+          "detailed": "\n        ",
+          "name": "smallname_length",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t smallname_labels",
+          "detailed": "\n        ",
+          "name": "smallname_labels",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static isc_refcount_t * smallname_refcount",
+          "detailed": "\n        ",
+          "name": "smallname_refcount",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static uint8_t * smallname_ndata",
+          "detailed": "\n        ",
+          "name": "smallname_ndata",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static uint8_t * smallname_offsets",
+          "detailed": "\n        ",
+          "name": "smallname_offsets",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const dns_name_t *name, void **valp, uint32_t *ctxp)",
+          "brief": "\n        ",
+          "definition": "static void smallname_from_name",
+          "detailed": "\n        ",
+          "name": "smallname_from_name",
+          "params": [
+            "name",
+            "valp",
+            "ctxp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void smallname_free",
+          "detailed": "\n        ",
+          "name": "smallname_free",
+          "params": [
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void name_from_smallname",
+          "detailed": "\n        ",
+          "name": "name_from_smallname",
+          "params": [
+            "name",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpkey_t key, void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t qpkey_from_smallname",
+          "detailed": "\n        ",
+          "name": "qpkey_from_smallname",
+          "params": [
+            "key",
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void smallname_attach",
+          "detailed": "\n        ",
+          "name": "smallname_attach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void smallname_detach",
+          "detailed": "\n        ",
+          "name": "smallname_detach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, char *buf, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void testname",
+          "detailed": "\n        ",
+          "name": "testname",
+          "params": [
+            "ctx",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qp_t *qp, const char *filename)",
+          "brief": "\n        ",
+          "definition": "static size_t load_qp",
+          "detailed": "\n        ",
+          "name": "load_qp",
+          "params": [
+            "qp",
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_qpmethods_t methods",
+          "detailed": "\n        ",
+          "name": "methods",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/bench/qpmulti.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* ticker::loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* ticker::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_timer_t* ticker::timer",
+          "detailed": "\n        ",
+          "name": "timer",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/bench/siphash.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KILOHASHES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/bench",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

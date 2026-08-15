@@ -1,6 +1,7 @@
 {
   "files": {
     "fuzz/dns_message_checksig.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

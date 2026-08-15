@@ -1,6 +1,7 @@
 {
   "files": {
     "bin/confgen/include/confgen/os.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -22,6 +23,7 @@
       "variables": []
     },
     "bin/confgen/keygen.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -82,6 +84,7 @@
       "variables": []
     },
     "bin/confgen/keygen.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -153,6 +156,7 @@
       "variables": []
     },
     "bin/confgen/os.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -174,6 +178,7 @@
       "variables": []
     },
     "bin/confgen/rndc-confgen.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -280,6 +285,26 @@
       ]
     },
     "bin/confgen/tsig-keygen.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "progmode_keygen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "progmode_confgen",
+          "params": [],
+          "static": false
+        }
+      ],
       "enums": [
         {
           "args": "",
@@ -389,6 +414,7 @@
       ]
     },
     "bin/confgen/util.c": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {
@@ -441,6 +467,7 @@
       ]
     },
     "bin/confgen/util.h": {
+      "enum_values": [],
       "enums": [],
       "functions": [
         {

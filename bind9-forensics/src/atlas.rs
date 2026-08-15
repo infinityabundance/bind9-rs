@@ -47,11 +47,41 @@ pub struct AtlasFile {
     #[serde(default)]
     pub enums: Vec<serde_json::Value>,
     #[serde(default)]
+    pub enum_values: Vec<serde_json::Value>,
+    #[serde(default)]
     pub structs: Vec<serde_json::Value>,
     #[serde(default)]
     pub macros: Vec<serde_json::Value>,
     #[serde(default)]
     pub variables: Vec<serde_json::Value>,
+}
+
+impl AtlasFile {
+    /// Iterate every inventoried member across all kinds.  The parser
+    /// (scripts/archaeology/parse-doxygen-xml.py) emits a uniform entry
+    /// shape for every kind, so the non-function lists deserialize into the
+    /// same `AtlasFunction` struct; `kind` records the doxygen member kind.
+    pub fn all_members(&self) -> Vec<(&str, AtlasFunction)> {
+        let mut out = Vec::new();
+        for f in &self.functions {
+            out.push(("function", f.clone()));
+        }
+        for (kind, list) in [
+            ("macro", &self.macros),
+            ("enum_value", &self.enum_values),
+            ("enum", &self.enums),
+            ("struct", &self.structs),
+            ("typedef", &self.typedefs),
+            ("variable", &self.variables),
+        ] {
+            for v in list {
+                if let Ok(f) = serde_json::from_value::<AtlasFunction>(v.clone()) {
+                    out.push((kind, f));
+                }
+            }
+        }
+        out
+    }
 }
 
 /// One library/tool inventory.
@@ -79,7 +109,13 @@ pub fn load_all(dir: &str) -> Vec<AtlasInventory> {
             .unwrap_or_default()
             .to_string_lossy()
             .to_string();
-        if !name.starts_with("lib_") && !name.starts_with("bin_") && !name.starts_with("fuzz_") {
+        if !name.starts_with("lib_")
+            && !name.starts_with("bin_")
+            && !name.starts_with("fuzz_")
+            && !name.starts_with("tests_")
+            && !name.starts_with("util_")
+            && !name.starts_with("contrib_")
+        {
             continue;
         }
         if let Ok(text) = std::fs::read_to_string(&p) {
@@ -91,24 +127,33 @@ pub fn load_all(dir: &str) -> Vec<AtlasInventory> {
     out
 }
 
-/// Iterate (library, file, function) triples.
-pub fn all_functions<'a>(
+/// Iterate (library, file, kind, member) quadruples.
+pub fn all_members<'a>(
     inventories: &'a [AtlasInventory],
-) -> impl Iterator<Item = (&'a str, &'a str, &'a AtlasFunction)> {
+) -> impl Iterator<Item = (&'a str, &'a str, &'a str, AtlasFunction)> {
     inventories.iter().flat_map(|inv| {
         inv.files.iter().flat_map(move |(file, f)| {
-            f.functions
-                .iter()
-                .map(move |func| (inv.library.as_str(), file.as_str(), func))
+            f.all_members()
+                .into_iter()
+                .map(move |(kind, member)| (inv.library.as_str(), file.as_str(), kind, member))
         })
     })
 }
 
-/// A coverage rule: the first matching rule for a function name wins.
+/// A coverage rule: the first matching rule for a member wins.  `pattern`
+/// is a glob on the member name; `lib` and `file` (when non-empty) are
+/// globs restricting the rule to a library and/or source file.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CoverageRule {
-    /// Glob pattern on the function name (`*` wildcard), or exact name.
+    /// Glob pattern on the member name (`*` wildcard), or exact name.
     pub pattern: String,
+    /// Restrict to matching libraries (e.g. `lib/dns`, `tests/*`); empty =
+    /// any library.
+    #[serde(default)]
+    pub lib: String,
+    /// Restrict to matching source files; empty = any file.
+    #[serde(default)]
+    pub file: String,
     /// The §47 status.
     pub status: String,
     /// Court ID(s) that cover this surface.
@@ -155,11 +200,14 @@ pub fn glob_match(pattern: &str, name: &str) -> bool {
     }
 }
 
-/// The resolved coverage entry for one function.
+/// The resolved coverage entry for one member.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct CoverageEntry {
     pub library: String,
     pub file: String,
+    /// Doxygen member kind: function | macro | enum_value | enum | struct |
+    /// typedef | variable.
+    pub kind: String,
     pub function: String,
     pub static_: bool,
     pub definition: String,
@@ -170,12 +218,22 @@ pub struct CoverageEntry {
     pub notes: String,
 }
 
-/// Apply rules to all functions; first matching rule wins, then a synthetic
+/// Does a rule apply to (lib, file, name)?  Empty lib/file qualifiers match
+/// everything.
+fn rule_matches(rule: &CoverageRule, lib: &str, file: &str, name: &str) -> bool {
+    (rule.lib.is_empty() || glob_match(&rule.lib, lib))
+        && (rule.file.is_empty() || glob_match(&rule.file, file))
+        && glob_match(&rule.pattern, name)
+}
+
+/// Apply rules to all members; first matching rule wins, then a synthetic
 /// catch-all INTERNAL for static helpers with no doc, else UNKNOWN.
 pub fn resolve(inventories: &[AtlasInventory], rules: &[CoverageRule]) -> Vec<CoverageEntry> {
     let mut out = Vec::new();
-    for (lib, file, func) in all_functions(inventories) {
-        let matched = rules.iter().find(|r| glob_match(&r.pattern, &func.name));
+    for (lib, file, kind, member) in all_members(inventories) {
+        let matched = rules
+            .iter()
+            .find(|r| rule_matches(r, lib, file, &member.name));
         let (status, courts, rust_module, archaeology, notes) = match matched {
             Some(r) => (
                 r.status.clone(),
@@ -185,7 +243,7 @@ pub fn resolve(inventories: &[AtlasInventory], rules: &[CoverageRule]) -> Vec<Co
                 r.notes.clone(),
             ),
             None => {
-                if func.static_ && func.brief.is_empty() {
+                if member.static_ && member.brief.is_empty() {
                     // Internal helper with no documented surface; archived
                     // by source but not a compatibility surface.
                     (
@@ -209,9 +267,10 @@ pub fn resolve(inventories: &[AtlasInventory], rules: &[CoverageRule]) -> Vec<Co
         out.push(CoverageEntry {
             library: lib.to_string(),
             file: file.to_string(),
-            function: func.name.clone(),
-            static_: func.static_,
-            definition: func.definition.clone(),
+            kind: kind.to_string(),
+            function: member.name.clone(),
+            static_: member.static_,
+            definition: member.definition.clone(),
             status,
             courts,
             rust_module,
@@ -270,5 +329,56 @@ mod tests {
         let entries = resolve(&[inv], &[]);
         assert_eq!(entries.len(), 1);
         assert_eq!(entries[0].status, "UNKNOWN");
+        assert_eq!(entries[0].kind, "function");
+    }
+
+    #[test]
+    fn lib_qualified_rules_and_enum_values() {
+        let inv = AtlasInventory {
+            schema_version: 1,
+            version: "9.20.26".to_string(),
+            library: "tests/dns".to_string(),
+            files: BTreeMap::from([(
+                "tests/dns/name_test.c".to_string(),
+                AtlasFile {
+                    functions: vec![AtlasFunction {
+                        name: "name_test_main".to_string(),
+                        static_: false,
+                        definition: "int name_test_main".to_string(),
+                        args: String::new(),
+                        brief: "test".to_string(),
+                        detailed: String::new(),
+                        params: Vec::new(),
+                    }],
+                    enum_values: vec![serde_json::json!({
+                        "name": "ISC_R_SUCCESS",
+                        "static": false,
+                        "definition": "enum value",
+                        "args": "= 0",
+                        "brief": "",
+                        "detailed": "",
+                        "params": []
+                    })],
+                    ..Default::default()
+                },
+            )]),
+        };
+        let rules = vec![CoverageRule {
+            pattern: "*".to_string(),
+            lib: "tests/*".to_string(),
+            file: String::new(),
+            status: "INTERNAL".to_string(),
+            courts: Vec::new(),
+            rust_module: String::new(),
+            archaeology: Vec::new(),
+            notes: "test harness".to_string(),
+        }];
+        let entries = resolve(&[inv], &rules);
+        assert_eq!(entries.len(), 2);
+        assert_eq!(entries[0].status, "INTERNAL");
+        assert_eq!(entries[0].function, "name_test_main");
+        assert_eq!(entries[1].kind, "enum_value");
+        assert_eq!(entries[1].status, "INTERNAL");
+        assert_eq!(entries[1].function, "ISC_R_SUCCESS");
     }
 }

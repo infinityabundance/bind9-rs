@@ -1,6 +1,7 @@
 {
-  "file_count": 727,
-  "function_count": 5679,
+  "enum_value_count": 1035,
+  "file_count": 888,
+  "function_count": 6794,
   "libraries": [
     "bin/check",
     "bin/confgen",
@@ -11,6 +12,7 @@
     "bin/nsupdate",
     "bin/plugins",
     "bin/rndc",
+    "bin/tests",
     "bin/tools",
     "fuzz/dns_master_load.c",
     "fuzz/dns_message_checksig.c",
@@ -29,9 +31,19 @@
     "fuzz/old.h",
     "lib/dns",
     "lib/isc",
+    "lib/isccc",
     "lib/isccfg",
-    "lib/ns"
+    "lib/ns",
+    "tests/bench",
+    "tests/dns",
+    "tests/include",
+    "tests/isc",
+    "tests/isccfg",
+    "tests/libtest",
+    "tests/ns"
   ],
+  "macro_count": 1863,
   "schema_version": 1,
+  "skipped_xml_files": [],
   "version": "9.20.26"
 }
