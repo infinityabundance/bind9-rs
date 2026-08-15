@@ -1,0 +1,19 @@
+schema_version = 1
+court_id = "CORE-NAME-WIRE-0001"
+question = "dns_name_fromwire semantics: labels, compression pointers, bounds, and error codes"
+subsystem = "dns/name"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "the parsed name text must match byte-for-byte",
+    "error result texts must match BIND's isc_result_totext strings",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/name.c dns_name_fromwire (9.20.26): marker/segment rule, BADPOINTER, BADLABELTYPE, NAMETOOLONG",
+    "RFC 1035 §4.1.4",
+    "spec §16, §79",
+]

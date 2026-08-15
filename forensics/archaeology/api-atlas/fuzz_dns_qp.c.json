@@ -1,0 +1,200 @@
+{
+  "files": {
+    "fuzz/dns_qp.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void fuzz_attach",
+          "detailed": "\n        ",
+          "name": "fuzz_attach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void fuzz_detach",
+          "detailed": "\n        ",
+          "name": "fuzz_detach",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpkey_t key, void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t fuzz_makekey",
+          "detailed": "\n        ",
+          "name": "fuzz_makekey",
+          "params": [
+            "key",
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, char *buf, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void fuzz_triename",
+          "detailed": "\n        ",
+          "name": "fuzz_triename",
+          "params": [
+            "ctx",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static uint8_t random_byte",
+          "detailed": "\n        ",
+          "name": "random_byte",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int *argc, char ***argv)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerInitialize",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerInitialize",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRACE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ASSERT",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t refcount",
+          "detailed": "\n        ",
+          "name": "refcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool exists",
+          "detailed": "\n        ",
+          "name": "exists",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_qpkey_t key",
+          "detailed": "\n        ",
+          "name": "key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_qpkey_t ascii",
+          "detailed": "\n        ",
+          "name": "ascii",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256 *256/4]",
+          "brief": "\n        ",
+          "definition": "struct @121074154346257024020337361142161155317240242052 item[256 * 256 / 4]",
+          "detailed": "\n        ",
+          "name": "item",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_qpmethods_t fuzz_methods",
+          "detailed": "\n        ",
+          "name": "fuzz_methods",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "fuzz/dns_qp.c",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

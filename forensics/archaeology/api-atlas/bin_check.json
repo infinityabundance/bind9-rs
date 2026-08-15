@@ -1,0 +1,743 @@
+{
+  "files": {
+    "bin/check/check-tool.c": {
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@146126324012056236371314016101240231241067137146",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(char *key, unsigned int type, isc_symvalue_t value, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static void freekey",
+          "detailed": "\n        ",
+          "name": "freekey",
+          "params": [
+            "key",
+            "type",
+            "value",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *key, int value)",
+          "brief": "\n        ",
+          "definition": "static void add",
+          "detailed": "\n        ",
+          "name": "add",
+          "params": [
+            "key",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *key, int value)",
+          "brief": "\n        ",
+          "definition": "static bool logged",
+          "detailed": "\n        ",
+          "name": "logged",
+          "params": [
+            "key",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_zone_t *zone, const dns_name_t *name, const dns_name_t *owner, dns_rdataset_t *a, dns_rdataset_t *aaaa)",
+          "brief": "\n        ",
+          "definition": "static bool checkns",
+          "detailed": "\n        ",
+          "name": "checkns",
+          "params": [
+            "zone",
+            "name",
+            "owner",
+            "a",
+            "aaaa"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_zone_t *zone, const dns_name_t *name, const dns_name_t *owner)",
+          "brief": "\n        ",
+          "definition": "static bool checkmx",
+          "detailed": "\n        ",
+          "name": "checkmx",
+          "params": [
+            "zone",
+            "name",
+            "owner"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_zone_t *zone, const dns_name_t *name, const dns_name_t *owner)",
+          "brief": "\n        ",
+          "definition": "static bool checksrv",
+          "detailed": "\n        ",
+          "name": "checksrv",
+          "params": [
+            "zone",
+            "name",
+            "owner"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, FILE *errout, isc_log_t **logp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t setup_logging",
+          "detailed": "\n        ",
+          "name": "setup_logging",
+          "params": [
+            "mctx",
+            "errout",
+            "logp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_mem_t *mctx, const char *zonename, const char *filename, dns_masterformat_t fileformat, const char *classname, dns_ttl_t maxttl, dns_zone_t **zonep)",
+          "brief": "load the zone",
+          "definition": "isc_result_t load_zone",
+          "detailed": "\n        ",
+          "name": "load_zone",
+          "params": [
+            "mctx",
+            "zonename",
+            "filename",
+            "fileformat",
+            "classname",
+            "maxttl",
+            "zonep"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zonename, dns_zone_t *zone, const char *filename, dns_masterformat_t fileformat, const dns_master_style_t *style, const uint32_t rawversion)",
+          "brief": "dump the zone",
+          "definition": "isc_result_t dump_zone",
+          "detailed": "\n        ",
+          "name": "dump_zone",
+          "params": [
+            "zonename",
+            "zone",
+            "filename",
+            "fileformat",
+            "style",
+            "rawversion"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_SIBLING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_LOCAL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* dbtype[]",
+          "detailed": "\n        ",
+          "name": "dbtype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static void debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": true
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* journal",
+          "detailed": "journal file",
+          "name": "journal",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool nomerge",
+          "detailed": "\n        ",
+          "name": "nomerge",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool docheckmx",
+          "detailed": "\n        ",
+          "name": "docheckmx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dochecksrv",
+          "detailed": "\n        ",
+          "name": "dochecksrv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool docheckns",
+          "detailed": "\n        ",
+          "name": "docheckns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zoneopt_t zone_options",
+          "detailed": "\n        ",
+          "name": "zone_options",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "isc_logcategory_t categories[]",
+          "detailed": "\n        ",
+          "name": "categories",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_symtab_t* symtab",
+          "detailed": "\n        ",
+          "name": "symtab",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* sym_mctx",
+          "detailed": "\n        ",
+          "name": "sym_mctx",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/check/check-tool.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, FILE *errout, isc_log_t **logp)",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t setup_logging",
+          "detailed": "\n        ",
+          "name": "setup_logging",
+          "params": [
+            "mctx",
+            "errout",
+            "logp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_mem_t *mctx, const char *zonename, const char *filename, dns_masterformat_t fileformat, const char *classname, dns_ttl_t maxttl, dns_zone_t **zonep)",
+          "brief": "load the zone",
+          "definition": "isc_result_t load_zone",
+          "detailed": "\n        ",
+          "name": "load_zone",
+          "params": [
+            "mctx",
+            "zonename",
+            "filename",
+            "fileformat",
+            "classname",
+            "maxttl",
+            "zonep"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zonename, dns_zone_t *zone, const char *filename, dns_masterformat_t fileformat, const dns_master_style_t *style, const uint32_t rawversion)",
+          "brief": "dump the zone",
+          "definition": "isc_result_t dump_zone",
+          "detailed": "\n        ",
+          "name": "dump_zone",
+          "params": [
+            "zonename",
+            "zone",
+            "filename",
+            "fileformat",
+            "style",
+            "rawversion"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* journal",
+          "detailed": "\n        ",
+          "name": "journal",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool nomerge",
+          "detailed": "\n        ",
+          "name": "nomerge",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool docheckmx",
+          "detailed": "\n        ",
+          "name": "docheckmx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool docheckns",
+          "detailed": "\n        ",
+          "name": "docheckns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dochecksrv",
+          "detailed": "\n        ",
+          "name": "dochecksrv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zoneopt_t zone_options",
+          "detailed": "\n        ",
+          "name": "zone_options",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/check/named-checkconf.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "usage",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *clausename, const cfg_obj_t *obj, void *arg)",
+          "brief": "directory callback",
+          "definition": "static isc_result_t directory_callback",
+          "detailed": "\n        ",
+          "name": "directory_callback",
+          "params": [
+            "clausename",
+            "obj",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t **maps, const char *name, const cfg_obj_t **obj)",
+          "brief": "\n        ",
+          "definition": "static bool get_maps",
+          "detailed": "\n        ",
+          "name": "get_maps",
+          "params": [
+            "maps",
+            "name",
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t **maps, const cfg_obj_t **obj)",
+          "brief": "\n        ",
+          "definition": "static bool get_checknames",
+          "detailed": "\n        ",
+          "name": "get_checknames",
+          "params": [
+            "maps",
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *zfile, const char *zclass, isc_mem_t *mctx)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t configure_hint",
+          "detailed": "\n        ",
+          "name": "configure_hint",
+          "params": [
+            "zfile",
+            "zclass",
+            "mctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *vclass, const char *view, const cfg_obj_t *zconfig, const cfg_obj_t *vconfig, const cfg_obj_t *config, isc_mem_t *mctx, bool list)",
+          "brief": "configure the zone",
+          "definition": "static isc_result_t configure_zone",
+          "detailed": "\n        ",
+          "name": "configure_zone",
+          "params": [
+            "vclass",
+            "view",
+            "zconfig",
+            "vconfig",
+            "config",
+            "mctx",
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *vclass, const char *view, const cfg_obj_t *config, const cfg_obj_t *vconfig, isc_mem_t *mctx, bool list)",
+          "brief": "configure a view",
+          "definition": "static isc_result_t configure_view",
+          "detailed": "\n        ",
+          "name": "configure_view",
+          "params": [
+            "vclass",
+            "view",
+            "config",
+            "vconfig",
+            "mctx",
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *classobj, dns_rdataclass_t defclass, dns_rdataclass_t *classp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t config_getclass",
+          "detailed": "\n        ",
+          "name": "config_getclass",
+          "params": [
+            "classobj",
+            "defclass",
+            "classp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *config, isc_mem_t *mctx, bool list_zones)",
+          "brief": "load zones from the configuration",
+          "definition": "static isc_result_t load_zones_fromconfig",
+          "detailed": "\n        ",
+          "name": "load_zones_fromconfig",
+          "params": [
+            "config",
+            "mctx",
+            "list_zones"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *closure, const char *text, int textlen)",
+          "brief": "\n        ",
+          "definition": "static void output",
+          "detailed": "\n        ",
+          "name": "output",
+          "params": [
+            "closure",
+            "text",
+            "textlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "The main processing routine.",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_FLAGS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "\n        ",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* logc",
+          "detailed": "\n        ",
+          "name": "logc",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/check/named-checkzone.c": {
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@177256134277007205161331000154337317146347031147",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(int ret)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "ret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void destroy",
+          "detailed": "\n        ",
+          "name": "destroy",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "main processing routine",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ERRRET",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROGCMP",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGCMP",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int quiet",
+          "detailed": "\n        ",
+          "name": "quiet",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t* zone",
+          "detailed": "\n        ",
+          "name": "zone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zonetype_t zonetype",
+          "detailed": "\n        ",
+          "name": "zonetype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int dumpzone",
+          "detailed": "\n        ",
+          "name": "dumpzone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* output_filename",
+          "detailed": "\n        ",
+          "name": "output_filename",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* prog_name",
+          "detailed": "\n        ",
+          "name": "prog_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_master_style_t* outputstyle",
+          "detailed": "\n        ",
+          "name": "outputstyle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum @177256134277007205161331000154337317146347031147 progmode",
+          "detailed": "\n        ",
+          "name": "progmode",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "bin/check",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

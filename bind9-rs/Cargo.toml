@@ -1,0 +1,27 @@
+# bind9-rs — public compatibility facade (spec §4.1).
+#
+# This crate is the coherent public interface for the whole implementation:
+# top-level types, stable re-exports, compatibility profiles, feature
+# discovery, version reporting, the shared error taxonomy, embedding
+# interfaces, high-level server construction and configuration entry points.
+#
+# It intentionally does NOT re-export every internal module of the other five
+# crates; internals are private, the facade is the API.
+
+[package]
+name = "bind9-rs"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "Native Rust BIND 9 reimplementation — public compatibility facade"
+
+[dependencies]
+bind9-core.workspace = true
+bind9-server.workspace = true
+bind9-tools.workspace = true
+bind9-platform.workspace = true
+
+[lints]
+workspace = true

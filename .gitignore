@@ -1,0 +1,16 @@
+/target
+**/*.rs.bk
+*.swp
+.DS_Store
+
+# Oracle build artifacts and downloaded sources are reproducible from the
+# manifests under forensics/sources/; keep the raw trees and binaries out of
+# version control (the manifests and receipts are the committed evidence).
+/forensics/oracle/work/
+/forensics/oracle/build/
+/forensics/sources/*.tar.gz
+/forensics/sources/*.tar.xz
+/forensics/sources/*.asc
+
+# Court run artifacts that are pure build products (not evidence).
+/forensics/courts/**/work/

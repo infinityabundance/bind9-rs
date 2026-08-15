@@ -1,0 +1,50 @@
+{
+  "files": {
+    "fuzz/main.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "static void test_one_file",
+          "detailed": "\n        ",
+          "name": "test_one_file",
+          "params": [
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *dirname)",
+          "brief": "\n        ",
+          "definition": "static void test_all_from",
+          "detailed": "\n        ",
+          "name": "test_all_from",
+          "params": [
+            "dirname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "fuzz/main.c",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

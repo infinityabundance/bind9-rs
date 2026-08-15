@@ -1,0 +1,18 @@
+schema_version = 1
+court_id = "CORE-NAME-TEXT-0001"
+question = "dns_name_fromtext + totext + towire semantics for textual names against the root origin"
+subsystem = "dns/name"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "the formatted text, wire hex, countlabels and length must match byte-for-byte",
+    "error result texts must match BIND's isc_result_totext strings",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/name.c dns_name_fromtext / dns_name_totext / dns_name_towire (9.20.26)",
+    "spec §16, §79",
+]

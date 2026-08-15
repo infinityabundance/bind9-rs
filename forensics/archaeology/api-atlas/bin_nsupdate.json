@@ -1,0 +1,34 @@
+{
+  "files": {
+    "bin/nsupdate/nsupdate.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_message_t* nsu_requestinfo::msg",
+          "detailed": "\n        ",
+          "name": "msg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* nsu_requestinfo::addr",
+          "detailed": "\n        ",
+          "name": "addr",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "bin/nsupdate",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

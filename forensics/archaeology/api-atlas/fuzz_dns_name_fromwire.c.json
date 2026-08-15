@@ -1,0 +1,50 @@
+{
+  "files": {
+    "fuzz/dns_name_fromwire.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int *argc ISC_ATTR_UNUSED, char ***argv ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerInitialize",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerInitialize",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "fuzz/dns_name_fromwire.c",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

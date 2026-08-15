@@ -1,0 +1,6 @@
+# Reproducibility requirement (spec §45): receipts must record the Rust
+# compiler version.  The toolchain file pins the channel; the exact version is
+# recorded in each receipt's environment digest.
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy"]

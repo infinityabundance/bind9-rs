@@ -1,0 +1,502 @@
+{
+  "files": {
+    "bin/confgen/include/confgen/os.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(FILE *fd, const char *user)",
+          "brief": "Set the owner of the file referenced by 'fd' to 'user'. Returns: 0 success -1 insufficient permissions, or 'user' does not exist.",
+          "definition": "ISC_LANG_BEGINDECLS int set_user",
+          "detailed": "\n        ",
+          "name": "set_user",
+          "params": [
+            "fd",
+            "user"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/confgen/keygen.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *name)",
+          "brief": "Convert string to algorithm type.",
+          "definition": "dns_secalg_t alg_fromtext",
+          "detailed": "\n        ",
+          "name": "alg_fromtext",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_secalg_t alg)",
+          "brief": "Return default keysize for a given algorithm type.",
+          "definition": "int alg_bits",
+          "detailed": "\n        ",
+          "name": "alg_bits",
+          "params": [
+            "alg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_mem_t *mctx, dns_secalg_t alg, int keysize, isc_buffer_t *key_txtbuffer)",
+          "brief": "Generate a key of size 'keysize' and place it in 'key_txtbuffer'.",
+          "definition": "void generate_key",
+          "detailed": "\n        ",
+          "name": "generate_key",
+          "params": [
+            "mctx",
+            "alg",
+            "keysize",
+            "key_txtbuffer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *keyfile, const char *user, const char *keyname, isc_buffer_t *secret, dns_secalg_t alg)",
+          "brief": "Write a key file to 'keyfile'. If 'user' is non-NULL, make that user the owner of the file. The key will have the name 'keyname' and the secret in the buffer 'secret'.",
+          "definition": "void write_key_file",
+          "detailed": "\n        ",
+          "name": "write_key_file",
+          "params": [
+            "keyfile",
+            "user",
+            "keyname",
+            "secret",
+            "alg"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/confgen/keygen.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, dns_secalg_t alg, int keysize, isc_buffer_t *key_txtbuffer)",
+          "brief": "Generate a key of size 'keysize' and place it in 'key_txtbuffer'.",
+          "definition": "ISC_LANG_BEGINDECLS void generate_key",
+          "detailed": "\n        ",
+          "name": "generate_key",
+          "params": [
+            "mctx",
+            "alg",
+            "keysize",
+            "key_txtbuffer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *keyfile, const char *user, const char *keyname, isc_buffer_t *secret, dns_secalg_t alg)",
+          "brief": "Write a key file to 'keyfile'. If 'user' is non-NULL, make that user the owner of the file. The key will have the name 'keyname' and the secret in the buffer 'secret'.",
+          "definition": "void write_key_file",
+          "detailed": "\n        ",
+          "name": "write_key_file",
+          "params": [
+            "keyfile",
+            "user",
+            "keyname",
+            "secret",
+            "alg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_secalg_t alg)",
+          "brief": "\n        ",
+          "definition": "const char * alg_totext",
+          "detailed": "\n        ",
+          "name": "alg_totext",
+          "params": [
+            "alg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *name)",
+          "brief": "Convert string to algorithm type.",
+          "definition": "dns_secalg_t alg_fromtext",
+          "detailed": "\n        ",
+          "name": "alg_fromtext",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_secalg_t alg)",
+          "brief": "Return default keysize for a given algorithm type.",
+          "definition": "int alg_bits",
+          "detailed": "\n        ",
+          "name": "alg_bits",
+          "params": [
+            "alg"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/confgen/os.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(FILE *fd, const char *user)",
+          "brief": "Set the owner of the file referenced by 'fd' to 'user'. Returns: 0 success -1 insufficient permissions, or 'user' does not exist.",
+          "definition": "int set_user",
+          "detailed": "\n        ",
+          "name": "set_user",
+          "params": [
+            "fd",
+            "user"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/confgen/rndc-confgen.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "rndc-confgen generates configuration files for rndc. It can be used as a convenient alternative to writing the rndc.conf file and the corresponding controls and key statements in named.conf by hand. Alternatively, it can be run with the -a option to set up a rndc.key file and avoid the need for a rndc.conf file and a controls statement altogether.",
+          "name": "DEFAULT_KEYNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_SERVER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_PORT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "char program[256]",
+          "detailed": "\n        ",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "verbosity: set by -v and -q option in each program, defined in dnssectool.c",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* keyfile",
+          "detailed": "\n        ",
+          "name": "keyfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char * keydef",
+          "detailed": "\n        ",
+          "name": "keydef",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/confgen/tsig-keygen.c": {
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@267312127346046340101323047157345037136213003243",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "tsig-keygen generates TSIG keys that can be used in named configuration files for dynamic DNS.",
+          "name": "KEYGEN_DEFAULT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CONFGEN_DEFAULT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROGCMP",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "char program[256]",
+          "detailed": "\n        ",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum @267312127346046340101323047157345037136213003243 progmode",
+          "detailed": "\n        ",
+          "name": "progmode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "verbosity: set by -v and -q option in each program, defined in dnssectool.c",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/confgen/util.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void notify",
+          "detailed": "\n        ",
+          "name": "notify",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "\n        ",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/confgen/util.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *fmt,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS void notify",
+          "detailed": "\n        ",
+          "name": "notify",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS void noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NS_CONTROL_PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "bin/confgen",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

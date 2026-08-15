@@ -1,0 +1,50 @@
+OK .
+OK a.
+OK www.
+OK www.example.com.
+OK aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.
+OK aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.
+ERR name too long
+ERR bad label type
+ERR bad label type
+ERR bad label type
+ERR bad label type
+ERR bad label type
+ERR bad label type
+OK a.
+ERR bad label type
+ERR bad label type
+OK y.c.
+OK a.b.
+ERR bad compression pointer
+ERR bad compression pointer
+ERR bad compression pointer
+ERR bad compression pointer
+ERR bad compression pointer
+ERR bad compression pointer
+ERR bad compression pointer
+OK b.
+OK .
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+ERR unexpected end of input
+OK a.
+OK .

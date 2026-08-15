@@ -1,0 +1,26 @@
+# bind9-core — DNS semantics and protocol machinery (spec §4.2).
+#
+# Everything that is about DNS itself: names, labels, classes, types, rdata,
+# wire parsing/rendering, compression, presentation/masterfile, EDNS,
+# DNSSEC, zones, transfers, updates, the resolver state machine, caches, ACLs,
+# RPZ, catalog zones.  Grouped hierarchically as modules; this crate must
+# implement protocol invariants so that hostile input cannot break them
+# (§4.2 defensive requirements).
+#
+# Dependency policy (§54): this crate currently has ZERO external
+# dependencies.  Cryptography (DNSSEC validation/signing) will arrive later as
+# a deliberately audited dependency, never bespoke primitives (§25).
+
+[package]
+name = "bind9-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "bind9-rs DNS semantics and protocol machinery"
+
+[dependencies]
+
+[lints]
+workspace = true

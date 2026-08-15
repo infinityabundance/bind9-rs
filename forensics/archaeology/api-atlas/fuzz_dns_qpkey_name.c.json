@@ -1,0 +1,50 @@
+{
+  "files": {
+    "fuzz/dns_qpkey_name.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int *argc, char ***argv)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerInitialize",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerInitialize",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "fuzz/dns_qpkey_name.c",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

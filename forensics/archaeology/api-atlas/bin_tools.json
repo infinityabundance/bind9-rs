@@ -1,0 +1,1400 @@
+{
+  "files": {
+    "bin/tools/arpaname.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNUSED",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tools/dnstap-read.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dtdata_t *dt)",
+          "brief": "\n        ",
+          "definition": "static void print_dtdata",
+          "detailed": "\n        ",
+          "name": "print_dtdata",
+          "params": [
+            "dt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dtdata_t *dt)",
+          "brief": "\n        ",
+          "definition": "static void print_hex",
+          "detailed": "\n        ",
+          "name": "print_hex",
+          "params": [
+            "dt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dtdata_t *dt, const dns_master_style_t *style)",
+          "brief": "\n        ",
+          "definition": "static void print_packet",
+          "detailed": "\n        ",
+          "name": "print_packet",
+          "params": [
+            "dt",
+            "style"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dtdata_t *dt)",
+          "brief": "\n        ",
+          "definition": "static void print_yaml",
+          "detailed": "\n        ",
+          "name": "print_yaml",
+          "params": [
+            "dt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKM",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool memrecord",
+          "detailed": "\n        ",
+          "name": "memrecord",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool printmessage",
+          "detailed": "\n        ",
+          "name": "printmessage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool hexmessage",
+          "detailed": "\n        ",
+          "name": "hexmessage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool yaml",
+          "detailed": "\n        ",
+          "name": "yaml",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool timestampmillis",
+          "detailed": "\n        ",
+          "name": "timestampmillis",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "program name, statically initialized in each program",
+          "name": "program",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tools/mdig.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct query)",
+          "brief": "opcode text",
+          "definition": "static ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rcode_t rcode)",
+          "brief": "safe rcodetext[]",
+          "definition": "static char * rcode_totext",
+          "detailed": "\n        ",
+          "name": "rcode_totext",
+          "params": [
+            "rcode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void recvresponse",
+          "detailed": "\n        ",
+          "name": "recvresponse",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg, uint16_t udpsize, uint16_t edns, unsigned int flags, dns_ednsopt_t *opts, size_t count)",
+          "brief": "Add EDNS0 option record to a message. Currently, the only supported options are UDP buffer size, the DO bit, and EDNS options (e.g., NSID, COOKIE, client-subnet).",
+          "definition": "static void add_opt",
+          "detailed": "\n        ",
+          "name": "add_opt",
+          "params": [
+            "msg",
+            "udpsize",
+            "edns",
+            "flags",
+            "opts",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *cookie, size_t len)",
+          "brief": "\n        ",
+          "definition": "static void compute_cookie",
+          "detailed": "\n        ",
+          "name": "compute_cookie",
+          "params": [
+            "cookie",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct query *query)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t sendquery",
+          "detailed": "\n        ",
+          "name": "sendquery",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void sendqueries",
+          "detailed": "\n        ",
+          "name": "sendqueries",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "help",
+          "definition": "static void help",
+          "detailed": "\n        ",
+          "name": "help",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "static noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc, int base)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_uint_helper",
+          "detailed": "\n        ",
+          "name": "parse_uint_helper",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc",
+            "base"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_uint",
+          "detailed": "\n        ",
+          "name": "parse_uint",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_xint",
+          "detailed": "\n        ",
+          "name": "parse_xint",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct query *query)",
+          "brief": "\n        ",
+          "definition": "static void newopts",
+          "detailed": "\n        ",
+          "name": "newopts",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct query *query, char *code, char *value)",
+          "brief": "\n        ",
+          "definition": "static void save_opt",
+          "detailed": "\n        ",
+          "name": "save_opt",
+          "params": [
+            "query",
+            "code",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_sockaddr_t **sap, const char *value)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_netprefix",
+          "detailed": "\n        ",
+          "name": "parse_netprefix",
+          "params": [
+            "sap",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *text, int len, char **p, char *end)",
+          "brief": "Append 'len' bytes of 'text' at '*p', failing with ISC_R_NOSPACE if that would advance p past 'end'.",
+          "definition": "static isc_result_t append",
+          "detailed": "\n        ",
+          "name": "append",
+          "params": [
+            "text",
+            "len",
+            "p",
+            "end"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *in, char **p, char *end)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t reverse_octets",
+          "detailed": "\n        ",
+          "name": "reverse_octets",
+          "params": [
+            "in",
+            "p",
+            "end"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *reverse, size_t len, const char *value)",
+          "brief": "\n        ",
+          "definition": "static void get_reverse",
+          "detailed": "\n        ",
+          "name": "get_reverse",
+          "params": [
+            "reverse",
+            "len",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *option, struct query *query, bool global)",
+          "brief": "We're not using isc_commandline_parse() here since the command line syntax of mdig is quite a bit different from that which can be described by that routine. XXX doc options.",
+          "definition": "static void plus_option",
+          "detailed": "\n        ",
+          "name": "plus_option",
+          "params": [
+            "option",
+            "query",
+            "global"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *option, char *next, struct query *query, bool global, bool *setname)",
+          "brief": "\n        ",
+          "definition": "static bool dash_option",
+          "detailed": "\n        ",
+          "name": "dash_option",
+          "params": [
+            "option",
+            "next",
+            "query",
+            "global",
+            "setname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static struct query * clone_default_query",
+          "detailed": "\n        ",
+          "name": "clone_default_query",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "Because we may be trying to do memory allocation recording, we're going to need to parse the arguments for the -m before we start the main argument parsing routine.",
+          "definition": "static void preparse_args",
+          "detailed": "I'd prefer not to have to do this, but I am not quite sure how else to fix the problem. Argument parsing in mdig involves memory allocation by its nature, so it can't be done in the main argument parser.",
+          "name": "preparse_args",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool is_batchfile, int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "is_batchfile",
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dispatchmgr_t *manager)",
+          "brief": "\n        ",
+          "definition": "static void set_source_ports",
+          "detailed": "\n        ",
+          "name": "set_source_ports",
+          "params": [
+            "manager"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void teardown",
+          "detailed": "\n        ",
+          "name": "teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void setup",
+          "detailed": "\n        ",
+          "name": "setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "Main processing routine for mdig.",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKM",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RUNCHECK",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ADD_STRING",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MXNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMMSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "OUTPUTBUF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXPORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXTIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TCPTIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UDPTIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXTRIES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EDNSOPTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FULLCHECK",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FULLCHECK2",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_requestmgr_t* requestmgr",
+          "detailed": "\n        ",
+          "name": "requestmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* batchname",
+          "detailed": "\n        ",
+          "name": "batchname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* batchfp",
+          "detailed": "\n        ",
+          "name": "batchfp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool burst",
+          "detailed": "\n        ",
+          "name": "burst",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv4",
+          "detailed": "\n        ",
+          "name": "have_ipv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv6",
+          "detailed": "\n        ",
+          "name": "have_ipv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_src",
+          "detailed": "\n        ",
+          "name": "have_src",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool tcp_mode",
+          "detailed": "\n        ",
+          "name": "tcp_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool besteffort",
+          "detailed": "\n        ",
+          "name": "besteffort",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_short_form",
+          "detailed": "\n        ",
+          "name": "display_short_form",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_headers",
+          "detailed": "\n        ",
+          "name": "display_headers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_comments",
+          "detailed": "\n        ",
+          "name": "display_comments",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int display_rrcomments",
+          "detailed": "\n        ",
+          "name": "display_rrcomments",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_ttlunits",
+          "detailed": "\n        ",
+          "name": "display_ttlunits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_ttl",
+          "detailed": "\n        ",
+          "name": "display_ttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_class",
+          "detailed": "\n        ",
+          "name": "display_class",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_crypto",
+          "detailed": "\n        ",
+          "name": "display_crypto",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_multiline",
+          "detailed": "\n        ",
+          "name": "display_multiline",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_question",
+          "detailed": "\n        ",
+          "name": "display_question",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_answer",
+          "detailed": "\n        ",
+          "name": "display_answer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_authority",
+          "detailed": "\n        ",
+          "name": "display_authority",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_additional",
+          "detailed": "\n        ",
+          "name": "display_additional",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool display_unknown_format",
+          "detailed": "\n        ",
+          "name": "display_unknown_format",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool yaml",
+          "detailed": "\n        ",
+          "name": "yaml",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool continue_on_error",
+          "detailed": "\n        ",
+          "name": "continue_on_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t display_splitwidth",
+          "detailed": "\n        ",
+          "name": "display_splitwidth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t srcaddr",
+          "detailed": "\n        ",
+          "name": "srcaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* server",
+          "detailed": "\n        ",
+          "name": "server",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t dstaddr",
+          "detailed": "\n        ",
+          "name": "dstaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "in_port_t port",
+          "detailed": "\n        ",
+          "name": "port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[33]",
+          "brief": "\n        ",
+          "definition": "unsigned char cookie_secret[33]",
+          "detailed": "\n        ",
+          "name": "cookie_secret",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int onfly",
+          "detailed": "\n        ",
+          "name": "onfly",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[81]",
+          "brief": "\n        ",
+          "definition": "char hexcookie[81]",
+          "detailed": "\n        ",
+          "name": "hexcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t bind_any",
+          "detailed": "\n        ",
+          "name": "bind_any",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatchmgr_t* dispatchmgr",
+          "detailed": "\n        ",
+          "name": "dispatchmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatch_t* dispatchvx",
+          "detailed": "\n        ",
+          "name": "dispatchvx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_view_t* view",
+          "detailed": "\n        ",
+          "name": "view",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct query default_query",
+          "detailed": "\n        ",
+          "name": "default_query",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "return code text",
+          "definition": "const char* const rcodetext[]",
+          "detailed": "\n        ",
+          "name": "rcodetext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "true returned if value was used",
+          "definition": "const char* single_dash_opts",
+          "detailed": "\n        ",
+          "name": "single_dash_opts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* dash_opts",
+          "detailed": "\n        ",
+          "name": "dash_opts",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tools/named-journalprint.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, FILE *errout, isc_log_t **logp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t setup_logging",
+          "detailed": "\n        ",
+          "name": "setup_logging",
+          "params": [
+            "mctx",
+            "errout",
+            "logp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tools/named-nzd2nzf.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/tools/named-rrchecker.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_lex_t* lex",
+          "detailed": "\n        ",
+          "name": "lex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_lexspecials_t specials",
+          "detailed": "\n        ",
+          "name": "specials",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/tools/nsec3hash.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_result_t result, const char *message)",
+          "brief": "\n        ",
+          "definition": "static void check_result",
+          "detailed": "\n        ",
+          "name": "check_result",
+          "params": [
+            "result",
+            "message"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(nsec3printer *nsec3print, const char *algostr, const char *flagstr, const char *iterstr, const char *saltstr, const char *domain)",
+          "brief": "\n        ",
+          "definition": "static void nsec3hash",
+          "detailed": "\n        ",
+          "name": "nsec3hash",
+          "params": [
+            "nsec3print",
+            "algostr",
+            "flagstr",
+            "iterstr",
+            "saltstr",
+            "domain"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int algo, unsigned int flags, unsigned int iters, const char *saltstr, const char *domain, const char *digest)",
+          "brief": "\n        ",
+          "definition": "static void nsec3hash_print",
+          "detailed": "\n        ",
+          "name": "nsec3hash_print",
+          "params": [
+            "algo",
+            "flags",
+            "iters",
+            "saltstr",
+            "domain",
+            "digest"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int algo, unsigned int flags, unsigned int iters, const char *saltstr, const char *domain, const char *digest)",
+          "brief": "\n        ",
+          "definition": "static void nsec3hash_rdata_print",
+          "detailed": "\n        ",
+          "name": "nsec3hash_rdata_print",
+          "params": [
+            "algo",
+            "flags",
+            "iters",
+            "saltstr",
+            "domain",
+            "digest"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "(unsigned int algo, unsigned int flags, unsigned int iters, const char *saltstr, const char *domain, const char *digest)",
+          "brief": "\n        ",
+          "definition": "typedef void nsec3printer(unsigned int algo, unsigned int flags, unsigned int iters, const char *saltstr, const char *domain, const char *digest)",
+          "detailed": "\n        ",
+          "name": "nsec3printer",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "program name, statically initialized in each program",
+          "name": "program",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "bin/tools",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

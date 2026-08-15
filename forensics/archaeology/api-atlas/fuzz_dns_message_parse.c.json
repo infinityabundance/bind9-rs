@@ -1,0 +1,133 @@
+{
+  "files": {
+    "fuzz/dns_message_parse.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int *argc ISC_ATTR_UNUSED, char ***argv ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerInitialize",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerInitialize",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_buffer_t *input, dns_message_t **messagep)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_message",
+          "detailed": "\n        ",
+          "name": "parse_message",
+          "params": [
+            "input",
+            "messagep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *message)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t print_message",
+          "detailed": "\n        ",
+          "name": "print_message",
+          "params": [
+            "message"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t **messagep)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t render_message",
+          "detailed": "\n        ",
+          "name": "render_message",
+          "params": [
+            "messagep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKRESULT",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t* output",
+          "detailed": "\n        ",
+          "name": "output",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t output_len",
+          "detailed": "\n        ",
+          "name": "output_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[64 *1024 - 1]",
+          "brief": "\n        ",
+          "definition": "uint8_t render_buf[64 *1024 - 1]",
+          "detailed": "\n        ",
+          "name": "render_buf",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "fuzz/dns_message_parse.c",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

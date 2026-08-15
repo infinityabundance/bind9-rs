@@ -1,0 +1,68 @@
+# bind9-rs workspace — Forensic Residual-Parity Native Rust Reimplementation of BIND 9
+#
+# Architectural invariant (project spec §3): exactly six first-party crates.
+# Feature decomposition happens through modules inside these crates, never by
+# proliferating first-party crates.  Benchmarks, fuzzers, scripts, fixtures and
+# courts are modules, bin targets, or files under forensics/ — not new crates.
+#
+# The workspace root is a virtual manifest; the compatibility facade lives in
+# bind9-rs/ (section 4.1), DNS semantics in bind9-core/, the named runtime in
+# bind9-server/, the utilities in bind9-tools/, the forensic machinery in
+# bind9-forensics/, and OS/unsafe boundaries in bind9-platform/ (section 4.6).
+
+[workspace]
+resolver = "2"
+members = [
+    "bind9-rs",
+    "bind9-core",
+    "bind9-server",
+    "bind9-tools",
+    "bind9-forensics",
+    "bind9-platform",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.96"
+license = "MPL-2.0"
+authors = ["bind9-rs custodians"]
+repository = "https://example.invalid/bind9-rs" # placeholder until upstream exists
+
+[workspace.dependencies]
+bind9-core = { path = "bind9-core" }
+bind9-server = { path = "bind9-server" }
+bind9-tools = { path = "bind9-tools" }
+bind9-forensics = { path = "bind9-forensics" }
+bind9-platform = { path = "bind9-platform" }
+
+# Deliberate, audited external dependencies only (spec §54).  Each entry below
+# is justified in the crate that consumes it.  The dependency ledger lives in
+# docs/supply-chain/dependency-ledger.md and is validated by cargo-deny/vet
+# during release CI (spec §54, §72).
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+sha2 = "0.10"
+getrandom = "0.2"
+
+[profile.release]
+debug = 1
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+debug = true
+
+# Workspace lint policy: infrastructure code expected to survive decades
+# (spec §67).  We are strict about what is warned and about documentation of
+# compatibility reasoning (spec §50, §51).
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = "warn"
+pedantic = "warn"
+nursery = "warn"
+cargo = "warn"

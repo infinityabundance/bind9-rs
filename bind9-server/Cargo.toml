@@ -1,0 +1,25 @@
+# bind9-server — the `named` runtime (spec §4.3).
+#
+# Lifecycle, configuration semantics, views, zones, listeners, authoritative
+# and recursive serving, transfers, dynamic update, DNSSEC maintenance,
+# control channel, reload/reconfig, signals, logging, statistics, dnstap,
+# plugins, rate limiting, privilege and shutdown behavior.
+#
+# `named` behavior is a lifecycle, not just "receive packet, answer".  That
+# lifecycle is modeled and tested here.
+
+[package]
+name = "bind9-server"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "bind9-rs named runtime"
+
+[dependencies]
+bind9-core.workspace = true
+bind9-platform.workspace = true
+
+[lints]
+workspace = true

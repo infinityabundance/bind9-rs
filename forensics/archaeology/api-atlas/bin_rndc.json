@@ -1,0 +1,558 @@
+{
+  "files": {
+    "bin/rndc/rndc.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_sockaddr_t *addr)",
+          "brief": "\n        ",
+          "definition": "static void rndc_startconnect",
+          "detailed": "\n        ",
+          "name": "rndc_startconnect",
+          "params": [
+            "addr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void preparse_args",
+          "detailed": "\n        ",
+          "name": "preparse_args",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *host, in_port_t port)",
+          "brief": "\n        ",
+          "definition": "static void get_addresses",
+          "detailed": "\n        ",
+          "name": "get_addresses",
+          "params": [
+            "host",
+            "port"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle ISC_ATTR_UNUSED, isc_result_t result, void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void rndc_senddone",
+          "detailed": "\n        ",
+          "name": "rndc_senddone",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "result",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t result, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void rndc_recvdone",
+          "detailed": "\n        ",
+          "name": "rndc_recvdone",
+          "params": [
+            "handle",
+            "result",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle ISC_ATTR_UNUSED, isc_result_t result, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void rndc_recvnonce",
+          "detailed": "\n        ",
+          "name": "rndc_recvnonce",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "result",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t result, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void rndc_connected",
+          "detailed": "\n        ",
+          "name": "rndc_connected",
+          "params": [
+            "handle",
+            "result",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void rndc_start",
+          "detailed": "\n        ",
+          "name": "rndc_start",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, isc_log_t *log, const char *keyname, cfg_parser_t **pctxp, cfg_obj_t **configp)",
+          "brief": "\n        ",
+          "definition": "static void parse_config",
+          "detailed": "\n        ",
+          "name": "parse_config",
+          "params": [
+            "mctx",
+            "log",
+            "keyname",
+            "pctxp",
+            "configp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SERVERADDRS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RNDC_TIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_FLAGS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "verbosity: set by -v and -q option in each program, defined in dnssectool.c",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* admin_conffile",
+          "detailed": "\n        ",
+          "name": "admin_conffile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* admin_keyfile",
+          "detailed": "\n        ",
+          "name": "admin_keyfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* version",
+          "detailed": "\n        ",
+          "name": "version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* servername",
+          "detailed": "\n        ",
+          "name": "servername",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t serveraddrs[10]",
+          "detailed": "\n        ",
+          "name": "serveraddrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t local4",
+          "detailed": "\n        ",
+          "name": "local4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t local6",
+          "detailed": "\n        ",
+          "name": "local6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool local4set",
+          "detailed": "\n        ",
+          "name": "local4set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool local6set",
+          "detailed": "\n        ",
+          "name": "local6set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int nserveraddrs",
+          "detailed": "\n        ",
+          "name": "nserveraddrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int currentaddr",
+          "detailed": "\n        ",
+          "name": "currentaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int remoteport",
+          "detailed": "\n        ",
+          "name": "remoteport",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t* databuf",
+          "detailed": "\n        ",
+          "name": "databuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_ccmsg_t rndc_ccmsg",
+          "detailed": "\n        ",
+          "name": "rndc_ccmsg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t algorithm",
+          "detailed": "\n        ",
+          "name": "algorithm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_region_t secret",
+          "detailed": "\n        ",
+          "name": "secret",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool failed",
+          "detailed": "\n        ",
+          "name": "failed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool c_flag",
+          "detailed": "\n        ",
+          "name": "c_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* rndc_mctx",
+          "detailed": "\n        ",
+          "name": "rndc_mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* command",
+          "detailed": "\n        ",
+          "name": "command",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* args",
+          "detailed": "\n        ",
+          "name": "args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "char program[256]",
+          "detailed": "\n        ",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t serial",
+          "detailed": "\n        ",
+          "name": "serial",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool quiet",
+          "detailed": "\n        ",
+          "name": "quiet",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool showresult",
+          "detailed": "\n        ",
+          "name": "showresult",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int32_t timeout",
+          "detailed": "\n        ",
+          "name": "timeout",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/rndc/util.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void notify",
+          "detailed": "\n        ",
+          "name": "notify",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "verbosity: set by -v and -q option in each program, defined in dnssectool.c",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/rndc/util.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *fmt,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS void notify",
+          "detailed": "\n        ",
+          "name": "notify",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS void noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NS_CONTROL_PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "bin/rndc",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

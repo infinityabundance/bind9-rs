@@ -1,0 +1,219 @@
+{
+  "files": {
+    "fuzz/dns_message_checksig.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int *argc ISC_ATTR_UNUSED, char ***argv ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerInitialize",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerInitialize",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_message_t **messagep, const uint8_t *data, size_t size, bool addasig, bool addtsig)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t create_message",
+          "detailed": "\n        ",
+          "name": "create_message",
+          "params": [
+            "messagep",
+            "data",
+            "size",
+            "addasig",
+            "addtsig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HMACSHA256",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t fuzztime",
+          "detailed": "\n        ",
+          "name": "fuzztime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_view_t* view",
+          "detailed": "\n        ",
+          "name": "view",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkey_t* tsigkey",
+          "detailed": "\n        ",
+          "name": "tsigkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkeyring_t* ring",
+          "detailed": "\n        ",
+          "name": "ring",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkeyring_t* emptyring",
+          "detailed": "\n        ",
+          "name": "emptyring",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* wd",
+          "detailed": "\n        ",
+          "name": "wd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char template[]",
+          "detailed": "\n        ",
+          "name": "template",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char f1[]",
+          "detailed": "\n        ",
+          "name": "f1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char c1[]",
+          "detailed": "\n        ",
+          "name": "c1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char f2[]",
+          "detailed": "\n        ",
+          "name": "f2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char c2[]",
+          "detailed": "\n        ",
+          "name": "c2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char f3[]",
+          "detailed": "\n        ",
+          "name": "f3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char c3[]",
+          "detailed": "\n        ",
+          "name": "c3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool destroy_dst",
+          "detailed": "\n        ",
+          "name": "destroy_dst",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "fuzz/dns_message_checksig.c",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "fuzz/old.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_name_t *name, isc_buffer_t *source, dns_decompress_t dctx, unsigned int options, isc_buffer_t *target)",
+          "brief": "For verifying no functional change in the rewrite of dns_name_fromwire().",
+          "definition": "isc_result_t old_name_fromwire",
+          "detailed": "\n        ",
+          "name": "old_name_fromwire",
+          "params": [
+            "name",
+            "source",
+            "dctx",
+            "options",
+            "target"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "fuzz/old.h",
+  "schema_version": 1,
+  "version": "9.20.26"
+}

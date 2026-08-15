@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "version": "9.20.26",
+  "url": "https://downloads.isc.org/isc/bind9/9.20.26/bind-9.20.26.tar.xz",
+  "sha256": "55248def0f870c4c46b3de72978ea972615131516663188a4564dca1d20bf350",
+  "size_bytes": 5918032,
+  "retrieved_at": "2026-08-15T23:25:00Z",
+  "provenance": "PGP good signature by Michal Kepien (Code-Signing Key) 706B6C28620E76F91D11F7DF510A642A06C52CEC, signature dated 2026-07-20; downloaded from downloads.isc.org over TLS",
+  "tree_sha256": null
+}

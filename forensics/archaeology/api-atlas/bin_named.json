@@ -1,0 +1,3861 @@
+{
+  "files": {
+    "bin/named/builtin.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int bdbnode::magic",
+          "detailed": "\n        ",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t bdbnode::references",
+          "detailed": "\n        ",
+          "name": "references",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bdb_t* bdbnode::bdb",
+          "detailed": "\n        ",
+          "name": "bdb",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/config.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* getipandkeylist_state_t::addrs",
+          "detailed": "\n        ",
+          "name": "addrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::addrsallocated",
+          "detailed": "\n        ",
+          "name": "addrsallocated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* getipandkeylist_state_t::sources",
+          "detailed": "\n        ",
+          "name": "sources",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::sourcesallocated",
+          "detailed": "\n        ",
+          "name": "sourcesallocated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t** getipandkeylist_state_t::keys",
+          "detailed": "\n        ",
+          "name": "keys",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::keysallocated",
+          "detailed": "\n        ",
+          "name": "keysallocated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t** getipandkeylist_state_t::tlss",
+          "detailed": "\n        ",
+          "name": "tlss",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::tlssallocated",
+          "detailed": "\n        ",
+          "name": "tlssallocated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::count",
+          "detailed": "\n        ",
+          "name": "count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char** getipandkeylist_state_t::seen",
+          "detailed": "\n        ",
+          "name": "seen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::seencount",
+          "detailed": "\n        ",
+          "name": "seencount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t getipandkeylist_state_t::seenallocated",
+          "detailed": "\n        ",
+          "name": "seenallocated",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/control.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_lex_t *lex, char **cmdp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t getcommand",
+          "detailed": "\n        ",
+          "name": "getcommand",
+          "params": [
+            "lex",
+            "cmdp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str, const char *command)",
+          "brief": "\n        ",
+          "definition": "static bool command_compare",
+          "detailed": "\n        ",
+          "name": "command_compare",
+          "params": [
+            "str",
+            "command"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isccc_sexpr_t *message, bool readonly, isc_buffer_t **text)",
+          "brief": "This function is called to process the incoming command when a control channel message is received.",
+          "definition": "isc_result_t named_control_docommand",
+          "detailed": "\n        ",
+          "name": "named_control_docommand",
+          "params": [
+            "message",
+            "readonly",
+            "text"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/controlconf.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "named_server_t* named_controls::server",
+          "detailed": "\n        ",
+          "name": "server",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "controllistenerlist_t named_controls::listeners",
+          "detailed": "\n        ",
+          "name": "listeners",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool named_controls::shuttingdown",
+          "detailed": "\n        ",
+          "name": "shuttingdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mutex_t named_controls::symtab_lock",
+          "detailed": "\n        ",
+          "name": "symtab_lock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_symtab_t* named_controls::symtab",
+          "detailed": "\n        ",
+          "name": "symtab",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/dlz_dlopen_driver.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* dlopen_data::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dlopen_data::dl_path",
+          "detailed": "\n        ",
+          "name": "dl_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dlopen_data::dlzname",
+          "detailed": "\n        ",
+          "name": "dlzname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_lib_t dlopen_data::dl_handle",
+          "detailed": "\n        ",
+          "name": "dl_handle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* dlopen_data::dbdata",
+          "detailed": "\n        ",
+          "name": "dbdata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int dlopen_data::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mutex_t dlopen_data::lock",
+          "detailed": "\n        ",
+          "name": "lock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int dlopen_data::version",
+          "detailed": "\n        ",
+          "name": "version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dlopen_data::in_configure",
+          "detailed": "\n        ",
+          "name": "in_configure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_version_t* dlopen_data::dlz_version",
+          "detailed": "\n        ",
+          "name": "dlz_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_create_t* dlopen_data::dlz_create",
+          "detailed": "\n        ",
+          "name": "dlz_create",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_findzonedb_t* dlopen_data::dlz_findzonedb",
+          "detailed": "\n        ",
+          "name": "dlz_findzonedb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_lookup_t* dlopen_data::dlz_lookup",
+          "detailed": "\n        ",
+          "name": "dlz_lookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_authority_t* dlopen_data::dlz_authority",
+          "detailed": "\n        ",
+          "name": "dlz_authority",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_allnodes_t* dlopen_data::dlz_allnodes",
+          "detailed": "\n        ",
+          "name": "dlz_allnodes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_allowzonexfr_t* dlopen_data::dlz_allowzonexfr",
+          "detailed": "\n        ",
+          "name": "dlz_allowzonexfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_newversion_t* dlopen_data::dlz_newversion",
+          "detailed": "\n        ",
+          "name": "dlz_newversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_closeversion_t* dlopen_data::dlz_closeversion",
+          "detailed": "\n        ",
+          "name": "dlz_closeversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_configure_t* dlopen_data::dlz_configure",
+          "detailed": "\n        ",
+          "name": "dlz_configure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_ssumatch_t* dlopen_data::dlz_ssumatch",
+          "detailed": "\n        ",
+          "name": "dlz_ssumatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_addrdataset_t* dlopen_data::dlz_addrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_addrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_subrdataset_t* dlopen_data::dlz_subrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_subrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_delrdataset_t* dlopen_data::dlz_delrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_delrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_destroy_t* dlopen_data::dlz_destroy",
+          "detailed": "\n        ",
+          "name": "dlz_destroy",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/fuzz.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_fuzz_notify",
+          "detailed": "\n        ",
+          "name": "named_fuzz_notify",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_fuzz_setup",
+          "detailed": "\n        ",
+          "name": "named_fuzz_setup",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/geoip.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_init",
+          "detailed": "\n        ",
+          "name": "named_geoip_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *dir)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_load",
+          "detailed": "\n        ",
+          "name": "named_geoip_load",
+          "params": [
+            "dir"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_unload",
+          "detailed": "\n        ",
+          "name": "named_geoip_unload",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_shutdown",
+          "detailed": "\n        ",
+          "name": "named_geoip_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_geoip_databases_t geoip_table",
+          "detailed": "\n        ",
+          "name": "geoip_table",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/include/dlz/dlz_dlopen_driver.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_dlopen_init",
+          "detailed": "\n        ",
+          "name": "dlz_dlopen_init",
+          "params": [
+            "mctx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void dlz_dlopen_clear",
+          "detailed": "\n        ",
+          "name": "dlz_dlopen_clear",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/builtin.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_builtin_init",
+          "detailed": "\n        ",
+          "name": "named_builtin_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_builtin_deinit",
+          "detailed": "\n        ",
+          "name": "named_builtin_deinit",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/config.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(cfg_parser_t *parser, cfg_obj_t **conf)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_parsedefaults",
+          "detailed": "\n        ",
+          "name": "named_config_parsedefaults",
+          "params": [
+            "parser",
+            "conf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * named_config_getdefault",
+          "detailed": "\n        ",
+          "name": "named_config_getdefault",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cfg_obj_t const *const *maps, const char *name, const cfg_obj_t **obj)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_get",
+          "detailed": "\n        ",
+          "name": "named_config_get",
+          "params": [
+            "maps",
+            "name",
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t **maps, const char *const names[], const cfg_obj_t **obj)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_checknames_get",
+          "detailed": "\n        ",
+          "name": "named_checknames_get",
+          "params": [
+            "maps",
+            "names",
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *list)",
+          "brief": "\n        ",
+          "definition": "int named_config_listcount",
+          "detailed": "\n        ",
+          "name": "named_config_listcount",
+          "params": [
+            "list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *classobj, dns_rdataclass_t defclass, dns_rdataclass_t *classp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_getclass",
+          "detailed": "\n        ",
+          "name": "named_config_getclass",
+          "params": [
+            "classobj",
+            "defclass",
+            "classp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *typeobj, dns_rdatatype_t deftype, dns_rdatatype_t *typep)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_gettype",
+          "detailed": "\n        ",
+          "name": "named_config_gettype",
+          "params": [
+            "typeobj",
+            "deftype",
+            "typep"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *zonetypeobj)",
+          "brief": "\n        ",
+          "definition": "dns_zonetype_t named_config_getzonetype",
+          "detailed": "\n        ",
+          "name": "named_config_getzonetype",
+          "params": [
+            "zonetypeobj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *cctx, const char *list, const char *name, const cfg_obj_t **ret)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_getremotesdef",
+          "detailed": "\n        ",
+          "name": "named_config_getremotesdef",
+          "params": [
+            "cctx",
+            "list",
+            "name",
+            "ret"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *list, isc_mem_t *mctx, dns_ipkeylist_t *ipkl)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_getipandkeylist",
+          "detailed": "\n        ",
+          "name": "named_config_getipandkeylist",
+          "params": [
+            "config",
+            "list",
+            "mctx",
+            "ipkl"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *config, const char *type, in_port_t *portp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_getport",
+          "detailed": "\n        ",
+          "name": "named_config_getport",
+          "params": [
+            "config",
+            "type",
+            "portp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str, unsigned int *typep, uint16_t *digestbits)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_config_getkeyalgorithm",
+          "detailed": "\n        ",
+          "name": "named_config_getkeyalgorithm",
+          "params": [
+            "str",
+            "typep",
+            "digestbits"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_IANA_ROOT_ZONE_PRIMARIES",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/control.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(named_server_t *server, named_controls_t **ctrlsp)",
+          "brief": "Create an initial, empty set of command channels for 'server'.",
+          "definition": "isc_result_t named_controls_create",
+          "detailed": "\n        ",
+          "name": "named_controls_create",
+          "params": [
+            "server",
+            "ctrlsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_controls_t **ctrlsp)",
+          "brief": "Destroy a set of command channels.",
+          "definition": "void named_controls_destroy",
+          "detailed": "Requires: Shutdown of the channels has completed.",
+          "name": "named_controls_destroy",
+          "params": [
+            "ctrlsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_controls_t *controls, const cfg_obj_t *config, cfg_aclconfctx_t *aclconfctx)",
+          "brief": "Configure zero or more command channels into 'controls' as defined in the configuration parse tree 'config'. The channels will evaluate ACLs in the context of 'aclconfctx'.",
+          "definition": "isc_result_t named_controls_configure",
+          "detailed": "\n        ",
+          "name": "named_controls_configure",
+          "params": [
+            "controls",
+            "config",
+            "aclconfctx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_controls_t *controls)",
+          "brief": "Initiate shutdown of all the command channels in 'controls'.",
+          "definition": "void named_controls_shutdown",
+          "detailed": "\n        ",
+          "name": "named_controls_shutdown",
+          "params": [
+            "controls"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *message, bool readonly, isc_buffer_t **text)",
+          "brief": "This function is called to process the incoming command when a control channel message is received.",
+          "definition": "isc_result_t named_control_docommand",
+          "detailed": "\n        ",
+          "name": "named_control_docommand",
+          "params": [
+            "message",
+            "readonly",
+            "text"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_CONTROL_PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_ADDZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_DELZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_DNSSEC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_DNSTAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_DNSTAPREOPEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_DUMPDB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_DUMPSTATS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_FETCHLIMIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_FLUSH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_FLUSHNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_FLUSHTREE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_FREEZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_HALT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_LOADKEYS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_MEMPROF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_MKEYS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_MODZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_NOTIFY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_NOTRACE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_NTA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_NULL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_QUERYLOG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_RECONFIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_RECURSING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_REFRESH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_RELOAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_RESETSTATS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_RESPONSELOG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_RETRANSFER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SCAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SECROOTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SERVESTALE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SHOWZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SIGN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SIGNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SKR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_STATUS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_STOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_SYNC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_TCPTIMEOUTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_TESTGEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_THAW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_TRACE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_UNFREEZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_VALIDATION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_COMMAND_ZONESTATUS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/fuzz.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_fuzz_notify",
+          "detailed": "\n        ",
+          "name": "named_fuzz_notify",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_fuzz_setup",
+          "detailed": "\n        ",
+          "name": "named_fuzz_setup",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/geoip.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_init",
+          "detailed": "\n        ",
+          "name": "named_geoip_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *dir)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_load",
+          "detailed": "\n        ",
+          "name": "named_geoip_load",
+          "params": [
+            "dir"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_unload",
+          "detailed": "\n        ",
+          "name": "named_geoip_unload",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_geoip_shutdown",
+          "detailed": "\n        ",
+          "name": "named_geoip_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_geoip_databases_t* named_g_geoip",
+          "detailed": "\n        ",
+          "name": "named_g_geoip",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/include/named/log.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(bool safe)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_log_init",
+          "detailed": "\n        ",
+          "name": "named_log_init",
+          "params": [
+            "safe"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Initialize the logging system and set up an initial default logging default configuration that will be used until the config file has been read.",
+          "definition": "void named_log_setdefaultchannels",
+          "detailed": "If 'safe' is true, use a default configuration that refrains from opening files. This is to avoid creating log files as root.",
+          "name": "named_log_setdefaultchannels",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Set up logging channels according to the named defaults, which may differ from the logging library defaults. Currently, this just means setting up default_debug.",
+          "definition": "void named_log_setsafechannels",
+          "detailed": "\n        ",
+          "name": "named_log_setsafechannels",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Like named_log_setdefaultchannels(), but omits any logging to files.",
+          "definition": "void named_log_setdefaultsslkeylogfile",
+          "detailed": "\n        ",
+          "name": "named_log_setdefaultsslkeylogfile",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "If the SSLKEYLOGFILE environment variable is set, sets up a default logging channel for writing TLS pre-master secrets to the path stored in that environment variable (for debugging purposes).",
+          "definition": "isc_result_t named_log_setdefaultcategory",
+          "detailed": "\n        ",
+          "name": "named_log_setdefaultcategory",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Set up \"category default\" to go to the right places.",
+          "definition": "isc_result_t named_log_setunmatchedcategory",
+          "detailed": "\n        ",
+          "name": "named_log_setunmatchedcategory",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Set up \"category unmatched\" to go to the right places.",
+          "definition": "void named_log_shutdown",
+          "detailed": "\n        ",
+          "name": "named_log_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_LOGCATEGORY_UNMATCHED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_LOGCATEGORY_GENERAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_LOGMODULE_MAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_LOGMODULE_SERVER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_LOGMODULE_CONTROL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/logconf.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_logconfig_t *logconf, const cfg_obj_t *logstmt)",
+          "brief": "Set up the logging configuration in '*logconf' according to the named.conf data in 'logstmt'.",
+          "definition": "isc_result_t named_logconfig",
+          "detailed": "\n        ",
+          "name": "named_logconfig",
+          "params": [
+            "logconf",
+            "logstmt"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/main.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "noreturn void named_main_earlyfatal",
+          "detailed": "\n        ",
+          "name": "named_main_earlyfatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "noreturn void void named_main_earlywarning",
+          "detailed": "\n        ",
+          "name": "named_main_earlywarning",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *)",
+          "brief": "\n        ",
+          "definition": "noreturn void void void named_main_setmemstats",
+          "detailed": "\n        ",
+          "name": "named_main_setmemstats",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg, int signum)",
+          "brief": "\n        ",
+          "definition": "void named_main_shutdown",
+          "detailed": "\n        ",
+          "name": "named_main_shutdown",
+          "params": [
+            "arg",
+            "signum"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_MAIN_ARGS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/os.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *progname)",
+          "brief": "\n        ",
+          "definition": "void named_os_init",
+          "detailed": "\n        ",
+          "name": "named_os_init",
+          "params": [
+            "progname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_daemonize",
+          "detailed": "\n        ",
+          "name": "named_os_daemonize",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_opendevnull",
+          "detailed": "\n        ",
+          "name": "named_os_opendevnull",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_closedevnull",
+          "detailed": "\n        ",
+          "name": "named_os_closedevnull",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *root)",
+          "brief": "\n        ",
+          "definition": "void named_os_chroot",
+          "detailed": "\n        ",
+          "name": "named_os_chroot",
+          "params": [
+            "root"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *username)",
+          "brief": "\n        ",
+          "definition": "void named_os_inituserinfo",
+          "detailed": "\n        ",
+          "name": "named_os_inituserinfo",
+          "params": [
+            "username"
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool permanent)",
+          "brief": "\n        ",
+          "definition": "void named_os_changeuser",
+          "detailed": "\n        ",
+          "name": "named_os_changeuser",
+          "params": [
+            "permanent"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_restoreuser",
+          "detailed": "\n        ",
+          "name": "named_os_restoreuser",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "uid_t named_os_uid",
+          "detailed": "\n        ",
+          "name": "named_os_uid",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_adjustnofile",
+          "detailed": "\n        ",
+          "name": "named_os_adjustnofile",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_minprivs",
+          "detailed": "\n        ",
+          "name": "named_os_minprivs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, mode_t mode, bool switch_user)",
+          "brief": "\n        ",
+          "definition": "FILE * named_os_openfile",
+          "detailed": "\n        ",
+          "name": "named_os_openfile",
+          "params": [
+            "filename",
+            "mode",
+            "switch_user"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, bool first_time)",
+          "brief": "\n        ",
+          "definition": "void named_os_writepidfile",
+          "detailed": "\n        ",
+          "name": "named_os_writepidfile",
+          "params": [
+            "filename",
+            "first_time"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_shutdown",
+          "detailed": "\n        ",
+          "name": "named_os_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *command, isc_buffer_t *text)",
+          "brief": "\n        ",
+          "definition": "void named_os_shutdownmsg",
+          "detailed": "\n        ",
+          "name": "named_os_shutdownmsg",
+          "params": [
+            "command",
+            "text"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_tzset",
+          "detailed": "\n        ",
+          "name": "named_os_tzset",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_started",
+          "detailed": "\n        ",
+          "name": "named_os_started",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * named_os_uname",
+          "detailed": "\n        ",
+          "name": "named_os_uname",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "named_os_notify_systemd",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "named_os_notify_close",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/server.h": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int named_server::magic",
+          "detailed": "\n        ",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* named_server::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_server_t* named_server::sctx",
+          "detailed": "\n        ",
+          "name": "sctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Statistics file name.",
+          "definition": "char* named_server::statsfile",
+          "detailed": "\n        ",
+          "name": "statsfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Dump file name.",
+          "definition": "char* named_server::dumpfile",
+          "detailed": "\n        ",
+          "name": "dumpfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Secroots file name.",
+          "definition": "char* named_server::secrootsfile",
+          "detailed": "\n        ",
+          "name": "secrootsfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "bind.keys file name",
+          "definition": "char* named_server::bindkeysfile",
+          "detailed": "\n        ",
+          "name": "bindkeysfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Recursive file name.",
+          "definition": "char* named_server::recfile",
+          "detailed": "\n        ",
+          "name": "recfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "User has set version.",
+          "definition": "bool named_server::version_set",
+          "detailed": "\n        ",
+          "name": "version_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "User-specified version.",
+          "definition": "char* named_server::version",
+          "detailed": "\n        ",
+          "name": "version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "User has set hostname.",
+          "definition": "bool named_server::hostname_set",
+          "detailed": "\n        ",
+          "name": "hostname_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "User-specified hostname.",
+          "definition": "char* named_server::hostname",
+          "detailed": "\n        ",
+          "name": "hostname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_loadmgr_t* named_server::loadmgr",
+          "detailed": "\n        ",
+          "name": "loadmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zonemgr_t* named_server::zonemgr",
+          "detailed": "\n        ",
+          "name": "zonemgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_viewlist_t named_server::viewlist",
+          "detailed": "\n        ",
+          "name": "viewlist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_kasplist_t named_server::kasplist",
+          "detailed": "\n        ",
+          "name": "kasplist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_keystorelist_t named_server::keystorelist",
+          "detailed": "\n        ",
+          "name": "keystorelist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_interfacemgr_t* named_server::interfacemgr",
+          "detailed": "\n        ",
+          "name": "interfacemgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* named_server::in_roothints",
+          "detailed": "\n        ",
+          "name": "in_roothints",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_timer_t* named_server::interface_timer",
+          "detailed": "\n        ",
+          "name": "interface_timer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_timer_t* named_server::heartbeat_timer",
+          "detailed": "\n        ",
+          "name": "heartbeat_timer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_timer_t* named_server::pps_timer",
+          "detailed": "\n        ",
+          "name": "pps_timer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_timer_t* named_server::tat_timer",
+          "detailed": "\n        ",
+          "name": "tat_timer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t named_server::interface_interval",
+          "detailed": "\n        ",
+          "name": "interface_interval",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t named_server::heartbeat_interval",
+          "detailed": "\n        ",
+          "name": "heartbeat_interval",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int named_server::reload_status",
+          "detailed": "\n        ",
+          "name": "reload_status",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool named_server::flushonshutdown",
+          "detailed": "\n        ",
+          "name": "flushonshutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Possibly shared caches.",
+          "definition": "named_cachelist_t named_server::cachelist",
+          "detailed": "\n        ",
+          "name": "cachelist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stats_t* named_server::zonestats",
+          "detailed": "\n        ",
+          "name": "zonestats",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Zone management stats.",
+          "definition": "isc_stats_t* named_server::resolverstats",
+          "detailed": "\n        ",
+          "name": "resolverstats",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Resolver stats.",
+          "definition": "isc_stats_t* named_server::sockstats",
+          "detailed": "Socket stats",
+          "name": "sockstats",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Control channels.",
+          "definition": "named_controls_t* named_server::controls",
+          "detailed": "\n        ",
+          "name": "controls",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int named_server::dispatchgen",
+          "detailed": "\n        ",
+          "name": "dispatchgen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "named_dispatchlist_t named_server::dispatches",
+          "detailed": "\n        ",
+          "name": "dispatches",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "named_statschannellist_t named_server::statschannels",
+          "detailed": "\n        ",
+          "name": "statschannels",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_key_t* named_server::sessionkey",
+          "detailed": "\n        ",
+          "name": "sessionkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* named_server::session_keyfile",
+          "detailed": "\n        ",
+          "name": "session_keyfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* named_server::session_keyname",
+          "detailed": "\n        ",
+          "name": "session_keyname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int named_server::session_keyalg",
+          "detailed": "\n        ",
+          "name": "session_keyalg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t named_server::session_keybits",
+          "detailed": "\n        ",
+          "name": "session_keybits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool named_server::interface_auto",
+          "detailed": "\n        ",
+          "name": "interface_auto",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "Server Cookie Secret.",
+          "definition": "unsigned char named_server::secret[32]",
+          "detailed": "\n        ",
+          "name": "secret",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_cookiealg_t named_server::cookiealg",
+          "detailed": "\n        ",
+          "name": "cookiealg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Dnstap environment.",
+          "definition": "dns_dtenv_t* named_server::dtenv",
+          "detailed": "\n        ",
+          "name": "dtenv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_cache_t* named_server::tlsctx_server_cache",
+          "detailed": "\n        ",
+          "name": "tlsctx_server_cache",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_cache_t* named_server::tlsctx_client_cache",
+          "detailed": "\n        ",
+          "name": "tlsctx_client_cache",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_signal_t* named_server::sighup",
+          "detailed": "\n        ",
+          "name": "sighup",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/include/named/smf_globals.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(isc_buffer_t **text)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_smf_add_message",
+          "detailed": "\n        ",
+          "name": "named_smf_add_message",
+          "params": [
+            "text"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char **name, int debug, isc_mem_t *mctx)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_smf_get_instance",
+          "detailed": "\n        ",
+          "name": "named_smf_get_instance",
+          "params": [
+            "name",
+            "debug",
+            "mctx"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXTERN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INIT",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int named_smf_got_instance",
+          "detailed": "\n        ",
+          "name": "named_smf_got_instance",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int named_smf_chroot",
+          "detailed": "\n        ",
+          "name": "named_smf_chroot",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int named_smf_want_disable",
+          "detailed": "\n        ",
+          "name": "named_smf_want_disable",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/include/named/statschannel.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(named_server_t *server, const cfg_obj_t *config, cfg_aclconfctx_t *aclconfctx)",
+          "brief": "[Re]configure the statistics channels.",
+          "definition": "isc_result_t named_statschannels_configure",
+          "detailed": "If it is no longer there but was previously configured, destroy it here.\nIf the IP address or port has changed, destroy the old server and create a new one.",
+          "name": "named_statschannels_configure",
+          "params": [
+            "server",
+            "config",
+            "aclconfctx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_server_t *server)",
+          "brief": "Initiate shutdown of all the statistics channel listeners.",
+          "definition": "void named_statschannels_shutdown",
+          "detailed": "\n        ",
+          "name": "named_statschannels_shutdown",
+          "params": [
+            "server"
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_server_t *server, FILE *fp)",
+          "brief": "Dump statistics counters managed by the server to the file fp.",
+          "definition": "isc_result_t named_stats_dump",
+          "detailed": "\n        ",
+          "name": "named_stats_dump",
+          "params": [
+            "server",
+            "fp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAMED_STATSCHANNEL_HTTPPORT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/tkeyconf.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *options, isc_mem_t *mctx, dns_tkeyctx_t **tctxp)",
+          "brief": "Create a TKEY context and configure it, including the default DH key and default domain, according to 'options'.",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t named_tkeyctx_fromconfig",
+          "detailed": "Requires: \n'cfg' is a valid configuration options object. \n\n'mctx' is not NULL \n\n'tctx' is not NULL \n\n'*tctx' is NULL\n\n\nReturns: \nISC_R_SUCCESS \n\nISC_R_NOMEMORY \n\n\n\n'cfg' is a valid configuration options object. \n'mctx' is not NULL \n'tctx' is not NULL \n'*tctx' is NULL\nISC_R_SUCCESS \nISC_R_NOMEMORY",
+          "name": "named_tkeyctx_fromconfig",
+          "params": [
+            "options",
+            "mctx",
+            "tctxp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/transportconf.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *vconfig, isc_mem_t *mctx, dns_transport_list_t **listp)",
+          "brief": "Create a list of transport objects (DoT or DoH) and configure them according to 'key-file', 'cert-file', 'ca-file' or 'hostname' statements.",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t named_transports_fromconfig",
+          "detailed": "Requires: \n'config' is not NULL. \n\n'vconfig' is not NULL. \n\n'mctx' is not NULL \n\n'listp' is not NULL, and '*listp' is NULL \n\n\n\n'config' is not NULL. \n'vconfig' is not NULL. \n'mctx' is not NULL \n'listp' is not NULL, and '*listp' is NULL",
+          "name": "named_transports_fromconfig",
+          "params": [
+            "config",
+            "vconfig",
+            "mctx",
+            "listp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/tsigconf.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *vconfig, isc_mem_t *mctx, dns_tsigkeyring_t **ringp)",
+          "brief": "Create a TSIG key ring and configure it according to the 'key' statements in the global and view configuration objects.",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t named_tsigkeyring_fromconfig",
+          "detailed": "Requires: \n'config' is not NULL. \n\n'vconfig' is not NULL. \n\n'mctx' is not NULL \n\n'ringp' is not NULL, and '*ringp' is NULL\n\n\nReturns: \nISC_R_SUCCESS \n\nISC_R_NOMEMORY \n\n\n\n'config' is not NULL. \n'vconfig' is not NULL. \n'mctx' is not NULL \n'ringp' is not NULL, and '*ringp' is NULL\nISC_R_SUCCESS \nISC_R_NOMEMORY",
+          "name": "named_tsigkeyring_fromconfig",
+          "params": [
+            "config",
+            "vconfig",
+            "mctx",
+            "ringp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/include/named/types.h": {
+      "enums": [
+        {
+          "args": "",
+          "brief": "Used for server->reload_status as printed by rndc status.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "named_reload_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(named_cache_t) named_cachelist_t",
+          "brief": "\n        ",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_dispatch_t) named_dispatchlist_t",
+          "brief": "\n        ",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(named_statschannel_t) named_statschannellist_t",
+          "brief": "\n        ",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_cache named_cache_t",
+          "detailed": "\n        ",
+          "name": "named_cache_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_server named_server_t",
+          "detailed": "\n        ",
+          "name": "named_server_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_xmld named_xmld_t",
+          "detailed": "\n        ",
+          "name": "named_xmld_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_xmldmgr named_xmldmgr_t",
+          "detailed": "\n        ",
+          "name": "named_xmldmgr_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_controls named_controls_t",
+          "detailed": "\n        ",
+          "name": "named_controls_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_dispatch named_dispatch_t",
+          "detailed": "\n        ",
+          "name": "named_dispatch_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct named_statschannel named_statschannel_t",
+          "detailed": "\n        ",
+          "name": "named_statschannel_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "bin/named/include/named/zoneconf.h": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *vconfig, const cfg_obj_t *zconfig, cfg_aclconfctx_t *ac, dns_kasplist_t *kasplist, dns_keystorelist_t *keystores, dns_zone_t *zone, dns_zone_t *raw)",
+          "brief": "Configure or reconfigure a zone according to the named.conf data.",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t named_zone_configure",
+          "detailed": "The zone origin is not configured, it is assumed to have been set at zone creation time.\nRequire: \n'ac' to point to an initialized cfg_aclconfctx_t. \n\n'kasplist' to be initialized. \n\n'zone' to be initialized. \n\n\n\n'ac' to point to an initialized cfg_aclconfctx_t. \n'kasplist' to be initialized. \n'zone' to be initialized.",
+          "name": "named_zone_configure",
+          "params": [
+            "config",
+            "vconfig",
+            "zconfig",
+            "ac",
+            "kasplist",
+            "keystores",
+            "zone",
+            "raw"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_zone_t *zone, const cfg_obj_t *zconfig, const cfg_obj_t *vconfig, const cfg_obj_t *config, dns_kasplist_t *kasplist)",
+          "brief": "If 'zone' can be safely reconfigured according to the configuration data in 'zconfig', return true. If the configuration data is so different from the current zone state that the zone needs to be destroyed and recreated, return false.",
+          "definition": "bool named_zone_reusable",
+          "detailed": "\n        ",
+          "name": "named_zone_reusable",
+          "params": [
+            "zone",
+            "zconfig",
+            "vconfig",
+            "config",
+            "kasplist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *zconfig, const cfg_obj_t *vconfig, const cfg_obj_t *config, dns_kasplist_t *kasplist)",
+          "brief": "Determine if zone uses inline-signing. This is true if inline-signing is set to yes, in the zone clause or in the zone's dnssec-policy clause. By default, dnssec-policy uses inline-signing.",
+          "definition": "bool named_zone_inlinesigning",
+          "detailed": "\n        ",
+          "name": "named_zone_inlinesigning",
+          "params": [
+            "zconfig",
+            "vconfig",
+            "config",
+            "kasplist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_dlzdb_t *dlzdatabase, dns_zone_t *zone, dns_rdataclass_t rdclass, dns_name_t *name)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_zone_configure_writeable_dlz",
+          "detailed": "\n        ",
+          "name": "named_zone_configure_writeable_dlz",
+          "params": [
+            "dlzdatabase",
+            "zone",
+            "rdclass",
+            "name"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/log.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(bool safe)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_log_init",
+          "detailed": "\n        ",
+          "name": "named_log_init",
+          "params": [
+            "safe"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Initialize the logging system and set up an initial default logging default configuration that will be used until the config file has been read.",
+          "definition": "void named_log_setdefaultchannels",
+          "detailed": "If 'safe' is true, use a default configuration that refrains from opening files. This is to avoid creating log files as root.",
+          "name": "named_log_setdefaultchannels",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Set up logging channels according to the named defaults, which may differ from the logging library defaults. Currently, this just means setting up default_debug.",
+          "definition": "void named_log_setsafechannels",
+          "detailed": "\n        ",
+          "name": "named_log_setsafechannels",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Like named_log_setdefaultchannels(), but omits any logging to files.",
+          "definition": "void named_log_setdefaultsslkeylogfile",
+          "detailed": "\n        ",
+          "name": "named_log_setdefaultsslkeylogfile",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "If the SSLKEYLOGFILE environment variable is set, sets up a default logging channel for writing TLS pre-master secrets to the path stored in that environment variable (for debugging purposes).",
+          "definition": "isc_result_t named_log_setdefaultcategory",
+          "detailed": "\n        ",
+          "name": "named_log_setdefaultcategory",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_logconfig_t *lcfg)",
+          "brief": "Set up \"category default\" to go to the right places.",
+          "definition": "isc_result_t named_log_setunmatchedcategory",
+          "detailed": "\n        ",
+          "name": "named_log_setunmatchedcategory",
+          "params": [
+            "lcfg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Set up \"category unmatched\" to go to the right places.",
+          "definition": "void named_log_shutdown",
+          "detailed": "\n        ",
+          "name": "named_log_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_FACILITY",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "When adding a new category, be sure to add the appropriate #define to <named/log.h> and to update the list in bin/check/check-tool.c.",
+          "definition": "isc_logcategory_t categories[]",
+          "detailed": "\n        ",
+          "name": "categories",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "When adding a new module, be sure to add the appropriate #define to <dns/log.h>.",
+          "definition": "isc_logmodule_t modules[]",
+          "detailed": "\n        ",
+          "name": "modules",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/logconf.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *ccat, isc_logconfig_t *logconfig)",
+          "brief": "Set up a logging category according to the named.conf data in 'ccat' and add it to 'logconfig'.",
+          "definition": "static isc_result_t category_fromconf",
+          "detailed": "\n        ",
+          "name": "category_fromconf",
+          "params": [
+            "ccat",
+            "logconfig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *channel, isc_logconfig_t *logconfig)",
+          "brief": "Set up a logging channel according to the named.conf data in 'cchan' and add it to 'logconfig'.",
+          "definition": "static isc_result_t channel_fromconf",
+          "detailed": "\n        ",
+          "name": "channel_fromconf",
+          "params": [
+            "channel",
+            "logconfig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_logconfig_t *logconfig, const cfg_obj_t *logstmt)",
+          "brief": "Set up the logging configuration in '*logconf' according to the named.conf data in 'logstmt'.",
+          "definition": "isc_result_t named_logconfig",
+          "detailed": "\n        ",
+          "name": "named_logconfig",
+          "params": [
+            "logconfig",
+            "logstmt"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/main.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* flag_def::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int flag_def::value",
+          "detailed": "\n        ",
+          "name": "value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool flag_def::negate",
+          "detailed": "\n        ",
+          "name": "negate",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/os.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uid_t uid, gid_t gid)",
+          "brief": "\n        ",
+          "definition": "static void setperms",
+          "detailed": "\n        ",
+          "name": "setperms",
+          "params": [
+            "uid",
+            "gid"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *progname)",
+          "brief": "\n        ",
+          "definition": "static void setup_syslog",
+          "detailed": "\n        ",
+          "name": "setup_syslog",
+          "params": [
+            "progname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *progname)",
+          "brief": "\n        ",
+          "definition": "void named_os_init",
+          "detailed": "\n        ",
+          "name": "named_os_init",
+          "params": [
+            "progname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_daemonize",
+          "detailed": "\n        ",
+          "name": "named_os_daemonize",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_started",
+          "detailed": "\n        ",
+          "name": "named_os_started",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_opendevnull",
+          "detailed": "\n        ",
+          "name": "named_os_opendevnull",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_closedevnull",
+          "detailed": "\n        ",
+          "name": "named_os_closedevnull",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *s)",
+          "brief": "\n        ",
+          "definition": "static bool all_digits",
+          "detailed": "\n        ",
+          "name": "all_digits",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *root)",
+          "brief": "\n        ",
+          "definition": "void named_os_chroot",
+          "detailed": "\n        ",
+          "name": "named_os_chroot",
+          "params": [
+            "root"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *username)",
+          "brief": "\n        ",
+          "definition": "void named_os_inituserinfo",
+          "detailed": "\n        ",
+          "name": "named_os_inituserinfo",
+          "params": [
+            "username"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_restoreuser",
+          "detailed": "\n        ",
+          "name": "named_os_restoreuser",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool permanent)",
+          "brief": "\n        ",
+          "definition": "void named_os_changeuser",
+          "detailed": "\n        ",
+          "name": "named_os_changeuser",
+          "params": [
+            "permanent"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "uid_t named_os_uid",
+          "detailed": "\n        ",
+          "name": "named_os_uid",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_adjustnofile",
+          "detailed": "\n        ",
+          "name": "named_os_adjustnofile",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_minprivs",
+          "detailed": "\n        ",
+          "name": "named_os_minprivs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, mode_t mode, bool append)",
+          "brief": "\n        ",
+          "definition": "static int safe_open",
+          "detailed": "\n        ",
+          "name": "safe_open",
+          "params": [
+            "filename",
+            "mode",
+            "append"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cleanup_pidfile",
+          "detailed": "\n        ",
+          "name": "cleanup_pidfile",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *filename, void(*report)(const char *,...))",
+          "brief": "\n        ",
+          "definition": "static int mkdirpath",
+          "detailed": "\n        ",
+          "name": "mkdirpath",
+          "params": [
+            "filename",
+            "report"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *filename, mode_t mode, bool switch_user)",
+          "brief": "\n        ",
+          "definition": "FILE * named_os_openfile",
+          "detailed": "\n        ",
+          "name": "named_os_openfile",
+          "params": [
+            "filename",
+            "mode",
+            "switch_user"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, bool first_time)",
+          "brief": "\n        ",
+          "definition": "void named_os_writepidfile",
+          "detailed": "\n        ",
+          "name": "named_os_writepidfile",
+          "params": [
+            "filename",
+            "first_time"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_shutdown",
+          "detailed": "\n        ",
+          "name": "named_os_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *command, isc_buffer_t *text)",
+          "brief": "\n        ",
+          "definition": "void named_os_shutdownmsg",
+          "detailed": "\n        ",
+          "name": "named_os_shutdownmsg",
+          "params": [
+            "command",
+            "text"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void named_os_tzset",
+          "detailed": "\n        ",
+          "name": "named_os_tzset",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void getuname",
+          "detailed": "\n        ",
+          "name": "getuname",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * named_os_uname",
+          "detailed": "\n        ",
+          "name": "named_os_uname",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISC_FACILITY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "setup_systemd_notify",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* pidfile",
+          "detailed": "\n        ",
+          "name": "pidfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int devnullfd",
+          "detailed": "\n        ",
+          "name": "devnullfd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct passwd* runas_pw",
+          "detailed": "\n        ",
+          "name": "runas_pw",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool done_setuid",
+          "detailed": "\n        ",
+          "name": "done_setuid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "int dfd[2]",
+          "detailed": "\n        ",
+          "name": "dfd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int notify_fd",
+          "detailed": "\n        ",
+          "name": "notify_fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uid_t saved_uid",
+          "detailed": "\n        ",
+          "name": "saved_uid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "gid_t saved_gid",
+          "detailed": "\n        ",
+          "name": "saved_gid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char unamebuf[]",
+          "detailed": "\n        ",
+          "name": "unamebuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* unamep",
+          "detailed": "\n        ",
+          "name": "unamep",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/server.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zone_t* zonelistentry::zone",
+          "detailed": "\n        ",
+          "name": "zone",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/statschannel.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_statsformat_t stats_dumparg::type",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* stats_dumparg::arg",
+          "detailed": "\n        ",
+          "name": "arg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int stats_dumparg::ncounters",
+          "detailed": "\n        ",
+          "name": "ncounters",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int* stats_dumparg::counterindices",
+          "detailed": "\n        ",
+          "name": "counterindices",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t* stats_dumparg::countervalues",
+          "detailed": "\n        ",
+          "name": "countervalues",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_result_t stats_dumparg::result",
+          "detailed": "\n        ",
+          "name": "result",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/tkeyconf.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *options, isc_mem_t *mctx, dns_tkeyctx_t **tctxp)",
+          "brief": "Create a TKEY context and configure it, including the default DH key and default domain, according to 'options'.",
+          "definition": "isc_result_t named_tkeyctx_fromconfig",
+          "detailed": "Requires: \n'cfg' is a valid configuration options object. \n\n'mctx' is not NULL \n\n'tctx' is not NULL \n\n'*tctx' is NULL\n\n\nReturns: \nISC_R_SUCCESS \n\nISC_R_NOMEMORY \n\n\n\n'cfg' is a valid configuration options object. \n'mctx' is not NULL \n'tctx' is not NULL \n'*tctx' is NULL\nISC_R_SUCCESS \nISC_R_NOMEMORY",
+          "name": "named_tkeyctx_fromconfig",
+          "params": [
+            "options",
+            "mctx",
+            "tctxp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOG",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/transportconf.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *transportlist, dns_transport_list_t *list)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_doh_transports",
+          "detailed": "\n        ",
+          "name": "add_doh_transports",
+          "params": [
+            "transportlist",
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *transportlist, dns_transport_list_t *list)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_tls_transports",
+          "detailed": "\n        ",
+          "name": "add_tls_transports",
+          "params": [
+            "transportlist",
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *config, dns_transport_list_t *list)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t transport_list_fromconfig",
+          "detailed": "\n        ",
+          "name": "transport_list_fromconfig",
+          "params": [
+            "config",
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_transport_list_t *list)",
+          "brief": "\n        ",
+          "definition": "static void transport_list_add_ephemeral",
+          "detailed": "\n        ",
+          "name": "transport_list_add_ephemeral",
+          "params": [
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *vconfig, isc_mem_t *mctx, dns_transport_list_t **listp)",
+          "brief": "Create a list of transport objects (DoT or DoH) and configure them according to 'key-file', 'cert-file', 'ca-file' or 'hostname' statements.",
+          "definition": "isc_result_t named_transports_fromconfig",
+          "detailed": "Requires: \n'config' is not NULL. \n\n'vconfig' is not NULL. \n\n'mctx' is not NULL \n\n'listp' is not NULL, and '*listp' is NULL \n\n\n\n'config' is not NULL. \n'vconfig' is not NULL. \n'mctx' is not NULL \n'listp' is not NULL, and '*listp' is NULL",
+          "name": "named_transports_fromconfig",
+          "params": [
+            "config",
+            "vconfig",
+            "mctx",
+            "listp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "create_name",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "parse_transport_option",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "parse_transport_tls_versions",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "parse_transport_bool_option",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/tsigconf.c": {
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *list, dns_tsigkeyring_t *ring, isc_mem_t *mctx)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_initial_keys",
+          "detailed": "\n        ",
+          "name": "add_initial_keys",
+          "params": [
+            "list",
+            "ring",
+            "mctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *vconfig, isc_mem_t *mctx, dns_tsigkeyring_t **ringp)",
+          "brief": "Create a TSIG key ring and configure it according to the 'key' statements in the global and view configuration objects.",
+          "definition": "isc_result_t named_tsigkeyring_fromconfig",
+          "detailed": "Requires: \n'config' is not NULL. \n\n'vconfig' is not NULL. \n\n'mctx' is not NULL \n\n'ringp' is not NULL, and '*ringp' is NULL\n\n\nReturns: \nISC_R_SUCCESS \n\nISC_R_NOMEMORY \n\n\n\n'config' is not NULL. \n'vconfig' is not NULL. \n'mctx' is not NULL \n'ringp' is not NULL, and '*ringp' is NULL\nISC_R_SUCCESS \nISC_R_NOMEMORY",
+          "name": "named_tsigkeyring_fromconfig",
+          "params": [
+            "config",
+            "vconfig",
+            "mctx",
+            "ringp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "bin/named/xsl.c": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char xslmsg[]",
+          "detailed": "\n        ",
+          "name": "xslmsg",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/xsl_p.h": {
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char xslmsg[]",
+          "detailed": "\n        ",
+          "name": "xslmsg",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/named/zoneconf.c": {
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "acl_type_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(const cfg_obj_t *zconfig, const cfg_obj_t *vconfig, const cfg_obj_t *config, acl_type_t acltype, cfg_aclconfctx_t *actx, dns_zone_t *zone, void(*setzacl)(dns_zone_t *, dns_acl_t *), void(*clearzacl)(dns_zone_t *))",
+          "brief": "Convenience function for configuring a single zone ACL.",
+          "definition": "static isc_result_t configure_zone_acl",
+          "detailed": "\n        ",
+          "name": "configure_zone_acl",
+          "params": [
+            "zconfig",
+            "vconfig",
+            "config",
+            "acltype",
+            "actx",
+            "zone",
+            "setzacl",
+            "clearzacl"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *zconfig, dns_zone_t *zone, const char *zname)",
+          "brief": "Parse the zone update-policy statement.",
+          "definition": "static isc_result_t configure_zone_ssutable",
+          "detailed": "\n        ",
+          "name": "configure_zone_ssutable",
+          "params": [
+            "zconfig",
+            "zone",
+            "zname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *zconfig, dns_zone_t *zone, dns_rdatalist_t *rdatalist_ns, dns_rdatalist_t *rdatalist_a, dns_rdatalist_t *rdatalist_aaaa)",
+          "brief": "Configure an apex NS with glues for a static-stub zone. For example, for the zone named \"example.com\", the following RRs will be added to the zone DB: example.com. NS example.com. example.com. A 192.0.2.1 example.com. AAAA 2001:db8::1.",
+          "definition": "static isc_result_t configure_staticstub_serveraddrs",
+          "detailed": "\n        ",
+          "name": "configure_staticstub_serveraddrs",
+          "params": [
+            "zconfig",
+            "zone",
+            "rdatalist_ns",
+            "rdatalist_a",
+            "rdatalist_aaaa"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *zconfig, dns_zone_t *zone, dns_rdatalist_t *rdatalist, const char *zname)",
+          "brief": "Configure an apex NS with an out-of-zone NS names for a static-stub zone. For example, for the zone named \"example.com\", something like the following RRs will be added to the zone DB: example.com. NS ns.example.net.",
+          "definition": "static isc_result_t configure_staticstub_servernames",
+          "detailed": "\n        ",
+          "name": "configure_staticstub_servernames",
+          "params": [
+            "zconfig",
+            "zone",
+            "rdatalist",
+            "zname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *zconfig, dns_zone_t *zone, const char *zname, const char *dbtype)",
+          "brief": "Configure static-stub zone.",
+          "definition": "static isc_result_t configure_staticstub",
+          "detailed": "\n        ",
+          "name": "configure_staticstub",
+          "params": [
+            "zconfig",
+            "zone",
+            "zname",
+            "dbtype"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *map)",
+          "brief": "Convert a config file zone type into a server zone type.",
+          "definition": "static dns_zonetype_t zonetype_fromconfig",
+          "detailed": "\n        ",
+          "name": "zonetype_fromconfig",
+          "params": [
+            "map"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, char *s, unsigned int *argcp, char ***argvp, unsigned int n)",
+          "brief": "Helper function for strtoargv(). Pardon the gratuitous recursion.",
+          "definition": "static isc_result_t strtoargvsub",
+          "detailed": "\n        ",
+          "name": "strtoargvsub",
+          "params": [
+            "mctx",
+            "s",
+            "argcp",
+            "argvp",
+            "n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, char *s, unsigned int *argcp, char ***argvp)",
+          "brief": "Tokenize the string \"s\" into whitespace-separated words, return the number of words in '*argcp' and an array of pointers to the words in '*argvp'. The caller must free the array using isc_mem_put(). The string is modified in-place.",
+          "definition": "static isc_result_t strtoargv",
+          "detailed": "\n        ",
+          "name": "strtoargv",
+          "params": [
+            "mctx",
+            "s",
+            "argcp",
+            "argvp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_zonetype_t ztype, const cfg_obj_t **maps, const cfg_obj_t **objp)",
+          "brief": "\n        ",
+          "definition": "static void checknames",
+          "detailed": "\n        ",
+          "name": "checknames",
+          "params": [
+            "ztype",
+            "maps",
+            "objp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_view_t *myview, dns_tsigkey_t *mykey, const isc_sockaddr_t *srcaddr, const isc_sockaddr_t *dstaddr, dns_rdataclass_t rdclass, void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static bool isself",
+          "detailed": "\n        ",
+          "name": "isself",
+          "params": [
+            "myview",
+            "mykey",
+            "srcaddr",
+            "dstaddr",
+            "rdclass",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_notifytype_t ntype, dns_zonetype_t ztype, const char *zname, const cfg_obj_t **maps)",
+          "brief": "For mirror zones, change \"notify yes;\" to \"notify explicit;\", informing the user only if \"notify\" was explicitly configured rather than inherited from default configuration.",
+          "definition": "static dns_notifytype_t process_notifytype",
+          "detailed": "\n        ",
+          "name": "process_notifytype",
+          "params": [
+            "ntype",
+            "ztype",
+            "zname",
+            "maps"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *config, const cfg_obj_t *vconfig, const cfg_obj_t *zconfig, cfg_aclconfctx_t *ac, dns_kasplist_t *kasplist, dns_keystorelist_t *keystorelist, dns_zone_t *zone, dns_zone_t *raw)",
+          "brief": "Configure or reconfigure a zone according to the named.conf data.",
+          "definition": "isc_result_t named_zone_configure",
+          "detailed": "The zone origin is not configured, it is assumed to have been set at zone creation time.\nRequire: \n'ac' to point to an initialized cfg_aclconfctx_t. \n\n'kasplist' to be initialized. \n\n'zone' to be initialized. \n\n\n\n'ac' to point to an initialized cfg_aclconfctx_t. \n'kasplist' to be initialized. \n'zone' to be initialized.",
+          "name": "named_zone_configure",
+          "params": [
+            "config",
+            "vconfig",
+            "zconfig",
+            "ac",
+            "kasplist",
+            "keystores",
+            "zone",
+            "raw"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_dlzdb_t *dlzdatabase, dns_zone_t *zone, dns_rdataclass_t rdclass, dns_name_t *name)",
+          "brief": "\n        ",
+          "definition": "isc_result_t named_zone_configure_writeable_dlz",
+          "detailed": "\n        ",
+          "name": "named_zone_configure_writeable_dlz",
+          "params": [
+            "dlzdatabase",
+            "zone",
+            "rdclass",
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_zone_t *zone, const cfg_obj_t *zconfig, const cfg_obj_t *vconfig, const cfg_obj_t *config, dns_kasplist_t *kasplist)",
+          "brief": "If 'zone' can be safely reconfigured according to the configuration data in 'zconfig', return true. If the configuration data is so different from the current zone state that the zone needs to be destroyed and recreated, return false.",
+          "definition": "bool named_zone_reusable",
+          "detailed": "\n        ",
+          "name": "named_zone_reusable",
+          "params": [
+            "zone",
+            "zconfig",
+            "vconfig",
+            "config",
+            "kasplist"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const cfg_obj_t *zconfig, const cfg_obj_t *vconfig, const cfg_obj_t *config, dns_kasplist_t *kasplist)",
+          "brief": "Determine if zone uses inline-signing. This is true if inline-signing is set to yes, in the zone clause or in the zone's dnssec-policy clause. By default, dnssec-policy uses inline-signing.",
+          "definition": "bool named_zone_inlinesigning",
+          "detailed": "\n        ",
+          "name": "named_zone_inlinesigning",
+          "params": [
+            "zconfig",
+            "vconfig",
+            "config",
+            "kasplist"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STATICSTUB_SERVER_TTL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIGNED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* const primary_synonyms[]",
+          "detailed": "\n        ",
+          "name": "primary_synonyms",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* const secondary_synonyms[]",
+          "detailed": "\n        ",
+          "name": "secondary_synonyms",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "bin/named",
+  "schema_version": 1,
+  "version": "9.20.26"
+}
