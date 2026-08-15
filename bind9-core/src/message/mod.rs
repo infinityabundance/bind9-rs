@@ -156,14 +156,11 @@ impl Message {
         })
     }
 
-    /// Render the message.  `compression` enables name compression in
-    /// sections (never for the question name).
+    /// Render the message.  `compression` enables name compression; names
+    /// are added to the compression table either way (BIND behavior).
     pub fn render(&self, out: &mut Vec<u8>, compression: bool) -> Result<()> {
         let mut comp = Compressor::new();
-        let mut rcomp = None;
-        if compression {
-            rcomp = Some(&mut comp);
-        }
+        comp.set_permitted(compression);
 
         let header = Header {
             id: self.id,
@@ -182,22 +179,22 @@ impl Message {
             // added to the compression table, so later records compress
             // against it.  There is nothing earlier to point at, so the
             // emitted bytes are uncompressed.
-            rcomp.as_deref_mut().unwrap().render(&q.qname, out);
+            comp.render(&q.qname, out);
             out.extend_from_slice(&q.qtype.to_u16().to_be_bytes());
             out.extend_from_slice(&q.qclass.to_u16().to_be_bytes());
         }
 
         for r in &self.answer {
-            render_record(out, r, rcomp.as_deref_mut())?;
+            render_record(out, r, &mut comp)?;
         }
         for r in &self.authority {
-            render_record(out, r, rcomp.as_deref_mut())?;
+            render_record(out, r, &mut comp)?;
         }
         for r in &self.additional {
-            render_record(out, r, rcomp.as_deref_mut())?;
+            render_record(out, r, &mut comp)?;
         }
         if let Some(o) = &self.opt {
-            o.render(out, rcomp.as_deref_mut())?;
+            o.render(out, Some(&mut comp))?;
         }
         Ok(())
     }
@@ -272,17 +269,14 @@ fn parse_record_prefix(buf: &[u8], pos: usize) -> Result<(Name, RrType, Class, T
     Ok((fw.name, type_, class, ttl, rdlen, rpos))
 }
 
-fn render_record(out: &mut Vec<u8>, r: &Record, mut comp: Option<&mut Compressor>) -> Result<()> {
-    match comp.as_deref_mut() {
-        Some(c) => c.render(&r.name, out),
-        None => crate::name::wire::to_wire_uncompressed(&r.name, out)?,
-    }
+fn render_record(out: &mut Vec<u8>, r: &Record, comp: &mut Compressor) -> Result<()> {
+    comp.render(&r.name, out);
     out.extend_from_slice(&r.type_.to_u16().to_be_bytes());
     out.extend_from_slice(&r.class.to_u16().to_be_bytes());
     out.extend_from_slice(&r.ttl.as_u32().to_be_bytes());
     let len_pos = out.len();
     out.extend_from_slice(&0u16.to_be_bytes()); // rdlength placeholder
-    r.rdata.to_wire(out, comp.as_deref_mut())?;
+    r.rdata.to_wire(out, Some(comp))?;
     let rdlen = out.len() - len_pos - 2;
     let rdlen: u16 = rdlen.try_into().map_err(|_| Error::MessageTooLong)?;
     out[len_pos..len_pos + 2].copy_from_slice(&rdlen.to_be_bytes());

@@ -1,0 +1,20 @@
+schema_version = 1
+court_id = "RENDER-COMPRESS-0003"
+question = "dns_name_towire with DNS_COMPRESS_CASE: case-sensitive suffix matching"
+subsystem = "dns/compress"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "a suffix differing only in case must NOT be compressed when DNS_COMPRESS_CASE is set",
+    "cumulative message hex must match byte-for-byte",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/compress.c hash_label/match_wirename: sensitive paths skip tolower (9.20.26)",
+    "lib/ns/client.c: named enables DNS_COMPRESS_CASE by default unless the peer matches the view's nocasecompress ACL",
+    "lib/ns/xfrout.c: AXFR/IXFR responses use DNS_COMPRESS_CASE | DNS_COMPRESS_LARGE",
+    "spec §16",
+]

@@ -56,7 +56,8 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 |---|---|
 | ARCHAEOLOGY | 1557 |
 | INTERNAL | 1811 |
-| PARTIAL | 28 |
+| ORACLE-TESTED | 7 |
+| PARTIAL | 21 |
 | SCAFFOLDED | 1 |
 | UNKNOWN | 9693 |
 
@@ -64,12 +65,12 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 
 | Member | Kind | Library | Status | Court | Rust module |
 |---|---|---|---|---|---|
-| `dns_compress_init` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
-| `dns_compress_invalidate` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
-| `dns_compress_setpermitted` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
-| `dns_compress_getpermitted` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
-| `dns_compress_name` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
-| `dns_compress_rollback` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
+| `dns_compress_init` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_invalidate` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_setpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_getpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_name` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_rollback` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_master_stylecreate` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
 | `dns_rcode_fromtext` | function | lib/dns | SCAFFOLDED |  | `bind9-core::rcode` |
 | `dns_rcode_totext` | function | lib/dns | PARTIAL |  | `bind9-core::rcode` |
@@ -88,7 +89,7 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | `dns_name_totext` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
 | `dns_name_fromwire` | function | lib/dns | PARTIAL | CORE-NAME-WIRE-0001 | `bind9-core::name::wire` |
 | `dns_name_towire` | function | lib/dns | PARTIAL |  | `bind9-core::name::wire` |
-| `dns_compress_setpermitted` | function | lib/dns | PARTIAL |  | `bind9-core::message::compression` |
+| `dns_compress_setpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_rdata_txt_first` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
 | `dns_rdata_txt_next` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
 | `dns_rdata_txt_current` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |

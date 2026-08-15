@@ -1,0 +1,21 @@
+schema_version = 1
+court_id = "RENDER-COMPRESS-0005"
+question = "dns_name_towire with compression not permitted (RFC 3597): full names written, table still populated"
+subsystem = "dns/compress"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "no pointer bytes are ever emitted while not permitted",
+    "names rendered while not permitted must still be usable as compression targets afterwards",
+    "cumulative message hex must match byte-for-byte",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/name.c dns_name_towire: compress = !nocompress && getpermitted; dns_compress_name runs unconditionally, then prefix/suffix are reset when !compress",
+    "lib/dns/include/dns/compress.h: dns_compress_setpermitted for RFC 3597 per-name control",
+    "lib/dns/rdataset.c: nocompress propagates from owner names",
+    "spec §16",
+]

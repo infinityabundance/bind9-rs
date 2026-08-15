@@ -1,0 +1,17 @@
+schema_version = 1
+court_id = "CORE-NAME-COMPARE-0001"
+question = "dns_name_compare / fullcompare / rdatacompare / issubdomain / equal semantics"
+subsystem = "dns/name"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "compare order, namereln, common-label count, subdomain, equality and rdatacompare must match byte-for-byte",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/name.c dns_name_fullcompare (9.20.26): right-to-left label walk, root label counted",
+    "spec §79",
+]

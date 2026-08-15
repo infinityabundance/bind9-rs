@@ -61,6 +61,12 @@ pub const MAX_LABELS: usize = 128;
 pub struct Name {
     data: Box<[u8]>,
     absolute: bool,
+    /// BIND `DNS_NAMEATTR_NOCOMPRESS`: the name must never be compressed.
+    /// `dns_name_towire` still adds it to the compression table (so later
+    /// names can point at it), but always writes it in full.  BIND sets it
+    /// on TSIG key names (lib/dns/tsig.c, lib/dns/message.c) and propagates
+    /// it from owner names (lib/dns/rdataset.c).
+    nocompress: bool,
 }
 
 impl Name {
@@ -70,6 +76,7 @@ impl Name {
         Name {
             data: Box::new([]),
             absolute: true,
+            nocompress: false,
         }
     }
 
@@ -94,7 +101,11 @@ impl Name {
         if i != data.len() {
             return Err(Error::InvalidArgument);
         }
-        Ok(Name { data, absolute })
+        Ok(Name {
+            data,
+            absolute,
+            nocompress: false,
+        })
     }
 
     /// Parse a name from text, resolving relative names against `origin`.
@@ -277,6 +288,20 @@ impl Name {
     pub fn with_absolute(mut self, absolute: bool) -> Self {
         self.absolute = absolute;
         self
+    }
+
+    /// A copy with BIND's `DNS_NAMEATTR_NOCOMPRESS` attribute set/cleared.
+    #[must_use]
+    pub fn with_nocompress(mut self, nocompress: bool) -> Self {
+        self.nocompress = nocompress;
+        self
+    }
+
+    /// Whether the name must be rendered uncompressed (BIND
+    /// `DNS_NAMEATTR_NOCOMPRESS`; set on TSIG key names per RFC 8945).
+    #[must_use]
+    pub fn is_nocompress(&self) -> bool {
+        self.nocompress
     }
 
     /// The number of labels, counting the root label for absolute names

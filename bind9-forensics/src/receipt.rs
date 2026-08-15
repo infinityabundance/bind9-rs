@@ -199,9 +199,13 @@ pub fn verify_receipt(path: &Path) -> Result<Vec<String>, String> {
 }
 
 /// Find the workspace root by walking up to the `Cargo.toml` with the
-/// workspace marker.
+/// workspace marker.  The starting path is canonicalized first so that a
+/// relative path (e.g. `forensics/receipts/…` passed on the command line)
+/// resolves to a usable absolute root for subprocesses (`git rev-parse`
+/// refuses an empty current-dir).
 fn repo_root_of(start: &Path) -> std::path::PathBuf {
-    let mut p = Some(start);
+    let start = start.canonicalize().unwrap_or_else(|_| start.to_path_buf());
+    let mut p = Some(start.as_path());
     while let Some(dir) = p {
         let marker = dir.join("Cargo.toml");
         if marker.exists() {
@@ -213,7 +217,7 @@ fn repo_root_of(start: &Path) -> std::path::PathBuf {
         }
         p = dir.parent();
     }
-    start.to_path_buf()
+    start
 }
 
 #[cfg(test)]

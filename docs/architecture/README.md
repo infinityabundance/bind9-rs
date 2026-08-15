@@ -61,7 +61,8 @@ bind9-forensics/
 5. `dns_name_fromwire` rejects pointers that target the **current segment
    start** (`pointer >= marker`), not merely forward pointers.
 6. Every rendered name — including the question name — is added to the
-   compression table, and suffix matching is case-insensitive.
+   compression table, and suffix matching is case-insensitive **by default**
+   (see 11 for named's actual default).
 7. The masterfile lexer returns **raw tokens**; consumers (name/char-string
    parsers) resolve escapes; unknown rdata is signalled by a `\#` token.
 8. RCODEs 11-15 render as `RESERVED11`..`RESERVED15`; BADKEY/BADTIME/... are
@@ -69,3 +70,26 @@ bind9-forensics/
 9. `countlabels` includes the root label for absolute names
    (`countlabels(".") == 1`).
 10. BIND 9.20 renders escapes with **decimal** digits in `dns_name_totext`.
+11. `named` compresses query responses **case-sensitively by default**
+    (`DNS_COMPRESS_CASE`), unless the peer matches the view's
+    `nocasecompress` ACL (lib/ns/client.c).  AXFR/IXFR responses use
+    `DNS_COMPRESS_CASE | DNS_COMPRESS_LARGE` (lib/ns/xfrout.c); update
+    requests add `DNS_COMPRESS_LARGE` (lib/dns/request.c).  The compressor
+    therefore models all four BIND flags, each courted by its own
+    RENDER-COMPRESS-* court.
+12. The compression table is a **robin-hood hash set** of `(hash, coff)`
+    pairs — 64 slots by default, 1024 with `DNS_COMPRESS_LARGE` — with a
+    75% load cap (`count > mask*3/4` refuses inserts; 48 of 64 slots) and
+    a 0x4000 offset cap.  Suffix matching is verified against the actual
+    message bytes (`match_suffix`: literal, pointer-to-previous, or root
+    continuation).  A byte-exact port is required: an earlier HashMap
+    approximation chose different offsets than BIND (RENDER-COMPRESS-0001
+    residual).
+13. **`coff == 0` is the empty-slot sentinel** (`compress.h`): valid
+    compression offsets can never be zero because the DNS header occupies
+    message offset 0.  Consequence: in a bare-buffer probe, a name whose
+    whole-name entry would sit at offset 0 is invisible to later renders —
+    they match only its stored suffixes (e.g. `example.com.` rendered
+    twice yields `example` + pointer to `com.@8`, never `\xc0\x00`).
+    Real messages never hit this because the header pushes every name past
+    offset 12.

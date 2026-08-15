@@ -590,6 +590,9 @@ mod tests {
 
     #[test]
     fn ns_wire_roundtrip_with_compression() {
+        // One compressor + one buffer per message, exactly as in BIND
+        // (sharing a cctx across two buffers is never valid: recorded
+        // offsets refer to one buffer).
         let mut msg = Vec::new();
         let mut comp = Compressor::new();
         // First render the origin name in a "question-like" position.
@@ -598,15 +601,19 @@ mod tests {
             type_: RrType::Ns,
             name: name("ns1.example.com."),
         };
-        let mut out = Vec::new();
-        r.to_wire(&mut out, Some(&mut comp)).unwrap();
-        // ns1 + pointer to 0
-        assert_eq!(out, [3, b'n', b's', b'1', 0xc0, 0x00]);
-        // Parse back using the full message buffer.
-        let mut full = msg.clone();
-        full.extend_from_slice(&out);
-        let mut pos = msg.len();
-        let parsed = Rdata::from_wire(RrType::Ns, &full, &mut pos, full.len()).unwrap();
+        r.to_wire(&mut msg, Some(&mut comp)).unwrap();
+        // The "example.com." entry at offset 0 is invisible (coff == 0 is
+        // the empty-slot sentinel), so ns1 compresses only the "com."
+        // suffix at offset 8 — oracle-verified byte sequence (RENDER-
+        // COMPRESS-0001; in a real message offset 0 is the header and
+        // a pointer to it is impossible).
+        assert_eq!(
+            &msg[13..],
+            &[3, b'n', b's', b'1', 7, b'e', b'x', b'a', b'm', b'p', b'l', b'e', 0xc0, 0x08,]
+        );
+        // Parse the rdata back from the full message buffer.
+        let mut pos = 13;
+        let parsed = Rdata::from_wire(RrType::Ns, &msg, &mut pos, msg.len()).unwrap();
         assert_eq!(parsed, r);
     }
 

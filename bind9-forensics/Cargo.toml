@@ -45,6 +45,14 @@ path = "src/bin/probe-name.rs"
 name = "probe-name-wire"
 path = "src/bin/probe-name-wire.rs"
 
+[[bin]]
+name = "probe-name-compare"
+path = "src/bin/probe-name-compare.rs"
+
+[[bin]]
+name = "probe-compress"
+path = "src/bin/probe-compress.rs"
+
 [features]
 default = ["court-runner"]
 court-runner = []

@@ -1,0 +1,20 @@
+schema_version = 1
+court_id = "RENDER-COMPRESS-0001"
+question = "dns_name_towire + dns_compress_name byte-exact rendering, default context (flags=0)"
+subsystem = "dns/compress"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "cumulative message hex after each rendered name must match byte-for-byte",
+    "longest-suffix matching, first-occurrence offsets, 0x4000 and 75%-load caps",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/compress.c dns_compress_name/insert/match_suffix (9.20.26): robin-hood hash set, DJB2-per-label hash folded via ISC_HASH_GOLDENRATIO_32",
+    "lib/dns/name.c dns_name_towire (9.20.26): unconditional dns_compress_name call; pointer emission gated by dns_compress_getpermitted",
+    "compress.h: coff==0 is the empty-slot sentinel; valid offsets can never be 0 (DNS header occupies offset 0)",
+    "spec §16",
+]
