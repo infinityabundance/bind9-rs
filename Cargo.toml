@@ -31,11 +31,11 @@ authors = ["bind9-rs custodians"]
 repository = "https://github.com/infinityabundance/bind9-rs"
 
 [workspace.dependencies]
-bind9-rs-core = { path = "bind9-rs-core" }
-bind9-rs-server = { path = "bind9-rs-server" }
-bind9-rs-tools = { path = "bind9-rs-tools" }
-bind9-rs-forensics = { path = "bind9-rs-forensics" }
-bind9-rs-platform = { path = "bind9-rs-platform" }
+bind9-rs-core = { path = "bind9-rs-core", version = "0.1.0" }
+bind9-rs-server = { path = "bind9-rs-server", version = "0.1.0" }
+bind9-rs-tools = { path = "bind9-rs-tools", version = "0.1.0" }
+bind9-rs-forensics = { path = "bind9-rs-forensics", version = "0.1.0" }
+bind9-rs-platform = { path = "bind9-rs-platform", version = "0.1.0" }
 
 # Deliberate, audited external dependencies only (spec §54).  Each entry below
 # is justified in the crate that consumes it.  The dependency ledger lives in
