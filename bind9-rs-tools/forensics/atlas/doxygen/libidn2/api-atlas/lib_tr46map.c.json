@@ -1,0 +1,113 @@
+{
+  "files": {
+    "lib/tr46map.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uint32_t c, const uint8_t *p, IDNAMap *map)",
+          "brief": "\n        ",
+          "definition": "static void _fill_map",
+          "detailed": "\n        ",
+          "name": "_fill_map",
+          "params": [
+            "c",
+            "p",
+            "map"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint32_t *c, const uint8_t *p)",
+          "brief": "\n        ",
+          "definition": "static int _compare_idna_map",
+          "detailed": "\n        ",
+          "name": "_compare_idna_map",
+          "params": [
+            "c",
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t c, IDNAMap *map)",
+          "brief": "\n        ",
+          "definition": "int get_idna_map",
+          "detailed": "\n        ",
+          "name": "get_idna_map",
+          "params": [
+            "c",
+            "map"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const IDNAMap *map, unsigned flags)",
+          "brief": "\n        ",
+          "definition": "int map_is",
+          "detailed": "\n        ",
+          "name": "map_is",
+          "params": [
+            "map",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t *c, NFCQCMap *m2)",
+          "brief": "\n        ",
+          "definition": "static int _compare_nfcqc_map",
+          "detailed": "\n        ",
+          "name": "_compare_nfcqc_map",
+          "params": [
+            "c",
+            "m2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t c)",
+          "brief": "\n        ",
+          "definition": "NFCQCMap * get_nfcqc_map",
+          "detailed": "\n        ",
+          "name": "get_nfcqc_map",
+          "params": [
+            "c"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t *dst, const IDNAMap *map)",
+          "brief": "\n        ",
+          "definition": "int get_map_data",
+          "detailed": "\n        ",
+          "name": "get_map_data",
+          "params": [
+            "dst",
+            "map"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "countof",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/tr46map.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,228 @@
+{
+  "files": {
+    "bin/mmdblookup.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *program, int exit_code, const char *error)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "program",
+            "exit_code",
+            "error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv, char **mmdb_file, char **ip_address, int *verbose, int *iterations, int *lookup_path_length, int *const thread_count, char **const ip_file)",
+          "brief": "\n        ",
+          "definition": "static const char ** get_options",
+          "detailed": "\n        ",
+          "name": "get_options",
+          "params": [
+            "argc",
+            "argv",
+            "mmdb_file",
+            "ip_address",
+            "verbose",
+            "iterations",
+            "lookup_path_length",
+            "thread_count",
+            "ip_file"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname)",
+          "brief": "\n        ",
+          "definition": "static MMDB_s open_or_die",
+          "detailed": "\n        ",
+          "name": "open_or_die",
+          "params": [
+            "fname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb)",
+          "brief": "\n        ",
+          "definition": "static void dump_meta",
+          "detailed": "\n        ",
+          "name": "dump_meta",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *const mmdb, char const *const ip_file, bool const dump)",
+          "brief": "\n        ",
+          "definition": "static bool lookup_from_file",
+          "detailed": "\n        ",
+          "name": "lookup_from_file",
+          "params": [
+            "mmdb",
+            "ip_file",
+            "dump"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ip_address, const char **lookup_path, int lookup_path_length, bool verbose)",
+          "brief": "\n        ",
+          "definition": "static int lookup_and_print",
+          "detailed": "\n        ",
+          "name": "lookup_and_print",
+          "params": [
+            "mmdb",
+            "ip_address",
+            "lookup_path",
+            "lookup_path_length",
+            "verbose"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb, int iterations)",
+          "brief": "\n        ",
+          "definition": "static int benchmark",
+          "detailed": "\n        ",
+          "name": "benchmark",
+          "params": [
+            "mmdb",
+            "iterations"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ipstr)",
+          "brief": "\n        ",
+          "definition": "static MMDB_lookup_result_s lookup_or_die",
+          "detailed": "\n        ",
+          "name": "lookup_or_die",
+          "params": [
+            "mmdb",
+            "ipstr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *ip)",
+          "brief": "\n        ",
+          "definition": "static void random_ipv4",
+          "detailed": "\n        ",
+          "name": "random_ipv4",
+          "params": [
+            "ip"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *const mmdb, int const thread_count, int const iterations)",
+          "brief": "\n        ",
+          "definition": "static bool start_threaded_benchmark",
+          "detailed": "\n        ",
+          "name": "start_threaded_benchmark",
+          "params": [
+            "mmdb",
+            "thread_count",
+            "iterations"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static long double get_time",
+          "detailed": "\n        ",
+          "name": "get_time",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * thread",
+          "detailed": "\n        ",
+          "name": "thread",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_POSIX_C_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t thread_info::id",
+          "detailed": "\n        ",
+          "name": "id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int thread_info::num",
+          "detailed": "\n        ",
+          "name": "num",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_s* thread_info::mmdb",
+          "detailed": "\n        ",
+          "name": "mmdb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int thread_info::iterations",
+          "detailed": "\n        ",
+          "name": "iterations",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "bin/mmdblookup.c",
+  "schema_version": 1,
+  "version": "1.13.3"
+}

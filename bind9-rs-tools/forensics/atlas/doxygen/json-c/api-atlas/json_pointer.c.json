@@ -1,0 +1,237 @@
+{
+  "files": {
+    "json_pointer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *s, const char *occur, char repl_char)",
+          "brief": "\n        ",
+          "definition": "static void string_replace_all_occurrences_with_char",
+          "detailed": "JavaScript Object Notation (JSON) Pointer RFC 6901 - https://tools.ietf.org/html/rfc6901",
+          "name": "string_replace_all_occurrences_with_char",
+          "params": [
+            "s",
+            "occur",
+            "repl_char"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path, size_t *idx)",
+          "brief": "\n        ",
+          "definition": "static int is_valid_index",
+          "detailed": "\n        ",
+          "name": "is_valid_index",
+          "params": [
+            "path",
+            "idx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *obj, char *path, struct json_object **value, size_t *idx)",
+          "brief": "\n        ",
+          "definition": "static int json_pointer_get_single_path",
+          "detailed": "\n        ",
+          "name": "json_pointer_get_single_path",
+          "params": [
+            "obj",
+            "path",
+            "value",
+            "idx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *parent, const char *path, struct json_object *value, json_pointer_set_cb set_cb, int cb_handles_obj, void *priv)",
+          "brief": "\n        ",
+          "definition": "static int json_pointer_set_single_path",
+          "detailed": "\n        ",
+          "name": "json_pointer_set_single_path",
+          "params": [
+            "parent",
+            "path",
+            "value",
+            "set_cb",
+            "cb_handles_obj",
+            "priv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *obj, char *path, struct json_pointer_get_result *res)",
+          "brief": "\n        ",
+          "definition": "static int json_pointer_result_get_recursive",
+          "detailed": "\n        ",
+          "name": "json_pointer_result_get_recursive",
+          "params": [
+            "obj",
+            "path",
+            "res"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *obj, char *path, struct json_object **value)",
+          "brief": "\n        ",
+          "definition": "static int json_pointer_object_get_recursive",
+          "detailed": "\n        ",
+          "name": "json_pointer_object_get_recursive",
+          "params": [
+            "obj",
+            "path",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *obj, const char *path, struct json_pointer_get_result *res)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_get_internal",
+          "detailed": "\n        ",
+          "name": "json_pointer_get_internal",
+          "params": [
+            "obj",
+            "path",
+            "res"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, const char *path, struct json_object **res)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_get",
+          "detailed": "Retrieves a JSON sub-object from inside another JSON object using the JSON pointer notation as defined in RFC 6901 https://tools.ietf.org/html/rfc6901\nThe returned JSON sub-object is equivalent to parsing manually the 'obj' JSON tree ; i.e. it's not a new object that is created, but rather a pointer inside the JSON tree.\nInternally, this is equivalent to doing a series of 'json_object_object_get()' and 'json_object_array_get_idx()' along the given 'path'.\n\n\nobj\n\n\nthe json_object instance/tree from where to retrieve sub-objects \n\n\n\n\npath\n\n\na (RFC6901) string notation for the sub-object to retrieve \n\n\n\n\nres\n\n\na pointer that stores a reference to the json_object associated with the given path\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nthe json_object instance/tree from where to retrieve sub-objects \na (RFC6901) string notation for the sub-object to retrieve \na pointer that stores a reference to the json_object associated with the given path\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_get",
+          "params": [
+            "obj",
+            "path",
+            "res"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, struct json_object **res, const char *path_fmt,...)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_getf",
+          "detailed": "This is a variant of 'json_pointer_get()' that supports printf() style arguments.\nVariable arguments go after the 'path_fmt' parameter.\nExample: json_pointer_getf(obj, res, \"/foo/%d/%s\", 0, \"bar\") This also means that you need to escape '' with '%' (just like in printf())\nPlease take into consideration all recommended 'printf()' format security aspects when using this function.\n\n\nobj\n\n\nthe json_object instance/tree to which to add a sub-object \n\n\n\n\nres\n\n\na pointer that stores a reference to the json_object associated with the given path \n\n\n\n\npath_fmt\n\n\na printf() style format for the path\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nthe json_object instance/tree to which to add a sub-object \na pointer that stores a reference to the json_object associated with the given path \na printf() style format for the path\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_getf",
+          "params": [
+            "obj",
+            "res",
+            "path_fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object **obj, const char *path, struct json_object *value, json_pointer_set_cb set_cb, int cb_handles_obj, void *priv)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_set_with_cb",
+          "detailed": "Variant of 'json_pointer_set()' that allows specifying a custom callback\n\n\nobj\n\n\nthe json_object instance/tree to which to add a sub-object \n\n\n\n\npath\n\n\na (RFC6901) string notation for the sub-object to set in the tree \n\n\n\n\nvalue\n\n\nobject to set at path \n\n\n\n\nset_cb\n\n\nA custom callback function to handle setting the element \n\n\n\n\ncb_handles_obj\n\n\nIf 0, the callback is only invoked for array modifications. If 1, the callback is invoked for both array and object modifications. \n\n\n\n\npriv\n\n\nA private pointer passed through to the set_cb callback, for user-defined context\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nthe json_object instance/tree to which to add a sub-object \na (RFC6901) string notation for the sub-object to set in the tree \nobject to set at path \nA custom callback function to handle setting the element \nIf 0, the callback is only invoked for array modifications. If 1, the callback is invoked for both array and object modifications. \nA private pointer passed through to the set_cb callback, for user-defined context\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_set_with_cb",
+          "params": [
+            "obj",
+            "path",
+            "value",
+            "set_cb",
+            "cb_handles_obj",
+            "priv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *parent, const char *key, size_t idx, struct json_object *value, void *priv)",
+          "brief": "\n        ",
+          "definition": "static int default_put_cb",
+          "detailed": "\n        ",
+          "name": "default_put_cb",
+          "params": [
+            "parent",
+            "key",
+            "idx",
+            "value",
+            "priv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object **obj, const char *path, struct json_object *value)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_set",
+          "detailed": "Sets JSON object 'value' in the 'obj' tree at the location specified by the 'path'. 'path' is JSON pointer notation as defined in RFC 6901 https://tools.ietf.org/html/rfc6901\nNote that 'obj' is a double pointer, mostly for the \"\" (empty string) case, where the entire JSON object would be replaced by 'value'. In the case of the \"\" path, the object at '*obj' will have it's refcount decremented with 'json_object_put()' and the 'value' object will be assigned to it.\nFor other cases (JSON sub-objects) ownership of 'value' will be transferred into '*obj' via 'json_object_object_add()' & 'json_object_array_put_idx()', so the only time the refcount should be decremented for 'value' is when the return value of 'json_pointer_set()' is negative (meaning the 'value' object did not get set into '*obj').\nThat also implies that 'json_pointer_set()' does not do any refcount incrementing. (Just that single decrement that was mentioned above).\nThis function is vulnerable to an OOM. To prevent this, use the safer variant 'json_pointer_set_with_limit_index()' or the flexible 'json_pointer_set_with_array_cb()' with a custom callback.\n\n\n\nobj\n\n\nthe json_object instance/tree to which to add a sub-object \n\n\n\n\npath\n\n\na (RFC6901) string notation for the sub-object to set in the tree \n\n\n\n\nvalue\n\n\nobject to set at path\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nThis function is vulnerable to an OOM. To prevent this, use the safer variant 'json_pointer_set_with_limit_index()' or the flexible 'json_pointer_set_with_array_cb()' with a custom callback.\nthe json_object instance/tree to which to add a sub-object \na (RFC6901) string notation for the sub-object to set in the tree \nobject to set at path\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_set",
+          "params": [
+            "obj",
+            "path",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object **obj, struct json_object *value, const char *path_fmt,...)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_setf",
+          "detailed": "This is a variant of 'json_pointer_set()' that supports printf() style arguments.\nVariable arguments go after the 'path_fmt' parameter.\nExample: json_pointer_setf(obj, value, \"/foo/%d/%s\", 0, \"bar\") This also means that you need to escape '' with '%' (just like in printf())\nPlease take into consideration all recommended 'printf()' format security aspects when using this function.\n\n\nobj\n\n\nthe json_object instance/tree to which to add a sub-object \n\n\n\n\nvalue\n\n\nobject to set at path \n\n\n\n\npath_fmt\n\n\na printf() style format for the path\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nthe json_object instance/tree to which to add a sub-object \nobject to set at path \na printf() style format for the path\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_setf",
+          "params": [
+            "obj",
+            "value",
+            "path_fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object **obj, const char *path, struct json_object *value, size_t limit_index)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_set_with_limit_index",
+          "detailed": "A convenient and safe variant of 'json_pointer_set()' that prevents excessive memory allocations by enforcing a limit on array indices.\n\n\nobj\n\n\nthe json_object instance/tree to which to add a sub-object \n\n\n\n\npath\n\n\na (RFC6901) string notation for the sub-object to set in the tree \n\n\n\n\nvalue\n\n\nobject to set at path \n\n\n\n\nlimit_index\n\n\nThe maximum allowed value for an array index. If a path contains an index larger than this, the function will fail with errno set to EINVAL. A value of -1 can be used to specify no limit, reverting to the original behavior\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nthe json_object instance/tree to which to add a sub-object \na (RFC6901) string notation for the sub-object to set in the tree \nobject to set at path \nThe maximum allowed value for an array index. If a path contains an index larger than this, the function will fail with errno set to EINVAL. A value of -1 can be used to specify no limit, reverting to the original behavior\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_set_with_limit_index",
+          "params": [
+            "obj",
+            "path",
+            "value",
+            "limit_index"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *jso, const char *key, size_t idx, struct json_object *jso_new, void *priv)",
+          "brief": "\n        ",
+          "definition": "int json_object_array_put_with_idx_limit_cb",
+          "detailed": "A safer callback for 'json_pointer_set_with_cb()' that enforces a maximum array index.\nThis function can be used as the 'set_cb' argument to prevent OOM. It expects the 'priv' argument to be a valid pointer to a 'size_t' variable that holds the maximum allowed index.\n\n\njso\n\n\nthe parent json_object array. \n\n\n\n\nkey\n\n\nthe object field where the element is to be placed, should be NULL here. \n\n\n\n\nidx\n\n\nthe index where the element is to be placed. \n\n\n\n\njso_new\n\n\nthe new json_object to place at the index. \n\n\n\n\npriv\n\n\nA pointer to a 'size_t' variable specifying the maximum index. This pointer must not be NULL.\n\n\n\n0 on success, or a negative value if idx exceeds the limit or 'priv' is NULL. \n\n\nthe parent json_object array. \nthe object field where the element is to be placed, should be NULL here. \nthe index where the element is to be placed. \nthe new json_object to place at the index. \nA pointer to a 'size_t' variable specifying the maximum index. This pointer must not be NULL.\n0 on success, or a negative value if idx exceeds the limit or 'priv' is NULL.",
+          "name": "json_object_array_put_with_idx_limit_cb",
+          "params": [
+            "jso",
+            "key",
+            "idx",
+            "jso_new",
+            "priv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "is_plain_digit",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "json_pointer.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

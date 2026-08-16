@@ -1,0 +1,29 @@
+{
+  "files": {
+    "tests/test_locale.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_locale.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

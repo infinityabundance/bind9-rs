@@ -1,0 +1,40 @@
+{
+  "files": {
+    "fuzz/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int n)",
+          "brief": "\n        ",
+          "definition": "static int __AFL_LOOP",
+          "detailed": "\n        ",
+          "name": "__AFL_LOOP",
+          "params": [
+            "n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "fuzz/main.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

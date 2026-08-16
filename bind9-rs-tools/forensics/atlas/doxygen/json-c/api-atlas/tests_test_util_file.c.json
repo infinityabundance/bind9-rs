@@ -1,0 +1,116 @@
+{
+  "files": {
+    "tests/test_util_file.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *testdir)",
+          "brief": "\n        ",
+          "definition": "static void test_read_valid_with_fd",
+          "detailed": "\n        ",
+          "name": "test_read_valid_with_fd",
+          "params": [
+            "testdir"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *testdir)",
+          "brief": "\n        ",
+          "definition": "static void test_read_valid_nested_with_fd",
+          "detailed": "\n        ",
+          "name": "test_read_valid_nested_with_fd",
+          "params": [
+            "testdir"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_read_nonexistant",
+          "detailed": "\n        ",
+          "name": "test_read_nonexistant",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_read_closed",
+          "detailed": "\n        ",
+          "name": "test_read_closed",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_write_to_file",
+          "detailed": "\n        ",
+          "name": "test_write_to_file",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *file)",
+          "brief": "\n        ",
+          "definition": "static void stat_and_cat",
+          "detailed": "\n        ",
+          "name": "stat_and_cat",
+          "params": [
+            "file"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *testdir)",
+          "brief": "\n        ",
+          "definition": "static void test_read_fd_equal",
+          "detailed": "\n        ",
+          "name": "test_read_fd_equal",
+          "params": [
+            "testdir"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PATH_MAX",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_util_file.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

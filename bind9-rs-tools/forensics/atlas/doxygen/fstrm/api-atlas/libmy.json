@@ -1,0 +1,2654 @@
+{
+  "files": {
+    "libmy/argv.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(argv_t *grid, const int arg_c, char **argv, argv_t **queue_list, int *queue_head_p, int *queue_tail_p, int *okay_bp)",
+          "brief": "\n        ",
+          "definition": "static void do_list",
+          "detailed": "\n        ",
+          "name": "do_list",
+          "params": [
+            "grid",
+            "arg_c",
+            "argv",
+            "queue_list",
+            "queue_head_p",
+            "queue_tail_p",
+            "okay_bp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void argv_startup",
+          "detailed": "\n        ",
+          "name": "argv_startup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static int btoi",
+          "detailed": "\n        ",
+          "name": "btoi",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static int otoi",
+          "detailed": "\n        ",
+          "name": "otoi",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static int htoi",
+          "detailed": "\n        ",
+          "name": "htoi",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static char * string_copy",
+          "detailed": "\n        ",
+          "name": "string_copy",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *str, const char *tok, int *num_tok_p)",
+          "brief": "\n        ",
+          "definition": "static char ** vectorize",
+          "detailed": "\n        ",
+          "name": "vectorize",
+          "params": [
+            "str",
+            "tok",
+            "num_tok_p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *buf, const int buf_size, char *out, const int out_size)",
+          "brief": "\n        ",
+          "definition": "static int expand_buf",
+          "detailed": "\n        ",
+          "name": "expand_buf",
+          "params": [
+            "buf",
+            "buf_size",
+            "out",
+            "out_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args, const int flag)",
+          "brief": "\n        ",
+          "definition": "static void usage_short",
+          "detailed": "\n        ",
+          "name": "usage_short",
+          "params": [
+            "args",
+            "flag"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *stream, const argv_t *arg_p, const int max, int *col_cp)",
+          "brief": "\n        ",
+          "definition": "static void display_arg",
+          "detailed": "\n        ",
+          "name": "display_arg",
+          "params": [
+            "stream",
+            "arg_p",
+            "max",
+            "col_cp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *stream, const argv_t *arg_p, int *col_cp)",
+          "brief": "\n        ",
+          "definition": "static void display_option",
+          "detailed": "\n        ",
+          "name": "display_option",
+          "params": [
+            "stream",
+            "arg_p",
+            "col_cp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args)",
+          "brief": "\n        ",
+          "definition": "static void usage_long",
+          "detailed": "\n        ",
+          "name": "usage_long",
+          "params": [
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args, const int flag)",
+          "brief": "\n        ",
+          "definition": "static void do_usage",
+          "detailed": "\n        ",
+          "name": "do_usage",
+          "params": [
+            "args",
+            "flag"
+          ],
+          "static": true
+        },
+        {
+          "args": "(argv_t *args, const int arg_n)",
+          "brief": "\n        ",
+          "definition": "static int preprocess_array",
+          "detailed": "\n        ",
+          "name": "preprocess_array",
+          "params": [
+            "args",
+            "arg_n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *arg, char *var, const unsigned int type)",
+          "brief": "\n        ",
+          "definition": "static int string_to_value",
+          "detailed": "\n        ",
+          "name": "string_to_value",
+          "params": [
+            "arg",
+            "var",
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *var, const unsigned int type, char *buf, const int buf_size)",
+          "brief": "\n        ",
+          "definition": "static int value_to_string",
+          "detailed": "\n        ",
+          "name": "value_to_string",
+          "params": [
+            "var",
+            "type",
+            "buf",
+            "buf_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args)",
+          "brief": "\n        ",
+          "definition": "static void display_variables",
+          "detailed": "\n        ",
+          "name": "display_variables",
+          "params": [
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args, const argv_t *which_p)",
+          "brief": "\n        ",
+          "definition": "static int check_or",
+          "detailed": "\n        ",
+          "name": "check_or",
+          "params": [
+            "args",
+            "which_p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args)",
+          "brief": "\n        ",
+          "definition": "static int check_xor",
+          "detailed": "\n        ",
+          "name": "check_xor",
+          "params": [
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const argv_t *args)",
+          "brief": "\n        ",
+          "definition": "static int check_mand",
+          "detailed": "\n        ",
+          "name": "check_mand",
+          "params": [
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const int queue_head, const int queue_tail)",
+          "brief": "\n        ",
+          "definition": "static int check_opt",
+          "detailed": "\n        ",
+          "name": "check_opt",
+          "params": [
+            "queue_head",
+            "queue_tail"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path, argv_t *grid, argv_t **queue_list, int *queue_head_p, int *queue_tail_p, int *okay_bp)",
+          "brief": "\n        ",
+          "definition": "static void file_args",
+          "detailed": "\n        ",
+          "name": "file_args",
+          "params": [
+            "path",
+            "grid",
+            "queue_list",
+            "queue_head_p",
+            "queue_tail_p",
+            "okay_bp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(argv_t *grid, argv_t *match_p, const char *close_p, argv_t **queue_list, int *queue_head_p, int *okay_bp)",
+          "brief": "\n        ",
+          "definition": "static void do_arg",
+          "detailed": "\n        ",
+          "name": "do_arg",
+          "params": [
+            "grid",
+            "match_p",
+            "close_p",
+            "queue_list",
+            "queue_head_p",
+            "okay_bp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static int is_number",
+          "detailed": "\n        ",
+          "name": "is_number",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char **environ_pp, int *env_np)",
+          "brief": "\n        ",
+          "definition": "static char ** preprocess_env_args",
+          "detailed": "\n        ",
+          "name": "preprocess_env_args",
+          "params": [
+            "environ_pp",
+            "env_np"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int process_env",
+          "detailed": "\n        ",
+          "name": "process_env",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(argv_t *args, const int arg_n, char **argv)",
+          "brief": "\n        ",
+          "definition": "int argv_process_no_env",
+          "detailed": "\n        ",
+          "name": "argv_process_no_env",
+          "params": [
+            "args",
+            "arg_n",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(argv_t *args, const int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int argv_process",
+          "detailed": "\n        ",
+          "name": "argv_process",
+          "params": [
+            "args",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args, const int which)",
+          "brief": "\n        ",
+          "definition": "int argv_usage",
+          "detailed": "\n        ",
+          "name": "argv_usage",
+          "params": [
+            "args",
+            "which"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args, const char short_arg)",
+          "brief": "\n        ",
+          "definition": "int argv_was_used",
+          "detailed": "\n        ",
+          "name": "argv_was_used",
+          "params": [
+            "args",
+            "short_arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args, const char *long_arg)",
+          "brief": "\n        ",
+          "definition": "int argv_long_was_used",
+          "detailed": "\n        ",
+          "name": "argv_long_was_used",
+          "params": [
+            "args",
+            "long_arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *argv_entry_p)",
+          "brief": "\n        ",
+          "definition": "int argv_entry_was_used",
+          "detailed": "\n        ",
+          "name": "argv_entry_was_used",
+          "params": [
+            "argv_entry_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args)",
+          "brief": "\n        ",
+          "definition": "void argv_cleanup",
+          "detailed": "\n        ",
+          "name": "argv_cleanup",
+          "params": [
+            "args"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *buf, const int buf_size)",
+          "brief": "\n        ",
+          "definition": "int argv_copy_args",
+          "detailed": "\n        ",
+          "name": "argv_copy_args",
+          "params": [
+            "buf",
+            "buf_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *argv_entry_p, char *buf, const int buf_size)",
+          "brief": "\n        ",
+          "definition": "int argv_value_string",
+          "detailed": "\n        ",
+          "name": "argv_value_string",
+          "params": [
+            "argv_entry_p",
+            "buf",
+            "buf_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const unsigned int type, unsigned int *size_p, const char **desc_p)",
+          "brief": "\n        ",
+          "definition": "const char * argv_type_info",
+          "detailed": "\n        ",
+          "name": "argv_type_info",
+          "params": [
+            "type",
+            "size_p",
+            "desc_p"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOC_SNPRINTF",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SNP_ARG",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[256+1]",
+          "brief": "\n        ",
+          "definition": "char argv_program[256+1]",
+          "detailed": "\n        ",
+          "name": "argv_program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char** argv_argv",
+          "detailed": "\n        ",
+          "name": "argv_argv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_argc",
+          "detailed": "\n        ",
+          "name": "argv_argc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv_help_string",
+          "detailed": "\n        ",
+          "name": "argv_help_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv_version_string",
+          "detailed": "\n        ",
+          "name": "argv_version_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_interactive",
+          "detailed": "\n        ",
+          "name": "argv_interactive",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* argv_error_stream",
+          "detailed": "\n        ",
+          "name": "argv_error_stream",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_error_code",
+          "detailed": "\n        ",
+          "name": "argv_error_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_close_enable_b",
+          "detailed": "\n        ",
+          "name": "argv_close_enable_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_last_toggle_b",
+          "detailed": "\n        ",
+          "name": "argv_last_toggle_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_multi_accept_b",
+          "detailed": "\n        ",
+          "name": "argv_multi_accept_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_usage_type",
+          "detailed": "\n        ",
+          "name": "argv_usage_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_error_type",
+          "detailed": "\n        ",
+          "name": "argv_error_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_process_env_b",
+          "detailed": "\n        ",
+          "name": "argv_process_env_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_env_after_b",
+          "detailed": "\n        ",
+          "name": "argv_env_after_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "argv_t empty[]",
+          "detailed": "\n        ",
+          "name": "empty",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int enabled_b",
+          "detailed": "\n        ",
+          "name": "enabled_b",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libmy/argv.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(argv_t *args, const int arg_c, char **argv)",
+          "brief": "\n        ",
+          "definition": "int argv_process_no_env",
+          "detailed": "\n        ",
+          "name": "argv_process_no_env",
+          "params": [
+            "args",
+            "arg_c",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(argv_t *args, const int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int argv_process",
+          "detailed": "\n        ",
+          "name": "argv_process",
+          "params": [
+            "args",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args, const int which)",
+          "brief": "\n        ",
+          "definition": "int argv_usage",
+          "detailed": "\n        ",
+          "name": "argv_usage",
+          "params": [
+            "args",
+            "which"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args, const char short_arg)",
+          "brief": "\n        ",
+          "definition": "int argv_was_used",
+          "detailed": "\n        ",
+          "name": "argv_was_used",
+          "params": [
+            "args",
+            "short_arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args, const char *long_arg)",
+          "brief": "\n        ",
+          "definition": "int argv_long_was_used",
+          "detailed": "\n        ",
+          "name": "argv_long_was_used",
+          "params": [
+            "args",
+            "long_arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *argv_entry_p)",
+          "brief": "\n        ",
+          "definition": "int argv_entry_was_used",
+          "detailed": "\n        ",
+          "name": "argv_entry_was_used",
+          "params": [
+            "argv_entry_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *args)",
+          "brief": "\n        ",
+          "definition": "void argv_cleanup",
+          "detailed": "\n        ",
+          "name": "argv_cleanup",
+          "params": [
+            "args"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *buf, const int buf_size)",
+          "brief": "\n        ",
+          "definition": "int argv_copy_args",
+          "detailed": "\n        ",
+          "name": "argv_copy_args",
+          "params": [
+            "buf",
+            "buf_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const argv_t *argv_entry_p, char *buf, const int buf_size)",
+          "brief": "\n        ",
+          "definition": "int argv_value_string",
+          "detailed": "\n        ",
+          "name": "argv_value_string",
+          "params": [
+            "argv_entry_p",
+            "buf",
+            "buf_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const unsigned int type, unsigned int *size_p, const char **desc_p)",
+          "brief": "\n        ",
+          "definition": "const char * argv_type_info",
+          "detailed": "\n        ",
+          "name": "argv_type_info",
+          "params": [
+            "type",
+            "size_p",
+            "desc_p"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_VERSION_MAJOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_VERSION_MINOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_VERSION_PATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_PNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_ARRAY_COUNT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_ARRAY_ENTRY",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_ARRAY_ENTRY_P",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_LAST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_MAND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_MAYBE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_OR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_ONE_OF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_XOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BOOL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BOOL_NEG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BOOL_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_CHAR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_CHAR_P",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_SHORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_U_SHORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_INT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_U_INT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_LONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_U_LONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_FLOAT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_DOUBLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_OCT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_HEX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_INCR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_U_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BOOL_INT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BOOL_INT_NEG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_BOOL_INT_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_TYPE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_FLAG_ARRAY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_FLAG_MAND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_NONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_SHORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_LONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_DEFAULT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_SEE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_SHORT_REM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_USAGE_ALL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_FALSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_TRUE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char argv_program[]",
+          "detailed": "\n        ",
+          "name": "argv_program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char** argv_argv",
+          "detailed": "\n        ",
+          "name": "argv_argv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_argc",
+          "detailed": "\n        ",
+          "name": "argv_argc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv_help_string",
+          "detailed": "\n        ",
+          "name": "argv_help_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv_version_string",
+          "detailed": "\n        ",
+          "name": "argv_version_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_interactive",
+          "detailed": "\n        ",
+          "name": "argv_interactive",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* argv_error_stream",
+          "detailed": "\n        ",
+          "name": "argv_error_stream",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_error_code",
+          "detailed": "\n        ",
+          "name": "argv_error_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_close_enable_b",
+          "detailed": "\n        ",
+          "name": "argv_close_enable_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_last_toggle_b",
+          "detailed": "\n        ",
+          "name": "argv_last_toggle_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_multi_accept_b",
+          "detailed": "\n        ",
+          "name": "argv_multi_accept_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_usage_type",
+          "detailed": "\n        ",
+          "name": "argv_usage_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_error_type",
+          "detailed": "\n        ",
+          "name": "argv_error_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_process_env_b",
+          "detailed": "\n        ",
+          "name": "argv_process_env_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_env_after_b",
+          "detailed": "\n        ",
+          "name": "argv_env_after_b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int argv_array_t::aa_entry_n",
+          "detailed": "\n        ",
+          "name": "aa_entry_n",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv_array_t::aa_entries",
+          "detailed": "\n        ",
+          "name": "aa_entries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char argv_t::ar_short_arg",
+          "detailed": "\n        ",
+          "name": "ar_short_arg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* argv_t::ar_long_arg",
+          "detailed": "\n        ",
+          "name": "ar_long_arg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int argv_t::ar_type",
+          "detailed": "\n        ",
+          "name": "ar_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv_t::ar_variable",
+          "detailed": "\n        ",
+          "name": "ar_variable",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* argv_t::ar_var_label",
+          "detailed": "\n        ",
+          "name": "ar_var_label",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* argv_t::ar_comment",
+          "detailed": "\n        ",
+          "name": "ar_comment",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libmy/argv_loc.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INCLUDE_RCS_IDS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NULL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NOERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STDIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ERROR_STREAM_INIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NO_VALUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARRAY_INCR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SCREEN_WIDTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BITS_IN_BYTE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SPECIAL_CHARS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DUMP_SPACE_BUF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARG_MALLOC_INCR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FILE_LINE_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARGV_FLAG_USED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_ERROR_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INTERNAL_ERROR_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROGRAM_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXIT_CODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_CLOSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_ENV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_MULTI",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_USAGE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GLOBAL_LASTTOG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LAST_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LONG_PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SHORT_PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNKNOWN_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARG_EQUALS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NUMBER_ARG_CHARS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ENVIRON_FORMAT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_CHAR_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DISPLAY_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FILE_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HELP_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_SHORT_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_LONG_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_ALL_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VERSION_ARG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SHORT_COLUMN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LONG_COLUMN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMMENT_COLUMN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LONG_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMMENT_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARRAY_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BOOL_ARG_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SHORT_PREFIX_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LONG_PREFIX_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USAGE_LABEL_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMMENT_LABEL_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LONG_LABEL_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNKNOWN_ARG_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BOOL_ARG_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HAS_ARG",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "argv_type_t argv_types[]",
+          "detailed": "\n        ",
+          "name": "argv_types",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int argv_type_t::at_value",
+          "detailed": "\n        ",
+          "name": "at_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* argv_type_t::at_name",
+          "detailed": "\n        ",
+          "name": "at_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int argv_type_t::at_size",
+          "detailed": "\n        ",
+          "name": "at_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* argv_type_t::at_desc",
+          "detailed": "\n        ",
+          "name": "at_desc",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libmy/my_alloc.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t nmemb, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * my_calloc",
+          "detailed": "\n        ",
+          "name": "my_calloc",
+          "params": [
+            "nmemb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * my_malloc",
+          "detailed": "\n        ",
+          "name": "my_malloc",
+          "params": [
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ptr, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * my_realloc",
+          "detailed": "\n        ",
+          "name": "my_realloc",
+          "params": [
+            "ptr",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *s)",
+          "brief": "\n        ",
+          "definition": "static char * my_strdup",
+          "detailed": "\n        ",
+          "name": "my_strdup",
+          "params": [
+            "s"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "my_free",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libmy/my_memory_barrier.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libmy/my_queue.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned num_entries, unsigned size_entry)",
+          "brief": "\n        ",
+          "definition": "struct my_queue * my_queue_init",
+          "detailed": "Initialize a new queue.\n\n\nnum_entries\n\n\nNumber of elements in the queue. Must be >=2, and a power-of-2. \n\n\n\n\nsize_entry\n\n\nSize in bytes of each queue entry. \n\n\n\nOpaque pointer that is NULL on failure or non-NULL on success. \n\n\nNumber of elements in the queue. Must be >=2, and a power-of-2. \nSize in bytes of each queue entry. \nOpaque pointer that is NULL on failure or non-NULL on success.",
+          "name": "my_queue_init",
+          "params": [
+            "num_entries",
+            "size_entry"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue **q)",
+          "brief": "\n        ",
+          "definition": "void my_queue_destroy",
+          "detailed": "Destroy a queue.",
+          "name": "my_queue_destroy",
+          "params": [
+            "q"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * my_queue_impl_type",
+          "detailed": "Describe the queue implementation type.",
+          "name": "my_queue_impl_type",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue *q, void *elem, unsigned *space)",
+          "brief": "\n        ",
+          "definition": "bool my_queue_insert",
+          "detailed": "Insert an element into the queue.\n\n\nq\n\n\nQueue object. \n\n\n\n\nelem\n\n\nElement object. \n\n\n\n\nspace\n\n\nIf non-NULL, pointer to store the number of remaining spaces in the queue. \n\n\n\ntrue if the element was inserted into the queue, false if the queue is full. \n\n\nQueue object. \nElement object. \nIf non-NULL, pointer to store the number of remaining spaces in the queue. \ntrue if the element was inserted into the queue, false if the queue is full.",
+          "name": "my_queue_insert",
+          "params": [
+            "q",
+            "elem",
+            "space"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue *q, void *elem, unsigned *count)",
+          "brief": "\n        ",
+          "definition": "bool my_queue_remove",
+          "detailed": "Remove an element from the queue.\n\n\nq\n\n\nQueue object. \n\n\n\n\nelem\n\n\nWhere the element object will be copied. \n\n\n\n\ncount\n\n\nIf non-NULL, pointer to store the count of elements remaining in the queue. \n\n\n\ntrue if an element was removed from the queue, false if the queue is empty. \n\n\nQueue object. \nWhere the element object will be copied. \nIf non-NULL, pointer to store the count of elements remaining in the queue. \ntrue if an element was removed from the queue, false if the queue is empty.",
+          "name": "my_queue_remove",
+          "params": [
+            "q",
+            "elem",
+            "count"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": ")(unsigned, unsigned)",
+          "brief": "\n        ",
+          "definition": "struct my_queue *(* my_queue_ops::init) (unsigned, unsigned)",
+          "detailed": "\n        ",
+          "name": "init",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct my_queue **)",
+          "brief": "\n        ",
+          "definition": "void(* my_queue_ops::destroy) (struct my_queue **)",
+          "detailed": "\n        ",
+          "name": "destroy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void)",
+          "brief": "\n        ",
+          "definition": "const char *(* my_queue_ops::impl_type) (void)",
+          "detailed": "\n        ",
+          "name": "impl_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct my_queue *, void *, unsigned *)",
+          "brief": "\n        ",
+          "definition": "bool(* my_queue_ops::insert) (struct my_queue *, void *, unsigned *)",
+          "detailed": "\n        ",
+          "name": "insert",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct my_queue *, void *, unsigned *)",
+          "brief": "\n        ",
+          "definition": "bool(* my_queue_ops::remove) (struct my_queue *, void *, unsigned *)",
+          "detailed": "\n        ",
+          "name": "remove",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libmy/my_queue_mb.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libmy/my_queue_mutex.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned, unsigned)",
+          "brief": "\n        ",
+          "definition": "struct my_queue * my_queue_mutex_init",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_init",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue **)",
+          "brief": "\n        ",
+          "definition": "void my_queue_mutex_destroy",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_destroy",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * my_queue_mutex_impl_type",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_impl_type",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue *, void *, unsigned *)",
+          "brief": "\n        ",
+          "definition": "bool my_queue_mutex_insert",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_insert",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue *, void *, unsigned *)",
+          "brief": "\n        ",
+          "definition": "bool my_queue_mutex_remove",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_remove",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct my_queue *q)",
+          "brief": "\n        ",
+          "definition": "static void q_lock",
+          "detailed": "\n        ",
+          "name": "q_lock",
+          "params": [
+            "q"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct my_queue *q)",
+          "brief": "\n        ",
+          "definition": "static void q_unlock",
+          "detailed": "\n        ",
+          "name": "q_unlock",
+          "params": [
+            "q"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned head, unsigned tail, unsigned size)",
+          "brief": "\n        ",
+          "definition": "static unsigned q_space",
+          "detailed": "\n        ",
+          "name": "q_space",
+          "params": [
+            "head",
+            "tail",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned head, unsigned tail, unsigned size)",
+          "brief": "\n        ",
+          "definition": "static unsigned q_count",
+          "detailed": "\n        ",
+          "name": "q_count",
+          "params": [
+            "head",
+            "tail",
+            "size"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_aligned",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct my_queue_ops my_queue_mutex_ops",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_ops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t* my_queue::data",
+          "detailed": "\n        ",
+          "name": "data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned my_queue::num_elems",
+          "detailed": "\n        ",
+          "name": "num_elems",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned my_queue::sizeof_elem",
+          "detailed": "\n        ",
+          "name": "sizeof_elem",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned my_queue::head",
+          "detailed": "\n        ",
+          "name": "head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned my_queue::tail",
+          "detailed": "\n        ",
+          "name": "tail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t my_queue::lock",
+          "detailed": "\n        ",
+          "name": "lock",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libmy/my_time.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int clk_id __attribute__((unused)), struct timespec *ts)",
+          "brief": "\n        ",
+          "definition": "static void my_gettime",
+          "detailed": "\n        ",
+          "name": "my_gettime",
+          "params": [
+            "__attribute__",
+            "ts"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct timespec *a, struct timespec *b)",
+          "brief": "\n        ",
+          "definition": "static void my_timespec_add",
+          "detailed": "\n        ",
+          "name": "my_timespec_add",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct timespec *a, struct timespec *b)",
+          "brief": "\n        ",
+          "definition": "static void my_timespec_sub",
+          "detailed": "\n        ",
+          "name": "my_timespec_sub",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct timespec *ts)",
+          "brief": "\n        ",
+          "definition": "static double my_timespec_to_double",
+          "detailed": "\n        ",
+          "name": "my_timespec_to_double",
+          "params": [
+            "ts"
+          ],
+          "static": true
+        },
+        {
+          "args": "(double seconds, struct timespec *ts)",
+          "brief": "\n        ",
+          "definition": "static void my_timespec_from_double",
+          "detailed": "\n        ",
+          "name": "my_timespec_from_double",
+          "params": [
+            "seconds",
+            "ts"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct timespec *ts)",
+          "brief": "\n        ",
+          "definition": "static void my_nanosleep",
+          "detailed": "\n        ",
+          "name": "my_nanosleep",
+          "params": [
+            "ts"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libmy/print_string.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const void *data, size_t len, FILE *out)",
+          "brief": "\n        ",
+          "definition": "static void print_string",
+          "detailed": "\n        ",
+          "name": "print_string",
+          "params": [
+            "data",
+            "len",
+            "out"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libmy/read_bytes.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int fd, uint8_t *buf, size_t bytes_needed)",
+          "brief": "\n        ",
+          "definition": "static bool read_bytes",
+          "detailed": "\n        ",
+          "name": "read_bytes",
+          "params": [
+            "fd",
+            "buf",
+            "bytes_needed"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libmy/ubuf.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((unused)) static inline ubuf *ubuf_init(unsigned hint)",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct ubuf__vector ubuf",
+          "detailed": "\n        ",
+          "name": "ubuf",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ubuf* vec",
+          "detailed": "\n        ",
+          "name": "vec",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _hint",
+          "detailed": "\n        ",
+          "name": "_hint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _n",
+          "detailed": "\n        ",
+          "name": "_n",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _v",
+          "detailed": "\n        ",
+          "name": "_v",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _p",
+          "detailed": "\n        ",
+          "name": "_p",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t** out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "* outsz",
+          "detailed": "\n        ",
+          "name": "outsz",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _n_alloced",
+          "detailed": "\n        ",
+          "name": "_n_alloced",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libmy/vector.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VECTOR_GENERATE",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "libmy",
+  "schema_version": 1,
+  "version": "0.6.1"
+}

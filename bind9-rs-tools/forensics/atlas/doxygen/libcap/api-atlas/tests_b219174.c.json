@@ -1,0 +1,39 @@
+{
+  "files": {
+    "tests/b219174.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "N_THREADS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/b219174.c",
+  "schema_version": 1,
+  "version": "2.78"
+}

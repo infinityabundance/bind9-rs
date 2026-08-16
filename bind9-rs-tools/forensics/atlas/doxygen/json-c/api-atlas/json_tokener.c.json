@@ -1,0 +1,438 @@
+{
+  "files": {
+    "json_tokener.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char c)",
+          "brief": "\n        ",
+          "definition": "static int is_ws_char",
+          "detailed": "\n        ",
+          "name": "is_ws_char",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char c)",
+          "brief": "\n        ",
+          "definition": "static int is_hex_char",
+          "detailed": "\n        ",
+          "name": "is_hex_char",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char c, unsigned int *nBytes)",
+          "brief": "\n        ",
+          "definition": "static json_bool json_tokener_validate_utf8",
+          "detailed": "validete the utf-8 string in strict model. if not utf-8 format, return err.",
+          "name": "json_tokener_validate_utf8",
+          "params": [
+            "c",
+            "nBytes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *buf, int len, double *retval)",
+          "brief": "\n        ",
+          "definition": "static int json_tokener_parse_double",
+          "detailed": "\n        ",
+          "name": "json_tokener_parse_double",
+          "params": [
+            "buf",
+            "len",
+            "retval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(enum json_tokener_error jerr)",
+          "brief": "\n        ",
+          "definition": "const char * json_tokener_error_desc",
+          "detailed": "Given an error previously returned by json_tokener_get_error(), return a human readable description of the error.\na generic error message is returned if an invalid error value is provided. \n\n\na generic error message is returned if an invalid error value is provided.",
+          "name": "json_tokener_error_desc",
+          "params": [
+            "jerr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "enum json_tokener_error json_tokener_get_error",
+          "detailed": "Retrieve the error caused by the last call to json_tokener_parse_ex(), or json_tokener_success if there is no error.\nWhen parsing a JSON string in pieces, if the tokener is in the middle of parsing this will return json_tokener_continue.\njson_tokener_error_desc(). \n\n\njson_tokener_error_desc().",
+          "name": "json_tokener_get_error",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int depth)",
+          "brief": "\n        ",
+          "definition": "struct json_tokener * json_tokener_new_ex",
+          "detailed": "Allocate a new json_tokener with a custom max nesting depth. The depth must be at least 1. JSON_TOKENER_DEFAULT_DEPTH \n\n\nJSON_TOKENER_DEFAULT_DEPTH",
+          "name": "json_tokener_new_ex",
+          "params": [
+            "depth"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_tokener * json_tokener_new",
+          "detailed": "Allocate a new json_tokener. When done using that to parse objects, free it with json_tokener_free(). See json_tokener_parse_ex() for usage details.",
+          "name": "json_tokener_new",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "void json_tokener_free",
+          "detailed": "Free a json_tokener previously allocated with json_tokener_new().",
+          "name": "json_tokener_free",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok, int depth)",
+          "brief": "\n        ",
+          "definition": "static void json_tokener_reset_level",
+          "detailed": "\n        ",
+          "name": "json_tokener_reset_level",
+          "params": [
+            "tok",
+            "depth"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "void json_tokener_reset",
+          "detailed": "Reset the state of a json_tokener, to prepare to parse a brand new JSON object.",
+          "name": "json_tokener_reset",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_tokener_parse",
+          "detailed": "Parse a json_object out of the string str.\nIf you need more control over how the parsing occurs, see json_tokener_parse_ex().",
+          "name": "json_tokener_parse",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str, enum json_tokener_error *error)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_tokener_parse_verbose",
+          "detailed": "Parse a json_object out of the string str, but if it fails return the error in *error. json_tokener_parse() \n\njson_tokener_parse_ex() \n\n\njson_tokener_parse() \njson_tokener_parse_ex()",
+          "name": "json_tokener_parse_verbose",
+          "params": [
+            "str",
+            "error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok, const char *str, int len)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_tokener_parse_ex",
+          "detailed": "Parse a string and return a non-NULL json_object if a valid JSON value is found. The string does not need to be a JSON object or array; it can also be a string, number or boolean value.\nA partial JSON string can be parsed. If the parsing is incomplete, NULL will be returned and json_tokener_get_error() will return json_tokener_continue. json_tokener_parse_ex() can then be called with additional bytes in str to continue the parsing.\nIf json_tokener_parse_ex() returns NULL and the error is anything other than json_tokener_continue, a fatal error has occurred and parsing must be halted. Then, the tok object must not be reused until json_tokener_reset() is called.\nWhen a valid JSON value is parsed, a non-NULL json_object will be returned, with a reference count of one which belongs to the caller. Also, json_tokener_get_error() will return json_tokener_success. Be sure to check the type with json_object_is_type() or json_object_get_type() before using the object.\nTrailing characters after the parsed value do not automatically cause an error. It is up to the caller to decide whether to treat this as an error or to handle the additional characters, perhaps by parsing another json value starting from that point.\nIf the caller knows that they are at the end of their input, the length passed MUST include the final '\\0' character, so values with no inherent end (i.e. numbers) can be properly parsed, rather than just returning json_tokener_continue.\nExtra characters can be detected by comparing the value returned by json_tokener_get_parse_end() against the length of the last len parameter passed in.\nThe tokener does not maintain an internal buffer so the caller is responsible for a subsequent call to json_tokener_parse_ex with an appropriate str parameter starting with the extra characters.\nThis interface is presently not 64-bit clean due to the int len argument so the function limits the maximum string size to INT32_MAX (2GB). If the function is called with len == -1 then strlen is called to check the string length is less than INT32_MAX (2GB)\nExample: json_object*jobj=NULL;\nconstchar*mystring=NULL;\nintstringlen=0;\nenumjson_tokener_errorjerr;\ndo{\nmystring=...//getJSONstring,e.g.readfromfile,etc...\nstringlen=strlen(mystring);\nif(end_of_input)\nstringlen++;//Includethe'\\0'ifweknowwe'reattheendofinput\njobj=json_tokener_parse_ex(tok,mystring,stringlen);\n}while((jerr=json_tokener_get_error(tok))==json_tokener_continue);\nif(jerr!=json_tokener_success)\n{\nfprintf(stderr,\"Error:%s\\n\",json_tokener_error_desc(jerr));\n//Handleerrors,asappropriateforyourapplication.\n}\nif(json_tokener_get_parse_end(tok)<stringlen)\n{\n//Handleextracharactersafterparsedobjectasdesired.\n//e.g.issueanerror,parseanotherobjectfromthatpoint,etc...\n}\n//Success,usejobjhere.\n\n\n\ntok\n\n\na json_tokener previously allocated with json_tokener_new() \n\n\n\n\nstr\n\n\nan string with any valid JSON expression, or portion of. This does not need to be null terminated. \n\n\n\n\nlen\n\n\nthe length of str \n\n\n\n\na json_tokener previously allocated with json_tokener_new() \nan string with any valid JSON expression, or portion of. This does not need to be null terminated. \nthe length of str",
+          "name": "json_tokener_parse_ex",
+          "params": [
+            "tok",
+            "str",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok, int flags)",
+          "brief": "\n        ",
+          "definition": "void json_tokener_set_flags",
+          "detailed": "Set flags that control how parsing will be done.",
+          "name": "json_tokener_set_flags",
+          "params": [
+            "tok",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "size_t json_tokener_get_parse_end",
+          "detailed": "Return the offset of the byte after the last byte parsed relative to the start of the most recent string passed in to json_tokener_parse_ex(). i.e. this is where parsing would start again if the input contains another JSON object after the currently parsed one.\nNote that when multiple parse calls are issued, this is not the total number of characters parsed.\nIn the past this would have been accessed as tok->char_offset.\nSee json_tokener_parse_ex() for an example of how to use this.",
+          "name": "json_tokener_get_parse_end",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "jt_hexdigit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "IS_HIGH_SURROGATE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "IS_LOW_SURROGATE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DECODE_SURROGATE_PAIR",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "saved_state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "current",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "obj_field_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PEEK_CHAR",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ADVANCE_CHAR",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "printbuf_memappend_checked",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char json_null_str[]",
+          "detailed": "\n        ",
+          "name": "json_null_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int json_null_str_len",
+          "detailed": "\n        ",
+          "name": "json_null_str_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char json_inf_str[]",
+          "detailed": "\n        ",
+          "name": "json_inf_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char json_inf_str_invert[]",
+          "detailed": "\n        ",
+          "name": "json_inf_str_invert",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const unsigned int json_inf_str_len",
+          "detailed": "\n        ",
+          "name": "json_inf_str_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char json_nan_str[]",
+          "detailed": "\n        ",
+          "name": "json_nan_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int json_nan_str_len",
+          "detailed": "\n        ",
+          "name": "json_nan_str_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char json_true_str[]",
+          "detailed": "\n        ",
+          "name": "json_true_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int json_true_str_len",
+          "detailed": "\n        ",
+          "name": "json_true_str_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char json_false_str[]",
+          "detailed": "\n        ",
+          "name": "json_false_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int json_false_str_len",
+          "detailed": "\n        ",
+          "name": "json_false_str_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* json_tokener_errors[]",
+          "detailed": "\n        ",
+          "name": "json_tokener_errors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[3]",
+          "brief": "\n        ",
+          "definition": "unsigned char utf8_replacement_char[3]",
+          "detailed": "\n        ",
+          "name": "utf8_replacement_char",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_tokener.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

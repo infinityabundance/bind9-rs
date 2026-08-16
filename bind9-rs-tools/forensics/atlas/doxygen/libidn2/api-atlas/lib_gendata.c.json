@@ -1,0 +1,83 @@
+{
+  "files": {
+    "lib/gendata.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int next_line",
+          "detailed": "\n        ",
+          "name": "next_line",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname, int fline, int rc)",
+          "brief": "\n        ",
+          "definition": "static void _ok",
+          "detailed": "\n        ",
+          "name": "_ok",
+          "params": [
+            "fname",
+            "fline",
+            "rc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char line[1024]",
+          "detailed": "\n        ",
+          "name": "line",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int line_cnt",
+          "detailed": "\n        ",
+          "name": "line_cnt",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "lib/gendata.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

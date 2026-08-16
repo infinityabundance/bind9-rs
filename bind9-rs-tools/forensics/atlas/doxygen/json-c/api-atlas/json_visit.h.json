@@ -1,0 +1,96 @@
+{
+  "files": {
+    "json_visit.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(json_object *jso, int future_flags, json_c_visit_userfunc *userfunc, void *userarg)",
+          "brief": "\n        ",
+          "definition": "int json_c_visit",
+          "detailed": "Visit each object in the JSON hierarchy starting at jso. For each object, userfunc is called, passing the object and userarg. If the object has a parent (i.e. anything other than jso itself) its parent will be passed as parent_jso, and either jso_key or jso_index will be set, depending on whether the parent is an object or an array.\nNodes will be visited depth first, but containers (arrays and objects) will be visited twice, the second time with JSON_C_VISIT_SECOND set in flags.\nuserfunc must return one of the defined return values, to indicate whether and how to continue visiting nodes, or one of various ways to stop.\nReturns 0 if nodes were visited successfully, even if some were intentionally skipped due to what userfunc returned. Returns <0 if an error occurred during iteration, including if userfunc returned JSON_C_VISIT_RETURN_ERROR.",
+          "name": "json_c_visit",
+          "params": [
+            "jso",
+            "future_flags",
+            "userfunc",
+            "userarg"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Passed to json_c_visit_userfunc as one of the flags values to indicate that this is the second time a container (array or object) is being called, after all of it's members have been iterated over.",
+          "name": "JSON_C_VISIT_SECOND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This json_c_visit_userfunc return value indicates that iteration should proceed normally.",
+          "name": "JSON_C_VISIT_RETURN_CONTINUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This json_c_visit_userfunc return value indicates that iteration over the members of the current object should be skipped. If the current object isn't a container (array or object), this is no different than JSON_C_VISIT_RETURN_CONTINUE.",
+          "name": "JSON_C_VISIT_RETURN_SKIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This json_c_visit_userfunc return value indicates that iteration of the fields/elements of the containing object should stop and continue \"popped up\" a level of the object hierarchy. For example, returning this when handling arg will result in arg3 and any other fields being skipped. The next call to userfunc will be the JSON_C_VISIT_SECOND call on \"foo\", followed by a userfunc call on \"bar\". \n{\n  \"foo\": {\n    \"arg1\": 1,\n    \"arg2\": 2,\n    \"arg3\": 3,\n    ...\n  },\n  \"bar\": {\n    ...\n  }\n}",
+          "name": "JSON_C_VISIT_RETURN_POP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This json_c_visit_userfunc return value indicates that iteration should stop immediately, and cause json_c_visit to return success.",
+          "name": "JSON_C_VISIT_RETURN_STOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This json_c_visit_userfunc return value indicates that iteration should stop immediately, and cause json_c_visit to return an error.",
+          "name": "JSON_C_VISIT_RETURN_ERROR",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "typedef int json_c_visit_userfunc(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "detailed": "\n        ",
+          "name": "json_c_visit_userfunc",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    }
+  },
+  "library": "json_visit.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

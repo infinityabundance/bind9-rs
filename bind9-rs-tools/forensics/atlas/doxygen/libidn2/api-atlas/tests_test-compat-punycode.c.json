@@ -1,0 +1,56 @@
+{
+  "files": {
+    "tests/test-compat-punycode.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t input_length, const char input[], size_t *output_length, uint32_t output[])",
+          "brief": "\n        ",
+          "definition": "int _idn2_punycode_decode",
+          "detailed": "\n        ",
+          "name": "_idn2_punycode_decode",
+          "params": [
+            "input_length",
+            "input",
+            "output_length",
+            "output"
+          ],
+          "static": false
+        },
+        {
+          "args": "(size_t input_length, const uint32_t input[], size_t *output_length, char output[])",
+          "brief": "\n        ",
+          "definition": "int _idn2_punycode_encode",
+          "detailed": "\n        ",
+          "name": "_idn2_punycode_encode",
+          "params": [
+            "input_length",
+            "input",
+            "output_length",
+            "output"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test-compat-punycode.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,571 @@
+{
+  "files": {
+    "tests/common/api.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(spinlock_t *sp)",
+          "brief": "\n        ",
+          "definition": "static void spin_lock_init",
+          "detailed": "\n        ",
+          "name": "spin_lock_init",
+          "params": [
+            "sp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(spinlock_t *sp)",
+          "brief": "\n        ",
+          "definition": "static void spin_lock",
+          "detailed": "\n        ",
+          "name": "spin_lock",
+          "params": [
+            "sp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(spinlock_t *sp)",
+          "brief": "\n        ",
+          "definition": "static void spin_unlock",
+          "detailed": "\n        ",
+          "name": "spin_unlock",
+          "params": [
+            "sp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int __smp_thread_id",
+          "detailed": "\n        ",
+          "name": "__smp_thread_id",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int smp_thread_id",
+          "detailed": "\n        ",
+          "name": "smp_thread_id",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *(*func)(void *), void *arg)",
+          "brief": "\n        ",
+          "definition": "static thread_id_t create_thread",
+          "detailed": "\n        ",
+          "name": "create_thread",
+          "params": [
+            "func",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(thread_id_t tid)",
+          "brief": "\n        ",
+          "definition": "static void * wait_thread",
+          "detailed": "\n        ",
+          "name": "wait_thread",
+          "params": [
+            "tid"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void wait_all_threads",
+          "detailed": "\n        ",
+          "name": "wait_all_threads",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int cpu __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void run_on",
+          "detailed": "\n        ",
+          "name": "run_on",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static long long get_microseconds",
+          "detailed": "\n        ",
+          "name": "get_microseconds",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void smp_init",
+          "detailed": "\n        ",
+          "name": "smp_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "____cacheline_internodealigned_in_smp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFINE_SPINLOCK",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__SPIN_LOCK_UNLOCKED",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "spin_lock_irqsave",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "spin_unlock_irqrestore",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_THREADS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__THREAD_ID_MAP_EMPTY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__THREAD_ID_MAP_WAITING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "for_each_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "for_each_running_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "for_each_tid",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFINE_PER_THREAD",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DECLARE_PER_THREAD",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "per_thread",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__get_thread_var",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "init_per_thread",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUG_ON",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef pthread_mutex_t spinlock_t",
+          "detailed": "\n        ",
+          "name": "spinlock_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef pthread_t thread_id_t",
+          "detailed": "\n        ",
+          "name": "thread_id_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[4096]",
+          "brief": "\n        ",
+          "definition": "thread_id_t __thread_id_map[4096]",
+          "detailed": "\n        ",
+          "name": "__thread_id_map",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "spinlock_t __thread_id_map_mutex",
+          "detailed": "\n        ",
+          "name": "__thread_id_map_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_key_t thread_id_key",
+          "detailed": "\n        ",
+          "name": "thread_id_key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4096]",
+          "brief": "\n        ",
+          "definition": "struct @114050123016305201121376121053231361112120207250 __per_thread_smp_processor_id[ 4096 ]",
+          "detailed": "\n        ",
+          "name": "__per_thread_smp_processor_id",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/common/compat-rand.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned int *seed)",
+          "brief": "\n        ",
+          "definition": "static int rand_r",
+          "detailed": "\n        ",
+          "name": "rand_r",
+          "params": [
+            "seed"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/common/debug-yield.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned int, rcu_rand_yield)",
+          "brief": "\n        ",
+          "definition": "DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int rcu_yield_active",
+          "detailed": "\n        ",
+          "name": "rcu_yield_active",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/common/debug-yield.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned int, rcu_rand_yield)",
+          "brief": "\n        ",
+          "definition": "DECLARE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DECLARE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void rcu_debug_yield_read",
+          "detailed": "\n        ",
+          "name": "rcu_debug_yield_read",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void rcu_debug_yield_write",
+          "detailed": "\n        ",
+          "name": "rcu_debug_yield_write",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int flags __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void rcu_debug_yield_enable",
+          "detailed": "\n        ",
+          "name": "rcu_debug_yield_enable",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int flags __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void rcu_debug_yield_disable",
+          "detailed": "\n        ",
+          "name": "rcu_debug_yield_disable",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void rcu_debug_yield_init",
+          "detailed": "\n        ",
+          "name": "rcu_debug_yield_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_YIELD_READ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_YIELD_WRITE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_SLEEP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int rcu_yield_active",
+          "detailed": "\n        ",
+          "name": "rcu_yield_active",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/common/thread-id.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static unsigned long urcu_get_thread_id",
+          "detailed": "\n        ",
+          "name": "urcu_get_thread_id",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/common",
+  "schema_version": 1,
+  "version": "0.15.6"
+}

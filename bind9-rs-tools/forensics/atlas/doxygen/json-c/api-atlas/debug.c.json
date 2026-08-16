@@ -1,0 +1,105 @@
+{
+  "files": {
+    "debug.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int debug)",
+          "brief": "\n        ",
+          "definition": "void mc_set_debug",
+          "detailed": "\n        ",
+          "name": "mc_set_debug",
+          "params": [
+            "debug"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int mc_get_debug",
+          "detailed": "\n        ",
+          "name": "mc_get_debug",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int syslog)",
+          "brief": "\n        ",
+          "definition": "void mc_set_syslog",
+          "detailed": "\n        ",
+          "name": "mc_set_syslog",
+          "params": [
+            "syslog"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "void mc_debug",
+          "detailed": "\n        ",
+          "name": "mc_debug",
+          "params": [
+            "msg",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "void mc_error",
+          "detailed": "\n        ",
+          "name": "mc_error",
+          "params": [
+            "msg",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "void mc_info",
+          "detailed": "\n        ",
+          "name": "mc_info",
+          "params": [
+            "msg",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int _syslog",
+          "detailed": "\n        ",
+          "name": "_syslog",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int _debug",
+          "detailed": "\n        ",
+          "name": "_debug",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "debug.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

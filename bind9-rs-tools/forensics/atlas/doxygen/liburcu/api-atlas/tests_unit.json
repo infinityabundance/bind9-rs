@@ -1,0 +1,1033 @@
+{
+  "files": {
+    "tests/unit/get_cpu_mask_from_sysfs.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/get_max_cpuid_from_sysfs.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_arch.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_caa_get_cycles",
+          "detailed": "\n        ",
+          "name": "test_caa_get_cycles",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_build.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int, my_tls_int)",
+          "brief": "\n        ",
+          "definition": "static DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct my_tls_struct, my_tls_struct)",
+          "brief": "\n        ",
+          "definition": "static DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_lfstack",
+          "detailed": "\n        ",
+          "name": "test_lfstack",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_wfstack",
+          "detailed": "\n        ",
+          "name": "test_wfstack",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_wfcqueue",
+          "detailed": "\n        ",
+          "name": "test_wfcqueue",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_build_cds_list_head_init",
+          "detailed": "\n        ",
+          "name": "test_build_cds_list_head_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_urcu_tls",
+          "detailed": "\n        ",
+          "name": "test_urcu_tls",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_build_rcu_dereference",
+          "detailed": "\n        ",
+          "name": "test_build_rcu_dereference",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_get_max_cpuid_from_mask.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_get_possible_cpus_array_len.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_lfstack.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_lfs_stack *queue)",
+          "brief": "\n        ",
+          "definition": "static void async_run",
+          "detailed": "\n        ",
+          "name": "async_run",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * async_loop",
+          "detailed": "\n        ",
+          "name": "async_loop",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * spawn_jobs",
+          "detailed": "\n        ",
+          "name": "spawn_jobs",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_PRODUCERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOOP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_uatomic.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BYTE_PER_LONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SHORT_PER_LONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INT_PER_LONG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "do_test",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct testvals vals",
+          "detailed": "\n        ",
+          "name": "vals",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/unit/test_urcu_multiflavor-bp.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_bp",
+          "detailed": "\n        ",
+          "name": "test_mf_bp",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_urcu_multiflavor-mb.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_mb",
+          "detailed": "\n        ",
+          "name": "test_mf_mb",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_MB",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_urcu_multiflavor-memb.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_memb",
+          "detailed": "\n        ",
+          "name": "test_mf_memb",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_urcu_multiflavor-qsbr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_qsbr",
+          "detailed": "\n        ",
+          "name": "test_mf_qsbr",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_urcu_multiflavor.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_urcu_multiflavor.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_memb",
+          "detailed": "\n        ",
+          "name": "test_mf_memb",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_mb",
+          "detailed": "\n        ",
+          "name": "test_mf_mb",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_qsbr",
+          "detailed": "\n        ",
+          "name": "test_mf_qsbr",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int test_mf_bp",
+          "detailed": "\n        ",
+          "name": "test_mf_bp",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_urcu_multiflavor_single_unit.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_mf_mb",
+          "detailed": "\n        ",
+          "name": "test_mf_mb",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_mf_bp",
+          "detailed": "\n        ",
+          "name": "test_mf_bp",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_mf_memb",
+          "detailed": "\n        ",
+          "name": "test_mf_memb",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_mf_qsbr",
+          "detailed": "\n        ",
+          "name": "test_mf_qsbr",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_wfcqueue.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct queue *queue)",
+          "brief": "\n        ",
+          "definition": "static void async_run",
+          "detailed": "\n        ",
+          "name": "async_run",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(size_t *k, struct queue *queue)",
+          "brief": "\n        ",
+          "definition": "static void do_async_loop",
+          "detailed": "\n        ",
+          "name": "do_async_loop",
+          "params": [
+            "k",
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * async_loop",
+          "detailed": "\n        ",
+          "name": "async_loop",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * spawn_jobs",
+          "detailed": "\n        ",
+          "name": "spawn_jobs",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_PRODUCERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOOP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_wfqueue.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_wfq_queue *queue)",
+          "brief": "\n        ",
+          "definition": "static void async_run",
+          "detailed": "\n        ",
+          "name": "async_run",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * async_loop",
+          "detailed": "\n        ",
+          "name": "async_loop",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * spawn_jobs",
+          "detailed": "\n        ",
+          "name": "spawn_jobs",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CDS_WFQ_DEPRECATED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_PRODUCERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOOP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/test_wfstack.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_wfs_stack *queue)",
+          "brief": "\n        ",
+          "definition": "static void async_run",
+          "detailed": "\n        ",
+          "name": "async_run",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * async_loop",
+          "detailed": "\n        ",
+          "name": "async_loop",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *queue)",
+          "brief": "\n        ",
+          "definition": "static void * spawn_jobs",
+          "detailed": "\n        ",
+          "name": "spawn_jobs",
+          "params": [
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_PRODUCERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOOP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "tests/unit/urcu-asm.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void show_read_lock",
+          "detailed": "\n        ",
+          "name": "show_read_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void show_read_unlock",
+          "detailed": "\n        ",
+          "name": "show_read_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/unit",
+  "schema_version": 1,
+  "version": "0.15.6"
+}

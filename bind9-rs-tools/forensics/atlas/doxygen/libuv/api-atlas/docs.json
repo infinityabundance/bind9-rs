@@ -1,0 +1,2356 @@
+{
+  "files": {
+    "docs/code/cgi/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_process_t *req, int64_t exit_status, int term_signal)",
+          "brief": "\n        ",
+          "definition": "void cleanup_handles",
+          "detailed": "\n        ",
+          "name": "cleanup_handles",
+          "params": [
+            "req",
+            "exit_status",
+            "term_signal"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_tcp_t *client)",
+          "brief": "\n        ",
+          "definition": "void invoke_cgi_script",
+          "detailed": "\n        ",
+          "name": "invoke_cgi_script",
+          "params": [
+            "client"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *server, int status)",
+          "brief": "\n        ",
+          "definition": "void on_new_connection",
+          "detailed": "\n        ",
+          "name": "on_new_connection",
+          "params": [
+            "server",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_t child_req",
+          "detailed": "\n        ",
+          "name": "child_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_options_t options",
+          "detailed": "\n        ",
+          "name": "options",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/cgi/tick.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/default-loop/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/detach/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_t child_req",
+          "detailed": "\n        ",
+          "name": "child_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_options_t options",
+          "detailed": "\n        ",
+          "name": "options",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/dns/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void on_read",
+          "detailed": "\n        ",
+          "name": "on_read",
+          "params": [
+            "client",
+            "nread",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_connect_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void on_connect",
+          "detailed": "\n        ",
+          "name": "on_connect",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_getaddrinfo_t *resolver, int status, struct addrinfo *res)",
+          "brief": "\n        ",
+          "definition": "void on_resolved",
+          "detailed": "\n        ",
+          "name": "on_resolved",
+          "params": [
+            "resolver",
+            "status",
+            "res"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/helloworld/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/idle-basic/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_idle_t *handle)",
+          "brief": "\n        ",
+          "definition": "void wait_for_a_while",
+          "detailed": "\n        ",
+          "name": "wait_for_a_while",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int64_t counter",
+          "detailed": "\n        ",
+          "name": "counter",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/idle-compute/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_idle_t *handle)",
+          "brief": "\n        ",
+          "definition": "void crunch_away",
+          "detailed": "\n        ",
+          "name": "crunch_away",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_fs_t *req)",
+          "brief": "\n        ",
+          "definition": "void on_type",
+          "detailed": "\n        ",
+          "name": "on_type",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_fs_t stdin_watcher",
+          "detailed": "\n        ",
+          "name": "stdin_watcher",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_idle_t idler",
+          "detailed": "\n        ",
+          "name": "idler",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char buffer[1024]",
+          "detailed": "\n        ",
+          "name": "buffer",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/interfaces/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/locks/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *n)",
+          "brief": "\n        ",
+          "definition": "void reader",
+          "detailed": "\n        ",
+          "name": "reader",
+          "params": [
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *n)",
+          "brief": "\n        ",
+          "definition": "void writer",
+          "detailed": "\n        ",
+          "name": "writer",
+          "params": [
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_barrier_t blocker",
+          "detailed": "\n        ",
+          "name": "blocker",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_rwlock_t numlock",
+          "detailed": "\n        ",
+          "name": "numlock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int shared_num",
+          "detailed": "\n        ",
+          "name": "shared_num",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/multi-echo-server/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_process_t *req, int64_t exit_status, int term_signal)",
+          "brief": "\n        ",
+          "definition": "void close_process_handle",
+          "detailed": "\n        ",
+          "name": "close_process_handle",
+          "params": [
+            "req",
+            "exit_status",
+            "term_signal"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *server, int status)",
+          "brief": "\n        ",
+          "definition": "void on_new_connection",
+          "detailed": "\n        ",
+          "name": "on_new_connection",
+          "params": [
+            "server",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "void setup_workers",
+          "detailed": "\n        ",
+          "name": "setup_workers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct child_worker * workers",
+          "detailed": "\n        ",
+          "name": "workers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int round_robin_counter",
+          "detailed": "\n        ",
+          "name": "round_robin_counter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int child_worker_count",
+          "detailed": "\n        ",
+          "name": "child_worker_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_buf_t dummy_buf",
+          "detailed": "\n        ",
+          "name": "dummy_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[500]",
+          "brief": "\n        ",
+          "definition": "char worker_path[500]",
+          "detailed": "\n        ",
+          "name": "worker_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_t child_worker::req",
+          "detailed": "\n        ",
+          "name": "req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_options_t child_worker::options",
+          "detailed": "\n        ",
+          "name": "options",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_pipe_t child_worker::pipe",
+          "detailed": "\n        ",
+          "name": "pipe",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/multi-echo-server/worker.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_write_t *req)",
+          "brief": "\n        ",
+          "definition": "void free_write_req",
+          "detailed": "\n        ",
+          "name": "free_write_req",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_write_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void echo_write",
+          "detailed": "\n        ",
+          "name": "echo_write",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void echo_read",
+          "detailed": "\n        ",
+          "name": "echo_read",
+          "params": [
+            "client",
+            "nread",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *q, ssize_t nread, const uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void on_new_connection",
+          "detailed": "\n        ",
+          "name": "on_new_connection",
+          "params": [
+            "q",
+            "nread",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_pipe_t queue",
+          "detailed": "\n        ",
+          "name": "queue",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/onchange/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_fs_event_t *handle, const char *filename, int events, int status)",
+          "brief": "\n        ",
+          "definition": "void run_command",
+          "detailed": "\n        ",
+          "name": "run_command",
+          "params": [
+            "handle",
+            "filename",
+            "events",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* command",
+          "detailed": "\n        ",
+          "name": "command",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/pipe-echo-server/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_write_t *req)",
+          "brief": "\n        ",
+          "definition": "void free_write_req",
+          "detailed": "\n        ",
+          "name": "free_write_req",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_write_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void echo_write",
+          "detailed": "\n        ",
+          "name": "echo_write",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void echo_read",
+          "detailed": "\n        ",
+          "name": "echo_read",
+          "params": [
+            "client",
+            "nread",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *server, int status)",
+          "brief": "\n        ",
+          "definition": "void on_new_connection",
+          "detailed": "\n        ",
+          "name": "on_new_connection",
+          "params": [
+            "server",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int sig)",
+          "brief": "\n        ",
+          "definition": "void remove_sock",
+          "detailed": "\n        ",
+          "name": "remove_sock",
+          "params": [
+            "sig"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PIPENAME",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/plugin/hello.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "void initialize",
+          "detailed": "\n        ",
+          "name": "initialize",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/plugin/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *name)",
+          "brief": "\n        ",
+          "definition": "void mfp_register",
+          "detailed": "\n        ",
+          "name": "mfp_register",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")()",
+          "brief": "\n        ",
+          "definition": "typedef void(* init_plugin_function) ()",
+          "detailed": "\n        ",
+          "name": "init_plugin_function",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "docs/code/plugin/plugin.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *name)",
+          "brief": "\n        ",
+          "definition": "void mfp_register",
+          "detailed": "\n        ",
+          "name": "mfp_register",
+          "params": [
+            "name"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/proc-streams/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_process_t *req, int64_t exit_status, int term_signal)",
+          "brief": "\n        ",
+          "definition": "void on_exit",
+          "detailed": "\n        ",
+          "name": "on_exit",
+          "params": [
+            "req",
+            "exit_status",
+            "term_signal"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_t child_req",
+          "detailed": "\n        ",
+          "name": "child_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_options_t options",
+          "detailed": "\n        ",
+          "name": "options",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/proc-streams/test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/progress/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_work_t *req)",
+          "brief": "\n        ",
+          "definition": "void fake_download",
+          "detailed": "\n        ",
+          "name": "fake_download",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_work_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void after",
+          "detailed": "\n        ",
+          "name": "after",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_async_t *handle)",
+          "brief": "\n        ",
+          "definition": "void print_progress",
+          "detailed": "\n        ",
+          "name": "print_progress",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_async_t async",
+          "detailed": "\n        ",
+          "name": "async",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "double percentage",
+          "detailed": "\n        ",
+          "name": "percentage",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/queue-cancel/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(long t)",
+          "brief": "\n        ",
+          "definition": "long fib_",
+          "detailed": "\n        ",
+          "name": "fib_",
+          "params": [
+            "t"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_work_t *req)",
+          "brief": "\n        ",
+          "definition": "void fib",
+          "detailed": "\n        ",
+          "name": "fib",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_work_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void after_fib",
+          "detailed": "\n        ",
+          "name": "after_fib",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_signal_t *req, int signum)",
+          "brief": "\n        ",
+          "definition": "void signal_handler",
+          "detailed": "\n        ",
+          "name": "signal_handler",
+          "params": [
+            "req",
+            "signum"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIB_UNTIL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[25]",
+          "brief": "\n        ",
+          "definition": "uv_work_t fib_reqs[25]",
+          "detailed": "\n        ",
+          "name": "fib_reqs",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/queue-work/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(long t)",
+          "brief": "\n        ",
+          "definition": "long fib_",
+          "detailed": "\n        ",
+          "name": "fib_",
+          "params": [
+            "t"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_work_t *req)",
+          "brief": "\n        ",
+          "definition": "void fib",
+          "detailed": "\n        ",
+          "name": "fib",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_work_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void after_fib",
+          "detailed": "\n        ",
+          "name": "after_fib",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIB_UNTIL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/ref-timer/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_timer_t *handle)",
+          "brief": "\n        ",
+          "definition": "void gc",
+          "detailed": "\n        ",
+          "name": "gc",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_timer_t *handle)",
+          "brief": "\n        ",
+          "definition": "void fake_job",
+          "detailed": "\n        ",
+          "name": "fake_job",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_timer_t gc_req",
+          "detailed": "\n        ",
+          "name": "gc_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_timer_t fake_job_req",
+          "detailed": "\n        ",
+          "name": "fake_job_req",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/signal/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "uv_loop_t * create_loop",
+          "detailed": "\n        ",
+          "name": "create_loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(uv_signal_t *handle, int signum)",
+          "brief": "\n        ",
+          "definition": "void signal_handler",
+          "detailed": "\n        ",
+          "name": "signal_handler",
+          "params": [
+            "handle",
+            "signum"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *userp)",
+          "brief": "\n        ",
+          "definition": "void thread1_worker",
+          "detailed": "\n        ",
+          "name": "thread1_worker",
+          "params": [
+            "userp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *userp)",
+          "brief": "\n        ",
+          "definition": "void thread2_worker",
+          "detailed": "\n        ",
+          "name": "thread2_worker",
+          "params": [
+            "userp"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/spawn/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_process_t *req, int64_t exit_status, int term_signal)",
+          "brief": "\n        ",
+          "definition": "void on_exit",
+          "detailed": "\n        ",
+          "name": "on_exit",
+          "params": [
+            "req",
+            "exit_status",
+            "term_signal"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_t child_req",
+          "detailed": "\n        ",
+          "name": "child_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_process_options_t options",
+          "detailed": "\n        ",
+          "name": "options",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/tcp-echo-server/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_write_t *req)",
+          "brief": "\n        ",
+          "definition": "void free_write_req",
+          "detailed": "\n        ",
+          "name": "free_write_req",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_handle_t *handle)",
+          "brief": "\n        ",
+          "definition": "static void on_close",
+          "detailed": "\n        ",
+          "name": "on_close",
+          "params": [
+            "handle"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uv_write_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void echo_write",
+          "detailed": "\n        ",
+          "name": "echo_write",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *client, ssize_t nread, const uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void echo_read",
+          "detailed": "\n        ",
+          "name": "echo_read",
+          "params": [
+            "client",
+            "nread",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *server, int status)",
+          "brief": "\n        ",
+          "definition": "void on_new_connection",
+          "detailed": "\n        ",
+          "name": "on_new_connection",
+          "params": [
+            "server",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_PORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_BACKLOG",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sockaddr_in addr",
+          "detailed": "\n        ",
+          "name": "addr",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/thread-create/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "void hare",
+          "detailed": "\n        ",
+          "name": "hare",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "void tortoise",
+          "detailed": "\n        ",
+          "name": "tortoise",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "docs/code/tty-gravity/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_timer_t *req)",
+          "brief": "\n        ",
+          "definition": "void update",
+          "detailed": "\n        ",
+          "name": "update",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_tty_t tty",
+          "detailed": "\n        ",
+          "name": "tty",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_timer_t tick",
+          "detailed": "\n        ",
+          "name": "tick",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_write_t write_req",
+          "detailed": "\n        ",
+          "name": "write_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int width",
+          "detailed": "\n        ",
+          "name": "width",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int height",
+          "detailed": "\n        ",
+          "name": "height",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pos",
+          "detailed": "\n        ",
+          "name": "pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* message",
+          "detailed": "\n        ",
+          "name": "message",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/tty/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_tty_t tty",
+          "detailed": "\n        ",
+          "name": "tty",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/udp-dhcp/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_udp_t *req, ssize_t nread, const uv_buf_t *buf, const struct sockaddr *addr, unsigned flags)",
+          "brief": "\n        ",
+          "definition": "void on_read",
+          "detailed": "\n        ",
+          "name": "on_read",
+          "params": [
+            "req",
+            "nread",
+            "buf",
+            "addr",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "uv_buf_t make_discover_msg",
+          "detailed": "\n        ",
+          "name": "make_discover_msg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(uv_udp_send_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void on_send",
+          "detailed": "\n        ",
+          "name": "on_send",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_udp_t send_socket",
+          "detailed": "\n        ",
+          "name": "send_socket",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_udp_t recv_socket",
+          "detailed": "\n        ",
+          "name": "recv_socket",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/uvcat/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_fs_t *req)",
+          "brief": "\n        ",
+          "definition": "void on_read",
+          "detailed": "\n        ",
+          "name": "on_read",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_fs_t *req)",
+          "brief": "\n        ",
+          "definition": "void on_write",
+          "detailed": "\n        ",
+          "name": "on_write",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_fs_t *req)",
+          "brief": "\n        ",
+          "definition": "void on_open",
+          "detailed": "\n        ",
+          "name": "on_open",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_fs_t open_req",
+          "detailed": "\n        ",
+          "name": "open_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_fs_t read_req",
+          "detailed": "\n        ",
+          "name": "read_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_fs_t write_req",
+          "detailed": "\n        ",
+          "name": "write_req",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char buffer[1024]",
+          "detailed": "\n        ",
+          "name": "buffer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_buf_t iov",
+          "detailed": "\n        ",
+          "name": "iov",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/uvstop/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_idle_t *handle)",
+          "brief": "\n        ",
+          "definition": "void idle_cb",
+          "detailed": "\n        ",
+          "name": "idle_cb",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_prepare_t *handle)",
+          "brief": "\n        ",
+          "definition": "void prep_cb",
+          "detailed": "\n        ",
+          "name": "prep_cb",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int64_t counter",
+          "detailed": "\n        ",
+          "name": "counter",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/uvtee/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uv_handle_t *handle, size_t suggested_size, uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void alloc_buffer",
+          "detailed": "\n        ",
+          "name": "alloc_buffer",
+          "params": [
+            "handle",
+            "suggested_size",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_write_t *req)",
+          "brief": "\n        ",
+          "definition": "void free_write_req",
+          "detailed": "\n        ",
+          "name": "free_write_req",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_write_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void on_stdout_write",
+          "detailed": "\n        ",
+          "name": "on_stdout_write",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_write_t *req, int status)",
+          "brief": "\n        ",
+          "definition": "void on_file_write",
+          "detailed": "\n        ",
+          "name": "on_file_write",
+          "params": [
+            "req",
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *dest, size_t size, uv_buf_t buf, uv_write_cb cb)",
+          "brief": "\n        ",
+          "definition": "void write_data",
+          "detailed": "\n        ",
+          "name": "write_data",
+          "params": [
+            "dest",
+            "size",
+            "buf",
+            "cb"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_stream_t *stream, ssize_t nread, const uv_buf_t *buf)",
+          "brief": "\n        ",
+          "definition": "void read_stdin",
+          "detailed": "\n        ",
+          "name": "read_stdin",
+          "params": [
+            "stream",
+            "nread",
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_pipe_t stdin_pipe",
+          "detailed": "\n        ",
+          "name": "stdin_pipe",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_pipe_t stdout_pipe",
+          "detailed": "\n        ",
+          "name": "stdout_pipe",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_pipe_t file_pipe",
+          "detailed": "\n        ",
+          "name": "file_pipe",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "docs/code/uvwget/main.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(curl_socket_t sockfd)",
+          "brief": "\n        ",
+          "definition": "curl_context_t * create_curl_context",
+          "detailed": "\n        ",
+          "name": "create_curl_context",
+          "params": [
+            "sockfd"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_handle_t *handle)",
+          "brief": "\n        ",
+          "definition": "void curl_close_cb",
+          "detailed": "\n        ",
+          "name": "curl_close_cb",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "(curl_context_t *context)",
+          "brief": "\n        ",
+          "definition": "void destroy_curl_context",
+          "detailed": "\n        ",
+          "name": "destroy_curl_context",
+          "params": [
+            "context"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *url, int num)",
+          "brief": "\n        ",
+          "definition": "void add_download",
+          "detailed": "\n        ",
+          "name": "add_download",
+          "params": [
+            "url",
+            "num"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void check_multi_info",
+          "detailed": "\n        ",
+          "name": "check_multi_info",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_poll_t *req, int status, int events)",
+          "brief": "\n        ",
+          "definition": "void curl_perform",
+          "detailed": "\n        ",
+          "name": "curl_perform",
+          "params": [
+            "req",
+            "status",
+            "events"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uv_timer_t *req)",
+          "brief": "\n        ",
+          "definition": "void on_timeout",
+          "detailed": "\n        ",
+          "name": "on_timeout",
+          "params": [
+            "req"
+          ],
+          "static": false
+        },
+        {
+          "args": "(CURLM *multi, long timeout_ms, void *userp)",
+          "brief": "\n        ",
+          "definition": "void start_timeout",
+          "detailed": "\n        ",
+          "name": "start_timeout",
+          "params": [
+            "multi",
+            "timeout_ms",
+            "userp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(CURL *easy, curl_socket_t s, int action, void *userp, void *socketp)",
+          "brief": "\n        ",
+          "definition": "int handle_socket",
+          "detailed": "\n        ",
+          "name": "handle_socket",
+          "params": [
+            "easy",
+            "s",
+            "action",
+            "userp",
+            "socketp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct curl_context_s curl_context_t",
+          "detailed": "\n        ",
+          "name": "curl_context_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_loop_t* loop",
+          "detailed": "\n        ",
+          "name": "loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "CURLM* curl_handle",
+          "detailed": "\n        ",
+          "name": "curl_handle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_timer_t timeout",
+          "detailed": "\n        ",
+          "name": "timeout",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "docs",
+  "schema_version": 1,
+  "version": "1.52.1"
+}

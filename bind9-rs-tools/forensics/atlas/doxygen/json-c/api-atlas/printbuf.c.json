@@ -1,0 +1,102 @@
+{
+  "files": {
+    "printbuf.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct printbuf *p, int min_size)",
+          "brief": "\n        ",
+          "definition": "static int printbuf_extend",
+          "detailed": "Extend the buffer p so it has a size of at least min_size.\nIf the current size is large enough, nothing is changed.\nIf extension failed, errno is set to indicate the error.\nNote: this does not check the available space! The caller is responsible for performing those calculations.",
+          "name": "printbuf_extend",
+          "params": [
+            "p",
+            "min_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct printbuf * printbuf_new",
+          "detailed": "\n        ",
+          "name": "printbuf_new",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p, const char *buf, int size)",
+          "brief": "\n        ",
+          "definition": "int printbuf_memappend",
+          "detailed": "\n        ",
+          "name": "printbuf_memappend",
+          "params": [
+            "p",
+            "buf",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *pb, int offset, int charvalue, int len)",
+          "brief": "\n        ",
+          "definition": "int printbuf_memset",
+          "detailed": "Set len bytes of the buffer to charvalue, starting at offset offset. Similar to calling memset(x, charvalue, len);\nThe memory allocated for the buffer is extended as necessary.\nIf offset is -1, this starts at the end of the current data in the buffer.",
+          "name": "printbuf_memset",
+          "params": [
+            "pb",
+            "offset",
+            "charvalue",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p, const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "int sprintbuf",
+          "detailed": "Formatted print to printbuf.\nThis function is the most expensive of the available functions for appending string data to a printbuf and should be used only where convenience is more important than speed. Avoid using this function in high performance code or tight loops; in these scenarios, consider using snprintf() with a static buffer in conjunction with one of the printbuf_*append() functions.\nSee also: printbuf_memappend_fast() printbuf_memappend() printbuf_strappend()",
+          "name": "sprintbuf",
+          "params": [
+            "p",
+            "msg",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p)",
+          "brief": "\n        ",
+          "definition": "void printbuf_reset",
+          "detailed": "\n        ",
+          "name": "printbuf_reset",
+          "params": [
+            "p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p)",
+          "brief": "\n        ",
+          "definition": "void printbuf_free",
+          "detailed": "\n        ",
+          "name": "printbuf_free",
+          "params": [
+            "p"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "printbuf.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

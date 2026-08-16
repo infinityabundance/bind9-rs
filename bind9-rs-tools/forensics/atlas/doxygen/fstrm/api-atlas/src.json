@@ -1,0 +1,1184 @@
+{
+  "files": {
+    "src/fstrm_capture.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_STATE_READING_CONTROL_READY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_STATE_READING_CONTROL_START",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_STATE_READING_DATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_STATE_STOPPED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_CRITICAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_WARNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_INFO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_DEBUG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 5",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONN_TRACE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "conn_state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "conn_verbosity",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static struct conn * conn_init",
+          "detailed": "\n        ",
+          "name": "conn_init",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn **conn)",
+          "brief": "\n        ",
+          "definition": "static void conn_destroy",
+          "detailed": "\n        ",
+          "name": "conn_destroy",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int level, struct conn *conn, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void conn_log",
+          "detailed": "\n        ",
+          "name": "conn_log",
+          "params": [
+            "level",
+            "conn",
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int level, struct conn *conn, const void *data, size_t len, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void conn_log_data",
+          "detailed": "\n        ",
+          "name": "conn_log_data",
+          "params": [
+            "level",
+            "conn",
+            "data",
+            "len",
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct bufferevent *bev, short error, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void cb_close_conn",
+          "detailed": "\n        ",
+          "name": "cb_close_conn",
+          "params": [
+            "bev",
+            "error",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *msg)",
+          "brief": "\n        ",
+          "definition": "static bool usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const int argc, char **argv, struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "argc",
+            "argv",
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool open_read_unix",
+          "detailed": "\n        ",
+          "name": "open_read_unix",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool open_read_tcp",
+          "detailed": "\n        ",
+          "name": "open_read_tcp",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool close_write_stop",
+          "detailed": "\n        ",
+          "name": "close_write_stop",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool open_write_start",
+          "detailed": "\n        ",
+          "name": "open_write_start",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static const char * update_output_fname",
+          "detailed": "\n        ",
+          "name": "update_output_fname",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool open_write_file",
+          "detailed": "\n        ",
+          "name": "open_write_file",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool close_write_file",
+          "detailed": "\n        ",
+          "name": "close_write_file",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static void process_data_frame",
+          "detailed": "\n        ",
+          "name": "process_data_frame",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static void rotate_output",
+          "detailed": "\n        ",
+          "name": "rotate_output",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static void maybe_rotate_output",
+          "detailed": "\n        ",
+          "name": "maybe_rotate_output",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn, const void *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static bool send_frame",
+          "detailed": "\n        ",
+          "name": "send_frame",
+          "params": [
+            "conn",
+            "data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool match_content_type",
+          "detailed": "\n        ",
+          "name": "match_content_type",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool write_control_frame",
+          "detailed": "\n        ",
+          "name": "write_control_frame",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool process_control_frame_ready",
+          "detailed": "\n        ",
+          "name": "process_control_frame_ready",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool process_control_frame_start",
+          "detailed": "\n        ",
+          "name": "process_control_frame_start",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool process_control_frame_stop",
+          "detailed": "\n        ",
+          "name": "process_control_frame_stop",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool process_control_frame",
+          "detailed": "\n        ",
+          "name": "process_control_frame",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool load_control_frame",
+          "detailed": "\n        ",
+          "name": "load_control_frame",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct conn *conn)",
+          "brief": "\n        ",
+          "definition": "static bool can_read_full_frame",
+          "detailed": "\n        ",
+          "name": "can_read_full_frame",
+          "params": [
+            "conn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct bufferevent *bev, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void cb_write",
+          "detailed": "\n        ",
+          "name": "cb_write",
+          "params": [
+            "bev",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct bufferevent *bev, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void cb_read",
+          "detailed": "\n        ",
+          "name": "cb_read",
+          "params": [
+            "bev",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct evconnlistener *listener, evutil_socket_t fd, __attribute__((unused)) struct sockaddr *sa, __attribute__((unused)) int socklen, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void cb_accept_conn",
+          "detailed": "\n        ",
+          "name": "cb_accept_conn",
+          "params": [
+            "listener",
+            "fd",
+            "sa",
+            "socklen",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) struct evconnlistener *listener, __attribute__((unused)) void *arg)",
+          "brief": "\n        ",
+          "definition": "static void cb_accept_error",
+          "detailed": "\n        ",
+          "name": "cb_accept_error",
+          "params": [
+            "listener",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) evutil_socket_t sig, __attribute__((unused)) short events, void *user_data)",
+          "brief": "\n        ",
+          "definition": "static void do_sigusr1",
+          "detailed": "\n        ",
+          "name": "do_sigusr1",
+          "params": [
+            "sig",
+            "events",
+            "user_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) evutil_socket_t sig, __attribute__((unused)) short events, void *user_data)",
+          "brief": "\n        ",
+          "definition": "static void do_sighup",
+          "detailed": "\n        ",
+          "name": "do_sighup",
+          "params": [
+            "sig",
+            "events",
+            "user_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool setup_event_loop",
+          "detailed": "\n        ",
+          "name": "setup_event_loop",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int signum __attribute__((unused)))",
+          "brief": "\n        ",
+          "definition": "static void shutdown_handler",
+          "detailed": "\n        ",
+          "name": "shutdown_handler",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static bool setup_signals",
+          "detailed": "\n        ",
+          "name": "setup_signals",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct capture *ctx)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef enum conn_verbosity conn_verbosity",
+          "detailed": "\n        ",
+          "name": "conn_verbosity",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct capture g_program_ctx",
+          "detailed": "\n        ",
+          "name": "g_program_ctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct capture_args g_program_args",
+          "detailed": "\n        ",
+          "name": "g_program_args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "argv_t g_args[]",
+          "detailed": "\n        ",
+          "name": "g_args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct capture_args* capture::args",
+          "detailed": "\n        ",
+          "name": "args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sockaddr_storage capture::ss",
+          "detailed": "\n        ",
+          "name": "ss",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "socklen_t capture::ss_len",
+          "detailed": "\n        ",
+          "name": "ss_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "evutil_socket_t capture::listen_fd",
+          "detailed": "\n        ",
+          "name": "listen_fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct event_base* capture::ev_base",
+          "detailed": "\n        ",
+          "name": "ev_base",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct evconnlistener* capture::ev_connlistener",
+          "detailed": "\n        ",
+          "name": "ev_connlistener",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct event* capture::ev_sighup",
+          "detailed": "\n        ",
+          "name": "ev_sighup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct event* capture::ev_sigusr1",
+          "detailed": "\n        ",
+          "name": "ev_sigusr1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* capture::output_file",
+          "detailed": "\n        ",
+          "name": "output_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* capture::output_fname",
+          "detailed": "\n        ",
+          "name": "output_fname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "time_t capture::output_open_timestamp",
+          "detailed": "\n        ",
+          "name": "output_open_timestamp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t capture::bytes_written",
+          "detailed": "\n        ",
+          "name": "bytes_written",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t capture::count_written",
+          "detailed": "\n        ",
+          "name": "count_written",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t capture::capture_highwater",
+          "detailed": "\n        ",
+          "name": "capture_highwater",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int capture::remaining_connections",
+          "detailed": "\n        ",
+          "name": "remaining_connections",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const time_t *, struct tm *)",
+          "brief": "\n        ",
+          "definition": "struct tm *(* capture::calendar_fn) (const time_t *, struct tm *)",
+          "detailed": "\n        ",
+          "name": "calendar_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool capture_args::help",
+          "detailed": "\n        ",
+          "name": "help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int capture_args::debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool capture_args::localtime",
+          "detailed": "\n        ",
+          "name": "localtime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool capture_args::gmtime",
+          "detailed": "\n        ",
+          "name": "gmtime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* capture_args::str_content_type",
+          "detailed": "\n        ",
+          "name": "str_content_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* capture_args::str_read_unix",
+          "detailed": "\n        ",
+          "name": "str_read_unix",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* capture_args::str_read_tcp_address",
+          "detailed": "\n        ",
+          "name": "str_read_tcp_address",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* capture_args::str_read_tcp_port",
+          "detailed": "\n        ",
+          "name": "str_read_tcp_port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* capture_args::str_write_fname",
+          "detailed": "\n        ",
+          "name": "str_write_fname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int capture_args::split_seconds",
+          "detailed": "\n        ",
+          "name": "split_seconds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int capture_args::buffer_size",
+          "detailed": "\n        ",
+          "name": "buffer_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int capture_args::count_connections",
+          "detailed": "\n        ",
+          "name": "count_connections",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct capture* conn::ctx",
+          "detailed": "\n        ",
+          "name": "ctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "conn_state conn::state",
+          "detailed": "\n        ",
+          "name": "state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t conn::len_frame_payload",
+          "detailed": "\n        ",
+          "name": "len_frame_payload",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t conn::len_frame_total",
+          "detailed": "\n        ",
+          "name": "len_frame_total",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t conn::len_buf",
+          "detailed": "\n        ",
+          "name": "len_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t conn::bytes_read",
+          "detailed": "\n        ",
+          "name": "bytes_read",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t conn::bytes_skip",
+          "detailed": "\n        ",
+          "name": "bytes_skip",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t conn::count_read",
+          "detailed": "\n        ",
+          "name": "count_read",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct bufferevent* conn::bev",
+          "detailed": "\n        ",
+          "name": "bev",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct evbuffer* conn::ev_input",
+          "detailed": "\n        ",
+          "name": "ev_input",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct evbuffer* conn::ev_output",
+          "detailed": "\n        ",
+          "name": "ev_output",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_control* conn::control",
+          "detailed": "\n        ",
+          "name": "control",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/fstrm_dump.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct fstrm_reader *r, struct fstrm_writer_options *wopt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res process_start_frame",
+          "detailed": "\n        ",
+          "name": "process_start_frame",
+          "params": [
+            "r",
+            "wopt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_reader *r)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res print_stop_frame",
+          "detailed": "\n        ",
+          "name": "print_stop_frame",
+          "params": [
+            "r"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data, size_t len_data)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res print_data_frame",
+          "detailed": "\n        ",
+          "name": "print_data_frame",
+          "params": [
+            "data",
+            "len_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/fstrm_replay.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *msg)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv, struct replay *ctx)",
+          "brief": "\n        ",
+          "definition": "static bool parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "argc",
+            "argv",
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static struct fstrm_writer * init_writer",
+          "detailed": "\n        ",
+          "name": "init_writer",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname, struct fstrm_writer *w)",
+          "brief": "\n        ",
+          "definition": "static void process_file",
+          "detailed": "\n        ",
+          "name": "process_file",
+          "params": [
+            "fname",
+            "w"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct replay g_program_ctx",
+          "detailed": "\n        ",
+          "name": "g_program_ctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct replay_args g_program_args",
+          "detailed": "\n        ",
+          "name": "g_program_args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "argv_t g_args[]",
+          "detailed": "\n        ",
+          "name": "g_args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct replay_args* replay::args",
+          "detailed": "\n        ",
+          "name": "args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t* replay::content_type",
+          "detailed": "\n        ",
+          "name": "content_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t replay::len_content_type",
+          "detailed": "\n        ",
+          "name": "len_content_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool replay_args::help",
+          "detailed": "\n        ",
+          "name": "help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* replay_args::unix_address",
+          "detailed": "\n        ",
+          "name": "unix_address",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* replay_args::tcp_address",
+          "detailed": "\n        ",
+          "name": "tcp_address",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* replay_args::tcp_port",
+          "detailed": "\n        ",
+          "name": "tcp_port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "argv_array_t replay_args::files",
+          "detailed": "\n        ",
+          "name": "files",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "src",
+  "schema_version": 1,
+  "version": "0.6.1"
+}

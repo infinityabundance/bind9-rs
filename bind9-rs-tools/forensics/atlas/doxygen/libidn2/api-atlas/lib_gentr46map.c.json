@@ -1,0 +1,336 @@
+{
+  "files": {
+    "lib/gentr46map.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uint32_t *src, size_t len)",
+          "brief": "\n        ",
+          "definition": "static size_t _u32_stream_len",
+          "detailed": "\n        ",
+          "name": "_u32_stream_len",
+          "params": [
+            "src",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *stream, size_t ncp)",
+          "brief": "\n        ",
+          "definition": "static size_t _u32_cp_stream_len",
+          "detailed": "\n        ",
+          "name": "_u32_cp_stream_len",
+          "params": [
+            "stream",
+            "ncp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char **line)",
+          "brief": "\n        ",
+          "definition": "static char * _nextField",
+          "detailed": "\n        ",
+          "name": "_nextField",
+          "params": [
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname, int(*scan)(char *))",
+          "brief": "\n        ",
+          "definition": "static int _scan_file",
+          "detailed": "\n        ",
+          "name": "_scan_file",
+          "params": [
+            "fname",
+            "scan"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t *dst, size_t dst_size, uint32_t *src, size_t len)",
+          "brief": "\n        ",
+          "definition": "static size_t _u32_to_stream",
+          "detailed": "\n        ",
+          "name": "_u32_to_stream",
+          "params": [
+            "dst",
+            "dst_size",
+            "src",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *dst, const uint8_t *src, size_t n)",
+          "brief": "\n        ",
+          "definition": "static void _copy_from_stream",
+          "detailed": "\n        ",
+          "name": "_copy_from_stream",
+          "params": [
+            "dst",
+            "src",
+            "n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *linep)",
+          "brief": "\n        ",
+          "definition": "static int read_IdnaMappings",
+          "detailed": "\n        ",
+          "name": "read_IdnaMappings",
+          "params": [
+            "linep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(IDNAMap_gen *m1, IDNAMap_gen *m2)",
+          "brief": "\n        ",
+          "definition": "static int _compare_map",
+          "detailed": "\n        ",
+          "name": "_compare_map",
+          "params": [
+            "m1",
+            "m2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *linep)",
+          "brief": "\n        ",
+          "definition": "static int read_NFCQC",
+          "detailed": "\n        ",
+          "name": "read_NFCQC",
+          "params": [
+            "linep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(IDNAMap_gen *m1, IDNAMap_gen *m2)",
+          "brief": "\n        ",
+          "definition": "static int _compare_map_by_maplen",
+          "detailed": "\n        ",
+          "name": "_compare_map_by_maplen",
+          "params": [
+            "m1",
+            "m2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t *haystack, size_t hlen, uint8_t *needle, size_t nlen)",
+          "brief": "\n        ",
+          "definition": "static uint8_t * _u8_memmem",
+          "detailed": "\n        ",
+          "name": "_u8_memmem",
+          "params": [
+            "haystack",
+            "hlen",
+            "needle",
+            "nlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _compact_idna_map",
+          "detailed": "\n        ",
+          "name": "_compact_idna_map",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _combine_idna_flags",
+          "detailed": "\n        ",
+          "name": "_combine_idna_flags",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t min, uint32_t max, int do_print)",
+          "brief": "\n        ",
+          "definition": "static int _print_tr46_map",
+          "detailed": "\n        ",
+          "name": "_print_tr46_map",
+          "params": [
+            "min",
+            "max",
+            "do_print"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "countof",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[10000]",
+          "brief": "\n        ",
+          "definition": "IDNAMap_gen idna_map[10000]",
+          "detailed": "\n        ",
+          "name": "idna_map",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t map_pos",
+          "detailed": "\n        ",
+          "name": "map_pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[16384]",
+          "brief": "\n        ",
+          "definition": "uint8_t genmapdata[16384]",
+          "detailed": "\n        ",
+          "name": "genmapdata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t mapdata_pos",
+          "detailed": "\n        ",
+          "name": "mapdata_pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[8]",
+          "brief": "\n        ",
+          "definition": "uint8_t flag_combination[8]",
+          "detailed": "\n        ",
+          "name": "flag_combination",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned flag_combinations",
+          "detailed": "\n        ",
+          "name": "flag_combinations",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[140]",
+          "brief": "\n        ",
+          "definition": "NFCQCMap nfcqc_map[140]",
+          "detailed": "\n        ",
+          "name": "nfcqc_map",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t nfcqc_pos",
+          "detailed": "\n        ",
+          "name": "nfcqc_pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t IDNAMap_gen::cp1",
+          "detailed": "\n        ",
+          "name": "cp1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t IDNAMap_gen::cp2",
+          "detailed": "\n        ",
+          "name": "cp2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned IDNAMap_gen::nmappings",
+          "detailed": "\n        ",
+          "name": "nmappings",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned IDNAMap_gen::offset",
+          "detailed": "\n        ",
+          "name": "offset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned IDNAMap_gen::flag_index",
+          "detailed": "\n        ",
+          "name": "flag_index",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t IDNAMap_gen::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "lib/gentr46map.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,28 @@
+{
+  "files": {
+    "gzclose.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzclose",
+          "detailed": "\n        ",
+          "name": "gzclose",
+          "params": [
+            "file"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "gzclose.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

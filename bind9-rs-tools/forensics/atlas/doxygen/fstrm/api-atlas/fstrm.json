@@ -1,0 +1,1493 @@
+{
+  "files": {
+    "fstrm/control.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fstrm_control_type fstrm_control::type",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fs_bufvec* fstrm_control::content_types",
+          "detailed": "\n        ",
+          "name": "content_types",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "fstrm/control.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/file.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__file_op_open",
+          "detailed": "\n        ",
+          "name": "fstrm__file_op_open",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__file_op_close",
+          "detailed": "\n        ",
+          "name": "fstrm__file_op_close",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj, void *data, size_t count)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__file_op_read",
+          "detailed": "\n        ",
+          "name": "fstrm__file_op_read",
+          "params": [
+            "obj",
+            "data",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj, const struct iovec *iov, int iovcnt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__file_op_write",
+          "detailed": "\n        ",
+          "name": "fstrm__file_op_write",
+          "params": [
+            "obj",
+            "iov",
+            "iovcnt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__file_op_destroy",
+          "detailed": "\n        ",
+          "name": "fstrm__file_op_destroy",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct fstrm_file_options *fopt, const char file_mode)",
+          "brief": "\n        ",
+          "definition": "static struct fstrm_rdwr * fstrm__file_init",
+          "detailed": "\n        ",
+          "name": "fstrm__file_init",
+          "params": [
+            "fopt",
+            "file_mode"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* fstrm__file::fp",
+          "detailed": "\n        ",
+          "name": "fp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* fstrm__file::file_path",
+          "detailed": "\n        ",
+          "name": "file_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "char fstrm__file::file_mode[2]",
+          "detailed": "\n        ",
+          "name": "file_mode",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "fstrm/file.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/fstrm-private.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((unused)) static inline fs_bufvec *fs_bufvec_init(unsigned hint)",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *, struct fstrm_control *, fstrm_control_type *, const bool with_escape)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_read_control_frame",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_read_control_frame",
+          "params": [
+            "rdwr",
+            "control",
+            "type",
+            "with_escape"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *, struct fstrm_control **, fstrm_control_type wanted_type)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_read_control",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_read_control",
+          "params": [
+            "rdwr",
+            "control",
+            "wanted_type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *, const struct fstrm_control *)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_write_control_frame",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_write_control_frame",
+          "params": [
+            "rdwr",
+            "control"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *, fstrm_control_type type, const fs_buf *content_type)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_write_control",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_write_control",
+          "params": [
+            "rdwr",
+            "type",
+            "content_type"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "likely",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "unlikely",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "warn_unused_result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MSG_NOSIGNAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "IOV_MAX",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct fs_bufvec__vector fs_bufvec",
+          "detailed": "\n        ",
+          "name": "fs_bufvec",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fs_bufvec* vec",
+          "detailed": "\n        ",
+          "name": "vec",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _hint",
+          "detailed": "\n        ",
+          "name": "_hint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _n",
+          "detailed": "\n        ",
+          "name": "_n",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _v",
+          "detailed": "\n        ",
+          "name": "_v",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _p",
+          "detailed": "\n        ",
+          "name": "_p",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fs_buf** out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "* outsz",
+          "detailed": "\n        ",
+          "name": "outsz",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "vec _n_alloced",
+          "detailed": "\n        ",
+          "name": "_n_alloced",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t n_elems",
+          "detailed": "\n        ",
+          "name": "n_elems",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct my_queue_ops my_queue_mutex_ops",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_ops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t fs_buf::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t* fs_buf::data",
+          "detailed": "\n        ",
+          "name": "data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_rdwr_ops fstrm_rdwr::ops",
+          "detailed": "\n        ",
+          "name": "ops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* fstrm_rdwr::obj",
+          "detailed": "\n        ",
+          "name": "obj",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool fstrm_rdwr::opened",
+          "detailed": "\n        ",
+          "name": "opened",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "fstrm/fstrm.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/iothr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *)",
+          "brief": "\n        ",
+          "definition": "static void * fstrm__iothr_thr",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_thr",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm__iothr_queue_entry *entry)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_queue_entry_free_bytes",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_queue_entry_free_bytes",
+          "params": [
+            "entry"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_free_queues",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_free_queues",
+          "params": [
+            "iothr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *data, void *free_data __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "void fstrm_free_wrapper",
+          "detailed": "\n        ",
+          "name": "fstrm_free_wrapper",
+          "params": [
+            "data",
+            "__attribute__"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_close",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_close",
+          "params": [
+            "iothr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_flush_output",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_flush_output",
+          "params": [
+            "iothr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr, size_t nbytes)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_maybe_flush_output",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_maybe_flush_output",
+          "params": [
+            "iothr",
+            "nbytes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr, struct fstrm__iothr_queue_entry *entry)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_process_queue_entry",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_process_queue_entry",
+          "params": [
+            "iothr",
+            "entry"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr)",
+          "brief": "\n        ",
+          "definition": "static unsigned fstrm__iothr_process_queues",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_process_queues",
+          "params": [
+            "iothr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__iothr_open",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_open",
+          "params": [
+            "iothr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_iothr *iothr)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_maybe_open",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_maybe_open",
+          "params": [
+            "iothr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void fstrm__iothr_thr_setup",
+          "detailed": "\n        ",
+          "name": "fstrm__iothr_thr_setup",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct fstrm_iothr_options default_fstrm_iothr_options",
+          "detailed": "\n        ",
+          "name": "default_fstrm_iothr_options",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *, void *)",
+          "brief": "\n        ",
+          "definition": "void(* fstrm__iothr_queue_entry::free_func) (void *, void *)",
+          "detailed": "\n        ",
+          "name": "free_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* fstrm__iothr_queue_entry::free_data",
+          "detailed": "\n        ",
+          "name": "free_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* fstrm__iothr_queue_entry::data",
+          "detailed": "\n        ",
+          "name": "data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t fstrm__iothr_queue_entry::len_data",
+          "detailed": "\n        ",
+          "name": "len_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t fstrm_iothr::thr",
+          "detailed": "\n        ",
+          "name": "thr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_iothr_options fstrm_iothr::opt",
+          "detailed": "\n        ",
+          "name": "opt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct my_queue_ops* fstrm_iothr::queue_ops",
+          "detailed": "\n        ",
+          "name": "queue_ops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_writer* fstrm_iothr::writer",
+          "detailed": "\n        ",
+          "name": "writer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool fstrm_iothr::opened",
+          "detailed": "\n        ",
+          "name": "opened",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "time_t fstrm_iothr::last_open_attempt",
+          "detailed": "\n        ",
+          "name": "last_open_attempt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_iothr_queue* fstrm_iothr::queues",
+          "detailed": "\n        ",
+          "name": "queues",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile bool fstrm_iothr::shutting_down",
+          "detailed": "\n        ",
+          "name": "shutting_down",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_cond_t fstrm_iothr::cv",
+          "detailed": "\n        ",
+          "name": "cv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t fstrm_iothr::cv_lock",
+          "detailed": "\n        ",
+          "name": "cv_lock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t fstrm_iothr::get_queue_lock",
+          "detailed": "\n        ",
+          "name": "get_queue_lock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr::get_queue_idx",
+          "detailed": "\n        ",
+          "name": "get_queue_idx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr::outq_idx",
+          "detailed": "\n        ",
+          "name": "outq_idx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct iovec* fstrm_iothr::outq_iov",
+          "detailed": "\n        ",
+          "name": "outq_iov",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm__iothr_queue_entry* fstrm_iothr::outq_entries",
+          "detailed": "\n        ",
+          "name": "outq_entries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr::outq_nbytes",
+          "detailed": "\n        ",
+          "name": "outq_nbytes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::buffer_hint",
+          "detailed": "\n        ",
+          "name": "buffer_hint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::flush_timeout",
+          "detailed": "\n        ",
+          "name": "flush_timeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::input_queue_size",
+          "detailed": "\n        ",
+          "name": "input_queue_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::num_input_queues",
+          "detailed": "\n        ",
+          "name": "num_input_queues",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::output_queue_size",
+          "detailed": "\n        ",
+          "name": "output_queue_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::queue_notify_threshold",
+          "detailed": "\n        ",
+          "name": "queue_notify_threshold",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned fstrm_iothr_options::reopen_interval",
+          "detailed": "\n        ",
+          "name": "reopen_interval",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fstrm_iothr_queue_model fstrm_iothr_options::queue_model",
+          "detailed": "\n        ",
+          "name": "queue_model",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct my_queue* fstrm_iothr_queue::q",
+          "detailed": "\n        ",
+          "name": "q",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "fstrm/iothr.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/rdwr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct fstrm_rdwr *rdwr, struct fstrm_control *control, fstrm_control_type *type, const bool with_escape)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_read_control_frame",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_read_control_frame",
+          "params": [
+            "rdwr",
+            "control",
+            "type",
+            "with_escape"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *rdwr, struct fstrm_control **control, fstrm_control_type wanted_type)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_read_control",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_read_control",
+          "params": [
+            "rdwr",
+            "control",
+            "wanted_type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *rdwr, const struct fstrm_control *control)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_write_control_frame",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_write_control_frame",
+          "params": [
+            "rdwr",
+            "control"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct fstrm_rdwr *rdwr, fstrm_control_type type, const fs_buf *content_type)",
+          "brief": "\n        ",
+          "definition": "fstrm_res fstrm__rdwr_write_control",
+          "detailed": "\n        ",
+          "name": "fstrm__rdwr_write_control",
+          "params": [
+            "rdwr",
+            "type",
+            "content_type"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/rdwr.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/reader.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_reader_state_opening",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_reader_state_opened",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_reader_state_closing",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_reader_state_closed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_reader_state_failed",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "fstrm_reader_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(struct fstrm_reader *r)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__reader_open_unidirectional",
+          "detailed": "\n        ",
+          "name": "fstrm__reader_open_unidirectional",
+          "params": [
+            "r"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_reader *r)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__reader_open_bidirectional",
+          "detailed": "\n        ",
+          "name": "fstrm__reader_open_bidirectional",
+          "params": [
+            "r"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_reader *r, uint32_t *out)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__reader_read_be32",
+          "detailed": "\n        ",
+          "name": "fstrm__reader_read_be32",
+          "params": [
+            "r",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_reader *r, const uint8_t **data, size_t *len_data)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__reader_next_data",
+          "detailed": "\n        ",
+          "name": "fstrm__reader_next_data",
+          "params": [
+            "r",
+            "data",
+            "len_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_reader *r)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__reader_maybe_open",
+          "detailed": "\n        ",
+          "name": "fstrm__reader_maybe_open",
+          "params": [
+            "r"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct fstrm_reader_options default_fstrm_reader_options",
+          "detailed": "\n        ",
+          "name": "default_fstrm_reader_options",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fstrm_reader_state fstrm_reader::state",
+          "detailed": "\n        ",
+          "name": "state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "fs_bufvec* fstrm_reader::content_types",
+          "detailed": "\n        ",
+          "name": "content_types",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t fstrm_reader::max_frame_size",
+          "detailed": "\n        ",
+          "name": "max_frame_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_rdwr* fstrm_reader::rdwr",
+          "detailed": "\n        ",
+          "name": "rdwr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_control* fstrm_reader::control_start",
+          "detailed": "\n        ",
+          "name": "control_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_control* fstrm_reader::control_stop",
+          "detailed": "\n        ",
+          "name": "control_stop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_control* fstrm_reader::control_ready",
+          "detailed": "\n        ",
+          "name": "control_ready",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_control* fstrm_reader::control_accept",
+          "detailed": "\n        ",
+          "name": "control_accept",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct fstrm_control* fstrm_reader::control_tmp",
+          "detailed": "\n        ",
+          "name": "control_tmp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ubuf* fstrm_reader::buf",
+          "detailed": "\n        ",
+          "name": "buf",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "fstrm/reader.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/tcp_writer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_op_open",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_op_open",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_op_close",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_op_close",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj, void *buf, size_t nbytes)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_op_read",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_op_read",
+          "params": [
+            "obj",
+            "buf",
+            "nbytes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj, const struct iovec *iov, int iovcnt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_op_write",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_op_write",
+          "params": [
+            "obj",
+            "iov",
+            "iovcnt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_op_destroy",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_op_destroy",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm__tcp_writer *w, const struct fstrm_tcp_writer_options *twopt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_fill_socket_port",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_fill_socket_port",
+          "params": [
+            "w",
+            "twopt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm__tcp_writer *w, const struct fstrm_tcp_writer_options *twopt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__tcp_writer_fill_socket_address",
+          "detailed": "\n        ",
+          "name": "fstrm__tcp_writer_fill_socket_address",
+          "params": [
+            "w",
+            "twopt"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/tcp_writer.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/time.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/unix_writer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__unix_writer_op_open",
+          "detailed": "\n        ",
+          "name": "fstrm__unix_writer_op_open",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__unix_writer_op_close",
+          "detailed": "\n        ",
+          "name": "fstrm__unix_writer_op_close",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj, void *buf, size_t nbytes)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__unix_writer_op_read",
+          "detailed": "\n        ",
+          "name": "fstrm__unix_writer_op_read",
+          "params": [
+            "obj",
+            "buf",
+            "nbytes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj, const struct iovec *iov, int iovcnt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__unix_writer_op_write",
+          "detailed": "\n        ",
+          "name": "fstrm__unix_writer_op_write",
+          "params": [
+            "obj",
+            "iov",
+            "iovcnt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__unix_writer_op_destroy",
+          "detailed": "\n        ",
+          "name": "fstrm__unix_writer_op_destroy",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/unix_writer.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/writer.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_writer_state_opening",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_writer_state_opened",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_writer_state_closed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "fstrm_writer_state_failed",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "fstrm_writer_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(struct fstrm_writer *w)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__writer_open_bidirectional",
+          "detailed": "\n        ",
+          "name": "fstrm__writer_open_bidirectional",
+          "params": [
+            "w"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_writer *w)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__writer_open_unidirectional",
+          "detailed": "\n        ",
+          "name": "fstrm__writer_open_unidirectional",
+          "params": [
+            "w"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_writer *w)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__writer_maybe_open",
+          "detailed": "\n        ",
+          "name": "fstrm__writer_maybe_open",
+          "params": [
+            "w"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_writer *w, const struct iovec *iov, int iovcnt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__writer_write_iov",
+          "detailed": "\n        ",
+          "name": "fstrm__writer_write_iov",
+          "params": [
+            "w",
+            "iov",
+            "iovcnt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_writer *w, const struct iovec *iov, int iovcnt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res fstrm__writer_write_iov_stupid",
+          "detailed": "\n        ",
+          "name": "fstrm__writer_write_iov_stupid",
+          "params": [
+            "w",
+            "iov",
+            "iovcnt"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FSTRM__WRITER_IOVEC_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "fstrm/writer.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "fstrm",
+  "schema_version": 1,
+  "version": "0.6.1"
+}

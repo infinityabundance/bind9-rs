@@ -1,0 +1,2755 @@
+{
+  "files": {
+    "t/bad_data_size_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_bad_data_size_rejected",
+          "detailed": "\n        ",
+          "name": "test_bad_data_size_rejected",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_bad_map_size_rejected",
+          "detailed": "\n        ",
+          "name": "test_bad_map_size_rejected",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/bad_databases_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *path, const struct stat *(sbuf), int flags, struct FTW *(ftw))",
+          "brief": "\n        ",
+          "definition": "int test_read",
+          "detailed": "\n        ",
+          "name": "test_read",
+          "params": [
+            "path",
+            "",
+            "flags",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_XOPEN_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/bad_epoch_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_bad_epoch",
+          "detailed": "\n        ",
+          "name": "test_bad_epoch",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/bad_indent_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_negative_indent",
+          "detailed": "\n        ",
+          "name": "test_negative_indent",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/bad_pointers_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/bad_search_tree_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_read_node_bounds",
+          "detailed": "\n        ",
+          "name": "test_read_node_bounds",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/basic_lookup_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_big_lookup",
+          "detailed": "\n        ",
+          "name": "test_big_lookup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb, MMDB_lookup_result_s result, const char *ip, const char *expect, const char *function, const char *filename, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_one_result",
+          "detailed": "\n        ",
+          "name": "test_one_result",
+          "params": [
+            "mmdb",
+            "result",
+            "ip",
+            "expect",
+            "function",
+            "filename",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, const char *expect, const char *filename, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_one_ip",
+          "detailed": "\n        ",
+          "name": "test_one_ip",
+          "params": [
+            "mmdb",
+            "ip",
+            "expect",
+            "filename",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, const char **missing_ips, int missing_ips_length, const char *pairs[][2], int pairs_rows)",
+          "brief": "\n        ",
+          "definition": "void run_ipX_tests",
+          "detailed": "\n        ",
+          "name": "run_ipX_tests",
+          "params": [
+            "filename",
+            "missing_ips",
+            "missing_ips_length",
+            "pairs",
+            "pairs_rows"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int(record_size), const char *filename, const char *(ignored))",
+          "brief": "\n        ",
+          "definition": "void run_ipv4_tests",
+          "detailed": "\n        ",
+          "name": "run_ipv4_tests",
+          "params": [
+            "",
+            "filename",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int(record_size), const char *filename, const char *(ignored))",
+          "brief": "\n        ",
+          "definition": "void run_ipv6_tests",
+          "detailed": "\n        ",
+          "name": "run_ipv6_tests",
+          "params": [
+            "",
+            "filename",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *description)",
+          "brief": "\n        ",
+          "definition": "void all_record_sizes",
+          "detailed": "\n        ",
+          "name": "all_record_sizes",
+          "params": [
+            "mode",
+            "description"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int Current_Mode",
+          "detailed": "\n        ",
+          "name": "Current_Mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* Current_Mode_Description",
+          "detailed": "\n        ",
+          "name": "Current_Mode_Description",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/data-pool-t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_data_pool_new",
+          "detailed": "\n        ",
+          "name": "test_data_pool_new",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_data_pool_destroy",
+          "detailed": "\n        ",
+          "name": "test_data_pool_destroy",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_data_pool_alloc",
+          "detailed": "\n        ",
+          "name": "test_data_pool_alloc",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_data_pool_to_list",
+          "detailed": "\n        ",
+          "name": "test_data_pool_to_list",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(size_t const, size_t const)",
+          "brief": "\n        ",
+          "definition": "static bool create_and_check_list",
+          "detailed": "\n        ",
+          "name": "create_and_check_list",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_entry_data_list_s const *const, size_t const)",
+          "brief": "\n        ",
+          "definition": "static void check_block_count",
+          "detailed": "\n        ",
+          "name": "check_block_count",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/data_entry_list_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_array_value",
+          "detailed": "\n        ",
+          "name": "test_array_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_boolean_value",
+          "detailed": "\n        ",
+          "name": "test_boolean_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_bytes_value",
+          "detailed": "\n        ",
+          "name": "test_bytes_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_double_value",
+          "detailed": "\n        ",
+          "name": "test_double_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_float_value",
+          "detailed": "\n        ",
+          "name": "test_float_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_int32_value",
+          "detailed": "\n        ",
+          "name": "test_int32_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_arrayX_value",
+          "detailed": "\n        ",
+          "name": "test_arrayX_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_mapX_key_value_pair",
+          "detailed": "\n        ",
+          "name": "test_mapX_key_value_pair",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_map_value",
+          "detailed": "\n        ",
+          "name": "test_map_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_uint128_value",
+          "detailed": "\n        ",
+          "name": "test_uint128_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_uint16_value",
+          "detailed": "\n        ",
+          "name": "test_uint16_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_uint32_value",
+          "detailed": "\n        ",
+          "name": "test_uint32_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_uint64_value",
+          "detailed": "\n        ",
+          "name": "test_uint64_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_utf8_string_value",
+          "detailed": "\n        ",
+          "name": "test_utf8_string_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *description)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "description"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/data_types_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_lookup_result_s *result, const char *ip, const char *(filename), const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_all_data_types",
+          "detailed": "\n        ",
+          "name": "test_all_data_types",
+          "params": [
+            "result",
+            "ip",
+            "",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_lookup_result_s *result, const char *ip, const char *(filename), const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_all_data_types_as_zero",
+          "detailed": "\n        ",
+          "name": "test_all_data_types_as_zero",
+          "params": [
+            "result",
+            "ip",
+            "",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/double_close_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_double_close",
+          "detailed": "\n        ",
+          "name": "test_double_close",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/dump_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_XOPEN_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/empty_container_metadata_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *filename, const char *open_msg)",
+          "brief": "\n        ",
+          "definition": "static void test_db_opens_and_lookup_succeeds",
+          "detailed": "\n        ",
+          "name": "test_db_opens_and_lookup_succeeds",
+          "params": [
+            "filename",
+            "open_msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_empty_map_last_in_metadata",
+          "detailed": "\n        ",
+          "name": "test_empty_map_last_in_metadata",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_empty_array_last_in_metadata",
+          "detailed": "\n        ",
+          "name": "test_empty_array_last_in_metadata",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/gai_error_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_mmdb_error_set_on_gai_failure",
+          "detailed": "\n        ",
+          "name": "test_mmdb_error_set_on_gai_failure",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/get_value_pointer_bug_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_s *mmdb, const char *filename, const char *mode_desc, char *ip, char *country_code)",
+          "brief": "\n        ",
+          "definition": "void test_one_ip",
+          "detailed": "\n        ",
+          "name": "test_one_ip",
+          "params": [
+            "mmdb",
+            "filename",
+            "mode_desc",
+            "ip",
+            "country_code"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/get_value_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function)",
+          "brief": "\n        ",
+          "definition": "void test_array_0_result",
+          "detailed": "\n        ",
+          "name": "test_array_0_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function)",
+          "brief": "\n        ",
+          "definition": "void test_array_2_result",
+          "detailed": "\n        ",
+          "name": "test_array_2_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function)",
+          "brief": "\n        ",
+          "definition": "void test_array_minus_3_result",
+          "detailed": "\n        ",
+          "name": "test_array_minus_3_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function)",
+          "brief": "\n        ",
+          "definition": "void test_array_minus_1_result",
+          "detailed": "\n        ",
+          "name": "test_array_minus_1_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *entry, MMDB_entry_data_s *entry_data,...)",
+          "brief": "\n        ",
+          "definition": "int call_vget_value",
+          "detailed": "\n        ",
+          "name": "call_vget_value",
+          "params": [
+            "entry",
+            "entry_data",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_simple_structure",
+          "detailed": "\n        ",
+          "name": "test_simple_structure",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function)",
+          "brief": "\n        ",
+          "definition": "void test_complex_map_a_result",
+          "detailed": "\n        ",
+          "name": "test_complex_map_a_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function)",
+          "brief": "\n        ",
+          "definition": "void test_complex_map_c_result",
+          "detailed": "\n        ",
+          "name": "test_complex_map_c_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status, MMDB_entry_data_s entry_data, char *function, char *path_description)",
+          "brief": "\n        ",
+          "definition": "void test_no_result",
+          "detailed": "\n        ",
+          "name": "test_no_result",
+          "params": [
+            "status",
+            "entry_data",
+            "function",
+            "path_description"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_nested_structure",
+          "detailed": "\n        ",
+          "name": "test_nested_structure",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/ipv4_start_cache_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, const char *filename, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_one_ip",
+          "detailed": "\n        ",
+          "name": "test_one_ip",
+          "params": [
+            "mmdb",
+            "ip",
+            "filename",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/ipv6_lookup_in_ipv4_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/libtap/tap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *fmt, va_list args)",
+          "brief": "\n        ",
+          "definition": "static char * vstrdupf",
+          "detailed": "\n        ",
+          "name": "vstrdupf",
+          "params": [
+            "fmt",
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int tests, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void tap_plan",
+          "detailed": "\n        ",
+          "name": "tap_plan",
+          "params": [
+            "tests",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, int test, const char *fmt, va_list args)",
+          "brief": "\n        ",
+          "definition": "int vok_at_loc",
+          "detailed": "\n        ",
+          "name": "vok_at_loc",
+          "params": [
+            "file",
+            "line",
+            "test",
+            "fmt",
+            "args"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, int test, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int ok_at_loc",
+          "detailed": "\n        ",
+          "name": "ok_at_loc",
+          "params": [
+            "file",
+            "line",
+            "test",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *a, const char *b)",
+          "brief": "\n        ",
+          "definition": "static int mystrcmp",
+          "detailed": "\n        ",
+          "name": "mystrcmp",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *file, int line, const char *got, const char *expected, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int is_at_loc",
+          "detailed": "\n        ",
+          "name": "is_at_loc",
+          "params": [
+            "file",
+            "line",
+            "got",
+            "expected",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, const char *got, const char *expected, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int isnt_at_loc",
+          "detailed": "\n        ",
+          "name": "isnt_at_loc",
+          "params": [
+            "file",
+            "line",
+            "got",
+            "expected",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, int a, const char *op, int b, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int cmp_ok_at_loc",
+          "detailed": "\n        ",
+          "name": "cmp_ok_at_loc",
+          "params": [
+            "file",
+            "line",
+            "a",
+            "op",
+            "b",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *a, const char *b, size_t n, size_t *offset)",
+          "brief": "\n        ",
+          "definition": "static int find_mem_diff",
+          "detailed": "\n        ",
+          "name": "find_mem_diff",
+          "params": [
+            "a",
+            "b",
+            "n",
+            "offset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *file, int line, const void *got, const void *expected, size_t n, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int cmp_mem_at_loc",
+          "detailed": "\n        ",
+          "name": "cmp_mem_at_loc",
+          "params": [
+            "file",
+            "line",
+            "got",
+            "expected",
+            "n",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int diag",
+          "detailed": "\n        ",
+          "name": "diag",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "int exit_status",
+          "detailed": "\n        ",
+          "name": "exit_status",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(int ignore, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int bail_out",
+          "detailed": "\n        ",
+          "name": "bail_out",
+          "params": [
+            "ignore",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int n, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void tap_skip",
+          "detailed": "\n        ",
+          "name": "tap_skip",
+          "params": [
+            "n",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int ignore, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void tap_todo",
+          "detailed": "\n        ",
+          "name": "tap_todo",
+          "params": [
+            "ignore",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "void tap_end_todo",
+          "detailed": "\n        ",
+          "name": "tap_end_todo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "int tap_test_died",
+          "detailed": "\n        ",
+          "name": "tap_test_died",
+          "params": [
+            "status"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int for_match, const char *file, int line, const char *got, const char *expected, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int like_at_loc",
+          "detailed": "\n        ",
+          "name": "like_at_loc",
+          "params": [
+            "for_match",
+            "file",
+            "line",
+            "got",
+            "expected",
+            "fmt",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "eq",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ne",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_tests",
+          "detailed": "\n        ",
+          "name": "expected_tests",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int failed_tests",
+          "detailed": "\n        ",
+          "name": "failed_tests",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int current_test",
+          "detailed": "\n        ",
+          "name": "current_test",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* todo_mesg",
+          "detailed": "\n        ",
+          "name": "todo_mesg",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/libtap/tap.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *file, int line, int test, const char *fmt, va_list args)",
+          "brief": "\n        ",
+          "definition": "int vok_at_loc",
+          "detailed": "\n        ",
+          "name": "vok_at_loc",
+          "params": [
+            "file",
+            "line",
+            "test",
+            "fmt",
+            "args"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, int test, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int ok_at_loc",
+          "detailed": "\n        ",
+          "name": "ok_at_loc",
+          "params": [
+            "file",
+            "line",
+            "test",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, const char *got, const char *expected, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int is_at_loc",
+          "detailed": "\n        ",
+          "name": "is_at_loc",
+          "params": [
+            "file",
+            "line",
+            "got",
+            "expected",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, const char *got, const char *expected, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int isnt_at_loc",
+          "detailed": "\n        ",
+          "name": "isnt_at_loc",
+          "params": [
+            "file",
+            "line",
+            "got",
+            "expected",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, int a, const char *op, int b, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int cmp_ok_at_loc",
+          "detailed": "\n        ",
+          "name": "cmp_ok_at_loc",
+          "params": [
+            "file",
+            "line",
+            "a",
+            "op",
+            "b",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, int line, const void *got, const void *expected, size_t n, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int cmp_mem_at_loc",
+          "detailed": "\n        ",
+          "name": "cmp_mem_at_loc",
+          "params": [
+            "file",
+            "line",
+            "got",
+            "expected",
+            "n",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int ignore, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int bail_out",
+          "detailed": "\n        ",
+          "name": "bail_out",
+          "params": [
+            "ignore",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int tests, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void tap_plan",
+          "detailed": "\n        ",
+          "name": "tap_plan",
+          "params": [
+            "tests",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int diag",
+          "detailed": "\n        ",
+          "name": "diag",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int exit_status",
+          "detailed": "\n        ",
+          "name": "exit_status",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int n, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void tap_skip",
+          "detailed": "\n        ",
+          "name": "tap_skip",
+          "params": [
+            "n",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int ignore, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void tap_todo",
+          "detailed": "\n        ",
+          "name": "tap_todo",
+          "params": [
+            "ignore",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void tap_end_todo",
+          "detailed": "\n        ",
+          "name": "tap_end_todo",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int for_match, const char *file, int line, const char *got, const char *expected, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int like_at_loc",
+          "detailed": "\n        ",
+          "name": "like_at_loc",
+          "params": [
+            "for_match",
+            "file",
+            "line",
+            "got",
+            "expected",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "int tap_test_died",
+          "detailed": "\n        ",
+          "name": "tap_test_died",
+          "params": [
+            "status"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "va_copy",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NO_PLAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SKIP_ALL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "is",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "isnt",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cmp_ok",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cmp_mem",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "plan",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "done_testing",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BAIL_OUT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "pass",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "fail",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "skip",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "end_skip",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "todo",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "end_todo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "dies_ok",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "lives_ok",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "like",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "unlike",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "dies_ok_common",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/max_depth_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_deep_nesting_rejected",
+          "detailed": "\n        ",
+          "name": "test_deep_nesting_rejected",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_valid_nesting_allowed",
+          "detailed": "\n        ",
+          "name": "test_valid_nesting_allowed",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_deep_array_nesting_rejected",
+          "detailed": "\n        ",
+          "name": "test_deep_array_nesting_rejected",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/maxminddb_test_helper.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *filename_fmt, void(*tests)(int record_size, const char *filename, const char *description))",
+          "brief": "\n        ",
+          "definition": "void for_all_record_sizes",
+          "detailed": "\n        ",
+          "name": "for_all_record_sizes",
+          "params": [
+            "filename_fmt",
+            "tests"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void(*tests)(int mode, const char *description))",
+          "brief": "\n        ",
+          "definition": "void for_all_modes",
+          "detailed": "\n        ",
+          "name": "for_all_modes",
+          "params": [
+            "tests"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "char * test_database_path",
+          "detailed": "\n        ",
+          "name": "test_database_path",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "char * bad_database_path",
+          "detailed": "\n        ",
+          "name": "bad_database_path",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_s entry_data)",
+          "brief": "\n        ",
+          "definition": "char * dup_entry_string_or_bail",
+          "detailed": "\n        ",
+          "name": "dup_entry_string_or_bail",
+          "params": [
+            "entry_data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *db_file, int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "MMDB_s * open_ok",
+          "detailed": "\n        ",
+          "name": "open_ok",
+          "params": [
+            "db_file",
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, const char *file, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s lookup_string_ok",
+          "detailed": "\n        ",
+          "name": "lookup_string_ok",
+          "params": [
+            "mmdb",
+            "ip",
+            "file",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, const char *file, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s lookup_sockaddr_ok",
+          "detailed": "\n        ",
+          "name": "lookup_sockaddr_ok",
+          "params": [
+            "mmdb",
+            "ip",
+            "file",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int gai_error, int mmdb_error, const char *function, const char *ip, const char *file, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_lookup_errors",
+          "detailed": "\n        ",
+          "name": "test_lookup_errors",
+          "params": [
+            "gai_error",
+            "mmdb_error",
+            "function",
+            "ip",
+            "file",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_lookup_result_s *result, uint32_t expect_type, const char *description,...)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_s data_ok",
+          "detailed": "\n        ",
+          "name": "data_ok",
+          "params": [
+            "result",
+            "expect_type",
+            "description",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(double got, double expect)",
+          "brief": "\n        ",
+          "definition": "void compare_double",
+          "detailed": "\n        ",
+          "name": "compare_double",
+          "params": [
+            "got",
+            "expect"
+          ],
+          "static": false
+        },
+        {
+          "args": "(float got, float expect)",
+          "brief": "\n        ",
+          "definition": "void compare_float",
+          "detailed": "\n        ",
+          "name": "compare_float",
+          "params": [
+            "got",
+            "expect"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/maxminddb_test_helper.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *filename_fmt, void(*tests)(int record_size, const char *filename, const char *description))",
+          "brief": "\n        ",
+          "definition": "void for_all_record_sizes",
+          "detailed": "\n        ",
+          "name": "for_all_record_sizes",
+          "params": [
+            "filename_fmt",
+            "tests"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void(*tests)(int mode, const char *description))",
+          "brief": "\n        ",
+          "definition": "void for_all_modes",
+          "detailed": "\n        ",
+          "name": "for_all_modes",
+          "params": [
+            "tests"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "char * test_database_path",
+          "detailed": "\n        ",
+          "name": "test_database_path",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "char * bad_database_path",
+          "detailed": "\n        ",
+          "name": "bad_database_path",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_s entry_data)",
+          "brief": "\n        ",
+          "definition": "char * dup_entry_string_or_bail",
+          "detailed": "\n        ",
+          "name": "dup_entry_string_or_bail",
+          "params": [
+            "entry_data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *db_file, int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "MMDB_s * open_ok",
+          "detailed": "\n        ",
+          "name": "open_ok",
+          "params": [
+            "db_file",
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, const char *file, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s lookup_string_ok",
+          "detailed": "\n        ",
+          "name": "lookup_string_ok",
+          "params": [
+            "mmdb",
+            "ip",
+            "file",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, const char *file, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s lookup_sockaddr_ok",
+          "detailed": "\n        ",
+          "name": "lookup_sockaddr_ok",
+          "params": [
+            "mmdb",
+            "ip",
+            "file",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int gai_error, int mmdb_error, const char *function, const char *ip, const char *file, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_lookup_errors",
+          "detailed": "\n        ",
+          "name": "test_lookup_errors",
+          "params": [
+            "gai_error",
+            "mmdb_error",
+            "function",
+            "ip",
+            "file",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_lookup_result_s *result, uint32_t expect_type, const char *description,...)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_s data_ok",
+          "detailed": "\n        ",
+          "name": "data_ok",
+          "params": [
+            "result",
+            "expect_type",
+            "description",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(double got, double expect)",
+          "brief": "\n        ",
+          "definition": "void compare_double",
+          "detailed": "\n        ",
+          "name": "compare_double",
+          "params": [
+            "got",
+            "expect"
+          ],
+          "static": false
+        },
+        {
+          "args": "(float got, float expect)",
+          "brief": "\n        ",
+          "definition": "void compare_float",
+          "detailed": "\n        ",
+          "name": "compare_float",
+          "params": [
+            "got",
+            "expect"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_POSIX_C_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_TEST_HELPER_C",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNUSED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_DESCRIPTION_LENGTH",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/metadata_pointers_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/metadata_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_s *mmdb, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_metadata",
+          "detailed": "\n        ",
+          "name": "test_metadata",
+          "params": [
+            "mmdb",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_languages_value",
+          "detailed": "\n        ",
+          "name": "test_languages_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *entry_data_list)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * test_description_value",
+          "detailed": "\n        ",
+          "name": "test_description_value",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void test_metadata_as_data_entry_list",
+          "detailed": "\n        ",
+          "name": "test_metadata_as_data_entry_list",
+          "params": [
+            "mmdb",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/no_map_get_value_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/overflow_bounds_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_normal_lookup_still_works",
+          "detailed": "\n        ",
+          "name": "test_normal_lookup_still_works",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void test_record_type_bounds",
+          "detailed": "\n        ",
+          "name": "test_record_type_bounds",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/read_node_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_s *mmdb, MMDB_entry_s *entry, uint32_t node_number, char *node_record)",
+          "brief": "\n        ",
+          "definition": "void test_entry_data",
+          "detailed": "\n        ",
+          "name": "test_entry_data",
+          "params": [
+            "mmdb",
+            "entry",
+            "node_number",
+            "node_record"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const uint32_t tests[][5], int test_count, uint8_t record_size)",
+          "brief": "\n        ",
+          "definition": "void run_read_node_tests",
+          "detailed": "\n        ",
+          "name": "run_read_node_tests",
+          "params": [
+            "mmdb",
+            "tests",
+            "test_count",
+            "record_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_24_bit_record_tests",
+          "detailed": "\n        ",
+          "name": "run_24_bit_record_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_28_bit_record_tests",
+          "detailed": "\n        ",
+          "name": "run_28_bit_record_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_32_bit_record_tests",
+          "detailed": "\n        ",
+          "name": "run_32_bit_record_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_read_node_invalid_node_number_tests",
+          "detailed": "\n        ",
+          "name": "run_read_node_invalid_node_number_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/threads_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_s *mmdb, const char *ip, test_result_s *test_result)",
+          "brief": "\n        ",
+          "definition": "void test_one_ip",
+          "detailed": "\n        ",
+          "name": "test_one_ip",
+          "params": [
+            "mmdb",
+            "ip",
+            "test_result"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "void * run_one_thread",
+          "detailed": "\n        ",
+          "name": "run_one_thread",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(test_result_s *result, const char *expect, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void process_result",
+          "detailed": "\n        ",
+          "name": "process_result",
+          "params": [
+            "result",
+            "expect",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *mmdb, const char *pairs[][2], int pairs_rows, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_ipX_tests",
+          "detailed": "\n        ",
+          "name": "run_ipX_tests",
+          "params": [
+            "mmdb",
+            "pairs",
+            "pairs_rows",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int mode, const char *mode_desc)",
+          "brief": "\n        ",
+          "definition": "void run_tests",
+          "detailed": "\n        ",
+          "name": "run_tests",
+          "params": [
+            "mode",
+            "mode_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct thread_arg thread_arg_s",
+          "detailed": "\n        ",
+          "name": "thread_arg_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct test_result test_result_s",
+          "detailed": "\n        ",
+          "name": "test_result_s",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "t/version_t.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "t",
+  "schema_version": 1,
+  "version": "1.13.3"
+}

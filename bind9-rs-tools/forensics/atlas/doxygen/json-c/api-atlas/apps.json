@@ -1,0 +1,170 @@
+{
+  "files": {
+    "apps/json_parse.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((noreturn, cold))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fd, int(*callback)(struct json_object *))",
+          "brief": "\n        ",
+          "definition": "static int parseit",
+          "detailed": "\n        ",
+          "name": "parseit",
+          "params": [
+            "fd",
+            "callback"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *new_obj)",
+          "brief": "\n        ",
+          "definition": "static int showobj",
+          "detailed": "\n        ",
+          "name": "showobj",
+          "params": [
+            "new_obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *argv0, int exitval, const char *errmsg)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "argv0",
+            "exitval",
+            "errmsg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_NORETURN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "json_tokener_get_parse_end",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int formatted_output",
+          "detailed": "\n        ",
+          "name": "formatted_output",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int show_output",
+          "detailed": "\n        ",
+          "name": "show_output",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int show_diag",
+          "detailed": "\n        ",
+          "name": "show_diag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int strict_mode",
+          "detailed": "\n        ",
+          "name": "strict_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int validate_utf8",
+          "detailed": "\n        ",
+          "name": "validate_utf8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int tokener_flags",
+          "detailed": "\n        ",
+          "name": "tokener_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int color",
+          "detailed": "\n        ",
+          "name": "color",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* fname",
+          "detailed": "\n        ",
+          "name": "fname",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "apps",
+  "schema_version": 1,
+  "version": "0.19"
+}

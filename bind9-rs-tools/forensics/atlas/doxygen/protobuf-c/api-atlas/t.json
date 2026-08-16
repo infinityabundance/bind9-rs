@@ -1,0 +1,3419 @@
+{
+  "files": {
+    "t/generated-code/test-generated-code.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/generated-code2/common-test-arrays.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "THOUSAND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MILLION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BILLION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRILLION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "QUADRILLION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "QUINTILLION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLOATING_POINT_RANDOM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "T",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "T",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "int32_t int32_arr0[2]",
+          "detailed": "\n        ",
+          "name": "int32_arr0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[5]",
+          "brief": "\n        ",
+          "definition": "int32_t int32_arr1[5]",
+          "detailed": "\n        ",
+          "name": "int32_arr1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "int32_t int32_arr_min_max[2]",
+          "detailed": "\n        ",
+          "name": "int32_arr_min_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4]",
+          "brief": "\n        ",
+          "definition": "uint32_t uint32_roundnumbers[4]",
+          "detailed": "\n        ",
+          "name": "uint32_roundnumbers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "uint32_t uint32_0_max[2]",
+          "detailed": "\n        ",
+          "name": "uint32_0_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[15]",
+          "brief": "\n        ",
+          "definition": "int64_t int64_roundnumbers[15]",
+          "detailed": "\n        ",
+          "name": "int64_roundnumbers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "int64_t int64_min_max[2]",
+          "detailed": "\n        ",
+          "name": "int64_min_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[9]",
+          "brief": "\n        ",
+          "definition": "uint64_t uint64_roundnumbers[9]",
+          "detailed": "\n        ",
+          "name": "uint64_roundnumbers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[3]",
+          "brief": "\n        ",
+          "definition": "uint64_t uint64_0_1_max[3]",
+          "detailed": "\n        ",
+          "name": "uint64_0_1_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "uint64_t uint64_random[]",
+          "detailed": "\n        ",
+          "name": "uint64_random",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "float float_random[]",
+          "detailed": "\n        ",
+          "name": "float_random",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "double double_random[]",
+          "detailed": "\n        ",
+          "name": "double_random",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "protobuf_c_boolean boolean_0[]",
+          "detailed": "\n        ",
+          "name": "boolean_0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "protobuf_c_boolean boolean_1[]",
+          "detailed": "\n        ",
+          "name": "boolean_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "protobuf_c_boolean boolean_random[]",
+          "detailed": "\n        ",
+          "name": "boolean_random",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "TEST_ENUM_SMALL_TYPE_NAME enum_small_0[]",
+          "detailed": "\n        ",
+          "name": "enum_small_0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "TEST_ENUM_SMALL_TYPE_NAME enum_small_1[]",
+          "detailed": "\n        ",
+          "name": "enum_small_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "TEST_ENUM_SMALL_TYPE_NAME enum_small_random[]",
+          "detailed": "\n        ",
+          "name": "enum_small_random",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "TEST_ENUM_TYPE_NAME enum_0[]",
+          "detailed": "\n        ",
+          "name": "enum_0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "TEST_ENUM_TYPE_NAME enum_1[]",
+          "detailed": "\n        ",
+          "name": "enum_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "TEST_ENUM_TYPE_NAME enum_random[]",
+          "detailed": "\n        ",
+          "name": "enum_random",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* repeated_strings_0[]",
+          "detailed": "\n        ",
+          "name": "repeated_strings_0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* repeated_strings_1[]",
+          "detailed": "\n        ",
+          "name": "repeated_strings_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* repeated_strings_2[]",
+          "detailed": "\n        ",
+          "name": "repeated_strings_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* repeated_strings_3[]",
+          "detailed": "\n        ",
+          "name": "repeated_strings_3",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/generated-code2/test-generated-code2.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned actual_len, const uint8_t *actual_data, unsigned expected_len, const uint8_t *expected_data)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean are_bytes_equal",
+          "detailed": "\n        ",
+          "name": "are_bytes_equal",
+          "params": [
+            "actual_len",
+            "actual_data",
+            "expected_len",
+            "expected_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(size_t len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static void dump_bytes_stderr",
+          "detailed": "\n        ",
+          "name": "dump_bytes_stderr",
+          "params": [
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned actual_len, const uint8_t *actual_data, unsigned expected_len, const uint8_t *expected_data, const char *static_buf_name, const char *filename, unsigned lineno)",
+          "brief": "\n        ",
+          "definition": "static void test_versus_static_array",
+          "detailed": "\n        ",
+          "name": "test_versus_static_array",
+          "params": [
+            "actual_len",
+            "actual_data",
+            "expected_len",
+            "expected_data",
+            "static_buf_name",
+            "filename",
+            "lineno"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCMessage *message, size_t *packed_len_out, uint8_t **packed_out)",
+          "brief": "\n        ",
+          "definition": "static void * test_compare_pack_methods",
+          "detailed": "\n        ",
+          "name": "test_compare_pack_methods",
+          "params": [
+            "message",
+            "packed_len_out",
+            "packed_out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCBinaryData a, ProtobufCBinaryData b)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean binary_data_equals",
+          "detailed": "\n        ",
+          "name": "binary_data_equals",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Foo__SubMess *a, Foo__SubMess *b)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean submesses_equals",
+          "detailed": "\n        ",
+          "name": "submesses_equals",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_enum_small",
+          "detailed": "\n        ",
+          "name": "test_enum_small",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_enum_big",
+          "detailed": "\n        ",
+          "name": "test_enum_big",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_field_numbers",
+          "detailed": "\n        ",
+          "name": "test_field_numbers",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_int32",
+          "detailed": "\n        ",
+          "name": "test_required_int32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_sint32",
+          "detailed": "\n        ",
+          "name": "test_required_sint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_sfixed32",
+          "detailed": "\n        ",
+          "name": "test_required_sfixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_uint32",
+          "detailed": "\n        ",
+          "name": "test_required_uint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_fixed32",
+          "detailed": "\n        ",
+          "name": "test_required_fixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_int64",
+          "detailed": "\n        ",
+          "name": "test_required_int64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_sint64",
+          "detailed": "\n        ",
+          "name": "test_required_sint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_sfixed64",
+          "detailed": "\n        ",
+          "name": "test_required_sfixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_uint64",
+          "detailed": "\n        ",
+          "name": "test_required_uint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_fixed64",
+          "detailed": "\n        ",
+          "name": "test_required_fixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_float",
+          "detailed": "\n        ",
+          "name": "test_required_float",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_double",
+          "detailed": "\n        ",
+          "name": "test_required_double",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_bool",
+          "detailed": "\n        ",
+          "name": "test_required_bool",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_TestEnumSmall",
+          "detailed": "\n        ",
+          "name": "test_required_TestEnumSmall",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_TestEnum",
+          "detailed": "\n        ",
+          "name": "test_required_TestEnum",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_string",
+          "detailed": "\n        ",
+          "name": "test_required_string",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_bytes",
+          "detailed": "\n        ",
+          "name": "test_required_bytes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_SubMess",
+          "detailed": "\n        ",
+          "name": "test_required_SubMess",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const Foo__TestMessOptional *message)",
+          "brief": "\n        ",
+          "definition": "static size_t foo__test_mess_optional__get_packed_size",
+          "detailed": "\n        ",
+          "name": "foo__test_mess_optional__get_packed_size",
+          "params": [
+            "message"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const Foo__TestMessOptional *message, uint8_t *out)",
+          "brief": "\n        ",
+          "definition": "static size_t foo__test_mess_optional__pack",
+          "detailed": "\n        ",
+          "name": "foo__test_mess_optional__pack",
+          "params": [
+            "message",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCAllocator *allocator, size_t len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static Foo__TestMessOptional * foo__test_mess_optional__unpack",
+          "detailed": "\n        ",
+          "name": "foo__test_mess_optional__unpack",
+          "params": [
+            "allocator",
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Foo__TestMessOptional *message, ProtobufCAllocator *allocator)",
+          "brief": "\n        ",
+          "definition": "static void foo__test_mess_optional__free_unpacked",
+          "detailed": "\n        ",
+          "name": "foo__test_mess_optional__free_unpacked",
+          "params": [
+            "message",
+            "allocator"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_empty_optional",
+          "detailed": "\n        ",
+          "name": "test_empty_optional",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_int32",
+          "detailed": "\n        ",
+          "name": "test_optional_int32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_sint32",
+          "detailed": "\n        ",
+          "name": "test_optional_sint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_sfixed32",
+          "detailed": "\n        ",
+          "name": "test_optional_sfixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_int64",
+          "detailed": "\n        ",
+          "name": "test_optional_int64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_sint64",
+          "detailed": "\n        ",
+          "name": "test_optional_sint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_sfixed64",
+          "detailed": "\n        ",
+          "name": "test_optional_sfixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_uint32",
+          "detailed": "\n        ",
+          "name": "test_optional_uint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_fixed32",
+          "detailed": "\n        ",
+          "name": "test_optional_fixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_uint64",
+          "detailed": "\n        ",
+          "name": "test_optional_uint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_fixed64",
+          "detailed": "\n        ",
+          "name": "test_optional_fixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_float",
+          "detailed": "\n        ",
+          "name": "test_optional_float",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_double",
+          "detailed": "\n        ",
+          "name": "test_optional_double",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_bool",
+          "detailed": "\n        ",
+          "name": "test_optional_bool",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_TestEnumSmall",
+          "detailed": "\n        ",
+          "name": "test_optional_TestEnumSmall",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_TestEnum",
+          "detailed": "\n        ",
+          "name": "test_optional_TestEnum",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_string",
+          "detailed": "\n        ",
+          "name": "test_optional_string",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_bytes",
+          "detailed": "\n        ",
+          "name": "test_optional_bytes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_SubMess",
+          "detailed": "\n        ",
+          "name": "test_optional_SubMess",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_empty_oneof",
+          "detailed": "\n        ",
+          "name": "test_empty_oneof",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_int32",
+          "detailed": "\n        ",
+          "name": "test_oneof_int32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_sint32",
+          "detailed": "\n        ",
+          "name": "test_oneof_sint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_sfixed32",
+          "detailed": "\n        ",
+          "name": "test_oneof_sfixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_int64",
+          "detailed": "\n        ",
+          "name": "test_oneof_int64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_sint64",
+          "detailed": "\n        ",
+          "name": "test_oneof_sint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_sfixed64",
+          "detailed": "\n        ",
+          "name": "test_oneof_sfixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_uint32",
+          "detailed": "\n        ",
+          "name": "test_oneof_uint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_fixed32",
+          "detailed": "\n        ",
+          "name": "test_oneof_fixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_uint64",
+          "detailed": "\n        ",
+          "name": "test_oneof_uint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_fixed64",
+          "detailed": "\n        ",
+          "name": "test_oneof_fixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_float",
+          "detailed": "\n        ",
+          "name": "test_oneof_float",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_double",
+          "detailed": "\n        ",
+          "name": "test_oneof_double",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_bool",
+          "detailed": "\n        ",
+          "name": "test_oneof_bool",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_TestEnumSmall",
+          "detailed": "\n        ",
+          "name": "test_oneof_TestEnumSmall",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_TestEnum",
+          "detailed": "\n        ",
+          "name": "test_oneof_TestEnum",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_string",
+          "detailed": "\n        ",
+          "name": "test_oneof_string",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_bytes",
+          "detailed": "\n        ",
+          "name": "test_oneof_bytes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_SubMess",
+          "detailed": "\n        ",
+          "name": "test_oneof_SubMess",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_message_check",
+          "detailed": "\n        ",
+          "name": "test_oneof_message_check",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_oneof_merge",
+          "detailed": "\n        ",
+          "name": "test_oneof_merge",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_empty_repeated",
+          "detailed": "\n        ",
+          "name": "test_empty_repeated",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_int32",
+          "detailed": "\n        ",
+          "name": "test_repeated_int32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_sint32",
+          "detailed": "\n        ",
+          "name": "test_repeated_sint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_sfixed32",
+          "detailed": "\n        ",
+          "name": "test_repeated_sfixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_uint32",
+          "detailed": "\n        ",
+          "name": "test_repeated_uint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_fixed32",
+          "detailed": "\n        ",
+          "name": "test_repeated_fixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_int64",
+          "detailed": "\n        ",
+          "name": "test_repeated_int64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_sint64",
+          "detailed": "\n        ",
+          "name": "test_repeated_sint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_sfixed64",
+          "detailed": "\n        ",
+          "name": "test_repeated_sfixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_uint64",
+          "detailed": "\n        ",
+          "name": "test_repeated_uint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_fixed64",
+          "detailed": "\n        ",
+          "name": "test_repeated_fixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_float",
+          "detailed": "\n        ",
+          "name": "test_repeated_float",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_double",
+          "detailed": "\n        ",
+          "name": "test_repeated_double",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_boolean",
+          "detailed": "\n        ",
+          "name": "test_repeated_boolean",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_TestEnumSmall",
+          "detailed": "\n        ",
+          "name": "test_repeated_TestEnumSmall",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_TestEnum",
+          "detailed": "\n        ",
+          "name": "test_repeated_TestEnum",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_string",
+          "detailed": "\n        ",
+          "name": "test_repeated_string",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_bytes",
+          "detailed": "\n        ",
+          "name": "test_repeated_bytes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_repeated_SubMess",
+          "detailed": "\n        ",
+          "name": "test_repeated_SubMess",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_int32",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_int32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_sint32",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_sint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_sfixed32",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_sfixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_uint32",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_uint32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_fixed32",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_fixed32",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_int64",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_int64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_sint64",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_sint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_sfixed64",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_sfixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_uint64",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_uint64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_fixed64",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_fixed64",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_float",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_float",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_double",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_double",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_boolean",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_boolean",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_TestEnumSmall",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_TestEnumSmall",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_packed_repeated_TestEnum",
+          "detailed": "\n        ",
+          "name": "test_packed_repeated_TestEnum",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_unknown_fields",
+          "detailed": "\n        ",
+          "name": "test_unknown_fields",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ProtobufCEnumDescriptor *desc)",
+          "brief": "\n        ",
+          "definition": "static void test_enum_descriptor",
+          "detailed": "\n        ",
+          "name": "test_enum_descriptor",
+          "params": [
+            "desc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ProtobufCEnumDescriptor *desc, const char *name, int expected_value)",
+          "brief": "\n        ",
+          "definition": "static void test_enum_by_name",
+          "detailed": "\n        ",
+          "name": "test_enum_by_name",
+          "params": [
+            "desc",
+            "name",
+            "expected_value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_lite_enum",
+          "detailed": "\n        ",
+          "name": "test_lite_enum",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_enum_lookups",
+          "detailed": "\n        ",
+          "name": "test_enum_lookups",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ProtobufCMessageDescriptor *desc)",
+          "brief": "\n        ",
+          "definition": "static void test_message_descriptor",
+          "detailed": "\n        ",
+          "name": "test_message_descriptor",
+          "params": [
+            "desc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_message_lookups",
+          "detailed": "\n        ",
+          "name": "test_message_lookups",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(Foo__DefaultRequiredValues *mess)",
+          "brief": "\n        ",
+          "definition": "static void assert_required_default_values_are_default",
+          "detailed": "\n        ",
+          "name": "assert_required_default_values_are_default",
+          "params": [
+            "mess"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_default_values",
+          "detailed": "\n        ",
+          "name": "test_required_default_values",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(Foo__DefaultOptionalValues *mess)",
+          "brief": "\n        ",
+          "definition": "static void assert_optional_default_values_are_default",
+          "detailed": "\n        ",
+          "name": "assert_optional_default_values_are_default",
+          "params": [
+            "mess"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Foo__TestMessOptional *mess)",
+          "brief": "\n        ",
+          "definition": "static void assert_unspecified_default_values_are_correct",
+          "detailed": "\n        ",
+          "name": "assert_unspecified_default_values_are_correct",
+          "params": [
+            "mess"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_default_values",
+          "detailed": "\n        ",
+          "name": "test_optional_default_values",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(Foo__LowerCase *mess)",
+          "brief": "\n        ",
+          "definition": "static void assert_optional_lowercase_enum_default_value_is_default",
+          "detailed": "\n        ",
+          "name": "assert_optional_lowercase_enum_default_value_is_default",
+          "params": [
+            "mess"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_optional_lowercase_enum_default_value",
+          "detailed": "\n        ",
+          "name": "test_optional_lowercase_enum_default_value",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_field_merge",
+          "detailed": "\n        ",
+          "name": "test_field_merge",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_submessage_merge",
+          "detailed": "\n        ",
+          "name": "test_submessage_merge",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *allocator_data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * test_alloc",
+          "detailed": "\n        ",
+          "name": "test_alloc",
+          "params": [
+            "allocator_data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *allocator_data, void *data)",
+          "brief": "\n        ",
+          "definition": "static void test_free",
+          "detailed": "\n        ",
+          "name": "test_free",
+          "params": [
+            "allocator_data",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t *packed, size_t len, int good_allocs)",
+          "brief": "\n        ",
+          "definition": "static void test_alloc_graceful_cleanup",
+          "detailed": "\n        ",
+          "name": "test_alloc_graceful_cleanup",
+          "params": [
+            "packed",
+            "len",
+            "good_allocs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_alloc_free_all",
+          "detailed": "\n        ",
+          "name": "test_alloc_free_all",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_alloc_fail",
+          "detailed": "\n        ",
+          "name": "test_alloc_fail",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_free_unpacked_input_check_for_null_message",
+          "detailed": "\n        ",
+          "name": "test_free_unpacked_input_check_for_null_message",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_free_unpacked_input_check_for_null_repeated_field",
+          "detailed": "\n        ",
+          "name": "test_free_unpacked_input_check_for_null_repeated_field",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_required_fields_bitmap",
+          "detailed": "\n        ",
+          "name": "test_required_fields_bitmap",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_field_flags",
+          "detailed": "\n        ",
+          "name": "test_field_flags",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_message_check",
+          "detailed": "\n        ",
+          "name": "test_message_check",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_message_free_null",
+          "detailed": "\n        ",
+          "name": "test_message_free_null",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ENUM_SMALL_TYPE_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ENUM_SMALL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ENUM_TYPE_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "N_ELEMENTS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_VERSUS_STATIC_ARRAY",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GENERIC_ASSIGN",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NUMERIC_EQUALS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STRING_EQUALS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_NONE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_NOT_NULL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_ONE_TEST",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_ONE_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_REQUIRED",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_OPTIONAL",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_OPTIONAL__NO_HAS",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_GENERIC_ONEOF",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_ONEOF",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_ONEOF_REF_VAL",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_REPEATED",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST_PACKED_REPEATED",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_TEST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEST_ENUM_DUP_VALUES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SETUP_TEST_ALLOC_BUFFER",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "n_tests",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")(void)",
+          "brief": "\n        ",
+          "definition": "typedef void(* TestFunc) (void)",
+          "detailed": "\n        ",
+          "name": "TestFunc",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct alloc_data test_allocator_data",
+          "detailed": "\n        ",
+          "name": "test_allocator_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCAllocator test_allocator",
+          "detailed": "\n        ",
+          "name": "test_allocator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "Test tests[]",
+          "detailed": "\n        ",
+          "name": "tests",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/issue204/issue204.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/issue220/issue220.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/issue251/issue251.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/issue330/issue330.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/issue375/issue375.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/issue440/issue440.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/issue745/issue745.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "t/version/version.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "t",
+  "schema_version": 1,
+  "version": "1.5.2"
+}

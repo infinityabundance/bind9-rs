@@ -1,0 +1,69 @@
+{
+  "files": {
+    "tests/test_printbuf.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_basic_printbuf_memset",
+          "detailed": "\n        ",
+          "name": "test_basic_printbuf_memset",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_printbuf_memset_length",
+          "detailed": "\n        ",
+          "name": "test_printbuf_memset_length",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int *before_resize)",
+          "brief": "\n        ",
+          "definition": "static void test_printbuf_memappend",
+          "detailed": "\n        ",
+          "name": "test_printbuf_memappend",
+          "params": [
+            "before_resize"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__func__",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SA_TEST_STR",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_printbuf.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,163 @@
+{
+  "files": {
+    "json_patch.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object **res, struct json_object *patch_elem, const char *path, struct json_patch_error *patch_error)",
+          "brief": "\n        ",
+          "definition": "static int json_patch_apply_test",
+          "detailed": "JavaScript Object Notation (JSON) Patch RFC 6902 - https://tools.ietf.org/html/rfc6902",
+          "name": "json_patch_apply_test",
+          "params": [
+            "res",
+            "patch_elem",
+            "path",
+            "patch_error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_pointer_get_result *jpres)",
+          "brief": "\n        ",
+          "definition": "static int __json_patch_apply_remove",
+          "detailed": "\n        ",
+          "name": "__json_patch_apply_remove",
+          "params": [
+            "jpres"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object **res, const char *path, struct json_patch_error *patch_error)",
+          "brief": "\n        ",
+          "definition": "static int json_patch_apply_remove",
+          "detailed": "\n        ",
+          "name": "json_patch_apply_remove",
+          "params": [
+            "res",
+            "path",
+            "patch_error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *parent, const char *key, size_t idx, struct json_object *value, void *priv)",
+          "brief": "\n        ",
+          "definition": "static int json_object_array_insert_idx_cb",
+          "detailed": "\n        ",
+          "name": "json_object_array_insert_idx_cb",
+          "params": [
+            "parent",
+            "key",
+            "idx",
+            "value",
+            "priv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object **res, struct json_object *patch_elem, const char *path, int add, struct json_patch_error *patch_error)",
+          "brief": "\n        ",
+          "definition": "static int json_patch_apply_add_replace",
+          "detailed": "\n        ",
+          "name": "json_patch_apply_add_replace",
+          "params": [
+            "res",
+            "patch_elem",
+            "path",
+            "add",
+            "patch_error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *parent, const char *key, size_t idx, struct json_object *value, void *priv)",
+          "brief": "\n        ",
+          "definition": "static int json_object_array_move_cb",
+          "detailed": "\n        ",
+          "name": "json_object_array_move_cb",
+          "params": [
+            "parent",
+            "key",
+            "idx",
+            "value",
+            "priv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object **res, struct json_object *patch_elem, const char *path, int move, struct json_patch_error *patch_error)",
+          "brief": "\n        ",
+          "definition": "static int json_patch_apply_move_copy",
+          "detailed": "\n        ",
+          "name": "json_patch_apply_move_copy",
+          "params": [
+            "res",
+            "patch_elem",
+            "path",
+            "move",
+            "patch_error"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *copy_from, struct json_object *patch, struct json_object **base, struct json_patch_error *patch_error)",
+          "brief": "\n        ",
+          "definition": "int json_patch_apply",
+          "detailed": "Apply the JSON patch to the base object. The patch object must be formatted as per RFC 6902, i.e. a json_type_array containing patch operations. If the patch is not correctly formatted, an error will be returned.\nThe json_object at *base will be modified in place. Exactly one of *base or copy_from must be non-NULL. If *base is NULL, a new copy of copy_from will allocated and populated using json_object_deep_copy(). In this case json_object_put() must be used to free *base even if the overall patching operation fails.\nIf anything fails during patching a negative value will be returned, and patch_error (if non-NULL) will be populated with error details.\n\n\nbase\n\n\na pointer to the JSON object which to patch \n\n\n\n\npatch\n\n\nthe JSON object that describes the patch to be applied \n\n\n\n\ncopy_from\n\n\na JSON object to copy to *base \n\n\n\n\npatch_error\n\n\noptional, details about errors\n\n\n\nnegative if an error (or not found), or 0 if patch completely applied \n\n\na pointer to the JSON object which to patch \nthe JSON object that describes the patch to be applied \na JSON object to copy to *base \noptional, details about errors\nnegative if an error (or not found), or 0 if patch completely applied",
+          "name": "json_patch_apply",
+          "params": [
+            "copy_from",
+            "patch",
+            "base",
+            "patch_error"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZE_T_MAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_set_err",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_set_err_from_ptrget",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "json_patch.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

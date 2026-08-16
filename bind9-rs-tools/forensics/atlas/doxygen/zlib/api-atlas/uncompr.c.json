@@ -1,0 +1,55 @@
+{
+  "files": {
+    "uncompr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong *sourceLen)",
+          "brief": "\n        ",
+          "definition": "int uncompress2",
+          "detailed": "\n        ",
+          "name": "uncompress2",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "int uncompress",
+          "detailed": "\n        ",
+          "name": "uncompress",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_INTERNAL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "uncompr.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

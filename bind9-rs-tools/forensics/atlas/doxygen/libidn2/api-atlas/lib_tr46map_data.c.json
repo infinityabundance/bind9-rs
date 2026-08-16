@@ -1,0 +1,71 @@
+{
+  "files": {
+    "lib/tr46map_data.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[7]",
+          "brief": "\n        ",
+          "definition": "const uint8_t idna_flags[7]",
+          "detailed": "\n        ",
+          "name": "idna_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[455]",
+          "brief": "\n        ",
+          "definition": "const uint8_t idna_map_8[455]",
+          "detailed": "\n        ",
+          "name": "idna_map_8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[35322]",
+          "brief": "\n        ",
+          "definition": "const uint8_t idna_map_16[35322]",
+          "detailed": "\n        ",
+          "name": "idna_map_16",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[23088]",
+          "brief": "\n        ",
+          "definition": "const uint8_t idna_map_24[23088]",
+          "detailed": "\n        ",
+          "name": "idna_map_24",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10273]",
+          "brief": "\n        ",
+          "definition": "const uint8_t mapdata[10273]",
+          "detailed": "\n        ",
+          "name": "mapdata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[117]",
+          "brief": "\n        ",
+          "definition": "const NFCQCMap nfcqc_map[117]",
+          "detailed": "\n        ",
+          "name": "nfcqc_map",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "lib/tr46map_data.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

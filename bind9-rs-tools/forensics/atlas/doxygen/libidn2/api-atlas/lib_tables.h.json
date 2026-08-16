@@ -1,0 +1,61 @@
+{
+  "files": {
+    "lib/tables.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_disallowed_p",
+          "detailed": "\n        ",
+          "name": "_idn2_disallowed_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_contextj_p",
+          "detailed": "\n        ",
+          "name": "_idn2_contextj_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_contexto_p",
+          "detailed": "\n        ",
+          "name": "_idn2_contexto_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_unassigned_p",
+          "detailed": "\n        ",
+          "name": "_idn2_unassigned_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/tables.h",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,1033 @@
+{
+  "files": {
+    "lib/idn2.h": {
+      "enum_values": [
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NFC_INPUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_ALABEL_ROUNDTRIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_TRANSITIONAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 8",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NONTRANSITIONAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 16",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_ALLOW_UNASSIGNED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 32",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_USE_STD3_ASCII_RULES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 64",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NO_TR46",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 128",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NO_ALABEL_ROUNDTRIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_OK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -100",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_MALLOC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -101",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NO_CODESET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -102",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_ICONV_FAIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -200",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_ENCODING_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -201",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NFC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -202",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_PUNYCODE_BAD_INPUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -203",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_PUNYCODE_BIG_OUTPUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -204",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_PUNYCODE_OVERFLOW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -205",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_TOO_BIG_DOMAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -206",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_TOO_BIG_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -207",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_INVALID_ALABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -208",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_UALABEL_MISMATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -209",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_INVALID_FLAGS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -300",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_NOT_NFC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -301",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_2HYPHEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -302",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_HYPHEN_STARTEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -303",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_LEADING_COMBINING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -304",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_DISALLOWED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -305",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_CONTEXTJ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -306",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_CONTEXTJ_NO_RULE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -307",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_CONTEXTO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -308",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_CONTEXTO_NO_RULE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -309",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_UNASSIGNED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -310",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_BIDI",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -311",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_DOT_IN_LABEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -312",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_INVALID_TRANSITIONAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -313",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_INVALID_NONTRANSITIONAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -314",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDN2_ALABEL_ROUNDTRIP_FAILED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_OK",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_SUCCESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_STRINGPREP_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_PUNYCODE_BAD_INPUT",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_PUNYCODE_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_CONTAINS_NON_LDH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDNA_CONTAINS_NON_LDH",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_CONTAINS_LDH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_CONTAINS_MINUS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_DISALLOWED",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_INVALID_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_NO_ACE_PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_ROUNDTRIP_VERIFY_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_CONTAINS_ACE_PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ENCODING_ERROR",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_ICONV_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_MALLOC",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_MALLOC_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_MALLOC",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_DLOPEN_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_ALLOW_UNASSIGNED",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_ALLOW_UNASSIGNED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= IDN2_USE_STD3_ASCII_RULES",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "IDNA_USE_STD3_ASCII_RULES",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "idn2_flags: @IDN2_NFC_INPUT: Normalize input string using normalization form C. @IDN2_ALABEL_ROUNDTRIP: Perform optional IDNA2008 lookup roundtrip check (default). @IDN2_NO_ALABEL_ROUNDTRIP: Disable ALabel lookup roundtrip check. @IDN2_NO_TR46: Disable Unicode TR46 processing. @IDN2_TRANSITIONAL: Perform Unicode TR46 transitional processing. @IDN2_NONTRANSITIONAL: Perform Unicode TR46 non-transitional processing (default). @IDN2_ALLOW_UNASSIGNED: Libidn compatibility flag, unused. @IDN2_USE_STD3_ASCII_RULES: Use STD3 ASCII rules. This is a Unicode TR46 only flag, and will be ignored when set without either @IDN2_TRANSITIONAL or @IDN2_NONTRANSITIONAL.\nFlags to IDNA2008 functions, to be binary or:ed together. Specify only 0 if you want the default behaviour.",
+          "name": "idn2_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "idn2_rc: @IDN2_OK: Successful return. @IDN2_MALLOC: Memory allocation error. @IDN2_NO_CODESET: Could not determine locale string encoding format. @IDN2_ICONV_FAIL: Could not transcode locale string to UTF-8. @IDN2_ENCODING_ERROR: Unicode data encoding error. @IDN2_NFC: Error normalizing string. @IDN2_PUNYCODE_BAD_INPUT: Punycode invalid input. @IDN2_PUNYCODE_BIG_OUTPUT: Punycode output buffer too small. @IDN2_PUNYCODE_OVERFLOW: Punycode conversion would overflow. @IDN2_TOO_BIG_DOMAIN: Domain name longer than 255 characters. @IDN2_TOO_BIG_LABEL: Domain label longer than 63 characters. @IDN2_INVALID_ALABEL: Input A-label is not valid. @IDN2_UALABEL_MISMATCH: Input A-label and U-label does not match. @IDN2_INVALID_FLAGS: Invalid combination of flags. @IDN2_NOT_NFC: String is not NFC. @IDN2_2HYPHEN: String has forbidden two hyphens. @IDN2_HYPHEN_STARTEND: String has forbidden starting/ending hyphen. @IDN2_LEADING_COMBINING: String has forbidden leading combining character. @IDN2_DISALLOWED: String has disallowed character. @IDN2_CONTEXTJ: String has forbidden context-j character. @IDN2_CONTEXTJ_NO_RULE: String has context-j character with no rull. @IDN2_CONTEXTO: String has forbidden context-o character. @IDN2_CONTEXTO_NO_RULE: String has context-o character with no rull. @IDN2_UNASSIGNED: String has forbidden unassigned character. @IDN2_BIDI: String has forbidden bi-directional properties. @IDN2_DOT_IN_LABEL: Label has forbidden dot (TR46). @IDN2_INVALID_TRANSITIONAL: Label has character forbidden in transitional mode (TR46). @IDN2_INVALID_NONTRANSITIONAL: Label has character forbidden in non-transitional mode (TR46). @IDN2_ALABEL_ROUNDTRIP_FAILED: ALabel -> Ulabel -> ALabel result differs from input.\nReturn codes for IDN2 functions. All return codes are negative except for the successful code IDN2_OK which are guaranteed to be\nPositive values are reserved for non-error return codes.\n\n\nPositive values are reserved for non-error return codes.\nNote that the idn2_rc enumeration may be extended at a later date to include new return codes.",
+          "name": "idn2_rc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Idna_rc: @IDNA_SUCCESS: Same as IDN2_OK @IDNA_STRINGPREP_ERROR: Same as IDN2_ENCODING_ERROR @IDNA_PUNYCODE_ERROR: Same as IDN2_PUNYCODE_BAD_INPUT @IDNA_CONTAINS_NON_LDH: Same as IDN2_ENCODING_ERROR @IDNA_CONTAINS_LDH: Same as IDNA_CONTAINS_NON_LDH @IDNA_CONTAINS_MINUS: Same as IDN2_ENCODING_ERROR @IDNA_INVALID_LENGTH: Same as IDN2_DISALLOWED @IDNA_NO_ACE_PREFIX: Same as IDN2_ENCODING_ERROR @IDNA_ROUNDTRIP_VERIFY_ERROR: Same as IDN2_ENCODING_ERROR @IDNA_CONTAINS_ACE_PREFIX: Same as IDN2_ENCODING_ERROR @IDNA_ICONV_ERROR: Same as IDN2_ENCODING_ERROR @IDNA_MALLOC_ERROR: Same as IDN2_MALLOC @IDNA_DLOPEN_ERROR: Same as IDN2_MALLOC\nReturn codes for transition to / compatibility with libidn2.\nPlease be aware that return codes from idna_ functions might be unexpected when linked / built with libidn2.",
+          "name": "Idna_rc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Idna_flags: @IDNA_ALLOW_UNASSIGNED: Same as IDN2_ALLOW_UNASSIGNED @IDNA_USE_STD3_ASCII_RULES: Same as IDN2_USE_STD3_ASCII_RULES\nFlags for transition to / compatibility with libidn2.",
+          "name": "Idna_flags",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(const uint8_t *src, uint8_t **lookupname, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_lookup_u8",
+          "detailed": "idn2_lookup_u8: @src: input zero-terminated UTF-8 string in Unicode NFC normalized form. @lookupname: newly allocated output variable with name to lookup in DNS. @flags: optional idn2_flags to modify behaviour.\nPerform IDNA2008 lookup string conversion on domain name @src, as described in section 5 of RFC 5891. Note that the input string must be encoded in UTF-8 and be in Unicode NFC form.\nPass IDN2_NFC_INPUT in @flags to convert input to NFC form before further processing. IDN2_TRANSITIONAL and IDN2_NONTRANSITIONAL do already imply IDN2_NFC_INPUT.\nPass IDN2_ALABEL_ROUNDTRIP in @flags to convert any input A-labels to U-labels and perform additional testing. This is default since version 2.2. To switch this behavior off, pass IDN2_NO_ALABEL_ROUNDTRIP\nPass IDN2_TRANSITIONAL to enable Unicode TR46 transitional processing, and IDN2_NONTRANSITIONAL to enable Unicode TR46 non-transitional processing.\nMultiple flags may be specified by binary or:ing them together.\nAfter version 2.0.3: IDN2_USE_STD3_ASCII_RULES disabled by default. Previously we were eliminating non-STD3 characters from domain strings such as _443._tcp.example.com, or IPs 1.2.3.4/24 provided to libidn2 functions. That was an unexpected regression for applications switching from libidn and thus it is no longer applied by default. Use IDN2_USE_STD3_ASCII_RULES to enable that behavior again.\nAfter version 0.11: @lookupname may be NULL to test lookup of @src without allocating memory.\nReturns: On successful conversion IDN2_OK is returned, if the output domain or any label would have been too long IDN2_TOO_BIG_DOMAIN or IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 0.1",
+          "name": "idn2_lookup_u8",
+          "params": [
+            "src",
+            "lookupname",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *ulabel, const uint8_t *alabel, uint8_t **insertname, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_register_u8",
+          "detailed": "idn2_register_u8: @ulabel: input zero-terminated UTF-8 and Unicode NFC string, or NULL. @alabel: input zero-terminated ACE encoded string (xn), or NULL. @insertname: newly allocated output variable with name to register in DNS. @flags: optional idn2_flags to modify behaviour.\nPerform IDNA2008 register string conversion on domain label @ulabel and @alabel, as described in section 4 of RFC 5891. Note that the input @ulabel must be encoded in UTF-8 and be in Unicode NFC form.\nPass IDN2_NFC_INPUT in @flags to convert input @ulabel to NFC form before further processing.\nIt is recommended to supply both @ulabel and @alabel for better error checking, but supplying just one of them will work. Passing in only @alabel is better than only @ulabel. See RFC 5891 section 4 for more information.\nAfter version 0.11: @insertname may be NULL to test conversion of @src without allocating memory.\nReturns: On successful conversion IDN2_OK is returned, when the given @ulabel and @alabel does not match each other IDN2_UALABEL_MISMATCH is returned, when either of the input labels are too long IDN2_TOO_BIG_LABEL is returned, when @alabel does does not appear to be a proper A-label IDN2_INVALID_ALABEL is returned, or another error code is returned.",
+          "name": "idn2_register_u8",
+          "params": [
+            "ulabel",
+            "alabel",
+            "insertname",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *src, char **lookupname, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_lookup_ul",
+          "detailed": "idn2_lookup_ul: @src: input zero-terminated locale encoded string. @lookupname: newly allocated output variable with name to lookup in DNS. @flags: optional idn2_flags to modify behaviour.\nPerform IDNA2008 lookup string conversion on domain name @src, as described in section 5 of RFC 5891. Note that the input is assumed to be encoded in the locale's default coding system, and will be transcoded to UTF-8 and NFC normalized by this function.\nPass IDN2_ALABEL_ROUNDTRIP in @flags to convert any input A-labels to U-labels and perform additional testing. This is default since version 2.2. To switch this behavior off, pass IDN2_NO_ALABEL_ROUNDTRIP\nPass IDN2_TRANSITIONAL to enable Unicode TR46 transitional processing, and IDN2_NONTRANSITIONAL to enable Unicode TR46 non-transitional processing.\nMultiple flags may be specified by binary or:ing them together, for example IDN2_ALABEL_ROUNDTRIP | IDN2_NONTRANSITIONAL.\nThe IDN2_NFC_INPUT in @flags is always enabled in this function.\nAfter version 0.11: @lookupname may be NULL to test lookup of @src without allocating memory.\nReturns: On successful conversion IDN2_OK is returned, if conversion from locale to UTF-8 fails then IDN2_ICONV_FAIL is returned, if the output domain or any label would have been too long IDN2_TOO_BIG_DOMAIN or IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 0.1",
+          "name": "idn2_lookup_ul",
+          "params": [
+            "src",
+            "lookupname",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *ulabel, const char *alabel, char **insertname, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_register_ul",
+          "detailed": "idn2_register_ul: @ulabel: input zero-terminated locale encoded string, or NULL. @alabel: input zero-terminated ACE encoded string (xn), or NULL. @insertname: newly allocated output variable with name to register in DNS. @flags: optional idn2_flags to modify behaviour.\nPerform IDNA2008 register string conversion on domain label @ulabel and @alabel, as described in section 4 of RFC 5891. Note that the input @ulabel is assumed to be encoded in the locale's default coding system, and will be transcoded to UTF-8 and NFC normalized by this function.\nIt is recommended to supply both @ulabel and @alabel for better error checking, but supplying just one of them will work. Passing in only @alabel is better than only @ulabel. See RFC 5891 section 4 for more information.\nAfter version 0.11: @insertname may be NULL to test conversion of @src without allocating memory.\nReturns: On successful conversion IDN2_OK is returned, when the given @ulabel and @alabel does not match each other IDN2_UALABEL_MISMATCH is returned, when either of the input labels are too long IDN2_TOO_BIG_LABEL is returned, when @alabel does does not appear to be a proper A-label IDN2_INVALID_ALABEL is returned, when @ulabel locale to UTF-8 conversion failed IDN2_ICONV_FAIL is returned, or another error code is returned.",
+          "name": "idn2_register_ul",
+          "params": [
+            "ulabel",
+            "alabel",
+            "insertname",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, size_t inlen, char *output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_4i",
+          "detailed": "idn2_to_ascii_4i: @input: zero terminated input Unicode (UCS-4) string. @inlen: number of elements in @input. @output: output zero terminated string that must have room for at least 63 characters plus the terminating zero. @flags: optional idn2_flags to modify behaviour.\nThe ToASCII operation takes a sequence of Unicode code points that make up one domain label and transforms it into a sequence of code points in the ASCII range (0..7F). If ToASCII succeeds, the original sequence and the resulting sequence are equivalent labels.\nIt is important to note that the ToASCII operation can fail. ToASCII fails if any step of it fails. If any step of the ToASCII operation fails on any label in a domain name, that domain name MUST NOT be used as an internationalized domain name. The method for dealing with this failure is application-specific.\nThe inputs to ToASCII are a sequence of code points.\nToASCII never alters a sequence of code points that are all in the ASCII range to begin with (although it could fail). Applying the ToASCII operation multiple effect as applying it just once.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nWarning: With version 2.1.1 until before version 2.3.5 this function was deprecated in favor idn2_to_ascii_4i2(). We still encourage you to use idn2_to_ascii_4i2() when appropriate.\nReturns: On successful conversion IDN2_OK is returned; if the output label would have been too long IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_4i",
+          "params": [
+            "input",
+            "inlen",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, size_t inlen, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_4i2",
+          "detailed": "idn2_to_ascii_4i2: @input: zero terminated input Unicode (UCS-4) string. @inlen: number of elements in @input. @output: pointer to newly allocated zero-terminated output string. @flags: optional idn2_flags to modify behaviour.\nThe ToASCII operation takes a sequence of Unicode code points that make up one domain label and transforms it into a sequence of code points in the ASCII range (0..7F). If ToASCII succeeds, the original sequence and the resulting sequence are equivalent labels.\nIt is important to note that the ToASCII operation can fail. ToASCII fails if any step of it fails. If any step of the ToASCII operation fails on any label in a domain name, that domain name MUST NOT be used as an internationalized domain name. The method for dealing with this failure is application-specific.\nThe inputs to ToASCII are a sequence of code points.\nToASCII never alters a sequence of code points that are all in the ASCII range to begin with (although it could fail). Applying the ToASCII operation multiple effect as applying it just once.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturns: On successful conversion IDN2_OK is returned; if the output label would have been too long IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 2.1.1",
+          "name": "idn2_to_ascii_4i2",
+          "params": [
+            "input",
+            "inlen",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_4z",
+          "detailed": "idn2_to_ascii_4z: @input: zero terminated input Unicode (UCS-4) string. @output: pointer to newly allocated zero-terminated output string. @flags: optional idn2_flags to modify behaviour.\nConvert UCS-4 domain name to ASCII string using the IDNA2008 rules. The domain name may contain several labels, separated by dots. The output buffer must be deallocated by the caller.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturn value: Returns IDN2_OK on success, or error code.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_4z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_8z",
+          "detailed": "idn2_to_ascii_8z: @input: zero terminated input UTF-8 string. @output: pointer to newly allocated output string. @flags: optional idn2_flags to modify behaviour.\nConvert UTF-8 domain name to ASCII string using the IDNA2008 rules. The domain name may contain several labels, separated by dots. The output buffer must be deallocated by the caller.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturn value: Returns IDN2_OK on success, or error code.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_8z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_lz",
+          "detailed": "idn2_to_ascii_lz: @input: zero terminated input UTF-8 string. @output: pointer to newly allocated output string. @flags: optional idn2_flags to modify behaviour.\nConvert a domain name in locale's encoding to ASCII string using the IDNA2008 rules. The domain name may contain several labels, separated by dots. The output buffer must be deallocated by the caller.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturns: IDN2_OK on success, or error code. Same as described in idn2_lookup_ul() documentation.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_lz",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, uint32_t **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_8z4z",
+          "detailed": "idn2_to_unicode_8z4z: @input: Input zero-terminated UTF-8 string. @output: Newly allocated UTF-32/UCS-4 output string. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-8 format into a UTF-32 string (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_8z4z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, uint32_t **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_4z4z",
+          "detailed": "idn2_to_unicode_4z4z: @input: Input zero-terminated UTF-32 string. @output: Newly allocated UTF-32 output string. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-32 format into a UTF-32 string (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_4z4z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *in, size_t inlen, uint32_t *out, size_t *outlen, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_44i",
+          "detailed": "idn2_to_unicode_44i: @in: Input array with UTF-32 code points. @inlen: number of code points of input array @out: output array with UTF-32 code points. @outlen: on input, maximum size of output array with UTF-32 code points, on exit, actual size of output array with UTF-32 code points. @flags: Currently unused.\nThe ToUnicode operation takes a sequence of UTF-32 code points that make up one domain label and returns a sequence of UTF-32 code points. If the input sequence is a label in ACE form, then the result is an equivalent internationalized label that is not in ACE form, otherwise the original sequence is returned unaltered.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_44i",
+          "params": [
+            "in",
+            "inlen",
+            "out",
+            "outlen",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_8z8z",
+          "detailed": "idn2_to_unicode_8z8z: @input: Input zero-terminated UTF-8 string. @output: Newly allocated UTF-8 output string. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-8 format into a UTF-8 string (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_8z8z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_8zlz",
+          "detailed": "idn2_to_unicode_8zlz: @input: Input zero-terminated UTF-8 string. @output: Newly allocated output string in current locale's character set. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-8 format into a string encoded in the current locale's character set (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_8zlz",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_lzlz",
+          "detailed": "idn2_to_unicode_lzlz: @input: Input zero-terminated string encoded in the current locale's character set. @output: Newly allocated output string in current locale's character set. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in the locale's character set into a string encoded in the current locale's character set (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Output character conversion failed. IDN2_ICONV_FAIL: Input character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_lzlz",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, size_t input_length, char *output, size_t *output_length)",
+          "brief": "\n        ",
+          "definition": "int idn2_punycode_encode",
+          "detailed": "idn2_punycode_encode: @input: array of input Unicode (UCS-4) code points @input_length: number of code points in the @input array. @output: output character array with ASCII code points. @output_length: size of @output array\nConverts a sequence of code points to Punycode.\nWarning: Be aware that is rare for applications to need to perform Punycode operations, and you should consider idn2_to_ascii_8z(), idn2_to_ascii_lz(), idn2_to_ascii_4z() etc.\nReturns: On successful encoding IDN2_OK is returned, or an error codes like IDN2_PUNYCODE_BAD_INPUT, IDN2_PUNYCODE_BIG_OUTPUT, or IDN2_PUNYCODE_OVERFLOW.\nSince: 2.3.5",
+          "name": "idn2_punycode_encode",
+          "params": [
+            "input",
+            "input_length",
+            "output",
+            "output_length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, size_t input_length, uint32_t *output, size_t *output_length)",
+          "brief": "\n        ",
+          "definition": "int idn2_punycode_decode",
+          "detailed": "idn2_punycode_decode: @input: array of ASCII characters (0..7F) @input_length: Number of ASCII characters in the @input array. @output: output character array with ASCII code points. @output_length: on input, guarantee that @output has room for this many code points; on output, *@output_length holds number of code points in @output.\nConverts Punycode to a sequence of code points.\nThe decoder will never need to output more code points than the number of ASCII code points in the input, because of the way the encoding is defined.\nThe number of code points output cannot exceed the maximum possible value of a uint32_t, even if the supplied @output_length is greater than that.\nWarning: Be aware that is rare for applications to need to perform Punycode operations, and you should consider idn2_to_unicode_8z8z(), idn2_to_unicode_lzlz() etc.\nReturns: On successful encoding IDN2_OK is returned, or an error codes like IDN2_PUNYCODE_BAD_INPUT, IDN2_PUNYCODE_BIG_OUTPUT, or IDN2_PUNYCODE_OVERFLOW.\nSince: 2.3.5",
+          "name": "idn2_punycode_decode",
+          "params": [
+            "input",
+            "input_length",
+            "output",
+            "output_length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int rc)",
+          "brief": "\n        ",
+          "definition": "const char * idn2_strerror",
+          "detailed": "idn2_strerror: @rc: return code from another libidn2 function.\nConvert internal libidn2 error code to a humanly readable string. The returned pointer must not be de-allocated by the caller.\nReturn value: A humanly readable string describing error.",
+          "name": "idn2_strerror",
+          "params": [
+            "rc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int rc)",
+          "brief": "\n        ",
+          "definition": "const char * idn2_strerror_name",
+          "detailed": "idn2_strerror_name: @rc: return code from another libidn2 function.\nConvert internal libidn2 error code to a string corresponding to internal header file symbols. For example, idn2_strerror_name(IDN2_MALLOC) will return the string \"IDN2_MALLOC\".\nThe caller must not attempt to de-allocate the returned string.\nReturn value: A string corresponding to error code symbol.",
+          "name": "idn2_strerror_name",
+          "params": [
+            "rc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *req_version)",
+          "brief": "\n        ",
+          "definition": "const char * idn2_check_version",
+          "detailed": "idn2_check_version: @req_version: version string to compare with, or NULL.\nCheck IDN2 library version. This function can also be used to read out the version of the library code used. See IDN2_VERSION for a suitable @req_version string, it corresponds to the idn2.h header file version. Normally these two version numbers match, but if you are using an application built against an older libidn2 with a newer libidn2 shared library they will be different.\nReturn value: Check that the version of the library is at minimum the one given as a string in @req_version and return the actual version string of the library; return NULL if the condition is not met. If NULL is passed to this function no check is done and only the version string is returned.",
+          "name": "idn2_check_version",
+          "params": [
+            "req_version"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *ptr)",
+          "brief": "\n        ",
+          "definition": "void idn2_free",
+          "detailed": "idn2_free: @ptr: pointer to deallocate\nCall free(3) on the given pointer.\nThis function is typically only useful on systems where the library malloc heap is different from the library caller malloc heap, which happens on Windows when the library is a separate DLL.",
+          "name": "idn2_free",
+          "params": [
+            "ptr"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "SECTION:idn2 @title: idn2.h @short_description: main library interfaces\nThe main library interfaces are declared in idn2.h.",
+          "name": "_IDN2_API",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "GCC_VERSION_AT_LEAST @major: gcc major version number to compare with @minor: gcc minor version number to compare with\nPre-processor symbol to check the gcc version.",
+          "name": "GCC_VERSION_AT_LEAST",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "G_GNUC_IDN2_ATTRIBUTE_PURE\nFunction attribute: Function is a pure function.",
+          "name": "G_GNUC_IDN2_ATTRIBUTE_PURE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "G_GNUC_IDN2_ATTRIBUTE_CONST\nFunction attribute: Function is a const function.",
+          "name": "G_GNUC_IDN2_ATTRIBUTE_CONST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "G_GNUC_UNUSED\nParameter attribute: Parameter is not used.",
+          "name": "G_GNUC_UNUSED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_VERSION\nPre-processor symbol with a string that describe the header file version number. Used together with idn2_check_version() to verify header file and run-time library consistency.",
+          "name": "IDN2_VERSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_VERSION_NUMBER\nPre-processor symbol with a hexadecimal value describing the header file version number. For example, when the header version is 1.2.4711 this symbol will have the value 0x01021267. The last four digits are used to enumerate development snapshots, but for all public releases they will be 0000.",
+          "name": "IDN2_VERSION_NUMBER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_VERSION_MAJOR\nPre-processor symbol for the major version number (decimal). The version scheme is major.minor.patchlevel.",
+          "name": "IDN2_VERSION_MAJOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_VERSION_MINOR\nPre-processor symbol for the minor version number (decimal). The version scheme is major.minor.patchlevel.",
+          "name": "IDN2_VERSION_MINOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_VERSION_PATCH\nPre-processor symbol for the patch level number (decimal). The version scheme is major.minor.patchlevel.",
+          "name": "IDN2_VERSION_PATCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_LABEL_MAX_LENGTH\nConstant specifying the maximum length of a DNS label to 63 characters, as specified in RFC 1034.",
+          "name": "IDN2_LABEL_MAX_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "IDN2_DOMAIN_MAX_LENGTH\nConstant specifying the maximum size of the wire encoding of a DNS domain to 255 characters, as specified in RFC 1034. Note that the usual printed representation of a domain name is limited to 253 characters if it does not end with a period, or 254 characters if it ends with a period.",
+          "name": "IDN2_DOMAIN_MAX_LENGTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_ascii_4i",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_ascii_4z",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_ascii_8z",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_ascii_lz",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_unicode_8z4z",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_unicode_4z4z",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_unicode_44i",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_unicode_8z8z",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_unicode_8zlz",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_to_unicode_lzlz",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idna_strerror",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "idn_free",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/idn2.h",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

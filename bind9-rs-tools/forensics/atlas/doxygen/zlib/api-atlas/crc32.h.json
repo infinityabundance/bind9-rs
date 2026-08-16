@@ -1,0 +1,35 @@
+{
+  "files": {
+    "crc32.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "local const z_crc_t FAR crc_table[]",
+          "detailed": "\n        ",
+          "name": "crc_table",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "local const z_crc_t FAR x2n_table[]",
+          "detailed": "\n        ",
+          "name": "x2n_table",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "crc32.h",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

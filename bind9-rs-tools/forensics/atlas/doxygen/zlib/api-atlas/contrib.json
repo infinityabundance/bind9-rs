@@ -1,0 +1,6438 @@
+{
+  "files": {
+    "contrib/blast/blast.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct state *s, int need)",
+          "brief": "\n        ",
+          "definition": "static int bits",
+          "detailed": "\n        ",
+          "name": "bits",
+          "params": [
+            "s",
+            "need"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s, struct huffman *h)",
+          "brief": "\n        ",
+          "definition": "static int decode",
+          "detailed": "\n        ",
+          "name": "decode",
+          "params": [
+            "s",
+            "h"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct huffman *h, const unsigned char *rep, int n)",
+          "brief": "\n        ",
+          "definition": "static int construct",
+          "detailed": "\n        ",
+          "name": "construct",
+          "params": [
+            "h",
+            "rep",
+            "n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s)",
+          "brief": "\n        ",
+          "definition": "static int decomp",
+          "detailed": "\n        ",
+          "name": "decomp",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(blast_in infun, void *inhow, blast_out outfun, void *outhow, unsigned *left, unsigned char **in)",
+          "brief": "\n        ",
+          "definition": "int blast",
+          "detailed": "\n        ",
+          "name": "blast",
+          "params": [
+            "infun",
+            "inhow",
+            "outfun",
+            "outhow",
+            "left",
+            "in"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXWIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "short * huffman::count",
+          "detailed": "\n        ",
+          "name": "count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "short * huffman::symbol",
+          "detailed": "\n        ",
+          "name": "symbol",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "blast_in state::infun",
+          "detailed": "\n        ",
+          "name": "infun",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* state::inhow",
+          "detailed": "\n        ",
+          "name": "inhow",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* state::in",
+          "detailed": "\n        ",
+          "name": "in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned state::left",
+          "detailed": "\n        ",
+          "name": "left",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int state::bitbuf",
+          "detailed": "\n        ",
+          "name": "bitbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int state::bitcnt",
+          "detailed": "\n        ",
+          "name": "bitcnt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "jmp_buf state::env",
+          "detailed": "\n        ",
+          "name": "env",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "blast_out state::outfun",
+          "detailed": "\n        ",
+          "name": "outfun",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* state::outhow",
+          "detailed": "\n        ",
+          "name": "outhow",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned state::next",
+          "detailed": "\n        ",
+          "name": "next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int state::first",
+          "detailed": "\n        ",
+          "name": "first",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4096]",
+          "brief": "\n        ",
+          "definition": "unsigned char state::out[4096]",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long state::outlen",
+          "detailed": "\n        ",
+          "name": "outlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long state::outcnt",
+          "detailed": "\n        ",
+          "name": "outcnt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long state::inlen",
+          "detailed": "\n        ",
+          "name": "inlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long state::incnt",
+          "detailed": "\n        ",
+          "name": "incnt",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/blast/blast.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(blast_in infun, void *inhow, blast_out outfun, void *outhow, unsigned *left, unsigned char **in)",
+          "brief": "\n        ",
+          "definition": "int blast",
+          "detailed": "\n        ",
+          "name": "blast",
+          "params": [
+            "infun",
+            "inhow",
+            "outfun",
+            "outhow",
+            "left",
+            "in"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")(void *how, unsigned char **buf)",
+          "brief": "\n        ",
+          "definition": "typedef unsigned(* blast_in) (void *how, unsigned char **buf)",
+          "detailed": "\n        ",
+          "name": "blast_in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *how, unsigned char *buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "typedef int(* blast_out) (void *how, unsigned char *buf, unsigned len)",
+          "detailed": "\n        ",
+          "name": "blast_out",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "contrib/infback9/infback9.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(z_stream *strm, unsigned char *window, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateBack9Init_",
+          "detailed": "\n        ",
+          "name": "inflateBack9Init_",
+          "params": [
+            "strm",
+            "window",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_stream *strm, in_func in, void *in_desc, out_func out, void *out_desc)",
+          "brief": "\n        ",
+          "definition": "int inflateBack9",
+          "detailed": "\n        ",
+          "name": "inflateBack9",
+          "params": [
+            "strm",
+            "in",
+            "in_desc",
+            "out",
+            "out_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_stream *strm)",
+          "brief": "\n        ",
+          "definition": "int inflateBack9End",
+          "detailed": "\n        ",
+          "name": "inflateBack9End",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INITBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULLBYTE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NEEDBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DROPBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BYTEBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ROOM",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/infback9/infback9.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(z_stream FAR *strm, in_func in, void FAR *in_desc, out_func out, void FAR *out_desc)",
+          "brief": "\n        ",
+          "definition": "ZEXTERN int ZEXPORT inflateBack9",
+          "detailed": "\n        ",
+          "name": "inflateBack9",
+          "params": [
+            "strm",
+            "in",
+            "in_desc",
+            "out",
+            "out_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_stream FAR *strm)",
+          "brief": "\n        ",
+          "definition": "ZEXTERN int ZEXPORT inflateBack9End",
+          "detailed": "\n        ",
+          "name": "inflateBack9End",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_stream FAR *strm, unsigned char FAR *window, const char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "ZEXTERN int ZEXPORT inflateBack9Init_",
+          "detailed": "\n        ",
+          "name": "inflateBack9Init_",
+          "params": [
+            "strm",
+            "window",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "inflateBack9Init",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/infback9/inffix9.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "const code lenfix[512]",
+          "detailed": "\n        ",
+          "name": "lenfix",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "const code distfix[32]",
+          "detailed": "\n        ",
+          "name": "distfix",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/infback9/inflate9.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "STORED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "LEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "BAD",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "inflate_mode",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char FAR * inflate_state::window",
+          "detailed": "\n        ",
+          "name": "window",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::ncode",
+          "detailed": "\n        ",
+          "name": "ncode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::nlen",
+          "detailed": "\n        ",
+          "name": "nlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::ndist",
+          "detailed": "\n        ",
+          "name": "ndist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::have",
+          "detailed": "\n        ",
+          "name": "have",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "code FAR * inflate_state::next",
+          "detailed": "\n        ",
+          "name": "next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[320]",
+          "brief": "\n        ",
+          "definition": "unsigned short inflate_state::lens",
+          "detailed": "\n        ",
+          "name": "lens",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[288]",
+          "brief": "\n        ",
+          "definition": "unsigned short inflate_state::work",
+          "detailed": "\n        ",
+          "name": "work",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[ENOUGH]",
+          "brief": "\n        ",
+          "definition": "code inflate_state::codes",
+          "detailed": "\n        ",
+          "name": "codes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "z_streamp inflate_state::strm",
+          "detailed": "\n        ",
+          "name": "strm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "inflate_mode inflate_state::mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int inflate_state::last",
+          "detailed": "\n        ",
+          "name": "last",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int inflate_state::wrap",
+          "detailed": "\n        ",
+          "name": "wrap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int inflate_state::havedict",
+          "detailed": "\n        ",
+          "name": "havedict",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int inflate_state::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::dmax",
+          "detailed": "\n        ",
+          "name": "dmax",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long inflate_state::check",
+          "detailed": "\n        ",
+          "name": "check",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long inflate_state::total",
+          "detailed": "\n        ",
+          "name": "total",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "gz_headerp inflate_state::head",
+          "detailed": "\n        ",
+          "name": "head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::wbits",
+          "detailed": "\n        ",
+          "name": "wbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::wsize",
+          "detailed": "\n        ",
+          "name": "wsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::whave",
+          "detailed": "\n        ",
+          "name": "whave",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::wnext",
+          "detailed": "\n        ",
+          "name": "wnext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long inflate_state::hold",
+          "detailed": "\n        ",
+          "name": "hold",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::bits",
+          "detailed": "\n        ",
+          "name": "bits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::length",
+          "detailed": "\n        ",
+          "name": "length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::offset",
+          "detailed": "\n        ",
+          "name": "offset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::extra",
+          "detailed": "\n        ",
+          "name": "extra",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "code const FAR* inflate_state::lencode",
+          "detailed": "\n        ",
+          "name": "lencode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "code const FAR* inflate_state::distcode",
+          "detailed": "\n        ",
+          "name": "distcode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::lenbits",
+          "detailed": "\n        ",
+          "name": "lenbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::distbits",
+          "detailed": "\n        ",
+          "name": "distbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int inflate_state::sane",
+          "detailed": "\n        ",
+          "name": "sane",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int inflate_state::back",
+          "detailed": "\n        ",
+          "name": "back",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned inflate_state::was",
+          "detailed": "\n        ",
+          "name": "was",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/infback9/inftree9.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(codetype type, unsigned short *lens, unsigned codes, code **table, unsigned *bits, unsigned short *work)",
+          "brief": "\n        ",
+          "definition": "int inflate_table9",
+          "detailed": "\n        ",
+          "name": "inflate_table9",
+          "params": [
+            "type",
+            "lens",
+            "codes",
+            "table",
+            "bits",
+            "work"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXBITS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char inflate9_copyright[]",
+          "detailed": "\n        ",
+          "name": "inflate9_copyright",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/infback9/inftree9.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "LENS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DISTS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "codetype",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(codetype type, unsigned short FAR *lens, unsigned codes, code FAR *FAR *table, unsigned FAR *bits, unsigned short FAR *work)",
+          "brief": "\n        ",
+          "definition": "int inflate_table9",
+          "detailed": "\n        ",
+          "name": "inflate_table9",
+          "params": [
+            "type",
+            "lens",
+            "codes",
+            "table",
+            "bits",
+            "work"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ENOUGH_LENS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ENOUGH_DISTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ENOUGH",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char code::op",
+          "detailed": "\n        ",
+          "name": "op",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char code::bits",
+          "detailed": "\n        ",
+          "name": "bits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short code::val",
+          "detailed": "\n        ",
+          "name": "val",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/iostream/zfstream.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(gzofstream &s, gzomanip< T > &m)",
+          "brief": "\n        ",
+          "definition": "gzofstream & operator<<",
+          "detailed": "\n        ",
+          "name": "operator<<",
+          "params": [
+            "",
+            "s",
+            "m"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzofstream &s, int l)",
+          "brief": "\n        ",
+          "definition": "gzofstream & setcompressionlevel",
+          "detailed": "\n        ",
+          "name": "setcompressionlevel",
+          "params": [
+            "s",
+            "l"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzofstream &s, int l)",
+          "brief": "\n        ",
+          "definition": "gzofstream & setcompressionstrategy",
+          "detailed": "\n        ",
+          "name": "setcompressionstrategy",
+          "params": [
+            "s",
+            "l"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int l)",
+          "brief": "\n        ",
+          "definition": "gzomanip< int > setcompressionlevel",
+          "detailed": "\n        ",
+          "name": "setcompressionlevel",
+          "params": [
+            "l"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int l)",
+          "brief": "\n        ",
+          "definition": "gzomanip< int > setcompressionstrategy",
+          "detailed": "\n        ",
+          "name": "setcompressionstrategy",
+          "params": [
+            "l"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/iostream2/zstream.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(izstream &zs, T *x, Items items)",
+          "brief": "\n        ",
+          "definition": "int read",
+          "detailed": "\n        ",
+          "name": "read",
+          "params": [
+            "",
+            "",
+            "zs",
+            "x",
+            "items"
+          ],
+          "static": false
+        },
+        {
+          "args": "(izstream &zs, T &x)",
+          "brief": "\n        ",
+          "definition": "izstream & operator>",
+          "detailed": "\n        ",
+          "name": "operator>",
+          "params": [
+            "",
+            "zs",
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(izstream &zs, char *x)",
+          "brief": "\n        ",
+          "definition": "izstream & operator>",
+          "detailed": "\n        ",
+          "name": "operator>",
+          "params": [
+            "zs",
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(izstream &zs)",
+          "brief": "\n        ",
+          "definition": "char * read_string",
+          "detailed": "\n        ",
+          "name": "read_string",
+          "params": [
+            "zs"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ozstream &zs, T *x, Items items)",
+          "brief": "\n        ",
+          "definition": "int write",
+          "detailed": "\n        ",
+          "name": "write",
+          "params": [
+            "",
+            "",
+            "zs",
+            "x",
+            "items"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ozstream &zs, T &x)",
+          "brief": "\n        ",
+          "definition": "ozstream & operator<",
+          "detailed": "\n        ",
+          "name": "operator<",
+          "params": [
+            "",
+            "zs",
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ozstream &zs, char *x)",
+          "brief": "\n        ",
+          "definition": "ozstream & operator<",
+          "detailed": "\n        ",
+          "name": "operator<",
+          "params": [
+            "zs",
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ozstream &zs, T &x)",
+          "brief": "\n        ",
+          "definition": "ostream & operator<<",
+          "detailed": "\n        ",
+          "name": "operator<<",
+          "params": [
+            "",
+            "zs",
+            "x"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_BINARY_MODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/iostream3/zfstream.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(gzofstream &gzs, int l, int s=0)",
+          "brief": "\n        ",
+          "definition": "gzofstream & setcompression",
+          "detailed": "\n        ",
+          "name": "setcompression",
+          "params": [
+            "gzs",
+            "l",
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzofstream &s, gzomanip2< T1, T2 > &m)",
+          "brief": "\n        ",
+          "definition": "gzofstream & operator<<",
+          "detailed": "\n        ",
+          "name": "operator<<",
+          "params": [
+            "",
+            "",
+            "s",
+            "m"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int l, int s=0)",
+          "brief": "\n        ",
+          "definition": "gzomanip2< int, int > setcompression",
+          "detailed": "\n        ",
+          "name": "setcompression",
+          "params": [
+            "l",
+            "s"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/crypt.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned long *pkeys, const z_crc_t *pcrc_32_tab)",
+          "brief": "\n        ",
+          "definition": "static int decrypt_byte",
+          "detailed": "\n        ",
+          "name": "decrypt_byte",
+          "params": [
+            "pkeys",
+            "pcrc_32_tab"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long *pkeys, const z_crc_t *pcrc_32_tab, int c)",
+          "brief": "\n        ",
+          "definition": "static int update_keys",
+          "detailed": "\n        ",
+          "name": "update_keys",
+          "params": [
+            "pkeys",
+            "pcrc_32_tab",
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *passwd, unsigned long *pkeys, const z_crc_t *pcrc_32_tab)",
+          "brief": "\n        ",
+          "definition": "static void init_keys",
+          "detailed": "\n        ",
+          "name": "init_keys",
+          "params": [
+            "passwd",
+            "pkeys",
+            "pcrc_32_tab"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CRC32",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "zdecode",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "zencode",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/ioapi.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(zlib_filefunc64_32_def *pfilefunc, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "voidpf call_zopen64",
+          "detailed": "\n        ",
+          "name": "call_zopen64",
+          "params": [
+            "pfilefunc",
+            "filename",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pfilefunc, voidpf filestream, ZPOS64_T offset, int origin)",
+          "brief": "\n        ",
+          "definition": "long call_zseek64",
+          "detailed": "\n        ",
+          "name": "call_zseek64",
+          "params": [
+            "pfilefunc",
+            "filestream",
+            "offset",
+            "origin"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pfilefunc, voidpf filestream)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T call_ztell64",
+          "detailed": "\n        ",
+          "name": "call_ztell64",
+          "params": [
+            "pfilefunc",
+            "filestream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *p_filefunc64_32, zlib_filefunc_def *p_filefunc32)",
+          "brief": "\n        ",
+          "definition": "void fill_zlib_filefunc64_32_def_from_filefunc32",
+          "detailed": "\n        ",
+          "name": "fill_zlib_filefunc64_32_def_from_filefunc32",
+          "params": [
+            "p_filefunc64_32",
+            "p_filefunc32"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, char *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "static voidpf fopen_file_func",
+          "detailed": "\n        ",
+          "name": "fopen_file_func",
+          "params": [
+            "opaque",
+            "filename",
+            "mode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "static voidpf fopen64_file_func",
+          "detailed": "\n        ",
+          "name": "fopen64_file_func",
+          "params": [
+            "opaque",
+            "filename",
+            "mode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "brief": "\n        ",
+          "definition": "static uLong fread_file_func",
+          "detailed": "\n        ",
+          "name": "fread_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "brief": "\n        ",
+          "definition": "static uLong fwrite_file_func",
+          "detailed": "\n        ",
+          "name": "fwrite_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "static long ftell_file_func",
+          "detailed": "\n        ",
+          "name": "ftell_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "static ZPOS64_T ftell64_file_func",
+          "detailed": "\n        ",
+          "name": "ftell64_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, uLong offset, int origin)",
+          "brief": "\n        ",
+          "definition": "static long fseek_file_func",
+          "detailed": "\n        ",
+          "name": "fseek_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "offset",
+            "origin"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, ZPOS64_T offset, int origin)",
+          "brief": "\n        ",
+          "definition": "static long fseek64_file_func",
+          "detailed": "\n        ",
+          "name": "fseek64_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "offset",
+            "origin"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "static int fclose_file_func",
+          "detailed": "\n        ",
+          "name": "fclose_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "static int ferror_file_func",
+          "detailed": "\n        ",
+          "name": "ferror_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_fopen_filefunc",
+          "detailed": "\n        ",
+          "name": "fill_fopen_filefunc",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_fopen64_filefunc",
+          "detailed": "\n        ",
+          "name": "fill_fopen64_filefunc",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FOPEN_FUNC",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FTELLO_FUNC",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FSEEKO_FUNC",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/ioapi.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_fopen64_filefunc",
+          "detailed": "\n        ",
+          "name": "fill_fopen64_filefunc",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_fopen_filefunc",
+          "detailed": "\n        ",
+          "name": "fill_fopen_filefunc",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pfilefunc, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "voidpf call_zopen64",
+          "detailed": "\n        ",
+          "name": "call_zopen64",
+          "params": [
+            "pfilefunc",
+            "filename",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pfilefunc, voidpf filestream, ZPOS64_T offset, int origin)",
+          "brief": "\n        ",
+          "definition": "long call_zseek64",
+          "detailed": "\n        ",
+          "name": "call_zseek64",
+          "params": [
+            "pfilefunc",
+            "filestream",
+            "offset",
+            "origin"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pfilefunc, voidpf filestream)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T call_ztell64",
+          "detailed": "\n        ",
+          "name": "call_ztell64",
+          "params": [
+            "pfilefunc",
+            "filestream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *p_filefunc64_32, zlib_filefunc_def *p_filefunc32)",
+          "brief": "\n        ",
+          "definition": "void fill_zlib_filefunc64_32_def_from_filefunc32",
+          "detailed": "\n        ",
+          "name": "fill_zlib_filefunc64_32_def_from_filefunc32",
+          "params": [
+            "p_filefunc64_32",
+            "p_filefunc32"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_FILE_OFFSET64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_LARGEFILE64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LARGEFILE64_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_FILE_OFFSET_BIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXU32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_SEEK_CUR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_SEEK_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_SEEK_SET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_MODE_READ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_MODE_WRITE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_MODE_READWRITEFILTER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_MODE_EXISTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_FILEFUNC_MODE_CREATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZCALLBACK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZREAD64",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZWRITE64",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZCLOSE64",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZERROR64",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZOPEN64",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZTELL64",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZSEEK64",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned long long int ZPOS64_T",
+          "detailed": "\n        ",
+          "name": "ZPOS64_T",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, char *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "typedef voidpf( * open_file_func) (voidpf opaque, char *filename, int mode)",
+          "detailed": "\n        ",
+          "name": "open_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "brief": "\n        ",
+          "definition": "typedef uLong( * read_file_func) (voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "detailed": "\n        ",
+          "name": "read_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "brief": "\n        ",
+          "definition": "typedef uLong( * write_file_func) (voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "detailed": "\n        ",
+          "name": "write_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "typedef int( * close_file_func) (voidpf opaque, voidpf stream)",
+          "detailed": "\n        ",
+          "name": "close_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "typedef int( * testerror_file_func) (voidpf opaque, voidpf stream)",
+          "detailed": "\n        ",
+          "name": "testerror_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "typedef long( * tell_file_func) (voidpf opaque, voidpf stream)",
+          "detailed": "\n        ",
+          "name": "tell_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream, uLong offset, int origin)",
+          "brief": "\n        ",
+          "definition": "typedef long( * seek_file_func) (voidpf opaque, voidpf stream, uLong offset, int origin)",
+          "detailed": "\n        ",
+          "name": "seek_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct zlib_filefunc_def_s zlib_filefunc_def",
+          "detailed": "\n        ",
+          "name": "zlib_filefunc_def",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "typedef ZPOS64_T( * tell64_file_func) (voidpf opaque, voidpf stream)",
+          "detailed": "\n        ",
+          "name": "tell64_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf stream, ZPOS64_T offset, int origin)",
+          "brief": "\n        ",
+          "definition": "typedef long( * seek64_file_func) (voidpf opaque, voidpf stream, ZPOS64_T offset, int origin)",
+          "detailed": "\n        ",
+          "name": "seek64_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "typedef voidpf( * open64_file_func) (voidpf opaque, void *filename, int mode)",
+          "detailed": "\n        ",
+          "name": "open64_file_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct zlib_filefunc64_def_s zlib_filefunc64_def",
+          "detailed": "\n        ",
+          "name": "zlib_filefunc64_def",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct zlib_filefunc64_32_def_s zlib_filefunc64_32_def",
+          "detailed": "\n        ",
+          "name": "zlib_filefunc64_32_def",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "zlib_filefunc64_def zlib_filefunc64_32_def_s::zfile_func64",
+          "detailed": "\n        ",
+          "name": "zfile_func64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "open_file_func zlib_filefunc64_32_def_s::zopen32_file",
+          "detailed": "\n        ",
+          "name": "zopen32_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "tell_file_func zlib_filefunc64_32_def_s::ztell32_file",
+          "detailed": "\n        ",
+          "name": "ztell32_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "seek_file_func zlib_filefunc64_32_def_s::zseek32_file",
+          "detailed": "\n        ",
+          "name": "zseek32_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "open64_file_func zlib_filefunc64_def_s::zopen64_file",
+          "detailed": "\n        ",
+          "name": "zopen64_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "read_file_func zlib_filefunc64_def_s::zread_file",
+          "detailed": "\n        ",
+          "name": "zread_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "write_file_func zlib_filefunc64_def_s::zwrite_file",
+          "detailed": "\n        ",
+          "name": "zwrite_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "tell64_file_func zlib_filefunc64_def_s::ztell64_file",
+          "detailed": "\n        ",
+          "name": "ztell64_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "seek64_file_func zlib_filefunc64_def_s::zseek64_file",
+          "detailed": "\n        ",
+          "name": "zseek64_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "close_file_func zlib_filefunc64_def_s::zclose_file",
+          "detailed": "\n        ",
+          "name": "zclose_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "testerror_file_func zlib_filefunc64_def_s::zerror_file",
+          "detailed": "\n        ",
+          "name": "zerror_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "voidpf zlib_filefunc64_def_s::opaque",
+          "detailed": "\n        ",
+          "name": "opaque",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "open_file_func zlib_filefunc_def_s::zopen_file",
+          "detailed": "\n        ",
+          "name": "zopen_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "tell_file_func zlib_filefunc_def_s::ztell_file",
+          "detailed": "\n        ",
+          "name": "ztell_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "seek_file_func zlib_filefunc_def_s::zseek_file",
+          "detailed": "\n        ",
+          "name": "zseek_file",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/minizip/iowin32.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int mode, DWORD *lpdwDesiredAccess, DWORD *lpdwCreationDisposition, DWORD *lpdwShareMode, DWORD *lpdwFlagsAndAttributes)",
+          "brief": "\n        ",
+          "definition": "static void win32_translate_open_mode",
+          "detailed": "\n        ",
+          "name": "win32_translate_open_mode",
+          "params": [
+            "mode",
+            "lpdwDesiredAccess",
+            "lpdwCreationDisposition",
+            "lpdwShareMode",
+            "lpdwFlagsAndAttributes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(HANDLE hFile)",
+          "brief": "\n        ",
+          "definition": "static voidpf win32_build_iowin",
+          "detailed": "\n        ",
+          "name": "win32_build_iowin",
+          "params": [
+            "hFile"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "voidpf win32_open64_file_func",
+          "detailed": "\n        ",
+          "name": "win32_open64_file_func",
+          "params": [
+            "opaque",
+            "filename",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "voidpf win32_open64_file_funcA",
+          "detailed": "\n        ",
+          "name": "win32_open64_file_funcA",
+          "params": [
+            "opaque",
+            "filename",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, void *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "voidpf win32_open64_file_funcW",
+          "detailed": "\n        ",
+          "name": "win32_open64_file_funcW",
+          "params": [
+            "opaque",
+            "filename",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, char *filename, int mode)",
+          "brief": "\n        ",
+          "definition": "voidpf win32_open_file_func",
+          "detailed": "\n        ",
+          "name": "win32_open_file_func",
+          "params": [
+            "opaque",
+            "filename",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "brief": "\n        ",
+          "definition": "uLong win32_read_file_func",
+          "detailed": "\n        ",
+          "name": "win32_read_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "buf",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, void *buf, uLong size)",
+          "brief": "\n        ",
+          "definition": "uLong win32_write_file_func",
+          "detailed": "\n        ",
+          "name": "win32_write_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "buf",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(HANDLE hFile, LARGE_INTEGER pos, LARGE_INTEGER *newPos, DWORD dwMoveMethod)",
+          "brief": "\n        ",
+          "definition": "static BOOL MySetFilePointerEx",
+          "detailed": "\n        ",
+          "name": "MySetFilePointerEx",
+          "params": [
+            "hFile",
+            "pos",
+            "newPos",
+            "dwMoveMethod"
+          ],
+          "static": true
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "long win32_tell_file_func",
+          "detailed": "\n        ",
+          "name": "win32_tell_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T win32_tell64_file_func",
+          "detailed": "\n        ",
+          "name": "win32_tell64_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, uLong offset, int origin)",
+          "brief": "\n        ",
+          "definition": "long win32_seek_file_func",
+          "detailed": "\n        ",
+          "name": "win32_seek_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "offset",
+            "origin"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream, ZPOS64_T offset, int origin)",
+          "brief": "\n        ",
+          "definition": "long win32_seek64_file_func",
+          "detailed": "\n        ",
+          "name": "win32_seek64_file_func",
+          "params": [
+            "opaque",
+            "stream",
+            "offset",
+            "origin"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "int win32_close_file_func",
+          "detailed": "\n        ",
+          "name": "win32_close_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf stream)",
+          "brief": "\n        ",
+          "definition": "int win32_error_file_func",
+          "detailed": "\n        ",
+          "name": "win32_error_file_func",
+          "params": [
+            "opaque",
+            "stream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc64",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc64",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc64A",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc64A",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc64W",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc64W",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INVALID_HANDLE_VALUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INVALID_SET_FILE_POINTER",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "HANDLE WIN32FILE_IOWIN::hf",
+          "detailed": "\n        ",
+          "name": "hf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int WIN32FILE_IOWIN::error",
+          "detailed": "\n        ",
+          "name": "error",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/minizip/iowin32.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(zlib_filefunc_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc64",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc64",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc64A",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc64A",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "void fill_win32_filefunc64W",
+          "detailed": "\n        ",
+          "name": "fill_win32_filefunc64W",
+          "params": [
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/miniunz.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *filename, uLong dosdate, tm_unz tmu_date)",
+          "brief": "\n        ",
+          "definition": "static void change_file_date",
+          "detailed": "\n        ",
+          "name": "change_file_date",
+          "params": [
+            "filename",
+            "dosdate",
+            "tmu_date"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *dirname)",
+          "brief": "\n        ",
+          "definition": "static int mymkdir",
+          "detailed": "\n        ",
+          "name": "mymkdir",
+          "params": [
+            "dirname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *newdir)",
+          "brief": "\n        ",
+          "definition": "static int makedir",
+          "detailed": "\n        ",
+          "name": "makedir",
+          "params": [
+            "newdir"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void do_banner",
+          "detailed": "\n        ",
+          "name": "do_banner",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void do_help",
+          "detailed": "\n        ",
+          "name": "do_help",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(ZPOS64_T n, int size_char)",
+          "brief": "\n        ",
+          "definition": "static void Display64BitsSize",
+          "detailed": "\n        ",
+          "name": "Display64BitsSize",
+          "params": [
+            "n",
+            "size_char"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile uf)",
+          "brief": "\n        ",
+          "definition": "static int do_list",
+          "detailed": "\n        ",
+          "name": "do_list",
+          "params": [
+            "uf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile uf, int *popt_extract_without_path, int *popt_overwrite, char *password)",
+          "brief": "\n        ",
+          "definition": "static int do_extract_currentfile",
+          "detailed": "\n        ",
+          "name": "do_extract_currentfile",
+          "params": [
+            "uf",
+            "popt_extract_without_path",
+            "popt_overwrite",
+            "password"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile uf, int opt_extract_without_path, int opt_overwrite, char *password)",
+          "brief": "\n        ",
+          "definition": "static int do_extract",
+          "detailed": "\n        ",
+          "name": "do_extract",
+          "params": [
+            "uf",
+            "opt_extract_without_path",
+            "opt_overwrite",
+            "password"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile uf, char *filename, int opt_extract_without_path, int opt_overwrite, char *password)",
+          "brief": "\n        ",
+          "definition": "static int do_extract_onefile",
+          "detailed": "\n        ",
+          "name": "do_extract_onefile",
+          "params": [
+            "uf",
+            "filename",
+            "opt_extract_without_path",
+            "opt_overwrite",
+            "password"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_FILE_OFFSET64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_LARGEFILE64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LARGEFILE64_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_FILE_OFFSET_BIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FOPEN_FUNC",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FTELLO_FUNC",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FSEEKO_FUNC",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CASESENSITIVITY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WRITEBUFFERSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXFILENAME",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/minizip.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *f, tm_zip *tmzip, uLong *dt)",
+          "brief": "\n        ",
+          "definition": "static int filetime",
+          "detailed": "\n        ",
+          "name": "filetime",
+          "params": [
+            "f",
+            "tmzip",
+            "dt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *filename)",
+          "brief": "\n        ",
+          "definition": "static int check_exist_file",
+          "detailed": "\n        ",
+          "name": "check_exist_file",
+          "params": [
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void do_banner",
+          "detailed": "\n        ",
+          "name": "do_banner",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void do_help",
+          "detailed": "\n        ",
+          "name": "do_help",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *filenameinzip, void *buf, unsigned long size_buf, unsigned long *result_crc)",
+          "brief": "\n        ",
+          "definition": "static int getFileCrc",
+          "detailed": "\n        ",
+          "name": "getFileCrc",
+          "params": [
+            "filenameinzip",
+            "buf",
+            "size_buf",
+            "result_crc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *filename)",
+          "brief": "\n        ",
+          "definition": "static int isLargeFile",
+          "detailed": "\n        ",
+          "name": "isLargeFile",
+          "params": [
+            "filename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_FILE_OFFSET64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_LARGEFILE64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LARGEFILE64_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_FILE_OFFSET_BIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FOPEN_FUNC",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FTELLO_FUNC",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FSEEKO_FUNC",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WRITEBUFFERSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXFILENAME",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/mztools.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *file, char *fileOut, char *fileOutTmp, uLong *nRecovered, uLong *bytesRecovered)",
+          "brief": "\n        ",
+          "definition": "int unzRepair",
+          "detailed": "\n        ",
+          "name": "unzRepair",
+          "params": [
+            "file",
+            "fileOut",
+            "fileOutTmp",
+            "nRecovered",
+            "bytesRecovered"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "READ_8",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "READ_16",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "READ_32",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WRITE_8",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WRITE_16",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WRITE_32",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/mztools.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *file, char *fileOut, char *fileOutTmp, uLong *nRecovered, uLong *bytesRecovered)",
+          "brief": "\n        ",
+          "definition": "int unzRepair",
+          "detailed": "\n        ",
+          "name": "unzRepair",
+          "params": [
+            "file",
+            "fileOut",
+            "fileOutTmp",
+            "nRecovered",
+            "bytesRecovered"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/minizip/unzip.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, uLong *pX)",
+          "brief": "\n        ",
+          "definition": "static int unz64local_getShort",
+          "detailed": "\n        ",
+          "name": "unz64local_getShort",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pX"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, uLong *pX)",
+          "brief": "\n        ",
+          "definition": "static int unz64local_getLong",
+          "detailed": "\n        ",
+          "name": "unz64local_getLong",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pX"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, ZPOS64_T *pX)",
+          "brief": "\n        ",
+          "definition": "static int unz64local_getLong64",
+          "detailed": "\n        ",
+          "name": "unz64local_getLong64",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pX"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *fileName1, char *fileName2)",
+          "brief": "\n        ",
+          "definition": "static int strcmpcasenosensitive_internal",
+          "detailed": "\n        ",
+          "name": "strcmpcasenosensitive_internal",
+          "params": [
+            "fileName1",
+            "fileName2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *fileName1, char *fileName2, int iCaseSensitivity)",
+          "brief": "\n        ",
+          "definition": "int unzStringFileNameCompare",
+          "detailed": "\n        ",
+          "name": "unzStringFileNameCompare",
+          "params": [
+            "fileName1",
+            "fileName2",
+            "iCaseSensitivity"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream)",
+          "brief": "\n        ",
+          "definition": "static ZPOS64_T unz64local_SearchCentralDir",
+          "detailed": "\n        ",
+          "name": "unz64local_SearchCentralDir",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream)",
+          "brief": "\n        ",
+          "definition": "static ZPOS64_T unz64local_SearchCentralDir64",
+          "detailed": "\n        ",
+          "name": "unz64local_SearchCentralDir64",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *path, zlib_filefunc64_32_def *pzlib_filefunc64_32_def, int is64bitOpenFunction)",
+          "brief": "\n        ",
+          "definition": "static unzFile unzOpenInternal",
+          "detailed": "\n        ",
+          "name": "unzOpenInternal",
+          "params": [
+            "path",
+            "pzlib_filefunc64_32_def",
+            "is64bitOpenFunction"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *path, zlib_filefunc_def *pzlib_filefunc32_def)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen2",
+          "detailed": "\n        ",
+          "name": "unzOpen2",
+          "params": [
+            "path",
+            "pzlib_filefunc32_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *path, zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen2_64",
+          "detailed": "\n        ",
+          "name": "unzOpen2_64",
+          "params": [
+            "path",
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *path)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen",
+          "detailed": "\n        ",
+          "name": "unzOpen",
+          "params": [
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *path)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen64",
+          "detailed": "\n        ",
+          "name": "unzOpen64",
+          "params": [
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzClose",
+          "detailed": "\n        ",
+          "name": "unzClose",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_global_info64 *pglobal_info)",
+          "brief": "\n        ",
+          "definition": "int unzGetGlobalInfo64",
+          "detailed": "\n        ",
+          "name": "unzGetGlobalInfo64",
+          "params": [
+            "file",
+            "pglobal_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_global_info *pglobal_info32)",
+          "brief": "\n        ",
+          "definition": "int unzGetGlobalInfo",
+          "detailed": "\n        ",
+          "name": "unzGetGlobalInfo",
+          "params": [
+            "file",
+            "pglobal_info32"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ZPOS64_T ulDosDate, tm_unz *ptm)",
+          "brief": "\n        ",
+          "definition": "static void unz64local_DosDateToTmuDate",
+          "detailed": "\n        ",
+          "name": "unz64local_DosDateToTmuDate",
+          "params": [
+            "ulDosDate",
+            "ptm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile file, unz_file_info64 *pfile_info, unz_file_info64_internal *pfile_info_internal, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize)",
+          "brief": "\n        ",
+          "definition": "static int unz64local_GetCurrentFileInfoInternal",
+          "detailed": "\n        ",
+          "name": "unz64local_GetCurrentFileInfoInternal",
+          "params": [
+            "file",
+            "pfile_info",
+            "pfile_info_internal",
+            "szFileName",
+            "fileNameBufferSize",
+            "extraField",
+            "extraFieldBufferSize",
+            "szComment",
+            "commentBufferSize"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile file, unz_file_info64 *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize)",
+          "brief": "\n        ",
+          "definition": "int unzGetCurrentFileInfo64",
+          "detailed": "\n        ",
+          "name": "unzGetCurrentFileInfo64",
+          "params": [
+            "file",
+            "pfile_info",
+            "szFileName",
+            "fileNameBufferSize",
+            "extraField",
+            "extraFieldBufferSize",
+            "szComment",
+            "commentBufferSize"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_info *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize)",
+          "brief": "\n        ",
+          "definition": "int unzGetCurrentFileInfo",
+          "detailed": "\n        ",
+          "name": "unzGetCurrentFileInfo",
+          "params": [
+            "file",
+            "pfile_info",
+            "szFileName",
+            "fileNameBufferSize",
+            "extraField",
+            "extraFieldBufferSize",
+            "szComment",
+            "commentBufferSize"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzGoToFirstFile",
+          "detailed": "\n        ",
+          "name": "unzGoToFirstFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzGoToNextFile",
+          "detailed": "\n        ",
+          "name": "unzGoToNextFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, char *szFileName, int iCaseSensitivity)",
+          "brief": "\n        ",
+          "definition": "int unzLocateFile",
+          "detailed": "\n        ",
+          "name": "unzLocateFile",
+          "params": [
+            "file",
+            "szFileName",
+            "iCaseSensitivity"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz64_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGetFilePos64",
+          "detailed": "\n        ",
+          "name": "unzGetFilePos64",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGetFilePos",
+          "detailed": "\n        ",
+          "name": "unzGetFilePos",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz64_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGoToFilePos64",
+          "detailed": "\n        ",
+          "name": "unzGoToFilePos64",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGoToFilePos",
+          "detailed": "\n        ",
+          "name": "unzGoToFilePos",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unz64_s *s, uInt *piSizeVar, ZPOS64_T *poffset_local_extrafield, uInt *psize_local_extrafield)",
+          "brief": "\n        ",
+          "definition": "static int unz64local_CheckCurrentFileCoherencyHeader",
+          "detailed": "\n        ",
+          "name": "unz64local_CheckCurrentFileCoherencyHeader",
+          "params": [
+            "s",
+            "piSizeVar",
+            "poffset_local_extrafield",
+            "psize_local_extrafield"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unzFile file, int *method, int *level, int raw, char *password)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFile3",
+          "detailed": "\n        ",
+          "name": "unzOpenCurrentFile3",
+          "params": [
+            "file",
+            "method",
+            "level",
+            "raw",
+            "password"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFile",
+          "detailed": "Addition for GDAL : END",
+          "name": "unzOpenCurrentFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, char *password)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFilePassword",
+          "detailed": "\n        ",
+          "name": "unzOpenCurrentFilePassword",
+          "params": [
+            "file",
+            "password"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, int *method, int *level, int raw)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFile2",
+          "detailed": "\n        ",
+          "name": "unzOpenCurrentFile2",
+          "params": [
+            "file",
+            "method",
+            "level",
+            "raw"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T unzGetCurrentFileZStreamPos64",
+          "detailed": "Addition for GDAL : START",
+          "name": "unzGetCurrentFileZStreamPos64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, voidp buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int unzReadCurrentFile",
+          "detailed": "Addition for GDAL : END",
+          "name": "unzReadCurrentFile",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "long unztell",
+          "detailed": "\n        ",
+          "name": "unztell",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T unztell64",
+          "detailed": "\n        ",
+          "name": "unztell64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzeof",
+          "detailed": "\n        ",
+          "name": "unzeof",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, voidp buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int unzGetLocalExtrafield",
+          "detailed": "\n        ",
+          "name": "unzGetLocalExtrafield",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzCloseCurrentFile",
+          "detailed": "\n        ",
+          "name": "unzCloseCurrentFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, char *szComment, uLong uSizeBuf)",
+          "brief": "\n        ",
+          "definition": "int unzGetGlobalComment",
+          "detailed": "\n        ",
+          "name": "unzGetGlobalComment",
+          "params": [
+            "file",
+            "szComment",
+            "uSizeBuf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T unzGetOffset64",
+          "detailed": "\n        ",
+          "name": "unzGetOffset64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "uLong unzGetOffset",
+          "detailed": "\n        ",
+          "name": "unzGetOffset",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, ZPOS64_T pos)",
+          "brief": "\n        ",
+          "definition": "int unzSetOffset64",
+          "detailed": "\n        ",
+          "name": "unzSetOffset64",
+          "params": [
+            "file",
+            "pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, uLong pos)",
+          "brief": "\n        ",
+          "definition": "int unzSetOffset",
+          "detailed": "\n        ",
+          "name": "unzSetOffset",
+          "params": [
+            "file",
+            "pos"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NOUNCRYPT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CASESENSITIVITYDEFAULT_NO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_BUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_MAXFILENAMEINZIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ALLOC",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZECENTRALDIRITEM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZEZIPLOCALHEADER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CASESENSITIVITYDEFAULTVALUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STRCMPCASENOSENTIVEFUNCTION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFREADCOMMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CENTRALDIRINVALID",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz_file_info64_internal_s unz_file_info64_internal",
+          "detailed": "\n        ",
+          "name": "unz_file_info64_internal",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char unz_copyright[]",
+          "detailed": "\n        ",
+          "name": "unz_copyright",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/minizip/unzip.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *fileName1, char *fileName2, int iCaseSensitivity)",
+          "brief": "\n        ",
+          "definition": "int unzStringFileNameCompare",
+          "detailed": "\n        ",
+          "name": "unzStringFileNameCompare",
+          "params": [
+            "fileName1",
+            "fileName2",
+            "iCaseSensitivity"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *path)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen",
+          "detailed": "\n        ",
+          "name": "unzOpen",
+          "params": [
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *path)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen64",
+          "detailed": "\n        ",
+          "name": "unzOpen64",
+          "params": [
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *path, zlib_filefunc_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen2",
+          "detailed": "\n        ",
+          "name": "unzOpen2",
+          "params": [
+            "path",
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *path, zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "unzFile unzOpen2_64",
+          "detailed": "\n        ",
+          "name": "unzOpen2_64",
+          "params": [
+            "path",
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzClose",
+          "detailed": "\n        ",
+          "name": "unzClose",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_global_info *pglobal_info)",
+          "brief": "\n        ",
+          "definition": "int unzGetGlobalInfo",
+          "detailed": "\n        ",
+          "name": "unzGetGlobalInfo",
+          "params": [
+            "file",
+            "pglobal_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_global_info64 *pglobal_info)",
+          "brief": "\n        ",
+          "definition": "int unzGetGlobalInfo64",
+          "detailed": "\n        ",
+          "name": "unzGetGlobalInfo64",
+          "params": [
+            "file",
+            "pglobal_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, char *szComment, uLong uSizeBuf)",
+          "brief": "\n        ",
+          "definition": "int unzGetGlobalComment",
+          "detailed": "\n        ",
+          "name": "unzGetGlobalComment",
+          "params": [
+            "file",
+            "szComment",
+            "uSizeBuf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzGoToFirstFile",
+          "detailed": "\n        ",
+          "name": "unzGoToFirstFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzGoToNextFile",
+          "detailed": "\n        ",
+          "name": "unzGoToNextFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, char *szFileName, int iCaseSensitivity)",
+          "brief": "\n        ",
+          "definition": "int unzLocateFile",
+          "detailed": "\n        ",
+          "name": "unzLocateFile",
+          "params": [
+            "file",
+            "szFileName",
+            "iCaseSensitivity"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGetFilePos",
+          "detailed": "\n        ",
+          "name": "unzGetFilePos",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGoToFilePos",
+          "detailed": "\n        ",
+          "name": "unzGoToFilePos",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz64_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGetFilePos64",
+          "detailed": "\n        ",
+          "name": "unzGetFilePos64",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz64_file_pos *file_pos)",
+          "brief": "\n        ",
+          "definition": "int unzGoToFilePos64",
+          "detailed": "\n        ",
+          "name": "unzGoToFilePos64",
+          "params": [
+            "file",
+            "file_pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_info64 *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize)",
+          "brief": "\n        ",
+          "definition": "int unzGetCurrentFileInfo64",
+          "detailed": "\n        ",
+          "name": "unzGetCurrentFileInfo64",
+          "params": [
+            "file",
+            "pfile_info",
+            "szFileName",
+            "fileNameBufferSize",
+            "extraField",
+            "extraFieldBufferSize",
+            "szComment",
+            "commentBufferSize"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, unz_file_info *pfile_info, char *szFileName, uLong fileNameBufferSize, void *extraField, uLong extraFieldBufferSize, char *szComment, uLong commentBufferSize)",
+          "brief": "\n        ",
+          "definition": "int unzGetCurrentFileInfo",
+          "detailed": "\n        ",
+          "name": "unzGetCurrentFileInfo",
+          "params": [
+            "file",
+            "pfile_info",
+            "szFileName",
+            "fileNameBufferSize",
+            "extraField",
+            "extraFieldBufferSize",
+            "szComment",
+            "commentBufferSize"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T unzGetCurrentFileZStreamPos64",
+          "detailed": "Addition for GDAL : START",
+          "name": "unzGetCurrentFileZStreamPos64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFile",
+          "detailed": "Addition for GDAL : END",
+          "name": "unzOpenCurrentFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, char *password)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFilePassword",
+          "detailed": "\n        ",
+          "name": "unzOpenCurrentFilePassword",
+          "params": [
+            "file",
+            "password"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, int *method, int *level, int raw)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFile2",
+          "detailed": "\n        ",
+          "name": "unzOpenCurrentFile2",
+          "params": [
+            "file",
+            "method",
+            "level",
+            "raw"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, int *method, int *level, int raw, char *password)",
+          "brief": "\n        ",
+          "definition": "int unzOpenCurrentFile3",
+          "detailed": "\n        ",
+          "name": "unzOpenCurrentFile3",
+          "params": [
+            "file",
+            "method",
+            "level",
+            "raw",
+            "password"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzCloseCurrentFile",
+          "detailed": "\n        ",
+          "name": "unzCloseCurrentFile",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, voidp buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int unzReadCurrentFile",
+          "detailed": "Addition for GDAL : END",
+          "name": "unzReadCurrentFile",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "long unztell",
+          "detailed": "\n        ",
+          "name": "unztell",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T unztell64",
+          "detailed": "\n        ",
+          "name": "unztell64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "int unzeof",
+          "detailed": "\n        ",
+          "name": "unzeof",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, voidp buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int unzGetLocalExtrafield",
+          "detailed": "\n        ",
+          "name": "unzGetLocalExtrafield",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "ZPOS64_T unzGetOffset64",
+          "detailed": "\n        ",
+          "name": "unzGetOffset64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file)",
+          "brief": "\n        ",
+          "definition": "uLong unzGetOffset",
+          "detailed": "\n        ",
+          "name": "unzGetOffset",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, ZPOS64_T pos)",
+          "brief": "\n        ",
+          "definition": "int unzSetOffset64",
+          "detailed": "\n        ",
+          "name": "unzSetOffset64",
+          "params": [
+            "file",
+            "pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unzFile file, uLong pos)",
+          "brief": "\n        ",
+          "definition": "int unzSetOffset",
+          "detailed": "\n        ",
+          "name": "unzSetOffset",
+          "params": [
+            "file",
+            "pos"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BZIP2ED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_OK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_END_OF_LIST_OF_FILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_ERRNO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_EOF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_PARAMERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_BADZIPFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_INTERNALERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNZ_CRCERROR",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef voidp unzFile",
+          "detailed": "\n        ",
+          "name": "unzFile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct tm_unz_s tm_unz",
+          "detailed": "\n        ",
+          "name": "tm_unz",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz_global_info64_s unz_global_info64",
+          "detailed": "\n        ",
+          "name": "unz_global_info64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz_global_info_s unz_global_info",
+          "detailed": "\n        ",
+          "name": "unz_global_info",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz_file_info64_s unz_file_info64",
+          "detailed": "\n        ",
+          "name": "unz_file_info64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz_file_info_s unz_file_info",
+          "detailed": "\n        ",
+          "name": "unz_file_info",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz_file_pos_s unz_file_pos",
+          "detailed": "\n        ",
+          "name": "unz_file_pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct unz64_file_pos_s unz64_file_pos",
+          "detailed": "\n        ",
+          "name": "unz64_file_pos",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "contrib/minizip/zip.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static linkedlist_datablock_internal * allocate_new_datablock",
+          "detailed": "\n        ",
+          "name": "allocate_new_datablock",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(linkedlist_datablock_internal *ldi)",
+          "brief": "\n        ",
+          "definition": "static void free_datablock",
+          "detailed": "\n        ",
+          "name": "free_datablock",
+          "params": [
+            "ldi"
+          ],
+          "static": true
+        },
+        {
+          "args": "(linkedlist_data *ll)",
+          "brief": "\n        ",
+          "definition": "static void init_linkedlist",
+          "detailed": "\n        ",
+          "name": "init_linkedlist",
+          "params": [
+            "ll"
+          ],
+          "static": true
+        },
+        {
+          "args": "(linkedlist_data *ll)",
+          "brief": "\n        ",
+          "definition": "static void free_linkedlist",
+          "detailed": "\n        ",
+          "name": "free_linkedlist",
+          "params": [
+            "ll"
+          ],
+          "static": true
+        },
+        {
+          "args": "(linkedlist_data *ll, void *buf, uLong len)",
+          "brief": "\n        ",
+          "definition": "static int add_data_in_datablock",
+          "detailed": "\n        ",
+          "name": "add_data_in_datablock",
+          "params": [
+            "ll",
+            "buf",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, ZPOS64_T x, int nbByte)",
+          "brief": "\n        ",
+          "definition": "static int zip64local_putValue",
+          "detailed": "\n        ",
+          "name": "zip64local_putValue",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "x",
+            "nbByte"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *dest, ZPOS64_T x, int nbByte)",
+          "brief": "\n        ",
+          "definition": "static void zip64local_putValue_inmemory",
+          "detailed": "\n        ",
+          "name": "zip64local_putValue_inmemory",
+          "params": [
+            "dest",
+            "x",
+            "nbByte"
+          ],
+          "static": true
+        },
+        {
+          "args": "(tm_zip *ptm)",
+          "brief": "\n        ",
+          "definition": "static uLong zip64local_TmzDateToDosDate",
+          "detailed": "\n        ",
+          "name": "zip64local_TmzDateToDosDate",
+          "params": [
+            "ptm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, int *pi)",
+          "brief": "\n        ",
+          "definition": "static int zip64local_getByte",
+          "detailed": "\n        ",
+          "name": "zip64local_getByte",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pi"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, uLong *pX)",
+          "brief": "\n        ",
+          "definition": "static int zip64local_getShort",
+          "detailed": "\n        ",
+          "name": "zip64local_getShort",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pX"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, uLong *pX)",
+          "brief": "\n        ",
+          "definition": "static int zip64local_getLong",
+          "detailed": "\n        ",
+          "name": "zip64local_getLong",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pX"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream, ZPOS64_T *pX)",
+          "brief": "\n        ",
+          "definition": "static int zip64local_getLong64",
+          "detailed": "\n        ",
+          "name": "zip64local_getLong64",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream",
+            "pX"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream)",
+          "brief": "\n        ",
+          "definition": "static ZPOS64_T zip64local_SearchCentralDir",
+          "detailed": "\n        ",
+          "name": "zip64local_SearchCentralDir",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zlib_filefunc64_32_def *pzlib_filefunc_def, voidpf filestream)",
+          "brief": "\n        ",
+          "definition": "static ZPOS64_T zip64local_SearchCentralDir64",
+          "detailed": "\n        ",
+          "name": "zip64local_SearchCentralDir64",
+          "params": [
+            "pzlib_filefunc_def",
+            "filestream"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zip64_internal *pziinit)",
+          "brief": "\n        ",
+          "definition": "static int LoadCentralDirectoryRecord",
+          "detailed": "\n        ",
+          "name": "LoadCentralDirectoryRecord",
+          "params": [
+            "pziinit"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *pathname, int append, zipcharpc *globalcomment, zlib_filefunc64_32_def *pzlib_filefunc64_32_def)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen3",
+          "detailed": "\n        ",
+          "name": "zipOpen3",
+          "params": [
+            "pathname",
+            "append",
+            "globalcomment",
+            "pzlib_filefunc64_32_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *pathname, int append, zipcharpc *globalcomment, zlib_filefunc_def *pzlib_filefunc32_def)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen2",
+          "detailed": "\n        ",
+          "name": "zipOpen2",
+          "params": [
+            "pathname",
+            "append",
+            "globalcomment",
+            "pzlib_filefunc32_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *pathname, int append, zipcharpc *globalcomment, zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen2_64",
+          "detailed": "\n        ",
+          "name": "zipOpen2_64",
+          "params": [
+            "pathname",
+            "append",
+            "globalcomment",
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *pathname, int append)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen",
+          "detailed": "\n        ",
+          "name": "zipOpen",
+          "params": [
+            "pathname",
+            "append"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *pathname, int append)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen64",
+          "detailed": "\n        ",
+          "name": "zipOpen64",
+          "params": [
+            "pathname",
+            "append"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zip64_internal *zi, char *filename, uInt size_extrafield_local, void *extrafield_local)",
+          "brief": "\n        ",
+          "definition": "static int Write_LocalFileHeader",
+          "detailed": "\n        ",
+          "name": "Write_LocalFileHeader",
+          "params": [
+            "zi",
+            "filename",
+            "size_extrafield_local",
+            "extrafield_local"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip4_64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip4_64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting",
+            "versionMadeBy",
+            "flagBase",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip4",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip4",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting",
+            "versionMadeBy",
+            "flagBase"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip3",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip3",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip3_64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip3_64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip2",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip2",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip2_64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip2_64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zip64_internal *zi)",
+          "brief": "\n        ",
+          "definition": "static int zip64FlushWriteBuffer",
+          "detailed": "\n        ",
+          "name": "zip64FlushWriteBuffer",
+          "params": [
+            "zi"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zipFile file, void *buf, unsigned int len)",
+          "brief": "\n        ",
+          "definition": "int zipWriteInFileInZip",
+          "detailed": "\n        ",
+          "name": "zipWriteInFileInZip",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, uLong uncompressed_size, uLong crc32)",
+          "brief": "\n        ",
+          "definition": "int zipCloseFileInZipRaw",
+          "detailed": "\n        ",
+          "name": "zipCloseFileInZipRaw",
+          "params": [
+            "file",
+            "uncompressed_size",
+            "crc32"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, ZPOS64_T uncompressed_size, uLong crc32)",
+          "brief": "\n        ",
+          "definition": "int zipCloseFileInZipRaw64",
+          "detailed": "\n        ",
+          "name": "zipCloseFileInZipRaw64",
+          "params": [
+            "file",
+            "uncompressed_size",
+            "crc32"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file)",
+          "brief": "\n        ",
+          "definition": "int zipCloseFileInZip",
+          "detailed": "\n        ",
+          "name": "zipCloseFileInZip",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zip64_internal *zi, ZPOS64_T zip64eocd_pos_inzip)",
+          "brief": "\n        ",
+          "definition": "static int Write_Zip64EndOfCentralDirectoryLocator",
+          "detailed": "\n        ",
+          "name": "Write_Zip64EndOfCentralDirectoryLocator",
+          "params": [
+            "zi",
+            "zip64eocd_pos_inzip"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zip64_internal *zi, uLong size_centraldir, ZPOS64_T centraldir_pos_inzip)",
+          "brief": "\n        ",
+          "definition": "static int Write_Zip64EndOfCentralDirectoryRecord",
+          "detailed": "\n        ",
+          "name": "Write_Zip64EndOfCentralDirectoryRecord",
+          "params": [
+            "zi",
+            "size_centraldir",
+            "centraldir_pos_inzip"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zip64_internal *zi, uLong size_centraldir, ZPOS64_T centraldir_pos_inzip)",
+          "brief": "\n        ",
+          "definition": "static int Write_EndOfCentralDirectoryRecord",
+          "detailed": "\n        ",
+          "name": "Write_EndOfCentralDirectoryRecord",
+          "params": [
+            "zi",
+            "size_centraldir",
+            "centraldir_pos_inzip"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zip64_internal *zi, char *global_comment)",
+          "brief": "\n        ",
+          "definition": "static int Write_GlobalComment",
+          "detailed": "\n        ",
+          "name": "Write_GlobalComment",
+          "params": [
+            "zi",
+            "global_comment"
+          ],
+          "static": true
+        },
+        {
+          "args": "(zipFile file, char *global_comment)",
+          "brief": "\n        ",
+          "definition": "int zipClose",
+          "detailed": "\n        ",
+          "name": "zipClose",
+          "params": [
+            "file",
+            "global_comment"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *pData, int *dataLen, short sHeader)",
+          "brief": "\n        ",
+          "definition": "int zipRemoveExtraInfoBlock",
+          "detailed": "\n        ",
+          "name": "zipRemoveExtraInfoBlock",
+          "params": [
+            "pData",
+            "dataLen",
+            "sHeader"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VERSIONMADEBY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_MAXFILENAMEINZIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ALLOC",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAKEULONG64",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZEDATA_INDATABLOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOCALHEADERMAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CENTRALHEADERMAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ENDHEADERMAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP64ENDHEADERMAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP64ENDLOCHEADERMAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLAG_LOCALHEADER_OFFSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CRC_LOCALHEADER_OFFSET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZECENTRALHEADER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INCLUDECRYPTINGCODE_IFCRYPTALLOWED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFREADCOMMENT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct linkedlist_datablock_internal_s linkedlist_datablock_internal",
+          "detailed": "\n        ",
+          "name": "linkedlist_datablock_internal",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct linkedlist_data_s linkedlist_data",
+          "detailed": "\n        ",
+          "name": "linkedlist_data",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char zip_copyright[]",
+          "detailed": "\n        ",
+          "name": "zip_copyright",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/minizip/zip.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *pathname, int append)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen",
+          "detailed": "\n        ",
+          "name": "zipOpen",
+          "params": [
+            "pathname",
+            "append"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *pathname, int append)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen64",
+          "detailed": "\n        ",
+          "name": "zipOpen64",
+          "params": [
+            "pathname",
+            "append"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *pathname, int append, zipcharpc *globalcomment, zlib_filefunc_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen2",
+          "detailed": "\n        ",
+          "name": "zipOpen2",
+          "params": [
+            "pathname",
+            "append",
+            "globalcomment",
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *pathname, int append, zipcharpc *globalcomment, zlib_filefunc64_def *pzlib_filefunc_def)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen2_64",
+          "detailed": "\n        ",
+          "name": "zipOpen2_64",
+          "params": [
+            "pathname",
+            "append",
+            "globalcomment",
+            "pzlib_filefunc_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *pathname, int append, zipcharpc *globalcomment, zlib_filefunc64_32_def *pzlib_filefunc64_32_def)",
+          "brief": "\n        ",
+          "definition": "zipFile zipOpen3",
+          "detailed": "\n        ",
+          "name": "zipOpen3",
+          "params": [
+            "pathname",
+            "append",
+            "globalcomment",
+            "pzlib_filefunc64_32_def"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip2",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip2",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip2_64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip2_64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip3",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip3",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip3_64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip3_64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip4",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip4",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting",
+            "versionMadeBy",
+            "flagBase"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *filename, zip_fileinfo *zipfi, void *extrafield_local, uInt size_extrafield_local, void *extrafield_global, uInt size_extrafield_global, char *comment, int method, int level, int raw, int windowBits, int memLevel, int strategy, char *password, uLong crcForCrypting, uLong versionMadeBy, uLong flagBase, int zip64)",
+          "brief": "\n        ",
+          "definition": "int zipOpenNewFileInZip4_64",
+          "detailed": "\n        ",
+          "name": "zipOpenNewFileInZip4_64",
+          "params": [
+            "file",
+            "filename",
+            "zipfi",
+            "extrafield_local",
+            "size_extrafield_local",
+            "extrafield_global",
+            "size_extrafield_global",
+            "comment",
+            "method",
+            "level",
+            "raw",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "password",
+            "crcForCrypting",
+            "versionMadeBy",
+            "flagBase",
+            "zip64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, void *buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int zipWriteInFileInZip",
+          "detailed": "\n        ",
+          "name": "zipWriteInFileInZip",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file)",
+          "brief": "\n        ",
+          "definition": "int zipCloseFileInZip",
+          "detailed": "\n        ",
+          "name": "zipCloseFileInZip",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, uLong uncompressed_size, uLong crc32)",
+          "brief": "\n        ",
+          "definition": "int zipCloseFileInZipRaw",
+          "detailed": "\n        ",
+          "name": "zipCloseFileInZipRaw",
+          "params": [
+            "file",
+            "uncompressed_size",
+            "crc32"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, ZPOS64_T uncompressed_size, uLong crc32)",
+          "brief": "\n        ",
+          "definition": "int zipCloseFileInZipRaw64",
+          "detailed": "\n        ",
+          "name": "zipCloseFileInZipRaw64",
+          "params": [
+            "file",
+            "uncompressed_size",
+            "crc32"
+          ],
+          "static": false
+        },
+        {
+          "args": "(zipFile file, char *global_comment)",
+          "brief": "\n        ",
+          "definition": "int zipClose",
+          "detailed": "\n        ",
+          "name": "zipClose",
+          "params": [
+            "file",
+            "global_comment"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *pData, int *dataLen, short sHeader)",
+          "brief": "\n        ",
+          "definition": "int zipRemoveExtraInfoBlock",
+          "detailed": "\n        ",
+          "name": "zipRemoveExtraInfoBlock",
+          "params": [
+            "pData",
+            "dataLen",
+            "sHeader"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BZIP2ED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP_OK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP_EOF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP_ERRNO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP_PARAMERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP_BADZIPFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIP_INTERNALERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEF_MEM_LEVEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "APPEND_STATUS_CREATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "APPEND_STATUS_CREATEAFTER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "APPEND_STATUS_ADDINZIP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef voidp zipFile",
+          "detailed": "\n        ",
+          "name": "zipFile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct tm_zip_s tm_zip",
+          "detailed": "\n        ",
+          "name": "tm_zip",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef char* zipcharpc",
+          "detailed": "\n        ",
+          "name": "zipcharpc",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "contrib/puff/puff.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct state *s, int need)",
+          "brief": "\n        ",
+          "definition": "static int bits",
+          "detailed": "\n        ",
+          "name": "bits",
+          "params": [
+            "s",
+            "need"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s)",
+          "brief": "\n        ",
+          "definition": "static int stored",
+          "detailed": "\n        ",
+          "name": "stored",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s, const struct huffman *h)",
+          "brief": "\n        ",
+          "definition": "static int decode",
+          "detailed": "\n        ",
+          "name": "decode",
+          "params": [
+            "s",
+            "h"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct huffman *h, const short *length, int n)",
+          "brief": "\n        ",
+          "definition": "static int construct",
+          "detailed": "\n        ",
+          "name": "construct",
+          "params": [
+            "h",
+            "length",
+            "n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s, const struct huffman *lencode, const struct huffman *distcode)",
+          "brief": "\n        ",
+          "definition": "static int codes",
+          "detailed": "\n        ",
+          "name": "codes",
+          "params": [
+            "s",
+            "lencode",
+            "distcode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s)",
+          "brief": "\n        ",
+          "definition": "static int fixed",
+          "detailed": "\n        ",
+          "name": "fixed",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct state *s)",
+          "brief": "\n        ",
+          "definition": "static int dynamic",
+          "detailed": "\n        ",
+          "name": "dynamic",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *dest, unsigned long *destlen, const unsigned char *source, unsigned long *sourcelen)",
+          "brief": "\n        ",
+          "definition": "int puff",
+          "detailed": "\n        ",
+          "name": "puff",
+          "params": [
+            "dest",
+            "destlen",
+            "source",
+            "sourcelen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXLCODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXDCODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXCODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIXLCODES",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/puff/puff.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned char *dest, unsigned long *destlen, const unsigned char *source, unsigned long *sourcelen)",
+          "brief": "\n        ",
+          "definition": "int puff",
+          "detailed": "\n        ",
+          "name": "puff",
+          "params": [
+            "dest",
+            "destlen",
+            "source",
+            "sourcelen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NIL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/puff/pufftest.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t size)",
+          "brief": "\n        ",
+          "definition": "static size_t bythirds",
+          "detailed": "\n        ",
+          "name": "bythirds",
+          "params": [
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *name, size_t *len)",
+          "brief": "\n        ",
+          "definition": "static void * load",
+          "detailed": "\n        ",
+          "name": "load",
+          "params": [
+            "name",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_BINARY_MODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/testzlib/testzlib.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(LARGE_INTEGER *R, LARGE_INTEGER A, LARGE_INTEGER B)",
+          "brief": "\n        ",
+          "definition": "void MyDoMinus64",
+          "detailed": "\n        ",
+          "name": "MyDoMinus64",
+          "params": [
+            "R",
+            "A",
+            "B"
+          ],
+          "static": false
+        },
+        {
+          "args": "(LARGE_INTEGER *pbeginTime64)",
+          "brief": "\n        ",
+          "definition": "void myGetRDTSC32",
+          "detailed": "\n        ",
+          "name": "myGetRDTSC32",
+          "params": [
+            "pbeginTime64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(LARGE_INTEGER *pbeginTime64)",
+          "brief": "\n        ",
+          "definition": "void BeginCountRdtsc",
+          "detailed": "\n        ",
+          "name": "BeginCountRdtsc",
+          "params": [
+            "pbeginTime64"
+          ],
+          "static": false
+        },
+        {
+          "args": "(LARGE_INTEGER beginTime64, BOOL fComputeTimeQueryPerf)",
+          "brief": "\n        ",
+          "definition": "LARGE_INTEGER GetResRdtsc",
+          "detailed": "\n        ",
+          "name": "GetResRdtsc",
+          "params": [
+            "beginTime64",
+            "fComputeTimeQueryPerf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(LARGE_INTEGER *pbeginTime64, BOOL fComputeTimeQueryPerf)",
+          "brief": "\n        ",
+          "definition": "void BeginCountPerfCounter",
+          "detailed": "\n        ",
+          "name": "BeginCountPerfCounter",
+          "params": [
+            "pbeginTime64",
+            "fComputeTimeQueryPerf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(LARGE_INTEGER beginTime64, BOOL fComputeTimeQueryPerf)",
+          "brief": "\n        ",
+          "definition": "DWORD GetMsecSincePerfCounter",
+          "detailed": "\n        ",
+          "name": "GetMsecSincePerfCounter",
+          "params": [
+            "beginTime64",
+            "fComputeTimeQueryPerf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *filename, long *plFileSize, unsigned char **pFilePtr)",
+          "brief": "\n        ",
+          "definition": "int ReadFileMemory",
+          "detailed": "\n        ",
+          "name": "ReadFileMemory",
+          "params": [
+            "filename",
+            "plFileSize",
+            "pFilePtr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/untgz/untgz.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TGZ_EXTRACT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TGZ_LIST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TGZ_INVALID",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@160062040343323235260117176214022016371354163317",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(char *msg)",
+          "brief": "\n        ",
+          "definition": "void error",
+          "detailed": "\n        ",
+          "name": "error",
+          "params": [
+            "msg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arcname)",
+          "brief": "\n        ",
+          "definition": "char * TGZfname",
+          "detailed": "\n        ",
+          "name": "TGZfname",
+          "params": [
+            "arcname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arcname)",
+          "brief": "\n        ",
+          "definition": "void TGZnotfound",
+          "detailed": "\n        ",
+          "name": "TGZnotfound",
+          "params": [
+            "arcname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *p, int width)",
+          "brief": "\n        ",
+          "definition": "int getoct",
+          "detailed": "\n        ",
+          "name": "getoct",
+          "params": [
+            "p",
+            "width"
+          ],
+          "static": false
+        },
+        {
+          "args": "(time_t *t)",
+          "brief": "\n        ",
+          "definition": "char * strtime",
+          "detailed": "\n        ",
+          "name": "strtime",
+          "params": [
+            "t"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *fname, time_t ftime)",
+          "brief": "\n        ",
+          "definition": "int setfiletime",
+          "detailed": "\n        ",
+          "name": "setfiletime",
+          "params": [
+            "fname",
+            "ftime"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct attr_item **list, char *fname, int mode, time_t time)",
+          "brief": "\n        ",
+          "definition": "void push_attr",
+          "detailed": "\n        ",
+          "name": "push_attr",
+          "params": [
+            "list",
+            "fname",
+            "mode",
+            "time"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct attr_item **list)",
+          "brief": "\n        ",
+          "definition": "void restore_attr",
+          "detailed": "\n        ",
+          "name": "restore_attr",
+          "params": [
+            "list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *string, char *expr)",
+          "brief": "\n        ",
+          "definition": "int ExprMatch",
+          "detailed": "\n        ",
+          "name": "ExprMatch",
+          "params": [
+            "string",
+            "expr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *newdir)",
+          "brief": "\n        ",
+          "definition": "int makedir",
+          "detailed": "\n        ",
+          "name": "makedir",
+          "params": [
+            "newdir"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int arg, int argc, char **argv, char *fname)",
+          "brief": "\n        ",
+          "definition": "int matchname",
+          "detailed": "\n        ",
+          "name": "matchname",
+          "params": [
+            "arg",
+            "argc",
+            "argv",
+            "fname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile in, int action, int arg, int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int tar",
+          "detailed": "\n        ",
+          "name": "tar",
+          "params": [
+            "in",
+            "action",
+            "arg",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int exitval)",
+          "brief": "\n        ",
+          "definition": "void help",
+          "detailed": "\n        ",
+          "name": "help",
+          "params": [
+            "exitval"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REGTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "AREGTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LNKTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SYMTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHRTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BLKTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIRTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIFOTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CONTTYPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_DUMPDIR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_LONGLINK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_LONGNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_MULTIVOL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_NAMES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_SPARSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GNUTYPE_VOLHDR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BLOCKSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SHORTNAMESIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISSPECIAL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* prog",
+          "detailed": "\n        ",
+          "name": "prog",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char* TGZsuffix[]",
+          "detailed": "\n        ",
+          "name": "TGZsuffix",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "contrib",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

@@ -1,0 +1,89 @@
+{
+  "files": {
+    "tests/test-punycode.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void fail",
+          "detailed": "\n        ",
+          "name": "fail",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint32_t *str, size_t len)",
+          "brief": "\n        ",
+          "definition": "static void ucs4print",
+          "detailed": "\n        ",
+          "name": "ucs4print",
+          "params": [
+            "str",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct punycode punycode[]",
+          "detailed": "\n        ",
+          "name": "punycode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int error_count",
+          "detailed": "\n        ",
+          "name": "error_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int break_on_error",
+          "detailed": "\n        ",
+          "name": "break_on_error",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test-punycode.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,28 @@
+{
+  "files": {
+    "lib/free.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *ptr)",
+          "brief": "\n        ",
+          "definition": "void idn2_free",
+          "detailed": "idn2_free: @ptr: pointer to deallocate\nCall free(3) on the given pointer.\nThis function is typically only useful on systems where the library malloc heap is different from the library caller malloc heap, which happens on Windows when the library is a separate DLL.",
+          "name": "idn2_free",
+          "params": [
+            "ptr"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/free.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

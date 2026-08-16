@@ -1,0 +1,81 @@
+{
+  "files": {
+    "json_inttypes.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PRId64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SCNd64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PRIu64",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef __int32 int32_t",
+          "detailed": "\n        ",
+          "name": "int32_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned __int32 uint32_t",
+          "detailed": "\n        ",
+          "name": "uint32_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef __int64 int64_t",
+          "detailed": "\n        ",
+          "name": "int64_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned __int64 uint64_t",
+          "detailed": "\n        ",
+          "name": "uint64_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    }
+  },
+  "library": "json_inttypes.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

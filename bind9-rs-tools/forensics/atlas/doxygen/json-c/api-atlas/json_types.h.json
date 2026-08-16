@@ -1,0 +1,183 @@
+{
+  "files": {
+    "json_types.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_null",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_boolean",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_double",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_int",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_object",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_type_string",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "json_type",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_EXPORT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct json_object_iter json_object_iter",
+          "detailed": "\n        ",
+          "name": "json_object_iter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef int json_bool",
+          "detailed": "\n        ",
+          "name": "json_bool",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "The core type for all type of JSON objects handled by json-c.",
+          "definition": "typedef struct json_object json_object",
+          "detailed": "\n        ",
+          "name": "json_object",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *jso, void *userdata)",
+          "brief": "\n        ",
+          "definition": "typedef void json_object_delete_fn(struct json_object *jso, void *userdata)",
+          "detailed": "Type of custom user delete functions. See json_object_set_serializer.",
+          "name": "json_object_delete_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *jso, struct printbuf *pb, int level, int flags)",
+          "brief": "\n        ",
+          "definition": "typedef int json_object_to_json_string_fn(struct json_object *jso, struct printbuf *pb, int level, int flags)",
+          "detailed": "Type of a custom serialization function. See json_object_set_serializer.",
+          "name": "json_object_to_json_string_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef enum json_type json_type",
+          "detailed": "\n        ",
+          "name": "json_type",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* json_object_iter::key",
+          "detailed": "\n        ",
+          "name": "key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_object* json_object_iter::val",
+          "detailed": "\n        ",
+          "name": "val",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct lh_entry* json_object_iter::entry",
+          "detailed": "\n        ",
+          "name": "entry",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_types.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

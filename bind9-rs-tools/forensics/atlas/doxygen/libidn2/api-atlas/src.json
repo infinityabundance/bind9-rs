@@ -1,0 +1,1028 @@
+{
+  "files": {
+    "src/idn2.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *prefix, const char *str)",
+          "brief": "\n        ",
+          "definition": "static void hexdump",
+          "detailed": "\n        ",
+          "name": "hexdump",
+          "params": [
+            "prefix",
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *readbuf, int flags)",
+          "brief": "\n        ",
+          "definition": "static void process_input",
+          "detailed": "\n        ",
+          "name": "process_input",
+          "params": [
+            "readbuf",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char version_etc_copyright[]",
+          "detailed": "\n        ",
+          "name": "version_etc_copyright",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct gengetopt_args_info args_info",
+          "detailed": "\n        ",
+          "name": "args_info",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/idn2_cmd.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ARG_NO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "ARG_FLAG",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cmdline_parser_arg_type",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "static void clear_given",
+          "detailed": "\n        ",
+          "name": "clear_given",
+          "params": [
+            "args_info"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "static void clear_args",
+          "detailed": "\n        ",
+          "name": "clear_args",
+          "params": [
+            "args_info"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info, struct cmdline_parser_params *params, const char *additional_error)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_internal",
+          "detailed": "\n        ",
+          "name": "cmdline_parser_internal",
+          "params": [
+            "argc",
+            "argv",
+            "args_info",
+            "params",
+            "additional_error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *s)",
+          "brief": "replacement of strdup, which is not standard",
+          "definition": "char * gengetopt_strdup",
+          "detailed": "\n        ",
+          "name": "gengetopt_strdup",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "static void init_args_info",
+          "detailed": "\n        ",
+          "name": "init_args_info",
+          "params": [
+            "args_info"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_print_version",
+          "detailed": "Print the version",
+          "name": "cmdline_parser_print_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void print_help_common",
+          "detailed": "\n        ",
+          "name": "print_help_common",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_print_help",
+          "detailed": "Print the help",
+          "name": "cmdline_parser_print_help",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_init",
+          "detailed": "Initializes the passed gengetopt_args_info structure's fields (also set default values for options that have a default) \n\nargs_info\n\n\nthe structure to initialize \n\n\n\n\nthe structure to initialize",
+          "name": "cmdline_parser_init",
+          "params": [
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cmdline_parser_params *params)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_params_init",
+          "detailed": "Initializes all the fields a cmdline_parser_params structure to their default values \n\nparams\n\n\nthe structure to initialize \n\n\n\n\nthe structure to initialize",
+          "name": "cmdline_parser_params_init",
+          "params": [
+            "params"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct cmdline_parser_params * cmdline_parser_params_create",
+          "detailed": "Allocates dynamically a cmdline_parser_params structure and initializes all its fields to their default values the created and initialized cmdline_parser_params structure \n\n\nthe created and initialized cmdline_parser_params structure",
+          "name": "cmdline_parser_params_create",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "static void cmdline_parser_release",
+          "detailed": "\n        ",
+          "name": "cmdline_parser_release",
+          "params": [
+            "args_info"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *outfile, const char *opt, const char *arg, const char *values[])",
+          "brief": "\n        ",
+          "definition": "static void write_into_file",
+          "detailed": "\n        ",
+          "name": "write_into_file",
+          "params": [
+            "outfile",
+            "opt",
+            "arg",
+            "values"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *outfile, struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_dump",
+          "detailed": "Save the contents of the option struct into an already open FILE stream. \n\noutfile\n\n\nthe stream where to dump options \n\n\n\n\nargs_info\n\n\nthe option struct to dump \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe stream where to dump options \nthe option struct to dump \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser_dump",
+          "params": [
+            "outfile",
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_file_save",
+          "detailed": "Save the contents of the option struct into a (text) file. This file can be read by the config file parser (if generated by gengetopt) \n\nfilename\n\n\nthe file where to save \n\n\n\n\nargs_info\n\n\nthe option struct to save \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe file where to save \nthe option struct to save \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser_file_save",
+          "params": [
+            "filename",
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_free",
+          "detailed": "Deallocates the string fields of the gengetopt_args_info structure (but does not deallocate the structure itself) \n\nargs_info\n\n\nthe structure to deallocate \n\n\n\n\nthe structure to deallocate",
+          "name": "cmdline_parser_free",
+          "params": [
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser",
+          "detailed": "The command line parser \n\nargc\n\n\nthe number of command line options \n\n\n\n\nargv\n\n\nthe command line options \n\n\n\n\nargs_info\n\n\nthe structure where option information will be stored \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe number of command line options \nthe command line options \nthe structure where option information will be stored \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser",
+          "params": [
+            "argc",
+            "argv",
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info, struct cmdline_parser_params *params)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_ext",
+          "detailed": "The command line parser (version with additional parameters) \n\nargc\n\n\nthe number of command line options \n\n\n\n\nargv\n\n\nthe command line options \n\n\n\n\nargs_info\n\n\nthe structure where option information will be stored \n\n\n\n\nparams\n\n\nadditional parameters for the parser \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe number of command line options \nthe command line options \nthe structure where option information will be stored \nadditional parameters for the parser \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser_ext",
+          "params": [
+            "argc",
+            "argv",
+            "args_info",
+            "params"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info, int override, int initialize, int check_required)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser2",
+          "detailed": "The command line parser (version with additional parameters - deprecated) \n\nargc\n\n\nthe number of command line options \n\n\n\n\nargv\n\n\nthe command line options \n\n\n\n\nargs_info\n\n\nthe structure where option information will be stored \n\n\n\n\noverride\n\n\nwhether to override possibly already present options \n\n\n\n\ninitialize\n\n\nwhether to initialize the option structure my_args_info \n\n\n\n\ncheck_required\n\n\nwhether to check that all required options were provided \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\nDeprecateduse cmdline_parser_ext() instead \n\nthe number of command line options \nthe command line options \nthe structure where option information will be stored \nwhether to override possibly already present options \nwhether to initialize the option structure my_args_info \nwhether to check that all required options were provided \n0 if everything went fine, NON 0 if an error took place \nuse cmdline_parser_ext() instead",
+          "name": "cmdline_parser2",
+          "params": [
+            "argc",
+            "argv",
+            "args_info",
+            "override",
+            "initialize",
+            "check_required"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info, const char *prog_name)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_required",
+          "detailed": "Checks that all the required options were specified \n\nargs_info\n\n\nthe structure to check \n\n\n\n\nprog_name\n\n\nthe name of the program that will be used to print possible errors \n\n\n\n\n\n\nthe structure to check \nthe name of the program that will be used to print possible errors",
+          "name": "cmdline_parser_required",
+          "params": [
+            "args_info",
+            "prog_name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *field, char **orig_field, unsigned int *field_given, unsigned int *prev_given, char *value, const char *possible_values[], const char *default_value, cmdline_parser_arg_type arg_type, int check_ambiguity, int override, int no_free, int multiple_option, const char *long_opt, char short_opt, const char *additional_error)",
+          "brief": "updates an option",
+          "definition": "static int update_arg",
+          "detailed": "field\n\n\nthe generic pointer to the field to update \n\n\n\n\norig_field\n\n\nthe pointer to the orig field \n\n\n\n\nfield_given\n\n\nthe pointer to the number of occurrence of this option \n\n\n\n\nprev_given\n\n\nthe pointer to the number of occurrence already seen \n\n\n\n\nvalue\n\n\nthe argument for this option (if null no arg was specified) \n\n\n\n\npossible_values\n\n\nthe possible values for this option (if specified) \n\n\n\n\ndefault_value\n\n\nthe default value (in case the option only accepts fixed values) \n\n\n\n\narg_type\n\n\nthe type of this option \n\n\n\n\ncheck_ambiguity\n\n\n\n\n\n\ncmdline_parser_params.check_ambiguity \n\n\n\noverride\n\n\n\n\n\n\ncmdline_parser_params.override \n\n\n\nno_free\n\n\nwhether to free a possible previous value \n\n\n\n\nmultiple_option\n\n\nwhether this is a multiple option \n\n\n\n\nlong_opt\n\n\nthe corresponding long option \n\n\n\n\nshort_opt\n\n\nthe corresponding short option (or '-' if none) \n\n\n\n\nadditional_error\n\n\npossible further error specification \n\n\n\n\nthe generic pointer to the field to update \nthe pointer to the orig field \nthe pointer to the number of occurrence of this option \nthe pointer to the number of occurrence already seen \nthe argument for this option (if null no arg was specified) \nthe possible values for this option (if specified) \nthe default value (in case the option only accepts fixed values) \nthe type of this option \n\ncmdline_parser_params.check_ambiguity \n\ncmdline_parser_params.override \nwhether to free a possible previous value \nwhether this is a multiple option \nthe corresponding long option \nthe corresponding short option (or '-' if none) \npossible further error specification",
+          "name": "update_arg",
+          "params": [
+            "field",
+            "orig_field",
+            "field_given",
+            "prev_given",
+            "value",
+            "possible_values",
+            "default_value",
+            "arg_type",
+            "check_ambiguity",
+            "override",
+            "no_free",
+            "multiple_option",
+            "long_opt",
+            "short_opt",
+            "additional_error"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIX_UNUSED",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "the purpose string of the program",
+          "definition": "const char* gengetopt_args_info_purpose",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_purpose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "the usage string of the program",
+          "definition": "const char* gengetopt_args_info_usage",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_usage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* gengetopt_args_info_versiontext",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_versiontext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "the description string of the program",
+          "definition": "const char* gengetopt_args_info_description",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_description",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "all the lines making the help output",
+          "definition": "const char* gengetopt_args_info_help[]",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* package_name",
+          "detailed": "\n        ",
+          "name": "package_name",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/idn2_cmd.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser",
+          "detailed": "The command line parser \n\nargc\n\n\nthe number of command line options \n\n\n\n\nargv\n\n\nthe command line options \n\n\n\n\nargs_info\n\n\nthe structure where option information will be stored \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe number of command line options \nthe command line options \nthe structure where option information will be stored \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser",
+          "params": [
+            "argc",
+            "argv",
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info, int override, int initialize, int check_required)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser2",
+          "detailed": "The command line parser (version with additional parameters - deprecated) \n\nargc\n\n\nthe number of command line options \n\n\n\n\nargv\n\n\nthe command line options \n\n\n\n\nargs_info\n\n\nthe structure where option information will be stored \n\n\n\n\noverride\n\n\nwhether to override possibly already present options \n\n\n\n\ninitialize\n\n\nwhether to initialize the option structure my_args_info \n\n\n\n\ncheck_required\n\n\nwhether to check that all required options were provided \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\nDeprecateduse cmdline_parser_ext() instead \n\nthe number of command line options \nthe command line options \nthe structure where option information will be stored \nwhether to override possibly already present options \nwhether to initialize the option structure my_args_info \nwhether to check that all required options were provided \n0 if everything went fine, NON 0 if an error took place \nuse cmdline_parser_ext() instead",
+          "name": "cmdline_parser2",
+          "params": [
+            "argc",
+            "argv",
+            "args_info",
+            "override",
+            "initialize",
+            "check_required"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv, struct gengetopt_args_info *args_info, struct cmdline_parser_params *params)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_ext",
+          "detailed": "The command line parser (version with additional parameters) \n\nargc\n\n\nthe number of command line options \n\n\n\n\nargv\n\n\nthe command line options \n\n\n\n\nargs_info\n\n\nthe structure where option information will be stored \n\n\n\n\nparams\n\n\nadditional parameters for the parser \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe number of command line options \nthe command line options \nthe structure where option information will be stored \nadditional parameters for the parser \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser_ext",
+          "params": [
+            "argc",
+            "argv",
+            "args_info",
+            "params"
+          ],
+          "static": false
+        },
+        {
+          "args": "(FILE *outfile, struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_dump",
+          "detailed": "Save the contents of the option struct into an already open FILE stream. \n\noutfile\n\n\nthe stream where to dump options \n\n\n\n\nargs_info\n\n\nthe option struct to dump \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe stream where to dump options \nthe option struct to dump \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser_dump",
+          "params": [
+            "outfile",
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_file_save",
+          "detailed": "Save the contents of the option struct into a (text) file. This file can be read by the config file parser (if generated by gengetopt) \n\nfilename\n\n\nthe file where to save \n\n\n\n\nargs_info\n\n\nthe option struct to save \n\n\n\n0 if everything went fine, NON 0 if an error took place \n\n\nthe file where to save \nthe option struct to save \n0 if everything went fine, NON 0 if an error took place",
+          "name": "cmdline_parser_file_save",
+          "params": [
+            "filename",
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_print_help",
+          "detailed": "Print the help",
+          "name": "cmdline_parser_print_help",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_print_version",
+          "detailed": "Print the version",
+          "name": "cmdline_parser_print_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cmdline_parser_params *params)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_params_init",
+          "detailed": "Initializes all the fields a cmdline_parser_params structure to their default values \n\nparams\n\n\nthe structure to initialize \n\n\n\n\nthe structure to initialize",
+          "name": "cmdline_parser_params_init",
+          "params": [
+            "params"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct cmdline_parser_params * cmdline_parser_params_create",
+          "detailed": "Allocates dynamically a cmdline_parser_params structure and initializes all its fields to their default values the created and initialized cmdline_parser_params structure \n\n\nthe created and initialized cmdline_parser_params structure",
+          "name": "cmdline_parser_params_create",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_init",
+          "detailed": "Initializes the passed gengetopt_args_info structure's fields (also set default values for options that have a default) \n\nargs_info\n\n\nthe structure to initialize \n\n\n\n\nthe structure to initialize",
+          "name": "cmdline_parser_init",
+          "params": [
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info)",
+          "brief": "\n        ",
+          "definition": "void cmdline_parser_free",
+          "detailed": "Deallocates the string fields of the gengetopt_args_info structure (but does not deallocate the structure itself) \n\nargs_info\n\n\nthe structure to deallocate \n\n\n\n\nthe structure to deallocate",
+          "name": "cmdline_parser_free",
+          "params": [
+            "args_info"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct gengetopt_args_info *args_info, const char *prog_name)",
+          "brief": "\n        ",
+          "definition": "int cmdline_parser_required",
+          "detailed": "Checks that all the required options were specified \n\nargs_info\n\n\nthe structure to check \n\n\n\n\nprog_name\n\n\nthe name of the program that will be used to print possible errors \n\n\n\n\n\n\nthe structure to check \nthe name of the program that will be used to print possible errors",
+          "name": "cmdline_parser_required",
+          "params": [
+            "args_info",
+            "prog_name"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "the program name (used for printing errors)",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_PARSER_PACKAGE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "the complete program name (used for help and version)",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_PARSER_PACKAGE_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "the program version",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_PARSER_VERSION",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "the purpose string of the program",
+          "definition": "const char* gengetopt_args_info_purpose",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_purpose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "the usage string of the program",
+          "definition": "const char* gengetopt_args_info_usage",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_usage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "the description string of the program",
+          "definition": "const char* gengetopt_args_info_description",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_description",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "all the lines making the help output",
+          "definition": "const char* gengetopt_args_info_help[]",
+          "detailed": "\n        ",
+          "name": "gengetopt_args_info_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "whether to override possibly already present options (default 0)",
+          "definition": "int cmdline_parser_params::override",
+          "detailed": "\n        ",
+          "name": "override",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "whether to initialize the option structure gengetopt_args_info (default 1)",
+          "definition": "int cmdline_parser_params::initialize",
+          "detailed": "\n        ",
+          "name": "initialize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "whether to check that all required options were provided (default 1)",
+          "definition": "int cmdline_parser_params::check_required",
+          "detailed": "\n        ",
+          "name": "check_required",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "whether to check for options already specified in the option structure gengetopt_args_info (default 0)",
+          "definition": "int cmdline_parser_params::check_ambiguity",
+          "detailed": "\n        ",
+          "name": "check_ambiguity",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "whether getopt_long should print an error message for a bad option (default 1)",
+          "definition": "int cmdline_parser_params::print_errors",
+          "detailed": "\n        ",
+          "name": "print_errors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Print help and exit help description.",
+          "definition": "const char* gengetopt_args_info::help_help",
+          "detailed": "\n        ",
+          "name": "help_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Print version and exit help description.",
+          "definition": "const char* gengetopt_args_info::version_help",
+          "detailed": "\n        ",
+          "name": "version_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Decode (punycode) domain name help description.",
+          "definition": "const char* gengetopt_args_info::decode_help",
+          "detailed": "\n        ",
+          "name": "decode_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Lookup domain name (default) help description.",
+          "definition": "const char* gengetopt_args_info::lookup_help",
+          "detailed": "\n        ",
+          "name": "lookup_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Register label help description.",
+          "definition": "const char* gengetopt_args_info::register_help",
+          "detailed": "\n        ",
+          "name": "register_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Enable TR46 transitional processing (default=off).",
+          "definition": "int gengetopt_args_info::tr46t_flag",
+          "detailed": "\n        ",
+          "name": "tr46t_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Enable TR46 transitional processing help description.",
+          "definition": "const char* gengetopt_args_info::tr46t_help",
+          "detailed": "\n        ",
+          "name": "tr46t_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Enable TR46 non-transitional processing (default=off).",
+          "definition": "int gengetopt_args_info::tr46nt_flag",
+          "detailed": "\n        ",
+          "name": "tr46nt_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Enable TR46 non-transitional processing help description.",
+          "definition": "const char* gengetopt_args_info::tr46nt_help",
+          "detailed": "\n        ",
+          "name": "tr46nt_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Disable TR46 processing (default=off).",
+          "definition": "int gengetopt_args_info::no_tr46_flag",
+          "detailed": "\n        ",
+          "name": "no_tr46_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Disable TR46 processing help description.",
+          "definition": "const char* gengetopt_args_info::no_tr46_help",
+          "detailed": "\n        ",
+          "name": "no_tr46_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Enable STD3 ASCII rules (default=off).",
+          "definition": "int gengetopt_args_info::usestd3asciirules_flag",
+          "detailed": "\n        ",
+          "name": "usestd3asciirules_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Enable STD3 ASCII rules help description.",
+          "definition": "const char* gengetopt_args_info::usestd3asciirules_help",
+          "detailed": "\n        ",
+          "name": "usestd3asciirules_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Disable A-label roundtrip for lookups (default=off).",
+          "definition": "int gengetopt_args_info::no_alabelroundtrip_flag",
+          "detailed": "\n        ",
+          "name": "no_alabelroundtrip_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Disable A-label roundtrip for lookups help description.",
+          "definition": "const char* gengetopt_args_info::no_alabelroundtrip_help",
+          "detailed": "\n        ",
+          "name": "no_alabelroundtrip_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Print debugging information (default=off).",
+          "definition": "int gengetopt_args_info::debug_flag",
+          "detailed": "\n        ",
+          "name": "debug_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Print debugging information help description.",
+          "definition": "const char* gengetopt_args_info::debug_help",
+          "detailed": "\n        ",
+          "name": "debug_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Silent operation (default=off).",
+          "definition": "int gengetopt_args_info::quiet_flag",
+          "detailed": "\n        ",
+          "name": "quiet_flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Silent operation help description.",
+          "definition": "const char* gengetopt_args_info::quiet_help",
+          "detailed": "\n        ",
+          "name": "quiet_help",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether help was given.",
+          "definition": "unsigned int gengetopt_args_info::help_given",
+          "detailed": "\n        ",
+          "name": "help_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether version was given.",
+          "definition": "unsigned int gengetopt_args_info::version_given",
+          "detailed": "\n        ",
+          "name": "version_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether decode was given.",
+          "definition": "unsigned int gengetopt_args_info::decode_given",
+          "detailed": "\n        ",
+          "name": "decode_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether lookup was given.",
+          "definition": "unsigned int gengetopt_args_info::lookup_given",
+          "detailed": "\n        ",
+          "name": "lookup_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether register was given.",
+          "definition": "unsigned int gengetopt_args_info::register_given",
+          "detailed": "\n        ",
+          "name": "register_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether tr46t was given.",
+          "definition": "unsigned int gengetopt_args_info::tr46t_given",
+          "detailed": "\n        ",
+          "name": "tr46t_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether tr46nt was given.",
+          "definition": "unsigned int gengetopt_args_info::tr46nt_given",
+          "detailed": "\n        ",
+          "name": "tr46nt_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether no-tr46 was given.",
+          "definition": "unsigned int gengetopt_args_info::no_tr46_given",
+          "detailed": "\n        ",
+          "name": "no_tr46_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether usestd3asciirules was given.",
+          "definition": "unsigned int gengetopt_args_info::usestd3asciirules_given",
+          "detailed": "\n        ",
+          "name": "usestd3asciirules_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether no-alabelroundtrip was given.",
+          "definition": "unsigned int gengetopt_args_info::no_alabelroundtrip_given",
+          "detailed": "\n        ",
+          "name": "no_alabelroundtrip_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether debug was given.",
+          "definition": "unsigned int gengetopt_args_info::debug_given",
+          "detailed": "\n        ",
+          "name": "debug_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Whether quiet was given.",
+          "definition": "unsigned int gengetopt_args_info::quiet_given",
+          "detailed": "\n        ",
+          "name": "quiet_given",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unnamed options (options without names)",
+          "definition": "char** gengetopt_args_info::inputs",
+          "detailed": "\n        ",
+          "name": "inputs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "unnamed options number",
+          "definition": "unsigned gengetopt_args_info::inputs_num",
+          "detailed": "\n        ",
+          "name": "inputs_num",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "src",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

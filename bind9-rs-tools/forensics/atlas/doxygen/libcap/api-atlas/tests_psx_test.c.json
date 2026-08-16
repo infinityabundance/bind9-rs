@@ -1,0 +1,155 @@
+{
+  "files": {
+    "tests/psx_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *title, int n, int kept)",
+          "brief": "\n        ",
+          "definition": "static void say_hello_expecting",
+          "detailed": "\n        ",
+          "name": "say_hello_expecting",
+          "params": [
+            "title",
+            "n",
+            "kept"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *args)",
+          "brief": "\n        ",
+          "definition": "static void * say_hello",
+          "detailed": "\n        ",
+          "name": "say_hello",
+          "params": [
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef union tp thread_ptr",
+          "detailed": "\n        ",
+          "name": "thread_ptr",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t mu",
+          "detailed": "\n        ",
+          "name": "mu",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_cond_t cond",
+          "detailed": "\n        ",
+          "name": "cond",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int global_kept",
+          "detailed": "\n        ",
+          "name": "global_kept",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int step",
+          "detailed": "\n        ",
+          "name": "step",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int replies",
+          "detailed": "\n        ",
+          "name": "replies",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int launched",
+          "detailed": "\n        ",
+          "name": "launched",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int started",
+          "detailed": "\n        ",
+          "name": "started",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long long unsigned tp::raw",
+          "detailed": "\n        ",
+          "name": "raw",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t tp::pt",
+          "detailed": "\n        ",
+          "name": "pt",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/psx_test.c",
+  "schema_version": 1,
+  "version": "2.78"
+}

@@ -1,0 +1,3398 @@
+{
+  "files": {
+    "libraries/liblmdb/lmdb.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef mode_t mdb_mode_t",
+          "detailed": "Unix permissions for creating files, or dummy definition for Windows",
+          "name": "mdb_mode_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef int mdb_filehandle_t",
+          "detailed": "An abstraction for a file handle. On POSIX systems file handles are small integers. On Windows they're opaque pointers.",
+          "name": "mdb_filehandle_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "libraries/liblmdb/mdb.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MDB_PID_T",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MDB_THR_T",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CACHEFLUSH",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MDB_USE_POSIX_MUTEX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VGMEMP_CREATE",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VGMEMP_ALLOC",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VGMEMP_FREE",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VGMEMP_DESTROY",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VGMEMP_DEFINED",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BYTE_ORDER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LITTLE_ENDIAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BIG_ENDIAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ESECT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CALL_CONV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "shorthand for mrb_txnid",
+          "name": "mr_txnid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mr_pid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mr_tid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_format",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_rmutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_rmname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_txnid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_numreaders",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mti_wmutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mp_pgno",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mp_next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mp_lower",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mp_upper",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mp_pages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "The size of pages used in this DB",
+          "name": "mm_psize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Any persistent environment flags. Environment Flags",
+          "name": "mm_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Failed to update the meta page. Probably an I/O error.",
+          "name": "MDB_FATAL_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Some fields are initialized.",
+          "name": "MDB_ENV_ACTIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "me_txkey is set",
+          "name": "MDB_ENV_TXKEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "fdatasync is unreliable",
+          "name": "MDB_FSYNCONLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "me_pglast",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "me_pghead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Shared reader lock",
+          "name": "me_rmutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Shared writer lock",
+          "name": "me_wmutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_PWRITE",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MDB_ERRCODE_ROFS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_WRITE",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO_WRITE",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cursor* MDB_cursor::mc_next",
+          "detailed": "Next cursor on this DB in this txn",
+          "name": "mc_next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cursor* MDB_cursor::mc_backup",
+          "detailed": "Backup of the original cursor if this cursor is a shadow",
+          "name": "mc_backup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct MDB_xcursor* MDB_cursor::mc_xcursor",
+          "detailed": "Context used for databases with MDB_DUPSORT, otherwise NULL",
+          "name": "mc_xcursor",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn* MDB_cursor::mc_txn",
+          "detailed": "The transaction that owns this cursor",
+          "name": "mc_txn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbi MDB_cursor::mc_dbi",
+          "detailed": "The database handle this cursor operates on",
+          "name": "mc_dbi",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_db* MDB_cursor::mc_db",
+          "detailed": "The database record for this cursor",
+          "name": "mc_db",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbx* MDB_cursor::mc_dbx",
+          "detailed": "The database auxiliary record for this cursor",
+          "name": "mc_dbx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* MDB_cursor::mc_dbflag",
+          "detailed": "The Transaction DB Flags for this database",
+          "name": "mc_dbflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short MDB_cursor::mc_snum",
+          "detailed": "number of pushed pages",
+          "name": "mc_snum",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short MDB_cursor::mc_top",
+          "detailed": "index of top page, normally mc_snum-1",
+          "name": "mc_top",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_cursor::mc_flags",
+          "detailed": "Cursor Flags",
+          "name": "mc_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "MDB_page* MDB_cursor::mc_pg[32]",
+          "detailed": "stack of pushed pages",
+          "name": "mc_pg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_cursor::mc_ki[32]",
+          "detailed": "stack of page indices",
+          "name": "mc_ki",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_db::md_pad",
+          "detailed": "also ksize for LEAF2 pages",
+          "name": "md_pad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_db::md_flags",
+          "detailed": "Database Flags",
+          "name": "md_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_db::md_depth",
+          "detailed": "depth of this tree",
+          "name": "md_depth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_db::md_branch_pages",
+          "detailed": "number of internal pages",
+          "name": "md_branch_pages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_db::md_leaf_pages",
+          "detailed": "number of leaf pages",
+          "name": "md_leaf_pages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_db::md_overflow_pages",
+          "detailed": "number of overflow pages",
+          "name": "md_overflow_pages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MDB_db::md_entries",
+          "detailed": "number of data items",
+          "name": "md_entries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_db::md_root",
+          "detailed": "the root page of this tree",
+          "name": "md_root",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_val MDB_dbx::md_name",
+          "detailed": "name of the database",
+          "name": "md_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cmp_func* MDB_dbx::md_cmp",
+          "detailed": "function for comparing keys",
+          "name": "md_cmp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cmp_func* MDB_dbx::md_dcmp",
+          "detailed": "function for comparing data items",
+          "name": "md_dcmp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_rel_func* MDB_dbx::md_rel",
+          "detailed": "user relocate function",
+          "name": "md_rel",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* MDB_dbx::md_relctx",
+          "detailed": "user-provided context for md_rel",
+          "name": "md_relctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_env::me_fd",
+          "detailed": "The main data file",
+          "name": "me_fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_env::me_lfd",
+          "detailed": "The lock file",
+          "name": "me_lfd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_env::me_mfd",
+          "detailed": "For writing and syncing the meta pages",
+          "name": "me_mfd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_env::me_flags",
+          "detailed": "Environment Flags",
+          "name": "me_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_env::me_psize",
+          "detailed": "DB page size, inited from me_os_psize",
+          "name": "me_psize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_env::me_os_psize",
+          "detailed": "OS page size, from GET_PAGESIZE",
+          "name": "me_os_psize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_env::me_maxreaders",
+          "detailed": "size of the reader table",
+          "name": "me_maxreaders",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile int MDB_env::me_close_readers",
+          "detailed": "Max MDB_txninfo.mti_numreaders of interest to mdb_env_close()",
+          "name": "me_close_readers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbi MDB_env::me_numdbs",
+          "detailed": "number of DBs opened",
+          "name": "me_numdbs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbi MDB_env::me_maxdbs",
+          "detailed": "size of the DB table",
+          "name": "me_maxdbs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pid_t MDB_env::me_pid",
+          "detailed": "process ID of this env",
+          "name": "me_pid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* MDB_env::me_path",
+          "detailed": "path to the DB files",
+          "name": "me_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* MDB_env::me_map",
+          "detailed": "the memory map of the data file",
+          "name": "me_map",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txninfo* MDB_env::me_txns",
+          "detailed": "the memory map of the lock file or NULL",
+          "name": "me_txns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "MDB_meta* MDB_env::me_metas[2]",
+          "detailed": "pointers to the two meta pages",
+          "name": "me_metas",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* MDB_env::me_pbuf",
+          "detailed": "scratch area for DUPSORT put()",
+          "name": "me_pbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn* MDB_env::me_txn",
+          "detailed": "current write transaction",
+          "name": "me_txn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn* MDB_env::me_txn0",
+          "detailed": "prealloc'd write transaction",
+          "name": "me_txn0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MDB_env::me_mapsize",
+          "detailed": "size of the data memory map",
+          "name": "me_mapsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "off_t MDB_env::me_size",
+          "detailed": "current file size",
+          "name": "me_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_env::me_maxpg",
+          "detailed": "me_mapsize / me_psize",
+          "name": "me_maxpg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbx* MDB_env::me_dbxs",
+          "detailed": "array of static DB info",
+          "name": "me_dbxs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t* MDB_env::me_dbflags",
+          "detailed": "array of flags from MDB_db.md_flags",
+          "name": "me_dbflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int* MDB_env::me_dbiseqs",
+          "detailed": "array of dbi sequence numbers",
+          "name": "me_dbiseqs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_key_t MDB_env::me_txkey",
+          "detailed": "thread-key for readers",
+          "name": "me_txkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "txnid_t MDB_env::me_pgoldest",
+          "detailed": "ID of oldest reader last time we looked",
+          "name": "me_pgoldest",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_pgstate MDB_env::me_pgstate",
+          "detailed": "state of old pages from freeDB",
+          "name": "me_pgstate",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_page* MDB_env::me_dpages",
+          "detailed": "list of malloc'd blocks for re-use",
+          "name": "me_dpages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_IDL MDB_env::me_free_pgs",
+          "detailed": "IDL of pages that became unused in a write txn",
+          "name": "me_free_pgs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_ID2L MDB_env::me_dirty_list",
+          "detailed": "ID2L of pages written during a write txn. Length MDB_IDL_UM_SIZE.",
+          "name": "me_dirty_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_env::me_maxfree_1pg",
+          "detailed": "Max number of freelist items that can fit in a single overflow page",
+          "name": "me_maxfree_1pg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_env::me_nodemax",
+          "detailed": "Max size of a node on a page",
+          "name": "me_nodemax",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_env::me_live_reader",
+          "detailed": "have liveness lock in reader table",
+          "name": "me_live_reader",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* MDB_env::me_userctx",
+          "detailed": "User-settable context",
+          "name": "me_userctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_assert_func* MDB_env::me_assert_func",
+          "detailed": "Callback for assertion failures",
+          "name": "me_assert_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_meta::mm_magic",
+          "detailed": "Stamp identifying this as an LMDB file. It must be set to MDB_MAGIC.",
+          "name": "mm_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_meta::mm_version",
+          "detailed": "Version number of this file. Must be set to MDB_DATA_VERSION.",
+          "name": "mm_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* MDB_meta::mm_address",
+          "detailed": "address for fixed mapping",
+          "name": "mm_address",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MDB_meta::mm_mapsize",
+          "detailed": "size of mmap region",
+          "name": "mm_mapsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "MDB_db MDB_meta::mm_dbs[2]",
+          "detailed": "first is free space, 2nd is main db",
+          "name": "mm_dbs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_meta::mm_last_pg",
+          "detailed": "Last used page in the datafile. Actually the file may be shorter if the freeDB lists the final pages.",
+          "name": "mm_last_pg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile txnid_t MDB_meta::mm_txnid",
+          "detailed": "txnid that committed this page",
+          "name": "mm_txnid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_name::mn_len",
+          "detailed": "Length",
+          "name": "mn_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_name::mn_alloced",
+          "detailed": "True if mn_val was malloced",
+          "name": "mn_alloced",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "mdb_nchar_t* MDB_name::mn_val",
+          "detailed": "Contents",
+          "name": "mn_val",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short MDB_node::mn_lo",
+          "detailed": "part of data size or pgno",
+          "name": "mn_lo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short MDB_node::mn_hi",
+          "detailed": "\n        ",
+          "name": "mn_hi",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short MDB_node::mn_flags",
+          "detailed": "Node Flags",
+          "name": "mn_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short MDB_node::mn_ksize",
+          "detailed": "key size",
+          "name": "mn_ksize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1]",
+          "brief": "\n        ",
+          "definition": "char MDB_node::mn_data[1]",
+          "detailed": "key and data are appended here",
+          "name": "mn_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn MDB_ntxn::mnt_txn",
+          "detailed": "the transaction",
+          "name": "mnt_txn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_pgstate MDB_ntxn::mnt_pgstate",
+          "detailed": "parent transaction's saved freestate",
+          "name": "mnt_pgstate",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_page::p_pgno",
+          "detailed": "page number",
+          "name": "p_pgno",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct MDB_page* MDB_page::p_next",
+          "detailed": "for in-memory list of freed pages",
+          "name": "p_next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MDB_page::@026065016237111007253212130312315034270237372362 MDB_page::mp_p",
+          "detailed": "\n        ",
+          "name": "mp_p",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_page::mp_pad",
+          "detailed": "key size if this is a LEAF2 page",
+          "name": "mp_pad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_page::mp_flags",
+          "detailed": "Page Flags",
+          "name": "mp_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_page::pb_lower",
+          "detailed": "lower bound of free space",
+          "name": "pb_lower",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_page::pb_upper",
+          "detailed": "upper bound of free space",
+          "name": "pb_upper",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct MDB_page::@040217226072362337003121036115266003077067137312::@240201327125253204004322163370225272124200047265 MDB_page::pb",
+          "detailed": "\n        ",
+          "name": "pb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_page::pb_pages",
+          "detailed": "number of overflow pages",
+          "name": "pb_pages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MDB_page::@040217226072362337003121036115266003077067137312 MDB_page::mp_pb",
+          "detailed": "\n        ",
+          "name": "mp_pb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[0]",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_page::mp_ptrs[0]",
+          "detailed": "dynamic size",
+          "name": "mp_ptrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[sizeof(pgno_t)/2]",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_page2::mp2_p[sizeof(pgno_t)/2]",
+          "detailed": "\n        ",
+          "name": "mp2_p",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_page2::mp2_pad",
+          "detailed": "\n        ",
+          "name": "mp2_pad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MDB_page2::mp2_flags",
+          "detailed": "\n        ",
+          "name": "mp2_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_page2::mp2_lower",
+          "detailed": "\n        ",
+          "name": "mp2_lower",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_page2::mp2_upper",
+          "detailed": "\n        ",
+          "name": "mp2_upper",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[0]",
+          "brief": "\n        ",
+          "definition": "indx_t MDB_page2::mp2_ptrs[0]",
+          "detailed": "\n        ",
+          "name": "mp2_ptrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t* MDB_pgstate::mf_pghead",
+          "detailed": "Reclaimed freeDB pages, or NULL before use",
+          "name": "mf_pghead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "txnid_t MDB_pgstate::mf_pglast",
+          "detailed": "ID of last used record, or 0 if !mf_pghead",
+          "name": "mf_pglast",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_rxbody MDB_reader::mrx",
+          "detailed": "\n        ",
+          "name": "mrx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(sizeof(MDB_rxbody)+64 -1) &~(64 -1)]",
+          "brief": "\n        ",
+          "definition": "char MDB_reader::pad[(sizeof(MDB_rxbody)+64 -1) &~(64 -1)]",
+          "detailed": "cache line alignment",
+          "name": "pad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MDB_reader::@002063140244130265313303343326373331207157275061 MDB_reader::mru",
+          "detailed": "\n        ",
+          "name": "mru",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile txnid_t MDB_rxbody::mrb_txnid",
+          "detailed": "Current Transaction ID when this transaction began, or (txnid_t)-1. Multiple readers that start at the same time will probably have the same ID here. Again, it's not important to exclude them from anything; all we need to know is which version of the DB they started from so we can avoid overwriting any data used in that particular version.",
+          "name": "mrb_txnid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile pid_t MDB_rxbody::mrb_pid",
+          "detailed": "The process ID of the process owning this reader txn.",
+          "name": "mrb_pid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile pthread_t MDB_rxbody::mrb_tid",
+          "detailed": "The thread ID of the thread owning this txn.",
+          "name": "mrb_tid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_txbody::mtb_magic",
+          "detailed": "Stamp identifying this as an LMDB file. It must be set to MDB_MAGIC.",
+          "name": "mtb_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MDB_txbody::mtb_format",
+          "detailed": "Format of this lock file. Must be set to MDB_LOCK_FORMAT.",
+          "name": "mtb_format",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "mdb_mutex_t MDB_txbody::mtb_rmutex",
+          "detailed": "Mutex protecting access to this table. This is the reader table lock used with LOCK_MUTEX().",
+          "name": "mtb_rmutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile txnid_t MDB_txbody::mtb_txnid",
+          "detailed": "The ID of the last transaction committed to the database. This is recorded here only for convenience; the value can always be determined by reading the main database meta pages.",
+          "name": "mtb_txnid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile unsigned MDB_txbody::mtb_numreaders",
+          "detailed": "The number of slots that have been used in the reader table. This always records the maximum count, it is not decremented when readers release their slots.",
+          "name": "mtb_numreaders",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn* MDB_txn::mt_parent",
+          "detailed": "parent of a nested txn",
+          "name": "mt_parent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn* MDB_txn::mt_child",
+          "detailed": "Nested txn under this txn, set together with flag MDB_TXN_HAS_CHILD",
+          "name": "mt_child",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t MDB_txn::mt_next_pgno",
+          "detailed": "next unallocated page",
+          "name": "mt_next_pgno",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "txnid_t MDB_txn::mt_txnid",
+          "detailed": "The ID of this transaction. IDs are integers incrementing from 1. Only committed write transactions increment the ID. If a transaction aborts, the ID may be re-used by the next writer.",
+          "name": "mt_txnid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_env* MDB_txn::mt_env",
+          "detailed": "the DB environment",
+          "name": "mt_env",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_IDL MDB_txn::mt_free_pgs",
+          "detailed": "The list of pages that became unused during this transaction.",
+          "name": "mt_free_pgs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_page* MDB_txn::mt_loose_pgs",
+          "detailed": "The list of loose pages that became unused and may be reused in this transaction, linked through NEXT_LOOSE_PAGE(page).",
+          "name": "mt_loose_pgs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int MDB_txn::mt_loose_count",
+          "detailed": "Number of loose pages (mt_loose_pgs)",
+          "name": "mt_loose_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_IDL MDB_txn::mt_spill_pgs",
+          "detailed": "The sorted list of dirty pages we temporarily wrote to disk because the dirty list was full. page numbers in here are shifted left by 1, deleted slots have the LSB set.",
+          "name": "mt_spill_pgs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_ID2L MDB_txn::dirty_list",
+          "detailed": "For write txns: Modified pages. Sorted when not MDB_WRITEMAP.",
+          "name": "dirty_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_reader* MDB_txn::reader",
+          "detailed": "For read txns: This thread/txn's reader table slot, or NULL.",
+          "name": "reader",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MDB_txn::@223032161013304054300100252275215055221037233335 MDB_txn::mt_u",
+          "detailed": "\n        ",
+          "name": "mt_u",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbx* MDB_txn::mt_dbxs",
+          "detailed": "Array of records for each DB known in the environment.",
+          "name": "mt_dbxs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_db* MDB_txn::mt_dbs",
+          "detailed": "Array of MDB_db records for each known DB",
+          "name": "mt_dbs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int* MDB_txn::mt_dbiseqs",
+          "detailed": "Array of sequence numbers for each DB handle",
+          "name": "mt_dbiseqs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cursor** MDB_txn::mt_cursors",
+          "detailed": "In write txns, array of cursors for each DB",
+          "name": "mt_cursors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* MDB_txn::mt_dbflags",
+          "detailed": "Array of flags for each DB",
+          "name": "mt_dbflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbi MDB_txn::mt_numdbs",
+          "detailed": "Number of DB records in use, or 0 when the txn is finished. This number only ever increments until the txn finishes; we don't decrement it when individual DB handles are closed.",
+          "name": "mt_numdbs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_txn::mt_flags",
+          "detailed": "Transaction Flags",
+          "name": "mt_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int MDB_txn::mt_dirty_room",
+          "detailed": "dirty_list room: Array size - #dirty pages visible to this txn. Includes ancestor txns' dirty pages not hidden by other txns' dirty/spilled pages. Thus commit(nested txn) has room to merge dirty_list into mt_parent after freeing hidden mt_parent pages.",
+          "name": "mt_dirty_room",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txbody MDB_txninfo::mtb",
+          "detailed": "\n        ",
+          "name": "mtb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MDB_txninfo::@212016176263134145140141147000026151356222114034 MDB_txninfo::mt1",
+          "detailed": "\n        ",
+          "name": "mt1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "mdb_mutex_t MDB_txninfo::mt2_wmutex",
+          "detailed": "\n        ",
+          "name": "mt2_wmutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MDB_txninfo::@265065052170222267037000345335175013301033072127 MDB_txninfo::mt2",
+          "detailed": "\n        ",
+          "name": "mt2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1]",
+          "brief": "\n        ",
+          "definition": "MDB_reader MDB_txninfo::mti_readers[1]",
+          "detailed": "\n        ",
+          "name": "mti_readers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cursor MDB_xcursor::mx_cursor",
+          "detailed": "A sub-cursor for traversing the Dup DB",
+          "name": "mx_cursor",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_db MDB_xcursor::mx_db",
+          "detailed": "The database record for this Dup DB",
+          "name": "mx_db",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_dbx MDB_xcursor::mx_dbx",
+          "detailed": "The auxiliary DB record for this Dup DB",
+          "name": "mx_dbx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char MDB_xcursor::mx_dbflag",
+          "detailed": "The Transaction DB Flags for this Dup DB",
+          "name": "mx_dbflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_env* mdb_copy::mc_env",
+          "detailed": "\n        ",
+          "name": "mc_env",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t mdb_copy::mc_mutex",
+          "detailed": "\n        ",
+          "name": "mc_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_cond_t mdb_copy::mc_cond",
+          "detailed": "Condition variable for mc_new",
+          "name": "mc_cond",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "char* mdb_copy::mc_wbuf[2]",
+          "detailed": "\n        ",
+          "name": "mc_wbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "char* mdb_copy::mc_over[2]",
+          "detailed": "\n        ",
+          "name": "mc_over",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "size_t mdb_copy::mc_wlen[2]",
+          "detailed": "\n        ",
+          "name": "mc_wlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "size_t mdb_copy::mc_olen[2]",
+          "detailed": "\n        ",
+          "name": "mc_olen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pgno_t mdb_copy::mc_next_pgno",
+          "detailed": "\n        ",
+          "name": "mc_next_pgno",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mdb_copy::mc_fd",
+          "detailed": "\n        ",
+          "name": "mc_fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mdb_copy::mc_toggle",
+          "detailed": "Buffer number in provider",
+          "name": "mc_toggle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mdb_copy::mc_new",
+          "detailed": "(0-2 buffers to write) | (MDB_EOF at end)",
+          "name": "mc_new",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile int mdb_copy::mc_error",
+          "detailed": "Error code. Never cleared if set. Both threads can set nonzero to fail the copy. Not mutex-protected, LMDB expects atomic int.",
+          "name": "mc_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_page MDB_metabuf::mb_page",
+          "detailed": "\n        ",
+          "name": "mb_page",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[((unsigned) offsetof(MDB_page, mp_ptrs))]",
+          "brief": "\n        ",
+          "definition": "char MDB_metabuf::mm_pad[((unsigned) offsetof(MDB_page, mp_ptrs))]",
+          "detailed": "\n        ",
+          "name": "mm_pad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_meta MDB_metabuf::mm_meta",
+          "detailed": "\n        ",
+          "name": "mm_meta",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct MDB_metabuf::@221136040320144104223000213150045365103337153045 MDB_metabuf::mb_metabuf",
+          "detailed": "\n        ",
+          "name": "mb_metabuf",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libraries/liblmdb/mdb_copy.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int sig)",
+          "brief": "\n        ",
+          "definition": "static void sighandle",
+          "detailed": "\n        ",
+          "name": "sighandle",
+          "params": [
+            "sig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MDB_STDOUT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/mdb_dump.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int sig)",
+          "brief": "\n        ",
+          "definition": "static void dumpsig",
+          "detailed": "\n        ",
+          "name": "dumpsig",
+          "params": [
+            "sig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char c)",
+          "brief": "\n        ",
+          "definition": "static void hex",
+          "detailed": "\n        ",
+          "name": "hex",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MDB_val *v)",
+          "brief": "\n        ",
+          "definition": "static void text",
+          "detailed": "\n        ",
+          "name": "text",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MDB_val *v)",
+          "brief": "\n        ",
+          "definition": "static void byte",
+          "detailed": "\n        ",
+          "name": "byte",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MDB_txn *txn, MDB_dbi dbi, char *name)",
+          "brief": "\n        ",
+          "definition": "static int dumpit",
+          "detailed": "\n        ",
+          "name": "dumpit",
+          "params": [
+            "txn",
+            "dbi",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *prog)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "prog"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PRINT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct flagbit flagbit",
+          "detailed": "\n        ",
+          "name": "flagbit",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "flagbit dbflags[]",
+          "detailed": "\n        ",
+          "name": "dbflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile sig_atomic_t gotsig",
+          "detailed": "\n        ",
+          "name": "gotsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char hexc[]",
+          "detailed": "\n        ",
+          "name": "hexc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int flagbit::bit",
+          "detailed": "\n        ",
+          "name": "bit",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char * flagbit::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int flagbit::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libraries/liblmdb/mdb_load.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void readhdr",
+          "detailed": "\n        ",
+          "name": "readhdr",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void badend",
+          "detailed": "\n        ",
+          "name": "badend",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *c2)",
+          "brief": "\n        ",
+          "definition": "static int unhex",
+          "detailed": "\n        ",
+          "name": "unhex",
+          "params": [
+            "c2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MDB_val *out, MDB_val *buf)",
+          "brief": "\n        ",
+          "definition": "static int readline",
+          "detailed": "\n        ",
+          "name": "readline",
+          "params": [
+            "out",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MDB_val *a, const MDB_val *b)",
+          "brief": "\n        ",
+          "definition": "static int greater",
+          "detailed": "\n        ",
+          "name": "greater",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PRINT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NOHDR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STRLENOF",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "S",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct flagbit flagbit",
+          "detailed": "\n        ",
+          "name": "flagbit",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* subname",
+          "detailed": "\n        ",
+          "name": "subname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t lineno",
+          "detailed": "\n        ",
+          "name": "lineno",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int version",
+          "detailed": "\n        ",
+          "name": "version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* prog",
+          "detailed": "\n        ",
+          "name": "prog",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int Eof",
+          "detailed": "\n        ",
+          "name": "Eof",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_envinfo info",
+          "detailed": "\n        ",
+          "name": "info",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_val kbuf",
+          "detailed": "\n        ",
+          "name": "kbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_val dbuf",
+          "detailed": "\n        ",
+          "name": "dbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_val k0buf",
+          "detailed": "\n        ",
+          "name": "k0buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "flagbit dbflags[]",
+          "detailed": "\n        ",
+          "name": "dbflags",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libraries/liblmdb/mdb_stat.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MDB_stat *ms)",
+          "brief": "\n        ",
+          "definition": "static void prstat",
+          "detailed": "\n        ",
+          "name": "prstat",
+          "params": [
+            "ms"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *prog)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "prog"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/midl.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/midl.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_ID MDB_ID2::mid",
+          "detailed": "The ID",
+          "name": "mid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* MDB_ID2::mptr",
+          "detailed": "The pointer",
+          "name": "mptr",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libraries/liblmdb/mplay.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned char *c2)",
+          "brief": "\n        ",
+          "definition": "static int unhex",
+          "detailed": "\n        ",
+          "name": "unhex",
+          "params": [
+            "c2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *in, char *out)",
+          "brief": "\n        ",
+          "definition": "int inhex",
+          "detailed": "\n        ",
+          "name": "inhex",
+          "params": [
+            "in",
+            "out"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *tenv, MDB_env *renv)",
+          "brief": "\n        ",
+          "definition": "static void addenv",
+          "detailed": "\n        ",
+          "name": "addenv",
+          "params": [
+            "tenv",
+            "renv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *tenv)",
+          "brief": "\n        ",
+          "definition": "static envpair * findenv",
+          "detailed": "\n        ",
+          "name": "findenv",
+          "params": [
+            "tenv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(envpair *ep)",
+          "brief": "\n        ",
+          "definition": "static void delenv",
+          "detailed": "\n        ",
+          "name": "delenv",
+          "params": [
+            "ep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *tenv, void *ttxn, MDB_txn *rtxn)",
+          "brief": "\n        ",
+          "definition": "static void addtxn",
+          "detailed": "\n        ",
+          "name": "addtxn",
+          "params": [
+            "tenv",
+            "ttxn",
+            "rtxn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ttxn)",
+          "brief": "\n        ",
+          "definition": "static txnpair * findtxn",
+          "detailed": "\n        ",
+          "name": "findtxn",
+          "params": [
+            "ttxn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(txnpair *tp)",
+          "brief": "\n        ",
+          "definition": "static void deltxn",
+          "detailed": "\n        ",
+          "name": "deltxn",
+          "params": [
+            "tp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(txnpair *tp, void *tcrs, MDB_cursor *rcrs)",
+          "brief": "\n        ",
+          "definition": "static void addcrs",
+          "detailed": "\n        ",
+          "name": "addcrs",
+          "params": [
+            "tp",
+            "tcrs",
+            "rcrs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *tcrs)",
+          "brief": "\n        ",
+          "definition": "static crspair * findcrs",
+          "detailed": "\n        ",
+          "name": "findcrs",
+          "params": [
+            "tcrs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *tcrs)",
+          "brief": "\n        ",
+          "definition": "static void delcrs",
+          "detailed": "\n        ",
+          "name": "delcrs",
+          "params": [
+            "tcrs"
+          ],
+          "static": true
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "void child",
+          "detailed": "\n        ",
+          "name": "child",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(int tpid)",
+          "brief": "\n        ",
+          "definition": "static pidpair * addpid",
+          "detailed": "\n        ",
+          "name": "addpid",
+          "params": [
+            "tpid"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int tpid)",
+          "brief": "\n        ",
+          "definition": "static pidpair * findpid",
+          "detailed": "\n        ",
+          "name": "findpid",
+          "params": [
+            "tpid"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int tpid)",
+          "brief": "\n        ",
+          "definition": "static void delpid",
+          "detailed": "\n        ",
+          "name": "delpid",
+          "params": [
+            "tpid"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int sig)",
+          "brief": "\n        ",
+          "definition": "static void reaper",
+          "detailed": "\n        ",
+          "name": "reaper",
+          "params": [
+            "sig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MDB_SCNy",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SCMP",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SOFF",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXENVS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXTXNS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXCRSS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXPIDS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct crspair crspair",
+          "detailed": "\n        ",
+          "name": "crspair",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct txnpair txnpair",
+          "detailed": "\n        ",
+          "name": "txnpair",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct envpair envpair",
+          "detailed": "\n        ",
+          "name": "envpair",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct pidpair pidpair",
+          "detailed": "\n        ",
+          "name": "pidpair",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[8192]",
+          "brief": "\n        ",
+          "definition": "char inbuf[8192]",
+          "detailed": "\n        ",
+          "name": "inbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dbuf",
+          "detailed": "\n        ",
+          "name": "dbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char * kbuf",
+          "detailed": "\n        ",
+          "name": "kbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t dbufsize",
+          "detailed": "\n        ",
+          "name": "dbufsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int maxkey",
+          "detailed": "\n        ",
+          "name": "maxkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[16]",
+          "brief": "\n        ",
+          "definition": "envpair envs[16]",
+          "detailed": "\n        ",
+          "name": "envs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int nenvs",
+          "detailed": "\n        ",
+          "name": "nenvs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "envpair* lastenv",
+          "detailed": "\n        ",
+          "name": "lastenv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "txnpair* lasttxn",
+          "detailed": "\n        ",
+          "name": "lasttxn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "crspair* lastcrs",
+          "detailed": "\n        ",
+          "name": "lastcrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pidpair* lastpid",
+          "detailed": "\n        ",
+          "name": "lastpid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[16]",
+          "brief": "\n        ",
+          "definition": "pidpair pids[16]",
+          "detailed": "\n        ",
+          "name": "pids",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int npids",
+          "detailed": "\n        ",
+          "name": "npids",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long lcount",
+          "detailed": "\n        ",
+          "name": "lcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile pid_t killpid",
+          "detailed": "\n        ",
+          "name": "killpid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* crspair::tcrs",
+          "detailed": "\n        ",
+          "name": "tcrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_cursor* crspair::rcrs",
+          "detailed": "\n        ",
+          "name": "rcrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* envpair::tenv",
+          "detailed": "\n        ",
+          "name": "tenv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_env* envpair::renv",
+          "detailed": "\n        ",
+          "name": "renv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[16]",
+          "brief": "\n        ",
+          "definition": "txnpair envpair::txns[16]",
+          "detailed": "\n        ",
+          "name": "txns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int envpair::ntxns",
+          "detailed": "\n        ",
+          "name": "ntxns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pidpair::tpid",
+          "detailed": "\n        ",
+          "name": "tpid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pid_t pidpair::rpid",
+          "detailed": "\n        ",
+          "name": "rpid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pidpair::fdout",
+          "detailed": "\n        ",
+          "name": "fdout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pidpair::fdin",
+          "detailed": "\n        ",
+          "name": "fdin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* txnpair::ttxn",
+          "detailed": "\n        ",
+          "name": "ttxn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MDB_txn* txnpair::rtxn",
+          "detailed": "\n        ",
+          "name": "rtxn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[16]",
+          "brief": "\n        ",
+          "definition": "crspair txnpair::cursors[16]",
+          "detailed": "\n        ",
+          "name": "cursors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int txnpair::ncursors",
+          "detailed": "\n        ",
+          "name": "ncursors",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libraries/liblmdb/mtest.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/mtest2.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/mtest3.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/mtest4.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/mtest5.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libraries/liblmdb/mtest6.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "E",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RES",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char dkbuf[1024]",
+          "detailed": "\n        ",
+          "name": "dkbuf",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "libraries",
+  "schema_version": 1,
+  "version": "0.9.35"
+}

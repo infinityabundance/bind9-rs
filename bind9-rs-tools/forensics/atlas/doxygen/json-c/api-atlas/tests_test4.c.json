@@ -1,0 +1,50 @@
+{
+  "files": {
+    "tests/test4.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *s)",
+          "brief": "\n        ",
+          "definition": "void print_hex",
+          "detailed": "\n        ",
+          "name": "print_hex",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_lot_of_adds",
+          "detailed": "\n        ",
+          "name": "test_lot_of_adds",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test4.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

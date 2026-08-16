@@ -1,0 +1,115 @@
+{
+  "files": {
+    "tests/test_deep_copy.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(json_object *src1)",
+          "brief": "\n        ",
+          "definition": "static void do_benchmark",
+          "detailed": "\n        ",
+          "name": "do_benchmark",
+          "params": [
+            "src1"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *jso, struct printbuf *pb, int level, int flags)",
+          "brief": "\n        ",
+          "definition": "int my_custom_serializer",
+          "detailed": "\n        ",
+          "name": "my_custom_serializer",
+          "params": [
+            "jso",
+            "pb",
+            "level",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *src, json_object *parent, const char *key, size_t index, json_object **dst)",
+          "brief": "\n        ",
+          "definition": "int my_shallow_copy",
+          "detailed": "\n        ",
+          "name": "my_shallow_copy",
+          "params": [
+            "src",
+            "parent",
+            "key",
+            "index",
+            "dst"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* json_str1",
+          "detailed": "\n        ",
+          "name": "json_str1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* json_str2",
+          "detailed": "\n        ",
+          "name": "json_str2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* json_str3",
+          "detailed": "\n        ",
+          "name": "json_str3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_object_to_json_string_fn my_custom_serializer",
+          "detailed": "\n        ",
+          "name": "my_custom_serializer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_shallow_copy_fn my_shallow_copy",
+          "detailed": "\n        ",
+          "name": "my_shallow_copy",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_deep_copy.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

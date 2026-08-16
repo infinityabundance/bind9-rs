@@ -1,0 +1,15 @@
+{
+  "enum_value_count": 0,
+  "file_count": 36,
+  "function_count": 264,
+  "libraries": [
+    "bin/mmdblookup.c",
+    "include",
+    "src",
+    "t"
+  ],
+  "macro_count": 84,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "1.13.3"
+}

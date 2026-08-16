@@ -1,0 +1,39 @@
+{
+  "files": {
+    "tests/test_double_serializer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "double zero_dot_zero",
+          "detailed": "\n        ",
+          "name": "zero_dot_zero",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_double_serializer.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,59 @@
+{
+  "files": {
+    "json_patch.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *copy_from, struct json_object *patch, struct json_object **base, struct json_patch_error *patch_error)",
+          "brief": "\n        ",
+          "definition": "int json_patch_apply",
+          "detailed": "Apply the JSON patch to the base object. The patch object must be formatted as per RFC 6902, i.e. a json_type_array containing patch operations. If the patch is not correctly formatted, an error will be returned.\nThe json_object at *base will be modified in place. Exactly one of *base or copy_from must be non-NULL. If *base is NULL, a new copy of copy_from will allocated and populated using json_object_deep_copy(). In this case json_object_put() must be used to free *base even if the overall patching operation fails.\nIf anything fails during patching a negative value will be returned, and patch_error (if non-NULL) will be populated with error details.\n\n\nbase\n\n\na pointer to the JSON object which to patch \n\n\n\n\npatch\n\n\nthe JSON object that describes the patch to be applied \n\n\n\n\ncopy_from\n\n\na JSON object to copy to *base \n\n\n\n\npatch_error\n\n\noptional, details about errors\n\n\n\nnegative if an error (or not found), or 0 if patch completely applied \n\n\na pointer to the JSON object which to patch \nthe JSON object that describes the patch to be applied \na JSON object to copy to *base \noptional, details about errors\nnegative if an error (or not found), or 0 if patch completely applied",
+          "name": "json_patch_apply",
+          "params": [
+            "copy_from",
+            "patch",
+            "base",
+            "patch_error"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_patch_error::errno_code",
+          "detailed": "An errno value indicating what kind of error occurred. Possible values include:\nENOENT - A path referenced in the operation does not exist.\nEINVAL - An invalid operation or with invalid path was attempted\nENOMEM - Unable to allocate memory\nEFAULT - Invalid arguments were passed to json_patch_apply() (i.e. a C API error, vs. a data error like EINVAL) \n\n\nENOENT - A path referenced in the operation does not exist.\nEINVAL - An invalid operation or with invalid path was attempted\nENOMEM - Unable to allocate memory\nEFAULT - Invalid arguments were passed to json_patch_apply() (i.e. a C API error, vs. a data error like EINVAL)",
+          "name": "errno_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t json_patch_error::patch_failure_idx",
+          "detailed": "The index into the patch array of the operation that failed, or SIZE_T_MAX for overall errors.",
+          "name": "patch_failure_idx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* json_patch_error::errmsg",
+          "detailed": "A human readable error message. Allocated from static storage, does not need to be freed.",
+          "name": "errmsg",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_patch.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

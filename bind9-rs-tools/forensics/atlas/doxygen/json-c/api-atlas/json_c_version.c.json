@@ -1,0 +1,39 @@
+{
+  "files": {
+    "json_c_version.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * json_c_version",
+          "detailed": "JSON_C_VERSION \n\nthe version of the json-c library as a string \n\n\nJSON_C_VERSION \nthe version of the json-c library as a string",
+          "name": "json_c_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int json_c_version_num",
+          "detailed": "The json-c version encoded into an int, with the low order 8 bits being the micro version, the next higher 8 bits being the minor version and the next higher 8 bits being the major version. For example, 7.12.99 would be 0x00070B63.\nJSON_C_VERSION_NUM \n\nthe version of the json-c library as an int \n\n\nJSON_C_VERSION_NUM \nthe version of the json-c library as an int",
+          "name": "json_c_version_num",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "json_c_version.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

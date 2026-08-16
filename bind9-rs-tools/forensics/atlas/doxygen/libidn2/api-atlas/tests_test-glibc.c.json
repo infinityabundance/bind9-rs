@@ -1,0 +1,234 @@
+{
+  "files": {
+    "tests/test-glibc.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "charset_utf8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "charset_latin1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "charset_neither",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "charset_kind",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "((malloc))",
+          "brief": "\n        ",
+          "definition": "static char * __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static enum charset_kind determine_current_charset_kind",
+          "detailed": "\n        ",
+          "name": "determine_current_charset_kind",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *func, const char *input, const char *expected, int ret, char *actual)",
+          "brief": "\n        ",
+          "definition": "static void check_success",
+          "detailed": "\n        ",
+          "name": "check_success",
+          "params": [
+            "func",
+            "input",
+            "expected",
+            "ret",
+            "actual"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input, const char *expected)",
+          "brief": "\n        ",
+          "definition": "static void check_lookup_ul_success",
+          "detailed": "\n        ",
+          "name": "check_lookup_ul_success",
+          "params": [
+            "input",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input, const char *expected)",
+          "brief": "\n        ",
+          "definition": "static void check_to_unicode_lzlz_success",
+          "detailed": "\n        ",
+          "name": "check_to_unicode_lzlz_success",
+          "params": [
+            "input",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *input, int expected)",
+          "brief": "\n        ",
+          "definition": "static void check_to_unicode_lzlz_failure",
+          "detailed": "\n        ",
+          "name": "check_to_unicode_lzlz_failure",
+          "params": [
+            "input",
+            "expected"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void run_utf8_tests",
+          "detailed": "\n        ",
+          "name": "run_utf8_tests",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void run_latin1_tests",
+          "detailed": "\n        ",
+          "name": "run_latin1_tests",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const wchar_t L_naemchen[]",
+          "detailed": "\n        ",
+          "name": "L_naemchen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* naemchen_latin1",
+          "detailed": "\n        ",
+          "name": "naemchen_latin1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* naemchen_utf8",
+          "detailed": "\n        ",
+          "name": "naemchen_utf8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const wchar_t L_shem[]",
+          "detailed": "\n        ",
+          "name": "L_shem",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* shem_utf8",
+          "detailed": "\n        ",
+          "name": "shem_utf8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* locale",
+          "detailed": "\n        ",
+          "name": "locale",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int errors",
+          "detailed": "\n        ",
+          "name": "errors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* const locale_candidates[]",
+          "detailed": "\n        ",
+          "name": "locale_candidates",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test-glibc.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

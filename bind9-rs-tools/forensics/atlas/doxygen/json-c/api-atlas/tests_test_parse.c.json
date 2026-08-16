@@ -1,0 +1,142 @@
+{
+  "files": {
+    "tests/test_parse.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_basic_parse",
+          "detailed": "\n        ",
+          "name": "test_basic_parse",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_utf8_parse",
+          "detailed": "\n        ",
+          "name": "test_utf8_parse",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_verbose_parse",
+          "detailed": "\n        ",
+          "name": "test_verbose_parse",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_incremental_parse",
+          "detailed": "\n        ",
+          "name": "test_incremental_parse",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *jso)",
+          "brief": "\n        ",
+          "definition": "static void do_clear_serializer",
+          "detailed": "\n        ",
+          "name": "do_clear_serializer",
+          "params": [
+            "jso"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *test_string, int clear_serializer)",
+          "brief": "\n        ",
+          "definition": "static void single_incremental_parse",
+          "detailed": "\n        ",
+          "name": "single_incremental_parse",
+          "params": [
+            "test_string",
+            "clear_serializer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *test_string, int clear_serializer)",
+          "brief": "\n        ",
+          "definition": "static void single_basic_parse",
+          "detailed": "\n        ",
+          "name": "single_basic_parse",
+          "params": [
+            "test_string",
+            "clear_serializer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int clear_serializer",
+          "detailed": "\n        ",
+          "name": "clear_serializer",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc clear_serializer",
+          "detailed": "\n        ",
+          "name": "clear_serializer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct incremental_step incremental_steps[]",
+          "detailed": "\n        ",
+          "name": "incremental_steps",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_parse.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,185 @@
+{
+  "files": {
+    "printbuf.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct printbuf * printbuf_new",
+          "detailed": "\n        ",
+          "name": "printbuf_new",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p, const char *buf, int size)",
+          "brief": "\n        ",
+          "definition": "int printbuf_memappend",
+          "detailed": "\n        ",
+          "name": "printbuf_memappend",
+          "params": [
+            "p",
+            "buf",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *pb, int offset, int charvalue, int len)",
+          "brief": "\n        ",
+          "definition": "int printbuf_memset",
+          "detailed": "Set len bytes of the buffer to charvalue, starting at offset offset. Similar to calling memset(x, charvalue, len);\nThe memory allocated for the buffer is extended as necessary.\nIf offset is -1, this starts at the end of the current data in the buffer.",
+          "name": "printbuf_memset",
+          "params": [
+            "pb",
+            "offset",
+            "charvalue",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p, const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "int sprintbuf",
+          "detailed": "Formatted print to printbuf.\nThis function is the most expensive of the available functions for appending string data to a printbuf and should be used only where convenience is more important than speed. Avoid using this function in high performance code or tight loops; in these scenarios, consider using snprintf() with a static buffer in conjunction with one of the printbuf_*append() functions.\nSee also: printbuf_memappend_fast() printbuf_memappend() printbuf_strappend()",
+          "name": "sprintbuf",
+          "params": [
+            "p",
+            "msg",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p)",
+          "brief": "\n        ",
+          "definition": "void printbuf_reset",
+          "detailed": "\n        ",
+          "name": "printbuf_reset",
+          "params": [
+            "p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct printbuf *p)",
+          "brief": "\n        ",
+          "definition": "void printbuf_free",
+          "detailed": "\n        ",
+          "name": "printbuf_free",
+          "params": [
+            "p"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_EXPORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "printbuf_memappend_fast",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "printbuf_length",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Results in a compile error if the argument is not a string literal.",
+          "name": "_printbuf_check_literal",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This is an optimization wrapper around printbuf_memappend() that is useful for appending string literals. Since the size of string constants is known at compile time, using this macro can avoid a costly strlen() call. This is especially helpful when a constant string must be appended many times. If you got here because of a compilation error caused by passing something other than a string literal, use printbuf_memappend_fast() in conjunction with strlen().\nSee also: printbuf_memappend_fast() printbuf_memappend() sprintbuf()",
+          "name": "printbuf_strappend",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct printbuf printbuf",
+          "detailed": "\n        ",
+          "name": "printbuf",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* printbuf::buf",
+          "detailed": "\n        ",
+          "name": "buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int printbuf::bpos",
+          "detailed": "\n        ",
+          "name": "bpos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int printbuf::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "printbuf.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

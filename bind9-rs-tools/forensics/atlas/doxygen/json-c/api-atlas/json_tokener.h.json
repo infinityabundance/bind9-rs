@@ -1,0 +1,759 @@
+{
+  "files": {
+    "json_tokener.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_continue",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_depth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_eof",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_unexpected",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_null",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_boolean",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_number",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_object_key_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_object_key_sep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_object_value_sep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_comment",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_parse_utf8_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_error_memory",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_eatws",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_finish",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_null",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_comment_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_comment",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_comment_eol",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_comment_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_string_escape",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_escape_unicode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_escape_unicode_need_escape",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_escape_unicode_need_u",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_boolean",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_number",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_array_add",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_array_sep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_field_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_field",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_field_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_value_add",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_sep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_array_after_sep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_object_field_start_after_sep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_tokener_state_inf",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "json_tokener_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "DeprecatedDon't use this outside of json_tokener.c, it will be made private in a future release. \n\nDon't use this outside of json_tokener.c, it will be made private in a future release.",
+          "name": "json_tokener_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "size_t json_tokener_get_parse_end",
+          "detailed": "Return the offset of the byte after the last byte parsed relative to the start of the most recent string passed in to json_tokener_parse_ex(). i.e. this is where parsing would start again if the input contains another JSON object after the currently parsed one.\nNote that when multiple parse calls are issued, this is not the total number of characters parsed.\nIn the past this would have been accessed as tok->char_offset.\nSee json_tokener_parse_ex() for an example of how to use this.",
+          "name": "json_tokener_get_parse_end",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(enum json_tokener_error jerr)",
+          "brief": "\n        ",
+          "definition": "const char * json_tokener_error_desc",
+          "detailed": "Given an error previously returned by json_tokener_get_error(), return a human readable description of the error.\na generic error message is returned if an invalid error value is provided. \n\n\na generic error message is returned if an invalid error value is provided.",
+          "name": "json_tokener_error_desc",
+          "params": [
+            "jerr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "enum json_tokener_error json_tokener_get_error",
+          "detailed": "Retrieve the error caused by the last call to json_tokener_parse_ex(), or json_tokener_success if there is no error.\nWhen parsing a JSON string in pieces, if the tokener is in the middle of parsing this will return json_tokener_continue.\njson_tokener_error_desc(). \n\n\njson_tokener_error_desc().",
+          "name": "json_tokener_get_error",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_tokener * json_tokener_new",
+          "detailed": "Allocate a new json_tokener. When done using that to parse objects, free it with json_tokener_free(). See json_tokener_parse_ex() for usage details.",
+          "name": "json_tokener_new",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int depth)",
+          "brief": "\n        ",
+          "definition": "struct json_tokener * json_tokener_new_ex",
+          "detailed": "Allocate a new json_tokener with a custom max nesting depth. The depth must be at least 1. JSON_TOKENER_DEFAULT_DEPTH \n\n\nJSON_TOKENER_DEFAULT_DEPTH",
+          "name": "json_tokener_new_ex",
+          "params": [
+            "depth"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "void json_tokener_free",
+          "detailed": "Free a json_tokener previously allocated with json_tokener_new().",
+          "name": "json_tokener_free",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok)",
+          "brief": "\n        ",
+          "definition": "void json_tokener_reset",
+          "detailed": "Reset the state of a json_tokener, to prepare to parse a brand new JSON object.",
+          "name": "json_tokener_reset",
+          "params": [
+            "tok"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_tokener_parse",
+          "detailed": "Parse a json_object out of the string str.\nIf you need more control over how the parsing occurs, see json_tokener_parse_ex().",
+          "name": "json_tokener_parse",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str, enum json_tokener_error *error)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_tokener_parse_verbose",
+          "detailed": "Parse a json_object out of the string str, but if it fails return the error in *error. json_tokener_parse() \n\njson_tokener_parse_ex() \n\n\njson_tokener_parse() \njson_tokener_parse_ex()",
+          "name": "json_tokener_parse_verbose",
+          "params": [
+            "str",
+            "error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok, int flags)",
+          "brief": "\n        ",
+          "definition": "void json_tokener_set_flags",
+          "detailed": "Set flags that control how parsing will be done.",
+          "name": "json_tokener_set_flags",
+          "params": [
+            "tok",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_tokener *tok, const char *str, int len)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_tokener_parse_ex",
+          "detailed": "Parse a string and return a non-NULL json_object if a valid JSON value is found. The string does not need to be a JSON object or array; it can also be a string, number or boolean value.\nA partial JSON string can be parsed. If the parsing is incomplete, NULL will be returned and json_tokener_get_error() will return json_tokener_continue. json_tokener_parse_ex() can then be called with additional bytes in str to continue the parsing.\nIf json_tokener_parse_ex() returns NULL and the error is anything other than json_tokener_continue, a fatal error has occurred and parsing must be halted. Then, the tok object must not be reused until json_tokener_reset() is called.\nWhen a valid JSON value is parsed, a non-NULL json_object will be returned, with a reference count of one which belongs to the caller. Also, json_tokener_get_error() will return json_tokener_success. Be sure to check the type with json_object_is_type() or json_object_get_type() before using the object.\nTrailing characters after the parsed value do not automatically cause an error. It is up to the caller to decide whether to treat this as an error or to handle the additional characters, perhaps by parsing another json value starting from that point.\nIf the caller knows that they are at the end of their input, the length passed MUST include the final '\\0' character, so values with no inherent end (i.e. numbers) can be properly parsed, rather than just returning json_tokener_continue.\nExtra characters can be detected by comparing the value returned by json_tokener_get_parse_end() against the length of the last len parameter passed in.\nThe tokener does not maintain an internal buffer so the caller is responsible for a subsequent call to json_tokener_parse_ex with an appropriate str parameter starting with the extra characters.\nThis interface is presently not 64-bit clean due to the int len argument so the function limits the maximum string size to INT32_MAX (2GB). If the function is called with len == -1 then strlen is called to check the string length is less than INT32_MAX (2GB)\nExample: json_object*jobj=NULL;\nconstchar*mystring=NULL;\nintstringlen=0;\nenumjson_tokener_errorjerr;\ndo{\nmystring=...//getJSONstring,e.g.readfromfile,etc...\nstringlen=strlen(mystring);\nif(end_of_input)\nstringlen++;//Includethe'\\0'ifweknowwe'reattheendofinput\njobj=json_tokener_parse_ex(tok,mystring,stringlen);\n}while((jerr=json_tokener_get_error(tok))==json_tokener_continue);\nif(jerr!=json_tokener_success)\n{\nfprintf(stderr,\"Error:%s\\n\",json_tokener_error_desc(jerr));\n//Handleerrors,asappropriateforyourapplication.\n}\nif(json_tokener_get_parse_end(tok)<stringlen)\n{\n//Handleextracharactersafterparsedobjectasdesired.\n//e.g.issueanerror,parseanotherobjectfromthatpoint,etc...\n}\n//Success,usejobjhere.\n\n\n\ntok\n\n\na json_tokener previously allocated with json_tokener_new() \n\n\n\n\nstr\n\n\nan string with any valid JSON expression, or portion of. This does not need to be null terminated. \n\n\n\n\nlen\n\n\nthe length of str \n\n\n\n\na json_tokener previously allocated with json_tokener_new() \nan string with any valid JSON expression, or portion of. This does not need to be null terminated. \nthe length of str",
+          "name": "json_tokener_parse_ex",
+          "params": [
+            "tok",
+            "str",
+            "len"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_TOKENER_DEFAULT_DEPTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Be strict when parsing JSON input. Use caution with this flag as what is considered valid may become more restrictive from one release to the next, causing your code to fail on previously working input.\nNote that setting this will also effectively disable parsing of multiple json objects in a single character stream (e.g. {\"foo\":123}{\"bar\":234}); if you want to allow that also set JSON_TOKENER_ALLOW_TRAILING_CHARS\nThis flag is not set by default.\njson_tokener_set_flags() \n\n\njson_tokener_set_flags()",
+          "name": "JSON_TOKENER_STRICT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Use with JSON_TOKENER_STRICT to allow trailing characters after the first parsed object.\njson_tokener_set_flags() \n\n\njson_tokener_set_flags()",
+          "name": "JSON_TOKENER_ALLOW_TRAILING_CHARS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Cause json_tokener_parse_ex() to validate that input is UTF8. If this flag is specified and validation fails, then json_tokener_get_error(tok) will return json_tokener_error_parse_utf8_string\nThis flag is not set by default.\njson_tokener_set_flags() \n\n\njson_tokener_set_flags()",
+          "name": "JSON_TOKENER_VALIDATE_UTF8",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct json_tokener json_tokener",
+          "detailed": "DeprecatedUnused in json-c code \n\nUnused in json-c code",
+          "name": "json_tokener",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* json_tokener::str",
+          "detailed": "DeprecatedDo not access any of these fields outside of json_tokener.c \n\nDo not access any of these fields outside of json_tokener.c",
+          "name": "str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct printbuf* json_tokener::pb",
+          "detailed": "\n        ",
+          "name": "pb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_tokener::max_depth",
+          "detailed": "\n        ",
+          "name": "max_depth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_tokener::depth",
+          "detailed": "\n        ",
+          "name": "depth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_tokener::is_double",
+          "detailed": "\n        ",
+          "name": "is_double",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_tokener::st_pos",
+          "detailed": "\n        ",
+          "name": "st_pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_tokener::char_offset",
+          "detailed": "DeprecatedSee json_tokener_get_parse_end() instead. \n\nSee json_tokener_get_parse_end() instead.",
+          "name": "char_offset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum json_tokener_error json_tokener::err",
+          "detailed": "DeprecatedSee json_tokener_get_error() instead. \n\nSee json_tokener_get_error() instead.",
+          "name": "err",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int json_tokener::ucs_char",
+          "detailed": "\n        ",
+          "name": "ucs_char",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int json_tokener::high_surrogate",
+          "detailed": "\n        ",
+          "name": "high_surrogate",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char json_tokener::quote_char",
+          "detailed": "\n        ",
+          "name": "quote_char",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_tokener_srec* json_tokener::stack",
+          "detailed": "\n        ",
+          "name": "stack",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int json_tokener::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum json_tokener_state state json_tokener_srec::saved_state",
+          "detailed": "\n        ",
+          "name": "saved_state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_object* json_tokener_srec::obj",
+          "detailed": "\n        ",
+          "name": "obj",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_object* json_tokener_srec::current",
+          "detailed": "\n        ",
+          "name": "current",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* json_tokener_srec::obj_field_name",
+          "detailed": "\n        ",
+          "name": "obj_field_name",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_tokener.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

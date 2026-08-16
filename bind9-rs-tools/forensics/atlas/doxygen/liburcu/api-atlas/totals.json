@@ -1,0 +1,19 @@
+{
+  "enum_value_count": 60,
+  "file_count": 220,
+  "function_count": 1149,
+  "libraries": [
+    "doc",
+    "include",
+    "src",
+    "tests/benchmark",
+    "tests/common",
+    "tests/regression",
+    "tests/unit",
+    "tests/utils"
+  ],
+  "macro_count": 978,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "0.15.6"
+}

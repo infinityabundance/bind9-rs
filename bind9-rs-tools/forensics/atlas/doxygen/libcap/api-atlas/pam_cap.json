@@ -1,0 +1,561 @@
+{
+  "files": {
+    "pam_cap/execable.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "static void __execable_main",
+          "detailed": "\n        ",
+          "name": "__execable_main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "pam_cap/lazylink.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int nothing_sets_this",
+          "detailed": "\n        ",
+          "name": "nothing_sets_this",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void nothing_uses_this",
+          "detailed": "\n        ",
+          "name": "nothing_uses_this",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "static void __execable_main",
+          "detailed": "\n        ",
+          "name": "__execable_main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "pam_cap/pam_cap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *user, char ***groups, int *groups_n)",
+          "brief": "\n        ",
+          "definition": "static int load_groups",
+          "detailed": "\n        ",
+          "name": "load_groups",
+          "params": [
+            "user",
+            "groups",
+            "groups_n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *user, const char *source)",
+          "brief": "\n        ",
+          "definition": "static char * read_capabilities_for_user",
+          "detailed": "\n        ",
+          "name": "read_capabilities_for_user",
+          "params": [
+            "user",
+            "source"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pam_handle_t *pamh, void *data, int error_status)",
+          "brief": "\n        ",
+          "definition": "static void iab_apply",
+          "detailed": "\n        ",
+          "name": "iab_apply",
+          "params": [
+            "pamh",
+            "data",
+            "error_status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct pam_cap_s *cs)",
+          "brief": "\n        ",
+          "definition": "static int set_capabilities",
+          "detailed": "\n        ",
+          "name": "set_capabilities",
+          "params": [
+            "cs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int err, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void _pam_log",
+          "detailed": "\n        ",
+          "name": "_pam_log",
+          "params": [
+            "err",
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, const char **argv, struct pam_cap_s *pcs)",
+          "brief": "\n        ",
+          "definition": "static void parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "argc",
+            "argv",
+            "pcs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pam_handle_t *pamh, int flags, int argc, const char **argv)",
+          "brief": "\n        ",
+          "definition": "int pam_sm_authenticate",
+          "detailed": "\n        ",
+          "name": "pam_sm_authenticate",
+          "params": [
+            "pamh",
+            "flags",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pam_handle_t *pamh, int flags, int argc, const char **argv)",
+          "brief": "\n        ",
+          "definition": "int pam_sm_setcred",
+          "detailed": "\n        ",
+          "name": "pam_sm_setcred",
+          "params": [
+            "pamh",
+            "flags",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "USER_CAP_FILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_FILE_BUFFER_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_FILE_DELIMITERS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pam_cap_s::debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pam_cap_s::keepcaps",
+          "detailed": "\n        ",
+          "name": "keepcaps",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pam_cap_s::autoauth",
+          "detailed": "\n        ",
+          "name": "autoauth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int pam_cap_s::defer",
+          "detailed": "\n        ",
+          "name": "defer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* pam_cap_s::user",
+          "detailed": "\n        ",
+          "name": "user",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* pam_cap_s::conf_filename",
+          "detailed": "\n        ",
+          "name": "conf_filename",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* pam_cap_s::fallback",
+          "detailed": "\n        ",
+          "name": "fallback",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pam_handle_t* pam_cap_s::pamh",
+          "detailed": "\n        ",
+          "name": "pamh",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "pam_cap/test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "pam_cap/test_pam_cap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(pam_handle_t *pamh, const char **user, const char *prompt)",
+          "brief": "\n        ",
+          "definition": "int pam_get_user",
+          "detailed": "\n        ",
+          "name": "pam_get_user",
+          "params": [
+            "pamh",
+            "user",
+            "prompt"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const pam_handle_t *pamh, int item_type, const void **item)",
+          "brief": "\n        ",
+          "definition": "int pam_get_item",
+          "detailed": "\n        ",
+          "name": "pam_get_item",
+          "params": [
+            "pamh",
+            "item_type",
+            "item"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pam_handle_t *pamh, const char *module_data_name, void *data, void(*cleanup)(pam_handle_t *pamh, void *data, int error_status))",
+          "brief": "\n        ",
+          "definition": "int pam_set_data",
+          "detailed": "\n        ",
+          "name": "pam_set_data",
+          "params": [
+            "pamh",
+            "module_data_name",
+            "data",
+            "cleanup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *user, gid_t group, gid_t *groups, int *ngroups)",
+          "brief": "\n        ",
+          "definition": "int getgrouplist",
+          "detailed": "\n        ",
+          "name": "getgrouplist",
+          "params": [
+            "user",
+            "group",
+            "groups",
+            "ngroups"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gid_t gid)",
+          "brief": "\n        ",
+          "definition": "struct group * getgrgid",
+          "detailed": "\n        ",
+          "name": "getgrgid",
+          "params": [
+            "gid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *name)",
+          "brief": "\n        ",
+          "definition": "struct passwd * getpwnam",
+          "detailed": "\n        ",
+          "name": "getpwnam",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long int bits[3])",
+          "brief": "\n        ",
+          "definition": "static void load_vectors",
+          "detailed": "\n        ",
+          "name": "load_vectors",
+          "params": [
+            "bits"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_arg_parsing",
+          "detailed": "\n        ",
+          "name": "test_arg_parsing",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "n_groups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "n_users",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "A",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "B",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "I",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* test_groups[]",
+          "detailed": "\n        ",
+          "name": "test_groups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* test_users[]",
+          "detailed": "\n        ",
+          "name": "test_users",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* test_user",
+          "detailed": "\n        ",
+          "name": "test_user",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct group gr",
+          "detailed": "\n        ",
+          "name": "gr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct passwd pw",
+          "detailed": "\n        ",
+          "name": "pw",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "pam_cap",
+  "schema_version": 1,
+  "version": "2.78"
+}

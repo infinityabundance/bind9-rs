@@ -1,0 +1,1015 @@
+{
+  "files": {
+    "progs/capsh.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *text, const char *prefix, int *ok)",
+          "brief": "\n        ",
+          "definition": "static unsigned long nonneg_uint",
+          "detailed": "\n        ",
+          "name": "nonneg_uint",
+          "params": [
+            "text",
+            "prefix",
+            "ok"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long value)",
+          "brief": "\n        ",
+          "definition": "static char * binary",
+          "detailed": "\n        ",
+          "name": "binary",
+          "params": [
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *name, int(*fn)(cap_value_t))",
+          "brief": "\n        ",
+          "definition": "static void display_prctl_set",
+          "detailed": "\n        ",
+          "name": "display_prctl_set",
+          "params": [
+            "name",
+            "fn"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void display_current",
+          "detailed": "\n        ",
+          "name": "display_current",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void display_current_iab",
+          "detailed": "\n        ",
+          "name": "display_current_iab",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void arg_print",
+          "detailed": "\n        ",
+          "name": "arg_print",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int strict)",
+          "brief": "\n        ",
+          "definition": "static cap_t will_need_setpcap",
+          "detailed": "\n        ",
+          "name": "will_need_setpcap",
+          "params": [
+            "strict"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int strict, cap_t *orig_p, cap_t *raised_for_setpcap_p)",
+          "brief": "\n        ",
+          "definition": "static void push_pcap",
+          "detailed": "\n        ",
+          "name": "push_pcap",
+          "params": [
+            "strict",
+            "orig_p",
+            "raised_for_setpcap_p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t orig, cap_t raised_for_setpcap)",
+          "brief": "\n        ",
+          "definition": "static void pop_pcap",
+          "detailed": "\n        ",
+          "name": "pop_pcap",
+          "params": [
+            "orig",
+            "raised_for_setpcap"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int strict, const char *arg_names)",
+          "brief": "\n        ",
+          "definition": "static void arg_drop",
+          "detailed": "\n        ",
+          "name": "arg_drop",
+          "params": [
+            "strict",
+            "arg_names"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *arg_names, cap_flag_value_t set)",
+          "brief": "\n        ",
+          "definition": "static void arg_change_amb",
+          "detailed": "\n        ",
+          "name": "arg_change_amb",
+          "params": [
+            "arg_names",
+            "set"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *arg0)",
+          "brief": "\n        ",
+          "definition": "static char * find_self",
+          "detailed": "\n        ",
+          "name": "find_self",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int name)",
+          "brief": "\n        ",
+          "definition": "static long safe_sysconf",
+          "detailed": "\n        ",
+          "name": "safe_sysconf",
+          "params": [
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_value_t cap)",
+          "brief": "\n        ",
+          "definition": "static void describe",
+          "detailed": "\n        ",
+          "name": "describe",
+          "params": [
+            "cap"
+          ],
+          "static": true
+        },
+        {
+          "args": "((noreturn))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char *argv[], char *envp[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv",
+            "envp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SHELL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_GROUPS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[1]",
+          "brief": "\n        ",
+          "definition": "const cap_value_t raise_setpcap[1]",
+          "detailed": "\n        ",
+          "name": "raise_setpcap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1]",
+          "brief": "\n        ",
+          "definition": "const cap_value_t raise_chroot[1]",
+          "detailed": "\n        ",
+          "name": "raise_chroot",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "progs/capshdoc.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation0[]",
+          "detailed": "\n        ",
+          "name": "explanation0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation1[]",
+          "detailed": "\n        ",
+          "name": "explanation1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation2[]",
+          "detailed": "\n        ",
+          "name": "explanation2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation3[]",
+          "detailed": "\n        ",
+          "name": "explanation3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation4[]",
+          "detailed": "\n        ",
+          "name": "explanation4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation5[]",
+          "detailed": "\n        ",
+          "name": "explanation5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation6[]",
+          "detailed": "\n        ",
+          "name": "explanation6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation7[]",
+          "detailed": "\n        ",
+          "name": "explanation7",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation8[]",
+          "detailed": "\n        ",
+          "name": "explanation8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation9[]",
+          "detailed": "\n        ",
+          "name": "explanation9",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation10[]",
+          "detailed": "\n        ",
+          "name": "explanation10",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation11[]",
+          "detailed": "\n        ",
+          "name": "explanation11",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation12[]",
+          "detailed": "\n        ",
+          "name": "explanation12",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation13[]",
+          "detailed": "\n        ",
+          "name": "explanation13",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation14[]",
+          "detailed": "\n        ",
+          "name": "explanation14",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation15[]",
+          "detailed": "\n        ",
+          "name": "explanation15",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation16[]",
+          "detailed": "\n        ",
+          "name": "explanation16",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation17[]",
+          "detailed": "\n        ",
+          "name": "explanation17",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation18[]",
+          "detailed": "\n        ",
+          "name": "explanation18",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation19[]",
+          "detailed": "\n        ",
+          "name": "explanation19",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation20[]",
+          "detailed": "\n        ",
+          "name": "explanation20",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation21[]",
+          "detailed": "\n        ",
+          "name": "explanation21",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation22[]",
+          "detailed": "\n        ",
+          "name": "explanation22",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation23[]",
+          "detailed": "\n        ",
+          "name": "explanation23",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation24[]",
+          "detailed": "\n        ",
+          "name": "explanation24",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation25[]",
+          "detailed": "\n        ",
+          "name": "explanation25",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation26[]",
+          "detailed": "\n        ",
+          "name": "explanation26",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation27[]",
+          "detailed": "\n        ",
+          "name": "explanation27",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation28[]",
+          "detailed": "\n        ",
+          "name": "explanation28",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation29[]",
+          "detailed": "\n        ",
+          "name": "explanation29",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation30[]",
+          "detailed": "\n        ",
+          "name": "explanation30",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation31[]",
+          "detailed": "\n        ",
+          "name": "explanation31",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation32[]",
+          "detailed": "\n        ",
+          "name": "explanation32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation33[]",
+          "detailed": "\n        ",
+          "name": "explanation33",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation34[]",
+          "detailed": "\n        ",
+          "name": "explanation34",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation35[]",
+          "detailed": "\n        ",
+          "name": "explanation35",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation36[]",
+          "detailed": "\n        ",
+          "name": "explanation36",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation37[]",
+          "detailed": "\n        ",
+          "name": "explanation37",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation38[]",
+          "detailed": "\n        ",
+          "name": "explanation38",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation39[]",
+          "detailed": "\n        ",
+          "name": "explanation39",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* explanation40[]",
+          "detailed": "\n        ",
+          "name": "explanation40",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char** explanations[]",
+          "detailed": "\n        ",
+          "name": "explanations",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int capsh_doc_limit",
+          "detailed": "\n        ",
+          "name": "capsh_doc_limit",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "progs/capshdoc.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAPSHDOC",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char** explanations[]",
+          "detailed": "\n        ",
+          "name": "explanations",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int capsh_doc_limit",
+          "detailed": "\n        ",
+          "name": "capsh_doc_limit",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "progs/getcap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int code)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "code"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname, const struct stat *stbuf, int tflag, struct FTW *ftwbuf)",
+          "brief": "\n        ",
+          "definition": "static int do_getcap",
+          "detailed": "\n        ",
+          "name": "do_getcap",
+          "params": [
+            "fname",
+            "stbuf",
+            "tflag",
+            "ftwbuf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_XOPEN_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int verbose",
+          "detailed": "\n        ",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int recursive",
+          "detailed": "\n        ",
+          "name": "recursive",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "progs/getpcaps.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int code)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "code"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "progs/old/execcap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "progs/old/setpcaps.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int quiet, const char *filename, char *buffer)",
+          "brief": "\n        ",
+          "definition": "static int read_caps",
+          "detailed": "\n        ",
+          "name": "read_caps",
+          "params": [
+            "quiet",
+            "filename",
+            "buffer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXCAP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "progs/old/sucap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int fd)",
+          "brief": "\n        ",
+          "definition": "static void wait_on_fd",
+          "detailed": "\n        ",
+          "name": "wait_on_fd",
+          "params": [
+            "fd"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__USE_BSD",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "progs/setcap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *text, const char *prefix, int *ok)",
+          "brief": "\n        ",
+          "definition": "static unsigned long pos_uint",
+          "detailed": "\n        ",
+          "name": "pos_uint",
+          "params": [
+            "text",
+            "prefix",
+            "ok"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int quiet, const char *filename, char *buffer)",
+          "brief": "\n        ",
+          "definition": "static int read_caps",
+          "detailed": "\n        ",
+          "name": "read_caps",
+          "params": [
+            "quiet",
+            "filename",
+            "buffer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXCAP",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "progs",
+  "schema_version": 1,
+  "version": "2.78"
+}

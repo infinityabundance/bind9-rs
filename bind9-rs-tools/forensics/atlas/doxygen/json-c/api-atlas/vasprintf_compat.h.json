@@ -1,0 +1,30 @@
+{
+  "files": {
+    "vasprintf_compat.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char **buf, const char *fmt, va_list ap)",
+          "brief": "\n        ",
+          "definition": "static int vasprintf",
+          "detailed": "\n        ",
+          "name": "vasprintf",
+          "params": [
+            "buf",
+            "fmt",
+            "ap"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "vasprintf_compat.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

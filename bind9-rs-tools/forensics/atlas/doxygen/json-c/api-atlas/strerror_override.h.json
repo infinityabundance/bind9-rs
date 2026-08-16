@@ -1,0 +1,38 @@
+{
+  "files": {
+    "strerror_override.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int errno_in)",
+          "brief": "\n        ",
+          "definition": "char * _json_c_strerror",
+          "detailed": "\n        ",
+          "name": "_json_c_strerror",
+          "params": [
+            "errno_in"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "strerror",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "strerror_override.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

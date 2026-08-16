@@ -1,0 +1,64 @@
+{
+  "files": {
+    "tests/test_cast.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *new_obj, const char *field)",
+          "brief": "\n        ",
+          "definition": "static void getit",
+          "detailed": "\n        ",
+          "name": "getit",
+          "params": [
+            "new_obj",
+            "field"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void checktype_header",
+          "detailed": "\n        ",
+          "name": "checktype_header",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *new_obj, const char *field)",
+          "brief": "\n        ",
+          "definition": "static void checktype",
+          "detailed": "\n        ",
+          "name": "checktype",
+          "params": [
+            "new_obj",
+            "field"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_cast.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,29 @@
+{
+  "files": {
+    "inffast.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(z_streamp strm, unsigned start)",
+          "brief": "\n        ",
+          "definition": "void inflate_fast",
+          "detailed": "\n        ",
+          "name": "inflate_fast",
+          "params": [
+            "strm",
+            "start"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "inffast.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

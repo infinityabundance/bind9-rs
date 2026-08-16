@@ -1,0 +1,105 @@
+{
+  "files": {
+    "json_object_iterator.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_object_iterator json_object_iter_init_default",
+          "detailed": "Initializes an iterator structure to a \"default\" value that is convenient for initializing an iterator variable to a default state (e.g., initialization list in a class' constructor).\nstructjson_object_iteratoriter=json_object_iter_init_default();\nMyClass():iter_(json_object_iter_init_default())\n\nThe initialized value doesn't reference any specific pair, is considered an invalid iterator, and MUST NOT be passed to any json-c API that expects a valid iterator.\n\nUser and internal code MUST NOT make any assumptions about and dependencies on the value of the \"default\" iterator value.\n\njson_object_iterator\n\n\n \nThe initialized value doesn't reference any specific pair, is considered an invalid iterator, and MUST NOT be passed to any json-c API that expects a valid iterator.\nUser and internal code MUST NOT make any assumptions about and dependencies on the value of the \"default\" iterator value.\njson_object_iterator",
+          "name": "json_object_iter_init_default",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct json_object_iterator json_object_iter_begin",
+          "detailed": "Retrieves an iterator to the first key/value pair of the JSON Object.\nAny modification of the fields present on the object invalidates all iterators on that object, regardless of what key/value pair they are pointing to, other than the end iterator. Modifications include adding or removing any pair, even if set of keys appears unchanged after the modification. Modifying values is allowed, including replacing a value by calling json_object_add(), provided the key already exists. Attempting to use an invalidated iterator in any way, other than comparing it to the end iterator, is undefined behavior. Passing such an iterator to any of the the json_object_iterator functions is not even guaranteed to fail in any consistent way.\n\n\n\nobj\n\n\nJSON Object instance (MUST be of type json_object)\n\n\n\njson_object_iterator If the JSON Object has at least one pair, on return, the iterator refers to the first pair. If the JSON Object doesn't have any pairs, the returned iterator is equivalent to the \"end\" iterator for the same JSON Object instance.\n\nstructjson_object_iteratorit;\nstructjson_object_iteratoritEnd;\nstructjson_object*obj;\n\nobj=json_tokener_parse(\"{'first':'george','age':100}\");\nit=json_object_iter_begin(obj);\nitEnd=json_object_iter_end(obj);\n\nwhile(!json_object_iter_equal(&it,&itEnd)){\nprintf(\"%s\\n\",\njson_object_iter_peek_name(&it));\njson_object_iter_next(&it);\n}\n\nAny modification of the fields present on the object invalidates all iterators on that object, regardless of what key/value pair they are pointing to, other than the end iterator. Modifications include adding or removing any pair, even if set of keys appears unchanged after the modification. Modifying values is allowed, including replacing a value by calling json_object_add(), provided the key already exists. Attempting to use an invalidated iterator in any way, other than comparing it to the end iterator, is undefined behavior. Passing such an iterator to any of the the json_object_iterator functions is not even guaranteed to fail in any consistent way.\nJSON Object instance (MUST be of type json_object)\njson_object_iterator If the JSON Object has at least one pair, on return, the iterator refers to the first pair. If the JSON Object doesn't have any pairs, the returned iterator is equivalent to the \"end\" iterator for the same JSON Object instance.",
+          "name": "json_object_iter_begin",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct json_object_iterator json_object_iter_end",
+          "detailed": "Retrieves the iterator that represents the position beyond the last pair of the given JSON Object instance.\nDo NOT write code that assumes that the \"end\" iterator value is NULL, even if it is so in a particular instance of the implementation.\n\nThe reason we do not (and MUST NOT) provide \"json_object_iter_is_end(json_object_iterator* iter)\" type of API is because it would limit the underlying representation of name/value containment (or force us to add additional, otherwise unnecessary, fields to the iterator structure). The \"end\" iterator and the equality test method, on the other hand, permit us to cleanly abstract pretty much any reasonable underlying representation without burdening the iterator structure with unnecessary data.\n\nFor performance reasons, memorize the \"end\" iterator prior to any loop.\n\n\n\nobj\n\n\nJSON Object instance (MUST be of type json_object)\n\n\n\njson_object_iterator On return, the iterator refers to the \"end\" of the Object instance's pairs (i.e., NOT the last pair, but \"beyond the last\n             pair\" value)\n\n\n \nDo NOT write code that assumes that the \"end\" iterator value is NULL, even if it is so in a particular instance of the implementation.\nThe reason we do not (and MUST NOT) provide \"json_object_iter_is_end(json_object_iterator* iter)\" type of API is because it would limit the underlying representation of name/value containment (or force us to add additional, otherwise unnecessary, fields to the iterator structure). The \"end\" iterator and the equality test method, on the other hand, permit us to cleanly abstract pretty much any reasonable underlying representation without burdening the iterator structure with unnecessary data.\nFor performance reasons, memorize the \"end\" iterator prior to any loop.\nJSON Object instance (MUST be of type json_object)\njson_object_iterator On return, the iterator refers to the \"end\" of the Object instance's pairs (i.e., NOT the last pair, but \"beyond the last\n             pair\" value)",
+          "name": "json_object_iter_end",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object_iterator *iter)",
+          "brief": "\n        ",
+          "definition": "void json_object_iter_next",
+          "detailed": "Returns an iterator to the next pair, if any\nAny modification of the fields of the object invalidates the iterator, see the warning on json_object_iter_begin() for details.\n\n\n\niter\n\n\n[IN/OUT] Pointer to iterator that references a name/value pair; MUST be a valid, non-end iterator. WARNING: bad things will happen if invalid or \"end\" iterator is passed. Upon return will contain the reference to the next pair if there is one; if there are no more pairs, will contain the \"end\" iterator value, which may be compared against the return value of json_object_iter_end() for the same JSON Object instance.\n\n\n\n\n \nAny modification of the fields of the object invalidates the iterator, see the warning on json_object_iter_begin() for details.\n[IN/OUT] Pointer to iterator that references a name/value pair; MUST be a valid, non-end iterator. WARNING: bad things will happen if invalid or \"end\" iterator is passed. Upon return will contain the reference to the next pair if there is one; if there are no more pairs, will contain the \"end\" iterator value, which may be compared against the return value of json_object_iter_end() for the same JSON Object instance.",
+          "name": "json_object_iter_next",
+          "params": [
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object_iterator *iter)",
+          "brief": "\n        ",
+          "definition": "const char * json_object_iter_peek_name",
+          "detailed": "Returns a const pointer to the name of the pair referenced by the given iterator.\n\n\niter\n\n\npointer to iterator that references a name/value pair; MUST be a valid, non-end iterator.\n\n\n\nbad things will happen if an invalid or \"end\" iterator is passed. See the warning on json_object_iter_begin() for details.\n\nconst char* Pointer to the name of the referenced name/value pair. The name memory belongs to the name/value pair, will be freed when the pair is deleted or modified, and MUST NOT be modified or freed by the user.\n\n\n \npointer to iterator that references a name/value pair; MUST be a valid, non-end iterator.\nbad things will happen if an invalid or \"end\" iterator is passed. See the warning on json_object_iter_begin() for details.\nconst char* Pointer to the name of the referenced name/value pair. The name memory belongs to the name/value pair, will be freed when the pair is deleted or modified, and MUST NOT be modified or freed by the user.",
+          "name": "json_object_iter_peek_name",
+          "params": [
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object_iterator *iter)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_iter_peek_value",
+          "detailed": "Returns a pointer to the json-c instance representing the value of the referenced name/value pair, without altering the instance's reference count.\n\n\niter\n\n\npointer to iterator that references a name/value pair; MUST be a valid, non-end iterator.\n\n\n\nbad things will happen if an invalid or \"end\" iterator is passed. See the warning on json_object_iter_begin() for details.\n\nstruct json_object* Pointer to the json-c value instance of the referenced name/value pair; the value's reference count is not changed by this function: if you plan to hold on to this json-c node, take a look at json_object_get() and json_object_put(). IMPORTANT: json-c API represents the JSON Null value as a NULL json_object instance pointer.\n\n\n \npointer to iterator that references a name/value pair; MUST be a valid, non-end iterator.\nbad things will happen if an invalid or \"end\" iterator is passed. See the warning on json_object_iter_begin() for details.\nstruct json_object* Pointer to the json-c value instance of the referenced name/value pair; the value's reference count is not changed by this function: if you plan to hold on to this json-c node, take a look at json_object_get() and json_object_put(). IMPORTANT: json-c API represents the JSON Null value as a NULL json_object instance pointer.",
+          "name": "json_object_iter_peek_value",
+          "params": [
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object_iterator *iter1, const struct json_object_iterator *iter2)",
+          "brief": "\n        ",
+          "definition": "json_bool json_object_iter_equal",
+          "detailed": "Tests two iterators for equality. Typically used to test for end of iteration by comparing an iterator to the corresponding \"end\" iterator (that was derived from the same JSON Object instance).\nThe reason we do not (and MUST NOT) provide \"json_object_iter_is_end(json_object_iterator* iter)\" type of API is because it would limit the underlying representation of name/value containment (or force us to add additional, otherwise unnecessary, fields to the iterator structure). The equality test method, on the other hand, permits us to cleanly abstract pretty much any reasonable underlying representation.\n\n\n\niter1\n\n\nPointer to first valid, non-NULL iterator \n\n\n\n\niter2\n\n\nPOinter to second valid, non-NULL iterator\n\n\n\nif a NULL iterator pointer or an uninitialized or invalid iterator, or iterators derived from different JSON Object instances are passed, bad things will happen!\n\njson_bool non-zero if iterators are equal (i.e., both reference the same name/value pair or are both at \"end\"); zero if they are not equal.\n\n\n \nThe reason we do not (and MUST NOT) provide \"json_object_iter_is_end(json_object_iterator* iter)\" type of API is because it would limit the underlying representation of name/value containment (or force us to add additional, otherwise unnecessary, fields to the iterator structure). The equality test method, on the other hand, permits us to cleanly abstract pretty much any reasonable underlying representation.\nPointer to first valid, non-NULL iterator \nPOinter to second valid, non-NULL iterator\nif a NULL iterator pointer or an uninitialized or invalid iterator, or iterators derived from different JSON Object instances are passed, bad things will happen!\njson_bool non-zero if iterators are equal (i.e., both reference the same name/value pair or are both at \"end\"); zero if they are not equal.",
+          "name": "json_object_iter_equal",
+          "params": [
+            "iter1",
+            "iter2"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const void* json_object_iterator::opaque_",
+          "detailed": "\n        ",
+          "name": "opaque_",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_object_iterator.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,1102 @@
+{
+  "files": {
+    "include/maxminddb.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *const filename, uint32_t flags, MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "int MMDB_open",
+          "detailed": "\n        ",
+          "name": "MMDB_open",
+          "params": [
+            "filename",
+            "flags",
+            "mmdb"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, const char *const ipstr, int *const gai_error, int *const mmdb_error)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s MMDB_lookup_string",
+          "detailed": "\n        ",
+          "name": "MMDB_lookup_string",
+          "params": [
+            "mmdb",
+            "ipstr",
+            "gai_error",
+            "mmdb_error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, const struct sockaddr *const sockaddr, int *const mmdb_error)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s MMDB_lookup_sockaddr",
+          "detailed": "\n        ",
+          "name": "MMDB_lookup_sockaddr",
+          "params": [
+            "mmdb",
+            "sockaddr",
+            "mmdb_error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint32_t node_number, MMDB_search_node_s *const node)",
+          "brief": "\n        ",
+          "definition": "int MMDB_read_node",
+          "detailed": "\n        ",
+          "name": "MMDB_read_node",
+          "params": [
+            "mmdb",
+            "node_number",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *const start, MMDB_entry_data_s *const entry_data,...)",
+          "brief": "\n        ",
+          "definition": "int MMDB_get_value",
+          "detailed": "\n        ",
+          "name": "MMDB_get_value",
+          "params": [
+            "start",
+            "entry_data",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *const start, MMDB_entry_data_s *const entry_data, va_list va_path)",
+          "brief": "\n        ",
+          "definition": "int MMDB_vget_value",
+          "detailed": "\n        ",
+          "name": "MMDB_vget_value",
+          "params": [
+            "start",
+            "entry_data",
+            "va_path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *const start, MMDB_entry_data_s *const entry_data, const char *const *const path)",
+          "brief": "\n        ",
+          "definition": "int MMDB_aget_value",
+          "detailed": "\n        ",
+          "name": "MMDB_aget_value",
+          "params": [
+            "start",
+            "entry_data",
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, MMDB_entry_data_list_s **const entry_data_list)",
+          "brief": "\n        ",
+          "definition": "int MMDB_get_metadata_as_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_get_metadata_as_entry_data_list",
+          "params": [
+            "mmdb",
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *start, MMDB_entry_data_list_s **const entry_data_list)",
+          "brief": "\n        ",
+          "definition": "int MMDB_get_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_get_entry_data_list",
+          "params": [
+            "start",
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *const entry_data_list)",
+          "brief": "\n        ",
+          "definition": "void MMDB_free_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_free_entry_data_list",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "void MMDB_close",
+          "detailed": "\n        ",
+          "name": "MMDB_close",
+          "params": [
+            "mmdb"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * MMDB_lib_version",
+          "detailed": "\n        ",
+          "name": "MMDB_lib_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(FILE *const stream, MMDB_entry_data_list_s *const entry_data_list, int indent)",
+          "brief": "\n        ",
+          "definition": "int MMDB_dump_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_dump_entry_data_list",
+          "params": [
+            "stream",
+            "entry_data_list",
+            "indent"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int error_code)",
+          "brief": "\n        ",
+          "definition": "const char * MMDB_strerror",
+          "detailed": "\n        ",
+          "name": "MMDB_strerror",
+          "params": [
+            "error_code"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXMINDDB_H",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_EXTENDED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_POINTER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_UTF8_STRING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_DOUBLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_BYTES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_UINT16",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_UINT32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_MAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_INT32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_UINT64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_UINT128",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_ARRAY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_CONTAINER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_END_MARKER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_BOOLEAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_TYPE_FLOAT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_RECORD_TYPE_SEARCH_NODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_RECORD_TYPE_EMPTY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_RECORD_TYPE_DATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_RECORD_TYPE_INVALID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_MODE_MMAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_MODE_MASK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_SUCCESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_FILE_OPEN_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_CORRUPT_SEARCH_TREE_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_INVALID_METADATA_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_IO_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_OUT_OF_MEMORY_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_UNKNOWN_DATABASE_FORMAT_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_INVALID_DATA_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_INVALID_LOOKUP_PATH_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_LOOKUP_PATH_DOES_NOT_MATCH_DATA_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_INVALID_NODE_NUMBER_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_IPV6_LOOKUP_IN_IPV4_DATABASE_ERROR",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned __int128 mmdb_uint128_t",
+          "detailed": "\n        ",
+          "name": "mmdb_uint128_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_entry_s MMDB_entry_s",
+          "detailed": "\n        ",
+          "name": "MMDB_entry_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_lookup_result_s MMDB_lookup_result_s",
+          "detailed": "\n        ",
+          "name": "MMDB_lookup_result_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_entry_data_s MMDB_entry_data_s",
+          "detailed": "\n        ",
+          "name": "MMDB_entry_data_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_entry_data_list_s MMDB_entry_data_list_s",
+          "detailed": "\n        ",
+          "name": "MMDB_entry_data_list_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_description_s MMDB_description_s",
+          "detailed": "\n        ",
+          "name": "MMDB_description_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_metadata_s MMDB_metadata_s",
+          "detailed": "\n        ",
+          "name": "MMDB_metadata_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_ipv4_start_node_s MMDB_ipv4_start_node_s",
+          "detailed": "\n        ",
+          "name": "MMDB_ipv4_start_node_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_s MMDB_s",
+          "detailed": "\n        ",
+          "name": "MMDB_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_search_node_s MMDB_search_node_s",
+          "detailed": "\n        ",
+          "name": "MMDB_search_node_s",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* MMDB_description_s::language",
+          "detailed": "\n        ",
+          "name": "language",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* MMDB_description_s::description",
+          "detailed": "\n        ",
+          "name": "description",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_s MMDB_entry_data_list_s::entry_data",
+          "detailed": "\n        ",
+          "name": "entry_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct MMDB_entry_data_list_s* MMDB_entry_data_list_s::next",
+          "detailed": "\n        ",
+          "name": "next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* MMDB_entry_data_list_s::pool",
+          "detailed": "\n        ",
+          "name": "pool",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool MMDB_entry_data_s::has_data",
+          "detailed": "\n        ",
+          "name": "has_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_entry_data_s::pointer",
+          "detailed": "\n        ",
+          "name": "pointer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* MMDB_entry_data_s::utf8_string",
+          "detailed": "\n        ",
+          "name": "utf8_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "double MMDB_entry_data_s::double_value",
+          "detailed": "\n        ",
+          "name": "double_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const uint8_t* MMDB_entry_data_s::bytes",
+          "detailed": "\n        ",
+          "name": "bytes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_entry_data_s::uint16",
+          "detailed": "\n        ",
+          "name": "uint16",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_entry_data_s::uint32",
+          "detailed": "\n        ",
+          "name": "uint32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int32_t MMDB_entry_data_s::int32",
+          "detailed": "\n        ",
+          "name": "int32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t MMDB_entry_data_s::uint64",
+          "detailed": "\n        ",
+          "name": "uint64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "mmdb_uint128_t MMDB_entry_data_s::uint128",
+          "detailed": "\n        ",
+          "name": "uint128",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool MMDB_entry_data_s::boolean",
+          "detailed": "\n        ",
+          "name": "boolean",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "float MMDB_entry_data_s::float_value",
+          "detailed": "\n        ",
+          "name": "float_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union MMDB_entry_data_s::@204145331253304067215125242232204377330164245145 MMDB_entry_data_s::@042041031234300051052166351255133371143100070311",
+          "detailed": "\n        ",
+          "name": "@042041031234300051052166351255133371143100070311",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_entry_data_s::offset",
+          "detailed": "\n        ",
+          "name": "offset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_entry_data_s::offset_to_next",
+          "detailed": "\n        ",
+          "name": "offset_to_next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_entry_data_s::data_size",
+          "detailed": "\n        ",
+          "name": "data_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_entry_data_s::type",
+          "detailed": "\n        ",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct MMDB_s* MMDB_entry_s::mmdb",
+          "detailed": "\n        ",
+          "name": "mmdb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_ipv4_start_node_s::netmask",
+          "detailed": "\n        ",
+          "name": "netmask",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_ipv4_start_node_s::node_value",
+          "detailed": "\n        ",
+          "name": "node_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool MMDB_lookup_result_s::found_entry",
+          "detailed": "\n        ",
+          "name": "found_entry",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_s MMDB_lookup_result_s::entry",
+          "detailed": "\n        ",
+          "name": "entry",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_metadata_s::node_count",
+          "detailed": "\n        ",
+          "name": "node_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_metadata_s::record_size",
+          "detailed": "\n        ",
+          "name": "record_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_metadata_s::ip_version",
+          "detailed": "\n        ",
+          "name": "ip_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* MMDB_metadata_s::database_type",
+          "detailed": "\n        ",
+          "name": "database_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MMDB_metadata_s::count",
+          "detailed": "\n        ",
+          "name": "count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char** MMDB_metadata_s::names",
+          "detailed": "\n        ",
+          "name": "names",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct MMDB_metadata_s::@030234173145351313345375060235250030224152046147 MMDB_metadata_s::languages",
+          "detailed": "\n        ",
+          "name": "languages",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_metadata_s::binary_format_major_version",
+          "detailed": "\n        ",
+          "name": "binary_format_major_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_metadata_s::binary_format_minor_version",
+          "detailed": "\n        ",
+          "name": "binary_format_minor_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t MMDB_metadata_s::build_epoch",
+          "detailed": "\n        ",
+          "name": "build_epoch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_description_s** MMDB_metadata_s::descriptions",
+          "detailed": "\n        ",
+          "name": "descriptions",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_s::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* MMDB_s::filename",
+          "detailed": "\n        ",
+          "name": "filename",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ssize_t MMDB_s::file_size",
+          "detailed": "\n        ",
+          "name": "file_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const uint8_t* MMDB_s::file_content",
+          "detailed": "\n        ",
+          "name": "file_content",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const uint8_t* MMDB_s::data_section",
+          "detailed": "\n        ",
+          "name": "data_section",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_s::data_section_size",
+          "detailed": "\n        ",
+          "name": "data_section_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const uint8_t* MMDB_s::metadata_section",
+          "detailed": "\n        ",
+          "name": "metadata_section",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t MMDB_s::metadata_section_size",
+          "detailed": "\n        ",
+          "name": "metadata_section_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_s::full_record_byte_size",
+          "detailed": "\n        ",
+          "name": "full_record_byte_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t MMDB_s::depth",
+          "detailed": "\n        ",
+          "name": "depth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_ipv4_start_node_s MMDB_s::ipv4_start_node",
+          "detailed": "\n        ",
+          "name": "ipv4_start_node",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_metadata_s MMDB_s::metadata",
+          "detailed": "\n        ",
+          "name": "metadata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t MMDB_search_node_s::left_record",
+          "detailed": "\n        ",
+          "name": "left_record",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t MMDB_search_node_s::right_record",
+          "detailed": "\n        ",
+          "name": "right_record",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t MMDB_search_node_s::left_record_type",
+          "detailed": "\n        ",
+          "name": "left_record_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t MMDB_search_node_s::right_record_type",
+          "detailed": "\n        ",
+          "name": "right_record_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_s MMDB_search_node_s::left_record_entry",
+          "detailed": "\n        ",
+          "name": "left_record_entry",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_s MMDB_search_node_s::right_record_entry",
+          "detailed": "\n        ",
+          "name": "right_record_entry",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "include",
+  "schema_version": 1,
+  "version": "1.13.3"
+}

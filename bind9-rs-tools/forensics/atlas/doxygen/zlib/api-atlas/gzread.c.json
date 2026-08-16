@@ -1,0 +1,196 @@
+{
+  "files": {
+    "gzread.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(gz_statep state, unsigned char *buf, unsigned len, unsigned *have)",
+          "brief": "\n        ",
+          "definition": "static int gz_load",
+          "detailed": "\n        ",
+          "name": "gz_load",
+          "params": [
+            "state",
+            "buf",
+            "len",
+            "have"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gz_statep state)",
+          "brief": "\n        ",
+          "definition": "static int gz_avail",
+          "detailed": "\n        ",
+          "name": "gz_avail",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gz_statep state)",
+          "brief": "\n        ",
+          "definition": "static int gz_look",
+          "detailed": "\n        ",
+          "name": "gz_look",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gz_statep state)",
+          "brief": "\n        ",
+          "definition": "static int gz_decomp",
+          "detailed": "\n        ",
+          "name": "gz_decomp",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gz_statep state)",
+          "brief": "\n        ",
+          "definition": "static int gz_fetch",
+          "detailed": "\n        ",
+          "name": "gz_fetch",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gz_statep state, long len)",
+          "brief": "\n        ",
+          "definition": "static int gz_skip",
+          "detailed": "\n        ",
+          "name": "gz_skip",
+          "params": [
+            "state",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gz_statep state, voidp buf, z_size_t len)",
+          "brief": "\n        ",
+          "definition": "static z_size_t gz_read",
+          "detailed": "\n        ",
+          "name": "gz_read",
+          "params": [
+            "state",
+            "buf",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gzFile file, voidp buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int gzread",
+          "detailed": "\n        ",
+          "name": "gzread",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidp buf, z_size_t size, z_size_t nitems, gzFile file)",
+          "brief": "\n        ",
+          "definition": "z_size_t gzfread",
+          "detailed": "\n        ",
+          "name": "gzfread",
+          "params": [
+            "buf",
+            "size",
+            "nitems",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzgetc",
+          "detailed": "\n        ",
+          "name": "gzgetc",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzgetc_",
+          "detailed": "\n        ",
+          "name": "gzgetc_",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int c, gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzungetc",
+          "detailed": "\n        ",
+          "name": "gzungetc",
+          "params": [
+            "c",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, char *buf, int len)",
+          "brief": "\n        ",
+          "definition": "char * gzgets",
+          "detailed": "\n        ",
+          "name": "gzgets",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzdirect",
+          "detailed": "\n        ",
+          "name": "gzdirect",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzclose_r",
+          "detailed": "\n        ",
+          "name": "gzclose_r",
+          "params": [
+            "file"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "gzread.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

@@ -1,0 +1,15 @@
+{
+  "enum_value_count": 409,
+  "file_count": 361,
+  "function_count": 3713,
+  "libraries": [
+    "docs",
+    "include",
+    "src",
+    "test"
+  ],
+  "macro_count": 1894,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "1.52.1"
+}

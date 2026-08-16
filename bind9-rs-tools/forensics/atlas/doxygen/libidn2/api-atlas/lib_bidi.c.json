@@ -1,0 +1,41 @@
+{
+  "files": {
+    "lib/bidi.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const uint32_t *label, size_t llen)",
+          "brief": "\n        ",
+          "definition": "static bool _isBidi",
+          "detailed": "\n        ",
+          "name": "_isBidi",
+          "params": [
+            "label",
+            "llen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint32_t *label, size_t llen)",
+          "brief": "\n        ",
+          "definition": "int _idn2_bidi",
+          "detailed": "\n        ",
+          "name": "_idn2_bidi",
+          "params": [
+            "label",
+            "llen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/bidi.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,1026 @@
+{
+  "files": {
+    "psx/libpsx.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "_PSX_IDLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "_PSX_SETUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "_PSX_SYSCALL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "_PSX_EXITING",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "psx_tracker_state_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void psx_lock",
+          "detailed": "\n        ",
+          "name": "psx_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void psx_unlock",
+          "detailed": "\n        ",
+          "name": "psx_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void psx_cond_wait",
+          "detailed": "\n        ",
+          "name": "psx_cond_wait",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(long value)",
+          "brief": "\n        ",
+          "definition": "long psx_mix",
+          "detailed": "\n        ",
+          "name": "psx_mix",
+          "params": [
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int psx_actions_size",
+          "detailed": "\n        ",
+          "name": "psx_actions_size",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void psx_confirm_sigaction",
+          "detailed": "\n        ",
+          "name": "psx_confirm_sigaction",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_mu_blocked",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_mu_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_mu_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_mu_unlock_return",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_mu_cond_wait",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_gettid",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned char psx_mutex_t",
+          "detailed": "\n        ",
+          "name": "psx_mutex_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct psx_thread_ref_s psx_thread_ref_t",
+          "detailed": "\n        ",
+          "name": "psx_thread_ref_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "psx_tracker_t psx_tracker",
+          "detailed": "\n        ",
+          "name": "psx_tracker",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_thread_ref_s::sweep",
+          "detailed": "\n        ",
+          "name": "sweep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_thread_ref_s::pending",
+          "detailed": "\n        ",
+          "name": "pending",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_thread_ref_s::tid",
+          "detailed": "\n        ",
+          "name": "tid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_thread_ref_s::retval",
+          "detailed": "\n        ",
+          "name": "retval",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::pid",
+          "detailed": "\n        ",
+          "name": "pid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* psx_tracker_t::pid_path",
+          "detailed": "\n        ",
+          "name": "pid_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "psx_mutex_t psx_tracker_t::state_mu",
+          "detailed": "\n        ",
+          "name": "state_mu",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "psx_tracker_state_t psx_tracker_t::state",
+          "detailed": "\n        ",
+          "name": "state",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::initialized",
+          "detailed": "\n        ",
+          "name": "initialized",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::incomplete",
+          "detailed": "\n        ",
+          "name": "incomplete",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::psx_sig",
+          "detailed": "\n        ",
+          "name": "psx_sig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::force_failure",
+          "detailed": "\n        ",
+          "name": "force_failure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "psx_sensitivity_t psx_tracker_t::sensitivity",
+          "detailed": "\n        ",
+          "name": "sensitivity",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::syscall_nr",
+          "detailed": "\n        ",
+          "name": "syscall_nr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::arg1",
+          "detailed": "\n        ",
+          "name": "arg1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::arg2",
+          "detailed": "\n        ",
+          "name": "arg2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::arg3",
+          "detailed": "\n        ",
+          "name": "arg3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::arg4",
+          "detailed": "\n        ",
+          "name": "arg4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::arg5",
+          "detailed": "\n        ",
+          "name": "arg5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::arg6",
+          "detailed": "\n        ",
+          "name": "arg6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::six",
+          "detailed": "\n        ",
+          "name": "six",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::active",
+          "detailed": "\n        ",
+          "name": "active",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct psx_tracker_t::@173154160354343100330242113221314342345036375201 psx_tracker_t::cmd",
+          "detailed": "\n        ",
+          "name": "cmd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* psx_tracker_t::actions",
+          "detailed": "\n        ",
+          "name": "actions",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int psx_tracker_t::map_entries",
+          "detailed": "\n        ",
+          "name": "map_entries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long psx_tracker_t::map_mask",
+          "detailed": "\n        ",
+          "name": "map_mask",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "psx_thread_ref_t* psx_tracker_t::map",
+          "detailed": "\n        ",
+          "name": "map",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "psx/psx.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(long int(**syscall_fn)(long int, long int, long int, long int), long int(**syscall6_fn)(long int, long int, long int, long int, long int, long int, long int))",
+          "brief": "\n        ",
+          "definition": "void psx_load_syscalls",
+          "detailed": "\n        ",
+          "name": "psx_load_syscalls",
+          "params": [
+            "syscall_fn",
+            "syscall6_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int size)",
+          "brief": "\n        ",
+          "definition": "static void psx_set_map",
+          "detailed": "\n        ",
+          "name": "psx_set_map",
+          "params": [
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _psx_cleanup",
+          "detailed": "\n        ",
+          "name": "_psx_cleanup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _psx_proc_start",
+          "detailed": "\n        ",
+          "name": "_psx_proc_start",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _psx_new_proc",
+          "detailed": "\n        ",
+          "name": "_psx_new_proc",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void psx_syscall_start",
+          "detailed": "\n        ",
+          "name": "psx_syscall_start",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(psx_tracker_state_t was, psx_tracker_state_t is)",
+          "brief": "\n        ",
+          "definition": "static void psx_new_state",
+          "detailed": "\n        ",
+          "name": "psx_new_state",
+          "params": [
+            "was",
+            "is"
+          ],
+          "static": true
+        },
+        {
+          "args": "(long int syscall_nr, long int arg1, long int arg2, long int arg3)",
+          "brief": "\n        ",
+          "definition": "long int psx_syscall3",
+          "detailed": "\n        ",
+          "name": "psx_syscall3",
+          "params": [
+            "syscall_nr",
+            "arg1",
+            "arg2",
+            "arg3"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int syscall_nr, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5, long int arg6)",
+          "brief": "\n        ",
+          "definition": "long int psx_syscall6",
+          "detailed": "\n        ",
+          "name": "psx_syscall6",
+          "params": [
+            "syscall_nr",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5",
+            "arg6"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int syscall_nr, int count, long int *arg)",
+          "brief": "\n        ",
+          "definition": "static long int __psx_immediate_syscall",
+          "detailed": "\n        ",
+          "name": "__psx_immediate_syscall",
+          "params": [
+            "syscall_nr",
+            "count",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(long int syscall_nr,...)",
+          "brief": "\n        ",
+          "definition": "long int __psx_syscall",
+          "detailed": "\n        ",
+          "name": "__psx_syscall",
+          "params": [
+            "syscall_nr",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(psx_sensitivity_t level)",
+          "brief": "\n        ",
+          "definition": "int psx_set_sensitivity",
+          "detailed": "\n        ",
+          "name": "psx_set_sensitivity",
+          "params": [
+            "level"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "taskdir_fmt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUF_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long long psx_linux_dirent64::d_ino",
+          "detailed": "\n        ",
+          "name": "d_ino",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long long psx_linux_dirent64::d_off",
+          "detailed": "\n        ",
+          "name": "d_off",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned short psx_linux_dirent64::d_reclen",
+          "detailed": "\n        ",
+          "name": "d_reclen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char psx_linux_dirent64::d_type",
+          "detailed": "\n        ",
+          "name": "d_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char psx_linux_dirent64::d_name[]",
+          "detailed": "\n        ",
+          "name": "d_name",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "psx/psx_calls.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int signum, siginfo_t *info, void *ignore)",
+          "brief": "\n        ",
+          "definition": "static void psx_posix_syscall_actor",
+          "detailed": "\n        ",
+          "name": "psx_posix_syscall_actor",
+          "params": [
+            "signum",
+            "info",
+            "ignore"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_rt_sigprocmask",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_rt_sigaction",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_sigemptyset",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_psx_sigaddset",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sigaction existing_sa",
+          "detailed": "\n        ",
+          "name": "existing_sa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sigaction psx_actions_t::sig_action",
+          "detailed": "\n        ",
+          "name": "sig_action",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sigaction psx_actions_t::chained_action",
+          "detailed": "\n        ",
+          "name": "chained_action",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "psx/psx_syscall.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "PSX_IGNORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "PSX_WARNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "PSX_ERROR",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "psx_sensitivity_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(long int syscall_nr,...)",
+          "brief": "\n        ",
+          "definition": "long int __psx_syscall",
+          "detailed": "\n        ",
+          "name": "__psx_syscall",
+          "params": [
+            "syscall_nr",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int syscall_nr, long int arg1, long int arg2, long int arg3)",
+          "brief": "\n        ",
+          "definition": "long int psx_syscall3",
+          "detailed": "\n        ",
+          "name": "psx_syscall3",
+          "params": [
+            "syscall_nr",
+            "arg1",
+            "arg2",
+            "arg3"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int syscall_nr, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5, long int arg6)",
+          "brief": "\n        ",
+          "definition": "long int psx_syscall6",
+          "detailed": "\n        ",
+          "name": "psx_syscall6",
+          "params": [
+            "syscall_nr",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5",
+            "arg6"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int(**syscall_fn)(long int, long int, long int, long int), long int(**syscall6_fn)(long int, long int, long int, long int, long int, long int, long int))",
+          "brief": "\n        ",
+          "definition": "void psx_load_syscalls",
+          "detailed": "\n        ",
+          "name": "psx_load_syscalls",
+          "params": [
+            "syscall_fn",
+            "syscall6_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(psx_sensitivity_t level)",
+          "brief": "\n        ",
+          "definition": "int psx_set_sensitivity",
+          "detailed": "\n        ",
+          "name": "psx_set_sensitivity",
+          "params": [
+            "level"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBPSX_MAJOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBPSX_MINOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "psx_syscall",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "psx/wrap/psx_wrap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg)",
+          "brief": "\n        ",
+          "definition": "int __real_pthread_create",
+          "detailed": "\n        ",
+          "name": "__real_pthread_create",
+          "params": [
+            "thread",
+            "attr",
+            "start_routine",
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg)",
+          "brief": "\n        ",
+          "definition": "int __wrap_pthread_create",
+          "detailed": "\n        ",
+          "name": "__wrap_pthread_create",
+          "params": [
+            "thread",
+            "attr",
+            "start_routine",
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "((weak))",
+          "brief": "\n        ",
+          "definition": "int __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "psx",
+  "schema_version": 1,
+  "version": "2.78"
+}

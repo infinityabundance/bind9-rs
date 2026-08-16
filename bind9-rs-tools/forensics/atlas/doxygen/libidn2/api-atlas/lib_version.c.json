@@ -1,0 +1,38 @@
+{
+  "files": {
+    "lib/version.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *req_version)",
+          "brief": "\n        ",
+          "definition": "const char * idn2_check_version",
+          "detailed": "idn2_check_version: @req_version: version string to compare with, or NULL.\nCheck IDN2 library version. This function can also be used to read out the version of the library code used. See IDN2_VERSION for a suitable @req_version string, it corresponds to the idn2.h header file version. Normally these two version numbers match, but if you are using an application built against an older libidn2 with a newer libidn2 shared library they will be different.\nReturn value: Check that the version of the library is at minimum the one given as a string in @req_version and return the actual version string of the library; return NULL if the condition is not met. If NULL is passed to this function no check is done and only the version string is returned.",
+          "name": "idn2_check_version",
+          "params": [
+            "req_version"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char version_etc_copyright[]",
+          "detailed": "\n        ",
+          "name": "version_etc_copyright",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "lib/version.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

@@ -1,0 +1,2111 @@
+{
+  "files": {
+    "examples/enough.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(string_t *s)",
+          "brief": "\n        ",
+          "definition": "static void string_clear",
+          "detailed": "\n        ",
+          "name": "string_clear",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(string_t *s)",
+          "brief": "\n        ",
+          "definition": "static void string_init",
+          "detailed": "\n        ",
+          "name": "string_init",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(string_t *s)",
+          "brief": "\n        ",
+          "definition": "static void string_free",
+          "detailed": "\n        ",
+          "name": "string_free",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(string_t *s, char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "static void string_printf",
+          "detailed": "\n        ",
+          "name": "string_printf",
+          "params": [
+            "s",
+            "fmt",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int syms, int left, int len)",
+          "brief": "\n        ",
+          "definition": "static size_t map",
+          "detailed": "\n        ",
+          "name": "map",
+          "params": [
+            "syms",
+            "left",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int syms, int left, int len)",
+          "brief": "\n        ",
+          "definition": "static big_t count",
+          "detailed": "\n        ",
+          "name": "count",
+          "params": [
+            "syms",
+            "left",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int syms, int left, int len, int mem, int rem)",
+          "brief": "\n        ",
+          "definition": "static int been_here",
+          "detailed": "\n        ",
+          "name": "been_here",
+          "params": [
+            "syms",
+            "left",
+            "len",
+            "mem",
+            "rem"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int syms, int left, int len, int mem, int rem)",
+          "brief": "\n        ",
+          "definition": "static void examine",
+          "detailed": "\n        ",
+          "name": "examine",
+          "params": [
+            "syms",
+            "left",
+            "len",
+            "mem",
+            "rem"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int syms)",
+          "brief": "\n        ",
+          "definition": "static void enough",
+          "detailed": "\n        ",
+          "name": "enough",
+          "params": [
+            "syms"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PRIbig",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef uintmax_t big_t",
+          "detailed": "\n        ",
+          "name": "big_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef uintmax_t code_t",
+          "detailed": "\n        ",
+          "name": "code_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int max",
+          "detailed": "\n        ",
+          "name": "max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int root",
+          "detailed": "\n        ",
+          "name": "root",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int large",
+          "detailed": "\n        ",
+          "name": "large",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "big_t tot",
+          "detailed": "\n        ",
+          "name": "tot",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "string_t out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int* code",
+          "detailed": "\n        ",
+          "name": "code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "big_t* num",
+          "detailed": "\n        ",
+          "name": "num",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct tab* done",
+          "detailed": "\n        ",
+          "name": "done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct @340075263101102255105254105276157341317064043001 g",
+          "detailed": "\n        ",
+          "name": "g",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* string_t::str",
+          "detailed": "\n        ",
+          "name": "str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t string_t::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* tab::vec",
+          "detailed": "\n        ",
+          "name": "vec",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/fitblk.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *why)",
+          "brief": "\n        ",
+          "definition": "static void quit",
+          "detailed": "\n        ",
+          "name": "quit",
+          "params": [
+            "why"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *in, z_streamp def)",
+          "brief": "\n        ",
+          "definition": "static int partcompress",
+          "detailed": "\n        ",
+          "name": "partcompress",
+          "params": [
+            "in",
+            "def"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp inf, z_streamp def)",
+          "brief": "\n        ",
+          "definition": "static int recompress",
+          "detailed": "\n        ",
+          "name": "recompress",
+          "params": [
+            "inf",
+            "def"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RAWLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXCESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MARGIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "examples/gun.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *in_desc, unsigned char **buf)",
+          "brief": "\n        ",
+          "definition": "static unsigned in",
+          "detailed": "\n        ",
+          "name": "in",
+          "params": [
+            "in_desc",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *out_desc, unsigned char *buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "static int out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [
+            "out_desc",
+            "buf",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned have, unsigned char *next, struct ind *indp, int outfile, z_stream *strm)",
+          "brief": "\n        ",
+          "definition": "static int lunpipe",
+          "detailed": "\n        ",
+          "name": "lunpipe",
+          "params": [
+            "have",
+            "next",
+            "indp",
+            "outfile",
+            "strm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm, int infile, int outfile)",
+          "brief": "\n        ",
+          "definition": "static int gunpipe",
+          "detailed": "\n        ",
+          "name": "gunpipe",
+          "params": [
+            "strm",
+            "infile",
+            "outfile"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *from, char *to)",
+          "brief": "\n        ",
+          "definition": "static void copymeta",
+          "detailed": "\n        ",
+          "name": "copymeta",
+          "params": [
+            "from",
+            "to"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm, char *inname, char *outname, int test)",
+          "brief": "\n        ",
+          "definition": "static int gunzip",
+          "detailed": "\n        ",
+          "name": "gunzip",
+          "params": [
+            "strm",
+            "inname",
+            "outname",
+            "test"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PIECE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NEXT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLUSHCODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[32768U]",
+          "brief": "\n        ",
+          "definition": "unsigned char inbuf[32768U]",
+          "detailed": "\n        ",
+          "name": "inbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32768U]",
+          "brief": "\n        ",
+          "definition": "unsigned char outbuf[32768U]",
+          "detailed": "\n        ",
+          "name": "outbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[65536]",
+          "brief": "\n        ",
+          "definition": "unsigned short prefix[65536]",
+          "detailed": "\n        ",
+          "name": "prefix",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[65536]",
+          "brief": "\n        ",
+          "definition": "unsigned char suffix[65536]",
+          "detailed": "\n        ",
+          "name": "suffix",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[65280+2]",
+          "brief": "\n        ",
+          "definition": "unsigned char match[65280+2]",
+          "detailed": "\n        ",
+          "name": "match",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ind::infile",
+          "detailed": "\n        ",
+          "name": "infile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int outd::outfile",
+          "detailed": "\n        ",
+          "name": "outfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int outd::check",
+          "detailed": "\n        ",
+          "name": "check",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long outd::crc",
+          "detailed": "\n        ",
+          "name": "crc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long outd::total",
+          "detailed": "\n        ",
+          "name": "total",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/gzappend.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *msg1, char *msg2)",
+          "brief": "\n        ",
+          "definition": "static void bye",
+          "detailed": "\n        ",
+          "name": "bye",
+          "params": [
+            "msg1",
+            "msg2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned a, unsigned b)",
+          "brief": "\n        ",
+          "definition": "static unsigned gcd",
+          "detailed": "\n        ",
+          "name": "gcd",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *list, unsigned len, unsigned rot)",
+          "brief": "\n        ",
+          "definition": "static void rotate",
+          "detailed": "\n        ",
+          "name": "rotate",
+          "params": [
+            "list",
+            "len",
+            "rot"
+          ],
+          "static": true
+        },
+        {
+          "args": "(file *in)",
+          "brief": "\n        ",
+          "definition": "static int readin",
+          "detailed": "\n        ",
+          "name": "readin",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(file *in)",
+          "brief": "\n        ",
+          "definition": "static int readmore",
+          "detailed": "\n        ",
+          "name": "readmore",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(file *in, unsigned n)",
+          "brief": "\n        ",
+          "definition": "static void skip",
+          "detailed": "\n        ",
+          "name": "skip",
+          "params": [
+            "in",
+            "n"
+          ],
+          "static": true
+        },
+        {
+          "args": "(file *in)",
+          "brief": "\n        ",
+          "definition": "unsigned long read4",
+          "detailed": "\n        ",
+          "name": "read4",
+          "params": [
+            "in"
+          ],
+          "static": false
+        },
+        {
+          "args": "(file *in)",
+          "brief": "\n        ",
+          "definition": "static void gzheader",
+          "detailed": "\n        ",
+          "name": "gzheader",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *name, z_stream *strm, int level)",
+          "brief": "\n        ",
+          "definition": "static int gzscan",
+          "detailed": "\n        ",
+          "name": "gzscan",
+          "params": [
+            "name",
+            "strm",
+            "level"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *name, int gd, z_stream *strm, int last)",
+          "brief": "\n        ",
+          "definition": "static void gztack",
+          "detailed": "\n        ",
+          "name": "gztack",
+          "params": [
+            "name",
+            "gd",
+            "strm",
+            "last"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LGCHUNK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHUNK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "read1",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int file::fd",
+          "detailed": "\n        ",
+          "name": "fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int file::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned file::left",
+          "detailed": "\n        ",
+          "name": "left",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* file::buf",
+          "detailed": "\n        ",
+          "name": "buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* file::next",
+          "detailed": "\n        ",
+          "name": "next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* file::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/gzjoin.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *why1, char *why2)",
+          "brief": "\n        ",
+          "definition": "static int bail",
+          "detailed": "\n        ",
+          "name": "bail",
+          "params": [
+            "why1",
+            "why2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bin *in)",
+          "brief": "\n        ",
+          "definition": "static void bclose",
+          "detailed": "\n        ",
+          "name": "bclose",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *name)",
+          "brief": "\n        ",
+          "definition": "static bin * bopen",
+          "detailed": "\n        ",
+          "name": "bopen",
+          "params": [
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bin *in)",
+          "brief": "\n        ",
+          "definition": "static int bload",
+          "detailed": "\n        ",
+          "name": "bload",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bin *in)",
+          "brief": "\n        ",
+          "definition": "static unsigned long bget4",
+          "detailed": "\n        ",
+          "name": "bget4",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bin *in, unsigned skip)",
+          "brief": "\n        ",
+          "definition": "static void bskip",
+          "detailed": "\n        ",
+          "name": "bskip",
+          "params": [
+            "in",
+            "skip"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bin *in)",
+          "brief": "\n        ",
+          "definition": "static void gzhead",
+          "detailed": "\n        ",
+          "name": "gzhead",
+          "params": [
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long val, FILE *out)",
+          "brief": "\n        ",
+          "definition": "static void put4",
+          "detailed": "\n        ",
+          "name": "put4",
+          "params": [
+            "val",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, bin *in)",
+          "brief": "\n        ",
+          "definition": "static void zpull",
+          "detailed": "\n        ",
+          "name": "zpull",
+          "params": [
+            "strm",
+            "in"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long *crc, unsigned long *tot, FILE *out)",
+          "brief": "\n        ",
+          "definition": "static void gzinit",
+          "detailed": "\n        ",
+          "name": "gzinit",
+          "params": [
+            "crc",
+            "tot",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *name, int clr, unsigned long *crc, unsigned long *tot, FILE *out)",
+          "brief": "\n        ",
+          "definition": "static void gzcopy",
+          "detailed": "\n        ",
+          "name": "gzcopy",
+          "params": [
+            "name",
+            "clr",
+            "crc",
+            "tot",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHUNK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "bget",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* bin::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int bin::fd",
+          "detailed": "\n        ",
+          "name": "fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned bin::left",
+          "detailed": "\n        ",
+          "name": "left",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* bin::next",
+          "detailed": "\n        ",
+          "name": "next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* bin::buf",
+          "detailed": "\n        ",
+          "name": "buf",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/gzlog.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static int log_lock",
+          "detailed": "\n        ",
+          "name": "log_lock",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static void log_touch",
+          "detailed": "\n        ",
+          "name": "log_touch",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static int log_check",
+          "detailed": "\n        ",
+          "name": "log_check",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static void log_unlock",
+          "detailed": "\n        ",
+          "name": "log_unlock",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static int log_head",
+          "detailed": "\n        ",
+          "name": "log_head",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log, int op)",
+          "brief": "\n        ",
+          "definition": "static int log_mark",
+          "detailed": "\n        ",
+          "name": "log_mark",
+          "params": [
+            "log",
+            "op"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log, int last)",
+          "brief": "\n        ",
+          "definition": "static int log_last",
+          "detailed": "\n        ",
+          "name": "log_last",
+          "params": [
+            "log",
+            "last"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log, unsigned char *data, size_t len)",
+          "brief": "\n        ",
+          "definition": "static int log_append",
+          "detailed": "\n        ",
+          "name": "log_append",
+          "params": [
+            "log",
+            "data",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static int log_replace",
+          "detailed": "\n        ",
+          "name": "log_replace",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log, unsigned char *data, size_t len)",
+          "brief": "\n        ",
+          "definition": "static int log_compress",
+          "detailed": "\n        ",
+          "name": "log_compress",
+          "params": [
+            "log",
+            "data",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log, int op, char *record)",
+          "brief": "\n        ",
+          "definition": "static void log_log",
+          "detailed": "\n        ",
+          "name": "log_log",
+          "params": [
+            "log",
+            "op",
+            "record"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log, int op)",
+          "brief": "\n        ",
+          "definition": "static int log_recover",
+          "detailed": "\n        ",
+          "name": "log_recover",
+          "params": [
+            "log",
+            "op"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static void log_close",
+          "detailed": "\n        ",
+          "name": "log_close",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct log *log)",
+          "brief": "\n        ",
+          "definition": "static int log_open",
+          "detailed": "\n        ",
+          "name": "log_open",
+          "params": [
+            "log"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *path)",
+          "brief": "\n        ",
+          "definition": "gzlog * gzlog_open",
+          "detailed": "\n        ",
+          "name": "gzlog_open",
+          "params": [
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzlog *logd)",
+          "brief": "\n        ",
+          "definition": "int gzlog_compress",
+          "detailed": "\n        ",
+          "name": "gzlog_compress",
+          "params": [
+            "logd"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzlog *logd, void *data, size_t len)",
+          "brief": "\n        ",
+          "definition": "int gzlog_write",
+          "detailed": "\n        ",
+          "name": "gzlog_write",
+          "params": [
+            "logd",
+            "data",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzlog *logd)",
+          "brief": "\n        ",
+          "definition": "int gzlog_close",
+          "detailed": "\n        ",
+          "name": "gzlog_close",
+          "params": [
+            "logd"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BAIL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PATIENCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_STORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRIGGER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DICT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NO_OP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "APPEND_OP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMPRESS_OP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REPLACE_OP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULL2",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULL4",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULL8",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT2",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT4",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PUT8",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOGID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HEAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXTRA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BODY",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned int uint",
+          "detailed": "\n        ",
+          "name": "uint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned long ulong",
+          "detailed": "\n        ",
+          "name": "ulong",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char log_gzhead[]",
+          "detailed": "\n        ",
+          "name": "log_gzhead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char log_gzext[]",
+          "detailed": "\n        ",
+          "name": "log_gzext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "unsigned char log_gzbody[]",
+          "detailed": "\n        ",
+          "name": "log_gzbody",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4]",
+          "brief": "\n        ",
+          "definition": "char log::id[4]",
+          "detailed": "\n        ",
+          "name": "id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int log::fd",
+          "detailed": "\n        ",
+          "name": "fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* log::path",
+          "detailed": "\n        ",
+          "name": "path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* log::end",
+          "detailed": "\n        ",
+          "name": "end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "off_t log::first",
+          "detailed": "\n        ",
+          "name": "first",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int log::back",
+          "detailed": "\n        ",
+          "name": "back",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint log::stored",
+          "detailed": "\n        ",
+          "name": "stored",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "off_t log::last",
+          "detailed": "\n        ",
+          "name": "last",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulong log::ccrc",
+          "detailed": "\n        ",
+          "name": "ccrc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulong log::clen",
+          "detailed": "\n        ",
+          "name": "clen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulong log::tcrc",
+          "detailed": "\n        ",
+          "name": "tcrc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulong log::tlen",
+          "detailed": "\n        ",
+          "name": "tlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "time_t log::lock",
+          "detailed": "\n        ",
+          "name": "lock",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/gzlog.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *path)",
+          "brief": "\n        ",
+          "definition": "gzlog * gzlog_open",
+          "detailed": "\n        ",
+          "name": "gzlog_open",
+          "params": [
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzlog *log, void *data, size_t len)",
+          "brief": "\n        ",
+          "definition": "int gzlog_write",
+          "detailed": "\n        ",
+          "name": "gzlog_write",
+          "params": [
+            "log",
+            "data",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzlog *log)",
+          "brief": "\n        ",
+          "definition": "int gzlog_compress",
+          "detailed": "\n        ",
+          "name": "gzlog_compress",
+          "params": [
+            "log"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzlog *log)",
+          "brief": "\n        ",
+          "definition": "int gzlog_close",
+          "detailed": "\n        ",
+          "name": "gzlog_close",
+          "params": [
+            "log"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef void gzlog",
+          "detailed": "\n        ",
+          "name": "gzlog",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "examples/gznorm.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "static char * aprintf",
+          "detailed": "\n        ",
+          "name": "aprintf",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *in, FILE *out, char **err)",
+          "brief": "\n        ",
+          "definition": "static int gzip_normalize",
+          "detailed": "\n        ",
+          "name": "gzip_normalize",
+          "params": [
+            "in",
+            "out",
+            "err"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_BINARY_MODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BYE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHUNK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "examples/zpipe.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(FILE *source, FILE *dest, int level)",
+          "brief": "\n        ",
+          "definition": "int def",
+          "detailed": "\n        ",
+          "name": "def",
+          "params": [
+            "source",
+            "dest",
+            "level"
+          ],
+          "static": false
+        },
+        {
+          "args": "(FILE *source, FILE *dest)",
+          "brief": "\n        ",
+          "definition": "int inf",
+          "detailed": "\n        ",
+          "name": "inf",
+          "params": [
+            "source",
+            "dest"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int ret)",
+          "brief": "\n        ",
+          "definition": "void zerr",
+          "detailed": "\n        ",
+          "name": "zerr",
+          "params": [
+            "ret"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_BINARY_MODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHUNK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "examples/zran.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct deflate_index *index)",
+          "brief": "\n        ",
+          "definition": "void deflate_index_free",
+          "detailed": "\n        ",
+          "name": "deflate_index_free",
+          "params": [
+            "index"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct deflate_index *index, int bits, off_t in, off_t out, unsigned left, unsigned char *window)",
+          "brief": "\n        ",
+          "definition": "static struct deflate_index * add_point",
+          "detailed": "\n        ",
+          "name": "add_point",
+          "params": [
+            "index",
+            "bits",
+            "in",
+            "out",
+            "left",
+            "window"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *in, off_t span, struct deflate_index **built)",
+          "brief": "\n        ",
+          "definition": "int deflate_index_build",
+          "detailed": "\n        ",
+          "name": "deflate_index_build",
+          "params": [
+            "in",
+            "span",
+            "built"
+          ],
+          "static": false
+        },
+        {
+          "args": "(FILE *in, struct deflate_index *index, off_t offset, unsigned char *buf, size_t len)",
+          "brief": "\n        ",
+          "definition": "ptrdiff_t deflate_index_extract",
+          "detailed": "\n        ",
+          "name": "deflate_index_extract",
+          "params": [
+            "in",
+            "index",
+            "offset",
+            "buf",
+            "len"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WINSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHUNK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RAW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INFLATEPRIME",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "examples/zran.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(FILE *in, off_t span, struct deflate_index **built)",
+          "brief": "\n        ",
+          "definition": "int deflate_index_build",
+          "detailed": "\n        ",
+          "name": "deflate_index_build",
+          "params": [
+            "in",
+            "span",
+            "built"
+          ],
+          "static": false
+        },
+        {
+          "args": "(FILE *in, struct deflate_index *index, off_t offset, unsigned char *buf, size_t len)",
+          "brief": "\n        ",
+          "definition": "ptrdiff_t deflate_index_extract",
+          "detailed": "\n        ",
+          "name": "deflate_index_extract",
+          "params": [
+            "in",
+            "index",
+            "offset",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct deflate_index *index)",
+          "brief": "\n        ",
+          "definition": "void deflate_index_free",
+          "detailed": "\n        ",
+          "name": "deflate_index_free",
+          "params": [
+            "index"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct point point_t",
+          "detailed": "\n        ",
+          "name": "point_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    }
+  },
+  "library": "examples",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

@@ -1,0 +1,51 @@
+{
+  "files": {
+    "random_seed.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int get_time_seed",
+          "detailed": "\n        ",
+          "name": "get_time_seed",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int json_c_get_random_seed",
+          "detailed": "\n        ",
+          "name": "json_c_get_random_seed",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEBUG_SEED",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "random_seed.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

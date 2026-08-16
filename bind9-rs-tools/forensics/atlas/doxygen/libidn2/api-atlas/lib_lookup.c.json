@@ -1,0 +1,168 @@
+{
+  "files": {
+    "lib/lookup.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int *flags)",
+          "brief": "\n        ",
+          "definition": "static int set_default_flags",
+          "detailed": "\n        ",
+          "name": "set_default_flags",
+          "params": [
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *src, size_t srclen, uint8_t *dst, size_t *dstlen, int flags)",
+          "brief": "\n        ",
+          "definition": "static int label",
+          "detailed": "\n        ",
+          "name": "label",
+          "params": [
+            "src",
+            "srclen",
+            "dst",
+            "dstlen",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *domain_u8, uint8_t **out, int flags)",
+          "brief": "\n        ",
+          "definition": "static int _tr46",
+          "detailed": "\n        ",
+          "name": "_tr46",
+          "params": [
+            "domain_u8",
+            "out",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *src, uint8_t **lookupname, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_lookup_u8",
+          "detailed": "idn2_lookup_u8: @src: input zero-terminated UTF-8 string in Unicode NFC normalized form. @lookupname: newly allocated output variable with name to lookup in DNS. @flags: optional idn2_flags to modify behaviour.\nPerform IDNA2008 lookup string conversion on domain name @src, as described in section 5 of RFC 5891. Note that the input string must be encoded in UTF-8 and be in Unicode NFC form.\nPass IDN2_NFC_INPUT in @flags to convert input to NFC form before further processing. IDN2_TRANSITIONAL and IDN2_NONTRANSITIONAL do already imply IDN2_NFC_INPUT.\nPass IDN2_ALABEL_ROUNDTRIP in @flags to convert any input A-labels to U-labels and perform additional testing. This is default since version 2.2. To switch this behavior off, pass IDN2_NO_ALABEL_ROUNDTRIP\nPass IDN2_TRANSITIONAL to enable Unicode TR46 transitional processing, and IDN2_NONTRANSITIONAL to enable Unicode TR46 non-transitional processing.\nMultiple flags may be specified by binary or:ing them together.\nAfter version 2.0.3: IDN2_USE_STD3_ASCII_RULES disabled by default. Previously we were eliminating non-STD3 characters from domain strings such as _443._tcp.example.com, or IPs 1.2.3.4/24 provided to libidn2 functions. That was an unexpected regression for applications switching from libidn and thus it is no longer applied by default. Use IDN2_USE_STD3_ASCII_RULES to enable that behavior again.\nAfter version 0.11: @lookupname may be NULL to test lookup of @src without allocating memory.\nReturns: On successful conversion IDN2_OK is returned, if the output domain or any label would have been too long IDN2_TOO_BIG_DOMAIN or IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 0.1",
+          "name": "idn2_lookup_u8",
+          "params": [
+            "src",
+            "lookupname",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *src, char **lookupname, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_lookup_ul",
+          "detailed": "idn2_lookup_ul: @src: input zero-terminated locale encoded string. @lookupname: newly allocated output variable with name to lookup in DNS. @flags: optional idn2_flags to modify behaviour.\nPerform IDNA2008 lookup string conversion on domain name @src, as described in section 5 of RFC 5891. Note that the input is assumed to be encoded in the locale's default coding system, and will be transcoded to UTF-8 and NFC normalized by this function.\nPass IDN2_ALABEL_ROUNDTRIP in @flags to convert any input A-labels to U-labels and perform additional testing. This is default since version 2.2. To switch this behavior off, pass IDN2_NO_ALABEL_ROUNDTRIP\nPass IDN2_TRANSITIONAL to enable Unicode TR46 transitional processing, and IDN2_NONTRANSITIONAL to enable Unicode TR46 non-transitional processing.\nMultiple flags may be specified by binary or:ing them together, for example IDN2_ALABEL_ROUNDTRIP | IDN2_NONTRANSITIONAL.\nThe IDN2_NFC_INPUT in @flags is always enabled in this function.\nAfter version 0.11: @lookupname may be NULL to test lookup of @src without allocating memory.\nReturns: On successful conversion IDN2_OK is returned, if conversion from locale to UTF-8 fails then IDN2_ICONV_FAIL is returned, if the output domain or any label would have been too long IDN2_TOO_BIG_DOMAIN or IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 0.1",
+          "name": "idn2_lookup_ul",
+          "params": [
+            "src",
+            "lookupname",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, size_t inlen, char *output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_4i",
+          "detailed": "idn2_to_ascii_4i: @input: zero terminated input Unicode (UCS-4) string. @inlen: number of elements in @input. @output: output zero terminated string that must have room for at least 63 characters plus the terminating zero. @flags: optional idn2_flags to modify behaviour.\nThe ToASCII operation takes a sequence of Unicode code points that make up one domain label and transforms it into a sequence of code points in the ASCII range (0..7F). If ToASCII succeeds, the original sequence and the resulting sequence are equivalent labels.\nIt is important to note that the ToASCII operation can fail. ToASCII fails if any step of it fails. If any step of the ToASCII operation fails on any label in a domain name, that domain name MUST NOT be used as an internationalized domain name. The method for dealing with this failure is application-specific.\nThe inputs to ToASCII are a sequence of code points.\nToASCII never alters a sequence of code points that are all in the ASCII range to begin with (although it could fail). Applying the ToASCII operation multiple effect as applying it just once.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nWarning: With version 2.1.1 until before version 2.3.5 this function was deprecated in favor idn2_to_ascii_4i2(). We still encourage you to use idn2_to_ascii_4i2() when appropriate.\nReturns: On successful conversion IDN2_OK is returned; if the output label would have been too long IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_4i",
+          "params": [
+            "input",
+            "inlen",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, size_t inlen, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_4i2",
+          "detailed": "idn2_to_ascii_4i2: @input: zero terminated input Unicode (UCS-4) string. @inlen: number of elements in @input. @output: pointer to newly allocated zero-terminated output string. @flags: optional idn2_flags to modify behaviour.\nThe ToASCII operation takes a sequence of Unicode code points that make up one domain label and transforms it into a sequence of code points in the ASCII range (0..7F). If ToASCII succeeds, the original sequence and the resulting sequence are equivalent labels.\nIt is important to note that the ToASCII operation can fail. ToASCII fails if any step of it fails. If any step of the ToASCII operation fails on any label in a domain name, that domain name MUST NOT be used as an internationalized domain name. The method for dealing with this failure is application-specific.\nThe inputs to ToASCII are a sequence of code points.\nToASCII never alters a sequence of code points that are all in the ASCII range to begin with (although it could fail). Applying the ToASCII operation multiple effect as applying it just once.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturns: On successful conversion IDN2_OK is returned; if the output label would have been too long IDN2_TOO_BIG_LABEL is returned, or another error code is returned.\nSince: 2.1.1",
+          "name": "idn2_to_ascii_4i2",
+          "params": [
+            "input",
+            "inlen",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_4z",
+          "detailed": "idn2_to_ascii_4z: @input: zero terminated input Unicode (UCS-4) string. @output: pointer to newly allocated zero-terminated output string. @flags: optional idn2_flags to modify behaviour.\nConvert UCS-4 domain name to ASCII string using the IDNA2008 rules. The domain name may contain several labels, separated by dots. The output buffer must be deallocated by the caller.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturn value: Returns IDN2_OK on success, or error code.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_4z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_8z",
+          "detailed": "idn2_to_ascii_8z: @input: zero terminated input UTF-8 string. @output: pointer to newly allocated output string. @flags: optional idn2_flags to modify behaviour.\nConvert UTF-8 domain name to ASCII string using the IDNA2008 rules. The domain name may contain several labels, separated by dots. The output buffer must be deallocated by the caller.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturn value: Returns IDN2_OK on success, or error code.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_8z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_ascii_lz",
+          "detailed": "idn2_to_ascii_lz: @input: zero terminated input UTF-8 string. @output: pointer to newly allocated output string. @flags: optional idn2_flags to modify behaviour.\nConvert a domain name in locale's encoding to ASCII string using the IDNA2008 rules. The domain name may contain several labels, separated by dots. The output buffer must be deallocated by the caller.\nThe default behavior of this function (when flags are zero) is to apply the IDNA2008 rules without the TR46 amendments. As the TR46 non-transitional processing is nowadays ubiquitous, when unsure, it is recommended to call this function with the IDN2_NONTRANSITIONAL and the IDN2_NFC_INPUT flags for compatibility with other software.\nReturns: IDN2_OK on success, or error code. Same as described in idn2_lookup_ul() documentation.\nSince: 2.0.0",
+          "name": "idn2_to_ascii_lz",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TR46_TRANSITIONAL_CHECK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TR46_NONTRANSITIONAL_CHECK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/lookup.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

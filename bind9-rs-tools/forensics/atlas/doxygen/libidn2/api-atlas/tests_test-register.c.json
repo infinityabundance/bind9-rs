@@ -1,0 +1,38 @@
+{
+  "files": {
+    "tests/test-register.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct idna idna[]",
+          "detailed": "\n        ",
+          "name": "idna",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test-register.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

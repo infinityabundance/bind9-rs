@@ -1,0 +1,528 @@
+{
+  "files": {
+    "trees.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned code, int len)",
+          "brief": "\n        ",
+          "definition": "static unsigned bi_reverse",
+          "detailed": "\n        ",
+          "name": "bi_reverse",
+          "params": [
+            "code",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static void bi_flush",
+          "detailed": "\n        ",
+          "name": "bi_flush",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static void bi_windup",
+          "detailed": "\n        ",
+          "name": "bi_windup",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ct_data *tree, int max_code, ushf *bl_count)",
+          "brief": "\n        ",
+          "definition": "static void gen_codes",
+          "detailed": "\n        ",
+          "name": "gen_codes",
+          "params": [
+            "tree",
+            "max_code",
+            "bl_count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void tr_static_init",
+          "detailed": "\n        ",
+          "name": "tr_static_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static void init_block",
+          "detailed": "\n        ",
+          "name": "init_block",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "void _tr_init",
+          "detailed": "\n        ",
+          "name": "_tr_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, ct_data *tree, int k)",
+          "brief": "\n        ",
+          "definition": "static void pqdownheap",
+          "detailed": "\n        ",
+          "name": "pqdownheap",
+          "params": [
+            "s",
+            "tree",
+            "k"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, tree_desc *desc)",
+          "brief": "\n        ",
+          "definition": "static void gen_bitlen",
+          "detailed": "\n        ",
+          "name": "gen_bitlen",
+          "params": [
+            "s",
+            "desc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, tree_desc *desc)",
+          "brief": "\n        ",
+          "definition": "static void build_tree",
+          "detailed": "\n        ",
+          "name": "build_tree",
+          "params": [
+            "s",
+            "desc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, ct_data *tree, int max_code)",
+          "brief": "\n        ",
+          "definition": "static void scan_tree",
+          "detailed": "\n        ",
+          "name": "scan_tree",
+          "params": [
+            "s",
+            "tree",
+            "max_code"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, ct_data *tree, int max_code)",
+          "brief": "\n        ",
+          "definition": "static void send_tree",
+          "detailed": "\n        ",
+          "name": "send_tree",
+          "params": [
+            "s",
+            "tree",
+            "max_code"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static int build_bl_tree",
+          "detailed": "\n        ",
+          "name": "build_bl_tree",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, int lcodes, int dcodes, int blcodes)",
+          "brief": "\n        ",
+          "definition": "static void send_all_trees",
+          "detailed": "\n        ",
+          "name": "send_all_trees",
+          "params": [
+            "s",
+            "lcodes",
+            "dcodes",
+            "blcodes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, charf *buf, ulg stored_len, int last)",
+          "brief": "\n        ",
+          "definition": "void _tr_stored_block",
+          "detailed": "\n        ",
+          "name": "_tr_stored_block",
+          "params": [
+            "s",
+            "buf",
+            "stored_len",
+            "last"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "void _tr_flush_bits",
+          "detailed": "\n        ",
+          "name": "_tr_flush_bits",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "void _tr_align",
+          "detailed": "\n        ",
+          "name": "_tr_align",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, ct_data *ltree, ct_data *dtree)",
+          "brief": "\n        ",
+          "definition": "static void compress_block",
+          "detailed": "\n        ",
+          "name": "compress_block",
+          "params": [
+            "s",
+            "ltree",
+            "dtree"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static int detect_data_type",
+          "detailed": "\n        ",
+          "name": "detect_data_type",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, charf *buf, ulg stored_len, int last)",
+          "brief": "\n        ",
+          "definition": "void _tr_flush_block",
+          "detailed": "\n        ",
+          "name": "_tr_flush_block",
+          "params": [
+            "s",
+            "buf",
+            "stored_len",
+            "last"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, unsigned dist, unsigned lc)",
+          "brief": "\n        ",
+          "definition": "int _tr_tally",
+          "detailed": "\n        ",
+          "name": "_tr_tally",
+          "params": [
+            "s",
+            "dist",
+            "lc"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_BL_BITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "END_BLOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REP_3_6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REPZ_3_10",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REPZ_11_138",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIST_CODE_LEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TCONST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "put_short",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "send_code",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "send_bits",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SMALLEST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "pqremove",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "smaller",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[29]",
+          "brief": "\n        ",
+          "definition": "int extra_lbits[29]",
+          "detailed": "\n        ",
+          "name": "extra_lbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[30]",
+          "brief": "\n        ",
+          "definition": "int extra_dbits[30]",
+          "detailed": "\n        ",
+          "name": "extra_dbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[19]",
+          "brief": "\n        ",
+          "definition": "int extra_blbits[19]",
+          "detailed": "\n        ",
+          "name": "extra_blbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[19]",
+          "brief": "\n        ",
+          "definition": "uch bl_order[19]",
+          "detailed": "\n        ",
+          "name": "bl_order",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(256+1+29)+2]",
+          "brief": "\n        ",
+          "definition": "ct_data static_ltree[(256+1+29)+2]",
+          "detailed": "\n        ",
+          "name": "static_ltree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[30]",
+          "brief": "\n        ",
+          "definition": "ct_data static_dtree[30]",
+          "detailed": "\n        ",
+          "name": "static_dtree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "uch _dist_code[512]",
+          "detailed": "\n        ",
+          "name": "_dist_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[258 - 3+1]",
+          "brief": "\n        ",
+          "definition": "uch _length_code[258 - 3+1]",
+          "detailed": "\n        ",
+          "name": "_length_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[29]",
+          "brief": "\n        ",
+          "definition": "int base_length[29]",
+          "detailed": "\n        ",
+          "name": "base_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[30]",
+          "brief": "\n        ",
+          "definition": "int base_dist[30]",
+          "detailed": "\n        ",
+          "name": "base_dist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static_tree_desc static_l_desc",
+          "detailed": "\n        ",
+          "name": "static_l_desc",
+          "params": [],
+          "static": true
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static_tree_desc static_d_desc",
+          "detailed": "\n        ",
+          "name": "static_d_desc",
+          "params": [],
+          "static": true
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static_tree_desc static_bl_desc",
+          "detailed": "\n        ",
+          "name": "static_bl_desc",
+          "params": [],
+          "static": true
+        }
+      ]
+    }
+  },
+  "library": "trees.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

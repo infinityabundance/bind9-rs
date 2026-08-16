@@ -1,0 +1,84 @@
+{
+  "files": {
+    "lib/tables.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const struct idna_table *m1, const struct idna_table *m2)",
+          "brief": "\n        ",
+          "definition": "static int _compare",
+          "detailed": "\n        ",
+          "name": "_compare",
+          "params": [
+            "m1",
+            "m2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t cp) _GL_ATTRIBUTE_CONST",
+          "brief": "\n        ",
+          "definition": "static int property",
+          "detailed": "\n        ",
+          "name": "property",
+          "params": [
+            "cp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_disallowed_p",
+          "detailed": "\n        ",
+          "name": "_idn2_disallowed_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_contextj_p",
+          "detailed": "\n        ",
+          "name": "_idn2_contextj_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_contexto_p",
+          "detailed": "\n        ",
+          "name": "_idn2_contexto_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "int _idn2_unassigned_p",
+          "detailed": "\n        ",
+          "name": "_idn2_unassigned_p",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/tables.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

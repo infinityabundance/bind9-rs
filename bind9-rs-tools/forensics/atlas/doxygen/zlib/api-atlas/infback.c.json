@@ -1,0 +1,180 @@
+{
+  "files": {
+    "infback.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(z_streamp strm, int windowBits, unsigned char *window, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateBackInit_",
+          "detailed": "\n        ",
+          "name": "inflateBackInit_",
+          "params": [
+            "strm",
+            "windowBits",
+            "window",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct inflate_state *state)",
+          "brief": "\n        ",
+          "definition": "static void fixedtables",
+          "detailed": "\n        ",
+          "name": "fixedtables",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, in_func in, void *in_desc, out_func out, void *out_desc)",
+          "brief": "\n        ",
+          "definition": "int inflateBack",
+          "detailed": "\n        ",
+          "name": "inflateBack",
+          "params": [
+            "strm",
+            "in",
+            "in_desc",
+            "out",
+            "out_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateBackEnd",
+          "detailed": "\n        ",
+          "name": "inflateBackEnd",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOAD",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RESTORE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INITBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULLBYTE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NEEDBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DROPBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BYTEBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ROOM",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "infback.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

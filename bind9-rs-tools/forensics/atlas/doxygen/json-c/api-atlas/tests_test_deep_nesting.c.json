@@ -1,0 +1,72 @@
+{
+  "files": {
+    "tests/test_deep_nesting.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static char * generate_json_string",
+          "detailed": "\n        ",
+          "name": "generate_json_string",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static void test_deep_nesting_put",
+          "detailed": "\n        ",
+          "name": "test_deep_nesting_put",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static void test_deep_nesting_tostring",
+          "detailed": "\n        ",
+          "name": "test_deep_nesting_tostring",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NESTING_DEPTH",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_deep_nesting.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

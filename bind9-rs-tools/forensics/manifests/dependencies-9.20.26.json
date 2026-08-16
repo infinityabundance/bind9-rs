@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-16T00:00:00Z",
+  "for_bind_release": "9.20.26",
+  "purpose": "Dependency inventory and provenance for the pinned BIND 9.20.26 oracle (addendum §6, §7). Constraints are read from the pinned source's configure.ac (hash below), not from memory. Host versions are what the local oracle build actually linked against.",
+  "constraints_source": {
+    "path": "forensics/oracle/work/bind-9.20.26/configure.ac",
+    "sha256": "7c639ccd156a8eb75f700b150d6df42daf6c113bdf7d55b3d4824a647c3a4e37"
+  },
+  "oracle_build_environment": {
+    "os": "CachyOS (Arch Linux derivative)",
+    "os_release": "ID=cachyos",
+    "compiler": "gcc (GCC) 16.2.1 20260810",
+    "package_manager_evidence": "pacman -Q output recorded in per-dependency 'host_version'",
+    "notes": "DNSTAP is DISABLED in this oracle build (libfstrm absent from host and from ldd on installed binaries; dnstap-read not installed). LMDB, maxminddb, json-c, libxml2, libcap, libedit, libidn2, libuv, liburcu, zlib are all enabled/auto-detected."
+  },
+  "dependencies": {
+    "libuv": {
+      "role": "runtime (event loop; required by named since 9.16)",
+      "constraint": "libuv >= 1.37.0; fallback 1.34.0 <= x < 1.35.0",
+      "configure_ac_refs": ["583", "584"],
+      "oracle_status": "enabled",
+      "host_version": "1.52.1-1.1",
+      "upstream": "https://github.com/libuv/libuv",
+      "source_url_template": "https://github.com/libuv/libuv/releases/download/v{ver}/libuv-v{ver}.tar.gz"
+    },
+    "liburcu": {
+      "role": "runtime (userspace RCU; required since 9.16)",
+      "constraint": "liburcu >= 0.13.0 + liburcu-cds >= 0.13.0; fallback >= 0.10.0",
+      "configure_ac_refs": ["241", "242"],
+      "oracle_status": "enabled",
+      "host_version": "0.15.6-1.1",
+      "upstream": "https://github.com/urcu/userspace-rcu",
+      "source_url_template": "https://github.com/urcu/userspace-rcu/releases/download/v{ver}/userspace-rcu-{ver}.tar.bz2"
+    },
+    "lmdb": {
+      "role": "runtime (named-nzd2nzf / runtime-added-zone persistence; BIND uses the OpenLDAP LMDB tree)",
+      "constraint": "auto-detected (pkg-config lmdb)",
+      "configure_ac_refs": ["873"],
+      "oracle_status": "enabled (HAVE_LMDB=1; named-nzd2nzf installed)",
+      "host_version": "0.9.35-1.1",
+      "upstream": "https://github.com/LMDB/lmdb",
+      "source_url_template": "https://github.com/LMDB/lmdb/archive/refs/tags/LMDB_{ver}.tar.gz"
+    },
+    "libmaxminddb": {
+      "role": "runtime (GeoIP2 ACL support)",
+      "constraint": "auto-detected (libmaxminddb)",
+      "configure_ac_refs": ["526", "530"],
+      "oracle_status": "enabled (libmaxminddb.so.0 linked)",
+      "host_version": "1.13.3-1.1",
+      "upstream": "https://github.com/maxmind/libmaxminddb",
+      "source_url_template": "https://github.com/maxmind/libmaxminddb/releases/download/{ver}/libmaxminddb-{ver}.tar.gz"
+    },
+    "zlib": {
+      "role": "runtime (compression; linked as zlib-ng-compat on host)",
+      "constraint": "auto-detected (zlib)",
+      "configure_ac_refs": ["954", "957"],
+      "oracle_status": "enabled (libz.so.1 linked; host provides zlib-ng-compat)",
+      "host_version": "zlib-ng-compat 2.3.3-2 (libz.so.1 ABI)",
+      "upstream": "https://github.com/madler/zlib",
+      "source_url_template": "https://zlib.net/zlib-{ver}.tar.gz"
+    },
+    "libxml2": {
+      "role": "runtime (statistics / config XSL support)",
+      "constraint": "libxml-2.0 >= 2.6.0",
+      "configure_ac_refs": ["909", "912"],
+      "oracle_status": "enabled (libxml2.so.16 linked)",
+      "host_version": "2.15.3-1.1",
+      "upstream": "https://gitlab.gnome.org/GNOME/libxml2",
+      "source_url_template": "https://download.gnome.org/sources/libxml2/{minor}/libxml2-{ver}.tar.xz"
+    },
+    "json-c": {
+      "role": "runtime (JSON statistics channels)",
+      "constraint": "json-c >= 0.11",
+      "configure_ac_refs": ["929", "932"],
+      "oracle_status": "enabled (libjson-c.so.5 linked)",
+      "host_version": "0.19-1.1",
+      "upstream": "https://github.com/json-c/json-c",
+      "source_url_template": "https://github.com/json-c/json-c/releases/download/json-c-{ver}/json-c-{ver}.tar.gz"
+    },
+    "libcap": {
+      "role": "runtime (Linux capabilities for privilege drop)",
+      "constraint": "auto-detected (libcap)",
+      "configure_ac_refs": ["1073"],
+      "oracle_status": "enabled (linked into named)",
+      "host_version": "2.78-1.1",
+      "upstream": "https://sites.google.com/site/fullycapable/",
+      "source_url_template": "https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-{ver}.tar.xz"
+    },
+    "libedit": {
+      "role": "runtime (nslookup interactive line editing; readline fallback)",
+      "constraint": "libedit / libeditline / readline (first found)",
+      "configure_ac_refs": ["1033", "1035", "1042", "1045"],
+      "oracle_status": "enabled (libedit)",
+      "host_version": "20260512_3.1-1.1",
+      "upstream": "https://github.com/NetBSD/src/tree/trunk/lib/libedit (NetBSD editline)",
+      "source_url_template": "https://thrysoee.dk/editline/libedit-{ver}.tar.gz"
+    },
+    "libidn2": {
+      "role": "runtime (IDNA2008 for dig/host name processing)",
+      "constraint": "auto-detected (libidn2)",
+      "configure_ac_refs": ["1286"],
+      "oracle_status": "enabled (libidn2 2.3.8 on host; dig links via libdns)",
+      "host_version": "2.3.8-1.1",
+      "upstream": "https://gitlab.com/libidn/libidn2",
+      "source_url_template": "https://ftp.gnu.org/gnu/libidn/libidn2-{ver}.tar.gz"
+    },
+    "openssl": {
+      "role": "runtime (DNSSEC, TLS/DoT, TSIG, HTTP/DoH)",
+      "constraint": "libssl + libcrypto",
+      "configure_ac_refs": ["670", "671"],
+      "oracle_status": "enabled (openssl 3.6.3 linked)",
+      "host_version": "3.6.3-1.1",
+      "upstream": "https://github.com/openssl/openssl",
+      "source_url_template": "https://www.openssl.org/source/openssl-{ver}.tar.gz"
+    },
+    "libfstrm": {
+      "role": "runtime (DNSTAP; REQUIRED for dnstap-read)",
+      "constraint": "libfstrm + libprotobuf-c (DNSTAP)",
+      "configure_ac_refs": ["1215"],
+      "oracle_status": "DISABLED in this oracle build (not installed on host; dnstap-read not built)",
+      "host_version": "absent",
+      "upstream": "https://github.com/farsightsec/fstrm",
+      "source_url_template": "https://github.com/farsightsec/fstrm/releases/download/v{ver}/fstrm-{ver}.tar.gz"
+    },
+    "libprotobuf-c": {
+      "role": "runtime (DNSTAP protobuf encoding; REQUIRED for dnstap-read)",
+      "constraint": "libprotobuf-c (DNSTAP)",
+      "configure_ac_refs": ["1215"],
+      "oracle_status": "DISABLED in this oracle build (dnstap disabled)",
+      "host_version": "1.5.2-12.1 (installed but unused by this build)",
+      "upstream": "https://github.com/protobuf-c/protobuf-c",
+      "source_url_template": "https://github.com/protobuf-c/protobuf-c/releases/download/v{ver}/protobuf-c-{ver}.tar.gz"
+    }
+  }
+}

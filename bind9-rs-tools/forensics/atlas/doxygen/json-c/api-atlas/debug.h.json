@@ -1,0 +1,187 @@
+{
+  "files": {
+    "debug.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int debug)",
+          "brief": "\n        ",
+          "definition": "void mc_set_debug",
+          "detailed": "\n        ",
+          "name": "mc_set_debug",
+          "params": [
+            "debug"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int mc_get_debug",
+          "detailed": "\n        ",
+          "name": "mc_get_debug",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int syslog)",
+          "brief": "\n        ",
+          "definition": "void mc_set_syslog",
+          "detailed": "\n        ",
+          "name": "mc_set_syslog",
+          "params": [
+            "syslog"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "void mc_debug",
+          "detailed": "\n        ",
+          "name": "mc_debug",
+          "params": [
+            "msg",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "void mc_error",
+          "detailed": "\n        ",
+          "name": "mc_error",
+          "params": [
+            "msg",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *msg,...)",
+          "brief": "\n        ",
+          "definition": "void mc_info",
+          "detailed": "\n        ",
+          "name": "mc_info",
+          "params": [
+            "msg",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_EXPORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__STRING",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JASSERT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MC_ERROR",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MC_SET_DEBUG",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MC_GET_DEBUG",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MC_SET_SYSLOG",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MC_DEBUG",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MC_INFO",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "debug.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

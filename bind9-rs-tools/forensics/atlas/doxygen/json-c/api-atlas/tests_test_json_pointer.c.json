@@ -1,0 +1,116 @@
+{
+  "files": {
+    "tests/test_json_pointer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *jo1, const char *json_pointer, int expected_int)",
+          "brief": "\n        ",
+          "definition": "static void test_example_int",
+          "detailed": "\n        ",
+          "name": "test_example_int",
+          "params": [
+            "jo1",
+            "json_pointer",
+            "expected_int"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_example_get",
+          "detailed": "\n        ",
+          "name": "test_example_get",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_recursion_get",
+          "detailed": "\n        ",
+          "name": "test_recursion_get",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_wrong_inputs_get",
+          "detailed": "\n        ",
+          "name": "test_wrong_inputs_get",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_example_set",
+          "detailed": "\n        ",
+          "name": "test_example_set",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_wrong_inputs_set",
+          "detailed": "\n        ",
+          "name": "test_wrong_inputs_set",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* input_json_str",
+          "detailed": "\n        ",
+          "name": "input_json_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* rec_input_json_str",
+          "detailed": "\n        ",
+          "name": "rec_input_json_str",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_json_pointer.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

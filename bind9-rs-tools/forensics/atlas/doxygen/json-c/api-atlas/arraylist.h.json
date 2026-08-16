@@ -1,0 +1,241 @@
+{
+  "files": {
+    "arraylist.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(array_list_free_fn *free_fn)",
+          "brief": "\n        ",
+          "definition": "struct array_list * array_list_new",
+          "detailed": "Allocate an array_list of the default size (32). DeprecatedUse array_list_new2() instead. \n\nUse array_list_new2() instead.",
+          "name": "array_list_new",
+          "params": [
+            "free_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(array_list_free_fn *free_fn, int initial_size)",
+          "brief": "\n        ",
+          "definition": "struct array_list * array_list_new2",
+          "detailed": "Allocate an array_list of the desired size.\nIf possible, the size should be chosen to closely match the actual number of elements expected to be used. If the exact size is unknown, there are tradeoffs to be made:\ntoo small - the array_list code will need to call realloc() more often (which might incur an additional memory copy).\ntoo large - will waste memory, but that can be mitigated by calling array_list_shrink() once the final size is known.\n\n\ntoo small - the array_list code will need to call realloc() more often (which might incur an additional memory copy).\ntoo large - will waste memory, but that can be mitigated by calling array_list_shrink() once the final size is known.\narray_list_shrink \n\n\narray_list_shrink",
+          "name": "array_list_new2",
+          "params": [
+            "free_fn",
+            "initial_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al)",
+          "brief": "\n        ",
+          "definition": "void array_list_free",
+          "detailed": "\n        ",
+          "name": "array_list_free",
+          "params": [
+            "al"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al, size_t i)",
+          "brief": "\n        ",
+          "definition": "void * array_list_get_idx",
+          "detailed": "\n        ",
+          "name": "array_list_get_idx",
+          "params": [
+            "al",
+            "i"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al, size_t i, void *data)",
+          "brief": "\n        ",
+          "definition": "int array_list_insert_idx",
+          "detailed": "\n        ",
+          "name": "array_list_insert_idx",
+          "params": [
+            "al",
+            "i",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al, size_t i, void *data)",
+          "brief": "\n        ",
+          "definition": "int array_list_put_idx",
+          "detailed": "\n        ",
+          "name": "array_list_put_idx",
+          "params": [
+            "al",
+            "i",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al, void *data)",
+          "brief": "\n        ",
+          "definition": "int array_list_add",
+          "detailed": "\n        ",
+          "name": "array_list_add",
+          "params": [
+            "al",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al, size_t i, void *data)",
+          "brief": "\n        ",
+          "definition": "int array_list_set_idx",
+          "detailed": "Set the value at index i. Caller is responsible for freeing the previous value. To automatically free the existing value, use array_list_put_idx() instead.",
+          "name": "array_list_set_idx",
+          "params": [
+            "al",
+            "i",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *al)",
+          "brief": "\n        ",
+          "definition": "size_t array_list_length",
+          "detailed": "\n        ",
+          "name": "array_list_length",
+          "params": [
+            "al"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *arr, int(*compar)(const void *, const void *))",
+          "brief": "\n        ",
+          "definition": "void array_list_sort",
+          "detailed": "\n        ",
+          "name": "array_list_sort",
+          "params": [
+            "arr",
+            "compar"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void **key, struct array_list *arr, int(*compar)(const void *, const void *))",
+          "brief": "\n        ",
+          "definition": "void * array_list_bsearch",
+          "detailed": "\n        ",
+          "name": "array_list_bsearch",
+          "params": [
+            "key",
+            "arr",
+            "compar"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *arr, size_t idx, size_t count)",
+          "brief": "\n        ",
+          "definition": "int array_list_del_idx",
+          "detailed": "\n        ",
+          "name": "array_list_del_idx",
+          "params": [
+            "arr",
+            "idx",
+            "count"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct array_list *arr, size_t empty_slots)",
+          "brief": "\n        ",
+          "definition": "int array_list_shrink",
+          "detailed": "Shrink the array list to just enough to fit the number of elements in it, plus empty_slots.",
+          "name": "array_list_shrink",
+          "params": [
+            "arr",
+            "empty_slots"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ARRAY_LIST_DEFAULT_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "(void *data)",
+          "brief": "\n        ",
+          "definition": "typedef void array_list_free_fn(void *data)",
+          "detailed": "\n        ",
+          "name": "array_list_free_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct array_list array_list",
+          "detailed": "\n        ",
+          "name": "array_list",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void** array_list::array",
+          "detailed": "\n        ",
+          "name": "array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t array_list::length",
+          "detailed": "\n        ",
+          "name": "length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t array_list::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "array_list_free_fn* array_list::free_fn",
+          "detailed": "\n        ",
+          "name": "free_fn",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "arraylist.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

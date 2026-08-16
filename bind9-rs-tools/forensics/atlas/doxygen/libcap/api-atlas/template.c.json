@@ -1,0 +1,16 @@
+{
+  "files": {
+    "template.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "template.c",
+  "schema_version": 1,
+  "version": "2.78"
+}

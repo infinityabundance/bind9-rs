@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-16T00:00:00Z",
+  "purpose": "Index of the Doxygen source-surface atlases for the 11 conserved BIND dependency modules (addendum §7, §8). Each entry records the pinned version, provenance URL+sha256 (from manifests/dependency-sources.json), and the parsed inventory counts.",
+  "atlas_root": "bind9-rs-tools/forensics/atlas/doxygen",
+  "entries": {
+    "lmdb": { "version": "0.9.35", "inventory_files": 2, "functions": 42 },
+    "fstrm": { "version": "0.6.1", "inventory_files": 5, "functions": 208 },
+    "libcap": { "version": "2.78", "inventory_files": 17, "functions": 354 },
+    "libidn2": { "version": "2.3.8", "inventory_files": 45, "functions": 701 },
+    "libedit": { "version": "20260512-3.1", "inventory_files": 3, "functions": 897 },
+    "liburcu": { "version": "0.15.6", "inventory_files": 9, "functions": 1149 },
+    "libuv": { "version": "1.52.1", "inventory_files": 5, "functions": 3713 },
+    "protobuf-c": { "version": "1.5.2", "inventory_files": 4, "functions": 282 },
+    "libmaxminddb": { "version": "1.13.3", "inventory_files": 5, "functions": 264 },
+    "zlib": { "version": "1.3.1", "inventory_files": 30, "functions": 643 },
+    "json-c": { "version": "0.19", "inventory_files": 68, "functions": 405 }
+  },
+  "totals": { "inventory_files": 193, "functions": 8658 },
+  "generator": "scripts/archaeology/doxygen-deps.sh (config: scripts/archaeology/doxygen-dep.conf, parser: scripts/archaeology/parse-doxygen-xml.py)"
+}

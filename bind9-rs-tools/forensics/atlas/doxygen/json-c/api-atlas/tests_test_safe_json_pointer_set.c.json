@@ -1,0 +1,102 @@
+{
+  "files": {
+    "tests/test_safe_json_pointer_set.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_example_set_with_limit_index",
+          "detailed": "\n        ",
+          "name": "test_example_set_with_limit_index",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_wrong_inputs_set_with_limit_index",
+          "detailed": "\n        ",
+          "name": "test_wrong_inputs_set_with_limit_index",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *parent, const char *key, size_t idx, json_object *value, void *priv)",
+          "brief": "\n        ",
+          "definition": "static int test_cb_print_msg",
+          "detailed": "\n        ",
+          "name": "test_cb_print_msg",
+          "params": [
+            "parent",
+            "key",
+            "idx",
+            "value",
+            "priv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *parent, const char *key, size_t idx, json_object *value, void *priv)",
+          "brief": "\n        ",
+          "definition": "static int test_cb_reject_logic",
+          "detailed": "\n        ",
+          "name": "test_cb_reject_logic",
+          "params": [
+            "parent",
+            "key",
+            "idx",
+            "value",
+            "priv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_set_with_cb",
+          "detailed": "\n        ",
+          "name": "test_set_with_cb",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* input_json_str",
+          "detailed": "\n        ",
+          "name": "input_json_str",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_safe_json_pointer_set.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

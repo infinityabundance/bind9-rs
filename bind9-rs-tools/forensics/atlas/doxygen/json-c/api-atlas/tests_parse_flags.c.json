@@ -1,0 +1,69 @@
+{
+  "files": {
+    "tests/parse_flags.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int parse_flags",
+          "detailed": "\n        ",
+          "name": "parse_flags",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NELEM",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* arg",
+          "detailed": "\n        ",
+          "name": "arg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int flag",
+          "detailed": "\n        ",
+          "name": "flag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct @205244100272111057252300325311007141255363146214 format_args[]",
+          "detailed": "\n        ",
+          "name": "format_args",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/parse_flags.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

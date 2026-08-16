@@ -1,0 +1,126 @@
+{
+  "files": {
+    "strerror_override.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *name)",
+          "brief": "\n        ",
+          "definition": "char * getenv",
+          "detailed": "\n        ",
+          "name": "getenv",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int errno_in)",
+          "brief": "\n        ",
+          "definition": "char * _json_c_strerror",
+          "detailed": "\n        ",
+          "name": "_json_c_strerror",
+          "params": [
+            "errno_in"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STRERROR_OVERRIDE_IMPL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STRINGIFY",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ENTRY",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PREFIX",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int errno_value",
+          "detailed": "\n        ",
+          "name": "errno_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* errno_str",
+          "detailed": "\n        ",
+          "name": "errno_str",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct @057101246375326346157175233113021112367221373011 errno_list[]",
+          "detailed": "\n        ",
+          "name": "errno_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int _json_c_strerror_enable",
+          "detailed": "\n        ",
+          "name": "_json_c_strerror_enable",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[128]",
+          "brief": "\n        ",
+          "definition": "char errno_buf[128]",
+          "detailed": "\n        ",
+          "name": "errno_buf",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "strerror_override.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

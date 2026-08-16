@@ -1,0 +1,203 @@
+{
+  "files": {
+    "lib/idna.h": {
+      "enum_values": [
+        {
+          "args": "= 0x0001",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_NFC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0002",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_2HYPHEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0004",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_HYPHEN_STARTEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0008",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_LEADING_COMBINING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0010",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_DISALLOWED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0020",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_CONTEXTJ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0040",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_CONTEXTJ_RULE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0080",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_CONTEXTO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0100",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_CONTEXTO_WITH_RULE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0200",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_CONTEXTO_RULE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0400",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_UNASSIGNED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x0800",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_BIDI",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x1000",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_TRANSITIONAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x2000",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_NONTRANSITIONAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x4000",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TEST_ALLOW_STD3_DISALLOWED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@130205300344017214306177027314162145330331277075",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(const uint8_t *src, size_t srclen, uint32_t **out, size_t *outlen, int nfc)",
+          "brief": "\n        ",
+          "definition": "int _idn2_u8_to_u32_nfc",
+          "detailed": "\n        ",
+          "name": "_idn2_u8_to_u32_nfc",
+          "params": [
+            "src",
+            "srclen",
+            "out",
+            "outlen",
+            "nfc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *src, size_t srclen)",
+          "brief": "\n        ",
+          "definition": "bool _idn2_ascii_p",
+          "detailed": "\n        ",
+          "name": "_idn2_ascii_p",
+          "params": [
+            "src",
+            "srclen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int what, const uint32_t *label, size_t llen)",
+          "brief": "\n        ",
+          "definition": "int _idn2_label_test",
+          "detailed": "\n        ",
+          "name": "_idn2_label_test",
+          "params": [
+            "what",
+            "label",
+            "llen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/idna.h",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

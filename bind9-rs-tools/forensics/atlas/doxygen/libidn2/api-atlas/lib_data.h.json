@@ -1,0 +1,118 @@
+{
+  "files": {
+    "lib/data.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "PVALID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONTEXTJ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CONTEXTO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "DISALLOWED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "UNASSIGNED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@322255200031214126213131346340372153047334237133",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct idna_table idna_table[]",
+          "detailed": "\n        ",
+          "name": "idna_table",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const size_t idna_table_size",
+          "detailed": "\n        ",
+          "name": "idna_table_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t idna_table::start",
+          "detailed": "\n        ",
+          "name": "start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t idna_table::end",
+          "detailed": "\n        ",
+          "name": "end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int idna_table::state",
+          "detailed": "\n        ",
+          "name": "state",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "lib/data.h",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

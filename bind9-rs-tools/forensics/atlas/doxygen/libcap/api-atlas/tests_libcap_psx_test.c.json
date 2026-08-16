@@ -1,0 +1,50 @@
+{
+  "files": {
+    "tests/libcap_psx_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *data)",
+          "brief": "\n        ",
+          "definition": "static void * thread_fork_exit",
+          "detailed": "\n        ",
+          "name": "thread_fork_exit",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/libcap_psx_test.c",
+  "schema_version": 1,
+  "version": "2.78"
+}

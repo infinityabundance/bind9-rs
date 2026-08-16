@@ -1,0 +1,906 @@
+{
+  "files": {
+    "json_object.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_get",
+          "detailed": "Increment the reference count of json_object, thereby taking ownership of it.\nCases where you might need to increase the refcount include:\nUsing an object field or array index (retrieved through json_object_object_get() or json_object_array_get_idx()) beyond the lifetime of the parent object.\nDetaching an object field or array index from its parent object (using json_object_object_del() or json_object_array_del_idx())\nSharing a json_object with multiple (not necessarily parallel) threads of execution that all expect to free it (with json_object_put()) when they're done.\n\n\nUsing an object field or array index (retrieved through json_object_object_get() or json_object_array_get_idx()) beyond the lifetime of the parent object.\nDetaching an object field or array index from its parent object (using json_object_object_del() or json_object_array_del_idx())\nSharing a json_object with multiple (not necessarily parallel) threads of execution that all expect to free it (with json_object_put()) when they're done.\n\n\nobj\n\n\nthe json_object instance \n\n\n\njson_object_put() \n\njson_object_object_get() \n\njson_object_array_get_idx() \n\n\nthe json_object instance \njson_object_put() \njson_object_object_get() \njson_object_array_get_idx()",
+          "name": "json_object_get",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "int json_object_put",
+          "detailed": "Decrement the reference count of json_object and free if it reaches zero.\nYou must have ownership of obj prior to doing this or you will cause an imbalance in the reference count, leading to a classic use-after-free bug. In particular, you normally do not need to call json_object_put() on the json_object returned by json_object_object_get() or json_object_array_get_idx().\nJust like after calling free() on a block of memory, you must not use obj after calling json_object_put() on it or any object that it is a member of (unless you know you've called json_object_get(obj) to explicitly increment the refcount).\nNULL may be passed, in which case this is a no-op.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n1 if the object was freed, 0 if only the refcount was decremented \n\njson_object_get() \n\n\nthe json_object instance \n1 if the object was freed, 0 if only the refcount was decremented \njson_object_get()",
+          "name": "json_object_put",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj, enum json_type type)",
+          "brief": "\n        ",
+          "definition": "int json_object_is_type",
+          "detailed": "Check if the json_object is of a given type \n\nobj\n\n\nthe json_object instance \n\n\n\n\ntype\n\n\none of: json_type_null (i.e. obj == NULL), json_type_boolean, json_type_double, json_type_int, json_type_object, json_type_array, json_type_string \n\n\n\n1 if the object is of the specified type, 0 otherwise \n\n\nthe json_object instance \none of: json_type_null (i.e. obj == NULL), json_type_boolean, json_type_double, json_type_int, json_type_object, json_type_array, json_type_string \n1 if the object is of the specified type, 0 otherwise",
+          "name": "json_object_is_type",
+          "params": [
+            "obj",
+            "type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "enum json_type json_object_get_type",
+          "detailed": "Get the type of the json_object. See also json_type_to_name() to turn this into a string suitable, for instance, for logging.\n\n\nobj\n\n\nthe json_object instance \n\n\n\ntype being one of: json_type_null (i.e. obj == NULL), json_type_boolean, json_type_double, json_type_int, json_type_object, json_type_array, json_type_string \n\n\nthe json_object instance \ntype being one of: json_type_null (i.e. obj == NULL), json_type_boolean, json_type_double, json_type_int, json_type_object, json_type_array, json_type_string",
+          "name": "json_object_get_type",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "const char * json_object_to_json_string",
+          "detailed": "Stringify object to json format. Equivalent to json_object_to_json_string_ext(obj, JSON_C_TO_STRING_SPACED) The pointer you get is an internal of your json object. You don't have to free it, later use of json_object_put() should be sufficient. If you can not ensure there's no concurrent access to *obj use strdup(). \n\nobj\n\n\nthe json_object instance \n\n\n\na string in JSON format \n\n\nthe json_object instance \na string in JSON format",
+          "name": "json_object_to_json_string",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, int flags)",
+          "brief": "\n        ",
+          "definition": "const char * json_object_to_json_string_ext",
+          "detailed": "Stringify object to json format json_object_to_json_string() for details on how to free string. \n\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nflags\n\n\nformatting options, see JSON_C_TO_STRING_PRETTY and other constants \n\n\n\na string in JSON format \n\n\njson_object_to_json_string() for details on how to free string. \nthe json_object instance \nformatting options, see JSON_C_TO_STRING_PRETTY and other constants \na string in JSON format",
+          "name": "json_object_to_json_string_ext",
+          "params": [
+            "obj",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, int flags, size_t *length)",
+          "brief": "\n        ",
+          "definition": "const char * json_object_to_json_string_length",
+          "detailed": "Stringify object to json format json_object_to_json_string() for details on how to free string. \n\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nflags\n\n\nformatting options, see JSON_C_TO_STRING_PRETTY and other constants \n\n\n\n\nlength\n\n\na pointer where, if not NULL, the length (without null) is stored \n\n\n\na string in JSON format and the length if not NULL \n\n\njson_object_to_json_string() for details on how to free string. \nthe json_object instance \nformatting options, see JSON_C_TO_STRING_PRETTY and other constants \na pointer where, if not NULL, the length (without null) is stored \na string in JSON format and the length if not NULL",
+          "name": "json_object_to_json_string_length",
+          "params": [
+            "obj",
+            "flags",
+            "length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *jso)",
+          "brief": "\n        ",
+          "definition": "void * json_object_get_userdata",
+          "detailed": "Returns the userdata set by json_object_set_userdata() or json_object_set_serializer()\n\n\njso\n\n\nthe object to return the userdata for \n\n\n\n\nthe object to return the userdata for",
+          "name": "json_object_get_userdata",
+          "params": [
+            "jso"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *jso, void *userdata, json_object_delete_fn *user_delete)",
+          "brief": "\n        ",
+          "definition": "void json_object_set_userdata",
+          "detailed": "Set an opaque userdata value for an object\nThe userdata can be retrieved using json_object_get_userdata().\nIf custom userdata is already set on this object, any existing user_delete function is called before the new one is set.\nThe user_delete parameter is optional and may be passed as NULL, even if the userdata parameter is non-NULL. It will be called just before the json_object is deleted, after it's reference count goes to zero (see json_object_put()). If this is not provided, it is up to the caller to free the userdata at an appropriate time. (i.e. after the json_object is deleted)\nNote: Objects created by parsing strings may have custom serializers set which expect the userdata to contain specific data (due to use of json_object_new_double_s()). In this case, json_object_set_serialiser() with NULL as to_string_func should be used instead to set the userdata and reset the serializer to its default value.\n\n\njso\n\n\nthe object to set the userdata for \n\n\n\n\nuserdata\n\n\nan optional opaque cookie \n\n\n\n\nuser_delete\n\n\nan optional function from freeing userdata \n\n\n\n\nthe object to set the userdata for \nan optional opaque cookie \nan optional function from freeing userdata",
+          "name": "json_object_set_userdata",
+          "params": [
+            "jso",
+            "userdata",
+            "user_delete"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *jso, json_object_to_json_string_fn *to_string_func, void *userdata, json_object_delete_fn *user_delete)",
+          "brief": "\n        ",
+          "definition": "void json_object_set_serializer",
+          "detailed": "Set a custom serialization function to be used when this particular object is converted to a string by json_object_to_json_string.\nIf custom userdata is already set on this object, any existing user_delete function is called before the new one is set.\nIf to_string_func is NULL the default behaviour is reset (but the userdata and user_delete fields are still set).\nThe userdata parameter is optional and may be passed as NULL. It can be used to provide additional data for to_string_func to use. This parameter may be NULL even if user_delete is non-NULL.\nThe user_delete parameter is optional and may be passed as NULL, even if the userdata parameter is non-NULL. It will be called just before the json_object is deleted, after it's reference count goes to zero (see json_object_put()). If this is not provided, it is up to the caller to free the userdata at an appropriate time. (i.e. after the json_object is deleted)\nNote that the userdata is the same as set by json_object_set_userdata(), so care must be taken not to overwrite the value when both a custom serializer and json_object_set_userdata() are used.\n\n\njso\n\n\nthe object to customize \n\n\n\n\nto_string_func\n\n\nthe custom serialization function \n\n\n\n\nuserdata\n\n\nan optional opaque cookie \n\n\n\n\nuser_delete\n\n\nan optional function from freeing userdata \n\n\n\n\nthe object to customize \nthe custom serialization function \nan optional opaque cookie \nan optional function from freeing userdata",
+          "name": "json_object_set_serializer",
+          "params": [
+            "jso",
+            "to_string_func",
+            "userdata",
+            "user_delete"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_object",
+          "detailed": "Create a new empty object with a reference count of 1. The caller of this object initially has sole ownership. Remember, when using json_object_object_add or json_object_array_put_idx, ownership will transfer to the object/array. Call json_object_get if you want to maintain shared ownership or also add this object as a child of multiple objects or arrays. Any ownerships you acquired but did not transfer must be released through json_object_put.\na json_object of type json_type_object \n\n\na json_object of type json_type_object",
+          "name": "json_object_new_object",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct lh_table * json_object_get_object",
+          "detailed": "Get the hashtable of a json_object of type json_type_object \n\nobj\n\n\nthe json_object instance \n\n\n\na linkhash \n\n\nthe json_object instance \na linkhash",
+          "name": "json_object_get_object",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "int json_object_object_length",
+          "detailed": "Get the size of an object in terms of the number of fields it has. \n\nobj\n\n\nthe json_object whose length to return \n\n\n\n\nthe json_object whose length to return",
+          "name": "json_object_object_length",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "size_t json_c_object_sizeof",
+          "detailed": "Get the sizeof (struct json_object). a size_t with the sizeof (struct json_object) \n\n\na size_t with the sizeof (struct json_object)",
+          "name": "json_c_object_sizeof",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, const char *key, struct json_object *val)",
+          "brief": "\n        ",
+          "definition": "int json_object_object_add",
+          "detailed": "Add an object field to a json_object of type json_type_object\nThe reference count of val will not be incremented, in effect transferring ownership that object to obj, and thus val will be freed when obj is. (i.e. through json_object_put(obj))\nIf you want to retain a reference to the added object, independent of the lifetime of obj, you must increment the refcount with json_object_get(val) (and later release it with json_object_put()).\nSince ownership transfers to obj, you must make sure that you do in fact have ownership over val. For instance, json_object_new_object() will give you ownership until you transfer it, whereas json_object_object_get() does not.\nAny previous object stored under key in obj will have its refcount decremented, and be freed normally if that drops to zero.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nkey\n\n\nthe object field name (a private copy will be duplicated) \n\n\n\n\nval\n\n\na json_object or NULL member to associate with the given field\n\n\n\nOn success, 0 is returned. On error, a negative value is returned. \n\n\nthe json_object instance \nthe object field name (a private copy will be duplicated) \na json_object or NULL member to associate with the given field\nOn success, 0 is returned. On error, a negative value is returned.",
+          "name": "json_object_object_add",
+          "params": [
+            "obj",
+            "key",
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, const char *const key, struct json_object *const val, const unsigned opts)",
+          "brief": "\n        ",
+          "definition": "int json_object_object_add_ex",
+          "detailed": "Add an object field to a json_object of type json_type_object\nThe semantics are identical to json_object_object_add, except that an additional flag fields gives you more control over some detail aspects of processing. See the description of JSON_C_OBJECT_ADD_* flags for more details.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nkey\n\n\nthe object field name (a private copy will be duplicated) \n\n\n\n\nval\n\n\na json_object or NULL member to associate with the given field \n\n\n\n\nopts\n\n\nprocess-modifying options. To specify multiple options, use (OPT1|OPT2) \n\n\n\n\nthe json_object instance \nthe object field name (a private copy will be duplicated) \na json_object or NULL member to associate with the given field \nprocess-modifying options. To specify multiple options, use (OPT1|OPT2)",
+          "name": "json_object_object_add_ex",
+          "params": [
+            "obj",
+            "key",
+            "val",
+            "opts"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj, const char *key)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_object_get",
+          "detailed": "Get the json_object associate with a given object field. Deprecated/discouraged: used json_object_object_get_ex instead.\nThis returns NULL if the field is found but its value is null, or if the field is not found, or if obj is not a json_type_object. If you need to distinguish between these cases, use json_object_object_get_ex().\nNo reference counts will be changed. There is no need to manually adjust reference counts through the json_object_put/json_object_get methods unless you need to have the child (value) reference maintain a different lifetime than the owning parent (obj). Ownership of the returned value is retained by obj (do not do json_object_put unless you have done a json_object_get). If you delete the value from obj (json_object_object_del) and wish to access the returned reference afterwards, make sure you have first gotten shared ownership through json_object_get (& don't forget to do a json_object_put or transfer ownership to prevent a memory leak).\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nkey\n\n\nthe object field name \n\n\n\nthe json_object associated with the given field name \n\n\nthe json_object instance \nthe object field name \nthe json_object associated with the given field name",
+          "name": "json_object_object_get",
+          "params": [
+            "obj",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj, const char *key, struct json_object **value)",
+          "brief": "\n        ",
+          "definition": "int json_object_object_get_ex",
+          "detailed": "Get the json_object associated with a given object field.\nThis returns true if the key is found, false in all other cases (including if obj isn't a json_type_object).\nNo reference counts will be changed. There is no need to manually adjust reference counts through the json_object_put/json_object_get methods unless you need to have the child (value) reference maintain a different lifetime than the owning parent (obj). Ownership of value is retained by obj.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nkey\n\n\nthe object field name \n\n\n\n\nvalue\n\n\na pointer where to store a reference to the json_object associated with the given field name.\n\n\n\nIt is safe to pass a NULL value. 1 if the key exists, 0 otherwise \n\n\nthe json_object instance \nthe object field name \na pointer where to store a reference to the json_object associated with the given field name.\n1 if the key exists, 0 otherwise",
+          "name": "json_object_object_get_ex",
+          "params": [
+            "obj",
+            "key",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, const char *key)",
+          "brief": "\n        ",
+          "definition": "void json_object_object_del",
+          "detailed": "Delete the given json_object field\nThe reference count will be decremented for the deleted object. If there are no more owners of the value represented by this key, then the value is freed. Otherwise, the reference to the value will remain in memory.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nkey\n\n\nthe object field name \n\n\n\n\nthe json_object instance \nthe object field name",
+          "name": "json_object_object_del",
+          "params": [
+            "obj",
+            "key"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_array",
+          "detailed": "Create a new empty json_object of type json_type_array with 32 slots allocated. If you know the array size you'll need ahead of time, use json_object_new_array_ext() instead. json_object_new_array_ext() \n\njson_object_array_shrink() \n\na json_object of type json_type_array \n\n\njson_object_new_array_ext() \njson_object_array_shrink() \na json_object of type json_type_array",
+          "name": "json_object_new_array",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int initial_size)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_array_ext",
+          "detailed": "Create a new empty json_object of type json_type_array with the desired number of slots allocated. json_object_array_shrink() \n\n\n\ninitial_size\n\n\nthe number of slots to allocate \n\n\n\na json_object of type json_type_array \n\n\njson_object_array_shrink() \nthe number of slots to allocate \na json_object of type json_type_array",
+          "name": "json_object_new_array_ext",
+          "params": [
+            "initial_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct array_list * json_object_get_array",
+          "detailed": "Get the arraylist of a json_object of type json_type_array \n\nobj\n\n\nthe json_object instance \n\n\n\nan arraylist \n\n\nthe json_object instance \nan arraylist",
+          "name": "json_object_get_array",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "size_t json_object_array_length",
+          "detailed": "Get the length of a json_object of type json_type_array \n\nobj\n\n\nthe json_object instance \n\n\n\nthe length of the array \n\n\nthe json_object instance \nthe length of the array",
+          "name": "json_object_array_length",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *jso, int(*sort_fn)(const void *, const void *))",
+          "brief": "\n        ",
+          "definition": "void json_object_array_sort",
+          "detailed": "Sorts the elements of jso of type json_type_array\nPointers to the json_object pointers will be passed as the two arguments to sort_fn\n\n\njso\n\n\nthe json_object instance \n\n\n\n\nsort_fn\n\n\na sorting function \n\n\n\n\nthe json_object instance \na sorting function",
+          "name": "json_object_array_sort",
+          "params": [
+            "jso",
+            "sort_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *key, const struct json_object *jso, int(*sort_fn)(const void *, const void *))",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_array_bsearch",
+          "detailed": "Binary search a sorted array for a specified key object.\nIt depends on your compare function what's sufficient as a key. Usually you create some dummy object with the parameter compared in it, to identify the right item you're actually looking for.\njson_object_array_sort() for hints on the compare function.\n\n\n\nkey\n\n\na dummy json_object with the right key \n\n\n\n\njso\n\n\nthe array object we're searching \n\n\n\n\nsort_fn\n\n\nthe sort/compare function\n\n\n\nthe wanted json_object instance \n\n\njson_object_array_sort() for hints on the compare function.\na dummy json_object with the right key \nthe array object we're searching \nthe sort/compare function\nthe wanted json_object instance",
+          "name": "json_object_array_bsearch",
+          "params": [
+            "key",
+            "jso",
+            "sort_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, struct json_object *val)",
+          "brief": "\n        ",
+          "definition": "int json_object_array_add",
+          "detailed": "Add an element to the end of a json_object of type json_type_array\nThe reference count will not be incremented. This is to make adding fields to objects in code more compact. If you want to retain a reference to an added object you must wrap the passed object with json_object_get\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nval\n\n\nthe json_object to be added \n\n\n\n\nthe json_object instance \nthe json_object to be added",
+          "name": "json_object_array_add",
+          "params": [
+            "obj",
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, size_t idx, struct json_object *val)",
+          "brief": "\n        ",
+          "definition": "int json_object_array_put_idx",
+          "detailed": "Insert or replace an element at a specified index in an array (a json_object of type json_type_array)\nThe reference count will not be incremented. This is to make adding fields to objects in code more compact. If you want to retain a reference to an added object you must wrap the passed object with json_object_get\nThe reference count of a replaced object will be decremented.\nThe array size will be automatically be expanded to the size of the index if the index is larger than the current size.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nidx\n\n\nthe index to insert the element at \n\n\n\n\nval\n\n\nthe json_object to be added \n\n\n\n\nthe json_object instance \nthe index to insert the element at \nthe json_object to be added",
+          "name": "json_object_array_put_idx",
+          "params": [
+            "obj",
+            "idx",
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, size_t idx, struct json_object *val)",
+          "brief": "\n        ",
+          "definition": "int json_object_array_insert_idx",
+          "detailed": "Insert an element at a specified index in an array (a json_object of type json_type_array)\nThe reference count will not be incremented. This is to make adding fields to objects in code more compact. If you want to retain a reference to an added object you must wrap the passed object with json_object_get\nThe array size will be automatically be expanded to the size of the index if the index is larger than the current size. If the index is within the existing array limits, then the element will be inserted and all elements will be shifted. This is the only difference between this function and json_object_array_put_idx().\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nidx\n\n\nthe index to insert the element at \n\n\n\n\nval\n\n\nthe json_object to be added \n\n\n\n\nthe json_object instance \nthe index to insert the element at \nthe json_object to be added",
+          "name": "json_object_array_insert_idx",
+          "params": [
+            "obj",
+            "idx",
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj, size_t idx)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_array_get_idx",
+          "detailed": "Get the element at specified index of array obj (which must be a json_object of type json_type_array)\nNo reference counts will be changed, and ownership of the returned object remains with obj. See json_object_object_get() for additional implications of this behavior.\nCalling this with anything other than a json_type_array will trigger an assert.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nidx\n\n\nthe index to get the element at \n\n\n\nthe json_object at the specified index (or NULL) \n\n\nthe json_object instance \nthe index to get the element at \nthe json_object at the specified index (or NULL)",
+          "name": "json_object_array_get_idx",
+          "params": [
+            "obj",
+            "idx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, size_t idx, size_t count)",
+          "brief": "\n        ",
+          "definition": "int json_object_array_del_idx",
+          "detailed": "Delete an elements from a specified index in an array (a json_object of type json_type_array)\nThe reference count will be decremented for each of the deleted objects. If there are no more owners of an element that is being deleted, then the value is freed. Otherwise, the reference to the value will remain in memory.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nidx\n\n\nthe index to start deleting elements at \n\n\n\n\ncount\n\n\nthe number of elements to delete \n\n\n\n0 if the elements were successfully deleted \n\n\nthe json_object instance \nthe index to start deleting elements at \nthe number of elements to delete \n0 if the elements were successfully deleted",
+          "name": "json_object_array_del_idx",
+          "params": [
+            "obj",
+            "idx",
+            "count"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *jso, int empty_slots)",
+          "brief": "\n        ",
+          "definition": "int json_object_array_shrink",
+          "detailed": "Shrink the internal memory allocation of the array to just enough to fit the number of elements in it, plus empty_slots.\n\n\njso\n\n\nthe json_object instance, must be json_type_array \n\n\n\n\nempty_slots\n\n\nthe number of empty slots to leave allocated \n\n\n\n\nthe json_object instance, must be json_type_array \nthe number of empty slots to leave allocated",
+          "name": "json_object_array_shrink",
+          "params": [
+            "jso",
+            "empty_slots"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_bool b)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_boolean",
+          "detailed": "Create a new empty json_object of type json_type_boolean \n\nb\n\n\na json_bool 1 or 0 \n\n\n\na json_object of type json_type_boolean \n\n\na json_bool 1 or 0 \na json_object of type json_type_boolean",
+          "name": "json_object_new_boolean",
+          "params": [
+            "b"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "json_bool json_object_get_boolean",
+          "detailed": "Get the json_bool value of a json_object\nThe type is coerced to a json_bool if the passed object is not a json_bool. integer and double objects will return 0 if there value is zero or 1 otherwise. If the passed object is a string it will return 1 if it has a non zero length. If any other object type is passed 0 will be returned, even non-empty json_type_array and json_type_object objects.\n\n\nobj\n\n\nthe json_object instance \n\n\n\na json_bool \n\n\nthe json_object instance \na json_bool",
+          "name": "json_object_get_boolean",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, json_bool new_value)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_boolean",
+          "detailed": "Set the json_bool value of a json_object\nThe type of obj is checked to be a json_type_boolean and 0 is returned if it is not without any further actions. If type of obj is json_type_boolean the object value is changed to new_value\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nnew_value\n\n\nthe value to be set \n\n\n\n1 if value is set correctly, 0 otherwise \n\n\nthe json_object instance \nthe value to be set \n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_boolean",
+          "params": [
+            "obj",
+            "new_value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int32_t i)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_int",
+          "detailed": "Create a new empty json_object of type json_type_int Note that values are stored as 64-bit values internally. To ensure the full range is maintained, use json_object_new_int64 instead. \n\ni\n\n\nthe integer \n\n\n\na json_object of type json_type_int \n\n\nthe integer \na json_object of type json_type_int",
+          "name": "json_object_new_int",
+          "params": [
+            "i"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int64_t i)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_int64",
+          "detailed": "Create a new empty json_object of type json_type_int \n\ni\n\n\nthe integer \n\n\n\na json_object of type json_type_int \n\n\nthe integer \na json_object of type json_type_int",
+          "name": "json_object_new_int64",
+          "params": [
+            "i"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint64_t i)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_uint64",
+          "detailed": "Create a new empty json_object of type json_type_uint \n\ni\n\n\nthe integer \n\n\n\na json_object of type json_type_uint \n\n\nthe integer \na json_object of type json_type_uint",
+          "name": "json_object_new_uint64",
+          "params": [
+            "i"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "int32_t json_object_get_int",
+          "detailed": "Get the int value of a json_object\nThe type is coerced to a int if the passed object is not a int. double objects will return their integer conversion except for NaN values which return INT32_MIN and the errno is set to EINVAL. Strings will be parsed as an integer. If no conversion exists then 0 is returned and errno is set to EINVAL. null is equivalent to 0 (no error values set). Sets errno to ERANGE if the value exceeds the range of int.\nNote that integers are stored internally as 64-bit values. If the value of too big or too small to fit into 32-bit, INT32_MAX or INT32_MIN are returned, respectively.\n\n\nobj\n\n\nthe json_object instance \n\n\n\nan int \n\n\nthe json_object instance \nan int",
+          "name": "json_object_get_int",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, int new_value)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_int",
+          "detailed": "Set the int value of a json_object\nThe type of obj is checked to be a json_type_int and 0 is returned if it is not without any further actions. If type of obj is json_type_int the object value is changed to new_value\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nnew_value\n\n\nthe value to be set \n\n\n\n1 if value is set correctly, 0 otherwise \n\n\nthe json_object instance \nthe value to be set \n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_int",
+          "params": [
+            "obj",
+            "new_value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, int64_t val)",
+          "brief": "\n        ",
+          "definition": "int json_object_int_inc",
+          "detailed": "Increment a json_type_int object by the given amount, which may be negative.\nIf the type of obj is not json_type_int then 0 is returned with no further action taken. If the addition would result in a overflow, the object value is set to INT64_MAX. If the addition would result in a underflow, the object value is set to INT64_MIN. Neither overflow nor underflow affect the return value.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nval\n\n\nthe value to add \n\n\n\n1 if the increment succeeded, 0 otherwise \n\n\nthe json_object instance \nthe value to add \n1 if the increment succeeded, 0 otherwise",
+          "name": "json_object_int_inc",
+          "params": [
+            "obj",
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "int64_t json_object_get_int64",
+          "detailed": "Get the int value of a json_object\nThe type is coerced to a int64 if the passed object is not a int64. double objects will return their int64 conversion except for NaN values which return INT64_MIN and the errno is set to EINVAL. Strings will be parsed as an int64. If no conversion exists then 0 is returned and errno is set to EINVAL. null is equivalent to 0 (no error values set). Sets errno to ERANGE if the value exceeds the range of int64.\nNOTE: Set errno to 0 directly before a call to this function to determine whether or not conversion was successful (it does not clear the value for you).\n\n\nobj\n\n\nthe json_object instance \n\n\n\nan int64 \n\n\nthe json_object instance \nan int64",
+          "name": "json_object_get_int64",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "uint64_t json_object_get_uint64",
+          "detailed": "Get the uint value of a json_object\nThe type is coerced to a uint64 if the passed object is not a uint64. double objects will return their uint64 conversion except for NaN values which return 0 and the errno is set to EINVAL. Strings will be parsed as an uint64. If no conversion exists then 0 is returned and errno is set to EINVAL. null is equivalent to 0 (no error values set). Sets errno to ERANGE if the value exceeds the range of uint64.\nNOTE: Set errno to 0 directly before a call to this function to determine whether or not conversion was successful (it does not clear the value for you).\n\n\nobj\n\n\nthe json_object instance \n\n\n\nan uint64 \n\n\nthe json_object instance \nan uint64",
+          "name": "json_object_get_uint64",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, int64_t new_value)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_int64",
+          "detailed": "Set the int64_t value of a json_object\nThe type of obj is checked to be a json_type_int and 0 is returned if it is not without any further actions. If type of obj is json_type_int the object value is changed to new_value\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nnew_value\n\n\nthe value to be set \n\n\n\n1 if value is set correctly, 0 otherwise \n\n\nthe json_object instance \nthe value to be set \n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_int64",
+          "params": [
+            "obj",
+            "new_value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, uint64_t new_value)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_uint64",
+          "detailed": "Set the uint64_t value of a json_object\nThe type of obj is checked to be a json_type_uint and 0 is returned if it is not without any further actions. If type of obj is json_type_uint the object value is changed to new_value\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nnew_value\n\n\nthe value to be set \n\n\n\n1 if value is set correctly, 0 otherwise \n\n\nthe json_object instance \nthe value to be set \n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_uint64",
+          "params": [
+            "obj",
+            "new_value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(double d)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_double",
+          "detailed": "Create a new empty json_object of type json_type_double\njson_object_double_to_json_string() for how to set a custom format string.\n\n\n\nd\n\n\nthe double \n\n\n\na json_object of type json_type_double \n\n\njson_object_double_to_json_string() for how to set a custom format string.\nthe double \na json_object of type json_type_double",
+          "name": "json_object_new_double",
+          "params": [
+            "d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(double d, const char *ds)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_double_s",
+          "detailed": "Create a new json_object of type json_type_double, using the exact serialized representation of the value.\nThis allows for numbers that would otherwise get displayed inefficiently (e.g. 12.3 => \"12.300000000000001\") to be serialized with the more convenient form.\nNotes:\nThis is used by json_tokener_parse_ex() to allow for an exact re-serialization of a parsed object.\nThe userdata field is used to store the string representation, so it can't be used for other data if this function is used.\nA roughly equivalent sequence of calls, with the difference being that the serialization function won't be reset by json_object_set_double(), is: jso=json_object_new_double(d);\njson_object_set_serializer(jso,json_object_userdata_to_json_string,\nstrdup(ds),json_object_free_userdata);\n\n\n\nd\n\n\nthe numeric value of the double. \n\n\n\n\nds\n\n\nthe string representation of the double. This will be copied. \n\n\n\n\nthe numeric value of the double. \nthe string representation of the double. This will be copied.",
+          "name": "json_object_new_double_s",
+          "params": [
+            "d",
+            "ds"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *double_format, int global_or_thread)",
+          "brief": "\n        ",
+          "definition": "int json_c_set_serialization_double_format",
+          "detailed": "Set a global or thread-local json-c option, depending on whether JSON_C_OPTION_GLOBAL or JSON_C_OPTION_THREAD is passed. Thread-local options default to undefined, and inherit from the global value, even if the global value is changed after the thread is created. Attempting to set thread-local options when threading is not compiled in will result in an error. Be sure to check the return value.\ndouble_format is a \"%g\" printf format, such as \"%.20g\"\n-1 on errors, 0 on success. \n\n\n-1 on errors, 0 on success.",
+          "name": "json_c_set_serialization_double_format",
+          "params": [
+            "double_format",
+            "global_or_thread"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *jso, struct printbuf *pb, int level, int flags)",
+          "brief": "\n        ",
+          "definition": "int json_object_double_to_json_string",
+          "detailed": "Serialize a json_object of type json_type_double to a string.\nThis function isn't meant to be called directly. Instead, you can set a custom format string for the serialization of this double using the following call (where \"%.17g\" actually is the default):\njso=json_object_new_double(d);\njson_object_set_serializer(jso,json_object_double_to_json_string,\n\"%.17g\",NULL);\n\nprintf(3) man page for format strings\n\n\n\njso\n\n\nThe json_type_double object that is serialized. \n\n\n\n\npb\n\n\nThe destination buffer. \n\n\n\n\nlevel\n\n\nIgnored. \n\n\n\n\nflags\n\n\nIgnored. \n\n\n\n\nprintf(3) man page for format strings\nThe json_type_double object that is serialized. \nThe destination buffer. \nIgnored. \nIgnored.",
+          "name": "json_object_double_to_json_string",
+          "params": [
+            "jso",
+            "pb",
+            "level",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "double json_object_get_double",
+          "detailed": "Get the double floating point value of a json_object\nThe type is coerced to a double if the passed object is not a double. integer objects will return their double conversion. Strings will be parsed as a double. If no conversion exists then 0.0 is returned and errno is set to EINVAL. null is equivalent to 0 (no error values set)\nIf the value is too big to fit in a double, then the value is set to the closest infinity with errno set to ERANGE. If strings cannot be converted to their double value, then EINVAL is set & NaN is returned.\nArrays of length 0 are interpreted as 0 (with no error flags set). Arrays of length 1 are effectively cast to the equivalent object and converted using the above rules. All other arrays set the error to EINVAL & return NaN.\nNOTE: Set errno to 0 directly before a call to this function to determine whether or not conversion was successful (it does not clear the value for you).\n\n\nobj\n\n\nthe json_object instance \n\n\n\na double floating point number \n\n\nthe json_object instance \na double floating point number",
+          "name": "json_object_get_double",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj, double new_value)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_double",
+          "detailed": "Set the double value of a json_object\nThe type of obj is checked to be a json_type_double and 0 is returned if it is not without any further actions. If type of obj is json_type_double the object value is changed to new_value\nIf the object was created with json_object_new_double_s(), the serialization function is reset to the default and the cached serialized value is cleared.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nnew_value\n\n\nthe value to be set \n\n\n\n1 if value is set correctly, 0 otherwise \n\n\nthe json_object instance \nthe value to be set \n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_double",
+          "params": [
+            "obj",
+            "new_value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *s)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_string",
+          "detailed": "Create a new empty json_object of type json_type_string\nA copy of the string is made and the memory is managed by the json_object\n\n\ns\n\n\nthe string \n\n\n\na json_object of type json_type_string \n\njson_object_new_string_len() \n\n\nthe string \na json_object of type json_type_string \njson_object_new_string_len()",
+          "name": "json_object_new_string",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *s, const int len)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_string_len",
+          "detailed": "Create a new empty json_object of type json_type_string and allocate len characters for the new string.\nA copy of the string is made and the memory is managed by the json_object\n\n\ns\n\n\nthe string \n\n\n\n\nlen\n\n\nmax length of the new string \n\n\n\na json_object of type json_type_string \n\njson_object_new_string() \n\n\nthe string \nmax length of the new string \na json_object of type json_type_string \njson_object_new_string()",
+          "name": "json_object_new_string_len",
+          "params": [
+            "s",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "const char * json_object_get_string",
+          "detailed": "Get the string value of a json_object\nIf the passed object is of type json_type_null (i.e. obj == NULL), NULL is returned.\nIf the passed object of type json_type_string, the string contents are returned.\nOtherwise the JSON representation of the object is returned.\nThe returned string memory is managed by the json_object and will be freed when the reference count of the json_object drops to zero.\n\n\nobj\n\n\nthe json_object instance \n\n\n\na string or NULL \n\n\nthe json_object instance \na string or NULL",
+          "name": "json_object_get_string",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "int json_object_get_string_len",
+          "detailed": "Get the string length of a json_object\nIf the passed object is not of type json_type_string then zero will be returned.\n\n\nobj\n\n\nthe json_object instance \n\n\n\nint \n\n\nthe json_object instance \nint",
+          "name": "json_object_get_string_len",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *obj, const char *new_value)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_string",
+          "detailed": "Set the string value of a json_object with zero terminated strings equivalent to json_object_set_string_len (obj, new_value, strlen(new_value)) 1 if value is set correctly, 0 otherwise \n\n\n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_string",
+          "params": [
+            "obj",
+            "new_value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *obj, const char *new_value, int len)",
+          "brief": "\n        ",
+          "definition": "int json_object_set_string_len",
+          "detailed": "Set the string value of a json_object str\nThe type of obj is checked to be a json_type_string and 0 is returned if it is not without any further actions. If type of obj is json_type_string the object value is changed to new_value\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nnew_value\n\n\nthe value to be set; Since string length is given in len this need not be zero terminated \n\n\n\n\nlen\n\n\nthe length of new_value \n\n\n\n1 if value is set correctly, 0 otherwise \n\n\nthe json_object instance \nthe value to be set; Since string length is given in len this need not be zero terminated \nthe length of new_value \n1 if value is set correctly, 0 otherwise",
+          "name": "json_object_set_string_len",
+          "params": [
+            "obj",
+            "new_value",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_new_null",
+          "detailed": "This method exists only to provide a complementary function along the lines of the other json_object_new_* functions. It always returns NULL, and it is entirely acceptable to simply use NULL directly.",
+          "name": "json_object_new_null",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *obj1, struct json_object *obj2)",
+          "brief": "\n        ",
+          "definition": "int json_object_equal",
+          "detailed": "Check if two json_object's are equal\nIf the passed objects are equal 1 will be returned. Equality is defined as follows:\njson_objects of different types are never equal\njson_objects of the same primitive type are equal if the c-representation of their value is equal\njson-arrays are considered equal if all values at the same indices are equal (same order)\nComplex json_objects are considered equal if all contained objects referenced by their key are equal, regardless their order.\n\n\njson_objects of different types are never equal\njson_objects of the same primitive type are equal if the c-representation of their value is equal\njson-arrays are considered equal if all values at the same indices are equal (same order)\nComplex json_objects are considered equal if all contained objects referenced by their key are equal, regardless their order.\n\n\nobj1\n\n\nthe first json_object instance \n\n\n\n\nobj2\n\n\nthe second json_object instance \n\n\n\n1 if both objects are equal, 0 otherwise \n\n\nthe first json_object instance \nthe second json_object instance \n1 if both objects are equal, 0 otherwise",
+          "name": "json_object_equal",
+          "params": [
+            "obj1",
+            "obj2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object *src, struct json_object **dst, json_c_shallow_copy_fn *shallow_copy)",
+          "brief": "\n        ",
+          "definition": "int json_object_deep_copy",
+          "detailed": "Copy the contents of the JSON object. The destination object must be initialized to NULL, to make sure this function won't overwrite an existing JSON object.\nThis does roughly the same thing as json_tokener_parse(json_object_get_string(src)).\n\n\nsrc\n\n\nsource JSON object whose contents will be copied \n\n\n\n\ndst\n\n\npointer to the destination object where the contents of src; make sure this pointer is initialized to NULL \n\n\n\n\nshallow_copy\n\n\nan optional function to copy individual objects, needed when custom serializers are in use. See also json_object set_serializer.\n\n\n\n0 if the copy went well, -1 if an error occurred during copy or if the destination pointer is non-NULL \n\n\nsource JSON object whose contents will be copied \npointer to the destination object where the contents of src; make sure this pointer is initialized to NULL \nan optional function to copy individual objects, needed when custom serializers are in use. See also json_object set_serializer.\n0 if the copy went well, -1 if an error occurred during copy or if the destination pointer is non-NULL",
+          "name": "json_object_deep_copy",
+          "params": [
+            "src",
+            "dst",
+            "shallow_copy"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_C_CONST_FUNCTION",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_OBJECT_DEF_HASH_ENTRIES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_to_json_string_ext() and json_object_to_file_ext() functions which causes the output to have no extra whitespace or formatting applied.",
+          "name": "JSON_C_TO_STRING_PLAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_to_json_string_ext() and json_object_to_file_ext() functions which causes the output to have minimal whitespace inserted to make things slightly more readable.",
+          "name": "JSON_C_TO_STRING_SPACED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_to_json_string_ext() and json_object_to_file_ext() functions which causes the output to be formatted.\nSee the \"Two Space Tab\" option at https://jsonformatter.curiousconcept.com/ for an example of the format.",
+          "name": "JSON_C_TO_STRING_PRETTY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_to_json_string_ext() and json_object_to_file_ext() functions which causes the output to be formatted.\nInstead of a \"Two Space Tab\" this gives a single tab character.",
+          "name": "JSON_C_TO_STRING_PRETTY_TAB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag to drop trailing zero for float values",
+          "name": "JSON_C_TO_STRING_NOZERO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Don't escape forward slashes.",
+          "name": "JSON_C_TO_STRING_NOSLASHESCAPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_to_json_string_ext() and json_object_to_file_ext() functions which causes the output to be formatted.\nUse color for printing json.",
+          "name": "JSON_C_TO_STRING_COLOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_object_add_ex function which causes the value to be added without a check if it already exists. Note: it is the responsibility of the caller to ensure that no key is added multiple times. If this is done, results are unpredictable. While this option is somewhat dangerous, it permits potentially large performance savings in code that knows for sure the key values are unique (e.g. because the code adds a well-known set of constant key values).",
+          "name": "JSON_C_OBJECT_ADD_KEY_IS_NEW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "A flag for the json_object_object_add_ex function which flags the key as being constant memory. This means that the key will NOT be copied via strdup(), resulting in a potentially huge performance win (malloc, strdup and free are usually performance hogs). It is acceptable to use this flag for keys in non-constant memory blocks if the caller ensure that the memory holding the key lives longer than the corresponding json object. However, this is somewhat dangerous and should only be done if really justified. The general use-case for this flag is cases where the key is given as a real constant value in the function call, e.g. as in json_object_object_add_ex(obj, \"ip\", json, JSON_C_OBJECT_ADD_CONSTANT_KEY);",
+          "name": "JSON_C_OBJECT_ADD_CONSTANT_KEY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "This flag is an alias to JSON_C_OBJECT_ADD_CONSTANT_KEY. Historically, this flag was used first and the new name JSON_C_OBJECT_ADD_CONSTANT_KEY was introduced for version 0.16.00 in order to have regular naming. Use of this flag is now legacy.",
+          "name": "JSON_C_OBJECT_KEY_IS_CONSTANT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Set the global value of an option, which will apply to all current and future threads that have not set a thread-local value.\njson_c_set_serialization_double_format \n\n\njson_c_set_serialization_double_format",
+          "name": "JSON_C_OPTION_GLOBAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Set a thread-local value of an option, overriding the global value. This will fail if json-c is not compiled with threading enabled, and with the __thread specifier (or equivalent) available.\njson_c_set_serialization_double_format \n\n\njson_c_set_serialization_double_format",
+          "name": "JSON_C_OPTION_THREAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Iterate through all keys and values of an object.\nAdding keys to the object while iterating is NOT allowed.\nDeleting an existing key, or replacing an existing key with a new value IS allowed.\n\n\nobj\n\n\nthe json_object instance \n\n\n\n\nkey\n\n\nthe local name for the char* key variable defined in the body \n\n\n\n\nval\n\n\nthe local name for the json_object* object variable defined in the body \n\n\n\n\nthe json_object instance \nthe local name for the char* key variable defined in the body \nthe local name for the json_object* object variable defined in the body",
+          "name": "json_object_object_foreach",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Iterate through all keys and values of an object (ANSI C Safe) \n\nobj\n\n\nthe json_object instance \n\n\n\n\niter\n\n\nthe object iterator, use type json_object_iter \n\n\n\n\nthe json_object instance \nthe object iterator, use type json_object_iter",
+          "name": "json_object_object_foreachC",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "(json_object *src, json_object *parent, const char *key, size_t index, json_object **dst)",
+          "brief": "\n        ",
+          "definition": "typedef int json_c_shallow_copy_fn(json_object *src, json_object *parent, const char *key, size_t index, json_object **dst)",
+          "detailed": "Perform a shallow copy of src into *dst as part of an overall json_object_deep_copy().\nIf src is part of a containing object or array, parent will be non-NULL, and key or index will be provided. When shallow_copy is called *dst will be NULL, and must be non-NULL when it returns. src will never be NULL.\nIf shallow_copy sets the serializer on an object, return 2 to indicate to json_object_deep_copy that it should not attempt to use the standard userdata copy function.\nOn success 1 or 2, -1 on errors \n\n\nOn success 1 or 2, -1 on errors",
+          "name": "json_c_shallow_copy_fn",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_object_delete_fn json_object_free_userdata",
+          "detailed": "Simply call free on the userdata pointer. Can be used with json_object_set_serializer().\n\n\njso\n\n\nunused \n\n\n\n\nuserdata\n\n\nthe pointer that is passed to free(). \n\n\n\n\nunused \nthe pointer that is passed to free().",
+          "name": "json_object_free_userdata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_object_to_json_string_fn json_object_userdata_to_json_string",
+          "detailed": "Copy the jso->_userdata string over to pb as-is. Can be used with json_object_set_serializer().\n\n\njso\n\n\nThe object whose _userdata is used. \n\n\n\n\npb\n\n\nThe destination buffer. \n\n\n\n\nlevel\n\n\nIgnored. \n\n\n\n\nflags\n\n\nIgnored. \n\n\n\n\nThe object whose _userdata is used. \nThe destination buffer. \nIgnored. \nIgnored.",
+          "name": "json_object_userdata_to_json_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_shallow_copy_fn json_c_shallow_copy_default",
+          "detailed": "The default shallow copy implementation for use with json_object_deep_copy(). This simply calls the appropriate json_object_new_<type>() function and copies over the serializer function (_to_json_string internal field of the json_object structure) but not any _userdata or _user_delete values.\nIf you're writing a custom shallow_copy function, perhaps because you're using your own custom serializer, you can call this first to create the new object before customizing it with json_object_set_serializer().\n1 on success, -1 on errors, but never 2. \n\n\n1 on success, -1 on errors, but never 2.",
+          "name": "json_c_shallow_copy_default",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_object.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

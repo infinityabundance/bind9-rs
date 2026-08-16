@@ -1,0 +1,1503 @@
+{
+  "files": {
+    "zlib.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "char * zlibVersion",
+          "detailed": "\n        ",
+          "name": "zlibVersion",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int flush)",
+          "brief": "\n        ",
+          "definition": "int deflate",
+          "detailed": "\n        ",
+          "name": "deflate",
+          "params": [
+            "strm",
+            "flush"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int deflateEnd",
+          "detailed": "\n        ",
+          "name": "deflateEnd",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int flush)",
+          "brief": "\n        ",
+          "definition": "int inflate",
+          "detailed": "\n        ",
+          "name": "inflate",
+          "params": [
+            "strm",
+            "flush"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateEnd",
+          "detailed": "\n        ",
+          "name": "inflateEnd",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt dictLength)",
+          "brief": "\n        ",
+          "definition": "int deflateSetDictionary",
+          "detailed": "\n        ",
+          "name": "deflateSetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt *dictLength)",
+          "brief": "\n        ",
+          "definition": "int deflateGetDictionary",
+          "detailed": "\n        ",
+          "name": "deflateGetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp dest, z_streamp source)",
+          "brief": "\n        ",
+          "definition": "int deflateCopy",
+          "detailed": "\n        ",
+          "name": "deflateCopy",
+          "params": [
+            "dest",
+            "source"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int deflateReset",
+          "detailed": "\n        ",
+          "name": "deflateReset",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int level, int strategy)",
+          "brief": "\n        ",
+          "definition": "int deflateParams",
+          "detailed": "\n        ",
+          "name": "deflateParams",
+          "params": [
+            "strm",
+            "level",
+            "strategy"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int good_length, int max_lazy, int nice_length, int max_chain)",
+          "brief": "\n        ",
+          "definition": "int deflateTune",
+          "detailed": "\n        ",
+          "name": "deflateTune",
+          "params": [
+            "strm",
+            "good_length",
+            "max_lazy",
+            "nice_length",
+            "max_chain"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "uLong deflateBound",
+          "detailed": "\n        ",
+          "name": "deflateBound",
+          "params": [
+            "strm",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, unsigned *pending, int *bits)",
+          "brief": "\n        ",
+          "definition": "int deflatePending",
+          "detailed": "\n        ",
+          "name": "deflatePending",
+          "params": [
+            "strm",
+            "pending",
+            "bits"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int bits, int value)",
+          "brief": "\n        ",
+          "definition": "int deflatePrime",
+          "detailed": "\n        ",
+          "name": "deflatePrime",
+          "params": [
+            "strm",
+            "bits",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, gz_headerp head)",
+          "brief": "\n        ",
+          "definition": "int deflateSetHeader",
+          "detailed": "\n        ",
+          "name": "deflateSetHeader",
+          "params": [
+            "strm",
+            "head"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt dictLength)",
+          "brief": "\n        ",
+          "definition": "int inflateSetDictionary",
+          "detailed": "\n        ",
+          "name": "inflateSetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt *dictLength)",
+          "brief": "\n        ",
+          "definition": "int inflateGetDictionary",
+          "detailed": "\n        ",
+          "name": "inflateGetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateSync",
+          "detailed": "\n        ",
+          "name": "inflateSync",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp dest, z_streamp source)",
+          "brief": "\n        ",
+          "definition": "int inflateCopy",
+          "detailed": "\n        ",
+          "name": "inflateCopy",
+          "params": [
+            "dest",
+            "source"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateReset",
+          "detailed": "\n        ",
+          "name": "inflateReset",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int windowBits)",
+          "brief": "\n        ",
+          "definition": "int inflateReset2",
+          "detailed": "\n        ",
+          "name": "inflateReset2",
+          "params": [
+            "strm",
+            "windowBits"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int bits, int value)",
+          "brief": "\n        ",
+          "definition": "int inflatePrime",
+          "detailed": "\n        ",
+          "name": "inflatePrime",
+          "params": [
+            "strm",
+            "bits",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "long inflateMark",
+          "detailed": "\n        ",
+          "name": "inflateMark",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, gz_headerp head)",
+          "brief": "\n        ",
+          "definition": "int inflateGetHeader",
+          "detailed": "\n        ",
+          "name": "inflateGetHeader",
+          "params": [
+            "strm",
+            "head"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, in_func in, void *in_desc, out_func out, void *out_desc)",
+          "brief": "\n        ",
+          "definition": "int inflateBack",
+          "detailed": "\n        ",
+          "name": "inflateBack",
+          "params": [
+            "strm",
+            "in",
+            "in_desc",
+            "out",
+            "out_desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateBackEnd",
+          "detailed": "\n        ",
+          "name": "inflateBackEnd",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "uLong zlibCompileFlags",
+          "detailed": "\n        ",
+          "name": "zlibCompileFlags",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "int compress",
+          "detailed": "\n        ",
+          "name": "compress",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong sourceLen, int level)",
+          "brief": "\n        ",
+          "definition": "int compress2",
+          "detailed": "\n        ",
+          "name": "compress2",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen",
+            "level"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "uLong compressBound",
+          "detailed": "\n        ",
+          "name": "compressBound",
+          "params": [
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "int uncompress",
+          "detailed": "\n        ",
+          "name": "uncompress",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong *sourceLen)",
+          "brief": "\n        ",
+          "definition": "int uncompress2",
+          "detailed": "\n        ",
+          "name": "uncompress2",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fd, char *mode)",
+          "brief": "\n        ",
+          "definition": "gzFile gzdopen",
+          "detailed": "\n        ",
+          "name": "gzdopen",
+          "params": [
+            "fd",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, unsigned size)",
+          "brief": "\n        ",
+          "definition": "int gzbuffer",
+          "detailed": "\n        ",
+          "name": "gzbuffer",
+          "params": [
+            "file",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, int level, int strategy)",
+          "brief": "\n        ",
+          "definition": "int gzsetparams",
+          "detailed": "\n        ",
+          "name": "gzsetparams",
+          "params": [
+            "file",
+            "level",
+            "strategy"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, voidp buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int gzread",
+          "detailed": "\n        ",
+          "name": "gzread",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidp buf, z_size_t size, z_size_t nitems, gzFile file)",
+          "brief": "\n        ",
+          "definition": "z_size_t gzfread",
+          "detailed": "\n        ",
+          "name": "gzfread",
+          "params": [
+            "buf",
+            "size",
+            "nitems",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, voidpc buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "int gzwrite",
+          "detailed": "\n        ",
+          "name": "gzwrite",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpc buf, z_size_t size, z_size_t nitems, gzFile file)",
+          "brief": "\n        ",
+          "definition": "z_size_t gzfwrite",
+          "detailed": "\n        ",
+          "name": "gzfwrite",
+          "params": [
+            "buf",
+            "size",
+            "nitems",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, char *format,...)",
+          "brief": "\n        ",
+          "definition": "int gzprintf",
+          "detailed": "\n        ",
+          "name": "gzprintf",
+          "params": [
+            "file",
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, char *s)",
+          "brief": "\n        ",
+          "definition": "int gzputs",
+          "detailed": "\n        ",
+          "name": "gzputs",
+          "params": [
+            "file",
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, char *buf, int len)",
+          "brief": "\n        ",
+          "definition": "char * gzgets",
+          "detailed": "\n        ",
+          "name": "gzgets",
+          "params": [
+            "file",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, int c)",
+          "brief": "\n        ",
+          "definition": "int gzputc",
+          "detailed": "\n        ",
+          "name": "gzputc",
+          "params": [
+            "file",
+            "c"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzgetc",
+          "detailed": "\n        ",
+          "name": "gzgetc",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int c, gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzungetc",
+          "detailed": "\n        ",
+          "name": "gzungetc",
+          "params": [
+            "c",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, int flush)",
+          "brief": "\n        ",
+          "definition": "int gzflush",
+          "detailed": "\n        ",
+          "name": "gzflush",
+          "params": [
+            "file",
+            "flush"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzrewind",
+          "detailed": "\n        ",
+          "name": "gzrewind",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzeof",
+          "detailed": "\n        ",
+          "name": "gzeof",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzdirect",
+          "detailed": "\n        ",
+          "name": "gzdirect",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzclose",
+          "detailed": "\n        ",
+          "name": "gzclose",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzclose_r",
+          "detailed": "\n        ",
+          "name": "gzclose_r",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzclose_w",
+          "detailed": "\n        ",
+          "name": "gzclose_w",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, int *errnum)",
+          "brief": "\n        ",
+          "definition": "char * gzerror",
+          "detailed": "\n        ",
+          "name": "gzerror",
+          "params": [
+            "file",
+            "errnum"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "void gzclearerr",
+          "detailed": "\n        ",
+          "name": "gzclearerr",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong adler, Bytef *buf, uInt len)",
+          "brief": "\n        ",
+          "definition": "uLong adler32",
+          "detailed": "\n        ",
+          "name": "adler32",
+          "params": [
+            "adler",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong adler, Bytef *buf, z_size_t len)",
+          "brief": "\n        ",
+          "definition": "uLong adler32_z",
+          "detailed": "\n        ",
+          "name": "adler32_z",
+          "params": [
+            "adler",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong crc, Bytef *buf, uInt len)",
+          "brief": "\n        ",
+          "definition": "uLong crc32",
+          "detailed": "\n        ",
+          "name": "crc32",
+          "params": [
+            "crc",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong crc, Bytef *buf, z_size_t len)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_z",
+          "detailed": "\n        ",
+          "name": "crc32_z",
+          "params": [
+            "crc",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong crc1, uLong crc2, uLong op)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine_op",
+          "detailed": "\n        ",
+          "name": "crc32_combine_op",
+          "params": [
+            "crc1",
+            "crc2",
+            "op"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int level, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int deflateInit_",
+          "detailed": "\n        ",
+          "name": "deflateInit_",
+          "params": [
+            "strm",
+            "level",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateInit_",
+          "detailed": "\n        ",
+          "name": "inflateInit_",
+          "params": [
+            "strm",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int level, int method, int windowBits, int memLevel, int strategy, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int deflateInit2_",
+          "detailed": "\n        ",
+          "name": "deflateInit2_",
+          "params": [
+            "strm",
+            "level",
+            "method",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int windowBits, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateInit2_",
+          "detailed": "\n        ",
+          "name": "inflateInit2_",
+          "params": [
+            "strm",
+            "windowBits",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int windowBits, unsigned char *window, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateBackInit_",
+          "detailed": "\n        ",
+          "name": "inflateBackInit_",
+          "params": [
+            "strm",
+            "windowBits",
+            "window",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzgetc_",
+          "detailed": "\n        ",
+          "name": "gzgetc_",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *, char *)",
+          "brief": "\n        ",
+          "definition": "gzFile gzopen",
+          "detailed": "\n        ",
+          "name": "gzopen",
+          "params": [
+            "path",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile, long, int)",
+          "brief": "\n        ",
+          "definition": "long gzseek",
+          "detailed": "\n        ",
+          "name": "gzseek",
+          "params": [
+            "file",
+            "offset",
+            "whence"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile)",
+          "brief": "\n        ",
+          "definition": "long gztell",
+          "detailed": "\n        ",
+          "name": "gztell",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile)",
+          "brief": "\n        ",
+          "definition": "long gzoffset",
+          "detailed": "\n        ",
+          "name": "gzoffset",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong, uLong, long)",
+          "brief": "\n        ",
+          "definition": "uLong adler32_combine",
+          "detailed": "\n        ",
+          "name": "adler32_combine",
+          "params": [
+            "adler1",
+            "adler2",
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong, uLong, long)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine",
+          "detailed": "\n        ",
+          "name": "crc32_combine",
+          "params": [
+            "crc1",
+            "crc2",
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine_gen",
+          "detailed": "\n        ",
+          "name": "crc32_combine_gen",
+          "params": [
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int)",
+          "brief": "\n        ",
+          "definition": "char * zError",
+          "detailed": "\n        ",
+          "name": "zError",
+          "params": [
+            "err"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp)",
+          "brief": "\n        ",
+          "definition": "int inflateSyncPoint",
+          "detailed": "\n        ",
+          "name": "inflateSyncPoint",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "z_crc_t * get_crc_table",
+          "detailed": "\n        ",
+          "name": "get_crc_table",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp, int)",
+          "brief": "\n        ",
+          "definition": "int inflateUndermine",
+          "detailed": "\n        ",
+          "name": "inflateUndermine",
+          "params": [
+            "strm",
+            "subvert"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp, int)",
+          "brief": "\n        ",
+          "definition": "int inflateValidate",
+          "detailed": "\n        ",
+          "name": "inflateValidate",
+          "params": [
+            "strm",
+            "check"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp)",
+          "brief": "\n        ",
+          "definition": "unsigned long inflateCodesUsed",
+          "detailed": "\n        ",
+          "name": "inflateCodesUsed",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp)",
+          "brief": "\n        ",
+          "definition": "int inflateResetKeep",
+          "detailed": "\n        ",
+          "name": "inflateResetKeep",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp)",
+          "brief": "\n        ",
+          "definition": "int deflateResetKeep",
+          "detailed": "\n        ",
+          "name": "deflateResetKeep",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_VERSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_VERNUM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_VER_MAJOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_VER_MINOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_VER_REVISION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_VER_SUBREVISION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_NO_FLUSH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_PARTIAL_FLUSH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_SYNC_FLUSH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_FULL_FLUSH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_FINISH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BLOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_TREES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_OK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_STREAM_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_NEED_DICT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_ERRNO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_STREAM_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_DATA_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_MEM_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BUF_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_VERSION_ERROR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_NO_COMPRESSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BEST_SPEED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BEST_COMPRESSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_DEFAULT_COMPRESSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_FILTERED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_HUFFMAN_ONLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_RLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_FIXED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_DEFAULT_STRATEGY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_BINARY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_TEXT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_ASCII",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_UNKNOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_DEFLATED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Z_NULL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "zlib_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "deflateInit",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "inflateInit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "deflateInit2",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "inflateInit2",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "inflateBackInit",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "gzgetc",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")(voidpf opaque, uInt items, uInt size)",
+          "brief": "\n        ",
+          "definition": "typedef voidpf(* alloc_func) (voidpf opaque, uInt items, uInt size)",
+          "detailed": "\n        ",
+          "name": "alloc_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(voidpf opaque, voidpf address)",
+          "brief": "\n        ",
+          "definition": "typedef void(* free_func) (voidpf opaque, voidpf address)",
+          "detailed": "\n        ",
+          "name": "free_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct z_stream_s z_stream",
+          "detailed": "\n        ",
+          "name": "z_stream",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef z_stream* z_streamp",
+          "detailed": "\n        ",
+          "name": "z_streamp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct gz_header_s gz_header",
+          "detailed": "\n        ",
+          "name": "gz_header",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef gz_header* gz_headerp",
+          "detailed": "\n        ",
+          "name": "gz_headerp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *, unsigned char **)",
+          "brief": "\n        ",
+          "definition": "typedef unsigned(* in_func) (void *, unsigned char **)",
+          "detailed": "\n        ",
+          "name": "in_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *, unsigned char *, unsigned)",
+          "brief": "\n        ",
+          "definition": "typedef int(* out_func) (void *, unsigned char *, unsigned)",
+          "detailed": "\n        ",
+          "name": "out_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct gzFile_s* gzFile",
+          "detailed": "\n        ",
+          "name": "gzFile",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    }
+  },
+  "library": "zlib.h",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

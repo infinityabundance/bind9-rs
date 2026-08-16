@@ -1,0 +1,74 @@
+{
+  "files": {
+    "lib/error.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int rc)",
+          "brief": "\n        ",
+          "definition": "const char * idn2_strerror",
+          "detailed": "idn2_strerror: @rc: return code from another libidn2 function.\nConvert internal libidn2 error code to a humanly readable string. The returned pointer must not be de-allocated by the caller.\nReturn value: A humanly readable string describing error.",
+          "name": "idn2_strerror",
+          "params": [
+            "rc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int rc)",
+          "brief": "\n        ",
+          "definition": "const char * idn2_strerror_name",
+          "detailed": "idn2_strerror_name: @rc: return code from another libidn2 function.\nConvert internal libidn2 error code to a string corresponding to internal header file symbols. For example, idn2_strerror_name(IDN2_MALLOC) will return the string \"IDN2_MALLOC\".\nThe caller must not attempt to de-allocate the returned string.\nReturn value: A string corresponding to error code symbol.",
+          "name": "idn2_strerror_name",
+          "params": [
+            "rc"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "bindtextdomain",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ERR2STR",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/error.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

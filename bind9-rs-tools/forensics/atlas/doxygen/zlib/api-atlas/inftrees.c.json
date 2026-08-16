@@ -1,0 +1,53 @@
+{
+  "files": {
+    "inftrees.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(codetype type, unsigned short *lens, unsigned codes, code **table, unsigned *bits, unsigned short *work)",
+          "brief": "\n        ",
+          "definition": "int inflate_table",
+          "detailed": "\n        ",
+          "name": "inflate_table",
+          "params": [
+            "type",
+            "lens",
+            "codes",
+            "table",
+            "bits",
+            "work"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXBITS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char inflate_copyright[]",
+          "detailed": "\n        ",
+          "name": "inflate_copyright",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "inftrees.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

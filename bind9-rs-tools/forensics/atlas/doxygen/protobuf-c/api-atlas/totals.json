@@ -1,0 +1,14 @@
+{
+  "enum_value_count": 0,
+  "file_count": 27,
+  "function_count": 282,
+  "libraries": [
+    "protobuf-c",
+    "protoc-gen-c",
+    "t"
+  ],
+  "macro_count": 138,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "1.5.2"
+}

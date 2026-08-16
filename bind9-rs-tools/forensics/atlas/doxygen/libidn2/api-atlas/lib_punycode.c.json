@@ -1,0 +1,215 @@
+{
+  "files": {
+    "lib/punycode.c": {
+      "enum_values": [
+        {
+          "args": "= 36",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "base",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "tmin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 26",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "tmax",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 38",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "skew",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 700",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "damp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 72",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "initial_bias",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x80",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "initial_n",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 0x2D",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "delimiter",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "@114332272172123334214024315203210266301107202346",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(uint32_t d, int flag)",
+          "brief": "\n        ",
+          "definition": "static char encode_digit",
+          "detailed": "\n        ",
+          "name": "encode_digit",
+          "params": [
+            "d",
+            "flag"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int cp)",
+          "brief": "\n        ",
+          "definition": "static unsigned decode_digit",
+          "detailed": "\n        ",
+          "name": "decode_digit",
+          "params": [
+            "cp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t delta, uint32_t numpoints, int firsttime) _GL_ATTRIBUTE_CONST",
+          "brief": "\n        ",
+          "definition": "static uint32_t adapt",
+          "detailed": "\n        ",
+          "name": "adapt",
+          "params": [
+            "delta",
+            "numpoints",
+            "firsttime"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint32_t *input, size_t input_length, char *output, size_t *output_length)",
+          "brief": "\n        ",
+          "definition": "int idn2_punycode_encode",
+          "detailed": "idn2_punycode_encode: @input: array of input Unicode (UCS-4) code points @input_length: number of code points in the @input array. @output: output character array with ASCII code points. @output_length: size of @output array\nConverts a sequence of code points to Punycode.\nWarning: Be aware that is rare for applications to need to perform Punycode operations, and you should consider idn2_to_ascii_8z(), idn2_to_ascii_lz(), idn2_to_ascii_4z() etc.\nReturns: On successful encoding IDN2_OK is returned, or an error codes like IDN2_PUNYCODE_BAD_INPUT, IDN2_PUNYCODE_BIG_OUTPUT, or IDN2_PUNYCODE_OVERFLOW.\nSince: 2.3.5",
+          "name": "idn2_punycode_encode",
+          "params": [
+            "input",
+            "input_length",
+            "output",
+            "output_length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, size_t input_length, uint32_t *output, size_t *output_length)",
+          "brief": "\n        ",
+          "definition": "int idn2_punycode_decode",
+          "detailed": "idn2_punycode_decode: @input: array of ASCII characters (0..7F) @input_length: Number of ASCII characters in the @input array. @output: output character array with ASCII code points. @output_length: on input, guarantee that @output has room for this many code points; on output, *@output_length holds number of code points in @output.\nConverts Punycode to a sequence of code points.\nThe decoder will never need to output more code points than the number of ASCII code points in the input, because of the way the encoding is defined.\nThe number of code points output cannot exceed the maximum possible value of a uint32_t, even if the supplied @output_length is greater than that.\nWarning: Be aware that is rare for applications to need to perform Punycode operations, and you should consider idn2_to_unicode_8z8z(), idn2_to_unicode_lzlz() etc.\nReturns: On successful encoding IDN2_OK is returned, or an error codes like IDN2_PUNYCODE_BAD_INPUT, IDN2_PUNYCODE_BIG_OUTPUT, or IDN2_PUNYCODE_OVERFLOW.\nSince: 2.3.5",
+          "name": "idn2_punycode_decode",
+          "params": [
+            "input",
+            "input_length",
+            "output",
+            "output_length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(size_t input_length, const char input[], size_t *output_length, uint32_t output[])",
+          "brief": "\n        ",
+          "definition": "int _idn2_punycode_decode",
+          "detailed": "\n        ",
+          "name": "_idn2_punycode_decode",
+          "params": [
+            "input_length",
+            "input",
+            "output_length",
+            "output"
+          ],
+          "static": false
+        },
+        {
+          "args": "(size_t input_length, const uint32_t input[], size_t *output_length, char output[])",
+          "brief": "\n        ",
+          "definition": "int _idn2_punycode_encode",
+          "detailed": "\n        ",
+          "name": "_idn2_punycode_encode",
+          "params": [
+            "input_length",
+            "input",
+            "output_length",
+            "output"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "encode_basic",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "decode_basic",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/punycode.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

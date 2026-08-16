@@ -1,0 +1,93 @@
+{
+  "files": {
+    "json_pointer_private.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *obj, const char *path, struct json_pointer_get_result *res)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_get_internal",
+          "detailed": "\n        ",
+          "name": "json_pointer_get_internal",
+          "params": [
+            "obj",
+            "path",
+            "res"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object **obj, const char *path, struct json_object *value, json_pointer_set_cb set_cb, int cb_handles_obj, void *priv)",
+          "brief": "\n        ",
+          "definition": "int json_pointer_set_with_cb",
+          "detailed": "Variant of 'json_pointer_set()' that allows specifying a custom callback\n\n\nobj\n\n\nthe json_object instance/tree to which to add a sub-object \n\n\n\n\npath\n\n\na (RFC6901) string notation for the sub-object to set in the tree \n\n\n\n\nvalue\n\n\nobject to set at path \n\n\n\n\nset_cb\n\n\nA custom callback function to handle setting the element \n\n\n\n\ncb_handles_obj\n\n\nIf 0, the callback is only invoked for array modifications. If 1, the callback is invoked for both array and object modifications. \n\n\n\n\npriv\n\n\nA private pointer passed through to the set_cb callback, for user-defined context\n\n\n\nnegative if an error (or not found), or 0 if succeeded \n\n\nthe json_object instance/tree to which to add a sub-object \na (RFC6901) string notation for the sub-object to set in the tree \nobject to set at path \nA custom callback function to handle setting the element \nIf 0, the callback is only invoked for array modifications. If 1, the callback is invoked for both array and object modifications. \nA private pointer passed through to the set_cb callback, for user-defined context\nnegative if an error (or not found), or 0 if succeeded",
+          "name": "json_pointer_set_with_cb",
+          "params": [
+            "obj",
+            "path",
+            "value",
+            "set_cb",
+            "cb_handles_obj",
+            "priv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")(json_object *parent, const char *key, size_t idx, json_object *value, void *priv)",
+          "brief": "\n        ",
+          "definition": "typedef int(* json_pointer_set_cb) (json_object *parent, const char *key, size_t idx, json_object *value, void *priv)",
+          "detailed": "\n        ",
+          "name": "json_pointer_set_cb",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_object* json_pointer_get_result::parent",
+          "detailed": "\n        ",
+          "name": "parent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_object* json_pointer_get_result::obj",
+          "detailed": "\n        ",
+          "name": "obj",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* json_pointer_get_result::key_in_parent",
+          "detailed": "\n        ",
+          "name": "key_in_parent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t json_pointer_get_result::index_in_parent",
+          "detailed": "\n        ",
+          "name": "index_in_parent",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_pointer_private.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,5796 @@
+{
+  "files": {
+    "libcap/_makenames.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *p, int was, int is)",
+          "brief": "\n        ",
+          "definition": "static void * recalloc",
+          "detailed": "\n        ",
+          "name": "recalloc",
+          "params": [
+            "p",
+            "was",
+            "is"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int index",
+          "detailed": "\n        ",
+          "name": "index",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct @347245260270362325130211367037364257312166022134 list[]",
+          "detailed": "\n        ",
+          "name": "list",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/cap_alloc.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_value_t cap_max_bits",
+          "detailed": "\n        ",
+          "name": "cap_max_bits",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_init",
+          "detailed": "\n        ",
+          "name": "cap_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_dup",
+          "detailed": "\n        ",
+          "name": "cap_dup",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_init",
+          "detailed": "\n        ",
+          "name": "cap_iab_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_dup",
+          "detailed": "\n        ",
+          "name": "cap_iab_dup",
+          "params": [
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *arg0, const char *const *argv, const char *const *envp)",
+          "brief": "\n        ",
+          "definition": "cap_launch_t cap_new_launcher",
+          "detailed": "\n        ",
+          "name": "cap_new_launcher",
+          "params": [
+            "arg0",
+            "argv",
+            "envp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int(callback_fn)(void *detail))",
+          "brief": "\n        ",
+          "definition": "cap_launch_t cap_func_launcher",
+          "detailed": "\n        ",
+          "name": "cap_func_launcher",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *data_p)",
+          "brief": "\n        ",
+          "definition": "int cap_free",
+          "detailed": "\n        ",
+          "name": "cap_free",
+          "params": [
+            "data_p"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_ALLOC_OFF_U",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "[offsetof(struct _cap_alloc_s, u)==(__alignof__(union {struct _cap_struct s;struct cap_iab_s i;struct cap_launch_s l;}) > 2 *sizeof(uint32_t) ?(__alignof__(union {struct _cap_struct s;struct cap_iab_s i;struct cap_launch_s l;})) :(2 *sizeof(uint32_t))) ? 1:-1]",
+          "brief": "\n        ",
+          "definition": "typedef char _compilation_time_static_assert_Member_u_has_an_unexpected_offset_in_cap_alloc_s[offsetof(struct _cap_alloc_s, u)==(__alignof__(union {struct _cap_struct s;struct cap_iab_s i;struct cap_launch_s l;}) > 2 *sizeof(uint32_t) ?(__alignof__(union {struct _cap_struct s;struct cap_iab_s i;struct cap_launch_s l;})) :(2 *sizeof(uint32_t))) ? 1:-1]",
+          "detailed": "\n        ",
+          "name": "_compilation_time_static_assert_Member_u_has_an_unexpected_offset_in_cap_alloc_s",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t __libcap_mutex",
+          "detailed": "\n        ",
+          "name": "__libcap_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cap_value_t _cap_max_bits",
+          "detailed": "\n        ",
+          "name": "_cap_max_bits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t _cap_alloc_s::magic",
+          "detailed": "\n        ",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t _cap_alloc_s::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct _cap_struct _cap_alloc_s::set",
+          "detailed": "\n        ",
+          "name": "set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cap_iab_s _cap_alloc_s::iab",
+          "detailed": "\n        ",
+          "name": "iab",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cap_launch_s _cap_alloc_s::launcher",
+          "detailed": "\n        ",
+          "name": "launcher",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union _cap_alloc_s::@152055040022220017316062234231306207260106061022 _cap_alloc_s::u",
+          "detailed": "\n        ",
+          "name": "u",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/cap_extint.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "static ssize_t _cap_size_locked",
+          "detailed": "\n        ",
+          "name": "_cap_size_locked",
+          "params": [
+            "cap_d"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "ssize_t cap_size",
+          "detailed": "\n        ",
+          "name": "cap_size",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *cap_ext, cap_t cap_d, ssize_t length)",
+          "brief": "\n        ",
+          "definition": "ssize_t cap_copy_ext",
+          "detailed": "\n        ",
+          "name": "cap_copy_ext",
+          "params": [
+            "cap_ext",
+            "cap_d",
+            "length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *cap_ext)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_copy_int",
+          "detailed": "\n        ",
+          "name": "cap_copy_int",
+          "params": [
+            "cap_ext"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *cap_ext, ssize_t length)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_copy_int_check",
+          "detailed": "\n        ",
+          "name": "cap_copy_int_check",
+          "params": [
+            "cap_ext",
+            "length"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_EXT_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_EXT_MAGIC_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[4+1]",
+          "brief": "\n        ",
+          "definition": "const uint8_t external_magic[4+1]",
+          "detailed": "\n        ",
+          "name": "external_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t _libcap_min_ext_flag_size",
+          "detailed": "\n        ",
+          "name": "_libcap_min_ext_flag_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4]",
+          "brief": "\n        ",
+          "definition": "uint8_t cap_ext_struct::magic[4]",
+          "detailed": "\n        ",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t cap_ext_struct::length_of_capset",
+          "detailed": "\n        ",
+          "name": "length_of_capset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[((2) *sizeof(uint32_t))][3]",
+          "brief": "\n        ",
+          "definition": "uint8_t cap_ext_struct::bytes[((2) *sizeof(uint32_t))][3]",
+          "detailed": "\n        ",
+          "name": "bytes",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/cap_file.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *, const char *, void *, size_t)",
+          "brief": "\n        ",
+          "definition": "ssize_t getxattr",
+          "detailed": "\n        ",
+          "name": "getxattr",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, const char *, void *, size_t)",
+          "brief": "\n        ",
+          "definition": "ssize_t fgetxattr",
+          "detailed": "\n        ",
+          "name": "fgetxattr",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *, const char *, const void *, size_t, int)",
+          "brief": "\n        ",
+          "definition": "int setxattr",
+          "detailed": "\n        ",
+          "name": "setxattr",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, const char *, const void *, size_t, int)",
+          "brief": "\n        ",
+          "definition": "int fsetxattr",
+          "detailed": "\n        ",
+          "name": "fsetxattr",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *, const char *)",
+          "brief": "\n        ",
+          "definition": "int removexattr",
+          "detailed": "\n        ",
+          "name": "removexattr",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, const char *)",
+          "brief": "\n        ",
+          "definition": "int fremovexattr",
+          "detailed": "\n        ",
+          "name": "fremovexattr",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct vfs_ns_cap_data *rawvfscap, cap_t result, int bytes)",
+          "brief": "\n        ",
+          "definition": "static cap_t _fcaps_load",
+          "detailed": "\n        ",
+          "name": "_fcaps_load",
+          "params": [
+            "rawvfscap",
+            "result",
+            "bytes"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct vfs_ns_cap_data *rawvfscap, cap_t cap_d, int *bytes_p)",
+          "brief": "\n        ",
+          "definition": "static int _fcaps_save",
+          "detailed": "\n        ",
+          "name": "_fcaps_save",
+          "params": [
+            "rawvfscap",
+            "cap_d",
+            "bytes_p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int fildes)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_fd",
+          "detailed": "\n        ",
+          "name": "cap_get_fd",
+          "params": [
+            "fildes"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_file",
+          "detailed": "\n        ",
+          "name": "cap_get_file",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "uid_t cap_get_nsowner",
+          "detailed": "\n        ",
+          "name": "cap_get_nsowner",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fildes, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int cap_set_fd",
+          "detailed": "\n        ",
+          "name": "cap_set_fd",
+          "params": [
+            "fildes",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int cap_set_file",
+          "detailed": "\n        ",
+          "name": "cap_set_file",
+          "params": [
+            "filename",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d, uid_t rootuid)",
+          "brief": "\n        ",
+          "definition": "int cap_set_nsowner",
+          "detailed": "\n        ",
+          "name": "cap_set_nsowner",
+          "params": [
+            "cap_d",
+            "rootuid"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_CAPS_SUFFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_SECURITY_PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_NAME_CAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIXUP_32BITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/cap_flag.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(cap_t cap_d, cap_value_t value, cap_flag_t set, cap_flag_value_t *raised)",
+          "brief": "\n        ",
+          "definition": "int cap_get_flag",
+          "detailed": "\n        ",
+          "name": "cap_get_flag",
+          "params": [
+            "cap_d",
+            "value",
+            "set",
+            "raised"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d, cap_flag_t set, int no_values, const cap_value_t *array_values, cap_flag_value_t raise)",
+          "brief": "\n        ",
+          "definition": "int cap_set_flag",
+          "detailed": "\n        ",
+          "name": "cap_set_flag",
+          "params": [
+            "cap_d",
+            "set",
+            "no_values",
+            "array_values",
+            "raise"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int cap_clear",
+          "detailed": "\n        ",
+          "name": "cap_clear",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d, cap_flag_t flag)",
+          "brief": "\n        ",
+          "definition": "int cap_clear_flag",
+          "detailed": "\n        ",
+          "name": "cap_clear_flag",
+          "params": [
+            "cap_d",
+            "flag"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t a, cap_t b)",
+          "brief": "\n        ",
+          "definition": "int cap_compare",
+          "detailed": "\n        ",
+          "name": "cap_compare",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d, cap_flag_t to, cap_t ref, cap_flag_t from)",
+          "brief": "\n        ",
+          "definition": "int cap_fill_flag",
+          "detailed": "\n        ",
+          "name": "cap_fill_flag",
+          "params": [
+            "cap_d",
+            "to",
+            "ref",
+            "from"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d, cap_flag_t to, cap_flag_t from)",
+          "brief": "\n        ",
+          "definition": "int cap_fill",
+          "detailed": "\n        ",
+          "name": "cap_fill",
+          "params": [
+            "cap_d",
+            "to",
+            "from"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab, cap_iab_vector_t vec, cap_value_t bit)",
+          "brief": "\n        ",
+          "definition": "cap_flag_value_t cap_iab_get_vector",
+          "detailed": "\n        ",
+          "name": "cap_iab_get_vector",
+          "params": [
+            "iab",
+            "vec",
+            "bit"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab, cap_iab_vector_t vec, cap_value_t bit, cap_flag_value_t raised)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_set_vector",
+          "detailed": "\n        ",
+          "name": "cap_iab_set_vector",
+          "params": [
+            "iab",
+            "vec",
+            "bit",
+            "raised"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab, cap_iab_vector_t vec, cap_t cap_d, cap_flag_t flag)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_fill",
+          "detailed": "\n        ",
+          "name": "cap_iab_fill",
+          "params": [
+            "iab",
+            "vec",
+            "cap_d",
+            "flag"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t a, cap_iab_t b)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_compare",
+          "detailed": "\n        ",
+          "name": "cap_iab_compare",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/cap_proc.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(long int syscall_nr, long int arg1, long int arg2, long int arg3)",
+          "brief": "\n        ",
+          "definition": "static long int _cap_syscall3",
+          "detailed": "\n        ",
+          "name": "_cap_syscall3",
+          "params": [
+            "syscall_nr",
+            "arg1",
+            "arg2",
+            "arg3"
+          ],
+          "static": true
+        },
+        {
+          "args": "(long int syscall_nr, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5, long int arg6)",
+          "brief": "\n        ",
+          "definition": "static long int _cap_syscall6",
+          "detailed": "\n        ",
+          "name": "_cap_syscall6",
+          "params": [
+            "syscall_nr",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5",
+            "arg6"
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, cap_user_header_t header, const cap_user_data_t data)",
+          "brief": "\n        ",
+          "definition": "static int _libcap_capset",
+          "detailed": "\n        ",
+          "name": "_libcap_capset",
+          "params": [
+            "sc",
+            "header",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct syscaller_s *sc, long int pr_cmd, long int arg1, long int arg2)",
+          "brief": "\n        ",
+          "definition": "static int _libcap_wprctl3",
+          "detailed": "\n        ",
+          "name": "_libcap_wprctl3",
+          "params": [
+            "sc",
+            "pr_cmd",
+            "arg1",
+            "arg2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct syscaller_s *sc, long int pr_cmd, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5)",
+          "brief": "\n        ",
+          "definition": "static int _libcap_wprctl6",
+          "detailed": "\n        ",
+          "name": "_libcap_wprctl6",
+          "params": [
+            "sc",
+            "pr_cmd",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_proc",
+          "detailed": "\n        ",
+          "name": "cap_get_proc",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "static int _cap_set_proc",
+          "detailed": "\n        ",
+          "name": "_cap_set_proc",
+          "params": [
+            "sc",
+            "cap_d"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int cap_set_proc",
+          "detailed": "\n        ",
+          "name": "cap_set_proc",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int capgetp",
+          "detailed": "\n        ",
+          "name": "capgetp",
+          "params": [
+            "pid",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_pid",
+          "detailed": "\n        ",
+          "name": "cap_get_pid",
+          "params": [
+            "pid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int capsetp",
+          "detailed": "\n        ",
+          "name": "capsetp",
+          "params": [
+            "pid",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t cap)",
+          "brief": "\n        ",
+          "definition": "int cap_get_bound",
+          "detailed": "\n        ",
+          "name": "cap_get_bound",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, cap_value_t cap)",
+          "brief": "\n        ",
+          "definition": "static int _cap_drop_bound",
+          "detailed": "\n        ",
+          "name": "_cap_drop_bound",
+          "params": [
+            "sc",
+            "cap"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_value_t cap)",
+          "brief": "\n        ",
+          "definition": "int cap_drop_bound",
+          "detailed": "\n        ",
+          "name": "cap_drop_bound",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t cap)",
+          "brief": "\n        ",
+          "definition": "int cap_get_ambient",
+          "detailed": "\n        ",
+          "name": "cap_get_ambient",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, cap_value_t cap, cap_flag_value_t set)",
+          "brief": "\n        ",
+          "definition": "static int _cap_set_ambient",
+          "detailed": "\n        ",
+          "name": "_cap_set_ambient",
+          "params": [
+            "sc",
+            "cap",
+            "set"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_value_t cap, cap_flag_value_t set)",
+          "brief": "\n        ",
+          "definition": "int cap_set_ambient",
+          "detailed": "\n        ",
+          "name": "cap_set_ambient",
+          "params": [
+            "cap",
+            "set"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc)",
+          "brief": "\n        ",
+          "definition": "static int _cap_reset_ambient",
+          "detailed": "\n        ",
+          "name": "_cap_reset_ambient",
+          "params": [
+            "sc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int cap_reset_ambient",
+          "detailed": "\n        ",
+          "name": "cap_reset_ambient",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned cap_get_secbits",
+          "detailed": "\n        ",
+          "name": "cap_get_secbits",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, unsigned bits)",
+          "brief": "\n        ",
+          "definition": "static int _cap_set_secbits",
+          "detailed": "\n        ",
+          "name": "_cap_set_secbits",
+          "params": [
+            "sc",
+            "bits"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned bits)",
+          "brief": "\n        ",
+          "definition": "int cap_set_secbits",
+          "detailed": "\n        ",
+          "name": "cap_set_secbits",
+          "params": [
+            "bits"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc)",
+          "brief": "\n        ",
+          "definition": "static void _cap_set_no_new_privs",
+          "detailed": "\n        ",
+          "name": "_cap_set_no_new_privs",
+          "params": [
+            "sc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(long int pr_cmd, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5)",
+          "brief": "\n        ",
+          "definition": "int cap_prctl",
+          "detailed": "\n        ",
+          "name": "cap_prctl",
+          "params": [
+            "pr_cmd",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int pr_cmd, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5)",
+          "brief": "\n        ",
+          "definition": "int cap_prctlw",
+          "detailed": "\n        ",
+          "name": "cap_prctlw",
+          "params": [
+            "pr_cmd",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "static int _cap_set_mode",
+          "detailed": "\n        ",
+          "name": "_cap_set_mode",
+          "params": [
+            "sc",
+            "flavor"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "int cap_set_mode",
+          "detailed": "\n        ",
+          "name": "cap_set_mode",
+          "params": [
+            "flavor"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_mode_t cap_get_mode",
+          "detailed": "\n        ",
+          "name": "cap_get_mode",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, uid_t uid)",
+          "brief": "\n        ",
+          "definition": "static int _cap_setuid",
+          "detailed": "\n        ",
+          "name": "_cap_setuid",
+          "params": [
+            "sc",
+            "uid"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uid_t uid)",
+          "brief": "\n        ",
+          "definition": "int cap_setuid",
+          "detailed": "\n        ",
+          "name": "cap_setuid",
+          "params": [
+            "uid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, gid_t gid, size_t ngroups, const gid_t groups[])",
+          "brief": "\n        ",
+          "definition": "static int _cap_setgroups",
+          "detailed": "\n        ",
+          "name": "_cap_setgroups",
+          "params": [
+            "sc",
+            "gid",
+            "ngroups",
+            "groups"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gid_t gid, size_t ngroups, const gid_t groups[])",
+          "brief": "\n        ",
+          "definition": "int cap_setgroups",
+          "detailed": "\n        ",
+          "name": "cap_setgroups",
+          "params": [
+            "gid",
+            "ngroups",
+            "groups"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_get_proc",
+          "detailed": "\n        ",
+          "name": "cap_iab_get_proc",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "static int _cap_iab_set_proc",
+          "detailed": "\n        ",
+          "name": "_cap_iab_set_proc",
+          "params": [
+            "sc",
+            "iab"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_set_proc",
+          "detailed": "\n        ",
+          "name": "cap_iab_set_proc",
+          "params": [
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, int(callback_fn)(void *detail))",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_callback",
+          "detailed": "\n        ",
+          "name": "cap_launcher_callback",
+          "params": [
+            "attr",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, uid_t uid)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_setuid",
+          "detailed": "\n        ",
+          "name": "cap_launcher_setuid",
+          "params": [
+            "attr",
+            "uid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, gid_t gid, int ngroups, const gid_t *groups)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_setgroups",
+          "detailed": "\n        ",
+          "name": "cap_launcher_setgroups",
+          "params": [
+            "attr",
+            "gid",
+            "ngroups",
+            "groups"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_set_mode",
+          "detailed": "\n        ",
+          "name": "cap_launcher_set_mode",
+          "params": [
+            "attr",
+            "flavor"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_launcher_set_iab",
+          "detailed": "\n        ",
+          "name": "cap_launcher_set_iab",
+          "params": [
+            "attr",
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, const char *chroot)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_set_chroot",
+          "detailed": "\n        ",
+          "name": "cap_launcher_set_chroot",
+          "params": [
+            "attr",
+            "chroot"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct syscaller_s *sc, const char *root)",
+          "brief": "\n        ",
+          "definition": "static int _cap_chroot",
+          "detailed": "\n        ",
+          "name": "_cap_chroot",
+          "params": [
+            "sc",
+            "root"
+          ],
+          "static": true
+        },
+        {
+          "args": "((noreturn))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, void *detail)",
+          "brief": "\n        ",
+          "definition": "pid_t cap_launch",
+          "detailed": "\n        ",
+          "name": "cap_launch",
+          "params": [
+            "attr",
+            "detail"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "pr_arg",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SECURED_BITS_BASIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SECURED_BITS_AMBIENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "sys_setgroups_variant",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct syscaller_s multithread",
+          "detailed": "\n        ",
+          "name": "multithread",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct syscaller_s singlethread",
+          "detailed": "\n        ",
+          "name": "singlethread",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "cap_value_t raise_cap_setpcap[]",
+          "detailed": "\n        ",
+          "name": "raise_cap_setpcap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(long int syscall_nr, long int arg1, long int arg2, long int arg3)",
+          "brief": "\n        ",
+          "definition": "long int(* syscaller_s::three) (long int syscall_nr, long int arg1, long int arg2, long int arg3)",
+          "detailed": "\n        ",
+          "name": "three",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(long int syscall_nr, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5, long int arg6)",
+          "brief": "\n        ",
+          "definition": "long int(* syscaller_s::six) (long int syscall_nr, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5, long int arg6)",
+          "detailed": "\n        ",
+          "name": "six",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/cap_syscalls.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((weak))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/cap_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(cap_value_t x)",
+          "brief": "\n        ",
+          "definition": "static int cf",
+          "detailed": "\n        ",
+          "name": "cf",
+          "params": [
+            "x"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_cap_bits",
+          "detailed": "\n        ",
+          "name": "test_cap_bits",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_cap_flags",
+          "detailed": "\n        ",
+          "name": "test_cap_flags",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_short_bits",
+          "detailed": "\n        ",
+          "name": "test_short_bits",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *data)",
+          "brief": "\n        ",
+          "definition": "static int noop",
+          "detailed": "\n        ",
+          "name": "noop",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_alloc",
+          "detailed": "\n        ",
+          "name": "test_alloc",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int test_prctl",
+          "detailed": "\n        ",
+          "name": "test_prctl",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cap_value_t top",
+          "detailed": "\n        ",
+          "name": "top",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/cap_text.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(cap_t a, const uint32_t *b, cap_flag_t set, unsigned blks)",
+          "brief": "\n        ",
+          "definition": "static void setbits",
+          "detailed": "\n        ",
+          "name": "setbits",
+          "params": [
+            "a",
+            "b",
+            "set",
+            "blks"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t a, const uint32_t *b, cap_flag_t set, unsigned blks)",
+          "brief": "\n        ",
+          "definition": "static void clrbits",
+          "detailed": "\n        ",
+          "name": "clrbits",
+          "params": [
+            "a",
+            "b",
+            "set",
+            "blks"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char const *str, char const *nam)",
+          "brief": "\n        ",
+          "definition": "static char const  * namcmp",
+          "detailed": "\n        ",
+          "name": "namcmp",
+          "params": [
+            "str",
+            "nam"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *flat, uint32_t value, unsigned blks)",
+          "brief": "\n        ",
+          "definition": "static void forceall",
+          "detailed": "\n        ",
+          "name": "forceall",
+          "params": [
+            "flat",
+            "value",
+            "blks"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char const **strp)",
+          "brief": "\n        ",
+          "definition": "static int lookupname",
+          "detailed": "\n        ",
+          "name": "lookupname",
+          "params": [
+            "strp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_from_text",
+          "detailed": "\n        ",
+          "name": "cap_from_text",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *name, cap_value_t *value_p)",
+          "brief": "\n        ",
+          "definition": "int cap_from_name",
+          "detailed": "\n        ",
+          "name": "cap_from_name",
+          "params": [
+            "name",
+            "value_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t cap)",
+          "brief": "\n        ",
+          "definition": "char * cap_to_name",
+          "detailed": "\n        ",
+          "name": "cap_to_name",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t caps, int capno)",
+          "brief": "\n        ",
+          "definition": "static int getstateflags",
+          "detailed": "\n        ",
+          "name": "getstateflags",
+          "params": [
+            "caps",
+            "capno"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t caps, ssize_t *length_p)",
+          "brief": "\n        ",
+          "definition": "char * cap_to_text",
+          "detailed": "\n        ",
+          "name": "cap_to_text",
+          "params": [
+            "caps",
+            "length_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "const char * cap_mode_name",
+          "detailed": "\n        ",
+          "name": "cap_mode_name",
+          "params": [
+            "flavor"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "char * cap_iab_to_text",
+          "detailed": "\n        ",
+          "name": "cap_iab_to_text",
+          "params": [
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *text)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_from_text",
+          "detailed": "\n        ",
+          "name": "cap_iab_from_text",
+          "params": [
+            "text"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *c)",
+          "brief": "\n        ",
+          "definition": "static uint32_t _parse_hex32",
+          "detailed": "\n        ",
+          "name": "_parse_hex32",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *vals, const char *c, int invert)",
+          "brief": "\n        ",
+          "definition": "static uint32_t _parse_vec_string",
+          "detailed": "\n        ",
+          "name": "_parse_vec_string",
+          "params": [
+            "vals",
+            "c",
+            "invert"
+          ],
+          "static": true
+        },
+        {
+          "args": "((destructor(300)))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *root)",
+          "brief": "\n        ",
+          "definition": "char * cap_proc_root",
+          "detailed": "\n        ",
+          "name": "cap_proc_root",
+          "params": [
+            "root"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_get_pid",
+          "detailed": "\n        ",
+          "name": "cap_iab_get_pid",
+          "params": [
+            "pid"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_PLEASE_INCLUDE_ARRAY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_TEXT_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "raise_cap_mask",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_TEXT_BUFFER_ZONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROC_LINE_MAX",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[__CAP_BITS]",
+          "brief": "\n        ",
+          "definition": "char const* _cap_names[__CAP_BITS]",
+          "detailed": "\n        ",
+          "name": "_cap_names",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* _cap_proc_dir",
+          "detailed": "\n        ",
+          "name": "_cap_proc_dir",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/empty.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/execable.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int status)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void summary",
+          "detailed": "\n        ",
+          "name": "summary",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "static void __execable_main",
+          "detailed": "\n        ",
+          "name": "__execable_main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/execable.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((section(\".interp\")))",
+          "brief": "\n        ",
+          "definition": "const char __execable_dl_loader[] __attribute",
+          "detailed": "\n        ",
+          "name": "__attribute",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int *argc_p, char ***argv_p)",
+          "brief": "\n        ",
+          "definition": "static void __execable_parse_args",
+          "detailed": "\n        ",
+          "name": "__execable_parse_args",
+          "params": [
+            "argc_p",
+            "argv_p"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__EXECABLE_H",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__LIBCAP_PROTECT_CPP__",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__LIBCAP_UNPROTECT_CPP__",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__LIBCAP_CPP_PUBLIC__",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__SO_FORCE_ARG_ALIGNMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXECABLE_INITIALIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SO_MAIN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/include/sys/capability.h": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_EFFECTIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_PERMITTED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_INHERITABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_IAB_INH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 3",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_IAB_AMB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 4",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_IAB_BOUND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "=0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_CLEAR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "=1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CAP_SET",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cap_flag_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cap_iab_vector_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cap_flag_value_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_value_t cap_max_bits",
+          "detailed": "\n        ",
+          "name": "cap_max_bits",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *root)",
+          "brief": "\n        ",
+          "definition": "char * cap_proc_root",
+          "detailed": "\n        ",
+          "name": "cap_proc_root",
+          "params": [
+            "root"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_dup",
+          "detailed": "\n        ",
+          "name": "cap_dup",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *)",
+          "brief": "\n        ",
+          "definition": "int cap_free",
+          "detailed": "\n        ",
+          "name": "cap_free",
+          "params": [
+            "data_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_init",
+          "detailed": "\n        ",
+          "name": "cap_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_dup",
+          "detailed": "\n        ",
+          "name": "cap_iab_dup",
+          "params": [
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_init",
+          "detailed": "\n        ",
+          "name": "cap_iab_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, cap_value_t, cap_flag_t, cap_flag_value_t *)",
+          "brief": "\n        ",
+          "definition": "int cap_get_flag",
+          "detailed": "\n        ",
+          "name": "cap_get_flag",
+          "params": [
+            "cap_d",
+            "value",
+            "set",
+            "raised"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, cap_flag_t, int, const cap_value_t *, cap_flag_value_t)",
+          "brief": "\n        ",
+          "definition": "int cap_set_flag",
+          "detailed": "\n        ",
+          "name": "cap_set_flag",
+          "params": [
+            "cap_d",
+            "set",
+            "no_values",
+            "array_values",
+            "raise"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t)",
+          "brief": "\n        ",
+          "definition": "int cap_clear",
+          "detailed": "\n        ",
+          "name": "cap_clear",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, cap_flag_t)",
+          "brief": "\n        ",
+          "definition": "int cap_clear_flag",
+          "detailed": "\n        ",
+          "name": "cap_clear_flag",
+          "params": [
+            "cap_d",
+            "flag"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d, cap_flag_t to, cap_t ref, cap_flag_t from)",
+          "brief": "\n        ",
+          "definition": "int cap_fill_flag",
+          "detailed": "\n        ",
+          "name": "cap_fill_flag",
+          "params": [
+            "cap_d",
+            "to",
+            "ref",
+            "from"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, cap_flag_t, cap_flag_t)",
+          "brief": "\n        ",
+          "definition": "int cap_fill",
+          "detailed": "\n        ",
+          "name": "cap_fill",
+          "params": [
+            "cap_d",
+            "to",
+            "from"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, cap_t)",
+          "brief": "\n        ",
+          "definition": "int cap_compare",
+          "detailed": "\n        ",
+          "name": "cap_compare",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t, cap_iab_t)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_compare",
+          "detailed": "\n        ",
+          "name": "cap_iab_compare",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t, cap_iab_vector_t, cap_value_t)",
+          "brief": "\n        ",
+          "definition": "cap_flag_value_t cap_iab_get_vector",
+          "detailed": "\n        ",
+          "name": "cap_iab_get_vector",
+          "params": [
+            "iab",
+            "vec",
+            "bit"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t, cap_iab_vector_t, cap_value_t, cap_flag_value_t)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_set_vector",
+          "detailed": "\n        ",
+          "name": "cap_iab_set_vector",
+          "params": [
+            "iab",
+            "vec",
+            "bit",
+            "raised"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t, cap_iab_vector_t, cap_t, cap_flag_t)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_fill",
+          "detailed": "\n        ",
+          "name": "cap_iab_fill",
+          "params": [
+            "iab",
+            "vec",
+            "cap_d",
+            "flag"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_fd",
+          "detailed": "\n        ",
+          "name": "cap_get_fd",
+          "params": [
+            "fildes"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_file",
+          "detailed": "\n        ",
+          "name": "cap_get_file",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t)",
+          "brief": "\n        ",
+          "definition": "uid_t cap_get_nsowner",
+          "detailed": "\n        ",
+          "name": "cap_get_nsowner",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, cap_t)",
+          "brief": "\n        ",
+          "definition": "int cap_set_fd",
+          "detailed": "\n        ",
+          "name": "cap_set_fd",
+          "params": [
+            "fildes",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *, cap_t)",
+          "brief": "\n        ",
+          "definition": "int cap_set_file",
+          "detailed": "\n        ",
+          "name": "cap_set_file",
+          "params": [
+            "filename",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, uid_t)",
+          "brief": "\n        ",
+          "definition": "int cap_set_nsowner",
+          "detailed": "\n        ",
+          "name": "cap_set_nsowner",
+          "params": [
+            "cap_d",
+            "rootuid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_proc",
+          "detailed": "\n        ",
+          "name": "cap_get_proc",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_get_pid",
+          "detailed": "\n        ",
+          "name": "cap_get_pid",
+          "params": [
+            "pid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t)",
+          "brief": "\n        ",
+          "definition": "int cap_set_proc",
+          "detailed": "\n        ",
+          "name": "cap_set_proc",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t)",
+          "brief": "\n        ",
+          "definition": "int cap_get_bound",
+          "detailed": "\n        ",
+          "name": "cap_get_bound",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t)",
+          "brief": "\n        ",
+          "definition": "int cap_drop_bound",
+          "detailed": "\n        ",
+          "name": "cap_drop_bound",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t)",
+          "brief": "\n        ",
+          "definition": "int cap_get_ambient",
+          "detailed": "\n        ",
+          "name": "cap_get_ambient",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t, cap_flag_value_t)",
+          "brief": "\n        ",
+          "definition": "int cap_set_ambient",
+          "detailed": "\n        ",
+          "name": "cap_set_ambient",
+          "params": [
+            "cap",
+            "set"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int cap_reset_ambient",
+          "detailed": "\n        ",
+          "name": "cap_reset_ambient",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "ssize_t cap_size",
+          "detailed": "\n        ",
+          "name": "cap_size",
+          "params": [
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *cap_ext, cap_t cap_d, ssize_t length)",
+          "brief": "\n        ",
+          "definition": "ssize_t cap_copy_ext",
+          "detailed": "\n        ",
+          "name": "cap_copy_ext",
+          "params": [
+            "cap_ext",
+            "cap_d",
+            "length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *cap_ext)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_copy_int",
+          "detailed": "\n        ",
+          "name": "cap_copy_int",
+          "params": [
+            "cap_ext"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *cap_ext, ssize_t length)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_copy_int_check",
+          "detailed": "\n        ",
+          "name": "cap_copy_int_check",
+          "params": [
+            "cap_ext",
+            "length"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *)",
+          "brief": "\n        ",
+          "definition": "cap_t cap_from_text",
+          "detailed": "\n        ",
+          "name": "cap_from_text",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_t, ssize_t *)",
+          "brief": "\n        ",
+          "definition": "char * cap_to_text",
+          "detailed": "\n        ",
+          "name": "cap_to_text",
+          "params": [
+            "caps",
+            "length_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *, cap_value_t *)",
+          "brief": "\n        ",
+          "definition": "int cap_from_name",
+          "detailed": "\n        ",
+          "name": "cap_from_name",
+          "params": [
+            "name",
+            "value_p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_value_t)",
+          "brief": "\n        ",
+          "definition": "char * cap_to_name",
+          "detailed": "\n        ",
+          "name": "cap_to_name",
+          "params": [
+            "cap"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "char * cap_iab_to_text",
+          "detailed": "\n        ",
+          "name": "cap_iab_to_text",
+          "params": [
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *text)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_from_text",
+          "detailed": "\n        ",
+          "name": "cap_iab_from_text",
+          "params": [
+            "text"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int(*new_syscall)(long int, long int, long int, long int), long int(*new_syscall6)(long int, long int, long int, long int, long int, long int, long int))",
+          "brief": "\n        ",
+          "definition": "void cap_set_syscall",
+          "detailed": "\n        ",
+          "name": "cap_set_syscall",
+          "params": [
+            "new_syscall",
+            "new_syscall6"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "int cap_set_mode",
+          "detailed": "\n        ",
+          "name": "cap_set_mode",
+          "params": [
+            "flavor"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_mode_t cap_get_mode",
+          "detailed": "\n        ",
+          "name": "cap_get_mode",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "const char * cap_mode_name",
+          "detailed": "\n        ",
+          "name": "cap_mode_name",
+          "params": [
+            "flavor"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned cap_get_secbits",
+          "detailed": "\n        ",
+          "name": "cap_get_secbits",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned bits)",
+          "brief": "\n        ",
+          "definition": "int cap_set_secbits",
+          "detailed": "\n        ",
+          "name": "cap_set_secbits",
+          "params": [
+            "bits"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int pr_cmd, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5)",
+          "brief": "\n        ",
+          "definition": "int cap_prctl",
+          "detailed": "\n        ",
+          "name": "cap_prctl",
+          "params": [
+            "pr_cmd",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int pr_cmd, long int arg1, long int arg2, long int arg3, long int arg4, long int arg5)",
+          "brief": "\n        ",
+          "definition": "int cap_prctlw",
+          "detailed": "\n        ",
+          "name": "cap_prctlw",
+          "params": [
+            "pr_cmd",
+            "arg1",
+            "arg2",
+            "arg3",
+            "arg4",
+            "arg5"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uid_t uid)",
+          "brief": "\n        ",
+          "definition": "int cap_setuid",
+          "detailed": "\n        ",
+          "name": "cap_setuid",
+          "params": [
+            "uid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gid_t gid, size_t ngroups, const gid_t groups[])",
+          "brief": "\n        ",
+          "definition": "int cap_setgroups",
+          "detailed": "\n        ",
+          "name": "cap_setgroups",
+          "params": [
+            "gid",
+            "ngroups",
+            "groups"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_get_proc",
+          "detailed": "\n        ",
+          "name": "cap_iab_get_proc",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_iab_get_pid",
+          "detailed": "\n        ",
+          "name": "cap_iab_get_pid",
+          "params": [
+            "pid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "int cap_iab_set_proc",
+          "detailed": "\n        ",
+          "name": "cap_iab_set_proc",
+          "params": [
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *arg0, const char *const *argv, const char *const *envp)",
+          "brief": "\n        ",
+          "definition": "cap_launch_t cap_new_launcher",
+          "detailed": "\n        ",
+          "name": "cap_new_launcher",
+          "params": [
+            "arg0",
+            "argv",
+            "envp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int(callback_fn)(void *detail))",
+          "brief": "\n        ",
+          "definition": "cap_launch_t cap_func_launcher",
+          "detailed": "\n        ",
+          "name": "cap_func_launcher",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, int(callback_fn)(void *detail))",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_callback",
+          "detailed": "\n        ",
+          "name": "cap_launcher_callback",
+          "params": [
+            "attr",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, uid_t uid)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_setuid",
+          "detailed": "\n        ",
+          "name": "cap_launcher_setuid",
+          "params": [
+            "attr",
+            "uid"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, gid_t gid, int ngroups, const gid_t *groups)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_setgroups",
+          "detailed": "\n        ",
+          "name": "cap_launcher_setgroups",
+          "params": [
+            "attr",
+            "gid",
+            "ngroups",
+            "groups"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, cap_mode_t flavor)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_set_mode",
+          "detailed": "\n        ",
+          "name": "cap_launcher_set_mode",
+          "params": [
+            "attr",
+            "flavor"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, cap_iab_t iab)",
+          "brief": "\n        ",
+          "definition": "cap_iab_t cap_launcher_set_iab",
+          "detailed": "\n        ",
+          "name": "cap_launcher_set_iab",
+          "params": [
+            "attr",
+            "iab"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, const char *chroot)",
+          "brief": "\n        ",
+          "definition": "int cap_launcher_set_chroot",
+          "detailed": "\n        ",
+          "name": "cap_launcher_set_chroot",
+          "params": [
+            "attr",
+            "chroot"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_launch_t attr, void *detail)",
+          "brief": "\n        ",
+          "definition": "pid_t cap_launch",
+          "detailed": "\n        ",
+          "name": "cap_launch",
+          "params": [
+            "attr",
+            "detail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_user_header_t header, cap_user_data_t data)",
+          "brief": "\n        ",
+          "definition": "int capget",
+          "detailed": "\n        ",
+          "name": "capget",
+          "params": [
+            "header",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_user_header_t header, const cap_user_data_t data)",
+          "brief": "\n        ",
+          "definition": "int capset",
+          "detailed": "\n        ",
+          "name": "capset",
+          "params": [
+            "header",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int capgetp",
+          "detailed": "\n        ",
+          "name": "capgetp",
+          "params": [
+            "pid",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int capsetp",
+          "detailed": "\n        ",
+          "name": "capsetp",
+          "params": [
+            "pid",
+            "cap_d"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_MAJOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_MINOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__user",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MODE_UNCERTAIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MODE_NOPRIV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MODE_PURE1E_INIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MODE_PURE1E",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MODE_HYBRID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_DIFFERS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_IAB_DIFFERS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_IS_SUPPORTED",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_AMBIENT_SUPPORTED",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct _cap_struct* cap_t",
+          "detailed": "\n        ",
+          "name": "cap_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef int cap_value_t",
+          "detailed": "\n        ",
+          "name": "cap_value_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct cap_iab_s* cap_iab_t",
+          "detailed": "\n        ",
+          "name": "cap_iab_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned cap_mode_t",
+          "detailed": "\n        ",
+          "name": "cap_mode_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct cap_launch_s* cap_launch_t",
+          "detailed": "\n        ",
+          "name": "cap_launch_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "libcap/include/sys/securebits.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__user",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/include/uapi/linux/capability.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__u32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__le32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_VERSION_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_U32S_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_VERSION_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_U32S_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_VERSION_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_U32S_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_REVISION_MASK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_REVISION_SHIFT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_FLAGS_MASK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_FLAGS_EFFECTIVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_REVISION_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_U32_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_CAPS_SZ_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_REVISION_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_U32_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_CAPS_SZ_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_REVISION_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_U32_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_CAPS_SZ_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "XATTR_CAPS_SZ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_U32",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VFS_CAP_REVISION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_VFS_CAP_DATA_HEAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_VERSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LINUX_CAPABILITY_U32S",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "POSIX-draft defined capabilities.",
+          "name": "CAP_CHOWN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_DAC_OVERRIDE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_DAC_READ_SEARCH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_FOWNER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_FSETID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_KILL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SETGID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SETUID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Linux-specific capabilities",
+          "name": "CAP_SETPCAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_LINUX_IMMUTABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_NET_BIND_SERVICE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_NET_BROADCAST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_NET_ADMIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_NET_RAW",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_IPC_LOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_IPC_OWNER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_MODULE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_RAWIO",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_CHROOT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_PTRACE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_PACCT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_ADMIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_BOOT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_NICE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_RESOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_TIME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYS_TTY_CONFIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MKNOD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_LEASE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_AUDIT_WRITE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_AUDIT_CONTROL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SETFCAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MAC_OVERRIDE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_MAC_ADMIN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SYSLOG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_WAKE_ALARM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_BLOCK_SUSPEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_AUDIT_READ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_PERFMON",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_BPF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_CHECKPOINT_RESTORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_LAST_CAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cap_valid",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_TO_INDEX",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_TO_MASK",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct __user_cap_header_struct * cap_user_header_t",
+          "detailed": "\n        ",
+          "name": "cap_user_header_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct __user_cap_data_struct * cap_user_data_t",
+          "detailed": "\n        ",
+          "name": "cap_user_data_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    },
+    "libcap/include/uapi/linux/prctl.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_PDEATHSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_PDEATHSIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_DUMPABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_DUMPABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_UNALIGN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_UNALIGN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_UNALIGN_NOPRINT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_UNALIGN_SIGBUS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_KEEPCAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_KEEPCAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_FPEMU",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_FPEMU",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FPEMU_NOPRINT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FPEMU_SIGFPE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_FPEXC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_FPEXC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_SW_ENABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_DIV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_OVF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_UND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_RES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_INV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_DISABLED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_NONRECOV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_ASYNC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_EXC_PRECISE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_TIMING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_TIMING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_TIMING_STATISTICAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_TIMING_TIMESTAMP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_ENDIAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_ENDIAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_ENDIAN_BIG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_ENDIAN_LITTLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_ENDIAN_PPC_LITTLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_SECCOMP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_SECCOMP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAPBSET_READ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAPBSET_DROP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_TSC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_TSC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_TSC_ENABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_TSC_SIGSEGV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_SECUREBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_SECUREBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_TIMERSLACK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_TIMERSLACK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_TASK_PERF_EVENTS_DISABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_TASK_PERF_EVENTS_ENABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL_CLEAR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL_SET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL_LATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL_EARLY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL_DEFAULT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MCE_KILL_GET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_START_CODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_END_CODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_START_DATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_END_DATA",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_START_STACK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_START_BRK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_BRK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_ARG_START",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_ARG_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_ENV_START",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_ENV_END",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_AUXV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_EXE_FILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_MAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_MM_MAP_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_PTRACER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_PTRACER_ANY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_CHILD_SUBREAPER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_CHILD_SUBREAPER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_NO_NEW_PRIVS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_NO_NEW_PRIVS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_TID_ADDRESS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_THP_DISABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_THP_DISABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MPX_ENABLE_MANAGEMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_MPX_DISABLE_MANAGEMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_FP_MODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_FP_MODE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_MODE_FR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_FP_MODE_FRE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAP_AMBIENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAP_AMBIENT_IS_SET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAP_AMBIENT_RAISE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAP_AMBIENT_LOWER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAP_AMBIENT_CLEAR_ALL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::start_code",
+          "detailed": "\n        ",
+          "name": "start_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::end_code",
+          "detailed": "\n        ",
+          "name": "end_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::start_data",
+          "detailed": "\n        ",
+          "name": "start_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::end_data",
+          "detailed": "\n        ",
+          "name": "end_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::start_brk",
+          "detailed": "\n        ",
+          "name": "start_brk",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::brk",
+          "detailed": "\n        ",
+          "name": "brk",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::start_stack",
+          "detailed": "\n        ",
+          "name": "start_stack",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::arg_start",
+          "detailed": "\n        ",
+          "name": "arg_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::arg_end",
+          "detailed": "\n        ",
+          "name": "arg_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::env_start",
+          "detailed": "\n        ",
+          "name": "env_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64 prctl_mm_map::env_end",
+          "detailed": "\n        ",
+          "name": "env_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u64* prctl_mm_map::auxv",
+          "detailed": "\n        ",
+          "name": "auxv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u32 prctl_mm_map::auxv_size",
+          "detailed": "\n        ",
+          "name": "auxv_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "__u32 prctl_mm_map::exe_fd",
+          "detailed": "\n        ",
+          "name": "exe_fd",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/include/uapi/linux/securebits.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "issecure_mask",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECUREBITS_DEFAULT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_NOROOT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_NOROOT_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_NOROOT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_NOROOT_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_NO_SETUID_FIXUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_NO_SETUID_FIXUP_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_NO_SETUID_FIXUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_NO_SETUID_FIXUP_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_KEEP_CAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_KEEP_CAPS_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_KEEP_CAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_KEEP_CAPS_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_NO_CAP_AMBIENT_RAISE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_NO_CAP_AMBIENT_RAISE_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_NO_CAP_AMBIENT_RAISE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECBIT_NO_CAP_AMBIENT_RAISE_LOCKED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_ALL_BITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SECURE_ALL_LOCKS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "libcap/libcap.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *text)",
+          "brief": "\n        ",
+          "definition": "char * _libcap_strdup",
+          "detailed": "\n        ",
+          "name": "_libcap_strdup",
+          "params": [
+            "text"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void _libcap_initialize",
+          "detailed": "\n        ",
+          "name": "_libcap_initialize",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(long int(**syscall_fn)(long int, long int, long int, long int), long int(**syscall6_fn)(long int, long int, long int, long int, long int, long int, long int))",
+          "brief": "\n        ",
+          "definition": "void psx_load_syscalls",
+          "detailed": "\n        ",
+          "name": "psx_load_syscalls",
+          "params": [
+            "syscall_fn",
+            "syscall6_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cap_user_header_t header, cap_user_data_t data)",
+          "brief": "\n        ",
+          "definition": "int capget",
+          "detailed": "\n        ",
+          "name": "capget",
+          "params": [
+            "header",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int capgetp",
+          "detailed": "\n        ",
+          "name": "capgetp",
+          "params": [
+            "pid",
+            "cap_d"
+          ],
+          "static": false
+        },
+        {
+          "args": "(pid_t pid, cap_t cap_d)",
+          "brief": "\n        ",
+          "definition": "int capsetp",
+          "detailed": "\n        ",
+          "name": "capsetp",
+          "params": [
+            "pid",
+            "cap_d"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__u8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LIBCAP_CAPABILITY_VERSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LIBCAP_CAPABILITY_U32S",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NUMBER_OF_CAP_SETS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__CAP_BLKS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_SET_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_T_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_cap_mu_blocked",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_cap_mu_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_cap_mu_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_cap_mu_unlock_return",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__CAP_MAXBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_S_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_IAB_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CAP_LAUNCH_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "raise_cap",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "lower_cap",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "isset_cap",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_EFF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_INH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_PER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_cap_debug",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_cap_debugcap",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXECABLE_INITIALIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_KEEPCAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_KEEPCAPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAPBSET_READ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_CAPBSET_DROP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_GET_SECUREBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PR_SET_SECUREBITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ssizeof",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_binary_search",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_IAB_I_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_IAB_A_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_IAB_IA_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIBCAP_IAB_NB_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_CAP_STRUCTS_ALIGN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_CAP_ALLOC_OFF_TO_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "magic_of",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "good_cap_t",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "good_cap_iab_t",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "good_cap_launch_t",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "libcap_static_assert",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int _libcap_overrode_syscalls",
+          "detailed": "\n        ",
+          "name": "_libcap_overrode_syscalls",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t _cap_struct::mutex",
+          "detailed": "\n        ",
+          "name": "mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct __user_cap_header_struct _cap_struct::head",
+          "detailed": "\n        ",
+          "name": "head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct __user_cap_data_struct _cap_struct::set",
+          "detailed": "\n        ",
+          "name": "set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[3]",
+          "brief": "\n        ",
+          "definition": "uint32_t _cap_struct::flat[3]",
+          "detailed": "\n        ",
+          "name": "flat",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "union _cap_struct::@126251370064033154023020263066102311007107366031 _cap_struct::u[ 2 ]",
+          "detailed": "\n        ",
+          "name": "u",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uid_t _cap_struct::rootid",
+          "detailed": "\n        ",
+          "name": "rootid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "uint32_t cap_iab_s::i[2]",
+          "detailed": "\n        ",
+          "name": "i",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "uint32_t cap_iab_s::a[2]",
+          "detailed": "\n        ",
+          "name": "a",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2]",
+          "brief": "\n        ",
+          "definition": "uint32_t cap_iab_s::nb[2]",
+          "detailed": "\n        ",
+          "name": "nb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *detail)",
+          "brief": "\n        ",
+          "definition": "int(* cap_launch_s::custom_setup_fn) (void *detail)",
+          "detailed": "\n        ",
+          "name": "custom_setup_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cap_launch_s::change_uids",
+          "detailed": "\n        ",
+          "name": "change_uids",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uid_t cap_launch_s::uid",
+          "detailed": "\n        ",
+          "name": "uid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cap_launch_s::change_gids",
+          "detailed": "\n        ",
+          "name": "change_gids",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "gid_t cap_launch_s::gid",
+          "detailed": "\n        ",
+          "name": "gid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cap_launch_s::ngroups",
+          "detailed": "\n        ",
+          "name": "ngroups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const gid_t* cap_launch_s::groups",
+          "detailed": "\n        ",
+          "name": "groups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cap_launch_s::change_mode",
+          "detailed": "\n        ",
+          "name": "change_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cap_mode_t cap_launch_s::mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cap_iab_s* cap_launch_s::iab",
+          "detailed": "\n        ",
+          "name": "iab",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* cap_launch_s::chroot",
+          "detailed": "\n        ",
+          "name": "chroot",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* cap_launch_s::arg0",
+          "detailed": "\n        ",
+          "name": "arg0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* const* cap_launch_s::argv",
+          "detailed": "\n        ",
+          "name": "argv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* const* cap_launch_s::envp",
+          "detailed": "\n        ",
+          "name": "envp",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "libcap/psx_exec.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "static void __execable_main",
+          "detailed": "\n        ",
+          "name": "__execable_main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "libcap",
+  "schema_version": 1,
+  "version": "2.78"
+}

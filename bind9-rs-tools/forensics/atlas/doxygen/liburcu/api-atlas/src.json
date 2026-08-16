@@ -1,0 +1,6280 @@
+{
+  "files": {
+    "src/compat-getcpu.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int urcu_sched_getcpu",
+          "detailed": "\n        ",
+          "name": "urcu_sched_getcpu",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/compat-smp.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int get_num_possible_cpus_sysconf",
+          "detailed": "\n        ",
+          "name": "get_num_possible_cpus_sysconf",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int get_possible_cpus_array_len",
+          "detailed": "\n        ",
+          "name": "get_possible_cpus_array_len",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_CPUMASK_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/compat_arch.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/compat_futex.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((__weak__))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int32_t *uaddr, int op, int32_t val, const struct timespec *timeout, int32_t *uaddr2, int32_t val3)",
+          "brief": "\n        ",
+          "definition": "int compat_futex_async",
+          "detailed": "\n        ",
+          "name": "compat_futex_async",
+          "params": [
+            "uaddr",
+            "op",
+            "val",
+            "timeout",
+            "uaddr2",
+            "val3"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/lfstack.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_lfs_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_node_init",
+          "detailed": "\n        ",
+          "name": "cds_lfs_node_init",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_init",
+          "detailed": "\n        ",
+          "name": "cds_lfs_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_destroy",
+          "detailed": "\n        ",
+          "name": "cds_lfs_destroy",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct __cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void __cds_lfs_init",
+          "detailed": "\n        ",
+          "name": "__cds_lfs_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_lfs_stack_const_ptr_t s)",
+          "brief": "\n        ",
+          "definition": "bool cds_lfs_empty",
+          "detailed": "\n        ",
+          "name": "cds_lfs_empty",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_lfs_stack_ptr_t s, struct cds_lfs_node *node)",
+          "brief": "\n        ",
+          "definition": "bool cds_lfs_push",
+          "detailed": "\n        ",
+          "name": "cds_lfs_push",
+          "params": [
+            "s",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfs_node * cds_lfs_pop_blocking",
+          "detailed": "\n        ",
+          "name": "cds_lfs_pop_blocking",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfs_head * cds_lfs_pop_all_blocking",
+          "detailed": "\n        ",
+          "name": "cds_lfs_pop_all_blocking",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_pop_lock",
+          "detailed": "\n        ",
+          "name": "cds_lfs_pop_lock",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_pop_unlock",
+          "detailed": "\n        ",
+          "name": "cds_lfs_pop_unlock",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_lfs_stack_ptr_t s)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfs_node * __cds_lfs_pop",
+          "detailed": "\n        ",
+          "name": "__cds_lfs_pop",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_lfs_stack_ptr_t s)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfs_head * __cds_lfs_pop_all",
+          "detailed": "\n        ",
+          "name": "__cds_lfs_pop_all",
+          "params": [
+            "s"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/rculfhash-internal.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned long x)",
+          "brief": "\n        ",
+          "definition": "unsigned int cds_lfht_fls_ulong",
+          "detailed": "\n        ",
+          "name": "cds_lfht_fls_ulong",
+          "params": [
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long x)",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_get_count_order_ulong",
+          "detailed": "\n        ",
+          "name": "cds_lfht_get_count_order_ulong",
+          "params": [
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct cds_lfht_mm_type *mm, const struct cds_lfht_alloc *alloc, unsigned long cds_lfht_size, unsigned long min_nr_alloc_buckets, unsigned long max_nr_buckets)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht * __default_alloc_cds_lfht",
+          "detailed": "\n        ",
+          "name": "__default_alloc_cds_lfht",
+          "params": [
+            "mm",
+            "alloc",
+            "cds_lfht_size",
+            "min_nr_alloc_buckets",
+            "max_nr_buckets"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "dbg_printf",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_TABLE_ORDER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_CHUNK_TABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "min",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "max",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "poison_free",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long cds_lfht::max_nr_buckets",
+          "detailed": "\n        ",
+          "name": "max_nr_buckets",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct cds_lfht_mm_type* cds_lfht::mm",
+          "detailed": "\n        ",
+          "name": "mm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct cds_lfht_alloc* cds_lfht::alloc",
+          "detailed": "\n        ",
+          "name": "alloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct rcu_flavor_struct* cds_lfht::flavor",
+          "detailed": "\n        ",
+          "name": "flavor",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long cds_lfht::count",
+          "detailed": "\n        ",
+          "name": "count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t cds_lfht::resize_mutex",
+          "detailed": "\n        ",
+          "name": "resize_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_attr_t* cds_lfht::caller_resize_attr",
+          "detailed": "\n        ",
+          "name": "caller_resize_attr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_attr_t cds_lfht::resize_attr",
+          "detailed": "\n        ",
+          "name": "resize_attr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int cds_lfht::in_progress_destroy",
+          "detailed": "\n        ",
+          "name": "in_progress_destroy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long cds_lfht::resize_target",
+          "detailed": "\n        ",
+          "name": "resize_target",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cds_lfht::resize_initiated",
+          "detailed": "\n        ",
+          "name": "resize_initiated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_work cds_lfht::destroy_work",
+          "detailed": "\n        ",
+          "name": "destroy_work",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cds_lfht::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long cds_lfht::min_alloc_buckets_order",
+          "detailed": "\n        ",
+          "name": "min_alloc_buckets_order",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long cds_lfht::min_nr_alloc_buckets",
+          "detailed": "\n        ",
+          "name": "min_nr_alloc_buckets",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct ht_items_count* cds_lfht::split_count",
+          "detailed": "\n        ",
+          "name": "split_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long cds_lfht::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct cds_lfht *ht, unsigned long index)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node *(* cds_lfht::bucket_at) (struct cds_lfht *ht, unsigned long index)",
+          "detailed": "\n        ",
+          "name": "bucket_at",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[64]",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node* cds_lfht::tbl_order[64]",
+          "detailed": "\n        ",
+          "name": "tbl_order",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[0]",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node* cds_lfht::tbl_chunk[0]",
+          "detailed": "\n        ",
+          "name": "tbl_chunk",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node* cds_lfht::tbl_mmap",
+          "detailed": "\n        ",
+          "name": "tbl_mmap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union cds_lfht::@112051325371174013005036025074372167037237205053 cds_lfht::@264024114137336274224074276233147127210011023160",
+          "detailed": "\n        ",
+          "name": "@264024114137336274224074276233147127210011023160",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/rculfhash-mm-chunk.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_alloc_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_alloc_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_free_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_free_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long index)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * bucket_at",
+          "detailed": "\n        ",
+          "name": "bucket_at",
+          "params": [
+            "ht",
+            "index"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long min_nr_alloc_buckets, unsigned long max_nr_buckets, const struct cds_lfht_alloc *alloc)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht * alloc_cds_lfht",
+          "detailed": "\n        ",
+          "name": "alloc_cds_lfht",
+          "params": [
+            "min_nr_alloc_buckets",
+            "max_nr_buckets",
+            "alloc"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct cds_lfht_mm_type cds_lfht_mm_chunk",
+          "detailed": "\n        ",
+          "name": "cds_lfht_mm_chunk",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/rculfhash-mm-mmap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t length)",
+          "brief": "\n        ",
+          "definition": "static void * memory_map",
+          "detailed": "\n        ",
+          "name": "memory_map",
+          "params": [
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ptr, size_t length)",
+          "brief": "\n        ",
+          "definition": "static void memory_unmap",
+          "detailed": "\n        ",
+          "name": "memory_unmap",
+          "params": [
+            "ptr",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ptr, size_t length)",
+          "brief": "\n        ",
+          "definition": "static void memory_populate",
+          "detailed": "\n        ",
+          "name": "memory_populate",
+          "params": [
+            "ptr",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ptr, size_t length)",
+          "brief": "\n        ",
+          "definition": "static void memory_discard",
+          "detailed": "\n        ",
+          "name": "memory_discard",
+          "params": [
+            "ptr",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_alloc_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_alloc_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_free_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_free_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long index)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * bucket_at",
+          "detailed": "\n        ",
+          "name": "bucket_at",
+          "params": [
+            "ht",
+            "index"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long min_nr_alloc_buckets, unsigned long max_nr_buckets, const struct cds_lfht_alloc *alloc)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht * alloc_cds_lfht",
+          "detailed": "\n        ",
+          "name": "alloc_cds_lfht",
+          "params": [
+            "min_nr_alloc_buckets",
+            "max_nr_buckets",
+            "alloc"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAP_ANONYMOUS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct cds_lfht_mm_type cds_lfht_mm_mmap",
+          "detailed": "\n        ",
+          "name": "cds_lfht_mm_mmap",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/rculfhash-mm-order.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_alloc_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_alloc_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_free_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_free_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long index)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * bucket_at",
+          "detailed": "\n        ",
+          "name": "bucket_at",
+          "params": [
+            "ht",
+            "index"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long min_nr_alloc_buckets, unsigned long max_nr_buckets, const struct cds_lfht_alloc *alloc)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht * alloc_cds_lfht",
+          "detailed": "\n        ",
+          "name": "alloc_cds_lfht",
+          "params": [
+            "min_nr_alloc_buckets",
+            "max_nr_buckets",
+            "alloc"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct cds_lfht_mm_type cds_lfht_mm_order",
+          "detailed": "\n        ",
+          "name": "cds_lfht_mm_order",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/rculfhash.c": {
+      "enum_values": [
+        {
+          "args": "= -2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NR_CPUS_MASK_INIT_FAILED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= -1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NR_CPUS_MASK_UNINITIALIZED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "nr_cpus_mask_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "((__aligned__(CAA_CACHE_LINE_SIZE)))",
+          "brief": "\n        ",
+          "definition": "struct ht_items_count __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "((__destructor__))",
+          "brief": "\n        ",
+          "definition": "static void __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t v)",
+          "brief": "\n        ",
+          "definition": "static uint8_t bit_reverse_u8",
+          "detailed": "\n        ",
+          "name": "bit_reverse_u8",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint64_t v)",
+          "brief": "\n        ",
+          "definition": "static uint64_t bit_reverse_u64",
+          "detailed": "\n        ",
+          "name": "bit_reverse_u64",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long v)",
+          "brief": "\n        ",
+          "definition": "static unsigned long bit_reverse_ulong",
+          "detailed": "\n        ",
+          "name": "bit_reverse_ulong",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "((__unused__))",
+          "brief": "\n        ",
+          "definition": "static __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long x)",
+          "brief": "\n        ",
+          "definition": "unsigned int cds_lfht_fls_ulong",
+          "detailed": "\n        ",
+          "name": "cds_lfht_fls_ulong",
+          "params": [
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *state __attribute__((__unused__)), size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * cds_lfht_malloc",
+          "detailed": "\n        ",
+          "name": "cds_lfht_malloc",
+          "params": [
+            "__attribute__",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *state __attribute__((__unused__)), size_t nmemb, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * cds_lfht_calloc",
+          "detailed": "\n        ",
+          "name": "cds_lfht_calloc",
+          "params": [
+            "__attribute__",
+            "nmemb",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *state __attribute__((__unused__)), void *ptr, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * cds_lfht_realloc",
+          "detailed": "\n        ",
+          "name": "cds_lfht_realloc",
+          "params": [
+            "__attribute__",
+            "ptr",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *state __attribute__((__unused__)), size_t alignment, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * cds_lfht_aligned_alloc",
+          "detailed": "\n        ",
+          "name": "cds_lfht_aligned_alloc",
+          "params": [
+            "__attribute__",
+            "alignment",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *state __attribute__((__unused__)), void *ptr)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_free",
+          "detailed": "\n        ",
+          "name": "cds_lfht_free",
+          "params": [
+            "__attribute__",
+            "ptr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t x)",
+          "brief": "\n        ",
+          "definition": "static int cds_lfht_get_count_order_u32",
+          "detailed": "\n        ",
+          "name": "cds_lfht_get_count_order_u32",
+          "params": [
+            "x"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long x)",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_get_count_order_ulong",
+          "detailed": "\n        ",
+          "name": "cds_lfht_get_count_order_ulong",
+          "params": [
+            "x"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, int growth)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_resize_lazy_grow",
+          "detailed": "\n        ",
+          "name": "cds_lfht_resize_lazy_grow",
+          "params": [
+            "ht",
+            "size",
+            "growth"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, unsigned long count)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_resize_lazy_count",
+          "detailed": "\n        ",
+          "name": "cds_lfht_resize_lazy_count",
+          "params": [
+            "ht",
+            "size",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_lock",
+          "detailed": "\n        ",
+          "name": "mutex_lock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_unlock",
+          "detailed": "\n        ",
+          "name": "mutex_unlock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void ht_init_nr_cpus_mask",
+          "detailed": "\n        ",
+          "name": "ht_init_nr_cpus_mask",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht)",
+          "brief": "\n        ",
+          "definition": "static void alloc_split_items_count",
+          "detailed": "\n        ",
+          "name": "alloc_split_items_count",
+          "params": [
+            "ht"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht)",
+          "brief": "\n        ",
+          "definition": "static void free_split_items_count",
+          "detailed": "\n        ",
+          "name": "free_split_items_count",
+          "params": [
+            "ht"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long hash)",
+          "brief": "\n        ",
+          "definition": "static int ht_get_split_count_index",
+          "detailed": "\n        ",
+          "name": "ht_get_split_count_index",
+          "params": [
+            "hash"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, unsigned long hash)",
+          "brief": "\n        ",
+          "definition": "static void ht_count_add",
+          "detailed": "\n        ",
+          "name": "ht_count_add",
+          "params": [
+            "ht",
+            "size",
+            "hash"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, unsigned long hash)",
+          "brief": "\n        ",
+          "definition": "static void ht_count_del",
+          "detailed": "\n        ",
+          "name": "ht_count_del",
+          "params": [
+            "ht",
+            "size",
+            "hash"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, uint32_t chain_len)",
+          "brief": "\n        ",
+          "definition": "static void check_resize",
+          "detailed": "\n        ",
+          "name": "check_resize",
+          "params": [
+            "ht",
+            "size",
+            "chain_len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * clear_flag",
+          "detailed": "\n        ",
+          "name": "clear_flag",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static int is_removed",
+          "detailed": "\n        ",
+          "name": "is_removed",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static int is_bucket",
+          "detailed": "\n        ",
+          "name": "is_bucket",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * flag_bucket",
+          "detailed": "\n        ",
+          "name": "flag_bucket",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static int is_removal_owner",
+          "detailed": "\n        ",
+          "name": "is_removal_owner",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * flag_removed",
+          "detailed": "\n        ",
+          "name": "flag_removed",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * flag_removal_owner",
+          "detailed": "\n        ",
+          "name": "flag_removal_owner",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * flag_removed_or_removal_owner",
+          "detailed": "\n        ",
+          "name": "flag_removed_or_removal_owner",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * get_end",
+          "detailed": "\n        ",
+          "name": "get_end",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static int is_end",
+          "detailed": "\n        ",
+          "name": "is_end",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long *ptr, unsigned long v)",
+          "brief": "\n        ",
+          "definition": "static unsigned long _uatomic_xchg_monotonic_increase",
+          "detailed": "\n        ",
+          "name": "_uatomic_xchg_monotonic_increase",
+          "params": [
+            "ptr",
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_alloc_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_alloc_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long order)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_free_bucket_table",
+          "detailed": "\n        ",
+          "name": "cds_lfht_free_bucket_table",
+          "params": [
+            "ht",
+            "order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long index)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * bucket_at",
+          "detailed": "\n        ",
+          "name": "bucket_at",
+          "params": [
+            "ht",
+            "index"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, unsigned long hash)",
+          "brief": "\n        ",
+          "definition": "static struct cds_lfht_node * lookup_bucket",
+          "detailed": "\n        ",
+          "name": "lookup_bucket",
+          "params": [
+            "ht",
+            "size",
+            "hash"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *bucket, struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static void _cds_lfht_gc_bucket",
+          "detailed": "\n        ",
+          "name": "_cds_lfht_gc_bucket",
+          "params": [
+            "bucket",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, struct cds_lfht_node *old_node, struct cds_lfht_node *old_next, struct cds_lfht_node *new_node)",
+          "brief": "\n        ",
+          "definition": "static int _cds_lfht_replace",
+          "detailed": "\n        ",
+          "name": "_cds_lfht_replace",
+          "params": [
+            "ht",
+            "size",
+            "old_node",
+            "old_next",
+            "new_node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long hash, cds_lfht_match_fct match, const void *key, unsigned long size, struct cds_lfht_node *node, struct cds_lfht_iter *unique_ret, int bucket_flag)",
+          "brief": "\n        ",
+          "definition": "static void _cds_lfht_add",
+          "detailed": "\n        ",
+          "name": "_cds_lfht_add",
+          "params": [
+            "ht",
+            "hash",
+            "match",
+            "key",
+            "size",
+            "node",
+            "unique_ret",
+            "bucket_flag"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size, struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "static int _cds_lfht_del",
+          "detailed": "\n        ",
+          "name": "_cds_lfht_del",
+          "params": [
+            "ht",
+            "size",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * partition_resize_thread",
+          "detailed": "\n        ",
+          "name": "partition_resize_thread",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long i, unsigned long len, void(*fct)(struct cds_lfht *ht, unsigned long i, unsigned long start, unsigned long len))",
+          "brief": "\n        ",
+          "definition": "static void partition_resize_helper",
+          "detailed": "\n        ",
+          "name": "partition_resize_helper",
+          "params": [
+            "ht",
+            "i",
+            "len",
+            "fct"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long i, unsigned long start, unsigned long len)",
+          "brief": "\n        ",
+          "definition": "static void init_table_populate_partition",
+          "detailed": "\n        ",
+          "name": "init_table_populate_partition",
+          "params": [
+            "ht",
+            "i",
+            "start",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long i, unsigned long len)",
+          "brief": "\n        ",
+          "definition": "static void init_table_populate",
+          "detailed": "\n        ",
+          "name": "init_table_populate",
+          "params": [
+            "ht",
+            "i",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long first_order, unsigned long last_order)",
+          "brief": "\n        ",
+          "definition": "static void init_table",
+          "detailed": "\n        ",
+          "name": "init_table",
+          "params": [
+            "ht",
+            "first_order",
+            "last_order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long i, unsigned long start, unsigned long len)",
+          "brief": "\n        ",
+          "definition": "static void remove_table_partition",
+          "detailed": "\n        ",
+          "name": "remove_table_partition",
+          "params": [
+            "ht",
+            "i",
+            "start",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long i, unsigned long len)",
+          "brief": "\n        ",
+          "definition": "static void remove_table",
+          "detailed": "\n        ",
+          "name": "remove_table",
+          "params": [
+            "ht",
+            "i",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long first_order, unsigned long last_order)",
+          "brief": "\n        ",
+          "definition": "static void fini_table",
+          "detailed": "\n        ",
+          "name": "fini_table",
+          "params": [
+            "ht",
+            "first_order",
+            "last_order"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long size)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_create_bucket",
+          "detailed": "\n        ",
+          "name": "cds_lfht_create_bucket",
+          "params": [
+            "ht",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long max_nr_buckets __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static const struct cds_lfht_mm_type * get_mm_type",
+          "detailed": "\n        ",
+          "name": "get_mm_type",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_node_init_deleted",
+          "detailed": "\n        ",
+          "name": "cds_lfht_node_init_deleted",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long init_size, unsigned long min_nr_alloc_buckets, unsigned long max_nr_buckets, int flags, const struct cds_lfht_mm_type *mm, const struct rcu_flavor_struct *flavor, const struct cds_lfht_alloc *alloc, pthread_attr_t *attr)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht * _cds_lfht_new_with_alloc",
+          "detailed": "\n        ",
+          "name": "_cds_lfht_new_with_alloc",
+          "params": [
+            "init_size",
+            "min_nr_alloc_buckets",
+            "max_nr_buckets",
+            "flags",
+            "mm",
+            "flavor",
+            "alloc",
+            "attr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long init_size, unsigned long min_nr_alloc_buckets, unsigned long max_nr_buckets, int flags, const struct cds_lfht_mm_type *mm, const struct rcu_flavor_struct *flavor, pthread_attr_t *attr)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht * _cds_lfht_new",
+          "detailed": "\n        ",
+          "name": "_cds_lfht_new",
+          "params": [
+            "init_size",
+            "min_nr_alloc_buckets",
+            "max_nr_buckets",
+            "flags",
+            "mm",
+            "flavor",
+            "attr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long hash, cds_lfht_match_fct match, const void *key, struct cds_lfht_iter *iter)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_lookup",
+          "detailed": "\n        ",
+          "name": "cds_lfht_lookup",
+          "params": [
+            "ht",
+            "hash",
+            "match",
+            "key",
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht __attribute__((__unused__)), cds_lfht_match_fct match, const void *key, struct cds_lfht_iter *iter)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_next_duplicate",
+          "detailed": "\n        ",
+          "name": "cds_lfht_next_duplicate",
+          "params": [
+            "__attribute__",
+            "match",
+            "key",
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht __attribute__((__unused__)), struct cds_lfht_iter *iter)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_next",
+          "detailed": "\n        ",
+          "name": "cds_lfht_next",
+          "params": [
+            "__attribute__",
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, struct cds_lfht_iter *iter)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_first",
+          "detailed": "\n        ",
+          "name": "cds_lfht_first",
+          "params": [
+            "ht",
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long hash, struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_add",
+          "detailed": "\n        ",
+          "name": "cds_lfht_add",
+          "params": [
+            "ht",
+            "hash",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long hash, cds_lfht_match_fct match, const void *key, struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node * cds_lfht_add_unique",
+          "detailed": "\n        ",
+          "name": "cds_lfht_add_unique",
+          "params": [
+            "ht",
+            "hash",
+            "match",
+            "key",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long hash, cds_lfht_match_fct match, const void *key, struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node * cds_lfht_add_replace",
+          "detailed": "\n        ",
+          "name": "cds_lfht_add_replace",
+          "params": [
+            "ht",
+            "hash",
+            "match",
+            "key",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, struct cds_lfht_iter *old_iter, unsigned long hash, cds_lfht_match_fct match, const void *key, struct cds_lfht_node *new_node)",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_replace",
+          "detailed": "\n        ",
+          "name": "cds_lfht_replace",
+          "params": [
+            "ht",
+            "old_iter",
+            "hash",
+            "match",
+            "key",
+            "new_node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_del",
+          "detailed": "\n        ",
+          "name": "cds_lfht_del",
+          "params": [
+            "ht",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct cds_lfht_node *node)",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_is_node_deleted",
+          "detailed": "\n        ",
+          "name": "cds_lfht_is_node_deleted",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht)",
+          "brief": "\n        ",
+          "definition": "static bool cds_lfht_is_empty",
+          "detailed": "\n        ",
+          "name": "cds_lfht_is_empty",
+          "params": [
+            "ht"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht)",
+          "brief": "\n        ",
+          "definition": "static int cds_lfht_delete_bucket",
+          "detailed": "\n        ",
+          "name": "cds_lfht_delete_bucket",
+          "params": [
+            "ht"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_work *work)",
+          "brief": "\n        ",
+          "definition": "static void do_auto_resize_destroy_cb",
+          "detailed": "\n        ",
+          "name": "do_auto_resize_destroy_cb",
+          "params": [
+            "work"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, pthread_attr_t **attr)",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_destroy",
+          "detailed": "\n        ",
+          "name": "cds_lfht_destroy",
+          "params": [
+            "ht",
+            "attr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, long *approx_before, unsigned long *count, long *approx_after)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_count_nodes",
+          "detailed": "\n        ",
+          "name": "cds_lfht_count_nodes",
+          "params": [
+            "ht",
+            "approx_before",
+            "count",
+            "approx_after"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long old_size, unsigned long new_size)",
+          "brief": "\n        ",
+          "definition": "static void _do_cds_lfht_grow",
+          "detailed": "\n        ",
+          "name": "_do_cds_lfht_grow",
+          "params": [
+            "ht",
+            "old_size",
+            "new_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long old_size, unsigned long new_size)",
+          "brief": "\n        ",
+          "definition": "static void _do_cds_lfht_shrink",
+          "detailed": "\n        ",
+          "name": "_do_cds_lfht_shrink",
+          "params": [
+            "ht",
+            "old_size",
+            "new_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht)",
+          "brief": "\n        ",
+          "definition": "static void _do_cds_lfht_resize",
+          "detailed": "\n        ",
+          "name": "_do_cds_lfht_resize",
+          "params": [
+            "ht"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long new_size)",
+          "brief": "\n        ",
+          "definition": "static unsigned long resize_target_grow",
+          "detailed": "\n        ",
+          "name": "resize_target_grow",
+          "params": [
+            "ht",
+            "new_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long count)",
+          "brief": "\n        ",
+          "definition": "static void resize_target_update_count",
+          "detailed": "\n        ",
+          "name": "resize_target_update_count",
+          "params": [
+            "ht",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht, unsigned long new_size)",
+          "brief": "\n        ",
+          "definition": "void cds_lfht_resize",
+          "detailed": "\n        ",
+          "name": "cds_lfht_resize",
+          "params": [
+            "ht",
+            "new_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_work *work)",
+          "brief": "\n        ",
+          "definition": "static void do_resize_cb",
+          "detailed": "\n        ",
+          "name": "do_resize_cb",
+          "params": [
+            "work"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht *ht)",
+          "brief": "\n        ",
+          "definition": "static void __cds_lfht_resize_lazy_launch",
+          "detailed": "\n        ",
+          "name": "__cds_lfht_resize_lazy_launch",
+          "params": [
+            "ht"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *priv __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_before_fork",
+          "detailed": "\n        ",
+          "name": "cds_lfht_before_fork",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *priv __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_after_fork_parent",
+          "detailed": "\n        ",
+          "name": "cds_lfht_after_fork_parent",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *priv __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_after_fork_child",
+          "detailed": "\n        ",
+          "name": "cds_lfht_after_fork_child",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const struct rcu_flavor_struct *flavor)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_init_worker",
+          "detailed": "\n        ",
+          "name": "cds_lfht_init_worker",
+          "params": [
+            "flavor"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cds_lfht_exit",
+          "detailed": "\n        ",
+          "name": "cds_lfht_exit",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COUNT_COMMIT_ORDER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_SPLIT_COUNT_MASK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHAIN_LEN_TARGET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHAIN_LEN_RESIZE_THRESHOLD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN_TABLE_ORDER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN_TABLE_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN_PARTITION_PER_THREAD_ORDER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN_PARTITION_PER_THREAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REMOVED_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUCKET_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REMOVAL_OWNER_FLAG",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLAGS_MASK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "END_VALUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cds_lfht_iter_debug_assert",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "R2",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "R4",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "R6",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long add",
+          "detailed": "\n        ",
+          "name": "add",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long del",
+          "detailed": "\n        ",
+          "name": "del",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct resize_work __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue* cds_lfht_workqueue",
+          "detailed": "\n        ",
+          "name": "cds_lfht_workqueue",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t cds_lfht_fork_mutex",
+          "detailed": "\n        ",
+          "name": "cds_lfht_fork_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static struct urcu_atfork cds_lfht_atfork",
+          "detailed": "\n        ",
+          "name": "cds_lfht_atfork",
+          "params": [],
+          "static": true
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cds_lfht_workqueue_atfork_nesting",
+          "detailed": "\n        ",
+          "name": "cds_lfht_workqueue_atfork_nesting",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "const uint8_t BitReverseTable256[256]",
+          "detailed": "\n        ",
+          "name": "BitReverseTable256",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_alloc cds_lfht_default_alloc",
+          "detailed": "\n        ",
+          "name": "cds_lfht_default_alloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long nr_cpus_mask",
+          "detailed": "\n        ",
+          "name": "nr_cpus_mask",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long split_count_mask",
+          "detailed": "\n        ",
+          "name": "split_count_mask",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int split_count_order",
+          "detailed": "\n        ",
+          "name": "split_count_order",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t partition_resize_work::thread_id",
+          "detailed": "\n        ",
+          "name": "thread_id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht* partition_resize_work::ht",
+          "detailed": "\n        ",
+          "name": "ht",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long partition_resize_work::i",
+          "detailed": "\n        ",
+          "name": "i",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long partition_resize_work::start",
+          "detailed": "\n        ",
+          "name": "start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long partition_resize_work::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct cds_lfht *ht, unsigned long i, unsigned long start, unsigned long len)",
+          "brief": "\n        ",
+          "definition": "void(* partition_resize_work::fct) (struct cds_lfht *ht, unsigned long i, unsigned long start, unsigned long len)",
+          "detailed": "\n        ",
+          "name": "fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_work resize_work::work",
+          "detailed": "\n        ",
+          "name": "work",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/rculfqueue.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_lfq_node_rcu *node)",
+          "brief": "\n        ",
+          "definition": "void cds_lfq_node_init_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfq_node_init_rcu",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfq_queue_rcu *q, void queue_call_rcu(struct rcu_head *head, void(*func)(struct rcu_head *head)))",
+          "brief": "\n        ",
+          "definition": "void cds_lfq_init_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfq_init_rcu",
+          "params": [
+            "q",
+            "queue_call_rcu"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfq_queue_rcu *q)",
+          "brief": "\n        ",
+          "definition": "int cds_lfq_destroy_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfq_destroy_rcu",
+          "params": [
+            "q"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfq_queue_rcu *q, struct cds_lfq_node_rcu *node)",
+          "brief": "\n        ",
+          "definition": "void cds_lfq_enqueue_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfq_enqueue_rcu",
+          "params": [
+            "q",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfq_queue_rcu *q)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfq_node_rcu * cds_lfq_dequeue_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfq_dequeue_rcu",
+          "params": [
+            "q"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/rculfstack.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_lfs_node_rcu *node)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_node_init_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfs_node_init_rcu",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack_rcu *s)",
+          "brief": "\n        ",
+          "definition": "void cds_lfs_init_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfs_init_rcu",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack_rcu *s, struct cds_lfs_node_rcu *node)",
+          "brief": "\n        ",
+          "definition": "int cds_lfs_push_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfs_push_rcu",
+          "params": [
+            "s",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_lfs_stack_rcu *s)",
+          "brief": "\n        ",
+          "definition": "struct cds_lfs_node_rcu * cds_lfs_pop_rcu",
+          "detailed": "\n        ",
+          "name": "cds_lfs_pop_rcu",
+          "params": [
+            "s"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CDS_LFS_RCU_DEPRECATED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/urcu-bp.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_QUERY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 0)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_SHARED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 3)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_PRIVATE_EXPEDITED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 4)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "membarrier_cmd",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(void *old_address __attribute__((__unused__)), size_t old_size __attribute__((__unused__)), size_t new_size __attribute__((__unused__)), int flags)",
+          "brief": "\n        ",
+          "definition": "static void * mremap_wrapper",
+          "detailed": "\n        ",
+          "name": "mremap_wrapper",
+          "params": [
+            "__attribute__",
+            "__attribute__",
+            "__attribute__",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "((__constructor__))",
+          "brief": "\n        ",
+          "definition": "static void __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_bp_reader *, urcu_bp_reader)",
+          "brief": "\n        ",
+          "definition": "DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(registry)",
+          "brief": "\n        ",
+          "definition": "static CDS_LIST_HEAD",
+          "detailed": "\n        ",
+          "name": "CDS_LIST_HEAD",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_lock",
+          "detailed": "\n        ",
+          "name": "mutex_lock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_unlock",
+          "detailed": "\n        ",
+          "name": "mutex_unlock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void smp_mb_master",
+          "detailed": "\n        ",
+          "name": "smp_mb_master",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(size_t capacity)",
+          "brief": "\n        ",
+          "definition": "static size_t chunk_allocation_size",
+          "detailed": "\n        ",
+          "name": "chunk_allocation_size",
+          "params": [
+            "capacity"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_list_head *input_readers, struct cds_list_head *cur_snap_readers, struct cds_list_head *qsreaders, cmm_annotate_t *group)",
+          "brief": "\n        ",
+          "definition": "static void wait_for_readers",
+          "detailed": "\n        ",
+          "name": "wait_for_readers",
+          "params": [
+            "input_readers",
+            "cur_snap_readers",
+            "qsreaders",
+            "group"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "urcu_bp_synchronize_rcu",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_read_lock",
+          "detailed": "\n        ",
+          "name": "urcu_bp_read_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_read_unlock",
+          "detailed": "\n        ",
+          "name": "urcu_bp_read_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int urcu_bp_read_ongoing",
+          "detailed": "\n        ",
+          "name": "urcu_bp_read_ongoing",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct registry_arena *arena)",
+          "brief": "\n        ",
+          "definition": "static void expand_arena",
+          "detailed": "\n        ",
+          "name": "expand_arena",
+          "params": [
+            "arena"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct registry_arena *arena)",
+          "brief": "\n        ",
+          "definition": "static struct rcu_reader * arena_alloc",
+          "detailed": "\n        ",
+          "name": "arena_alloc",
+          "params": [
+            "arena"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void add_thread",
+          "detailed": "\n        ",
+          "name": "add_thread",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct registry_chunk *chunk, struct rcu_reader *rcu_reader_reg)",
+          "brief": "\n        ",
+          "definition": "static void cleanup_thread",
+          "detailed": "\n        ",
+          "name": "cleanup_thread",
+          "params": [
+            "chunk",
+            "rcu_reader_reg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct rcu_reader *rcu_reader_reg)",
+          "brief": "\n        ",
+          "definition": "static struct registry_chunk * find_chunk",
+          "detailed": "\n        ",
+          "name": "find_chunk",
+          "params": [
+            "rcu_reader_reg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct rcu_reader *rcu_reader_reg)",
+          "brief": "\n        ",
+          "definition": "static void remove_thread",
+          "detailed": "\n        ",
+          "name": "remove_thread",
+          "params": [
+            "rcu_reader_reg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_register",
+          "detailed": "\n        ",
+          "name": "urcu_bp_register",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_register_thread",
+          "detailed": "\n        ",
+          "name": "urcu_bp_register_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct rcu_reader *rcu_reader_reg)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_unregister",
+          "detailed": "\n        ",
+          "name": "urcu_bp_unregister",
+          "params": [
+            "rcu_reader_reg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *rcu_key)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_thread_exit_notifier",
+          "detailed": "\n        ",
+          "name": "urcu_bp_thread_exit_notifier",
+          "params": [
+            "rcu_key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool available)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_sys_membarrier_status",
+          "detailed": "\n        ",
+          "name": "urcu_bp_sys_membarrier_status",
+          "params": [
+            "available"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_sys_membarrier_init",
+          "detailed": "\n        ",
+          "name": "urcu_bp_sys_membarrier_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _urcu_bp_init",
+          "detailed": "\n        ",
+          "name": "_urcu_bp_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_exit",
+          "detailed": "\n        ",
+          "name": "urcu_bp_exit",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_exit_destructor",
+          "detailed": "\n        ",
+          "name": "urcu_bp_exit_destructor",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_before_fork",
+          "detailed": "\n        ",
+          "name": "urcu_bp_before_fork",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_after_fork_parent",
+          "detailed": "\n        ",
+          "name": "urcu_bp_after_fork_parent",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void urcu_bp_prune_registry",
+          "detailed": "\n        ",
+          "name": "urcu_bp_prune_registry",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_bp_after_fork_child",
+          "detailed": "\n        ",
+          "name": "urcu_bp_after_fork_child",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *p)",
+          "brief": "\n        ",
+          "definition": "void * urcu_bp_dereference_sym",
+          "detailed": "\n        ",
+          "name": "urcu_bp_dereference_sym",
+          "params": [
+            "p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **p, void *v)",
+          "brief": "\n        ",
+          "definition": "void * urcu_bp_set_pointer_sym",
+          "detailed": "\n        ",
+          "name": "urcu_bp_set_pointer_sym",
+          "params": [
+            "p",
+            "v"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **p, void *v)",
+          "brief": "\n        ",
+          "definition": "void * urcu_bp_xchg_pointer_sym",
+          "detailed": "\n        ",
+          "name": "urcu_bp_xchg_pointer_sym",
+          "params": [
+            "p",
+            "v"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **p, void *old, void *_new)",
+          "brief": "\n        ",
+          "definition": "void * urcu_bp_cmpxchg_pointer_sym",
+          "detailed": "\n        ",
+          "name": "urcu_bp_cmpxchg_pointer_sym",
+          "params": [
+            "p",
+            "old",
+            "_new"
+          ],
+          "static": false
+        },
+        {
+          "args": "(rcu_flavor)",
+          "brief": "\n        ",
+          "definition": "DEFINE_RCU_FLAVOR",
+          "detailed": "\n        ",
+          "name": "DEFINE_RCU_FLAVOR",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_NO_COMPAT_IDENTIFIERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_API_MAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAP_ANONYMOUS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MREMAP_MAYMOVE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MREMAP_FIXED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_SLEEP_DELAY_MS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INIT_READER_COUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_QS_ACTIVE_ATTEMPTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "membarrier",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int urcu_bp_refcount",
+          "detailed": "\n        ",
+          "name": "urcu_bp_refcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct registry_arena registry_arena",
+          "detailed": "\n        ",
+          "name": "registry_arena",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "sigset_t saved_fork_signal_mask",
+          "detailed": "\n        ",
+          "name": "saved_fork_signal_mask",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/urcu-call-rcu-impl.h": {
+      "enum_values": [
+        {
+          "args": "= (1 << 0)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CRDF_FLAG_JOIN_THREAD",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "crdf_flags",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "((__aligned__(CAA_CACHE_LINE_SIZE)))",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(call_rcu_data_list)",
+          "brief": "\n        ",
+          "definition": "static CDS_LIST_HEAD",
+          "detailed": "\n        ",
+          "name": "CDS_LIST_HEAD",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_data *, thread_call_rcu_data)",
+          "brief": "\n        ",
+          "definition": "static DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cpus_array_len_reset",
+          "detailed": "\n        ",
+          "name": "cpus_array_len_reset",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void alloc_cpu_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "alloc_cpu_call_rcu_data",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *pmp)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_lock",
+          "detailed": "\n        ",
+          "name": "call_rcu_lock",
+          "params": [
+            "pmp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *pmp)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_unlock",
+          "detailed": "\n        ",
+          "name": "call_rcu_unlock",
+          "params": [
+            "pmp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_data *crdp __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static int set_thread_cpu_affinity",
+          "detailed": "\n        ",
+          "name": "set_thread_cpu_affinity",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_wait",
+          "detailed": "\n        ",
+          "name": "call_rcu_wait",
+          "params": [
+            "crdp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_wake_up",
+          "detailed": "\n        ",
+          "name": "call_rcu_wake_up",
+          "params": [
+            "crdp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_completion *completion)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_completion_wait",
+          "detailed": "\n        ",
+          "name": "call_rcu_completion_wait",
+          "params": [
+            "completion"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_completion *completion)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_completion_wake_up",
+          "detailed": "\n        ",
+          "name": "call_rcu_completion_wake_up",
+          "params": [
+            "completion"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * call_rcu_thread",
+          "detailed": "\n        ",
+          "name": "call_rcu_thread",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_data **crdpp, unsigned long flags, int cpu_affinity)",
+          "brief": "\n        ",
+          "definition": "static void call_rcu_data_init",
+          "detailed": "\n        ",
+          "name": "call_rcu_data_init",
+          "params": [
+            "crdpp",
+            "flags",
+            "cpu_affinity"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int cpu)",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data * get_cpu_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "get_cpu_call_rcu_data",
+          "params": [
+            "cpu"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "pthread_t get_call_rcu_thread",
+          "detailed": "\n        ",
+          "name": "get_call_rcu_thread",
+          "params": [
+            "crdp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long flags, int cpu_affinity)",
+          "brief": "\n        ",
+          "definition": "static struct call_rcu_data * __create_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "__create_call_rcu_data",
+          "params": [
+            "flags",
+            "cpu_affinity"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long flags, int cpu_affinity)",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data * create_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "create_call_rcu_data",
+          "params": [
+            "flags",
+            "cpu_affinity"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int cpu, struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "int set_cpu_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "set_cpu_call_rcu_data",
+          "params": [
+            "cpu",
+            "crdp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data * get_default_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "get_default_call_rcu_data",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data * get_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "get_call_rcu_data",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data * get_thread_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "get_thread_call_rcu_data",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "void set_thread_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "set_thread_call_rcu_data",
+          "params": [
+            "crdp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long flags)",
+          "brief": "\n        ",
+          "definition": "int create_all_cpu_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "create_all_cpu_call_rcu_data",
+          "params": [
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "static void wake_call_rcu_thread",
+          "detailed": "\n        ",
+          "name": "wake_call_rcu_thread",
+          "params": [
+            "crdp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct rcu_head *head, void(*func)(struct rcu_head *head), struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "static void _call_rcu",
+          "detailed": "\n        ",
+          "name": "_call_rcu",
+          "params": [
+            "head",
+            "func",
+            "crdp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct rcu_head *head, void(*func)(struct rcu_head *head))",
+          "brief": "\n        ",
+          "definition": "void call_rcu",
+          "detailed": "\n        ",
+          "name": "call_rcu",
+          "params": [
+            "head",
+            "func"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct call_rcu_data *crdp, unsigned int flags)",
+          "brief": "\n        ",
+          "definition": "static void _call_rcu_data_free",
+          "detailed": "\n        ",
+          "name": "_call_rcu_data_free",
+          "params": [
+            "crdp",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct call_rcu_data *crdp)",
+          "brief": "\n        ",
+          "definition": "void call_rcu_data_free",
+          "detailed": "\n        ",
+          "name": "call_rcu_data_free",
+          "params": [
+            "crdp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void free_all_cpu_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "free_all_cpu_call_rcu_data",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_ref *ref)",
+          "brief": "\n        ",
+          "definition": "static void free_completion",
+          "detailed": "\n        ",
+          "name": "free_completion",
+          "params": [
+            "ref"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct rcu_head *head)",
+          "brief": "\n        ",
+          "definition": "static void _rcu_barrier_complete",
+          "detailed": "\n        ",
+          "name": "_rcu_barrier_complete",
+          "params": [
+            "head"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_barrier",
+          "detailed": "\n        ",
+          "name": "rcu_barrier",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void call_rcu_before_fork",
+          "detailed": "\n        ",
+          "name": "call_rcu_before_fork",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void call_rcu_after_fork_parent",
+          "detailed": "\n        ",
+          "name": "call_rcu_after_fork_parent",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void call_rcu_after_fork_child",
+          "detailed": "\n        ",
+          "name": "call_rcu_after_fork_child",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_atfork *atfork)",
+          "brief": "\n        ",
+          "definition": "void urcu_register_rculfhash_atfork",
+          "detailed": "\n        ",
+          "name": "urcu_register_rculfhash_atfork",
+          "params": [
+            "atfork"
+          ],
+          "static": false
+        },
+        {
+          "args": "((__noreturn__)) void urcu_unregister_rculfhash_atfork(struct urcu_atfork *atfork __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void urcu_call_rcu_exit",
+          "detailed": "\n        ",
+          "name": "urcu_call_rcu_exit",
+          "params": [
+            ""
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_AFFINITY_CHECK_PERIOD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_AFFINITY_CHECK_PERIOD_MASK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_tail cbs_tail",
+          "detailed": "\n        ",
+          "name": "cbs_tail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_head cbs_head",
+          "detailed": "\n        ",
+          "name": "cbs_head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int32_t futex",
+          "detailed": "\n        ",
+          "name": "futex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long qlen",
+          "detailed": "\n        ",
+          "name": "qlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t tid",
+          "detailed": "\n        ",
+          "name": "tid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cpu_affinity",
+          "detailed": "\n        ",
+          "name": "cpu_affinity",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long gp_count",
+          "detailed": "\n        ",
+          "name": "gp_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_list_head list",
+          "detailed": "\n        ",
+          "name": "list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_completion __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t call_rcu_mutex",
+          "detailed": "\n        ",
+          "name": "call_rcu_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data* default_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "default_call_rcu_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_atfork* registered_rculfhash_atfork",
+          "detailed": "\n        ",
+          "name": "registered_rculfhash_atfork",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct call_rcu_data** per_cpu_call_rcu_data",
+          "detailed": "\n        ",
+          "name": "per_cpu_call_rcu_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const long cpus_array_len",
+          "detailed": "\n        ",
+          "name": "cpus_array_len",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/urcu-defer-impl.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((__destructor__)) rcu_defer_exit(void)",
+          "brief": "\n        ",
+          "definition": "void __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "synchronize_rcu",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct defer_queue, defer_queue)",
+          "brief": "\n        ",
+          "definition": "static DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(registry_defer)",
+          "brief": "\n        ",
+          "definition": "static CDS_LIST_HEAD",
+          "detailed": "\n        ",
+          "name": "CDS_LIST_HEAD",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_lock_defer",
+          "detailed": "\n        ",
+          "name": "mutex_lock_defer",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void wake_up_defer",
+          "detailed": "\n        ",
+          "name": "wake_up_defer",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static unsigned long rcu_defer_num_callbacks",
+          "detailed": "\n        ",
+          "name": "rcu_defer_num_callbacks",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void wait_defer",
+          "detailed": "\n        ",
+          "name": "wait_defer",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct defer_queue *queue, unsigned long head)",
+          "brief": "\n        ",
+          "definition": "static void rcu_defer_barrier_queue",
+          "detailed": "\n        ",
+          "name": "rcu_defer_barrier_queue",
+          "params": [
+            "queue",
+            "head"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void _rcu_defer_barrier_thread",
+          "detailed": "\n        ",
+          "name": "_rcu_defer_barrier_thread",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_defer_barrier_thread",
+          "detailed": "\n        ",
+          "name": "rcu_defer_barrier_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_defer_barrier",
+          "detailed": "\n        ",
+          "name": "rcu_defer_barrier",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void(*fct)(void *p), void *p)",
+          "brief": "\n        ",
+          "definition": "static void _defer_rcu",
+          "detailed": "\n        ",
+          "name": "_defer_rcu",
+          "params": [
+            "fct",
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *args __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void * thr_defer",
+          "detailed": "\n        ",
+          "name": "thr_defer",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void(*fct)(void *p), void *p)",
+          "brief": "\n        ",
+          "definition": "void defer_rcu",
+          "detailed": "\n        ",
+          "name": "defer_rcu",
+          "params": [
+            "fct",
+            "p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void start_defer_thread",
+          "detailed": "\n        ",
+          "name": "start_defer_thread",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void stop_defer_thread",
+          "detailed": "\n        ",
+          "name": "stop_defer_thread",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int rcu_defer_register_thread",
+          "detailed": "\n        ",
+          "name": "rcu_defer_register_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_defer_unregister_thread",
+          "detailed": "\n        ",
+          "name": "rcu_defer_unregister_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_defer_exit",
+          "detailed": "\n        ",
+          "name": "rcu_defer_exit",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFER_QUEUE_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFER_QUEUE_MASK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DQ_FCT_BIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DQ_IS_FCT_BIT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DQ_SET_FCT_BIT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DQ_CLEAR_FCT_BIT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DQ_FCT_MARK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t rcu_defer_mutex",
+          "detailed": "\n        ",
+          "name": "rcu_defer_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t defer_thread_mutex",
+          "detailed": "\n        ",
+          "name": "defer_thread_mutex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int32_t defer_thread_futex",
+          "detailed": "\n        ",
+          "name": "defer_thread_futex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int32_t defer_thread_stop",
+          "detailed": "\n        ",
+          "name": "defer_thread_stop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t tid_defer",
+          "detailed": "\n        ",
+          "name": "tid_defer",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/urcu-die.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "urcu_die",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/urcu-pointer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "synchronize_rcu",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *p)",
+          "brief": "\n        ",
+          "definition": "void * rcu_dereference_sym",
+          "detailed": "\n        ",
+          "name": "rcu_dereference_sym",
+          "params": [
+            "p"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **p, void *v)",
+          "brief": "\n        ",
+          "definition": "void * rcu_set_pointer_sym",
+          "detailed": "\n        ",
+          "name": "rcu_set_pointer_sym",
+          "params": [
+            "p",
+            "v"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **p, void *v)",
+          "brief": "\n        ",
+          "definition": "void * rcu_xchg_pointer_sym",
+          "detailed": "\n        ",
+          "name": "rcu_xchg_pointer_sym",
+          "params": [
+            "p",
+            "v"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **p, void *old, void *_new)",
+          "brief": "\n        ",
+          "definition": "void * rcu_cmpxchg_pointer_sym",
+          "detailed": "\n        ",
+          "name": "rcu_cmpxchg_pointer_sym",
+          "params": [
+            "p",
+            "old",
+            "_new"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/urcu-poll-impl.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct rcu_head *head __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void urcu_poll_worker_cb",
+          "detailed": "\n        ",
+          "name": "urcu_poll_worker_cb",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct urcu_gp_poll_state start_poll_synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "start_poll_synchronize_rcu",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_gp_poll_state target_gp_state)",
+          "brief": "\n        ",
+          "definition": "bool poll_state_synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "poll_state_synchronize_rcu",
+          "params": [
+            "target_gp_state"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_poll_worker_state poll_worker_gp_state",
+          "detailed": "\n        ",
+          "name": "poll_worker_gp_state",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/urcu-qsbr.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((__destructor__))",
+          "brief": "\n        ",
+          "definition": "void __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_qsbr_reader, urcu_qsbr_reader)",
+          "brief": "\n        ",
+          "definition": "DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(registry)",
+          "brief": "\n        ",
+          "definition": "static CDS_LIST_HEAD",
+          "detailed": "\n        ",
+          "name": "CDS_LIST_HEAD",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_lock",
+          "detailed": "\n        ",
+          "name": "mutex_lock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_unlock",
+          "detailed": "\n        ",
+          "name": "mutex_unlock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void wait_gp",
+          "detailed": "\n        ",
+          "name": "wait_gp",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_list_head *input_readers, struct cds_list_head *cur_snap_readers, struct cds_list_head *qsreaders, cmm_annotate_t *group)",
+          "brief": "\n        ",
+          "definition": "static void wait_for_readers",
+          "detailed": "\n        ",
+          "name": "wait_for_readers",
+          "params": [
+            "input_readers",
+            "cur_snap_readers",
+            "qsreaders",
+            "group"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_synchronize_rcu",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_read_lock",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_read_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_read_unlock",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_read_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int urcu_qsbr_read_ongoing",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_read_ongoing",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_quiescent_state",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_quiescent_state",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_thread_offline",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_thread_offline",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_thread_online",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_thread_online",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_register_thread",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_register_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_unregister_thread",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_unregister_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void urcu_qsbr_exit",
+          "detailed": "\n        ",
+          "name": "urcu_qsbr_exit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(rcu_flavor)",
+          "brief": "\n        ",
+          "definition": "DEFINE_RCU_FLAVOR",
+          "detailed": "\n        ",
+          "name": "DEFINE_RCU_FLAVOR",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_NO_COMPAT_IDENTIFIERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUILD_QSBR_LIB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_API_MAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_QS_ACTIVE_ATTEMPTS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_wait_queue gp_waiters",
+          "detailed": "\n        ",
+          "name": "gp_waiters",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/urcu-utils.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "urcu_stringify",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_urcu_stringify",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "max_t",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "min_t",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/urcu-wait.h": {
+      "enum_values": [
+        {
+          "args": "=   0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "URCU_WAIT_WAITING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "=   (1 << 0)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "URCU_WAIT_WAKEUP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "=   (1 << 1)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "URCU_WAIT_RUNNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "=   (1 << 2)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "URCU_WAIT_TEARDOWN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "urcu_wait_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(struct urcu_wait_queue *queue, struct urcu_wait_node *node)",
+          "brief": "\n        ",
+          "definition": "static bool urcu_wait_add",
+          "detailed": "\n        ",
+          "name": "urcu_wait_add",
+          "params": [
+            "queue",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_waiters *waiters, struct urcu_wait_queue *queue)",
+          "brief": "\n        ",
+          "definition": "static void urcu_move_waiters",
+          "detailed": "\n        ",
+          "name": "urcu_move_waiters",
+          "params": [
+            "waiters",
+            "queue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_wait_node *node, enum urcu_wait_state state)",
+          "brief": "\n        ",
+          "definition": "static void urcu_wait_set_state",
+          "detailed": "\n        ",
+          "name": "urcu_wait_set_state",
+          "params": [
+            "node",
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_wait_node *node, enum urcu_wait_state state)",
+          "brief": "\n        ",
+          "definition": "static void urcu_wait_node_init",
+          "detailed": "\n        ",
+          "name": "urcu_wait_node_init",
+          "params": [
+            "node",
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_wait_node *wait)",
+          "brief": "\n        ",
+          "definition": "static void urcu_adaptative_wake_up",
+          "detailed": "\n        ",
+          "name": "urcu_adaptative_wake_up",
+          "params": [
+            "wait"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_wait_node *wait)",
+          "brief": "\n        ",
+          "definition": "static void urcu_adaptative_busy_wait",
+          "detailed": "\n        ",
+          "name": "urcu_adaptative_busy_wait",
+          "params": [
+            "wait"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_waiters *waiters)",
+          "brief": "\n        ",
+          "definition": "static void urcu_wake_all_waiters",
+          "detailed": "\n        ",
+          "name": "urcu_wake_all_waiters",
+          "params": [
+            "waiters"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WAIT_ATTEMPTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WAIT_NODE_INIT",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_WAIT_NODE",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DECLARE_URCU_WAIT_NODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WAIT_QUEUE_HEAD_INIT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DECLARE_URCU_WAIT_QUEUE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_WAIT_QUEUE",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/urcu.c": {
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_QUERY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 0)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_SHARED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 3)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_PRIVATE_EXPEDITED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= (1 << 4)",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "MEMBARRIER_CMD_REGISTER_PRIVATE_EXPEDITED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "membarrier_cmd",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "((__constructor__))",
+          "brief": "\n        ",
+          "definition": "void __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_reader, rcu_reader)",
+          "brief": "\n        ",
+          "definition": "DEFINE_URCU_TLS",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_TLS",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(registry)",
+          "brief": "\n        ",
+          "definition": "static CDS_LIST_HEAD",
+          "detailed": "\n        ",
+          "name": "CDS_LIST_HEAD",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_lock",
+          "detailed": "\n        ",
+          "name": "mutex_lock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pthread_mutex_t *mutex)",
+          "brief": "\n        ",
+          "definition": "static void mutex_unlock",
+          "detailed": "\n        ",
+          "name": "mutex_unlock",
+          "params": [
+            "mutex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void smp_mb_master",
+          "detailed": "\n        ",
+          "name": "smp_mb_master",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void wait_gp",
+          "detailed": "\n        ",
+          "name": "wait_gp",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_list_head *input_readers, struct cds_list_head *cur_snap_readers, struct cds_list_head *qsreaders, cmm_annotate_t *group)",
+          "brief": "\n        ",
+          "definition": "static void wait_for_readers",
+          "detailed": "\n        ",
+          "name": "wait_for_readers",
+          "params": [
+            "input_readers",
+            "cur_snap_readers",
+            "qsreaders",
+            "group"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void synchronize_rcu",
+          "detailed": "\n        ",
+          "name": "synchronize_rcu",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_read_lock",
+          "detailed": "\n        ",
+          "name": "rcu_read_lock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_read_unlock",
+          "detailed": "\n        ",
+          "name": "rcu_read_unlock",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int rcu_read_ongoing",
+          "detailed": "\n        ",
+          "name": "rcu_read_ongoing",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_register_thread",
+          "detailed": "\n        ",
+          "name": "rcu_register_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_unregister_thread",
+          "detailed": "\n        ",
+          "name": "rcu_unregister_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool available)",
+          "brief": "\n        ",
+          "definition": "static void rcu_sys_membarrier_status",
+          "detailed": "\n        ",
+          "name": "rcu_sys_membarrier_status",
+          "params": [
+            "available"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void rcu_sys_membarrier_init",
+          "detailed": "\n        ",
+          "name": "rcu_sys_membarrier_init",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_init",
+          "detailed": "\n        ",
+          "name": "rcu_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void rcu_exit",
+          "detailed": "\n        ",
+          "name": "rcu_exit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(rcu_flavor)",
+          "brief": "\n        ",
+          "definition": "DEFINE_RCU_FLAVOR",
+          "detailed": "\n        ",
+          "name": "DEFINE_RCU_FLAVOR",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_NO_COMPAT_IDENTIFIERS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_BSD_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_DEFAULT_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_API_MAP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KICK_READER_LOOPS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_QS_ACTIVE_ATTEMPTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "membarrier",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int init_done",
+          "detailed": "\n        ",
+          "name": "init_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int urcu_memb_has_sys_membarrier_private_expedited",
+          "detailed": "\n        ",
+          "name": "urcu_memb_has_sys_membarrier_private_expedited",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int urcu_memb_has_sys_membarrier",
+          "detailed": "\n        ",
+          "name": "urcu_memb_has_sys_membarrier",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_wait_queue gp_waiters",
+          "detailed": "\n        ",
+          "name": "gp_waiters",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/wfcqueue.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_wfcq_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_wfcq_node_init",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_node_init",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "void cds_wfcq_init",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_init",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "void cds_wfcq_destroy",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_destroy",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct __cds_wfcq_head *head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "void __cds_wfcq_init",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_init",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_const_ptr_t head, const struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "bool cds_wfcq_empty",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_empty",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail, struct cds_wfcq_node *node)",
+          "brief": "\n        ",
+          "definition": "bool cds_wfcq_enqueue",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_enqueue",
+          "params": [
+            "head",
+            "tail",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "void cds_wfcq_dequeue_lock",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_dequeue_lock",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "void cds_wfcq_dequeue_unlock",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_dequeue_unlock",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * cds_wfcq_dequeue_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_dequeue_blocking",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *head, struct cds_wfcq_tail *tail, int *state)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * cds_wfcq_dequeue_with_state_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_dequeue_with_state_blocking",
+          "params": [
+            "head",
+            "tail",
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfcq_head *dest_q_head, struct cds_wfcq_tail *dest_q_tail, struct cds_wfcq_head *src_q_head, struct cds_wfcq_tail *src_q_tail)",
+          "brief": "\n        ",
+          "definition": "enum cds_wfcq_ret cds_wfcq_splice_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfcq_splice_blocking",
+          "params": [
+            "dest_q_head",
+            "dest_q_tail",
+            "src_q_head",
+            "src_q_tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_dequeue_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_dequeue_blocking",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail, int *state)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_dequeue_with_state_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_dequeue_with_state_blocking",
+          "params": [
+            "head",
+            "tail",
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_dequeue_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_dequeue_nonblocking",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail, int *state)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_dequeue_with_state_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_dequeue_with_state_nonblocking",
+          "params": [
+            "head",
+            "tail",
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t dest_q_head, struct cds_wfcq_tail *dest_q_tail, cds_wfcq_head_ptr_t src_q_head, struct cds_wfcq_tail *src_q_tail)",
+          "brief": "\n        ",
+          "definition": "enum cds_wfcq_ret __cds_wfcq_splice_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_splice_blocking",
+          "params": [
+            "dest_q_head",
+            "dest_q_tail",
+            "src_q_head",
+            "src_q_tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t dest_q_head, struct cds_wfcq_tail *dest_q_tail, cds_wfcq_head_ptr_t src_q_head, struct cds_wfcq_tail *src_q_tail)",
+          "brief": "\n        ",
+          "definition": "enum cds_wfcq_ret __cds_wfcq_splice_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_splice_nonblocking",
+          "params": [
+            "dest_q_head",
+            "dest_q_tail",
+            "src_q_head",
+            "src_q_tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_first_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_first_blocking",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_first_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_first_nonblocking",
+          "params": [
+            "head",
+            "tail"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail, struct cds_wfcq_node *node)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_next_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_next_blocking",
+          "params": [
+            "head",
+            "tail",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfcq_head_ptr_t head, struct cds_wfcq_tail *tail, struct cds_wfcq_node *node)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_node * __cds_wfcq_next_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfcq_next_nonblocking",
+          "params": [
+            "head",
+            "tail",
+            "node"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/wfqueue.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_wfq_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_wfq_node_init",
+          "detailed": "\n        ",
+          "name": "cds_wfq_node_init",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfq_queue *q)",
+          "brief": "\n        ",
+          "definition": "void cds_wfq_init",
+          "detailed": "\n        ",
+          "name": "cds_wfq_init",
+          "params": [
+            "q"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfq_queue *q)",
+          "brief": "\n        ",
+          "definition": "void cds_wfq_destroy",
+          "detailed": "\n        ",
+          "name": "cds_wfq_destroy",
+          "params": [
+            "q"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfq_queue *q, struct cds_wfq_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_wfq_enqueue",
+          "detailed": "\n        ",
+          "name": "cds_wfq_enqueue",
+          "params": [
+            "q",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfq_queue *q)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfq_node * __cds_wfq_dequeue_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfq_dequeue_blocking",
+          "params": [
+            "q"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfq_queue *q)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfq_node * cds_wfq_dequeue_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfq_dequeue_blocking",
+          "params": [
+            "q"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CDS_WFQ_DEPRECATED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/wfstack.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct cds_wfs_node *node)",
+          "brief": "\n        ",
+          "definition": "void cds_wfs_node_init",
+          "detailed": "\n        ",
+          "name": "cds_wfs_node_init",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_wfs_init",
+          "detailed": "\n        ",
+          "name": "cds_wfs_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_wfs_destroy",
+          "detailed": "\n        ",
+          "name": "cds_wfs_destroy",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct __cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void __cds_wfs_init",
+          "detailed": "\n        ",
+          "name": "__cds_wfs_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_const_ptr_t u_stack)",
+          "brief": "\n        ",
+          "definition": "bool cds_wfs_empty",
+          "detailed": "\n        ",
+          "name": "cds_wfs_empty",
+          "params": [
+            "u_stack"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_ptr_t u_stack, struct cds_wfs_node *node)",
+          "brief": "\n        ",
+          "definition": "int cds_wfs_push",
+          "detailed": "\n        ",
+          "name": "cds_wfs_push",
+          "params": [
+            "u_stack",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * cds_wfs_pop_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfs_pop_blocking",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s, int *state)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * cds_wfs_pop_with_state_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfs_pop_with_state_blocking",
+          "params": [
+            "s",
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_head * cds_wfs_pop_all_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfs_pop_all_blocking",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_head *head)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * cds_wfs_first",
+          "detailed": "\n        ",
+          "name": "cds_wfs_first",
+          "params": [
+            "head"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_node *node)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * cds_wfs_next_blocking",
+          "detailed": "\n        ",
+          "name": "cds_wfs_next_blocking",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_node *node)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * cds_wfs_next_nonblocking",
+          "detailed": "\n        ",
+          "name": "cds_wfs_next_nonblocking",
+          "params": [
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_wfs_pop_lock",
+          "detailed": "\n        ",
+          "name": "cds_wfs_pop_lock",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct cds_wfs_stack *s)",
+          "brief": "\n        ",
+          "definition": "void cds_wfs_pop_unlock",
+          "detailed": "\n        ",
+          "name": "cds_wfs_pop_unlock",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_ptr_t u_stack)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * __cds_wfs_pop_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfs_pop_blocking",
+          "params": [
+            "u_stack"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_ptr_t u_stack, int *state)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * __cds_wfs_pop_with_state_blocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfs_pop_with_state_blocking",
+          "params": [
+            "u_stack",
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_ptr_t u_stack)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * __cds_wfs_pop_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfs_pop_nonblocking",
+          "params": [
+            "u_stack"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_ptr_t u_stack, int *state)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_node * __cds_wfs_pop_with_state_nonblocking",
+          "detailed": "\n        ",
+          "name": "__cds_wfs_pop_with_state_nonblocking",
+          "params": [
+            "u_stack",
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(cds_wfs_stack_ptr_t u_stack)",
+          "brief": "\n        ",
+          "definition": "struct cds_wfs_head * __cds_wfs_pop_all",
+          "detailed": "\n        ",
+          "name": "__cds_wfs_pop_all",
+          "params": [
+            "u_stack"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/workqueue.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((__aligned__(CAA_CACHE_LINE_SIZE)))",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static int set_thread_cpu_affinity",
+          "detailed": "\n        ",
+          "name": "set_thread_cpu_affinity",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int32_t *futex)",
+          "brief": "\n        ",
+          "definition": "static void futex_wait",
+          "detailed": "\n        ",
+          "name": "futex_wait",
+          "params": [
+            "futex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int32_t *futex)",
+          "brief": "\n        ",
+          "definition": "static void futex_wake_up",
+          "detailed": "\n        ",
+          "name": "futex_wake_up",
+          "params": [
+            "futex"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * workqueue_thread",
+          "detailed": "\n        ",
+          "name": "workqueue_thread",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned long flags, int cpu_affinity, void *priv, void(*grace_period_fct)(struct urcu_workqueue *workqueue, void *priv), void(*initialize_worker_fct)(struct urcu_workqueue *workqueue, void *priv), void(*finalize_worker_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_before_wait_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_after_wake_up_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_before_pause_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_after_resume_fct)(struct urcu_workqueue *workqueue, void *priv))",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue * urcu_workqueue_create",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_create",
+          "params": [
+            "flags",
+            "cpu_affinity",
+            "priv",
+            "grace_period_fct",
+            "initialize_worker_fct",
+            "finalize_worker_fct",
+            "worker_before_wait_fct",
+            "worker_after_wake_up_fct",
+            "worker_before_pause_fct",
+            "worker_after_resume_fct"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "static void wake_worker_thread",
+          "detailed": "\n        ",
+          "name": "wake_worker_thread",
+          "params": [
+            "workqueue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "static int urcu_workqueue_destroy_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_destroy_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_destroy",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_destroy",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue, struct urcu_work *work, void(*func)(struct urcu_work *work))",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_queue_work",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_queue_work",
+          "params": [
+            "workqueue",
+            "work",
+            "func"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_ref *ref)",
+          "brief": "\n        ",
+          "definition": "static void free_completion",
+          "detailed": "\n        ",
+          "name": "free_completion",
+          "params": [
+            "ref"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct urcu_work *work)",
+          "brief": "\n        ",
+          "definition": "static void _urcu_workqueue_wait_complete",
+          "detailed": "\n        ",
+          "name": "_urcu_workqueue_wait_complete",
+          "params": [
+            "work"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue_completion * urcu_workqueue_create_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_create_completion",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue_completion *completion)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_destroy_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_destroy_completion",
+          "params": [
+            "completion"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue_completion *completion)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_wait_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_wait_completion",
+          "params": [
+            "completion"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue, struct urcu_workqueue_completion *completion)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_queue_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_queue_completion",
+          "params": [
+            "workqueue",
+            "completion"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_flush_queued_work",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_flush_queued_work",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_pause_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_pause_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_resume_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_resume_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_create_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_create_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_AFFINITY_CHECK_PERIOD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_AFFINITY_CHECK_PERIOD_MASK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_tail cbs_tail",
+          "detailed": "\n        ",
+          "name": "cbs_tail",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_wfcq_head cbs_head",
+          "detailed": "\n        ",
+          "name": "cbs_head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int32_t futex",
+          "detailed": "\n        ",
+          "name": "futex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long qlen",
+          "detailed": "\n        ",
+          "name": "qlen",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_t tid",
+          "detailed": "\n        ",
+          "name": "tid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cpu_affinity",
+          "detailed": "\n        ",
+          "name": "cpu_affinity",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned long loop_count",
+          "detailed": "\n        ",
+          "name": "loop_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* priv",
+          "detailed": "\n        ",
+          "name": "priv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* grace_period_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "grace_period_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* initialize_worker_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "initialize_worker_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* finalize_worker_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "finalize_worker_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* worker_before_pause_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "worker_before_pause_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* worker_after_resume_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "worker_after_resume_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* worker_before_wait_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "worker_before_wait_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(struct urcu_workqueue *workqueue, void *priv)",
+          "brief": "\n        ",
+          "definition": "void(* worker_after_wake_up_fct) (struct urcu_workqueue *workqueue, void *priv)",
+          "detailed": "\n        ",
+          "name": "worker_after_wake_up_fct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue_completion __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/workqueue.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned long flags, int cpu_affinity, void *priv, void(*grace_period_fct)(struct urcu_workqueue *workqueue, void *priv), void(*initialize_worker_fct)(struct urcu_workqueue *workqueue, void *priv), void(*finalize_worker_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_before_wait_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_after_wake_up_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_before_pause_fct)(struct urcu_workqueue *workqueue, void *priv), void(*worker_after_resume_fct)(struct urcu_workqueue *workqueue, void *priv))",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue * urcu_workqueue_create",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_create",
+          "params": [
+            "flags",
+            "cpu_affinity",
+            "priv",
+            "grace_period_fct",
+            "initialize_worker_fct",
+            "finalize_worker_fct",
+            "worker_before_wait_fct",
+            "worker_after_wake_up_fct",
+            "worker_before_pause_fct",
+            "worker_after_resume_fct"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_destroy",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_destroy",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue, struct urcu_work *work, void(*func)(struct urcu_work *work))",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_queue_work",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_queue_work",
+          "params": [
+            "workqueue",
+            "work",
+            "func"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct urcu_workqueue_completion * urcu_workqueue_create_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_create_completion",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue_completion *completion)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_destroy_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_destroy_completion",
+          "params": [
+            "completion"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue, struct urcu_workqueue_completion *completion)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_queue_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_queue_completion",
+          "params": [
+            "workqueue",
+            "completion"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue_completion *completion)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_wait_completion",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_wait_completion",
+          "params": [
+            "completion"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_flush_queued_work",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_flush_queued_work",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_pause_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_pause_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_resume_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_resume_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct urcu_workqueue *workqueue)",
+          "brief": "\n        ",
+          "definition": "void urcu_workqueue_create_worker",
+          "detailed": "\n        ",
+          "name": "urcu_workqueue_create_worker",
+          "params": [
+            "workqueue"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WORKQUEUE_RT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WORKQUEUE_STOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WORKQUEUE_PAUSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "URCU_WORKQUEUE_PAUSED",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "src",
+  "schema_version": 1,
+  "version": "0.15.6"
+}

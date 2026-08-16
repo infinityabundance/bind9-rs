@@ -1,0 +1,15 @@
+{
+  "enum_value_count": 22,
+  "file_count": 41,
+  "function_count": 208,
+  "libraries": [
+    "fstrm",
+    "libmy",
+    "src",
+    "t"
+  ],
+  "macro_count": 119,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "0.6.1"
+}

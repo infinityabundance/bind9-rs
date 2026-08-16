@@ -1,0 +1,1073 @@
+{
+  "files": {
+    "deflate.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "void _tr_init",
+          "detailed": "\n        ",
+          "name": "_tr_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, unsigned dist, unsigned lc)",
+          "brief": "\n        ",
+          "definition": "int _tr_tally",
+          "detailed": "\n        ",
+          "name": "_tr_tally",
+          "params": [
+            "s",
+            "dist",
+            "lc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, charf *buf, ulg stored_len, int last)",
+          "brief": "\n        ",
+          "definition": "void _tr_flush_block",
+          "detailed": "\n        ",
+          "name": "_tr_flush_block",
+          "params": [
+            "s",
+            "buf",
+            "stored_len",
+            "last"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "void _tr_flush_bits",
+          "detailed": "\n        ",
+          "name": "_tr_flush_bits",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "void _tr_align",
+          "detailed": "\n        ",
+          "name": "_tr_align",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, charf *buf, ulg stored_len, int last)",
+          "brief": "\n        ",
+          "definition": "void _tr_stored_block",
+          "detailed": "\n        ",
+          "name": "_tr_stored_block",
+          "params": [
+            "s",
+            "buf",
+            "stored_len",
+            "last"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LENGTH_CODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LITERALS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "L_CODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "D_CODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BL_CODES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HEAP_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_BITS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Buf_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INIT_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZIP_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EXTRA_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NAME_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMMENT_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HCRC_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUSY_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FINISH_STATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Freq",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Dad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "Len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "max_insert_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LIT_BUFS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "put_byte",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN_LOOKAHEAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_DIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WIN_INIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "d_code",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_tr_tally_lit",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_tr_tally_dist",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct ct_data_s ct_data",
+          "detailed": "\n        ",
+          "name": "ct_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct static_tree_desc_s static_tree_desc",
+          "detailed": "\n        ",
+          "name": "static_tree_desc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct tree_desc_s tree_desc",
+          "detailed": "\n        ",
+          "name": "tree_desc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef ush Pos",
+          "detailed": "\n        ",
+          "name": "Pos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef Pos Posf",
+          "detailed": "\n        ",
+          "name": "Posf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef unsigned IPos",
+          "detailed": "\n        ",
+          "name": "IPos",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct internal_state deflate_state",
+          "detailed": "\n        ",
+          "name": "deflate_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "uch _length_code[]",
+          "detailed": "\n        ",
+          "name": "_length_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "uch _dist_code[]",
+          "detailed": "\n        ",
+          "name": "_dist_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush ct_data_s::freq",
+          "detailed": "\n        ",
+          "name": "freq",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush ct_data_s::code",
+          "detailed": "\n        ",
+          "name": "code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union ct_data_s::@206307222053367006032215375136126232250331222061 ct_data_s::fc",
+          "detailed": "\n        ",
+          "name": "fc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush ct_data_s::dad",
+          "detailed": "\n        ",
+          "name": "dad",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush ct_data_s::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union ct_data_s::@216321131302325062261147073120216366271262246027 ct_data_s::dl",
+          "detailed": "\n        ",
+          "name": "dl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "z_streamp internal_state::strm",
+          "detailed": "\n        ",
+          "name": "strm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::status",
+          "detailed": "\n        ",
+          "name": "status",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "Bytef* internal_state::pending_buf",
+          "detailed": "\n        ",
+          "name": "pending_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::pending_buf_size",
+          "detailed": "\n        ",
+          "name": "pending_buf_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "Bytef* internal_state::pending_out",
+          "detailed": "\n        ",
+          "name": "pending_out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::pending",
+          "detailed": "\n        ",
+          "name": "pending",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::wrap",
+          "detailed": "\n        ",
+          "name": "wrap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "gz_headerp internal_state::gzhead",
+          "detailed": "\n        ",
+          "name": "gzhead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::gzindex",
+          "detailed": "\n        ",
+          "name": "gzindex",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "Byte internal_state::method",
+          "detailed": "\n        ",
+          "name": "method",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::last_flush",
+          "detailed": "\n        ",
+          "name": "last_flush",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::w_size",
+          "detailed": "\n        ",
+          "name": "w_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::w_bits",
+          "detailed": "\n        ",
+          "name": "w_bits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::w_mask",
+          "detailed": "\n        ",
+          "name": "w_mask",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "Bytef* internal_state::window",
+          "detailed": "\n        ",
+          "name": "window",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::window_size",
+          "detailed": "\n        ",
+          "name": "window_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "Posf* internal_state::prev",
+          "detailed": "\n        ",
+          "name": "prev",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "Posf* internal_state::head",
+          "detailed": "\n        ",
+          "name": "head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::ins_h",
+          "detailed": "\n        ",
+          "name": "ins_h",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::hash_size",
+          "detailed": "\n        ",
+          "name": "hash_size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::hash_bits",
+          "detailed": "\n        ",
+          "name": "hash_bits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::hash_mask",
+          "detailed": "\n        ",
+          "name": "hash_mask",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::hash_shift",
+          "detailed": "\n        ",
+          "name": "hash_shift",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long internal_state::block_start",
+          "detailed": "\n        ",
+          "name": "block_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::match_length",
+          "detailed": "\n        ",
+          "name": "match_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "IPos internal_state::prev_match",
+          "detailed": "\n        ",
+          "name": "prev_match",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::match_available",
+          "detailed": "\n        ",
+          "name": "match_available",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::strstart",
+          "detailed": "\n        ",
+          "name": "strstart",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::match_start",
+          "detailed": "\n        ",
+          "name": "match_start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::lookahead",
+          "detailed": "\n        ",
+          "name": "lookahead",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::prev_length",
+          "detailed": "\n        ",
+          "name": "prev_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::max_chain_length",
+          "detailed": "\n        ",
+          "name": "max_chain_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::max_lazy_match",
+          "detailed": "\n        ",
+          "name": "max_lazy_match",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::level",
+          "detailed": "\n        ",
+          "name": "level",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::strategy",
+          "detailed": "\n        ",
+          "name": "strategy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::good_match",
+          "detailed": "\n        ",
+          "name": "good_match",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::nice_match",
+          "detailed": "\n        ",
+          "name": "nice_match",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(2 *(256+1+29)+1)]",
+          "brief": "\n        ",
+          "definition": "struct ct_data_s internal_state::dyn_ltree[(2 *(256+1+29)+1)]",
+          "detailed": "\n        ",
+          "name": "dyn_ltree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2 *30+1]",
+          "brief": "\n        ",
+          "definition": "struct ct_data_s internal_state::dyn_dtree[2 *30+1]",
+          "detailed": "\n        ",
+          "name": "dyn_dtree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2 *19+1]",
+          "brief": "\n        ",
+          "definition": "struct ct_data_s internal_state::bl_tree[2 *19+1]",
+          "detailed": "\n        ",
+          "name": "bl_tree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct tree_desc_s internal_state::l_desc",
+          "detailed": "\n        ",
+          "name": "l_desc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct tree_desc_s internal_state::d_desc",
+          "detailed": "\n        ",
+          "name": "d_desc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct tree_desc_s internal_state::bl_desc",
+          "detailed": "\n        ",
+          "name": "bl_desc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[15+1]",
+          "brief": "\n        ",
+          "definition": "ush internal_state::bl_count[15+1]",
+          "detailed": "\n        ",
+          "name": "bl_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2 *(256+1+29)+1]",
+          "brief": "\n        ",
+          "definition": "int internal_state::heap[2 *(256+1+29)+1]",
+          "detailed": "\n        ",
+          "name": "heap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::heap_len",
+          "detailed": "\n        ",
+          "name": "heap_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::heap_max",
+          "detailed": "\n        ",
+          "name": "heap_max",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[2 *(256+1+29)+1]",
+          "brief": "\n        ",
+          "definition": "uch internal_state::depth[2 *(256+1+29)+1]",
+          "detailed": "\n        ",
+          "name": "depth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uchf* internal_state::sym_buf",
+          "detailed": "\n        ",
+          "name": "sym_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::lit_bufsize",
+          "detailed": "\n        ",
+          "name": "lit_bufsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::sym_next",
+          "detailed": "\n        ",
+          "name": "sym_next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::sym_end",
+          "detailed": "\n        ",
+          "name": "sym_end",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::opt_len",
+          "detailed": "\n        ",
+          "name": "opt_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::static_len",
+          "detailed": "\n        ",
+          "name": "static_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::matches",
+          "detailed": "\n        ",
+          "name": "matches",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uInt internal_state::insert",
+          "detailed": "\n        ",
+          "name": "insert",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush internal_state::bi_buf",
+          "detailed": "\n        ",
+          "name": "bi_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int internal_state::bi_valid",
+          "detailed": "\n        ",
+          "name": "bi_valid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ulg internal_state::high_water",
+          "detailed": "\n        ",
+          "name": "high_water",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ct_data* tree_desc_s::dyn_tree",
+          "detailed": "\n        ",
+          "name": "dyn_tree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int tree_desc_s::max_code",
+          "detailed": "\n        ",
+          "name": "max_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static_tree_desc* tree_desc_s::stat_desc",
+          "detailed": "\n        ",
+          "name": "stat_desc",
+          "params": [],
+          "static": true
+        }
+      ]
+    }
+  },
+  "library": "deflate.h",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

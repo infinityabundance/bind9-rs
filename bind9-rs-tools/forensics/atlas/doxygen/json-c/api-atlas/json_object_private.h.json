@@ -1,0 +1,267 @@
+{
+  "files": {
+    "json_object_private.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_object_int_type_int64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "json_object_int_type_uint64",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "json_object_int_type",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(const char *err_fmt,...)",
+          "brief": "\n        ",
+          "definition": "void _json_c_set_last_err",
+          "detailed": "\n        ",
+          "name": "_json_c_set_last_err",
+          "params": [
+            "err_fmt",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef enum json_object_int_type json_object_int_type",
+          "detailed": "\n        ",
+          "name": "json_object_int_type",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* json_hex_chars",
+          "detailed": "\n        ",
+          "name": "json_hex_chars",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum json_type json_object::o_type",
+          "detailed": "\n        ",
+          "name": "o_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t json_object::_ref_count",
+          "detailed": "\n        ",
+          "name": "_ref_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_object_to_json_string_fn* json_object::_to_json_string",
+          "detailed": "\n        ",
+          "name": "_to_json_string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct printbuf* json_object::_pb",
+          "detailed": "\n        ",
+          "name": "_pb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_object_delete_fn* json_object::_user_delete",
+          "detailed": "\n        ",
+          "name": "_user_delete",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* json_object::_userdata",
+          "detailed": "\n        ",
+          "name": "_userdata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* json_object::_delete_parent",
+          "detailed": "\n        ",
+          "name": "_delete_parent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union json_object::@314140121364352006247211363142102141345071201060 json_object::@023055352167024371151223363041126261353163176273",
+          "detailed": "\n        ",
+          "name": "@023055352167024371151223363041126261353163176273",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct json_object json_object_array::base",
+          "detailed": "\n        ",
+          "name": "base",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct array_list* json_object_array::c_array",
+          "detailed": "\n        ",
+          "name": "c_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_bool json_object_boolean::c_boolean",
+          "detailed": "\n        ",
+          "name": "c_boolean",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "double json_object_double::c_double",
+          "detailed": "\n        ",
+          "name": "c_double",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum json_object_int_type json_object_int::cint_type",
+          "detailed": "\n        ",
+          "name": "cint_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int64_t json_object_int::c_int64",
+          "detailed": "\n        ",
+          "name": "c_int64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t json_object_int::c_uint64",
+          "detailed": "\n        ",
+          "name": "c_uint64",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union json_object_int::@355135066063013013226156234171146235003176346155 json_object_int::cint",
+          "detailed": "\n        ",
+          "name": "cint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct lh_table* json_object_object::c_object",
+          "detailed": "\n        ",
+          "name": "c_object",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ssize_t json_object_string::len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1]",
+          "brief": "\n        ",
+          "definition": "char json_object_string::idata[1]",
+          "detailed": "\n        ",
+          "name": "idata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* json_object_string::pdata",
+          "detailed": "\n        ",
+          "name": "pdata",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "union json_object_string::@312133052306351104143160167342171117334335360211 json_object_string::c_string",
+          "detailed": "\n        ",
+          "name": "c_string",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_object_private.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

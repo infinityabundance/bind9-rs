@@ -1,0 +1,406 @@
+{
+  "files": {
+    "inflate.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "static int inflateStateCheck",
+          "detailed": "\n        ",
+          "name": "inflateStateCheck",
+          "params": [
+            "strm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateResetKeep",
+          "detailed": "\n        ",
+          "name": "inflateResetKeep",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateReset",
+          "detailed": "\n        ",
+          "name": "inflateReset",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int windowBits)",
+          "brief": "\n        ",
+          "definition": "int inflateReset2",
+          "detailed": "\n        ",
+          "name": "inflateReset2",
+          "params": [
+            "strm",
+            "windowBits"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int windowBits, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateInit2_",
+          "detailed": "\n        ",
+          "name": "inflateInit2_",
+          "params": [
+            "strm",
+            "windowBits",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int inflateInit_",
+          "detailed": "\n        ",
+          "name": "inflateInit_",
+          "params": [
+            "strm",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int bits, int value)",
+          "brief": "\n        ",
+          "definition": "int inflatePrime",
+          "detailed": "\n        ",
+          "name": "inflatePrime",
+          "params": [
+            "strm",
+            "bits",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct inflate_state *state)",
+          "brief": "\n        ",
+          "definition": "static void fixedtables",
+          "detailed": "\n        ",
+          "name": "fixedtables",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, Bytef *end, unsigned copy)",
+          "brief": "\n        ",
+          "definition": "static int updatewindow",
+          "detailed": "\n        ",
+          "name": "updatewindow",
+          "params": [
+            "strm",
+            "end",
+            "copy"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, int flush)",
+          "brief": "\n        ",
+          "definition": "int inflate",
+          "detailed": "\n        ",
+          "name": "inflate",
+          "params": [
+            "strm",
+            "flush"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateEnd",
+          "detailed": "\n        ",
+          "name": "inflateEnd",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt *dictLength)",
+          "brief": "\n        ",
+          "definition": "int inflateGetDictionary",
+          "detailed": "\n        ",
+          "name": "inflateGetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt dictLength)",
+          "brief": "\n        ",
+          "definition": "int inflateSetDictionary",
+          "detailed": "\n        ",
+          "name": "inflateSetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, gz_headerp head)",
+          "brief": "\n        ",
+          "definition": "int inflateGetHeader",
+          "detailed": "\n        ",
+          "name": "inflateGetHeader",
+          "params": [
+            "strm",
+            "head"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned *have, unsigned char *buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "static unsigned syncsearch",
+          "detailed": "\n        ",
+          "name": "syncsearch",
+          "params": [
+            "have",
+            "buf",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateSync",
+          "detailed": "\n        ",
+          "name": "inflateSync",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int inflateSyncPoint",
+          "detailed": "\n        ",
+          "name": "inflateSyncPoint",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp dest, z_streamp source)",
+          "brief": "\n        ",
+          "definition": "int inflateCopy",
+          "detailed": "\n        ",
+          "name": "inflateCopy",
+          "params": [
+            "dest",
+            "source"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int subvert)",
+          "brief": "\n        ",
+          "definition": "int inflateUndermine",
+          "detailed": "\n        ",
+          "name": "inflateUndermine",
+          "params": [
+            "strm",
+            "subvert"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int check)",
+          "brief": "\n        ",
+          "definition": "int inflateValidate",
+          "detailed": "\n        ",
+          "name": "inflateValidate",
+          "params": [
+            "strm",
+            "check"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "long inflateMark",
+          "detailed": "\n        ",
+          "name": "inflateMark",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "unsigned long inflateCodesUsed",
+          "detailed": "\n        ",
+          "name": "inflateCodesUsed",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UPDATE_CHECK",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CRC2",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CRC4",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOAD",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RESTORE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INITBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PULLBYTE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NEEDBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DROPBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BYTEBITS",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "inflate.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

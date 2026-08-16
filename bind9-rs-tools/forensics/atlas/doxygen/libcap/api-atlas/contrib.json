@@ -1,0 +1,890 @@
+{
+  "files": {
+    "contrib/bug216610/c/fib.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct state *s)",
+          "brief": "\n        ",
+          "definition": "void fib_init",
+          "detailed": "\n        ",
+          "name": "fib_init",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct state *s)",
+          "brief": "\n        ",
+          "definition": "void fib_next",
+          "detailed": "\n        ",
+          "name": "fib_next",
+          "params": [
+            "s"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t state::b",
+          "detailed": "\n        ",
+          "name": "b",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t state::a",
+          "detailed": "\n        ",
+          "name": "a",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/bug400591/bug.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/capso/bind.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/capso/capso.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void fake_exploit",
+          "detailed": "\n        ",
+          "name": "fake_exploit",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static char * where_am_i",
+          "detailed": "\n        ",
+          "name": "where_am_i",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *hostname)",
+          "brief": "\n        ",
+          "definition": "static int try_bind80",
+          "detailed": "\n        ",
+          "name": "try_bind80",
+          "params": [
+            "hostname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *detail)",
+          "brief": "\n        ",
+          "definition": "static int set_fd3",
+          "detailed": "\n        ",
+          "name": "set_fd3",
+          "params": [
+            "detail"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *hostname)",
+          "brief": "\n        ",
+          "definition": "int bind80",
+          "detailed": "\n        ",
+          "name": "bind80",
+          "params": [
+            "hostname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "static void __execable_main",
+          "detailed": "\n        ",
+          "name": "__execable_main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char** environ",
+          "detailed": "\n        ",
+          "name": "environ",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "contrib/capso/capso.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *hostname)",
+          "brief": "\n        ",
+          "definition": "int bind80",
+          "detailed": "\n        ",
+          "name": "bind80",
+          "params": [
+            "hostname"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "contrib/sucap/su.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int keep_env)",
+          "brief": "\n        ",
+          "definition": "static int make_environment",
+          "detailed": "\n        ",
+          "name": "make_environment",
+          "params": [
+            "keep_env"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void checkfds",
+          "detailed": "\n        ",
+          "name": "checkfds",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void store_terminal_modes",
+          "detailed": "\n        ",
+          "name": "store_terminal_modes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int restore_terminal_modes",
+          "detailed": "\n        ",
+          "name": "restore_terminal_modes",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void disable_terminal_signals",
+          "detailed": "\n        ",
+          "name": "disable_terminal_signals",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void enable_terminal_signals",
+          "detailed": "\n        ",
+          "name": "enable_terminal_signals",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(uid_t uid, int is_login, const char **callname, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int change_terminal_owner",
+          "detailed": "\n        ",
+          "name": "change_terminal_owner",
+          "params": [
+            "uid",
+            "is_login",
+            "callname",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void restore_terminal_owner",
+          "detailed": "\n        ",
+          "name": "restore_terminal_owner",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char **callname, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int make_process_unkillable",
+          "detailed": "\n        ",
+          "name": "make_process_unkillable",
+          "params": [
+            "callname",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void make_process_killable",
+          "detailed": "\n        ",
+          "name": "make_process_killable",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int exit_val)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "exit_val"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[], int *is_login, const char **user, const char **command)",
+          "brief": "\n        ",
+          "definition": "static void parse_command_line",
+          "detailed": "\n        ",
+          "name": "parse_command_line",
+          "params": [
+            "argc",
+            "argv",
+            "is_login",
+            "user",
+            "command"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int ignore)",
+          "brief": "\n        ",
+          "definition": "static void wait_for_child_catch_sig",
+          "detailed": "\n        ",
+          "name": "wait_for_child_catch_sig",
+          "params": [
+            "ignore"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int need_it)",
+          "brief": "\n        ",
+          "definition": "static void prepare_for_job_control",
+          "detailed": "\n        ",
+          "name": "prepare_for_job_control",
+          "params": [
+            "need_it"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pid_t child)",
+          "brief": "\n        ",
+          "definition": "static int wait_for_child",
+          "detailed": "\n        ",
+          "name": "wait_for_child",
+          "params": [
+            "child"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *pw_shell, int login, const char *command)",
+          "brief": "\n        ",
+          "definition": "static const char *const  * build_shell_args",
+          "detailed": "\n        ",
+          "name": "build_shell_args",
+          "params": [
+            "pw_shell",
+            "login",
+            "command"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int exit_code, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void exit_now",
+          "detailed": "\n        ",
+          "name": "exit_now",
+          "params": [
+            "exit_code",
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *user, int is_login)",
+          "brief": "\n        ",
+          "definition": "static void do_pam_init",
+          "detailed": "\n        ",
+          "name": "do_pam_init",
+          "params": [
+            "user",
+            "is_login"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t all, int *retval, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int authenticate_user",
+          "detailed": "\n        ",
+          "name": "authenticate_user",
+          "params": [
+            "all",
+            "retval",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t all, int *retval, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int user_accounting",
+          "detailed": "\n        ",
+          "name": "user_accounting",
+          "params": [
+            "all",
+            "retval",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *ut_line, const char *ut_id)",
+          "brief": "\n        ",
+          "definition": "static const struct utmp * find_utmp_entry",
+          "detailed": "\n        ",
+          "name": "find_utmp_entry",
+          "params": [
+            "ut_line",
+            "ut_id"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *terminal, char *ut_line, char *ut_id)",
+          "brief": "\n        ",
+          "definition": "static void set_terminal_name",
+          "detailed": "\n        ",
+          "name": "set_terminal_name",
+          "params": [
+            "terminal",
+            "ut_line",
+            "ut_id"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct utmp *u_tmp_p, const char **callname, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int write_wtmp",
+          "detailed": "\n        ",
+          "name": "write_wtmp",
+          "params": [
+            "u_tmp_p",
+            "callname",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *user, const char *terminal, const char *rhost, pid_t pid, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int utmp_do_open_session",
+          "detailed": "\n        ",
+          "name": "utmp_do_open_session",
+          "params": [
+            "user",
+            "terminal",
+            "rhost",
+            "pid",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *terminal, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int utmp_do_close_session",
+          "detailed": "\n        ",
+          "name": "utmp_do_close_session",
+          "params": [
+            "terminal",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(pid_t pid, int *retval, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int utmp_open_session",
+          "detailed": "\n        ",
+          "name": "utmp_open_session",
+          "params": [
+            "pid",
+            "retval",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int utmp_close_session",
+          "detailed": "\n        ",
+          "name": "utmp_close_session",
+          "params": [
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t all, int login, const char **user_p, uid_t *uid_p, const char **pw_shell, int *retval, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int set_credentials",
+          "detailed": "\n        ",
+          "name": "set_credentials",
+          "params": [
+            "all",
+            "login",
+            "user_p",
+            "uid_p",
+            "pw_shell",
+            "retval",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t all, int *retval, const char **place, const char **err_descr)",
+          "brief": "\n        ",
+          "definition": "static int open_session",
+          "detailed": "\n        ",
+          "name": "open_session",
+          "params": [
+            "all",
+            "retval",
+            "place",
+            "err_descr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *h)",
+          "brief": "\n        ",
+          "definition": "static int launch_callback_fn",
+          "detailed": "\n        ",
+          "name": "launch_callback_fn",
+          "params": [
+            "h"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t all, int is_login, const char *user, const char *shell, const char *command)",
+          "brief": "\n        ",
+          "definition": "static int perform_launch_and_cleanup",
+          "detailed": "\n        ",
+          "name": "perform_launch_and_cleanup",
+          "params": [
+            "all",
+            "is_login",
+            "user",
+            "shell",
+            "command"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cap_t all)",
+          "brief": "\n        ",
+          "definition": "static void close_session",
+          "detailed": "\n        ",
+          "name": "close_session",
+          "params": [
+            "all"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TEMP_UID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PAM_APP_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_HOME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_SHELL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SLEEP_TO_KILL_CHILDREN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SU_FAIL_DELAY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RHOST_UNKNOWN_NAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEVICE_FILE_PREFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WTMP_LOCK_TIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UT_IDSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WWTMP_STATE_BEGINNING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WWTMP_STATE_FILE_OPENED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WWTMP_STATE_SIGACTION_SET",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WWTMP_STATE_LOCK_TAKEN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char** environ",
+          "detailed": "\n        ",
+          "name": "environ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pam_handle_t* pamh",
+          "detailed": "\n        ",
+          "name": "pamh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int wait_for_child_caught",
+          "detailed": "\n        ",
+          "name": "wait_for_child_caught",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int need_job_control",
+          "detailed": "\n        ",
+          "name": "need_job_control",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int is_terminal",
+          "detailed": "\n        ",
+          "name": "is_terminal",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct termios stored_mode",
+          "detailed": "\n        ",
+          "name": "stored_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uid_t terminal_uid",
+          "detailed": "\n        ",
+          "name": "terminal_uid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uid_t invoked_uid",
+          "detailed": "\n        ",
+          "name": "invoked_uid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* posix_env[]",
+          "detailed": "\n        ",
+          "name": "posix_env",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct sigaction old_int_act old_quit_act old_tstp_act old_pipe_act",
+          "detailed": "\n        ",
+          "name": "old_pipe_act",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct pam_conv conv",
+          "detailed": "\n        ",
+          "name": "conv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct utmp* login_stored_utmp",
+          "detailed": "\n        ",
+          "name": "login_stored_utmp",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "contrib",
+  "schema_version": 1,
+  "version": "2.78"
+}

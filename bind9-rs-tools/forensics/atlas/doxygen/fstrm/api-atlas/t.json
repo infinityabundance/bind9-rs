@@ -1,0 +1,1053 @@
+{
+  "files": {
+    "t/test_control.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct fstrm_control *c, const uint8_t *content_type, size_t len_content_type)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res match_content_type",
+          "detailed": "\n        ",
+          "name": "match_content_type",
+          "params": [
+            "c",
+            "content_type",
+            "len_content_type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c, const uint8_t *control_frame, size_t len_control_frame, uint32_t flags)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res decode_control_frame",
+          "detailed": "\n        ",
+          "name": "decode_control_frame",
+          "params": [
+            "c",
+            "control_frame",
+            "len_control_frame",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c, const uint8_t *control_frame, size_t len_control_frame, uint32_t flags)",
+          "brief": "\n        ",
+          "definition": "static void test_reencode_frame",
+          "detailed": "\n        ",
+          "name": "test_reencode_frame",
+          "params": [
+            "c",
+            "control_frame",
+            "len_control_frame",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c, const uint8_t *control_frame, size_t len_control_frame, uint32_t flags)",
+          "brief": "\n        ",
+          "definition": "static void test_reencode_frame_static",
+          "detailed": "\n        ",
+          "name": "test_reencode_frame_static",
+          "params": [
+            "c",
+            "control_frame",
+            "len_control_frame",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c, const struct control_test *test)",
+          "brief": "\n        ",
+          "definition": "static void test_control_test",
+          "detailed": "\n        ",
+          "name": "test_control_test",
+          "params": [
+            "c",
+            "test"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c)",
+          "brief": "\n        ",
+          "definition": "static void test_control_tests",
+          "detailed": "\n        ",
+          "name": "test_control_tests",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c)",
+          "brief": "\n        ",
+          "definition": "static void test_invalid",
+          "detailed": "\n        ",
+          "name": "test_invalid",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t wharrgarbl[]",
+          "detailed": "\n        ",
+          "name": "wharrgarbl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t wharrgarblv2[]",
+          "detailed": "\n        ",
+          "name": "wharrgarblv2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t accept_1[]",
+          "detailed": "\n        ",
+          "name": "accept_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t accept_1_wh[]",
+          "detailed": "\n        ",
+          "name": "accept_1_wh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t accept_2[]",
+          "detailed": "\n        ",
+          "name": "accept_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t accept_2_wh[]",
+          "detailed": "\n        ",
+          "name": "accept_2_wh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t accept_3[]",
+          "detailed": "\n        ",
+          "name": "accept_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t accept_3_wh[]",
+          "detailed": "\n        ",
+          "name": "accept_3_wh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t ready_1[]",
+          "detailed": "\n        ",
+          "name": "ready_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t start_1[]",
+          "detailed": "\n        ",
+          "name": "start_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t start_1_wh[]",
+          "detailed": "\n        ",
+          "name": "start_1_wh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t start_2[]",
+          "detailed": "\n        ",
+          "name": "start_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t start_2_wh[]",
+          "detailed": "\n        ",
+          "name": "start_2_wh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t stop_1[]",
+          "detailed": "\n        ",
+          "name": "stop_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t stop_1_wh[]",
+          "detailed": "\n        ",
+          "name": "stop_1_wh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct control_test control_tests[]",
+          "detailed": "\n        ",
+          "name": "control_tests",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_1[]",
+          "detailed": "\n        ",
+          "name": "invalid_1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_2[]",
+          "detailed": "\n        ",
+          "name": "invalid_2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_3[]",
+          "detailed": "\n        ",
+          "name": "invalid_3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_4[]",
+          "detailed": "\n        ",
+          "name": "invalid_4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_5[]",
+          "detailed": "\n        ",
+          "name": "invalid_5",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_6[]",
+          "detailed": "\n        ",
+          "name": "invalid_6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_7[]",
+          "detailed": "\n        ",
+          "name": "invalid_7",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_8[]",
+          "detailed": "\n        ",
+          "name": "invalid_8",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_9[]",
+          "detailed": "\n        ",
+          "name": "invalid_9",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_10[]",
+          "detailed": "\n        ",
+          "name": "invalid_10",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_11[]",
+          "detailed": "\n        ",
+          "name": "invalid_11",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const uint8_t invalid_12[]",
+          "detailed": "\n        ",
+          "name": "invalid_12",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct bytes invalid[]",
+          "detailed": "\n        ",
+          "name": "invalid",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/test_file_hello.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct fstrm_writer *w, int i)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res write_message",
+          "detailed": "\n        ",
+          "name": "write_message",
+          "params": [
+            "w",
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_reader *r, int i)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res read_message",
+          "detailed": "\n        ",
+          "name": "read_message",
+          "params": [
+            "r",
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_pattern",
+          "detailed": "test_file_hello: simple \"hello world\" fstrm_file test.\nWrites several messages to a test file, then reads the test file and verifies the contents of the test messages.",
+          "name": "test_pattern",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_content_type",
+          "detailed": "\n        ",
+          "name": "test_content_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int num_iterations",
+          "detailed": "\n        ",
+          "name": "num_iterations",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/test_fstrm_io_file.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * thr_producer",
+          "detailed": "\n        ",
+          "name": "thr_producer",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int fd, struct consumer_stats *cstat)",
+          "brief": "\n        ",
+          "definition": "static void read_input",
+          "detailed": "\n        ",
+          "name": "read_input",
+          "params": [
+            "fd",
+            "cstat"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct consumer *c, const char *file_path)",
+          "brief": "\n        ",
+          "definition": "static int consume_input",
+          "detailed": "\n        ",
+          "name": "consume_input",
+          "params": [
+            "c",
+            "file_path"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_MESSAGE_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_string",
+          "detailed": "\n        ",
+          "name": "test_string",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/test_fstrm_io_sock.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * thr_producer",
+          "detailed": "\n        ",
+          "name": "thr_producer",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c, const uint8_t *frame, const size_t len)",
+          "brief": "\n        ",
+          "definition": "static fstrm_control_type decode_control_frame",
+          "detailed": "\n        ",
+          "name": "decode_control_frame",
+          "params": [
+            "c",
+            "frame",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *f, struct fstrm_control *c)",
+          "brief": "\n        ",
+          "definition": "static fstrm_control_type read_control_frame",
+          "detailed": "\n        ",
+          "name": "read_control_frame",
+          "params": [
+            "f",
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int fd, struct fstrm_control *c, fstrm_control_type type)",
+          "brief": "\n        ",
+          "definition": "static void write_control_frame",
+          "detailed": "\n        ",
+          "name": "write_control_frame",
+          "params": [
+            "fd",
+            "c",
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct fstrm_control *c)",
+          "brief": "\n        ",
+          "definition": "static void print_content_types",
+          "detailed": "\n        ",
+          "name": "print_content_types",
+          "params": [
+            "c"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int fd, struct consumer_stats *cstat)",
+          "brief": "\n        ",
+          "definition": "static void read_input",
+          "detailed": "\n        ",
+          "name": "read_input",
+          "params": [
+            "fd",
+            "cstat"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * thr_consumer",
+          "detailed": "\n        ",
+          "name": "thr_consumer",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *socket_path)",
+          "brief": "\n        ",
+          "definition": "static int get_unix_server_socket",
+          "detailed": "\n        ",
+          "name": "get_unix_server_socket",
+          "params": [
+            "socket_path"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *socket_address, uint16_t *socket_port)",
+          "brief": "\n        ",
+          "definition": "static int get_tcp_server_socket",
+          "detailed": "\n        ",
+          "name": "get_tcp_server_socket",
+          "params": [
+            "socket_address",
+            "socket_port"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_MESSAGE_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_string",
+          "detailed": "\n        ",
+          "name": "test_string",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/test_queue.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "wt_spin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "wt_slow_producer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "wt_slow_consumer",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "wait_type",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(int64_t i)",
+          "brief": "\n        ",
+          "definition": "static void maybe_wait_producer",
+          "detailed": "\n        ",
+          "name": "maybe_wait_producer",
+          "params": [
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int64_t i)",
+          "brief": "\n        ",
+          "definition": "static void maybe_wait_consumer",
+          "detailed": "\n        ",
+          "name": "maybe_wait_consumer",
+          "params": [
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * thr_producer",
+          "detailed": "\n        ",
+          "name": "thr_producer",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * thr_consumer",
+          "detailed": "\n        ",
+          "name": "thr_consumer",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct my_queue *my_q)",
+          "brief": "\n        ",
+          "definition": "static void send_shutdown_message",
+          "detailed": "\n        ",
+          "name": "send_shutdown_message",
+          "params": [
+            "my_q"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct producer_stats *ps, struct consumer_stats *cs)",
+          "brief": "\n        ",
+          "definition": "static int check_stats",
+          "detailed": "\n        ",
+          "name": "check_stats",
+          "params": [
+            "ps",
+            "cs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct timespec *a, struct timespec *b, struct producer_stats *ps, struct consumer_stats *cs)",
+          "brief": "\n        ",
+          "definition": "static void print_stats",
+          "detailed": "\n        ",
+          "name": "print_stats",
+          "params": [
+            "a",
+            "b",
+            "ps",
+            "cs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int run_test",
+          "detailed": "\n        ",
+          "name": "run_test",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct my_queue_ops my_queue_mutex_ops",
+          "detailed": "\n        ",
+          "name": "my_queue_mutex_ops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const struct my_queue_ops* queue_ops",
+          "detailed": "\n        ",
+          "name": "queue_ops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile bool shut_down",
+          "detailed": "\n        ",
+          "name": "shut_down",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum wait_type wtype",
+          "detailed": "\n        ",
+          "name": "wtype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* wtype_s",
+          "detailed": "\n        ",
+          "name": "wtype_s",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned seconds",
+          "detailed": "\n        ",
+          "name": "seconds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct my_queue* q",
+          "detailed": "\n        ",
+          "name": "q",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "t/test_writer_hello.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(__attribute__((unused)) void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res test_rdwr_destroy",
+          "detailed": "\n        ",
+          "name": "test_rdwr_destroy",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res test_rdwr_open",
+          "detailed": "\n        ",
+          "name": "test_rdwr_open",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) void *obj)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res test_rdwr_close",
+          "detailed": "\n        ",
+          "name": "test_rdwr_close",
+          "params": [
+            "obj"
+          ],
+          "static": true
+        },
+        {
+          "args": "(__attribute__((unused)) void *obj, const struct iovec *iov, int iovcnt)",
+          "brief": "\n        ",
+          "definition": "static fstrm_res test_rdwr_write",
+          "detailed": "\n        ",
+          "name": "test_rdwr_write",
+          "params": [
+            "obj",
+            "iov",
+            "iovcnt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static int do_checks",
+          "detailed": "\n        ",
+          "name": "do_checks",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_content_type",
+          "detailed": "test_writer_hello: simple \"hello world\" fstrm_io test.\nInstantiates a dummy writer implementation which captures all writes, then verifies that the correct byte stream sequence was generated by the library.",
+          "name": "test_content_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const int num_iterations",
+          "detailed": "\n        ",
+          "name": "num_iterations",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_buf t_head",
+          "detailed": "\n        ",
+          "name": "t_head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_buf* t_cur",
+          "detailed": "\n        ",
+          "name": "t_cur",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_buf h_head",
+          "detailed": "\n        ",
+          "name": "h_head",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_buf* h_cur",
+          "detailed": "\n        ",
+          "name": "h_cur",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int num_control_frames",
+          "detailed": "\n        ",
+          "name": "num_control_frames",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int num_iovecs",
+          "detailed": "\n        ",
+          "name": "num_iovecs",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "t",
+  "schema_version": 1,
+  "version": "0.6.1"
+}

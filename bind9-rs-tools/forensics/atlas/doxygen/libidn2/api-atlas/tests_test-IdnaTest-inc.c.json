@@ -1,0 +1,76 @@
+{
+  "files": {
+    "tests/test-IdnaTest-inc.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_homebrewed",
+          "detailed": "\n        ",
+          "name": "test_homebrewed",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct idna idna[]",
+          "detailed": "\n        ",
+          "name": "idna",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ok",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int failed",
+          "detailed": "\n        ",
+          "name": "failed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int break_on_error",
+          "detailed": "\n        ",
+          "name": "break_on_error",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test-IdnaTest-inc.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

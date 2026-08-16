@@ -1,0 +1,51 @@
+{
+  "files": {
+    "tests/test_parse_int64.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *buf)",
+          "brief": "\n        ",
+          "definition": "void checkit",
+          "detailed": "\n        ",
+          "name": "checkit",
+          "params": [
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *buf)",
+          "brief": "\n        ",
+          "definition": "void checkit_uint",
+          "detailed": "\n        ",
+          "name": "checkit_uint",
+          "params": [
+            "buf"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "This test calls json_parse_int64 and json_parse_int64 with a variety of different strings. It's purpose is to ensure that the results are consistent across all different environments that it might be executed in.\nThis always exits with a 0 exit value. The output should be compared against previously saved expected output.",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_parse_int64.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

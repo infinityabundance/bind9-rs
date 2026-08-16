@@ -1,0 +1,666 @@
+{
+  "files": {
+    "examples/fileman.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t size)",
+          "brief": "\n        ",
+          "definition": "void * xmalloc",
+          "detailed": "\n        ",
+          "name": "xmalloc",
+          "params": [
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *caller)",
+          "brief": "\n        ",
+          "definition": "void too_dangerous",
+          "detailed": "\n        ",
+          "name": "too_dangerous",
+          "params": [
+            "caller"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "void initialize_readline",
+          "detailed": "\n        ",
+          "name": "initialize_readline",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(char *line)",
+          "brief": "\n        ",
+          "definition": "int execute_line",
+          "detailed": "\n        ",
+          "name": "execute_line",
+          "params": [
+            "line"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *caller, char *arg)",
+          "brief": "\n        ",
+          "definition": "int valid_argument",
+          "detailed": "\n        ",
+          "name": "valid_argument",
+          "params": [
+            "caller",
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_list",
+          "detailed": "\n        ",
+          "name": "com_list",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_view",
+          "detailed": "\n        ",
+          "name": "com_view",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_history",
+          "detailed": "\n        ",
+          "name": "com_history",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_rename",
+          "detailed": "\n        ",
+          "name": "com_rename",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_stat",
+          "detailed": "\n        ",
+          "name": "com_stat",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_pwd",
+          "detailed": "\n        ",
+          "name": "com_pwd",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_delete",
+          "detailed": "\n        ",
+          "name": "com_delete",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_help",
+          "detailed": "\n        ",
+          "name": "com_help",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_cd",
+          "detailed": "\n        ",
+          "name": "com_cd",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int com_quit",
+          "detailed": "\n        ",
+          "name": "com_quit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *string)",
+          "brief": "\n        ",
+          "definition": "char * stripwhite",
+          "detailed": "\n        ",
+          "name": "stripwhite",
+          "params": [
+            "string"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *name)",
+          "brief": "\n        ",
+          "definition": "COMMAND * find_command",
+          "detailed": "\n        ",
+          "name": "find_command",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *s)",
+          "brief": "\n        ",
+          "definition": "char * dupstr",
+          "detailed": "\n        ",
+          "name": "dupstr",
+          "params": [
+            "s"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc __attribute__((__unused__)), char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "__attribute__",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *, int)",
+          "brief": "\n        ",
+          "definition": "char * command_generator",
+          "detailed": "\n        ",
+          "name": "command_generator",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *, int, int)",
+          "brief": "\n        ",
+          "definition": "char ** fileman_completion",
+          "detailed": "\n        ",
+          "name": "fileman_completion",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *text, int start, int end __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "char ** fileman_completion",
+          "detailed": "\n        ",
+          "name": "fileman_completion",
+          "params": [
+            "text",
+            "start",
+            "__attribute__"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "int com_history",
+          "detailed": "\n        ",
+          "name": "com_history",
+          "params": [
+            "__attribute__"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "int com_rename",
+          "detailed": "\n        ",
+          "name": "com_rename",
+          "params": [
+            "__attribute__"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "int com_delete",
+          "detailed": "\n        ",
+          "name": "com_delete",
+          "params": [
+            "__attribute__"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *ignore __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "int com_pwd",
+          "detailed": "\n        ",
+          "name": "com_pwd",
+          "params": [
+            "__attribute__"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "int com_quit",
+          "detailed": "\n        ",
+          "name": "com_quit",
+          "params": [
+            "__attribute__"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "typedef int rl_icpfunc_t(char *)",
+          "detailed": "\n        ",
+          "name": "rl_icpfunc_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "COMMAND commands[]",
+          "detailed": "\n        ",
+          "name": "commands",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int done",
+          "detailed": "\n        ",
+          "name": "done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "char syscom[1024]",
+          "detailed": "\n        ",
+          "name": "syscom",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* COMMAND::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "rl_icpfunc_t* COMMAND::func",
+          "detailed": "\n        ",
+          "name": "func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* COMMAND::doc",
+          "detailed": "\n        ",
+          "name": "doc",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/fuzz1.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const uint8_t *Data, size_t Size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "Data",
+            "Size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int init",
+          "detailed": "\n        ",
+          "name": "init",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/tc1.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(\"@(#) Copyright (c) 1992, 1993\\n\\\n\tThe Regents of the University of California.  All rights reserved.\\n\")",
+          "brief": "\n        ",
+          "definition": "__COPYRIGHT",
+          "detailed": "\n        ",
+          "name": "__COPYRIGHT",
+          "params": [
+            "1992",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(\"$NetBSD: tc1.c,v 1.7 2016/02/17 19:47:49 christos Exp $\")",
+          "brief": "\n        ",
+          "definition": "__RCSID",
+          "detailed": "\n        ",
+          "name": "__RCSID",
+          "params": [
+            "c",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(EditLine *, int)",
+          "brief": "\n        ",
+          "definition": "static unsigned char complete",
+          "detailed": "\n        ",
+          "name": "complete",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(EditLine *)",
+          "brief": "\n        ",
+          "definition": "static char * prompt",
+          "detailed": "\n        ",
+          "name": "prompt",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int)",
+          "brief": "\n        ",
+          "definition": "static void sig",
+          "detailed": "\n        ",
+          "name": "sig",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(EditLine *el __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static char * prompt",
+          "detailed": "\n        ",
+          "name": "prompt",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(EditLine *el, int ch __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static unsigned char complete",
+          "detailed": "\n        ",
+          "name": "complete",
+          "params": [
+            "el",
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc __attribute__((__unused__)), char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "__attribute__",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__UNCONST",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int continuation",
+          "detailed": "\n        ",
+          "name": "continuation",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile sig_atomic_t gotsig",
+          "detailed": "\n        ",
+          "name": "gotsig",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "examples/wtc1.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(EditLine __attribute__((unused)) *el)",
+          "brief": "\n        ",
+          "definition": "static wchar_t * prompt",
+          "detailed": "\n        ",
+          "name": "prompt",
+          "params": [
+            "el"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int i)",
+          "brief": "\n        ",
+          "definition": "static void sig",
+          "detailed": "\n        ",
+          "name": "sig",
+          "params": [
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const wchar_t *wstr)",
+          "brief": "\n        ",
+          "definition": "const char * my_wcstombs",
+          "detailed": "\n        ",
+          "name": "my_wcstombs",
+          "params": [
+            "wstr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(EditLine *el, int __attribute__((unused)) ch)",
+          "brief": "\n        ",
+          "definition": "static unsigned char complete",
+          "detailed": "\n        ",
+          "name": "complete",
+          "params": [
+            "el",
+            "ch"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int __attribute__((unused)) argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int continuation",
+          "detailed": "\n        ",
+          "name": "continuation",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "volatile sig_atomic_t gotsig",
+          "detailed": "\n        ",
+          "name": "gotsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char hfile[]",
+          "detailed": "\n        ",
+          "name": "hfile",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "examples",
+  "schema_version": 1,
+  "version": "20260512-3.1"
+}

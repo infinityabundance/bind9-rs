@@ -1,0 +1,441 @@
+{
+  "files": {
+    "gzguts.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uInt size)",
+          "brief": "\n        ",
+          "definition": "voidp malloc",
+          "detailed": "\n        ",
+          "name": "malloc",
+          "params": [
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf ptr)",
+          "brief": "\n        ",
+          "definition": "void free",
+          "detailed": "\n        ",
+          "name": "free",
+          "params": [
+            "ptr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *, char *)",
+          "brief": "\n        ",
+          "definition": "gzFile gzopen64",
+          "detailed": "\n        ",
+          "name": "gzopen64",
+          "params": [
+            "path",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile, long, int)",
+          "brief": "\n        ",
+          "definition": "long gzseek64",
+          "detailed": "\n        ",
+          "name": "gzseek64",
+          "params": [
+            "file",
+            "offset",
+            "whence"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile)",
+          "brief": "\n        ",
+          "definition": "long gztell64",
+          "detailed": "\n        ",
+          "name": "gztell64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile)",
+          "brief": "\n        ",
+          "definition": "long gzoffset64",
+          "detailed": "\n        ",
+          "name": "gzoffset64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gz_statep, int, char *)",
+          "brief": "\n        ",
+          "definition": "void gz_error",
+          "detailed": "\n        ",
+          "name": "gz_error",
+          "params": [
+            "state",
+            "err",
+            "msg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned gz_intmax",
+          "detailed": "\n        ",
+          "name": "gz_intmax",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_INTERNAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_POSIX_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "zstrerror",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEF_MEM_LEVEL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZBUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZ_NONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZ_READ",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZ_WRITE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZ_APPEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOOK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COPY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZIP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GT_OFF",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef gz_state* gz_statep",
+          "detailed": "\n        ",
+          "name": "gz_statep",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct gzFile_s gz_state::x",
+          "detailed": "\n        ",
+          "name": "x",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::fd",
+          "detailed": "\n        ",
+          "name": "fd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* gz_state::path",
+          "detailed": "\n        ",
+          "name": "path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned gz_state::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned gz_state::want",
+          "detailed": "\n        ",
+          "name": "want",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* gz_state::in",
+          "detailed": "\n        ",
+          "name": "in",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* gz_state::out",
+          "detailed": "\n        ",
+          "name": "out",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::direct",
+          "detailed": "\n        ",
+          "name": "direct",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::how",
+          "detailed": "\n        ",
+          "name": "how",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long gz_state::start",
+          "detailed": "\n        ",
+          "name": "start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::eof",
+          "detailed": "\n        ",
+          "name": "eof",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::past",
+          "detailed": "\n        ",
+          "name": "past",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::level",
+          "detailed": "\n        ",
+          "name": "level",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::strategy",
+          "detailed": "\n        ",
+          "name": "strategy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::reset",
+          "detailed": "\n        ",
+          "name": "reset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long gz_state::skip",
+          "detailed": "\n        ",
+          "name": "skip",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::seek",
+          "detailed": "\n        ",
+          "name": "seek",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int gz_state::err",
+          "detailed": "\n        ",
+          "name": "err",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* gz_state::msg",
+          "detailed": "\n        ",
+          "name": "msg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "z_stream gz_state::strm",
+          "detailed": "\n        ",
+          "name": "strm",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "gzguts.h",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

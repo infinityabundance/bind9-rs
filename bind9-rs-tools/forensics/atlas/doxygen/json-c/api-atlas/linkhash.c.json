@@ -1,0 +1,370 @@
+{
+  "files": {
+    "linkhash.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const void *k)",
+          "brief": "\n        ",
+          "definition": "static unsigned long lh_char_hash",
+          "detailed": "\n        ",
+          "name": "lh_char_hash",
+          "params": [
+            "k"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *k)",
+          "brief": "\n        ",
+          "definition": "static unsigned long lh_perllike_str_hash",
+          "detailed": "\n        ",
+          "name": "lh_perllike_str_hash",
+          "params": [
+            "k"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *k1, const void *k2)",
+          "brief": "\n        ",
+          "definition": "int lh_char_equal",
+          "detailed": "\n        ",
+          "name": "lh_char_equal",
+          "params": [
+            "k1",
+            "k2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *k1, const void *k2)",
+          "brief": "\n        ",
+          "definition": "int lh_ptr_equal",
+          "detailed": "\n        ",
+          "name": "lh_ptr_equal",
+          "params": [
+            "k1",
+            "k2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const int h)",
+          "brief": "\n        ",
+          "definition": "int json_global_set_string_hash",
+          "detailed": "This function sets the hash function to be used for strings. Must be one of the JSON_C_STR_HASH_* values. 0 - ok, -1 if parameter was invalid \n\n\n0 - ok, -1 if parameter was invalid",
+          "name": "json_global_set_string_hash",
+          "params": [
+            "h"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *k)",
+          "brief": "\n        ",
+          "definition": "static unsigned long lh_ptr_hash",
+          "detailed": "\n        ",
+          "name": "lh_ptr_hash",
+          "params": [
+            "k"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *key, size_t length, uint32_t initval)",
+          "brief": "\n        ",
+          "definition": "static uint32_t hashlittle",
+          "detailed": "\n        ",
+          "name": "hashlittle",
+          "params": [
+            "key",
+            "length",
+            "initval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int size, lh_entry_free_fn *free_fn, lh_hash_fn *hash_fn, lh_equal_fn *equal_fn)",
+          "brief": "\n        ",
+          "definition": "struct lh_table * lh_table_new",
+          "detailed": "Create a new linkhash table.\n\n\nsize\n\n\ninitial table size. The table is automatically resized although this incurs a performance penalty. \n\n\n\n\nfree_fn\n\n\ncallback function used to free memory for entries when lh_table_free or lh_table_delete is called. If NULL is provided, then memory for keys and values must be freed by the caller. \n\n\n\n\nhash_fn\n\n\nfunction used to hash keys. 2 standard ones are defined: lh_ptr_hash and lh_char_hash for hashing pointer values and C strings respectively. \n\n\n\n\nequal_fn\n\n\ncomparison function to compare keys. 2 standard ones defined: lh_ptr_hash and lh_char_hash for comparing pointer values and C strings respectively. \n\n\n\nOn success, a pointer to the new linkhash table is returned. On error, a null pointer is returned. \n\n\ninitial table size. The table is automatically resized although this incurs a performance penalty. \ncallback function used to free memory for entries when lh_table_free or lh_table_delete is called. If NULL is provided, then memory for keys and values must be freed by the caller. \nfunction used to hash keys. 2 standard ones are defined: lh_ptr_hash and lh_char_hash for hashing pointer values and C strings respectively. \ncomparison function to compare keys. 2 standard ones defined: lh_ptr_hash and lh_char_hash for comparing pointer values and C strings respectively. \nOn success, a pointer to the new linkhash table is returned. On error, a null pointer is returned.",
+          "name": "lh_table_new",
+          "params": [
+            "size",
+            "free_fn",
+            "hash_fn",
+            "equal_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int size, lh_entry_free_fn *free_fn)",
+          "brief": "\n        ",
+          "definition": "struct lh_table * lh_kchar_table_new",
+          "detailed": "Convenience function to create a new linkhash table with char keys.\n\n\nsize\n\n\ninitial table size. \n\n\n\n\nfree_fn\n\n\ncallback function used to free memory for entries. \n\n\n\nOn success, a pointer to the new linkhash table is returned. On error, a null pointer is returned. \n\n\ninitial table size. \ncallback function used to free memory for entries. \nOn success, a pointer to the new linkhash table is returned. On error, a null pointer is returned.",
+          "name": "lh_kchar_table_new",
+          "params": [
+            "size",
+            "free_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int size, lh_entry_free_fn *free_fn)",
+          "brief": "\n        ",
+          "definition": "struct lh_table * lh_kptr_table_new",
+          "detailed": "Convenience function to create a new linkhash table with ptr keys.\n\n\nsize\n\n\ninitial table size. \n\n\n\n\nfree_fn\n\n\ncallback function used to free memory for entries. \n\n\n\nOn success, a pointer to the new linkhash table is returned. On error, a null pointer is returned. \n\n\ninitial table size. \ncallback function used to free memory for entries. \nOn success, a pointer to the new linkhash table is returned. On error, a null pointer is returned.",
+          "name": "lh_kptr_table_new",
+          "params": [
+            "size",
+            "free_fn"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, int new_size)",
+          "brief": "\n        ",
+          "definition": "int lh_table_resize",
+          "detailed": "Resizes the specified table.\n\n\nt\n\n\nPointer to table to resize. \n\n\n\n\nnew_size\n\n\nNew table size. Must be positive.\n\n\n\nOn success, 0 is returned. On error, a negative value is returned. \n\n\nPointer to table to resize. \nNew table size. Must be positive.\nOn success, 0 is returned. On error, a negative value is returned.",
+          "name": "lh_table_resize",
+          "params": [
+            "t",
+            "new_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t)",
+          "brief": "\n        ",
+          "definition": "void lh_table_free",
+          "detailed": "Free a linkhash table.\nIf a lh_entry_free_fn callback free function was provided then it is called for all entries in the table.\n\n\nt\n\n\ntable to free. \n\n\n\n\ntable to free.",
+          "name": "lh_table_free",
+          "params": [
+            "t"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, const void *k, const void *v, const unsigned long h, const unsigned opts)",
+          "brief": "\n        ",
+          "definition": "int lh_table_insert_w_hash",
+          "detailed": "Insert a record into the table using a precalculated key hash.\nThe hash h, which should be calculated with lh_get_hash() on k, is provided by the caller, to allow for optimization when multiple operations with the same key are known to be needed.\n\n\nt\n\n\nthe table to insert into. \n\n\n\n\nk\n\n\na pointer to the key to insert. \n\n\n\n\nv\n\n\na pointer to the value to insert. \n\n\n\n\nh\n\n\nhash value of the key to insert \n\n\n\n\nopts\n\n\nif set to JSON_C_OBJECT_ADD_CONSTANT_KEY, sets lh_entry.k_is_constant so t's free function knows to avoid freeing the key. \n\n\n\n\nthe table to insert into. \na pointer to the key to insert. \na pointer to the value to insert. \nhash value of the key to insert \nif set to JSON_C_OBJECT_ADD_CONSTANT_KEY, sets lh_entry.k_is_constant so t's free function knows to avoid freeing the key.",
+          "name": "lh_table_insert_w_hash",
+          "params": [
+            "t",
+            "k",
+            "v",
+            "h",
+            "opts"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, const void *k, const void *v)",
+          "brief": "\n        ",
+          "definition": "int lh_table_insert",
+          "detailed": "Insert a record into the table.\n\n\nt\n\n\nthe table to insert into. \n\n\n\n\nk\n\n\na pointer to the key to insert. \n\n\n\n\nv\n\n\na pointer to the value to insert.\n\n\n\nOn success, 0 is returned. On error, a negative value is returned. \n\n\nthe table to insert into. \na pointer to the key to insert. \na pointer to the value to insert.\nOn success, 0 is returned. On error, a negative value is returned.",
+          "name": "lh_table_insert",
+          "params": [
+            "t",
+            "k",
+            "v"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, const void *k, const unsigned long h)",
+          "brief": "\n        ",
+          "definition": "struct lh_entry * lh_table_lookup_entry_w_hash",
+          "detailed": "Lookup a record in the table using a precalculated key hash.\nThe hash h, which should be calculated with lh_get_hash() on k, is provided by the caller, to allow for optimization when multiple operations with the same key are known to be needed.\n\n\nt\n\n\nthe table to lookup \n\n\n\n\nk\n\n\na pointer to the key to lookup \n\n\n\n\nh\n\n\nhash value of the key to lookup \n\n\n\na pointer to the record structure of the value or NULL if it does not exist. \n\n\nthe table to lookup \na pointer to the key to lookup \nhash value of the key to lookup \na pointer to the record structure of the value or NULL if it does not exist.",
+          "name": "lh_table_lookup_entry_w_hash",
+          "params": [
+            "t",
+            "k",
+            "h"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, const void *k)",
+          "brief": "\n        ",
+          "definition": "struct lh_entry * lh_table_lookup_entry",
+          "detailed": "Lookup a record in the table.\n\n\nt\n\n\nthe table to lookup \n\n\n\n\nk\n\n\na pointer to the key to lookup \n\n\n\na pointer to the record structure of the value or NULL if it does not exist. \n\n\nthe table to lookup \na pointer to the key to lookup \na pointer to the record structure of the value or NULL if it does not exist.",
+          "name": "lh_table_lookup_entry",
+          "params": [
+            "t",
+            "k"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, const void *k, void **v)",
+          "brief": "\n        ",
+          "definition": "json_bool lh_table_lookup_ex",
+          "detailed": "Lookup a record in the table.\n\n\nt\n\n\nthe table to lookup \n\n\n\n\nk\n\n\na pointer to the key to lookup \n\n\n\n\nv\n\n\na pointer to a where to store the found value (set to NULL if it doesn't exist). \n\n\n\nwhether or not the key was found \n\n\nthe table to lookup \na pointer to the key to lookup \na pointer to a where to store the found value (set to NULL if it doesn't exist). \nwhether or not the key was found",
+          "name": "lh_table_lookup_ex",
+          "params": [
+            "t",
+            "k",
+            "v"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, struct lh_entry *e)",
+          "brief": "\n        ",
+          "definition": "int lh_table_delete_entry",
+          "detailed": "Delete a record from the table.\nIf a callback free function is provided then it is called for the for the item being deleted. \n\nt\n\n\nthe table to delete from. \n\n\n\n\ne\n\n\na pointer to the entry to delete. \n\n\n\n0 if the item was deleted. \n\n-1 if it was not found. \n\n\nthe table to delete from. \na pointer to the entry to delete. \n0 if the item was deleted. \n-1 if it was not found.",
+          "name": "lh_table_delete_entry",
+          "params": [
+            "t",
+            "e"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, struct lh_entry *first_entry)",
+          "brief": "\n        ",
+          "definition": "int lh_table_delete_entry_to_tail",
+          "detailed": "Delete all entries from the specified one to the tail of the list. Same as calling lh_table_delete_entry() on each of them.\n\n\nt\n\n\nthe table to delete from. \n\n\n\n\ne\n\n\na pointer to the first entry to delete. \n\n\n\n0 if the item was deleted. \n\n-1 if it was not found. \n\n\nthe table to delete from. \na pointer to the first entry to delete. \n0 if the item was deleted. \n-1 if it was not found.",
+          "name": "lh_table_delete_entry_to_tail",
+          "params": [
+            "t",
+            "e"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t, const void *k)",
+          "brief": "\n        ",
+          "definition": "int lh_table_delete",
+          "detailed": "Delete a record from the table.\nIf a callback free function is provided then it is called for the for the item being deleted. \n\nt\n\n\nthe table to delete from. \n\n\n\n\nk\n\n\na pointer to the key to delete. \n\n\n\n0 if the item was deleted. \n\n-1 if it was not found. \n\n\nthe table to delete from. \na pointer to the key to delete. \n0 if the item was deleted. \n-1 if it was not found.",
+          "name": "lh_table_delete",
+          "params": [
+            "t",
+            "k"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct lh_table *t)",
+          "brief": "\n        ",
+          "definition": "int lh_table_length",
+          "detailed": "Return the number of entries in the table.",
+          "name": "lh_table_length",
+          "params": [
+            "t"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HASH_LITTLE_ENDIAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HASH_BIG_ENDIAN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "hashsize",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "hashmask",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "rot",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mix",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "final",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RANDOM_SEED_TYPE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "lh_hash_fn* char_hash_fn",
+          "detailed": "\n        ",
+          "name": "char_hash_fn",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "linkhash.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

@@ -1,0 +1,177 @@
+{
+  "files": {
+    "tests/libcap_launch_test.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *data)",
+          "brief": "\n        ",
+          "definition": "static int clean_out",
+          "detailed": "\n        ",
+          "name": "clean_out",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MORE_THAN_ENOUGH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NO_MORE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int test_case_s::pass_on",
+          "detailed": "\n        ",
+          "name": "pass_on",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_case_s::chroot",
+          "detailed": "\n        ",
+          "name": "chroot",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uid_t test_case_s::uid",
+          "detailed": "\n        ",
+          "name": "uid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "gid_t test_case_s::gid",
+          "detailed": "\n        ",
+          "name": "gid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int test_case_s::ngroups",
+          "detailed": "\n        ",
+          "name": "ngroups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[20]",
+          "brief": "\n        ",
+          "definition": "const gid_t test_case_s::groups[20]",
+          "detailed": "\n        ",
+          "name": "groups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[20]",
+          "brief": "\n        ",
+          "definition": "const char* test_case_s::args[20]",
+          "detailed": "\n        ",
+          "name": "args",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char** test_case_s::envp",
+          "detailed": "\n        ",
+          "name": "envp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* test_case_s::iab",
+          "detailed": "\n        ",
+          "name": "iab",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cap_mode_t test_case_s::mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int test_case_s::launch_abort",
+          "detailed": "\n        ",
+          "name": "launch_abort",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int test_case_s::result",
+          "detailed": "\n        ",
+          "name": "result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *detail)",
+          "brief": "\n        ",
+          "definition": "int(* test_case_s::callback_fn) (void *detail)",
+          "detailed": "\n        ",
+          "name": "callback_fn",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/libcap_launch_test.c",
+  "schema_version": 1,
+  "version": "2.78"
+}

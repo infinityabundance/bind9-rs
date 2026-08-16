@@ -1,0 +1,29 @@
+{
+  "files": {
+    "fuzz/libidn2_to_unicode_8z8z_fuzzer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const uint8_t *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "int LLVMFuzzerTestOneInput",
+          "detailed": "\n        ",
+          "name": "LLVMFuzzerTestOneInput",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "fuzz/libidn2_to_unicode_8z8z_fuzzer.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

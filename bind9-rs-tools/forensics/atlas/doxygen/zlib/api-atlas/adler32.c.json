@@ -1,0 +1,193 @@
+{
+  "files": {
+    "adler32.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(uLong adler, Bytef *buf, z_size_t len)",
+          "brief": "\n        ",
+          "definition": "uLong adler32_z",
+          "detailed": "\n        ",
+          "name": "adler32_z",
+          "params": [
+            "adler",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong adler, Bytef *buf, uInt len)",
+          "brief": "\n        ",
+          "definition": "uLong adler32",
+          "detailed": "\n        ",
+          "name": "adler32",
+          "params": [
+            "adler",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong adler1, uLong adler2, long len2)",
+          "brief": "\n        ",
+          "definition": "static uLong adler32_combine_",
+          "detailed": "\n        ",
+          "name": "adler32_combine_",
+          "params": [
+            "adler1",
+            "adler2",
+            "len2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uLong adler1, uLong adler2, long len2)",
+          "brief": "\n        ",
+          "definition": "uLong adler32_combine",
+          "detailed": "\n        ",
+          "name": "adler32_combine",
+          "params": [
+            "adler1",
+            "adler2",
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong adler1, uLong adler2, long len2)",
+          "brief": "\n        ",
+          "definition": "uLong adler32_combine64",
+          "detailed": "\n        ",
+          "name": "adler32_combine64",
+          "params": [
+            "adler1",
+            "adler2",
+            "len2"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BASE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NMAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO1",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO2",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO4",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO8",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DO16",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MOD",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MOD28",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MOD63",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "adler32.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

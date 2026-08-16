@@ -1,0 +1,135 @@
+{
+  "files": {
+    "tests/test-IdnaTest-txt.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char **line)",
+          "brief": "\n        ",
+          "definition": "static const char * _nextField",
+          "detailed": "\n        ",
+          "name": "_nextField",
+          "params": [
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *fname, int(*scan)(char *))",
+          "brief": "\n        ",
+          "definition": "static int _scan_file",
+          "detailed": "\n        ",
+          "name": "_scan_file",
+          "params": [
+            "fname",
+            "scan"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *src_u8)",
+          "brief": "\n        ",
+          "definition": "static uint8_t * _decodeIdnaTest",
+          "detailed": "\n        ",
+          "name": "_decodeIdnaTest",
+          "params": [
+            "src_u8"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *source, const char *expected, int transitional, int expected_toASCII_failure)",
+          "brief": "\n        ",
+          "definition": "static void _check_toASCII",
+          "detailed": "\n        ",
+          "name": "_check_toASCII",
+          "params": [
+            "source",
+            "expected",
+            "transitional",
+            "expected_toASCII_failure"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *linep)",
+          "brief": "\n        ",
+          "definition": "static int test_IdnaTest",
+          "detailed": "\n        ",
+          "name": "test_IdnaTest",
+          "params": [
+            "linep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, const char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "IDNATEST_TXT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ok",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int failed",
+          "detailed": "\n        ",
+          "name": "failed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int break_on_error",
+          "detailed": "\n        ",
+          "name": "break_on_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int verbose",
+          "detailed": "\n        ",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test-IdnaTest-txt.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

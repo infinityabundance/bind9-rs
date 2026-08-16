@@ -1,0 +1,62 @@
+{
+  "files": {
+    "tests/test_json_patch.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *jo)",
+          "brief": "\n        ",
+          "definition": "void test_json_patch_op",
+          "detailed": "\n        ",
+          "name": "test_json_patch_op",
+          "params": [
+            "jo"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *testdir, const char *filename)",
+          "brief": "\n        ",
+          "definition": "void test_json_patch_using_file",
+          "detailed": "\n        ",
+          "name": "test_json_patch_using_file",
+          "params": [
+            "testdir",
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PATH_MAX",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/test_json_patch.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

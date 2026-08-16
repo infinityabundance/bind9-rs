@@ -1,0 +1,16 @@
+{
+  "files": {
+    "strdup_compat.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "strdup_compat.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

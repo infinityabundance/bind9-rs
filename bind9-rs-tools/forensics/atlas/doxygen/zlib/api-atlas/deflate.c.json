@@ -1,0 +1,629 @@
+{
+  "files": {
+    "deflate.c": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "need_more",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "block_done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "finish_started",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "finish_done",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "block_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(deflate_state *s, int flush)",
+          "brief": "\n        ",
+          "definition": "static block_state deflate_stored",
+          "detailed": "\n        ",
+          "name": "deflate_stored",
+          "params": [
+            "s",
+            "flush"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, int flush)",
+          "brief": "\n        ",
+          "definition": "static block_state deflate_fast",
+          "detailed": "\n        ",
+          "name": "deflate_fast",
+          "params": [
+            "s",
+            "flush"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, int flush)",
+          "brief": "\n        ",
+          "definition": "static block_state deflate_slow",
+          "detailed": "\n        ",
+          "name": "deflate_slow",
+          "params": [
+            "s",
+            "flush"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, int flush)",
+          "brief": "\n        ",
+          "definition": "static block_state deflate_rle",
+          "detailed": "\n        ",
+          "name": "deflate_rle",
+          "params": [
+            "s",
+            "flush"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s, int flush)",
+          "brief": "\n        ",
+          "definition": "static block_state deflate_huff",
+          "detailed": "\n        ",
+          "name": "deflate_huff",
+          "params": [
+            "s",
+            "flush"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static void slide_hash",
+          "detailed": "\n        ",
+          "name": "slide_hash",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, Bytef *buf, unsigned size)",
+          "brief": "\n        ",
+          "definition": "static unsigned read_buf",
+          "detailed": "\n        ",
+          "name": "read_buf",
+          "params": [
+            "strm",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static void fill_window",
+          "detailed": "\n        ",
+          "name": "fill_window",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, int level, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int deflateInit_",
+          "detailed": "\n        ",
+          "name": "deflateInit_",
+          "params": [
+            "strm",
+            "level",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int level, int method, int windowBits, int memLevel, int strategy, char *version, int stream_size)",
+          "brief": "\n        ",
+          "definition": "int deflateInit2_",
+          "detailed": "\n        ",
+          "name": "deflateInit2_",
+          "params": [
+            "strm",
+            "level",
+            "method",
+            "windowBits",
+            "memLevel",
+            "strategy",
+            "version",
+            "stream_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "static int deflateStateCheck",
+          "detailed": "\n        ",
+          "name": "deflateStateCheck",
+          "params": [
+            "strm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt dictLength)",
+          "brief": "\n        ",
+          "definition": "int deflateSetDictionary",
+          "detailed": "\n        ",
+          "name": "deflateSetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, Bytef *dictionary, uInt *dictLength)",
+          "brief": "\n        ",
+          "definition": "int deflateGetDictionary",
+          "detailed": "\n        ",
+          "name": "deflateGetDictionary",
+          "params": [
+            "strm",
+            "dictionary",
+            "dictLength"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int deflateResetKeep",
+          "detailed": "\n        ",
+          "name": "deflateResetKeep",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s)",
+          "brief": "\n        ",
+          "definition": "static void lm_init",
+          "detailed": "\n        ",
+          "name": "lm_init",
+          "params": [
+            "s"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int deflateReset",
+          "detailed": "\n        ",
+          "name": "deflateReset",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, gz_headerp head)",
+          "brief": "\n        ",
+          "definition": "int deflateSetHeader",
+          "detailed": "\n        ",
+          "name": "deflateSetHeader",
+          "params": [
+            "strm",
+            "head"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, unsigned *pending, int *bits)",
+          "brief": "\n        ",
+          "definition": "int deflatePending",
+          "detailed": "\n        ",
+          "name": "deflatePending",
+          "params": [
+            "strm",
+            "pending",
+            "bits"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int bits, int value)",
+          "brief": "\n        ",
+          "definition": "int deflatePrime",
+          "detailed": "\n        ",
+          "name": "deflatePrime",
+          "params": [
+            "strm",
+            "bits",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int level, int strategy)",
+          "brief": "\n        ",
+          "definition": "int deflateParams",
+          "detailed": "\n        ",
+          "name": "deflateParams",
+          "params": [
+            "strm",
+            "level",
+            "strategy"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, int good_length, int max_lazy, int nice_length, int max_chain)",
+          "brief": "\n        ",
+          "definition": "int deflateTune",
+          "detailed": "\n        ",
+          "name": "deflateTune",
+          "params": [
+            "strm",
+            "good_length",
+            "max_lazy",
+            "nice_length",
+            "max_chain"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm, uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "uLong deflateBound",
+          "detailed": "\n        ",
+          "name": "deflateBound",
+          "params": [
+            "strm",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, uInt b)",
+          "brief": "\n        ",
+          "definition": "static void putShortMSB",
+          "detailed": "\n        ",
+          "name": "putShortMSB",
+          "params": [
+            "s",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "static void flush_pending",
+          "detailed": "\n        ",
+          "name": "flush_pending",
+          "params": [
+            "strm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_streamp strm, int flush)",
+          "brief": "\n        ",
+          "definition": "int deflate",
+          "detailed": "\n        ",
+          "name": "deflate",
+          "params": [
+            "strm",
+            "flush"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp strm)",
+          "brief": "\n        ",
+          "definition": "int deflateEnd",
+          "detailed": "\n        ",
+          "name": "deflateEnd",
+          "params": [
+            "strm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(z_streamp dest, z_streamp source)",
+          "brief": "\n        ",
+          "definition": "int deflateCopy",
+          "detailed": "\n        ",
+          "name": "deflateCopy",
+          "params": [
+            "dest",
+            "source"
+          ],
+          "static": false
+        },
+        {
+          "args": "(deflate_state *s, IPos cur_match)",
+          "brief": "\n        ",
+          "definition": "static uInt longest_match",
+          "detailed": "\n        ",
+          "name": "longest_match",
+          "params": [
+            "s",
+            "cur_match"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NIL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TOO_FAR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RANK",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UPDATE_HASH",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INSERT_STRING",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CLEAR_HASH",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "HCRC_UPDATE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "check_match",
+          "params": [
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLUSH_BLOCK_ONLY",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLUSH_BLOCK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_STORED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MIN",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")(deflate_state *s, int flush)",
+          "brief": "\n        ",
+          "definition": "typedef block_state(* compress_func) (deflate_state *s, int flush)",
+          "detailed": "\n        ",
+          "name": "compress_func",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct config_s config",
+          "detailed": "\n        ",
+          "name": "config",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char deflate_copyright[]",
+          "detailed": "\n        ",
+          "name": "deflate_copyright",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "config configuration_table[10]",
+          "detailed": "\n        ",
+          "name": "configuration_table",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush config_s::good_length",
+          "detailed": "\n        ",
+          "name": "good_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush config_s::max_lazy",
+          "detailed": "\n        ",
+          "name": "max_lazy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush config_s::nice_length",
+          "detailed": "\n        ",
+          "name": "nice_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ush config_s::max_chain",
+          "detailed": "\n        ",
+          "name": "max_chain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "compress_func config_s::func",
+          "detailed": "\n        ",
+          "name": "func",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "deflate.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

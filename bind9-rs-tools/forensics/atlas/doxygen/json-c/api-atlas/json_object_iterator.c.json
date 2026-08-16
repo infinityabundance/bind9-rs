@@ -1,0 +1,105 @@
+{
+  "files": {
+    "json_object_iterator.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct json_object_iterator json_object_iter_begin",
+          "detailed": "",
+          "name": "json_object_iter_begin",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "struct json_object_iterator json_object_iter_end",
+          "detailed": "",
+          "name": "json_object_iter_end",
+          "params": [
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct json_object_iterator *iter)",
+          "brief": "\n        ",
+          "definition": "void json_object_iter_next",
+          "detailed": "",
+          "name": "json_object_iter_next",
+          "params": [
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object_iterator *iter)",
+          "brief": "\n        ",
+          "definition": "const char * json_object_iter_peek_name",
+          "detailed": "",
+          "name": "json_object_iter_peek_name",
+          "params": [
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object_iterator *iter)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_iter_peek_value",
+          "detailed": "",
+          "name": "json_object_iter_peek_value",
+          "params": [
+            "iter"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const struct json_object_iterator *iter1, const struct json_object_iterator *iter2)",
+          "brief": "\n        ",
+          "definition": "json_bool json_object_iter_equal",
+          "detailed": "",
+          "name": "json_object_iter_equal",
+          "params": [
+            "iter1",
+            "iter2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "struct json_object_iterator json_object_iter_init_default",
+          "detailed": "",
+          "name": "json_object_iter_init_default",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const void* kObjectEndIterValue",
+          "detailed": "How It Works\nFor each JSON Object, json-c maintains a linked list of zero or more lh_entry (link-hash entry) structures inside the Object's link-hash table (lh_table).\nEach lh_entry structure on the JSON Object's linked list represents a single name/value pair. The \"next\" field of the last lh_entry in the list is set to NULL, which terminates the list.\nWe represent a valid iterator that refers to an actual name/value pair via a pointer to the pair's lh_entry structure set as the iterator's opaque_ field.\nWe follow json-c's current pair list representation by representing a valid \"end\" iterator (one that refers past the last pair) with a NULL value in the iterator's opaque_ field.\nA JSON Object without any pairs in it will have the \"head\" field of its lh_table structure set to NULL. For such an object, json_object_iter_begin will return an iterator with the opaque_ field set to NULL, which is equivalent to the \"end\" iterator.\nWhen iterating, we simply update the iterator's opaque_ field to point to the next lh_entry structure in the linked list. opaque_ will become NULL once we iterate past the last pair in the list, which makes the iterator equivalent to the \"end\" iterator. Our current representation of the \"end\" iterator;\nMay not always be NULL \n\n\nMay not always be NULL",
+          "name": "kObjectEndIterValue",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "json_object_iterator.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

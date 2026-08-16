@@ -1,0 +1,97 @@
+{
+  "files": {
+    "lib/decode.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *input, uint32_t **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_8z4z",
+          "detailed": "idn2_to_unicode_8z4z: @input: Input zero-terminated UTF-8 string. @output: Newly allocated UTF-32/UCS-4 output string. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-8 format into a UTF-32 string (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_8z4z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *input, uint32_t **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_4z4z",
+          "detailed": "idn2_to_unicode_4z4z: @input: Input zero-terminated UTF-32 string. @output: Newly allocated UTF-32 output string. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-32 format into a UTF-32 string (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_4z4z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint32_t *in, size_t inlen, uint32_t *out, size_t *outlen, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_44i",
+          "detailed": "idn2_to_unicode_44i: @in: Input array with UTF-32 code points. @inlen: number of code points of input array @out: output array with UTF-32 code points. @outlen: on input, maximum size of output array with UTF-32 code points, on exit, actual size of output array with UTF-32 code points. @flags: Currently unused.\nThe ToUnicode operation takes a sequence of UTF-32 code points that make up one domain label and returns a sequence of UTF-32 code points. If the input sequence is a label in ACE form, then the result is an equivalent internationalized label that is not in ACE form, otherwise the original sequence is returned unaltered.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_44i",
+          "params": [
+            "in",
+            "inlen",
+            "out",
+            "outlen",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_8z8z",
+          "detailed": "idn2_to_unicode_8z8z: @input: Input zero-terminated UTF-8 string. @output: Newly allocated UTF-8 output string. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-8 format into a UTF-8 string (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_8z8z",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_8zlz",
+          "detailed": "idn2_to_unicode_8zlz: @input: Input zero-terminated UTF-8 string. @output: Newly allocated output string in current locale's character set. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in UTF-8 format into a string encoded in the current locale's character set (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_8zlz",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *input, char **output, int flags)",
+          "brief": "\n        ",
+          "definition": "int idn2_to_unicode_lzlz",
+          "detailed": "idn2_to_unicode_lzlz: @input: Input zero-terminated string encoded in the current locale's character set. @output: Newly allocated output string in current locale's character set. @flags: Currently unused.\nConverts a possibly ACE encoded domain name in the locale's character set into a string encoded in the current locale's character set (punycode decoding). The output buffer will be zero-terminated and must be deallocated by the caller.\n@output may be NULL to test lookup of @input without allocating memory.\nReturns: IDN2_OK: The conversion was successful. IDN2_TOO_BIG_DOMAIN: The domain is too long. IDN2_TOO_BIG_LABEL: A label is would have been too long. IDN2_ENCODING_ERROR: Output character conversion failed. IDN2_ICONV_FAIL: Input character conversion failed. IDN2_MALLOC: Memory allocation failed.\nSince: 2.0.0",
+          "name": "idn2_to_unicode_lzlz",
+          "params": [
+            "input",
+            "output",
+            "flags"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/decode.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

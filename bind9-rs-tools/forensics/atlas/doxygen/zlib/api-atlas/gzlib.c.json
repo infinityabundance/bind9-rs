@@ -1,0 +1,238 @@
+{
+  "files": {
+    "gzlib.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(gz_statep state)",
+          "brief": "\n        ",
+          "definition": "static void gz_reset",
+          "detailed": "\n        ",
+          "name": "gz_reset",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *path, int fd, char *mode)",
+          "brief": "\n        ",
+          "definition": "static gzFile gz_open",
+          "detailed": "\n        ",
+          "name": "gz_open",
+          "params": [
+            "path",
+            "fd",
+            "mode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *path, char *mode)",
+          "brief": "\n        ",
+          "definition": "gzFile gzopen",
+          "detailed": "\n        ",
+          "name": "gzopen",
+          "params": [
+            "path",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *path, char *mode)",
+          "brief": "\n        ",
+          "definition": "gzFile gzopen64",
+          "detailed": "\n        ",
+          "name": "gzopen64",
+          "params": [
+            "path",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fd, char *mode)",
+          "brief": "\n        ",
+          "definition": "gzFile gzdopen",
+          "detailed": "\n        ",
+          "name": "gzdopen",
+          "params": [
+            "fd",
+            "mode"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, unsigned size)",
+          "brief": "\n        ",
+          "definition": "int gzbuffer",
+          "detailed": "\n        ",
+          "name": "gzbuffer",
+          "params": [
+            "file",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzrewind",
+          "detailed": "\n        ",
+          "name": "gzrewind",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, long offset, int whence)",
+          "brief": "\n        ",
+          "definition": "long gzseek64",
+          "detailed": "\n        ",
+          "name": "gzseek64",
+          "params": [
+            "file",
+            "offset",
+            "whence"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, long offset, int whence)",
+          "brief": "\n        ",
+          "definition": "long gzseek",
+          "detailed": "\n        ",
+          "name": "gzseek",
+          "params": [
+            "file",
+            "offset",
+            "whence"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "long gztell64",
+          "detailed": "\n        ",
+          "name": "gztell64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "long gztell",
+          "detailed": "\n        ",
+          "name": "gztell",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "long gzoffset64",
+          "detailed": "\n        ",
+          "name": "gzoffset64",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "long gzoffset",
+          "detailed": "\n        ",
+          "name": "gzoffset",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "int gzeof",
+          "detailed": "\n        ",
+          "name": "gzeof",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file, int *errnum)",
+          "brief": "\n        ",
+          "definition": "char * gzerror",
+          "detailed": "\n        ",
+          "name": "gzerror",
+          "params": [
+            "file",
+            "errnum"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gzFile file)",
+          "brief": "\n        ",
+          "definition": "void gzclearerr",
+          "detailed": "\n        ",
+          "name": "gzclearerr",
+          "params": [
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(gz_statep state, int err, char *msg)",
+          "brief": "\n        ",
+          "definition": "void gz_error",
+          "detailed": "\n        ",
+          "name": "gz_error",
+          "params": [
+            "state",
+            "err",
+            "msg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned gz_intmax",
+          "detailed": "\n        ",
+          "name": "gz_intmax",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LSEEK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "gzlib.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

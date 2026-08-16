@@ -1,0 +1,61 @@
+{
+  "files": {
+    "tests/weaver.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "pthread_t weaver_thread",
+          "detailed": "\n        ",
+          "name": "weaver_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void weaver_setup",
+          "detailed": "\n        ",
+          "name": "weaver_setup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int n)",
+          "brief": "\n        ",
+          "definition": "int weaver_waitforit",
+          "detailed": "\n        ",
+          "name": "weaver_waitforit",
+          "params": [
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void weaver_terminate",
+          "detailed": "\n        ",
+          "name": "weaver_terminate",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/weaver.h",
+  "schema_version": 1,
+  "version": "2.78"
+}

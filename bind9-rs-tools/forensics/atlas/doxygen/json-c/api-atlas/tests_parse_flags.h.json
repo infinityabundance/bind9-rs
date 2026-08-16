@@ -1,0 +1,29 @@
+{
+  "files": {
+    "tests/parse_flags.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int parse_flags",
+          "detailed": "\n        ",
+          "name": "parse_flags",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/parse_flags.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

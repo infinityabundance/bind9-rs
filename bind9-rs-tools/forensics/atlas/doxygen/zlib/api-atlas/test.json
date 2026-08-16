@@ -1,0 +1,726 @@
+{
+  "files": {
+    "test/example.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(Byte *compr, uLong comprLen, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_compress",
+          "detailed": "\n        ",
+          "name": "test_compress",
+          "params": [
+            "compr",
+            "comprLen",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *fname, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_gzio",
+          "detailed": "\n        ",
+          "name": "test_gzio",
+          "params": [
+            "fname",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_deflate",
+          "detailed": "\n        ",
+          "name": "test_deflate",
+          "params": [
+            "compr",
+            "comprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_inflate",
+          "detailed": "\n        ",
+          "name": "test_inflate",
+          "params": [
+            "compr",
+            "comprLen",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_large_deflate",
+          "detailed": "\n        ",
+          "name": "test_large_deflate",
+          "params": [
+            "compr",
+            "comprLen",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_large_inflate",
+          "detailed": "\n        ",
+          "name": "test_large_inflate",
+          "params": [
+            "compr",
+            "comprLen",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong *comprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_flush",
+          "detailed": "\n        ",
+          "name": "test_flush",
+          "params": [
+            "compr",
+            "comprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_sync",
+          "detailed": "\n        ",
+          "name": "test_sync",
+          "params": [
+            "compr",
+            "comprLen",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_dict_deflate",
+          "detailed": "\n        ",
+          "name": "test_dict_deflate",
+          "params": [
+            "compr",
+            "comprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(Byte *compr, uLong comprLen, Byte *uncompr, uLong uncomprLen)",
+          "brief": "\n        ",
+          "definition": "static void test_dict_inflate",
+          "detailed": "\n        ",
+          "name": "test_dict_inflate",
+          "params": [
+            "compr",
+            "comprLen",
+            "uncompr",
+            "uncomprLen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TESTFILE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_ERR",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char hello[]",
+          "detailed": "\n        ",
+          "name": "hello",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "char dictionary[]",
+          "detailed": "\n        ",
+          "name": "dictionary",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uLong dictId",
+          "detailed": "\n        ",
+          "name": "dictId",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "alloc_func zalloc",
+          "detailed": "\n        ",
+          "name": "zalloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "free_func zfree",
+          "detailed": "\n        ",
+          "name": "zfree",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "test/infcover.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *mem, unsigned count, unsigned size)",
+          "brief": "\n        ",
+          "definition": "static void * mem_alloc",
+          "detailed": "\n        ",
+          "name": "mem_alloc",
+          "params": [
+            "mem",
+            "count",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *mem, void *ptr)",
+          "brief": "\n        ",
+          "definition": "static void mem_free",
+          "detailed": "\n        ",
+          "name": "mem_free",
+          "params": [
+            "mem",
+            "ptr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm)",
+          "brief": "\n        ",
+          "definition": "static void mem_setup",
+          "detailed": "\n        ",
+          "name": "mem_setup",
+          "params": [
+            "strm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm, size_t limit)",
+          "brief": "\n        ",
+          "definition": "static void mem_limit",
+          "detailed": "\n        ",
+          "name": "mem_limit",
+          "params": [
+            "strm",
+            "limit"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm, char *prefix)",
+          "brief": "\n        ",
+          "definition": "static void mem_used",
+          "detailed": "\n        ",
+          "name": "mem_used",
+          "params": [
+            "strm",
+            "prefix"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm, char *prefix)",
+          "brief": "\n        ",
+          "definition": "static void mem_high",
+          "detailed": "\n        ",
+          "name": "mem_high",
+          "params": [
+            "strm",
+            "prefix"
+          ],
+          "static": true
+        },
+        {
+          "args": "(z_stream *strm, char *prefix)",
+          "brief": "\n        ",
+          "definition": "static void mem_done",
+          "detailed": "\n        ",
+          "name": "mem_done",
+          "params": [
+            "strm",
+            "prefix"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *hex, unsigned *len)",
+          "brief": "\n        ",
+          "definition": "static unsigned char * h2b",
+          "detailed": "\n        ",
+          "name": "h2b",
+          "params": [
+            "hex",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *hex, char *what, unsigned step, int win, unsigned len, int err)",
+          "brief": "\n        ",
+          "definition": "static void inf",
+          "detailed": "\n        ",
+          "name": "inf",
+          "params": [
+            "hex",
+            "what",
+            "step",
+            "win",
+            "len",
+            "err"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cover_support",
+          "detailed": "\n        ",
+          "name": "cover_support",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cover_wrap",
+          "detailed": "\n        ",
+          "name": "cover_wrap",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *desc, unsigned char **buf)",
+          "brief": "\n        ",
+          "definition": "static unsigned pull",
+          "detailed": "\n        ",
+          "name": "pull",
+          "params": [
+            "desc",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *desc, unsigned char *buf, unsigned len)",
+          "brief": "\n        ",
+          "definition": "static int push",
+          "detailed": "\n        ",
+          "name": "push",
+          "params": [
+            "desc",
+            "buf",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cover_back",
+          "detailed": "\n        ",
+          "name": "cover_back",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *hex, char *id, int err)",
+          "brief": "\n        ",
+          "definition": "static int try",
+          "detailed": "\n        ",
+          "name": "try",
+          "params": [
+            "hex",
+            "id",
+            "err"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cover_inflate",
+          "detailed": "\n        ",
+          "name": "cover_inflate",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cover_trees",
+          "detailed": "\n        ",
+          "name": "cover_trees",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cover_fast",
+          "detailed": "\n        ",
+          "name": "cover_fast",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_INTERNAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* mem_item::ptr",
+          "detailed": "\n        ",
+          "name": "ptr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t mem_item::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct mem_item* mem_item::next",
+          "detailed": "\n        ",
+          "name": "next",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct mem_item* mem_zone::first",
+          "detailed": "\n        ",
+          "name": "first",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t mem_zone::total",
+          "detailed": "\n        ",
+          "name": "total",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t mem_zone::highwater",
+          "detailed": "\n        ",
+          "name": "highwater",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t mem_zone::limit",
+          "detailed": "\n        ",
+          "name": "limit",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mem_zone::notlifo",
+          "detailed": "\n        ",
+          "name": "notlifo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int mem_zone::rogue",
+          "detailed": "\n        ",
+          "name": "rogue",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "test/minigzip.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(char *)",
+          "brief": "\n        ",
+          "definition": "int unlink",
+          "detailed": "\n        ",
+          "name": "unlink",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *msg)",
+          "brief": "\n        ",
+          "definition": "static void error",
+          "detailed": "\n        ",
+          "name": "error",
+          "params": [
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *in, gzFile out)",
+          "brief": "\n        ",
+          "definition": "static void gz_compress",
+          "detailed": "\n        ",
+          "name": "gz_compress",
+          "params": [
+            "in",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(gzFile in, FILE *out)",
+          "brief": "\n        ",
+          "definition": "static void gz_uncompress",
+          "detailed": "\n        ",
+          "name": "gz_uncompress",
+          "params": [
+            "in",
+            "out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *file, char *mode)",
+          "brief": "\n        ",
+          "definition": "static void file_compress",
+          "detailed": "\n        ",
+          "name": "file_compress",
+          "params": [
+            "file",
+            "mode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *file)",
+          "brief": "\n        ",
+          "definition": "static void file_uncompress",
+          "detailed": "\n        ",
+          "name": "file_uncompress",
+          "params": [
+            "file"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SET_BINARY_MODE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GZ_SUFFIX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SUFFIX_LEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFLEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_NAME_LEN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "local",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* prog",
+          "detailed": "\n        ",
+          "name": "prog",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "test",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

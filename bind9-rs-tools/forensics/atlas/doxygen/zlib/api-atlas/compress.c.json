@@ -1,0 +1,67 @@
+{
+  "files": {
+    "compress.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong sourceLen, int level)",
+          "brief": "\n        ",
+          "definition": "int compress2",
+          "detailed": "\n        ",
+          "name": "compress2",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen",
+            "level"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uLongf *destLen, Bytef *source, uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "int compress",
+          "detailed": "\n        ",
+          "name": "compress",
+          "params": [
+            "dest",
+            "destLen",
+            "source",
+            "sourceLen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong sourceLen)",
+          "brief": "\n        ",
+          "definition": "uLong compressBound",
+          "detailed": "\n        ",
+          "name": "compressBound",
+          "params": [
+            "sourceLen"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZLIB_INTERNAL",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "compress.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

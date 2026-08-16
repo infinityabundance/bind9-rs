@@ -1,0 +1,1067 @@
+{
+  "files": {
+    "protobuf-c/protobuf-c.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *allocator_data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * system_alloc",
+          "detailed": "\n        ",
+          "name": "system_alloc",
+          "params": [
+            "allocator_data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *allocator_data, void *data)",
+          "brief": "\n        ",
+          "definition": "static void system_free",
+          "detailed": "\n        ",
+          "name": "system_free",
+          "params": [
+            "allocator_data",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCAllocator *allocator, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void * do_alloc",
+          "detailed": "\n        ",
+          "name": "do_alloc",
+          "params": [
+            "allocator",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCAllocator *allocator, void *data)",
+          "brief": "\n        ",
+          "definition": "static void do_free",
+          "detailed": "\n        ",
+          "name": "do_free",
+          "params": [
+            "allocator",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCBuffer *buffer, size_t len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c_buffer_simple_append",
+          "detailed": "\n        ",
+          "name": "protobuf_c_buffer_simple_append",
+          "params": [
+            "buffer",
+            "len",
+            "data"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ProtobufCMessage *earlier_msg, ProtobufCMessage *latter_msg, ProtobufCAllocator *allocator)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean merge_messages",
+          "detailed": "Merge earlier message into a latter message.\nFor numeric types and strings, if the same value appears multiple times, the parser accepts the last value it sees. For embedded message fields, the parser merges multiple instances of the same field. That is, all singular scalar fields in the latter instance replace those in the former, singular embedded messages are merged, and repeated fields are concatenated.\nThe earlier message should be freed after calling this function, as some of its fields may have been reused and changed to their default values during the merge.",
+          "name": "merge_messages",
+          "params": [
+            "earlier_msg",
+            "latter_msg",
+            "allocator"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCType type, size_t len, const uint8_t *data, size_t *count_out)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean count_packed_elements",
+          "detailed": "Count packed elements.\nGiven a raw slab of packed-repeated values, determine the number of elements. This function detects certain kinds of errors but not others; the remaining error checking is done by parse_packed_repeated_member().",
+          "name": "count_packed_elements",
+          "params": [
+            "type",
+            "len",
+            "data",
+            "count_out"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static uint32_t parse_uint32",
+          "detailed": "\n        ",
+          "name": "parse_uint32",
+          "params": [
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static uint32_t parse_int32",
+          "detailed": "\n        ",
+          "name": "parse_int32",
+          "params": [
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t v)",
+          "brief": "\n        ",
+          "definition": "static int32_t unzigzag32",
+          "detailed": "\n        ",
+          "name": "unzigzag32",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static uint32_t parse_fixed_uint32",
+          "detailed": "\n        ",
+          "name": "parse_fixed_uint32",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static uint64_t parse_uint64",
+          "detailed": "\n        ",
+          "name": "parse_uint64",
+          "params": [
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint64_t v)",
+          "brief": "\n        ",
+          "definition": "static int64_t unzigzag64",
+          "detailed": "\n        ",
+          "name": "unzigzag64",
+          "params": [
+            "v"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static uint64_t parse_fixed_uint64",
+          "detailed": "\n        ",
+          "name": "parse_fixed_uint64",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_boolean",
+          "detailed": "\n        ",
+          "name": "parse_boolean",
+          "params": [
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ScannedMember *scanned_member, void *member, ProtobufCAllocator *allocator, protobuf_c_boolean maybe_clear)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_required_member",
+          "detailed": "\n        ",
+          "name": "parse_required_member",
+          "params": [
+            "scanned_member",
+            "member",
+            "allocator",
+            "maybe_clear"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ScannedMember *scanned_member, void *member, ProtobufCMessage *message, ProtobufCAllocator *allocator)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_oneof_member",
+          "detailed": "\n        ",
+          "name": "parse_oneof_member",
+          "params": [
+            "scanned_member",
+            "member",
+            "message",
+            "allocator"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ScannedMember *scanned_member, void *member, ProtobufCMessage *message, ProtobufCAllocator *allocator)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_optional_member",
+          "detailed": "\n        ",
+          "name": "parse_optional_member",
+          "params": [
+            "scanned_member",
+            "member",
+            "message",
+            "allocator"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ScannedMember *scanned_member, void *member, ProtobufCMessage *message, ProtobufCAllocator *allocator)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_repeated_member",
+          "detailed": "\n        ",
+          "name": "parse_repeated_member",
+          "params": [
+            "scanned_member",
+            "member",
+            "message",
+            "allocator"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "static unsigned scan_varint",
+          "detailed": "\n        ",
+          "name": "scan_varint",
+          "params": [
+            "len",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ScannedMember *scanned_member, void *member, ProtobufCMessage *message)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_packed_repeated_member",
+          "detailed": "\n        ",
+          "name": "parse_packed_repeated_member",
+          "params": [
+            "scanned_member",
+            "member",
+            "message"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ProtobufCType type)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean is_packable_type",
+          "detailed": "\n        ",
+          "name": "is_packable_type",
+          "params": [
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ScannedMember *scanned_member, ProtobufCMessage *message, ProtobufCAllocator *allocator)",
+          "brief": "\n        ",
+          "definition": "static protobuf_c_boolean parse_member",
+          "detailed": "\n        ",
+          "name": "parse_member",
+          "params": [
+            "scanned_member",
+            "message",
+            "allocator"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ProtobufCMessageDescriptor *desc, ProtobufCMessage *message)",
+          "brief": "\n        ",
+          "definition": "static void message_init_generic",
+          "detailed": "Initialise messages generated by old code.\nThis function is used if desc->message_init == NULL (which occurs for old code, and which would be useful to support allocating descriptors dynamically).",
+          "name": "message_init_generic",
+          "params": [
+            "desc",
+            "message"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "Todo64-BIT OPTIMIZATION: certain implementations use 32-bit math even on 64-bit platforms (uint64_size, uint64_pack, parse_uint64).\n\n64-BIT OPTIMIZATION: certain implementations use 32-bit math even on 64-bit platforms (uint64_size, uint64_pack, parse_uint64).\nTodoUse size_t consistently. \n\nUse size_t consistently.",
+          "name": "TRUE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FALSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__ASSERT_NOT_REACHED",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FIRST_SCANNED_MEMBER_SLAB_SIZE_LOG2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_SCANNED_MEMBER_SLAB",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REQUIRED_FIELD_BITMAP_SET",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REQUIRED_FIELD_BITMAP_IS_SET",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CLEAR_REMAINING_N_PTRS",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": ")(void *service, const ProtobufCMessage *input, ProtobufCClosure closure, void *closure_data)",
+          "brief": "\n        ",
+          "definition": "typedef void(* GenericHandler) (void *service, const ProtobufCMessage *input, ProtobufCClosure closure, void *closure_data)",
+          "detailed": "\n        ",
+          "name": "GenericHandler",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCAllocator protobuf_c__allocator",
+          "detailed": "\n        ",
+          "name": "protobuf_c__allocator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t ScannedMember::tag",
+          "detailed": "Field tag.",
+          "name": "tag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t ScannedMember::wire_type",
+          "detailed": "Field type.",
+          "name": "wire_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t ScannedMember::length_prefix_len",
+          "detailed": "Prefix length.",
+          "name": "length_prefix_len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCFieldDescriptor* ScannedMember::field",
+          "detailed": "Field descriptor.",
+          "name": "field",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t ScannedMember::len",
+          "detailed": "Field length.",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const uint8_t* ScannedMember::data",
+          "detailed": "Pointer to field data.",
+          "name": "data",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protobuf-c/protobuf-c.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__BEGIN_DECLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__END_DECLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__API",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__DEPRECATED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__SERVICE_DESCRIPTOR_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": ")(void *allocator_data, size_t size)",
+          "brief": "\n        ",
+          "definition": "void *(* ProtobufCAllocator::alloc) (void *allocator_data, size_t size)",
+          "detailed": "Function to allocate memory.",
+          "name": "alloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void *allocator_data, void *pointer)",
+          "brief": "\n        ",
+          "definition": "void(* ProtobufCAllocator::free) (void *allocator_data, void *pointer)",
+          "detailed": "Function to free memory.",
+          "name": "free",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* ProtobufCAllocator::allocator_data",
+          "detailed": "Opaque pointer passed to alloc and free functions.",
+          "name": "allocator_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t ProtobufCBinaryData::len",
+          "detailed": "Number of bytes in the data field.",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t* ProtobufCBinaryData::data",
+          "detailed": "Data bytes.",
+          "name": "data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(ProtobufCBuffer *buffer, size_t len, const uint8_t *data)",
+          "brief": "\n        ",
+          "definition": "void(* ProtobufCBuffer::append) (ProtobufCBuffer *buffer, size_t len, const uint8_t *data)",
+          "detailed": "Append function. Consumes the len bytes stored at data.",
+          "name": "append",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCBuffer ProtobufCBufferSimple::base",
+          "detailed": "\"Base class\".",
+          "name": "base",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t ProtobufCBufferSimple::alloced",
+          "detailed": "Number of bytes allocated in data.",
+          "name": "alloced",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "protobuf_c_boolean ProtobufCBufferSimple::must_free_data",
+          "detailed": "Whether data must be freed.",
+          "name": "must_free_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCAllocator* ProtobufCBufferSimple::allocator",
+          "detailed": "Allocator to use. May be NULL to indicate the system allocator.",
+          "name": "allocator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t ProtobufCEnumDescriptor::magic",
+          "detailed": "Magic value checked to ensure that the API is used correctly.",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ProtobufCEnumDescriptor::name",
+          "detailed": "The qualified name (e.g., \"namespace.Type\").",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ProtobufCEnumDescriptor::short_name",
+          "detailed": "The unqualified name as given in the .proto file (e.g., \"Type\").",
+          "name": "short_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ProtobufCEnumDescriptor::c_name",
+          "detailed": "Identifier used in generated C code.",
+          "name": "c_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ProtobufCEnumDescriptor::package_name",
+          "detailed": "The dot-separated namespace.",
+          "name": "package_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCEnumDescriptor::n_values",
+          "detailed": "Number elements in values.",
+          "name": "n_values",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCEnumValue* ProtobufCEnumDescriptor::values",
+          "detailed": "Array of distinct values, sorted by numeric value.",
+          "name": "values",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCEnumDescriptor::n_value_names",
+          "detailed": "Number of elements in values_by_name.",
+          "name": "n_value_names",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCEnumValueIndex* ProtobufCEnumDescriptor::values_by_name",
+          "detailed": "Array of named values, including aliases, sorted by name.",
+          "name": "values_by_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCEnumDescriptor::n_value_ranges",
+          "detailed": "Number of elements in value_ranges.",
+          "name": "n_value_ranges",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCIntRange* ProtobufCEnumDescriptor::value_ranges",
+          "detailed": "Value ranges, for faster lookups by numeric value.",
+          "name": "value_ranges",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* ProtobufCEnumDescriptor::reserved1",
+          "detailed": "Reserved for future use.",
+          "name": "reserved1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* ProtobufCEnumDescriptor::reserved2",
+          "detailed": "Reserved for future use.",
+          "name": "reserved2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* ProtobufCEnumDescriptor::reserved3",
+          "detailed": "Reserved for future use.",
+          "name": "reserved3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* ProtobufCEnumDescriptor::reserved4",
+          "detailed": "Reserved for future use.",
+          "name": "reserved4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ProtobufCEnumValue::value",
+          "detailed": "The numeric value assigned in the .proto file.",
+          "name": "value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCEnumValueIndex::index",
+          "detailed": "Index into values[] array.",
+          "name": "index",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t ProtobufCFieldDescriptor::id",
+          "detailed": "Tag value of the field as given in the .proto file.",
+          "name": "id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCLabel ProtobufCFieldDescriptor::label",
+          "detailed": "Whether the field is REQUIRED, OPTIONAL, or REPEATED.",
+          "name": "label",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCType ProtobufCFieldDescriptor::type",
+          "detailed": "The type of the field.",
+          "name": "type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCFieldDescriptor::quantifier_offset",
+          "detailed": "The offset in bytes of the message's C structure's quantifier field (the has_MEMBER field for optional members or the n_MEMBER field for repeated members or the case enum for oneofs).",
+          "name": "quantifier_offset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCFieldDescriptor::offset",
+          "detailed": "The offset in bytes into the message's C structure for the member itself.",
+          "name": "offset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const void* ProtobufCFieldDescriptor::descriptor",
+          "detailed": "A type-specific descriptor.\nIf type is PROTOBUF_C_TYPE_ENUM, then descriptor points to the corresponding ProtobufCEnumDescriptor.\nIf type is PROTOBUF_C_TYPE_MESSAGE, then descriptor points to the corresponding ProtobufCMessageDescriptor.\nOtherwise this field is NULL.",
+          "name": "descriptor",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const void* ProtobufCFieldDescriptor::default_value",
+          "detailed": "The default value for this field, if defined. May be NULL.",
+          "name": "default_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t ProtobufCFieldDescriptor::flags",
+          "detailed": "A flag word. Zero or more of the bits defined in the ProtobufCFieldFlag enum may be set.",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCFieldDescriptor::reserved_flags",
+          "detailed": "Reserved for future use.",
+          "name": "reserved_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ProtobufCIntRange::start_value",
+          "detailed": "\n        ",
+          "name": "start_value",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCIntRange::orig_index",
+          "detailed": "\n        ",
+          "name": "orig_index",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCMessage::n_unknown_fields",
+          "detailed": "The number of elements in unknown_fields.",
+          "name": "n_unknown_fields",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCMessageUnknownField* ProtobufCMessage::unknown_fields",
+          "detailed": "The fields that weren't recognized by the parser.",
+          "name": "unknown_fields",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t ProtobufCMessageDescriptor::sizeof_message",
+          "detailed": "Size in bytes of the C structure representing an instance of this type of message.",
+          "name": "sizeof_message",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCMessageDescriptor::n_fields",
+          "detailed": "Number of elements in fields.",
+          "name": "n_fields",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCFieldDescriptor* ProtobufCMessageDescriptor::fields",
+          "detailed": "Field descriptors, sorted by tag number.",
+          "name": "fields",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const unsigned* ProtobufCMessageDescriptor::fields_sorted_by_name",
+          "detailed": "Used for looking up fields by name.",
+          "name": "fields_sorted_by_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCMessageDescriptor::n_field_ranges",
+          "detailed": "Number of elements in field_ranges.",
+          "name": "n_field_ranges",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCIntRange* ProtobufCMessageDescriptor::field_ranges",
+          "detailed": "Used for looking up fields by id.",
+          "name": "field_ranges",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCMessageInit ProtobufCMessageDescriptor::message_init",
+          "detailed": "Message initialisation function.",
+          "name": "message_init",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t ProtobufCMessageUnknownField::tag",
+          "detailed": "The tag number.",
+          "name": "tag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ProtobufCWireType ProtobufCMessageUnknownField::wire_type",
+          "detailed": "The wire type of the field.",
+          "name": "wire_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCMessageDescriptor* ProtobufCMethodDescriptor::input",
+          "detailed": "Input message descriptor.",
+          "name": "input",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCMessageDescriptor* ProtobufCMethodDescriptor::output",
+          "detailed": "Output message descriptor.",
+          "name": "output",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(ProtobufCService *service, unsigned method_index, const ProtobufCMessage *input, ProtobufCClosure closure, void *closure_data)",
+          "brief": "\n        ",
+          "definition": "void(* ProtobufCService::invoke) (ProtobufCService *service, unsigned method_index, const ProtobufCMessage *input, ProtobufCClosure closure, void *closure_data)",
+          "detailed": "Function to invoke the service.",
+          "name": "invoke",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(ProtobufCService *service)",
+          "brief": "\n        ",
+          "definition": "void(* ProtobufCService::destroy) (ProtobufCService *service)",
+          "detailed": "Function to destroy the service.",
+          "name": "destroy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ProtobufCServiceDescriptor::package",
+          "detailed": "Package name.",
+          "name": "package",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned ProtobufCServiceDescriptor::n_methods",
+          "detailed": "Number of elements in methods.",
+          "name": "n_methods",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ProtobufCMethodDescriptor* ProtobufCServiceDescriptor::methods",
+          "detailed": "Method descriptors, in the order defined in the .proto file.",
+          "name": "methods",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const unsigned* ProtobufCServiceDescriptor::method_indices_by_name",
+          "detailed": "Sort index of methods.",
+          "name": "method_indices_by_name",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "protobuf-c",
+  "schema_version": 1,
+  "version": "1.5.2"
+}

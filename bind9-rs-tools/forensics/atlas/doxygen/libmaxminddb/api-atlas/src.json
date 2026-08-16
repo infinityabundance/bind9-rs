@@ -1,0 +1,1190 @@
+{
+  "files": {
+    "src/data-pool.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t const size)",
+          "brief": "\n        ",
+          "definition": "MMDB_data_pool_s * data_pool_new",
+          "detailed": "\n        ",
+          "name": "data_pool_new",
+          "params": [
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(size_t const max, size_t const m, size_t const n)",
+          "brief": "\n        ",
+          "definition": "bool can_multiply",
+          "detailed": "\n        ",
+          "name": "can_multiply",
+          "params": [
+            "max",
+            "m",
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_data_pool_s *const pool)",
+          "brief": "\n        ",
+          "definition": "void data_pool_destroy",
+          "detailed": "\n        ",
+          "name": "data_pool_destroy",
+          "params": [
+            "pool"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_data_pool_s *const pool)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * data_pool_alloc",
+          "detailed": "\n        ",
+          "name": "data_pool_alloc",
+          "params": [
+            "pool"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_data_pool_s *const pool)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * data_pool_to_list",
+          "detailed": "\n        ",
+          "name": "data_pool_to_list",
+          "params": [
+            "pool"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_POSIX_C_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/data-pool.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(size_t const, size_t const, size_t const)",
+          "brief": "\n        ",
+          "definition": "bool can_multiply",
+          "detailed": "\n        ",
+          "name": "can_multiply",
+          "params": [
+            "max",
+            "m",
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "(size_t const)",
+          "brief": "\n        ",
+          "definition": "MMDB_data_pool_s * data_pool_new",
+          "detailed": "\n        ",
+          "name": "data_pool_new",
+          "params": [
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_data_pool_s *const)",
+          "brief": "\n        ",
+          "definition": "void data_pool_destroy",
+          "detailed": "\n        ",
+          "name": "data_pool_destroy",
+          "params": [
+            "pool"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_data_pool_s *const)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * data_pool_alloc",
+          "detailed": "\n        ",
+          "name": "data_pool_alloc",
+          "params": [
+            "pool"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_data_pool_s *const)",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s * data_pool_to_list",
+          "detailed": "\n        ",
+          "name": "data_pool_to_list",
+          "params": [
+            "pool"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DATA_POOL_NUM_BLOCKS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct MMDB_data_pool_s MMDB_data_pool_s",
+          "detailed": "\n        ",
+          "name": "MMDB_data_pool_s",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MMDB_data_pool_s::index",
+          "detailed": "\n        ",
+          "name": "index",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MMDB_data_pool_s::size",
+          "detailed": "\n        ",
+          "name": "size",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t MMDB_data_pool_s::used",
+          "detailed": "\n        ",
+          "name": "used",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s* MMDB_data_pool_s::block",
+          "detailed": "\n        ",
+          "name": "block",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "size_t MMDB_data_pool_s::sizes[32]",
+          "detailed": "\n        ",
+          "name": "sizes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "MMDB_entry_data_list_s* MMDB_data_pool_s::blocks[32]",
+          "detailed": "\n        ",
+          "name": "blocks",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "src/maxminddb-compat-util.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const void *l, size_t l_len, const void *s, size_t s_len)",
+          "brief": "\n        ",
+          "definition": "static const void * mmdb_memmem",
+          "detailed": "\n        ",
+          "name": "mmdb_memmem",
+          "params": [
+            "l",
+            "l_len",
+            "s",
+            "s_len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *s, size_t maxlen)",
+          "brief": "\n        ",
+          "definition": "static size_t mmdb_strnlen",
+          "detailed": "\n        ",
+          "name": "mmdb_strnlen",
+          "params": [
+            "s",
+            "maxlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "static char * mmdb_strdup",
+          "detailed": "\n        ",
+          "name": "mmdb_strdup",
+          "params": [
+            "str"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str, size_t n)",
+          "brief": "\n        ",
+          "definition": "static char * mmdb_strndup",
+          "detailed": "\n        ",
+          "name": "mmdb_strndup",
+          "params": [
+            "str",
+            "n"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "src/maxminddb.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "static int map_file",
+          "detailed": "\n        ",
+          "name": "map_file",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *file_content, ssize_t file_size, uint32_t *metadata_size)",
+          "brief": "\n        ",
+          "definition": "static const uint8_t * find_metadata",
+          "detailed": "\n        ",
+          "name": "find_metadata",
+          "params": [
+            "file_content",
+            "file_size",
+            "metadata_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb)",
+          "brief": "\n        ",
+          "definition": "static int read_metadata",
+          "detailed": "\n        ",
+          "name": "read_metadata",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "static MMDB_s make_fake_metadata_db",
+          "detailed": "\n        ",
+          "name": "make_fake_metadata_db",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_entry_s *start, char *key, uint16_t *value)",
+          "brief": "\n        ",
+          "definition": "static int value_for_key_as_uint16",
+          "detailed": "\n        ",
+          "name": "value_for_key_as_uint16",
+          "params": [
+            "start",
+            "key",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_entry_s *start, char *key, uint32_t *value)",
+          "brief": "\n        ",
+          "definition": "static int value_for_key_as_uint32",
+          "detailed": "\n        ",
+          "name": "value_for_key_as_uint32",
+          "params": [
+            "start",
+            "key",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_entry_s *start, char *key, uint64_t *value)",
+          "brief": "\n        ",
+          "definition": "static int value_for_key_as_uint64",
+          "detailed": "\n        ",
+          "name": "value_for_key_as_uint64",
+          "params": [
+            "start",
+            "key",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_entry_s *start, char *key, char const **value)",
+          "brief": "\n        ",
+          "definition": "static int value_for_key_as_string",
+          "detailed": "\n        ",
+          "name": "value_for_key_as_string",
+          "params": [
+            "start",
+            "key",
+            "value"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb, MMDB_s *metadata_db, MMDB_entry_s *metadata_start)",
+          "brief": "\n        ",
+          "definition": "static int populate_languages_metadata",
+          "detailed": "\n        ",
+          "name": "populate_languages_metadata",
+          "params": [
+            "mmdb",
+            "metadata_db",
+            "metadata_start"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb, MMDB_s *metadata_db, MMDB_entry_s *metadata_start)",
+          "brief": "\n        ",
+          "definition": "static int populate_description_metadata",
+          "detailed": "\n        ",
+          "name": "populate_description_metadata",
+          "params": [
+            "mmdb",
+            "metadata_db",
+            "metadata_start"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *ipstr, struct addrinfo **addresses)",
+          "brief": "\n        ",
+          "definition": "static int resolve_any_address",
+          "detailed": "\n        ",
+          "name": "resolve_any_address",
+          "params": [
+            "ipstr",
+            "addresses"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint8_t const *address, sa_family_t address_family, MMDB_lookup_result_s *result)",
+          "brief": "\n        ",
+          "definition": "static int find_address_in_search_tree",
+          "detailed": "\n        ",
+          "name": "find_address_in_search_tree",
+          "params": [
+            "mmdb",
+            "address",
+            "address_family",
+            "result"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "static record_info_s record_info_for_database",
+          "detailed": "\n        ",
+          "name": "record_info_for_database",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "static int find_ipv4_start_node",
+          "detailed": "\n        ",
+          "name": "find_ipv4_start_node",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint64_t record)",
+          "brief": "\n        ",
+          "definition": "static uint8_t record_type",
+          "detailed": "\n        ",
+          "name": "record_type",
+          "params": [
+            "mmdb",
+            "record"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *record)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_left_28_bit_record",
+          "detailed": "\n        ",
+          "name": "get_left_28_bit_record",
+          "params": [
+            "record"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *record)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_right_28_bit_record",
+          "detailed": "\n        ",
+          "name": "get_right_28_bit_record",
+          "params": [
+            "record"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint64_t record)",
+          "brief": "\n        ",
+          "definition": "static uint32_t data_section_offset_for_record",
+          "detailed": "\n        ",
+          "name": "data_section_offset_for_record",
+          "params": [
+            "mmdb",
+            "record"
+          ],
+          "static": true
+        },
+        {
+          "args": "(va_list va_path)",
+          "brief": "\n        ",
+          "definition": "static size_t path_length",
+          "detailed": "\n        ",
+          "name": "path_length",
+          "params": [
+            "va_path"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path_elem, const MMDB_s *const mmdb, MMDB_entry_data_s *entry_data)",
+          "brief": "\n        ",
+          "definition": "static int lookup_path_in_array",
+          "detailed": "\n        ",
+          "name": "lookup_path_in_array",
+          "params": [
+            "path_elem",
+            "mmdb",
+            "entry_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path_elem, const MMDB_s *const mmdb, MMDB_entry_data_s *entry_data)",
+          "brief": "\n        ",
+          "definition": "static int lookup_path_in_map",
+          "detailed": "\n        ",
+          "name": "lookup_path_in_map",
+          "params": [
+            "path_elem",
+            "mmdb",
+            "entry_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, MMDB_entry_data_s *entry_data, int depth)",
+          "brief": "\n        ",
+          "definition": "static int skip_map_or_array",
+          "detailed": "\n        ",
+          "name": "skip_map_or_array",
+          "params": [
+            "mmdb",
+            "entry_data",
+            "depth"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint32_t offset, MMDB_entry_data_s *entry_data)",
+          "brief": "\n        ",
+          "definition": "static int decode_one_follow",
+          "detailed": "\n        ",
+          "name": "decode_one_follow",
+          "params": [
+            "mmdb",
+            "offset",
+            "entry_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint32_t offset, MMDB_entry_data_s *entry_data)",
+          "brief": "\n        ",
+          "definition": "static int decode_one",
+          "detailed": "\n        ",
+          "name": "decode_one",
+          "params": [
+            "mmdb",
+            "offset",
+            "entry_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int raw_ext_type)",
+          "brief": "\n        ",
+          "definition": "static int get_ext_type",
+          "detailed": "\n        ",
+          "name": "get_ext_type",
+          "params": [
+            "raw_ext_type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t ctrl, uint8_t const *const ptr, int ptr_size)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_ptr_from",
+          "detailed": "\n        ",
+          "name": "get_ptr_from",
+          "params": [
+            "ctrl",
+            "ptr",
+            "ptr_size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint32_t offset, MMDB_entry_data_list_s *const entry_data_list, MMDB_data_pool_s *const pool, int depth)",
+          "brief": "\n        ",
+          "definition": "static int get_entry_data_list",
+          "detailed": "\n        ",
+          "name": "get_entry_data_list",
+          "params": [
+            "mmdb",
+            "offset",
+            "entry_data_list",
+            "pool",
+            "depth"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *restrict p)",
+          "brief": "\n        ",
+          "definition": "static float get_ieee754_float",
+          "detailed": "\n        ",
+          "name": "get_ieee754_float",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *restrict p)",
+          "brief": "\n        ",
+          "definition": "static double get_ieee754_double",
+          "detailed": "\n        ",
+          "name": "get_ieee754_double",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *p)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_uint32",
+          "detailed": "\n        ",
+          "name": "get_uint32",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *p)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_uint24",
+          "detailed": "\n        ",
+          "name": "get_uint24",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *p)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_uint16",
+          "detailed": "\n        ",
+          "name": "get_uint16",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *p, int length)",
+          "brief": "\n        ",
+          "definition": "static uint64_t get_uintX",
+          "detailed": "\n        ",
+          "name": "get_uintX",
+          "params": [
+            "p",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint8_t *p, int length)",
+          "brief": "\n        ",
+          "definition": "static int32_t get_sintX",
+          "detailed": "\n        ",
+          "name": "get_sintX",
+          "params": [
+            "p",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "static void free_mmdb_struct",
+          "detailed": "\n        ",
+          "name": "free_mmdb_struct",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb)",
+          "brief": "\n        ",
+          "definition": "static void free_languages_metadata",
+          "detailed": "\n        ",
+          "name": "free_languages_metadata",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_s *mmdb)",
+          "brief": "\n        ",
+          "definition": "static void free_descriptions_metadata",
+          "detailed": "\n        ",
+          "name": "free_descriptions_metadata",
+          "params": [
+            "mmdb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *stream, MMDB_entry_data_list_s *entry_data_list, int indent, int *status)",
+          "brief": "\n        ",
+          "definition": "static MMDB_entry_data_list_s * dump_entry_data_list",
+          "detailed": "\n        ",
+          "name": "dump_entry_data_list",
+          "params": [
+            "stream",
+            "entry_data_list",
+            "indent",
+            "status"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *stream, int i)",
+          "brief": "\n        ",
+          "definition": "static void print_indentation",
+          "detailed": "\n        ",
+          "name": "print_indentation",
+          "params": [
+            "stream",
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t const *bytes, uint32_t size)",
+          "brief": "\n        ",
+          "definition": "static char * bytes_to_hex",
+          "detailed": "\n        ",
+          "name": "bytes_to_hex",
+          "params": [
+            "bytes",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *const filename, uint32_t flags, MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "int MMDB_open",
+          "detailed": "\n        ",
+          "name": "MMDB_open",
+          "params": [
+            "filename",
+            "flags",
+            "mmdb"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, const char *const ipstr, int *const gai_error, int *const mmdb_error)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s MMDB_lookup_string",
+          "detailed": "\n        ",
+          "name": "MMDB_lookup_string",
+          "params": [
+            "mmdb",
+            "ipstr",
+            "gai_error",
+            "mmdb_error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, const struct sockaddr *const sockaddr, int *const mmdb_error)",
+          "brief": "\n        ",
+          "definition": "MMDB_lookup_result_s MMDB_lookup_sockaddr",
+          "detailed": "\n        ",
+          "name": "MMDB_lookup_sockaddr",
+          "params": [
+            "mmdb",
+            "sockaddr",
+            "mmdb_error"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, uint32_t node_number, MMDB_search_node_s *const node)",
+          "brief": "\n        ",
+          "definition": "int MMDB_read_node",
+          "detailed": "\n        ",
+          "name": "MMDB_read_node",
+          "params": [
+            "mmdb",
+            "node_number",
+            "node"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *const start, MMDB_entry_data_s *const entry_data,...)",
+          "brief": "\n        ",
+          "definition": "int MMDB_get_value",
+          "detailed": "\n        ",
+          "name": "MMDB_get_value",
+          "params": [
+            "start",
+            "entry_data",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *const start, MMDB_entry_data_s *const entry_data, va_list va_path)",
+          "brief": "\n        ",
+          "definition": "int MMDB_vget_value",
+          "detailed": "\n        ",
+          "name": "MMDB_vget_value",
+          "params": [
+            "start",
+            "entry_data",
+            "va_path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *const start, MMDB_entry_data_s *const entry_data, const char *const *const path)",
+          "brief": "\n        ",
+          "definition": "int MMDB_aget_value",
+          "detailed": "\n        ",
+          "name": "MMDB_aget_value",
+          "params": [
+            "start",
+            "entry_data",
+            "path"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t *p, int length)",
+          "brief": "\n        ",
+          "definition": "static mmdb_uint128_t get_uint128",
+          "detailed": "\n        ",
+          "name": "get_uint128",
+          "params": [
+            "p",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const MMDB_s *const mmdb, MMDB_entry_data_list_s **const entry_data_list)",
+          "brief": "\n        ",
+          "definition": "int MMDB_get_metadata_as_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_get_metadata_as_entry_data_list",
+          "params": [
+            "mmdb",
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_entry_s *start, MMDB_entry_data_list_s **const entry_data_list)",
+          "brief": "\n        ",
+          "definition": "int MMDB_get_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_get_entry_data_list",
+          "params": [
+            "start",
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t x)",
+          "brief": "\n        ",
+          "definition": "static uint32_t mmdb_bswap32",
+          "detailed": "\n        ",
+          "name": "mmdb_bswap32",
+          "params": [
+            "x"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint64_t x)",
+          "brief": "\n        ",
+          "definition": "static uint64_t mmdb_bswap64",
+          "detailed": "\n        ",
+          "name": "mmdb_bswap64",
+          "params": [
+            "x"
+          ],
+          "static": true
+        },
+        {
+          "args": "(MMDB_entry_data_list_s *const entry_data_list)",
+          "brief": "\n        ",
+          "definition": "void MMDB_free_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_free_entry_data_list",
+          "params": [
+            "entry_data_list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(MMDB_s *const mmdb)",
+          "brief": "\n        ",
+          "definition": "void MMDB_close",
+          "detailed": "\n        ",
+          "name": "MMDB_close",
+          "params": [
+            "mmdb"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * MMDB_lib_version",
+          "detailed": "\n        ",
+          "name": "MMDB_lib_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(FILE *const stream, MMDB_entry_data_list_s *const entry_data_list, int indent)",
+          "brief": "\n        ",
+          "definition": "int MMDB_dump_entry_data_list",
+          "detailed": "\n        ",
+          "name": "MMDB_dump_entry_data_list",
+          "params": [
+            "stream",
+            "entry_data_list",
+            "indent"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int error_code)",
+          "brief": "\n        ",
+          "definition": "const char * MMDB_strerror",
+          "detailed": "\n        ",
+          "name": "MMDB_strerror",
+          "params": [
+            "error_code"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_POSIX_C_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_DATA_SECTION_SEPARATOR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXIMUM_DATA_STRUCTURE_DEPTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEBUG_MSG",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEBUG_MSGF",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEBUG_BINARY",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEBUG_NL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAYBE_CHECK_SIZE_OVERFLOW",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "METADATA_MARKER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "METADATA_BLOCK_MAX_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MMDB_POOL_INIT_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKED_DECODE_ONE",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKED_DECODE_ONE_FOLLOW",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FREE_AND_SET_NULL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "__has_builtin",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct record_info_s record_info_s",
+          "detailed": "\n        ",
+          "name": "record_info_s",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t record_info_s::record_length",
+          "detailed": "\n        ",
+          "name": "record_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const uint8_t *)",
+          "brief": "\n        ",
+          "definition": "uint32_t(* record_info_s::left_record_getter) (const uint8_t *)",
+          "detailed": "\n        ",
+          "name": "left_record_getter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const uint8_t *)",
+          "brief": "\n        ",
+          "definition": "uint32_t(* record_info_s::right_record_getter) (const uint8_t *)",
+          "detailed": "\n        ",
+          "name": "right_record_getter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t record_info_s::right_record_offset",
+          "detailed": "\n        ",
+          "name": "right_record_offset",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "src",
+  "schema_version": 1,
+  "version": "1.13.3"
+}

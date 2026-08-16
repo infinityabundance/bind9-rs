@@ -1,0 +1,27 @@
+{
+  "enum_value_count": 15,
+  "file_count": 55,
+  "function_count": 354,
+  "libraries": [
+    "contrib",
+    "kdebug",
+    "libcap",
+    "pam_cap",
+    "progs",
+    "psx",
+    "template.c",
+    "tests/b219174.c",
+    "tests/exploit.c",
+    "tests/libcap_launch_test.c",
+    "tests/libcap_psx_test.c",
+    "tests/noop.c",
+    "tests/psx_test.c",
+    "tests/uns_test.c",
+    "tests/weaver.c",
+    "tests/weaver.h"
+  ],
+  "macro_count": 333,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "2.78"
+}

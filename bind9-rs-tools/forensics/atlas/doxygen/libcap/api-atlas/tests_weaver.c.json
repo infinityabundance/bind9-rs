@@ -1,0 +1,169 @@
+{
+  "files": {
+    "tests/weaver.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void *ignored)",
+          "brief": "\n        ",
+          "definition": "static void * run_thread",
+          "detailed": "\n        ",
+          "name": "run_thread",
+          "params": [
+            "ignored"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "pthread_t weaver_thread",
+          "detailed": "\n        ",
+          "name": "weaver_thread",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void weaver_setup",
+          "detailed": "\n        ",
+          "name": "weaver_setup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int n)",
+          "brief": "\n        ",
+          "definition": "int weaver_waitforit",
+          "detailed": "\n        ",
+          "name": "weaver_waitforit",
+          "params": [
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void weaver_terminate",
+          "detailed": "\n        ",
+          "name": "weaver_terminate",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int, char **)",
+          "brief": "\n        ",
+          "definition": "static void __execable_main",
+          "detailed": "\n        ",
+          "name": "__execable_main",
+          "params": [
+            "",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "((visibility(\"hidden\")))",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_GNU_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "N_THREADS",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_mutex_t mu",
+          "detailed": "\n        ",
+          "name": "mu",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "pthread_cond_t cond",
+          "detailed": "\n        ",
+          "name": "cond",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int primed",
+          "detailed": "\n        ",
+          "name": "primed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int counter",
+          "detailed": "\n        ",
+          "name": "counter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int total",
+          "detailed": "\n        ",
+          "name": "total",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int trigger",
+          "detailed": "\n        ",
+          "name": "trigger",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/weaver.c",
+  "schema_version": 1,
+  "version": "2.78"
+}

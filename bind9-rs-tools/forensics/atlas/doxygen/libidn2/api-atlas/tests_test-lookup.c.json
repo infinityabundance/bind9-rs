@@ -1,0 +1,98 @@
+{
+  "files": {
+    "tests/test-lookup.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_homebrewed",
+          "detailed": "\n        ",
+          "name": "test_homebrewed",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void separator",
+          "detailed": "\n        ",
+          "name": "separator",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_unicode_range",
+          "detailed": "\n        ",
+          "name": "test_unicode_range",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const struct idna idna[]",
+          "detailed": "\n        ",
+          "name": "idna",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ok",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int failed",
+          "detailed": "\n        ",
+          "name": "failed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int break_on_error",
+          "detailed": "\n        ",
+          "name": "break_on_error",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test-lookup.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}

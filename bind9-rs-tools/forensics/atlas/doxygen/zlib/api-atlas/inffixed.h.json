@@ -1,0 +1,35 @@
+{
+  "files": {
+    "inffixed.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "const code lenfix[512]",
+          "detailed": "\n        ",
+          "name": "lenfix",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "const code distfix[32]",
+          "detailed": "\n        ",
+          "name": "distfix",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "inffixed.h",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

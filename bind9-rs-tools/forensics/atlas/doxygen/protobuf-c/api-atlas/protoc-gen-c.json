@@ -1,0 +1,1679 @@
+{
+  "files": {
+    "protoc-gen-c/c_bytes_field.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::BytesFieldGenerator::BytesFieldGenerator",
+          "detailed": "\n        ",
+          "name": "BytesFieldGenerator",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::BytesFieldGenerator::~BytesFieldGenerator",
+          "detailed": "\n        ",
+          "name": "~BytesFieldGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::BytesFieldGenerator::GenerateStructMembers",
+          "detailed": "\n        ",
+          "name": "GenerateStructMembers",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::BytesFieldGenerator::GenerateDescriptorInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializer",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::BytesFieldGenerator::GenerateDefaultValueDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateDefaultValueDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::BytesFieldGenerator::GenerateDefaultValueImplementations",
+          "detailed": "\n        ",
+          "name": "GenerateDefaultValueImplementations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void) const",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::BytesFieldGenerator::GetDefaultValue",
+          "detailed": "\n        ",
+          "name": "GetDefaultValue",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::BytesFieldGenerator::GenerateStaticInit",
+          "detailed": "\n        ",
+          "name": "GenerateStaticInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(T n)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::SimpleItoa",
+          "detailed": "\n        ",
+          "name": "SimpleItoa",
+          "params": [
+            "",
+            "n"
+          ],
+          "static": false
+        },
+        {
+          "args": "(float f)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::SimpleFtoa",
+          "detailed": "\n        ",
+          "name": "SimpleFtoa",
+          "params": [
+            "f"
+          ],
+          "static": false
+        },
+        {
+          "args": "(double f)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::SimpleDtoa",
+          "detailed": "\n        ",
+          "name": "SimpleDtoa",
+          "params": [
+            "f"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView str, const char *delim, std::vector< std::string > *out)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::SplitStringUsing",
+          "detailed": "\n        ",
+          "name": "SplitStringUsing",
+          "params": [
+            "str",
+            "delim",
+            "out"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView src)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::CEscape",
+          "detailed": "\n        ",
+          "name": "CEscape",
+          "params": [
+            "src"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView str, compat::StringView suffix)",
+          "brief": "\n        ",
+          "definition": "bool protobuf_c::HasSuffixString",
+          "detailed": "\n        ",
+          "name": "HasSuffixString",
+          "params": [
+            "str",
+            "suffix"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView str, compat::StringView suffix)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::StripSuffixString",
+          "detailed": "\n        ",
+          "name": "StripSuffixString",
+          "params": [
+            "str",
+            "suffix"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int i, char *buffer)",
+          "brief": "\n        ",
+          "definition": "char * protobuf_c::FastHexToBuffer",
+          "detailed": "\n        ",
+          "name": "FastHexToBuffer",
+          "params": [
+            "i",
+            "buffer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *field)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::FieldName",
+          "detailed": "\n        ",
+          "name": "FieldName",
+          "params": [
+            "field"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *field)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::FieldDeprecated",
+          "detailed": "\n        ",
+          "name": "FieldDeprecated",
+          "params": [
+            "field"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *field)",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::Descriptor * protobuf_c::FieldScope",
+          "detailed": "\n        ",
+          "name": "FieldScope",
+          "params": [
+            "field"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView class_name)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::CamelToUpper",
+          "detailed": "\n        ",
+          "name": "CamelToUpper",
+          "params": [
+            "class_name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView class_name)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::CamelToLower",
+          "detailed": "\n        ",
+          "name": "CamelToLower",
+          "params": [
+            "class_name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView name)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::ToCamel",
+          "detailed": "\n        ",
+          "name": "ToCamel",
+          "params": [
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView class_name)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::ToLower",
+          "detailed": "\n        ",
+          "name": "ToLower",
+          "params": [
+            "class_name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView class_name)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::ToUpper",
+          "detailed": "\n        ",
+          "name": "ToUpper",
+          "params": [
+            "class_name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView full_name, const google::protobuf::FileDescriptor *file)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::FullNameToLower",
+          "detailed": "\n        ",
+          "name": "FullNameToLower",
+          "params": [
+            "full_name",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView full_name, const google::protobuf::FileDescriptor *file)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::FullNameToUpper",
+          "detailed": "\n        ",
+          "name": "FullNameToUpper",
+          "params": [
+            "full_name",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView class_name, const google::protobuf::FileDescriptor *file)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::FullNameToC",
+          "detailed": "\n        ",
+          "name": "FullNameToC",
+          "params": [
+            "class_name",
+            "file"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, std::string comment)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::PrintComment",
+          "detailed": "\n        ",
+          "name": "PrintComment",
+          "params": [
+            "printer",
+            "comment"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView input)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::ConvertToSpaces",
+          "detailed": "\n        ",
+          "name": "ConvertToSpaces",
+          "params": [
+            "input"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView filename)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::StripProto",
+          "detailed": "\n        ",
+          "name": "StripProto",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::FieldDescriptor::CppType type)",
+          "brief": "\n        ",
+          "definition": "const char * protobuf_c::PrimitiveTypeName",
+          "detailed": "\n        ",
+          "name": "PrimitiveTypeName",
+          "params": [
+            "type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::FieldDescriptor::Type type)",
+          "brief": "\n        ",
+          "definition": "const char * protobuf_c::DeclaredTypeMethodName",
+          "detailed": "\n        ",
+          "name": "DeclaredTypeMethodName",
+          "params": [
+            "type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(compat::StringView filename)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::FilenameIdentifier",
+          "detailed": "\n        ",
+          "name": "FilenameIdentifier",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::FieldDescriptor::Label label)",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::GetLabelName",
+          "detailed": "\n        ",
+          "name": "GetLabelName",
+          "params": [
+            "label"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, int n_values, const int *values, compat::StringView name)",
+          "brief": "\n        ",
+          "definition": "unsigned protobuf_c::WriteIntRanges",
+          "detailed": "\n        ",
+          "name": "WriteIntRanges",
+          "params": [
+            "printer",
+            "n_values",
+            "values",
+            "name"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const void *, const void *)",
+          "brief": "\n        ",
+          "definition": "int protobuf_c::compare_name_indices_by_name",
+          "detailed": "\n        ",
+          "name": "compare_name_indices_by_name",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *field)",
+          "brief": "\n        ",
+          "definition": "int protobuf_c::FieldSyntax",
+          "detailed": "\n        ",
+          "name": "FieldSyntax",
+          "params": [
+            "field"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::map<std::string, std::string> protobuf_c::BytesFieldGenerator::variables_",
+          "detailed": "\n        ",
+          "name": "variables_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_enum.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::EnumDescriptor *descriptor, const std::string &dllexport_decl)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::EnumGenerator::EnumGenerator",
+          "detailed": "\n        ",
+          "name": "EnumGenerator",
+          "params": [
+            "descriptor",
+            "dllexport_decl"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::EnumGenerator::~EnumGenerator",
+          "detailed": "\n        ",
+          "name": "~EnumGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumGenerator::GenerateDefinition",
+          "detailed": "\n        ",
+          "name": "GenerateDefinition",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumGenerator::GenerateDescriptorDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumGenerator::GenerateEnumDescriptor",
+          "detailed": "\n        ",
+          "name": "GenerateEnumDescriptor",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, int index)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumGenerator::GenerateValueInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateValueInitializer",
+          "params": [
+            "printer",
+            "index"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::EnumDescriptor* protobuf_c::EnumGenerator::descriptor_",
+          "detailed": "\n        ",
+          "name": "descriptor_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::EnumGenerator::dllexport_decl_",
+          "detailed": "\n        ",
+          "name": "dllexport_decl_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_enum_field.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::EnumFieldGenerator::EnumFieldGenerator",
+          "detailed": "\n        ",
+          "name": "EnumFieldGenerator",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::EnumFieldGenerator::~EnumFieldGenerator",
+          "detailed": "\n        ",
+          "name": "~EnumFieldGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumFieldGenerator::GenerateStructMembers",
+          "detailed": "\n        ",
+          "name": "GenerateStructMembers",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumFieldGenerator::GenerateDescriptorInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializer",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void) const",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::EnumFieldGenerator::GetDefaultValue",
+          "detailed": "\n        ",
+          "name": "GetDefaultValue",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::EnumFieldGenerator::GenerateStaticInit",
+          "detailed": "\n        ",
+          "name": "GenerateStaticInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::map<std::string, std::string> protobuf_c::EnumFieldGenerator::variables_",
+          "detailed": "\n        ",
+          "name": "variables_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_extension.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor, const std::string &dllexport_decl)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::ExtensionGenerator::ExtensionGenerator",
+          "detailed": "\n        ",
+          "name": "ExtensionGenerator",
+          "params": [
+            "descriptor",
+            "dllexport_decl"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::ExtensionGenerator::~ExtensionGenerator",
+          "detailed": "\n        ",
+          "name": "~ExtensionGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ExtensionGenerator::GenerateDeclaration",
+          "detailed": "\n        ",
+          "name": "GenerateDeclaration",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ExtensionGenerator::GenerateDefinition",
+          "detailed": "\n        ",
+          "name": "GenerateDefinition",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::FieldDescriptor* protobuf_c::ExtensionGenerator::descriptor_",
+          "detailed": "\n        ",
+          "name": "descriptor_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::ExtensionGenerator::type_traits_",
+          "detailed": "\n        ",
+          "name": "type_traits_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::ExtensionGenerator::dllexport_decl_",
+          "detailed": "\n        ",
+          "name": "dllexport_decl_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_field.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::FieldGenerator::FieldGenerator",
+          "detailed": "\n        ",
+          "name": "FieldGenerator",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "virtual protobuf_c::FieldGenerator::~FieldGenerator",
+          "detailed": "\n        ",
+          "name": "~FieldGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const =0",
+          "brief": "\n        ",
+          "definition": "virtual void protobuf_c::FieldGenerator::GenerateStructMembers",
+          "detailed": "\n        ",
+          "name": "GenerateStructMembers",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const =0",
+          "brief": "\n        ",
+          "definition": "virtual void protobuf_c::FieldGenerator::GenerateDescriptorInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializer",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "virtual void protobuf_c::FieldGenerator::GenerateDefaultValueDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateDefaultValueDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "virtual void protobuf_c::FieldGenerator::GenerateDefaultValueImplementations",
+          "detailed": "\n        ",
+          "name": "GenerateDefaultValueImplementations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "() const =0",
+          "brief": "\n        ",
+          "definition": "virtual std::string protobuf_c::FieldGenerator::GetDefaultValue",
+          "detailed": "\n        ",
+          "name": "GetDefaultValue",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const =0",
+          "brief": "\n        ",
+          "definition": "virtual void protobuf_c::FieldGenerator::GenerateStaticInit",
+          "detailed": "\n        ",
+          "name": "GenerateStaticInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, bool optional_uses_has, const std::string &type_macro, const std::string &descriptor_addr) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::FieldGenerator::GenerateDescriptorInitializerGeneric",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializerGeneric",
+          "params": [
+            "printer",
+            "optional_uses_has",
+            "type_macro",
+            "descriptor_addr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::Descriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::FieldGeneratorMap::FieldGeneratorMap",
+          "detailed": "\n        ",
+          "name": "FieldGeneratorMap",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::FieldGeneratorMap::~FieldGeneratorMap",
+          "detailed": "\n        ",
+          "name": "~FieldGeneratorMap",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *field) const",
+          "brief": "\n        ",
+          "definition": "const FieldGenerator & protobuf_c::FieldGeneratorMap::get",
+          "detailed": "\n        ",
+          "name": "get",
+          "params": [
+            "field"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *field)",
+          "brief": "\n        ",
+          "definition": "static FieldGenerator * protobuf_c::FieldGeneratorMap::MakeGenerator",
+          "detailed": "\n        ",
+          "name": "MakeGenerator",
+          "params": [
+            "field"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::FieldDescriptor* protobuf_c::FieldGenerator::descriptor_",
+          "detailed": "\n        ",
+          "name": "descriptor_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<FieldGenerator>[]> protobuf_c::FieldGeneratorMap::field_generators_",
+          "detailed": "\n        ",
+          "name": "field_generators_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_file.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FileDescriptor *file, const std::string &dllexport_decl)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::FileGenerator::FileGenerator",
+          "detailed": "\n        ",
+          "name": "FileGenerator",
+          "params": [
+            "file",
+            "dllexport_decl"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::FileGenerator::~FileGenerator",
+          "detailed": "\n        ",
+          "name": "~FileGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::FileGenerator::GenerateHeader",
+          "detailed": "\n        ",
+          "name": "GenerateHeader",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::FileGenerator::GenerateSource",
+          "detailed": "\n        ",
+          "name": "GenerateSource",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::FileDescriptor* protobuf_c::FileGenerator::file_",
+          "detailed": "\n        ",
+          "name": "file_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<MessageGenerator>[]> protobuf_c::FileGenerator::message_generators_",
+          "detailed": "\n        ",
+          "name": "message_generators_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<EnumGenerator>[]> protobuf_c::FileGenerator::enum_generators_",
+          "detailed": "\n        ",
+          "name": "enum_generators_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<ServiceGenerator>[]> protobuf_c::FileGenerator::service_generators_",
+          "detailed": "\n        ",
+          "name": "service_generators_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<ExtensionGenerator>[]> protobuf_c::FileGenerator::extension_generators_",
+          "detailed": "\n        ",
+          "name": "extension_generators_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_generator.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::CGenerator::CGenerator",
+          "detailed": "\n        ",
+          "name": "CGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::CGenerator::~CGenerator",
+          "detailed": "\n        ",
+          "name": "~CGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FileDescriptor *file, const std::string &parameter, google::protobuf::compiler::OutputDirectory *output_directory, std::string *error) const",
+          "brief": "\n        ",
+          "definition": "bool protobuf_c::CGenerator::Generate",
+          "detailed": "\n        ",
+          "name": "Generate",
+          "params": [
+            "file",
+            "parameter",
+            "output_directory",
+            "error"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PROTOBUF_C_EXPORT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "protoc-gen-c/c_helpers.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned protobuf_c::NameIndex::index",
+          "detailed": "\n        ",
+          "name": "index",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "compat::StringView protobuf_c::NameIndex::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_message.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::Descriptor *descriptor, const std::string &dllexport_decl)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::MessageGenerator::MessageGenerator",
+          "detailed": "\n        ",
+          "name": "MessageGenerator",
+          "params": [
+            "descriptor",
+            "dllexport_decl"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::MessageGenerator::~MessageGenerator",
+          "detailed": "\n        ",
+          "name": "~MessageGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateStructTypedef",
+          "detailed": "\n        ",
+          "name": "GenerateStructTypedef",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateDescriptorDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateClosureTypedef",
+          "detailed": "\n        ",
+          "name": "GenerateClosureTypedef",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateEnumDefinitions",
+          "detailed": "\n        ",
+          "name": "GenerateEnumDefinitions",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateStructDefinition",
+          "detailed": "\n        ",
+          "name": "GenerateStructDefinition",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateStructStaticInitMacro",
+          "detailed": "\n        ",
+          "name": "GenerateStructStaticInitMacro",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, bool is_pack_deep, bool gen_pack, bool gen_init)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateHelperFunctionDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateHelperFunctionDeclarations",
+          "params": [
+            "printer",
+            "is_pack_deep",
+            "gen_pack",
+            "gen_init"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, bool gen_init)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateMessageDescriptor",
+          "detailed": "\n        ",
+          "name": "GenerateMessageDescriptor",
+          "params": [
+            "printer",
+            "gen_init"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer, bool is_pack_deep, bool gen_pack, bool gen_init)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageGenerator::GenerateHelperFunctionDefinitions",
+          "detailed": "\n        ",
+          "name": "GenerateHelperFunctionDefinitions",
+          "params": [
+            "printer",
+            "is_pack_deep",
+            "gen_pack",
+            "gen_init"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const google::protobuf::FieldDescriptor *fd)",
+          "brief": "\n        ",
+          "definition": "int protobuf_c::MessageGenerator::GetOneofUnionOrder",
+          "detailed": "\n        ",
+          "name": "GetOneofUnionOrder",
+          "params": [
+            "fd"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::Descriptor* protobuf_c::MessageGenerator::descriptor_",
+          "detailed": "\n        ",
+          "name": "descriptor_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::MessageGenerator::dllexport_decl_",
+          "detailed": "\n        ",
+          "name": "dllexport_decl_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FieldGeneratorMap protobuf_c::MessageGenerator::field_generators_",
+          "detailed": "\n        ",
+          "name": "field_generators_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<MessageGenerator>[]> protobuf_c::MessageGenerator::nested_generators_",
+          "detailed": "\n        ",
+          "name": "nested_generators_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<EnumGenerator>[]> protobuf_c::MessageGenerator::enum_generators_",
+          "detailed": "\n        ",
+          "name": "enum_generators_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::unique_ptr<std::unique_ptr<ExtensionGenerator>[]> protobuf_c::MessageGenerator::extension_generators_",
+          "detailed": "\n        ",
+          "name": "extension_generators_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_message_field.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::MessageFieldGenerator::MessageFieldGenerator",
+          "detailed": "\n        ",
+          "name": "MessageFieldGenerator",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::MessageFieldGenerator::~MessageFieldGenerator",
+          "detailed": "\n        ",
+          "name": "~MessageFieldGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageFieldGenerator::GenerateStructMembers",
+          "detailed": "\n        ",
+          "name": "GenerateStructMembers",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageFieldGenerator::GenerateDescriptorInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializer",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void) const",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::MessageFieldGenerator::GetDefaultValue",
+          "detailed": "\n        ",
+          "name": "GetDefaultValue",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::MessageFieldGenerator::GenerateStaticInit",
+          "detailed": "\n        ",
+          "name": "GenerateStaticInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "protoc-gen-c/c_primitive_field.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::PrimitiveFieldGenerator::PrimitiveFieldGenerator",
+          "detailed": "\n        ",
+          "name": "PrimitiveFieldGenerator",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::PrimitiveFieldGenerator::~PrimitiveFieldGenerator",
+          "detailed": "\n        ",
+          "name": "~PrimitiveFieldGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::PrimitiveFieldGenerator::GenerateStructMembers",
+          "detailed": "\n        ",
+          "name": "GenerateStructMembers",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::PrimitiveFieldGenerator::GenerateDescriptorInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializer",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void) const",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::PrimitiveFieldGenerator::GetDefaultValue",
+          "detailed": "\n        ",
+          "name": "GetDefaultValue",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::PrimitiveFieldGenerator::GenerateStaticInit",
+          "detailed": "\n        ",
+          "name": "GenerateStaticInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    },
+    "protoc-gen-c/c_service.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::ServiceDescriptor *descriptor, const std::string &dllexport_decl)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::ServiceGenerator::ServiceGenerator",
+          "detailed": "\n        ",
+          "name": "ServiceGenerator",
+          "params": [
+            "descriptor",
+            "dllexport_decl"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::ServiceGenerator::~ServiceGenerator",
+          "detailed": "\n        ",
+          "name": "~ServiceGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateMainHFile",
+          "detailed": "\n        ",
+          "name": "GenerateMainHFile",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateVfuncs",
+          "detailed": "\n        ",
+          "name": "GenerateVfuncs",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateInitMacros",
+          "detailed": "\n        ",
+          "name": "GenerateInitMacros",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateDescriptorDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateCallersDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateCallersDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateCFile",
+          "detailed": "\n        ",
+          "name": "GenerateCFile",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateServiceDescriptor",
+          "detailed": "\n        ",
+          "name": "GenerateServiceDescriptor",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateInit",
+          "detailed": "\n        ",
+          "name": "GenerateInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer)",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::ServiceGenerator::GenerateCallersImplementations",
+          "detailed": "\n        ",
+          "name": "GenerateCallersImplementations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const google::protobuf::ServiceDescriptor* protobuf_c::ServiceGenerator::descriptor_",
+          "detailed": "\n        ",
+          "name": "descriptor_",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::map<std::string, std::string> protobuf_c::ServiceGenerator::vars_",
+          "detailed": "\n        ",
+          "name": "vars_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/c_string_field.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const google::protobuf::FieldDescriptor *descriptor)",
+          "brief": "\n        ",
+          "definition": "protobuf_c::StringFieldGenerator::StringFieldGenerator",
+          "detailed": "\n        ",
+          "name": "StringFieldGenerator",
+          "params": [
+            "descriptor"
+          ],
+          "static": false
+        },
+        {
+          "args": "()",
+          "brief": "\n        ",
+          "definition": "protobuf_c::StringFieldGenerator::~StringFieldGenerator",
+          "detailed": "\n        ",
+          "name": "~StringFieldGenerator",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::StringFieldGenerator::GenerateStructMembers",
+          "detailed": "\n        ",
+          "name": "GenerateStructMembers",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::StringFieldGenerator::GenerateDescriptorInitializer",
+          "detailed": "\n        ",
+          "name": "GenerateDescriptorInitializer",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::StringFieldGenerator::GenerateDefaultValueDeclarations",
+          "detailed": "\n        ",
+          "name": "GenerateDefaultValueDeclarations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::StringFieldGenerator::GenerateDefaultValueImplementations",
+          "detailed": "\n        ",
+          "name": "GenerateDefaultValueImplementations",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void) const",
+          "brief": "\n        ",
+          "definition": "std::string protobuf_c::StringFieldGenerator::GetDefaultValue",
+          "detailed": "\n        ",
+          "name": "GetDefaultValue",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(google::protobuf::io::Printer *printer) const",
+          "brief": "\n        ",
+          "definition": "void protobuf_c::StringFieldGenerator::GenerateStaticInit",
+          "detailed": "\n        ",
+          "name": "GenerateStaticInit",
+          "params": [
+            "printer"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "std::map<std::string, std::string> protobuf_c::StringFieldGenerator::variables_",
+          "detailed": "\n        ",
+          "name": "variables_",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "protoc-gen-c/compat.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef const std::string& protobuf_c::compat::StringView",
+          "detailed": "\n        ",
+          "name": "StringView",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": []
+    }
+  },
+  "library": "protoc-gen-c",
+  "schema_version": 1,
+  "version": "1.5.2"
+}

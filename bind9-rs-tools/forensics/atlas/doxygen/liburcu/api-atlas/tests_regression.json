@@ -1,0 +1,691 @@
+{
+  "files": {
+    "tests/regression/rcutorture.h": {
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CALLRCU_GLOBAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CALLRCU_PERCPU",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "CALLRCU_PERTHREAD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "WRITER_STATE_SYNC_RCU",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "WRITER_STATE_CALL_RCU",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "WRITER_STATE_POLL_RCU",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "callrcu_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "writer_state",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(long long, n_reads_pt)",
+          "brief": "\n        ",
+          "definition": "DEFINE_PER_THREAD",
+          "detailed": "\n        ",
+          "name": "DEFINE_PER_THREAD",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(long long, n_updates_pt)",
+          "brief": "\n        ",
+          "definition": "DEFINE_PER_THREAD",
+          "detailed": "\n        ",
+          "name": "DEFINE_PER_THREAD",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "((__aligned__(CAA_CACHE_LINE_SIZE)))=0",
+          "brief": "\n        ",
+          "definition": "volatile int goflag __attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * rcu_read_perf_test",
+          "detailed": "\n        ",
+          "name": "rcu_read_perf_test",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void * rcu_update_perf_test",
+          "detailed": "\n        ",
+          "name": "rcu_update_perf_test",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void perftestinit",
+          "detailed": "\n        ",
+          "name": "perftestinit",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int nthreads, int nreaders, int nupdaters)",
+          "brief": "\n        ",
+          "definition": "static int perftestrun",
+          "detailed": "\n        ",
+          "name": "perftestrun",
+          "params": [
+            "nthreads",
+            "nreaders",
+            "nupdaters"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int nreaders, int cpustride)",
+          "brief": "\n        ",
+          "definition": "static int perftest",
+          "detailed": "\n        ",
+          "name": "perftest",
+          "params": [
+            "nreaders",
+            "cpustride"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int nreaders, int cpustride)",
+          "brief": "\n        ",
+          "definition": "static int rperftest",
+          "detailed": "\n        ",
+          "name": "rperftest",
+          "params": [
+            "nreaders",
+            "cpustride"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int nupdaters, int cpustride)",
+          "brief": "\n        ",
+          "definition": "static int uperftest",
+          "detailed": "\n        ",
+          "name": "uperftest",
+          "params": [
+            "nupdaters",
+            "cpustride"
+          ],
+          "static": true
+        },
+        {
+          "args": "(long long[10+1], rcu_stress_count)",
+          "brief": "\n        ",
+          "definition": "DEFINE_PER_THREAD",
+          "detailed": "\n        ",
+          "name": "DEFINE_PER_THREAD",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void * rcu_read_stress_test",
+          "detailed": "\n        ",
+          "name": "rcu_read_stress_test",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(call_rcu_waiters)",
+          "brief": "\n        ",
+          "definition": "static DEFINE_URCU_WAIT_QUEUE",
+          "detailed": "\n        ",
+          "name": "DEFINE_URCU_WAIT_QUEUE",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct rcu_head *head __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void rcu_update_stress_test_rcu",
+          "detailed": "\n        ",
+          "name": "rcu_update_stress_test_rcu",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(enum writer_state *state)",
+          "brief": "\n        ",
+          "definition": "static void advance_writer_state",
+          "detailed": "\n        ",
+          "name": "advance_writer_state",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void * rcu_update_stress_test",
+          "detailed": "\n        ",
+          "name": "rcu_update_stress_test",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg __attribute__((__unused__)))",
+          "brief": "\n        ",
+          "definition": "static void * rcu_fake_update_stress_test",
+          "detailed": "\n        ",
+          "name": "rcu_fake_update_stress_test",
+          "params": [
+            "__attribute__"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int nreaders)",
+          "brief": "\n        ",
+          "definition": "static int stresstest",
+          "detailed": "\n        ",
+          "name": "stresstest",
+          "params": [
+            "nreaders"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *argv[]) __attribute__((__noreturn__))",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GOFLAG_INIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GOFLAG_RUN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GOFLAG_STOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_READ_RUN",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_READ_NESTABLE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "rcu_read_lock_nest",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "rcu_read_unlock_nest",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mark_rcu_quiescent_state",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "put_thread_offline",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "put_thread_online",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "put_thread_online_delay",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RCU_STRESS_PIPE_LEN",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum callrcu_type callrcu_type",
+          "detailed": "\n        ",
+          "name": "callrcu_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long long n_reads",
+          "detailed": "\n        ",
+          "name": "n_reads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "long n_updates",
+          "detailed": "\n        ",
+          "name": "n_updates",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int nthreadsrunning",
+          "detailed": "\n        ",
+          "name": "nthreadsrunning",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[64]",
+          "brief": "\n        ",
+          "definition": "char argsbuf[64]",
+          "detailed": "\n        ",
+          "name": "argsbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "struct rcu_stress rcu_stress_array[10]",
+          "detailed": "\n        ",
+          "name": "rcu_stress_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct rcu_stress* rcu_stress_current",
+          "detailed": "\n        ",
+          "name": "rcu_stress_current",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int rcu_stress_idx",
+          "detailed": "\n        ",
+          "name": "rcu_stress_idx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int n_mberror",
+          "detailed": "\n        ",
+          "name": "n_mberror",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int garbage",
+          "detailed": "\n        ",
+          "name": "garbage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int rcu_stress::pipe_count",
+          "detailed": "\n        ",
+          "name": "pipe_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int rcu_stress::mbtest",
+          "detailed": "\n        ",
+          "name": "mbtest",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/regression/test_urcu_fork.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(struct rcu_head *head)",
+          "brief": "\n        ",
+          "definition": "static void cb",
+          "detailed": "\n        ",
+          "name": "cb",
+          "params": [
+            "head"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void test_rcu",
+          "detailed": "\n        ",
+          "name": "test_rcu",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *execname)",
+          "brief": "\n        ",
+          "definition": "static int do_fork",
+          "detailed": "\n        ",
+          "name": "do_fork",
+          "params": [
+            "execname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc __attribute__((__unused__)), char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "__attribute__",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FORK_DEPTH",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_FORK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NR_TESTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "diag_gen0",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int fork_generation",
+          "detailed": "\n        ",
+          "name": "fork_generation",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/regression/urcutorture.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "_LGPL_SOURCE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "tests/regression",
+  "schema_version": 1,
+  "version": "0.15.6"
+}

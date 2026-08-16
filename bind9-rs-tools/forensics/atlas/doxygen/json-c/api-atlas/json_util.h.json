@@ -1,0 +1,181 @@
+{
+  "files": {
+    "json_util.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const char *filename)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_from_file",
+          "detailed": "Read the full contents of the given file, then convert it to a json_object using json_tokener_parse().\nReturns NULL on failure. See json_util_get_last_err() for details.",
+          "name": "json_object_from_file",
+          "params": [
+            "filename"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fd, int depth)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_from_fd_ex",
+          "detailed": "Create a JSON object from already opened file descriptor.\nThis function can be helpful, when you opened the file already, e.g. when you have a temp file. Note, that the fd must be readable at the actual position, i.e. use lseek(fd, 0, SEEK_SET) before.\nThe depth argument specifies the maximum object depth to pass to json_tokener_new_ex(). When depth == -1, JSON_TOKENER_DEFAULT_DEPTH is used instead.\nReturns NULL on failure. See json_util_get_last_err() for details.",
+          "name": "json_object_from_fd_ex",
+          "params": [
+            "fd",
+            "depth"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fd)",
+          "brief": "\n        ",
+          "definition": "struct json_object * json_object_from_fd",
+          "detailed": "Create a JSON object from an already opened file descriptor, using the default maximum object depth. (JSON_TOKENER_DEFAULT_DEPTH)\nSee json_object_from_fd_ex() for details.",
+          "name": "json_object_from_fd",
+          "params": [
+            "fd"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, struct json_object *obj)",
+          "brief": "\n        ",
+          "definition": "int json_object_to_file",
+          "detailed": "Equivalent to: json_object_to_file_ext(filename, obj, JSON_C_TO_STRING_PLAIN);\nReturns -1 if something fails. See json_util_get_last_err() for details.",
+          "name": "json_object_to_file",
+          "params": [
+            "filename",
+            "obj"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *filename, struct json_object *obj, int flags)",
+          "brief": "\n        ",
+          "definition": "int json_object_to_file_ext",
+          "detailed": "Open and truncate the given file, creating it if necessary, then convert the json_object to a string and write it to the file.\nReturns -1 if something fails. See json_util_get_last_err() for details.",
+          "name": "json_object_to_file_ext",
+          "params": [
+            "filename",
+            "obj",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int fd, struct json_object *obj, int flags)",
+          "brief": "\n        ",
+          "definition": "int json_object_to_fd",
+          "detailed": "Convert the json_object to a string and write it to the file descriptor. Handles partial writes and will keep writing until done, or an error occurs.\n\n\nfd\n\n\nan open, writable file descriptor to write to \n\n\n\n\nobj\n\n\nthe object to serializer and write \n\n\n\n\nflags\n\n\nflags to pass to json_object_to_json_string_ext() \n\n\n\n-1 if something fails. See json_util_get_last_err() for details. \n\n\nan open, writable file descriptor to write to \nthe object to serializer and write \nflags to pass to json_object_to_json_string_ext() \n-1 if something fails. See json_util_get_last_err() for details.",
+          "name": "json_object_to_fd",
+          "params": [
+            "fd",
+            "obj",
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char * json_util_get_last_err",
+          "detailed": "Return the last error from various json-c functions, including: json_object_to_file{,ext}, json_object_to_fd() or json_object_from{file,fd}, or NULL if there is none.",
+          "name": "json_util_get_last_err",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *buf, int64_t *retval)",
+          "brief": "\n        ",
+          "definition": "int json_parse_int64",
+          "detailed": "A parsing helper for integer values. Returns 0 on success, with the parsed value assigned to *retval. Overflow/underflow are NOT considered errors, but errno will be set to ERANGE, just like the strtol/strtoll functions do.",
+          "name": "json_parse_int64",
+          "params": [
+            "buf",
+            "retval"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *buf, uint64_t *retval)",
+          "brief": "\n        ",
+          "definition": "int json_parse_uint64",
+          "detailed": "A parsing help for integer values, providing one extra bit of magnitude beyond json_parse_int64().",
+          "name": "json_parse_uint64",
+          "params": [
+            "buf",
+            "retval"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *buf, double *retval)",
+          "brief": "\n        ",
+          "definition": "int json_parse_double",
+          "detailed": "Deprecated",
+          "name": "json_parse_double",
+          "params": [
+            "buf",
+            "retval"
+          ],
+          "static": false
+        },
+        {
+          "args": "(enum json_type o_type)",
+          "brief": "\n        ",
+          "definition": "const char * json_type_to_name",
+          "detailed": "Return a string describing the type of the object. e.g. \"int\", or \"object\", etc...",
+          "name": "json_type_to_name",
+          "params": [
+            "o_type"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "json_min",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "json_max",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "JSON_FILE_BUF_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "json_util.h",
+  "schema_version": 1,
+  "version": "0.19"
+}

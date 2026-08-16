@@ -1,0 +1,71 @@
+{
+  "files": {
+    "trees.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[L_CODES+2]",
+          "brief": "\n        ",
+          "definition": "local const ct_data static_ltree[L_CODES+2]",
+          "detailed": "\n        ",
+          "name": "static_ltree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[D_CODES]",
+          "brief": "\n        ",
+          "definition": "local const ct_data static_dtree[D_CODES]",
+          "detailed": "\n        ",
+          "name": "static_dtree",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[DIST_CODE_LEN]",
+          "brief": "\n        ",
+          "definition": "const uch ZLIB_INTERNAL _dist_code[DIST_CODE_LEN]",
+          "detailed": "\n        ",
+          "name": "_dist_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[MAX_MATCH-MIN_MATCH+1]",
+          "brief": "\n        ",
+          "definition": "const uch ZLIB_INTERNAL _length_code[MAX_MATCH-MIN_MATCH+1]",
+          "detailed": "\n        ",
+          "name": "_length_code",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[LENGTH_CODES]",
+          "brief": "\n        ",
+          "definition": "local const int base_length[LENGTH_CODES]",
+          "detailed": "\n        ",
+          "name": "base_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[D_CODES]",
+          "brief": "\n        ",
+          "definition": "local const int base_dist[D_CODES]",
+          "detailed": "\n        ",
+          "name": "base_dist",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "trees.h",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

@@ -1,0 +1,13 @@
+{
+  "enum_value_count": 5,
+  "file_count": 56,
+  "function_count": 897,
+  "libraries": [
+    "examples",
+    "src"
+  ],
+  "macro_count": 457,
+  "schema_version": 1,
+  "skipped_xml_files": [],
+  "version": "20260512-3.1"
+}

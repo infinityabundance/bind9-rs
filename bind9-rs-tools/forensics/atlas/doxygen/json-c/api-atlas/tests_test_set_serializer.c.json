@@ -1,0 +1,77 @@
+{
+  "files": {
+    "tests/test_set_serializer.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(json_object *jso, void *userdata)",
+          "brief": "\n        ",
+          "definition": "static void freeit",
+          "detailed": "\n        ",
+          "name": "freeit",
+          "params": [
+            "jso",
+            "userdata"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct json_object *o, struct printbuf *pb, int level, int flags)",
+          "brief": "\n        ",
+          "definition": "static int custom_serializer",
+          "detailed": "\n        ",
+          "name": "custom_serializer",
+          "params": [
+            "o",
+            "pb",
+            "level",
+            "flags"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNCONST",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int freeit_was_called",
+          "detailed": "\n        ",
+          "name": "freeit_was_called",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_set_serializer.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

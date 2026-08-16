@@ -1,0 +1,157 @@
+{
+  "files": {
+    "zutil.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "char * zlibVersion",
+          "detailed": "\n        ",
+          "name": "zlibVersion",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "uLong zlibCompileFlags",
+          "detailed": "\n        ",
+          "name": "zlibCompileFlags",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int err)",
+          "brief": "\n        ",
+          "definition": "char * zError",
+          "detailed": "\n        ",
+          "name": "zError",
+          "params": [
+            "err"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, Bytef *source, uInt len)",
+          "brief": "\n        ",
+          "definition": "void zmemcpy",
+          "detailed": "\n        ",
+          "name": "zmemcpy",
+          "params": [
+            "dest",
+            "source",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *s1, Bytef *s2, uInt len)",
+          "brief": "\n        ",
+          "definition": "int zmemcmp",
+          "detailed": "\n        ",
+          "name": "zmemcmp",
+          "params": [
+            "s1",
+            "s2",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(Bytef *dest, uInt len)",
+          "brief": "\n        ",
+          "definition": "void zmemzero",
+          "detailed": "\n        ",
+          "name": "zmemzero",
+          "params": [
+            "dest",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uInt size)",
+          "brief": "\n        ",
+          "definition": "voidp malloc",
+          "detailed": "\n        ",
+          "name": "malloc",
+          "params": [
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uInt items, uInt size)",
+          "brief": "\n        ",
+          "definition": "voidp calloc",
+          "detailed": "\n        ",
+          "name": "calloc",
+          "params": [
+            "items",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf ptr)",
+          "brief": "\n        ",
+          "definition": "void free",
+          "detailed": "\n        ",
+          "name": "free",
+          "params": [
+            "ptr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, unsigned items, unsigned size)",
+          "brief": "\n        ",
+          "definition": "voidpf zcalloc",
+          "detailed": "\n        ",
+          "name": "zcalloc",
+          "params": [
+            "opaque",
+            "items",
+            "size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(voidpf opaque, voidpf ptr)",
+          "brief": "\n        ",
+          "definition": "void zcfree",
+          "detailed": "\n        ",
+          "name": "zcfree",
+          "params": [
+            "opaque",
+            "ptr"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "[10]",
+          "brief": "\n        ",
+          "definition": "char* z_errmsg[10]",
+          "detailed": "\n        ",
+          "name": "z_errmsg",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "zutil.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

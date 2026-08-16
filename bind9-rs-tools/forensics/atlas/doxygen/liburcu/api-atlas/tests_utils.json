@@ -1,0 +1,564 @@
+{
+  "files": {
+    "tests/utils/tap.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(unsigned int)",
+          "brief": "\n        ",
+          "definition": "void _expected_tests",
+          "detailed": "\n        ",
+          "name": "_expected_tests",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void _tap_init",
+          "detailed": "\n        ",
+          "name": "_tap_init",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void _cleanup",
+          "detailed": "\n        ",
+          "name": "_cleanup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int ok, const char *func, const char *file, unsigned int line, const char *test_name,...)",
+          "brief": "\n        ",
+          "definition": "unsigned int _gen_result",
+          "detailed": "\n        ",
+          "name": "_gen_result",
+          "params": [
+            "ok",
+            "func",
+            "file",
+            "line",
+            "test_name",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int plan_no_plan",
+          "detailed": "\n        ",
+          "name": "plan_no_plan",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *reason)",
+          "brief": "\n        ",
+          "definition": "int plan_skip_all",
+          "detailed": "\n        ",
+          "name": "plan_skip_all",
+          "params": [
+            "reason"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned int tests)",
+          "brief": "\n        ",
+          "definition": "int plan_tests",
+          "detailed": "\n        ",
+          "name": "plan_tests",
+          "params": [
+            "tests"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "unsigned int diag",
+          "detailed": "\n        ",
+          "name": "diag",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned int rdiag_start",
+          "detailed": "\n        ",
+          "name": "rdiag_start",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "unsigned int rdiag",
+          "detailed": "\n        ",
+          "name": "rdiag",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned int rdiag_end",
+          "detailed": "\n        ",
+          "name": "rdiag_end",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *val)",
+          "brief": "\n        ",
+          "definition": "void diag_multiline",
+          "detailed": "\n        ",
+          "name": "diag_multiline",
+          "params": [
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned int n, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "int skip",
+          "detailed": "\n        ",
+          "name": "skip",
+          "params": [
+            "n",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void todo_start",
+          "detailed": "\n        ",
+          "name": "todo_start",
+          "params": [
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void todo_end",
+          "detailed": "\n        ",
+          "name": "todo_end",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int exit_status",
+          "detailed": "\n        ",
+          "name": "exit_status",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void tap_disable",
+          "detailed": "\n        ",
+          "name": "tap_disable",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOCK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNLOCK",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int no_plan",
+          "detailed": "\n        ",
+          "name": "no_plan",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int skip_all",
+          "detailed": "\n        ",
+          "name": "skip_all",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int have_plan",
+          "detailed": "\n        ",
+          "name": "have_plan",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int test_count",
+          "detailed": "\n        ",
+          "name": "test_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int e_tests",
+          "detailed": "\n        ",
+          "name": "e_tests",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int failures",
+          "detailed": "\n        ",
+          "name": "failures",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* todo_msg",
+          "detailed": "\n        ",
+          "name": "todo_msg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* todo_msg_fixed",
+          "detailed": "\n        ",
+          "name": "todo_msg_fixed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int todo",
+          "detailed": "\n        ",
+          "name": "todo",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int test_died",
+          "detailed": "\n        ",
+          "name": "test_died",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int tap_is_disabled",
+          "detailed": "\n        ",
+          "name": "tap_is_disabled",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "tests/utils/tap.h": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "((format(printf, 5, 6))) unsigned int _gen_result(int",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char const char unsigned const char int plan_no_plan",
+          "detailed": "\n        ",
+          "name": "plan_no_plan",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "((__noreturn__)) int plan_skip_all(const char *)",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned int)",
+          "brief": "\n        ",
+          "definition": "int plan_tests",
+          "detailed": "\n        ",
+          "name": "plan_tests",
+          "params": [
+            "tests"
+          ],
+          "static": false
+        },
+        {
+          "args": "((format(printf, 1, 2))) unsigned int diag(const char *",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *)",
+          "brief": "\n        ",
+          "definition": "void diag_multiline",
+          "detailed": "\n        ",
+          "name": "diag_multiline",
+          "params": [
+            "val"
+          ],
+          "static": false
+        },
+        {
+          "args": "((format(printf, 2, 3))) int skip(unsigned int",
+          "brief": "\n        ",
+          "definition": "__attribute__",
+          "detailed": "\n        ",
+          "name": "__attribute__",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "const char void todo_end",
+          "detailed": "\n        ",
+          "name": "todo_end",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int exit_status",
+          "detailed": "\n        ",
+          "name": "exit_status",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void tap_disable",
+          "detailed": "\n        ",
+          "name": "tap_disable",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned int rdiag_start",
+          "detailed": "\n        ",
+          "name": "rdiag_start",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "unsigned int rdiag_end",
+          "detailed": "\n        ",
+          "name": "rdiag_end",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ok",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ok1",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "pass",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "fail",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "skip_start",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "skip_end",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TAP_PRINTF_FORMAT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char const char unsigned int",
+          "detailed": "\n        ",
+          "name": "int",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/utils",
+  "schema_version": 1,
+  "version": "0.15.6"
+}

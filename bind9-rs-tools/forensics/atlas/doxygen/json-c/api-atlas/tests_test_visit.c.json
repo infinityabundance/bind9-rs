@@ -1,0 +1,204 @@
+{
+  "files": {
+    "tests/test_visit.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int emit_object",
+          "detailed": "\n        ",
+          "name": "emit_object",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int skip_arrays",
+          "detailed": "\n        ",
+          "name": "skip_arrays",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int pop_and_stop",
+          "detailed": "\n        ",
+          "name": "pop_and_stop",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int err_on_subobj2",
+          "detailed": "\n        ",
+          "name": "err_on_subobj2",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int pop_array",
+          "detailed": "\n        ",
+          "name": "pop_array",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int stop_array",
+          "detailed": "\n        ",
+          "name": "stop_array",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(json_object *jso, int flags, json_object *parent_jso, const char *jso_key, size_t *jso_index, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static int err_return",
+          "detailed": "\n        ",
+          "name": "err_return",
+          "params": [
+            "jso",
+            "flags",
+            "parent_jso",
+            "jso_key",
+            "jso_index",
+            "userarg"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc emit_object",
+          "detailed": "\n        ",
+          "name": "emit_object",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc skip_arrays",
+          "detailed": "\n        ",
+          "name": "skip_arrays",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc pop_and_stop",
+          "detailed": "\n        ",
+          "name": "pop_and_stop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc err_on_subobj2",
+          "detailed": "\n        ",
+          "name": "err_on_subobj2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc pop_array",
+          "detailed": "\n        ",
+          "name": "pop_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc stop_array",
+          "detailed": "\n        ",
+          "name": "stop_array",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "json_c_visit_userfunc err_return",
+          "detailed": "\n        ",
+          "name": "err_return",
+          "params": [],
+          "static": false
+        }
+      ]
+    }
+  },
+  "library": "tests/test_visit.c",
+  "schema_version": 1,
+  "version": "0.19"
+}

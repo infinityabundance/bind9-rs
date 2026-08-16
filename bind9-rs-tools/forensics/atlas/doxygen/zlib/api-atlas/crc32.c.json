@@ -1,0 +1,167 @@
+{
+  "files": {
+    "crc32.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(z_crc_t a, z_crc_t b)",
+          "brief": "\n        ",
+          "definition": "static z_crc_t multmodp",
+          "detailed": "\n        ",
+          "name": "multmodp",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(long n, unsigned k)",
+          "brief": "\n        ",
+          "definition": "static z_crc_t x2nmodp",
+          "detailed": "\n        ",
+          "name": "x2nmodp",
+          "params": [
+            "n",
+            "k"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "z_crc_t * get_crc_table",
+          "detailed": "\n        ",
+          "name": "get_crc_table",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long crc, unsigned char *buf, z_size_t len)",
+          "brief": "\n        ",
+          "definition": "unsigned long crc32_z",
+          "detailed": "\n        ",
+          "name": "crc32_z",
+          "params": [
+            "crc",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(unsigned long crc, unsigned char *buf, uInt len)",
+          "brief": "\n        ",
+          "definition": "unsigned long crc32",
+          "detailed": "\n        ",
+          "name": "crc32",
+          "params": [
+            "crc",
+            "buf",
+            "len"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong crc1, uLong crc2, long len2)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine64",
+          "detailed": "\n        ",
+          "name": "crc32_combine64",
+          "params": [
+            "crc1",
+            "crc2",
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong crc1, uLong crc2, long len2)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine",
+          "detailed": "\n        ",
+          "name": "crc32_combine",
+          "params": [
+            "crc1",
+            "crc2",
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long len2)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine_gen64",
+          "detailed": "\n        ",
+          "name": "crc32_combine_gen64",
+          "params": [
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(long len2)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine_gen",
+          "detailed": "\n        ",
+          "name": "crc32_combine_gen",
+          "params": [
+            "len2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uLong crc1, uLong crc2, uLong op)",
+          "brief": "\n        ",
+          "definition": "uLong crc32_combine_op",
+          "detailed": "\n        ",
+          "name": "crc32_combine_op",
+          "params": [
+            "crc1",
+            "crc2",
+            "op"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "N",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "W",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "POLY",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "crc32.c",
+  "schema_version": 1,
+  "version": "1.3.1"
+}

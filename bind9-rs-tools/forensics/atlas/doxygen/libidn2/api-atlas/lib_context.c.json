@@ -1,0 +1,65 @@
+{
+  "files": {
+    "lib/context.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(const uint32_t *label, size_t llen, size_t pos)",
+          "brief": "\n        ",
+          "definition": "int _idn2_contextj_rule",
+          "detailed": "\n        ",
+          "name": "_idn2_contextj_rule",
+          "params": [
+            "label",
+            "llen",
+            "pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ucs4_t uc)",
+          "brief": "\n        ",
+          "definition": "static const char * _uc_script_name",
+          "detailed": "\n        ",
+          "name": "_uc_script_name",
+          "params": [
+            "uc"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const uint32_t *label, size_t llen, size_t pos)",
+          "brief": "\n        ",
+          "definition": "int _idn2_contexto_rule",
+          "detailed": "\n        ",
+          "name": "_idn2_contexto_rule",
+          "params": [
+            "label",
+            "llen",
+            "pos"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t cp)",
+          "brief": "\n        ",
+          "definition": "bool _idn2_contexto_with_rule",
+          "detailed": "\n        ",
+          "name": "_idn2_contexto_with_rule",
+          "params": [
+            "cp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [],
+      "structs": [],
+      "typedefs": [],
+      "variables": []
+    }
+  },
+  "library": "lib/context.c",
+  "schema_version": 1,
+  "version": "2.3.8"
+}
