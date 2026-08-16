@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "court_id": "RENDER-COMPRESS-0004",
-  "git_commit": "78016646ef412682db24789213bf25a4bdc46560",
+  "git_commit": "6237a85b3e4b8995d068691206953acc2ba1b97e",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
   "cargo_lock_sha256": "3130e171624aef0f56f8066c15146a9099ae8918d6ca65e86f25a5518b27156c",
   "oracle_hashes": {},
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
-  "completed_at": "2026-08-16T00:07:17Z",
+  "completed_at": "2026-08-16T00:07:33Z",
   "input_hashes": {
     "names.txt": "3310b4afb449143a19ff3c1a94dcfe7e007c145cee8bb1052a8669a74aa38cdb"
   },
