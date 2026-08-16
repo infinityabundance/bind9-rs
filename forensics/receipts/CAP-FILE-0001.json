@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "court_id": "CAP-FILE-0001",
+  "git_commit": "e667b8c4",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "8b51282949344b6f52591e68bb51e39f8c530c4cb4801faf076d376cac3cf649",
+  "oracle_hashes": {
+    "oracle-libcap-2.78": "sha256:76543c29fa985fc3eba1af08fd6f20c4727449e253398ed81f509ab285abf215",
+    "probe-libcap-file.c": "e667259f6903c06edda0f935947c395b22343f1cd68b0af9ad834c3e325e014c",
+    "cap-file-probe.rs": "3f03e9cb46274790852529f00630b29e750a1ca1f08b076b107765643e424de5",
+    "compat/libcap.rs": "ec788354d6a84bb9a5bca8a87f7d84ccaa0c1025a385f0e70c72260601007add"
+  },
+  "environment_digest": "81ccd9b71efc049ef54f39d5be70f87883d3250b0a7e091ba5ab397822f32e4b",
+  "completed_at": "2026-08-16T03:03:14Z",
+  "input_hashes": {},
+  "residual_ids": [],
+  "invariants_passed": [
+    "cap_set_file(self) return value matches the C library (0)",
+    "cap_get_file(self) state (capabilities + rootid) matches the C library",
+    "the security.capability xattr bytes re-serialized by the Rust module match the raw kernel xattr bytes observed by the C probe (xattr(20) and xattr(24) hex dumps byte-identical)",
+    "cross-read: each side reads the OTHER side's file and observes the same state and xattr bytes (byte-identical)",
+    "cap_set_file on a symlink fails with the same errno as the C library (EINVAL)",
+    "cap_set_file(self, NULL) removes the xattr with the same return value (0)",
+    "the v3 rootid form serializes to the same 24-byte xattr and parses back identically"
+  ],
+  "captures_sha256": "ac2bf225181d8ffc59ff094a14dc82ee2145e83836e8ecdceef965999b379a88",
+  "repro_command": "sh bind9-rs-tools/forensics/courts/cap-file-0001/harness.sh && sh bind9-rs-tools/forensics/courts/cap-file-0001/compare.sh"
+}
