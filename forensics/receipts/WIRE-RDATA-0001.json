@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "court_id": "WIRE-RDATA-0001",
-  "git_commit": "2f24991a55ce584b2ceb9d41fad677baadad4a7c",
+  "git_commit": "59667ecaec6f6dd999e3f2b6c436bf691aad8832",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
   "cargo_lock_sha256": "3130e171624aef0f56f8066c15146a9099ae8918d6ca65e86f25a5518b27156c",
   "oracle_hashes": {},
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
-  "completed_at": "2026-08-16T00:15:50Z",
+  "completed_at": "2026-08-16T00:44:33Z",
   "input_hashes": {
     "cases.txt": "d8bddeeaa18540585fcdb1f6e8b984062cc882b9fdb8c3af5afd451c10c4f98d"
   },
@@ -15,6 +15,6 @@
     "totext (origin NULL), uncompressed wire hex, DNSSEC canonical digest hex, and the wire->text round-trip must each match byte-for-byte",
     "fromtext failure result codes must match (error text is part of the surface)"
   ],
-  "captures_sha256": "248981799be76d6efc08f0678f4f244278c7923b6b0b46a9d95a2a48f549238a",
+  "captures_sha256": "9e105032f1e34a227a34c203efedaa42aabe5be7e9f727cd8e73838c0f0444a9",
   "repro_command": "bind9-court run WIRE-RDATA-0001"
 }
