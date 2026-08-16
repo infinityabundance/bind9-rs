@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "court_id": "MMDB-0001",
+  "git_commit": "pending",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "8b51282949344b6f52591e68bb51e39f8c530c4cb4801faf076d376cac3cf649",
+  "oracle_hashes": {
+    "oracle-libmaxminddb-1.13.3": "sha256:1ec5a62807e1b411926b6e1933d6c62016d9f07a28915e2b70b977491ba86ab2",
+    "libmaxminddb-1.13.3.tar.gz": "a66502ea76eadbe17f2cd6fd708946777253972d2ae8157dee1b23a2fb528171",
+    "probe-maxminddb.c": "76077acaa30a0e1830bc92e796ec8146a091fc6fd938f35723524fea8b08f187",
+    "maxminddb-probe.rs": "3807a6541b21a45960e2a5bc9f39ebab853b4fd4ed8441b23f8a255302cf05ba",
+    "compat/maxminddb.rs": "6ed6937d0e6c6f580544740338a0e2d59257278e365661bcea6ac2989d466507"
+  },
+  "environment_digest": "81ccd9b71efc049ef54f39d5be70f87883d3250b0a7e091ba5ab397822f32e4b",
+  "completed_at": "2026-08-16T03:26:27Z",
+  "input_hashes": {
+    "oracle_stdout_sha256": "307ca10ee4fe29845aaf19db67e3e3df06ade3e30cd7f3909814d915b1f8e946",
+    "rust_stdout_sha256": "307ca10ee4fe29845aaf19db67e3e3df06ade3e30cd7f3909814d915b1f8e946"
+  },
+  "residual_ids": [],
+  "invariants_passed": [
+    "MMDB_lib_version and every MMDB_strerror string match",
+    "open-error taxonomy matches (IO_ERROR for empty files via mmap(0) EINVAL, INVALID_METADATA for garbage/truncated) for nonexistent, empty, garbage and truncated files",
+    "metadata fields (node_count, record_size, ip_version, binary format, build_epoch + gmtime rendering, type, languages, descriptions) match",
+    "metadata entry-data-list dump is byte-identical",
+    "MMDB_read_node records, types, entries and the node-count bounds error match",
+    "lookup found/netmask/gai_error/mmdb_error match for the deterministic address set (IPv4, IPv6, mapped, not-found)",
+    "MMDB_aget_value path lookups match, including strtol array-index semantics (negative wrap, out of range, non-numeric) and missing keys",
+    "MMDB_dump_entry_data_list output is byte-identical for every found entry (all data types incl. uint128 hex, %f floats, byte hex)",
+    "corrupt databases produce identical status codes (INVALID_DATA, CORRUPT_SEARCH_TREE, depth-limit)",
+    "IPv6 lookup in an IPv4 database returns MMDB_IPV6_LOOKUP_IN_IPV4_DATABASE_ERROR",
+    "getaddrinfo (AI_NUMERICHOST) error codes and resolved address bytes match for the 41-form corpus (strict inet_pton, inet_aton shorthand, octal/hex, zones)",
+    "glibc zone handling matches (numeric zones incl. 0 accepted, ERANGE-overflow and unknown-name zones rejected)"
+  ],
+  "captures_sha256": "8b458dc0980b34fe19aee3e8629dd733d1576fcd4186db3f6f8646d03c7f5910",
+  "repro_command": "sh bind9-rs-tools/forensics/courts/mmdb-0001/harness.sh && sh bind9-rs-tools/forensics/courts/mmdb-0001/compare.sh"
+}

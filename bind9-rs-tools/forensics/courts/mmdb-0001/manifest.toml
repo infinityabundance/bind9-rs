@@ -1,0 +1,32 @@
+schema_version = 1
+court_id = "MMDB-0001"
+question = "Does the Rust maxminddb module (compat/maxminddb.rs) reproduce the libmaxminddb 1.13.3 observable behavior byte-exactly across the pinned upstream test corpus: open-error taxonomy, metadata parsing and mmdblookup-format metadata dump, metadata entry-data-list dump, search-tree walk and MMDB_read_node bounds, deterministic address lookups with path lookups and full entry dumps, the decoder database (every data type), corrupt databases (broken pointers/search tree, deep nesting, oversized containers), the IPv6-in-IPv4 error, and getaddrinfo error codes?"
+subsystem = "compat/maxminddb"
+oracle_versions = ["1.13.3"]
+harness = "mmdb"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle container against the same pinned database files",
+]
+invariants = [
+    "MMDB_lib_version and every MMDB_strerror string match",
+    "open-error taxonomy matches (FILE_OPEN / INVALID_METADATA / UNKNOWN_DATABASE_FORMAT / INVALID_DATA / IO / OOM) for nonexistent, empty, garbage and truncated files",
+    "metadata fields (node_count, record_size, ip_version, binary format, build_epoch + gmtime rendering, type, languages, descriptions) match",
+    "metadata entry-data-list dump is byte-identical",
+    "MMDB_read_node records, types, entries and the node-count bounds error match",
+    "lookup found/netmask/gai_error/mmdb_error match for the deterministic address set (IPv4, IPv6, mapped, not-found)",
+    "MMDB_aget_value path lookups match, including strtol array-index semantics (negative wrap, out of range, non-numeric) and missing keys",
+    "MMDB_dump_entry_data_list output is byte-identical for every found entry (all data types incl. uint128 hex, %f floats, byte hex)",
+    "corrupt databases produce identical status codes (INVALID_DATA, CORRUPT_SEARCH_TREE, INVALID_NODE_COUNT, depth-limit)",
+    "IPv6 lookup in an IPv4 database returns MMDB_IPV6_LOOKUP_IN_IPV4_DATABASE_ERROR",
+    "getaddrinfo (AI_NUMERICHOST) error codes match for the invalid-address corpus",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are pinned files and fixed address strings; no wall-clock or random data is printed; build_epoch is rendered deterministically from the file contents"
+security_classification = "corrupt-database and depth-limit surfaces are the security-relevant parser paths; both implementations must reject rather than crash"
+references = [
+    "libmaxminddb-1.13.3 src/maxminddb.c, src/data-pool.c, src/maxminddb-compat-util.h (pinned archive sha256 a66502ea76eadbe17f2cd6fd708946777253972d2ae8157dee1b23a2fb528171)",
+    "upstream test corpus t/maxmind-db/test-data/ + t/maxmind-db/bad-data/ (pinned inside the same archive)",
+    "forensics/oracle/probes/probe-maxminddb.c",
+    "bind9-rs-tools/src/bin/maxminddb-probe.rs",
+    "addendum §33 (libmaxminddb), §37 (C probe courts), §38 (four-corner interchange courts)",
+]

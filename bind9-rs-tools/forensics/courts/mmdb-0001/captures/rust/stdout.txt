@@ -1,0 +1,1123 @@
+== version ==
+1.13.3
+== strerror ==
+0: Success (not an error)
+1: Error opening the specified MaxMind DB file
+2: The MaxMind DB file's search tree is corrupt
+3: The MaxMind DB file contains invalid metadata
+4: An attempt to read data from the MaxMind DB file failed
+5: A memory allocation call failed
+6: The MaxMind DB file is in a format this library can't handle (unknown record size or binary format version)
+7: The MaxMind DB file's data section contains bad data (unknown data type or corrupt data)
+8: The lookup path contained an invalid value (like a negative integer for an array index)
+9: The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+10: The MMDB_read_node function was called with a node number that does not exist in the search tree
+11: You attempted to look up an IPv6 address in an IPv4-only database
+999: Unknown error code
+== open errors ==
+/tmp/mmdb-nonexistent: 1 Error opening the specified MaxMind DB file
+/tmp/mmdb-empty: 4 An attempt to read data from the MaxMind DB file failed
+/tmp/mmdb-garbage: 3 The MaxMind DB file contains invalid metadata
+/tmp/mmdb-trunc: 3 The MaxMind DB file contains invalid metadata
+== open GeoIP2-City-Test.mmdb ==
+0 Success (not an error)
+== metadata ==
+  Database metadata
+    Node count:    1547
+    Record size:   28 bits
+    IP version:    IPv6
+    Binary format: 2.0
+    Build epoch:   1770245369 (2026-02-04 22:49:29 UTC)
+    Type:          GeoIP2-City
+    Languages:     en zh
+    Description:
+      en:   GeoIP2 City Test Database (fake GeoIP2 data, for example purposes only)
+      zh:   小型数据库
+
+== metadata list ==
+status=0
+{
+  "binary_format_major_version": 
+    2 <uint16>
+  "binary_format_minor_version": 
+    0 <uint16>
+  "build_epoch": 
+    1770245369 <uint64>
+  "database_type": 
+    "GeoIP2-City" <utf8_string>
+  "description": 
+    {
+      "en": 
+        "GeoIP2 City Test Database (fake GeoIP2 data, for example purposes only)" <utf8_string>
+      "zh": 
+        "小型数据库" <utf8_string>
+    }
+  "ip_version": 
+    6 <uint16>
+  "languages": 
+    [
+      "en" <utf8_string>
+      "zh" <utf8_string>
+    ]
+  "node_count": 
+    1547 <uint32>
+  "record_size": 
+    28 <uint16>
+}
+dump_status=0
+== read_node ==
+node 0: status=0 left=1 lt=0 le=4294965734 right=1538 rt=0 re=4294967271
+node 1: status=0 left=2 lt=0 le=4294965735 right=1547 rt=1 re=4294967280
+node 2: status=0 left=3 lt=0 le=4294965736 right=541 rt=0 re=4294966274
+node==count: status=10
+== lookups ==
+  lookup 81.2.69.142: found=1 netmask=127 gai=0 mmdb_err=0
+    path city names en: type=utf8_string has_data=1 data_size=6 off=1118 next=1129 val="London"
+    path country names en: type=utf8_string has_data=1 data_size=14 off=211 next=226 val="United Kingdom"
+    path subdivisions 0 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path location latitude: type=double has_data=1 data_size=- off=1194 next=1404 val=51.514200
+    path location longitude: type=double has_data=1 data_size=- off=1205 next=1408 val=-0.093100
+    path location accuracy_radius: type=uint16 has_data=1 data_size=- off=1398 next=1400 val=10
+    path traits network: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path postal code: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path registered_country iso_code: type=utf8_string has_data=1 data_size=2 off=1229 next=1232 val="US"
+    path nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path city nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions -1 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path subdivisions 9: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions x: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    dump:
+{
+  "city": 
+    {
+      "geoname_id": 
+        2643743 <uint32>
+      "names": 
+        {
+          "de": 
+            "London" <utf8_string>
+          "en": 
+            "London" <utf8_string>
+          "es": 
+            "Londres" <utf8_string>
+          "fr": 
+            "Londres" <utf8_string>
+          "ja": 
+            "ロンドン" <utf8_string>
+          "pt-BR": 
+            "Londres" <utf8_string>
+          "ru": 
+            "Лондон" <utf8_string>
+        }
+    }
+  "continent": 
+    {
+      "code": 
+        "EU" <utf8_string>
+      "geoname_id": 
+        6255148 <uint32>
+      "names": 
+        {
+          "de": 
+            "Europa" <utf8_string>
+          "en": 
+            "Europe" <utf8_string>
+          "es": 
+            "Europa" <utf8_string>
+          "fr": 
+            "Europe" <utf8_string>
+          "ja": 
+            "ヨーロッパ" <utf8_string>
+          "pt-BR": 
+            "Europa" <utf8_string>
+          "ru": 
+            "Европа" <utf8_string>
+          "zh-CN": 
+            "欧洲" <utf8_string>
+        }
+    }
+  "country": 
+    {
+      "geoname_id": 
+        2635167 <uint32>
+      "iso_code": 
+        "GB" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Vereinigtes Königreich" <utf8_string>
+          "en": 
+            "United Kingdom" <utf8_string>
+          "es": 
+            "Reino Unido" <utf8_string>
+          "fr": 
+            "Royaume-Uni" <utf8_string>
+          "ja": 
+            "イギリス" <utf8_string>
+          "pt-BR": 
+            "Reino Unido" <utf8_string>
+          "ru": 
+            "Великобритания" <utf8_string>
+          "zh-CN": 
+            "英国" <utf8_string>
+        }
+    }
+  "location": 
+    {
+      "accuracy_radius": 
+        10 <uint16>
+      "latitude": 
+        51.514200 <double>
+      "longitude": 
+        -0.093100 <double>
+      "time_zone": 
+        "Europe/London" <utf8_string>
+    }
+  "registered_country": 
+    {
+      "geoname_id": 
+        6252001 <uint32>
+      "iso_code": 
+        "US" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "USA" <utf8_string>
+          "en": 
+            "United States" <utf8_string>
+          "es": 
+            "Estados Unidos" <utf8_string>
+          "fr": 
+            "États-Unis" <utf8_string>
+          "ja": 
+            "アメリカ合衆国" <utf8_string>
+          "pt-BR": 
+            "Estados Unidos" <utf8_string>
+          "ru": 
+            "США" <utf8_string>
+          "zh-CN": 
+            "美国" <utf8_string>
+        }
+    }
+  "subdivisions": 
+    [
+      {
+        "geoname_id": 
+          6269131 <uint32>
+        "iso_code": 
+          "ENG" <utf8_string>
+        "names": 
+          {
+            "en": 
+              "England" <utf8_string>
+            "es": 
+              "Inglaterra" <utf8_string>
+            "fr": 
+              "Angleterre" <utf8_string>
+            "pt-BR": 
+              "Inglaterra" <utf8_string>
+          }
+      }
+    ]
+}
+    dump_status=0
+  lookup 81.2.69.143: found=1 netmask=127 gai=0 mmdb_err=0
+    path city names en: type=utf8_string has_data=1 data_size=6 off=1118 next=1129 val="London"
+    path country names en: type=utf8_string has_data=1 data_size=14 off=211 next=226 val="United Kingdom"
+    path subdivisions 0 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path location latitude: type=double has_data=1 data_size=- off=1194 next=1404 val=51.514200
+    path location longitude: type=double has_data=1 data_size=- off=1205 next=1408 val=-0.093100
+    path location accuracy_radius: type=uint16 has_data=1 data_size=- off=1398 next=1400 val=10
+    path traits network: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path postal code: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path registered_country iso_code: type=utf8_string has_data=1 data_size=2 off=1229 next=1232 val="US"
+    path nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path city nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions -1 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path subdivisions 9: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions x: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    dump:
+{
+  "city": 
+    {
+      "geoname_id": 
+        2643743 <uint32>
+      "names": 
+        {
+          "de": 
+            "London" <utf8_string>
+          "en": 
+            "London" <utf8_string>
+          "es": 
+            "Londres" <utf8_string>
+          "fr": 
+            "Londres" <utf8_string>
+          "ja": 
+            "ロンドン" <utf8_string>
+          "pt-BR": 
+            "Londres" <utf8_string>
+          "ru": 
+            "Лондон" <utf8_string>
+        }
+    }
+  "continent": 
+    {
+      "code": 
+        "EU" <utf8_string>
+      "geoname_id": 
+        6255148 <uint32>
+      "names": 
+        {
+          "de": 
+            "Europa" <utf8_string>
+          "en": 
+            "Europe" <utf8_string>
+          "es": 
+            "Europa" <utf8_string>
+          "fr": 
+            "Europe" <utf8_string>
+          "ja": 
+            "ヨーロッパ" <utf8_string>
+          "pt-BR": 
+            "Europa" <utf8_string>
+          "ru": 
+            "Европа" <utf8_string>
+          "zh-CN": 
+            "欧洲" <utf8_string>
+        }
+    }
+  "country": 
+    {
+      "geoname_id": 
+        2635167 <uint32>
+      "iso_code": 
+        "GB" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Vereinigtes Königreich" <utf8_string>
+          "en": 
+            "United Kingdom" <utf8_string>
+          "es": 
+            "Reino Unido" <utf8_string>
+          "fr": 
+            "Royaume-Uni" <utf8_string>
+          "ja": 
+            "イギリス" <utf8_string>
+          "pt-BR": 
+            "Reino Unido" <utf8_string>
+          "ru": 
+            "Великобритания" <utf8_string>
+          "zh-CN": 
+            "英国" <utf8_string>
+        }
+    }
+  "location": 
+    {
+      "accuracy_radius": 
+        10 <uint16>
+      "latitude": 
+        51.514200 <double>
+      "longitude": 
+        -0.093100 <double>
+      "time_zone": 
+        "Europe/London" <utf8_string>
+    }
+  "registered_country": 
+    {
+      "geoname_id": 
+        6252001 <uint32>
+      "iso_code": 
+        "US" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "USA" <utf8_string>
+          "en": 
+            "United States" <utf8_string>
+          "es": 
+            "Estados Unidos" <utf8_string>
+          "fr": 
+            "États-Unis" <utf8_string>
+          "ja": 
+            "アメリカ合衆国" <utf8_string>
+          "pt-BR": 
+            "Estados Unidos" <utf8_string>
+          "ru": 
+            "США" <utf8_string>
+          "zh-CN": 
+            "美国" <utf8_string>
+        }
+    }
+  "subdivisions": 
+    [
+      {
+        "geoname_id": 
+          6269131 <uint32>
+        "iso_code": 
+          "ENG" <utf8_string>
+        "names": 
+          {
+            "en": 
+              "England" <utf8_string>
+            "es": 
+              "Inglaterra" <utf8_string>
+            "fr": 
+              "Angleterre" <utf8_string>
+            "pt-BR": 
+              "Inglaterra" <utf8_string>
+          }
+      }
+    ]
+}
+    dump_status=0
+  lookup 81.2.69.144: found=1 netmask=124 gai=0 mmdb_err=0
+    path city names en: type=utf8_string has_data=1 data_size=6 off=1118 next=1129 val="London"
+    path country names en: type=utf8_string has_data=1 data_size=14 off=211 next=226 val="United Kingdom"
+    path subdivisions 0 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path location latitude: type=double has_data=1 data_size=- off=1194 next=1364 val=51.514200
+    path location longitude: type=double has_data=1 data_size=- off=1205 next=1368 val=-0.093100
+    path location accuracy_radius: type=uint16 has_data=1 data_size=- off=1358 next=1360 val=3
+    path traits network: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path postal code: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path registered_country iso_code: type=utf8_string has_data=1 data_size=2 off=1229 next=1232 val="US"
+    path nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path city nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions -1 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path subdivisions 9: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions x: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    dump:
+{
+  "city": 
+    {
+      "geoname_id": 
+        2643743 <uint32>
+      "names": 
+        {
+          "de": 
+            "London" <utf8_string>
+          "en": 
+            "London" <utf8_string>
+          "es": 
+            "Londres" <utf8_string>
+          "fr": 
+            "Londres" <utf8_string>
+          "ja": 
+            "ロンドン" <utf8_string>
+          "pt-BR": 
+            "Londres" <utf8_string>
+          "ru": 
+            "Лондон" <utf8_string>
+        }
+    }
+  "continent": 
+    {
+      "code": 
+        "EU" <utf8_string>
+      "geoname_id": 
+        6255148 <uint32>
+      "names": 
+        {
+          "de": 
+            "Europa" <utf8_string>
+          "en": 
+            "Europe" <utf8_string>
+          "es": 
+            "Europa" <utf8_string>
+          "fr": 
+            "Europe" <utf8_string>
+          "ja": 
+            "ヨーロッパ" <utf8_string>
+          "pt-BR": 
+            "Europa" <utf8_string>
+          "ru": 
+            "Европа" <utf8_string>
+          "zh-CN": 
+            "欧洲" <utf8_string>
+        }
+    }
+  "country": 
+    {
+      "geoname_id": 
+        2635167 <uint32>
+      "iso_code": 
+        "GB" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Vereinigtes Königreich" <utf8_string>
+          "en": 
+            "United Kingdom" <utf8_string>
+          "es": 
+            "Reino Unido" <utf8_string>
+          "fr": 
+            "Royaume-Uni" <utf8_string>
+          "ja": 
+            "イギリス" <utf8_string>
+          "pt-BR": 
+            "Reino Unido" <utf8_string>
+          "ru": 
+            "Великобритания" <utf8_string>
+          "zh-CN": 
+            "英国" <utf8_string>
+        }
+    }
+  "location": 
+    {
+      "accuracy_radius": 
+        3 <uint16>
+      "latitude": 
+        51.514200 <double>
+      "longitude": 
+        -0.093100 <double>
+      "time_zone": 
+        "Europe/London" <utf8_string>
+    }
+  "registered_country": 
+    {
+      "geoname_id": 
+        6252001 <uint32>
+      "iso_code": 
+        "US" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "USA" <utf8_string>
+          "en": 
+            "United States" <utf8_string>
+          "es": 
+            "Estados Unidos" <utf8_string>
+          "fr": 
+            "États-Unis" <utf8_string>
+          "ja": 
+            "アメリカ合衆国" <utf8_string>
+          "pt-BR": 
+            "Estados Unidos" <utf8_string>
+          "ru": 
+            "США" <utf8_string>
+          "zh-CN": 
+            "美国" <utf8_string>
+        }
+    }
+  "subdivisions": 
+    [
+      {
+        "geoname_id": 
+          6269131 <uint32>
+        "iso_code": 
+          "ENG" <utf8_string>
+        "names": 
+          {
+            "en": 
+              "England" <utf8_string>
+            "es": 
+              "Inglaterra" <utf8_string>
+            "fr": 
+              "Angleterre" <utf8_string>
+            "pt-BR": 
+              "Inglaterra" <utf8_string>
+          }
+      }
+    ]
+}
+    dump_status=0
+  lookup 2001:218::1: found=1 netmask=32 gai=0 mmdb_err=0
+    path city names en: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path country names en: type=utf8_string has_data=1 data_size=5 off=4070 next=4081 val="Japan"
+    path subdivisions 0 names en: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path location latitude: type=double has_data=1 data_size=- off=4145 next=4154 val=35.685360
+    path location longitude: type=double has_data=1 data_size=- off=4156 next=4165 val=139.753090
+    path location accuracy_radius: type=uint16 has_data=1 data_size=- off=4141 next=4143 val=100
+    path traits network: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path postal code: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path registered_country iso_code: type=utf8_string has_data=1 data_size=2 off=4062 next=4065 val="JP"
+    path nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path city nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions -1 names en: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions 9: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions x: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    dump:
+{
+  "continent": 
+    {
+      "code": 
+        "AS" <utf8_string>
+      "geoname_id": 
+        6255147 <uint32>
+      "names": 
+        {
+          "de": 
+            "Asien" <utf8_string>
+          "en": 
+            "Asia" <utf8_string>
+          "es": 
+            "Asia" <utf8_string>
+          "fr": 
+            "Asie" <utf8_string>
+          "ja": 
+            "アジア" <utf8_string>
+          "pt-BR": 
+            "Ásia" <utf8_string>
+          "ru": 
+            "Азия" <utf8_string>
+          "zh-CN": 
+            "亚洲" <utf8_string>
+        }
+    }
+  "country": 
+    {
+      "geoname_id": 
+        1861060 <uint32>
+      "iso_code": 
+        "JP" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Japan" <utf8_string>
+          "en": 
+            "Japan" <utf8_string>
+          "es": 
+            "Japón" <utf8_string>
+          "fr": 
+            "Japon" <utf8_string>
+          "ja": 
+            "日本" <utf8_string>
+          "pt-BR": 
+            "Japão" <utf8_string>
+          "ru": 
+            "Япония" <utf8_string>
+          "zh-CN": 
+            "日本" <utf8_string>
+        }
+    }
+  "location": 
+    {
+      "accuracy_radius": 
+        100 <uint16>
+      "latitude": 
+        35.685360 <double>
+      "longitude": 
+        139.753090 <double>
+      "time_zone": 
+        "Asia/Tokyo" <utf8_string>
+    }
+  "registered_country": 
+    {
+      "geoname_id": 
+        1861060 <uint32>
+      "iso_code": 
+        "JP" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Japan" <utf8_string>
+          "en": 
+            "Japan" <utf8_string>
+          "es": 
+            "Japón" <utf8_string>
+          "fr": 
+            "Japon" <utf8_string>
+          "ja": 
+            "日本" <utf8_string>
+          "pt-BR": 
+            "Japão" <utf8_string>
+          "ru": 
+            "Япония" <utf8_string>
+          "zh-CN": 
+            "日本" <utf8_string>
+        }
+    }
+}
+    dump_status=0
+  lookup 2001:218::: found=1 netmask=32 gai=0 mmdb_err=0
+    path city names en: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path country names en: type=utf8_string has_data=1 data_size=5 off=4070 next=4081 val="Japan"
+    path subdivisions 0 names en: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path location latitude: type=double has_data=1 data_size=- off=4145 next=4154 val=35.685360
+    path location longitude: type=double has_data=1 data_size=- off=4156 next=4165 val=139.753090
+    path location accuracy_radius: type=uint16 has_data=1 data_size=- off=4141 next=4143 val=100
+    path traits network: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path postal code: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path registered_country iso_code: type=utf8_string has_data=1 data_size=2 off=4062 next=4065 val="JP"
+    path nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path city nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions -1 names en: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions 9: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions x: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    dump:
+{
+  "continent": 
+    {
+      "code": 
+        "AS" <utf8_string>
+      "geoname_id": 
+        6255147 <uint32>
+      "names": 
+        {
+          "de": 
+            "Asien" <utf8_string>
+          "en": 
+            "Asia" <utf8_string>
+          "es": 
+            "Asia" <utf8_string>
+          "fr": 
+            "Asie" <utf8_string>
+          "ja": 
+            "アジア" <utf8_string>
+          "pt-BR": 
+            "Ásia" <utf8_string>
+          "ru": 
+            "Азия" <utf8_string>
+          "zh-CN": 
+            "亚洲" <utf8_string>
+        }
+    }
+  "country": 
+    {
+      "geoname_id": 
+        1861060 <uint32>
+      "iso_code": 
+        "JP" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Japan" <utf8_string>
+          "en": 
+            "Japan" <utf8_string>
+          "es": 
+            "Japón" <utf8_string>
+          "fr": 
+            "Japon" <utf8_string>
+          "ja": 
+            "日本" <utf8_string>
+          "pt-BR": 
+            "Japão" <utf8_string>
+          "ru": 
+            "Япония" <utf8_string>
+          "zh-CN": 
+            "日本" <utf8_string>
+        }
+    }
+  "location": 
+    {
+      "accuracy_radius": 
+        100 <uint16>
+      "latitude": 
+        35.685360 <double>
+      "longitude": 
+        139.753090 <double>
+      "time_zone": 
+        "Asia/Tokyo" <utf8_string>
+    }
+  "registered_country": 
+    {
+      "geoname_id": 
+        1861060 <uint32>
+      "iso_code": 
+        "JP" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Japan" <utf8_string>
+          "en": 
+            "Japan" <utf8_string>
+          "es": 
+            "Japón" <utf8_string>
+          "fr": 
+            "Japon" <utf8_string>
+          "ja": 
+            "日本" <utf8_string>
+          "pt-BR": 
+            "Japão" <utf8_string>
+          "ru": 
+            "Япония" <utf8_string>
+          "zh-CN": 
+            "日本" <utf8_string>
+        }
+    }
+}
+    dump_status=0
+  lookup 2a00:1450:4001:815::200e: found=0 netmask=15 gai=0 mmdb_err=0
+  lookup ::ffff:81.2.69.142: found=1 netmask=127 gai=0 mmdb_err=0
+    path city names en: type=utf8_string has_data=1 data_size=6 off=1118 next=1129 val="London"
+    path country names en: type=utf8_string has_data=1 data_size=14 off=211 next=226 val="United Kingdom"
+    path subdivisions 0 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path location latitude: type=double has_data=1 data_size=- off=1194 next=1404 val=51.514200
+    path location longitude: type=double has_data=1 data_size=- off=1205 next=1408 val=-0.093100
+    path location accuracy_radius: type=uint16 has_data=1 data_size=- off=1398 next=1400 val=10
+    path traits network: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path postal code: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path registered_country iso_code: type=utf8_string has_data=1 data_size=2 off=1229 next=1232 val="US"
+    path nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path city nope: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions -1 names en: type=utf8_string has_data=1 data_size=7 off=456 next=464 val="England"
+    path subdivisions 9: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    path subdivisions x: status=9 The lookup path does not match the data (key that doesn't exist, array index bigger than the array, expected array or map where none exists)
+    dump:
+{
+  "city": 
+    {
+      "geoname_id": 
+        2643743 <uint32>
+      "names": 
+        {
+          "de": 
+            "London" <utf8_string>
+          "en": 
+            "London" <utf8_string>
+          "es": 
+            "Londres" <utf8_string>
+          "fr": 
+            "Londres" <utf8_string>
+          "ja": 
+            "ロンドン" <utf8_string>
+          "pt-BR": 
+            "Londres" <utf8_string>
+          "ru": 
+            "Лондон" <utf8_string>
+        }
+    }
+  "continent": 
+    {
+      "code": 
+        "EU" <utf8_string>
+      "geoname_id": 
+        6255148 <uint32>
+      "names": 
+        {
+          "de": 
+            "Europa" <utf8_string>
+          "en": 
+            "Europe" <utf8_string>
+          "es": 
+            "Europa" <utf8_string>
+          "fr": 
+            "Europe" <utf8_string>
+          "ja": 
+            "ヨーロッパ" <utf8_string>
+          "pt-BR": 
+            "Europa" <utf8_string>
+          "ru": 
+            "Европа" <utf8_string>
+          "zh-CN": 
+            "欧洲" <utf8_string>
+        }
+    }
+  "country": 
+    {
+      "geoname_id": 
+        2635167 <uint32>
+      "iso_code": 
+        "GB" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "Vereinigtes Königreich" <utf8_string>
+          "en": 
+            "United Kingdom" <utf8_string>
+          "es": 
+            "Reino Unido" <utf8_string>
+          "fr": 
+            "Royaume-Uni" <utf8_string>
+          "ja": 
+            "イギリス" <utf8_string>
+          "pt-BR": 
+            "Reino Unido" <utf8_string>
+          "ru": 
+            "Великобритания" <utf8_string>
+          "zh-CN": 
+            "英国" <utf8_string>
+        }
+    }
+  "location": 
+    {
+      "accuracy_radius": 
+        10 <uint16>
+      "latitude": 
+        51.514200 <double>
+      "longitude": 
+        -0.093100 <double>
+      "time_zone": 
+        "Europe/London" <utf8_string>
+    }
+  "registered_country": 
+    {
+      "geoname_id": 
+        6252001 <uint32>
+      "iso_code": 
+        "US" <utf8_string>
+      "names": 
+        {
+          "de": 
+            "USA" <utf8_string>
+          "en": 
+            "United States" <utf8_string>
+          "es": 
+            "Estados Unidos" <utf8_string>
+          "fr": 
+            "États-Unis" <utf8_string>
+          "ja": 
+            "アメリカ合衆国" <utf8_string>
+          "pt-BR": 
+            "Estados Unidos" <utf8_string>
+          "ru": 
+            "США" <utf8_string>
+          "zh-CN": 
+            "美国" <utf8_string>
+        }
+    }
+  "subdivisions": 
+    [
+      {
+        "geoname_id": 
+          6269131 <uint32>
+        "iso_code": 
+          "ENG" <utf8_string>
+        "names": 
+          {
+            "en": 
+              "England" <utf8_string>
+            "es": 
+              "Inglaterra" <utf8_string>
+            "fr": 
+              "Angleterre" <utf8_string>
+            "pt-BR": 
+              "Inglaterra" <utf8_string>
+          }
+      }
+    ]
+}
+    dump_status=0
+  lookup 0.0.0.0: found=0 netmask=104 gai=0 mmdb_err=0
+  lookup 255.255.255.255: found=0 netmask=99 gai=0 mmdb_err=0
+  lookup e900::: found=0 netmask=4 gai=0 mmdb_err=0
+  lookup 10.0.0.1: found=0 netmask=104 gai=0 mmdb_err=0
+== gai errors ==
+  not an ip -> gai=-2 mmdb_err=0 addr=-
+   -> gai=-2 mmdb_err=0 addr=-
+  1.2.3 -> gai=0 mmdb_err=0 addr=1.2.0.3
+  1.2.3.4.5 -> gai=-2 mmdb_err=0 addr=-
+  256.1.1.1 -> gai=-2 mmdb_err=0 addr=-
+  01.2.3.4 -> gai=0 mmdb_err=0 addr=1.2.3.4
+  1.2.3.x -> gai=-2 mmdb_err=0 addr=-
+  0x7f.1 -> gai=0 mmdb_err=0 addr=127.0.0.1
+  1.2.3.4.5.6 -> gai=-2 mmdb_err=0 addr=-
+  010.0.0.1 -> gai=0 mmdb_err=0 addr=8.0.0.1
+  0x7f.0.0.1 -> gai=0 mmdb_err=0 addr=127.0.0.1
+  1.2.3.4  -> gai=-2 mmdb_err=0 addr=-
+  1.2.3.4.  -> gai=-2 mmdb_err=0 addr=-
+  09.0.0.1 -> gai=-2 mmdb_err=0 addr=-
+  0x.1 -> gai=-2 mmdb_err=0 addr=-
+  1..2 -> gai=-2 mmdb_err=0 addr=-
+  .1.2.3 -> gai=-2 mmdb_err=0 addr=-
+  1.2.3. -> gai=-2 mmdb_err=0 addr=-
+  4294967295 -> gai=0 mmdb_err=0 addr=255.255.255.255
+  4294967296 -> gai=-2 mmdb_err=0 addr=-
+  1.2.3.256 -> gai=-2 mmdb_err=0 addr=-
+  0xffffffff -> gai=0 mmdb_err=0 addr=255.255.255.255
+  0x100000000 -> gai=-2 mmdb_err=0 addr=-
+  1.2.3.4 xyz -> gai=-2 mmdb_err=0 addr=-
+  1.2.3.4	 -> gai=-2 mmdb_err=0 addr=-
+   1.2.3.4 -> gai=-2 mmdb_err=0 addr=-
+  +1.2.3.4 -> gai=-2 mmdb_err=0 addr=-
+  0x1f.0x1 -> gai=0 mmdb_err=0 addr=31.0.0.1
+  0377.0.0.1 -> gai=0 mmdb_err=0 addr=255.0.0.1
+  1:2:3:4:5:6:7 -> gai=-2 mmdb_err=0 addr=-
+  1::2::3 -> gai=-2 mmdb_err=0 addr=-
+  ::ffff:1.2.3.256 -> gai=-2 mmdb_err=0 addr=-
+  1:2:3:4:5:6:7:8:9 -> gai=-2 mmdb_err=0 addr=-
+  fe80::1% -> gai=-2 mmdb_err=0 addr=-
+  fe80::1%eth0 -> gai=0 mmdb_err=0 addr=fe80::1
+  fe80::1%nonexistentzz -> gai=-2 mmdb_err=0 addr=-
+  fe80::1%3 -> gai=0 mmdb_err=0 addr=fe80::1
+  fe80::1%0 -> gai=0 mmdb_err=0 addr=fe80::1
+  fe80::1%99999999999999999999 -> gai=-2 mmdb_err=0 addr=-
+  1.2.3.4%eth0 -> gai=-2 mmdb_err=0 addr=-
+  % -> gai=-2 mmdb_err=0 addr=-
+== open MaxMind-DB-test-decoder.mmdb ==
+0 Success (not an error)
+== decoder ==
+  decoder ::1.1.1.1: found=1 netmask=120 gai=0 mmdb_err=0
+    utf8_string: type=utf8_string has_data=1 data_size=18 off=252 next=271 val="unicode! ☯ - ♫"
+    double: type=double has_data=1 data_size=- off=139 next=148 val=42.123456
+    bytes: type=bytes has_data=1 data_size=4 off=132 next=137 val=0000002A
+    uint16: type=uint16 has_data=1 data_size=- off=229 next=231 val=100
+    uint32: type=uint32 has_data=1 data_size=- off=233 next=238 val=268435456
+    map: type=map has_data=1 data_size=1 off=166 next=167 val=
+    int32: type=int32 has_data=1 data_size=- off=158 next=164 val=-268435456
+    uint64: type=uint64 has_data=1 data_size=- off=240 next=250 val=1152921504606846976
+    uint128: type=uint128 has_data=1 data_size=- off=209 next=227 val=0
+    array: type=array has_data=1 data_size=3 off=118 next=120 val=
+    boolean: type=boolean has_data=1 data_size=0 off=128 next=130 val=true
+    float: type=float has_data=1 data_size=- off=150 next=156 val=1.100000
+    list_status=0
+    dump:
+{
+  "array": 
+    [
+      1 <uint32>
+      2 <uint32>
+      3 <uint32>
+    ]
+  "boolean": 
+    true <boolean>
+  "bytes": 
+    0000002A <bytes>
+  "double": 
+    42.123456 <double>
+  "float": 
+    1.100000 <float>
+  "int32": 
+    -268435456 <int32>
+  "map": 
+    {
+      "mapX": 
+        {
+          "arrayX": 
+            [
+              7 <uint32>
+              8 <uint32>
+              9 <uint32>
+            ]
+          "utf8_stringX": 
+            "hello" <utf8_string>
+        }
+    }
+  "uint128": 
+    0x01000000000000000000000000000000 <uint128>
+  "uint16": 
+    100 <uint16>
+  "uint32": 
+    268435456 <uint32>
+  "uint64": 
+    1152921504606846976 <uint64>
+  "utf8_string": 
+    "unicode! ☯ - ♫" <utf8_string>
+}
+    dump_status=0
+  decoder ::4.5.6.7: found=1 netmask=128 gai=0 mmdb_err=0
+    utf8_string: type=utf8_string has_data=1 data_size=18 off=252 next=271 val="unicode! ☯ - ♫"
+    double: type=double has_data=1 data_size=- off=139 next=148 val=42.123456
+    bytes: type=bytes has_data=1 data_size=4 off=132 next=137 val=0000002A
+    uint16: type=uint16 has_data=1 data_size=- off=229 next=231 val=100
+    uint32: type=uint32 has_data=1 data_size=- off=233 next=238 val=268435456
+    map: type=map has_data=1 data_size=1 off=166 next=167 val=
+    int32: type=int32 has_data=1 data_size=- off=158 next=164 val=-268435456
+    uint64: type=uint64 has_data=1 data_size=- off=240 next=250 val=1152921504606846976
+    uint128: type=uint128 has_data=1 data_size=- off=209 next=227 val=0
+    array: type=array has_data=1 data_size=3 off=118 next=120 val=
+    boolean: type=boolean has_data=1 data_size=0 off=128 next=130 val=true
+    float: type=float has_data=1 data_size=- off=150 next=156 val=1.100000
+    list_status=0
+    dump:
+{
+  "array": 
+    [
+      1 <uint32>
+      2 <uint32>
+      3 <uint32>
+    ]
+  "boolean": 
+    true <boolean>
+  "bytes": 
+    0000002A <bytes>
+  "double": 
+    42.123456 <double>
+  "float": 
+    1.100000 <float>
+  "int32": 
+    -268435456 <int32>
+  "map": 
+    {
+      "mapX": 
+        {
+          "arrayX": 
+            [
+              7 <uint32>
+              8 <uint32>
+              9 <uint32>
+            ]
+          "utf8_stringX": 
+            "hello" <utf8_string>
+        }
+    }
+  "uint128": 
+    0x01000000000000000000000000000000 <uint128>
+  "uint16": 
+    100 <uint16>
+  "uint32": 
+    268435456 <uint32>
+  "uint64": 
+    1152921504606846976 <uint64>
+  "utf8_string": 
+    "unicode! ☯ - ♫" <utf8_string>
+}
+    dump_status=0
+  decoder ::0.0.0.0: found=1 netmask=128 gai=0 mmdb_err=0
+    utf8_string: type=utf8_string has_data=1 data_size=0 off=114 next=115 val=""
+    double: type=double has_data=1 data_size=- off=33 next=42 val=0.000000
+    bytes: type=bytes has_data=1 data_size=0 off=25 next=26 val=
+    uint16: type=uint16 has_data=1 data_size=- off=84 next=85 val=0
+    uint32: type=uint32 has_data=1 data_size=- off=92 next=93 val=0
+    map: type=map has_data=1 data_size=0 off=66 next=67 val=
+    int32: type=int32 has_data=1 data_size=- off=60 next=62 val=0
+    uint64: type=uint64 has_data=1 data_size=- off=100 next=102 val=0
+    uint128: type=uint128 has_data=1 data_size=- off=75 next=77 val=0
+    array: type=array has_data=1 data_size=0 off=7 next=9 val=
+    boolean: type=boolean has_data=1 data_size=0 off=17 next=19 val=false
+    float: type=float has_data=1 data_size=- off=48 next=54 val=0.000000
+    list_status=0
+    dump:
+{
+  "array": 
+    [
+    ]
+  "boolean": 
+    false <boolean>
+  "bytes": 
+     <bytes>
+  "double": 
+    0.000000 <double>
+  "float": 
+    0.000000 <float>
+  "int32": 
+    0 <int32>
+  "map": 
+    {
+    }
+  "uint128": 
+    0x00000000000000000000000000000000 <uint128>
+  "uint16": 
+    0 <uint16>
+  "uint32": 
+    0 <uint32>
+  "uint64": 
+    0 <uint64>
+  "utf8_string": 
+    "" <utf8_string>
+}
+    dump_status=0
+  decoder e900::: found=0 netmask=2 gai=0 mmdb_err=0
+== open MaxMind-DB-test-ipv4-24.mmdb ==
+0 Success (not an error)
+== ipv6-in-ipv4 ==
+found=0 netmask=0 gai=0 mmdb_err=11 You attempted to look up an IPv6 address in an IPv4-only database
+== open broken-pointers-24 ==
+0 Success (not an error)
+lookup 1.1.1.16: found=1 gai=0 mmdb_err=0
+get_entry_data_list: 7 The MaxMind DB file's data section contains bad data (unknown data type or corrupt data)
+lookup 1.1.1.32: found=0 gai=0 mmdb_err=2 The MaxMind DB file's search tree is corrupt
+== open broken-search-tree-24 ==
+0 Success (not an error)
+lookup 1.1.1.1: gai=0 mmdb_err=0 Success (not an error)
+== bad-data ==
+open libmaxminddb-deep-nesting.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-deep-array-nesting.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-oversized-array.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-oversized-map.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-offset-integer-overflow.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-empty-array-last-in-metadata.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-empty-map-last-in-metadata.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-corrupt-search-tree.mmdb: 1 Error opening the specified MaxMind DB file
+open libmaxminddb-uint64-max-epoch.mmdb: 1 Error opening the specified MaxMind DB file
+== done ==

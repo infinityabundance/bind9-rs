@@ -33,6 +33,7 @@ form via `bind9-api-coverage regen` (per-function detail lives in
 | libcap IAB (`cap_iab_*`) | PROVEN | CAP-PROBE-0001 |
 | libcap process observables (`cap_get_proc`/bound/ambient/mode/secbits) | PROVEN | CAP-PROC-0001 (0 residuals; same-container kernel state) |
 | libcap VFS file xattr (`cap_get_file`/`cap_set_file`/rootid, v2+v3) | PROVEN | CAP-FILE-0001 (0 residuals; four-corner C↔Rust xattr interop, byte-exact) |
+| libmaxminddb metadata + decoder + search tree (`MMDB_*`) | PROVEN | MMDB-0001 (0 residuals; 41-address GAI corpus, decoder DB, corrupt-DB corpus, byte-exact) |
 | `named` runtime | UNKNOWN | |
 | Recursive resolver | UNKNOWN | |
 | DNSSEC | UNKNOWN | |

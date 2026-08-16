@@ -50,5 +50,12 @@ path = "src/bin/cap-proc-probe.rs"
 name = "cap-file-probe"
 path = "src/bin/cap-file-probe.rs"
 
+# maxminddb-probe: forensic diagnostic for the MMDB courts (mirrors
+# forensics/oracle/probes/probe-maxminddb.c byte-for-byte); not a
+# BIND-compat tool.
+[[bin]]
+name = "maxminddb-probe"
+path = "src/bin/maxminddb-probe.rs"
+
 [lints]
 workspace = true
