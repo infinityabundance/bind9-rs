@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "court_id": "CAP-PROBE-0001",
+  "git_commit": "6a2aa6d3c6fd48a5dc0f4ce54590f0c94304e523",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "8b51282949344b6f52591e68bb51e39f8c530c4cb4801faf076d376cac3cf649",
+  "oracle_hashes": {},
+  "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
+  "completed_at": "2026-08-16T02:50:39Z",
+  "input_hashes": {},
+  "residual_ids": [],
+  "invariants_passed": [
+    "cap_from_text/cap_to_text round-trips match the C library for the probe corpus",
+    "cap_from_name/cap_to_name match (cap_ prefix, numeric, error cases)",
+    "cap_set_flag/cap_get_flag/cap_clear/cap_fill/compare match",
+    "cap_copy_ext/cap_copy_int byte layout and errors match",
+    "cap_iab text and vector operations match"
+  ],
+  "captures_sha256": "572ff1aa6a3d6bcc9ce41244c66f688e18a49d1f7c4b5474ae6dbebe785e0145",
+  "repro_command": "bind9-court run CAP-PROBE-0001"
+}

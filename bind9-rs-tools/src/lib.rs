@@ -32,7 +32,11 @@
 //! (`forensics/atlas/…`/`docs/compatibility/parity-ledger.md`) tracks every
 //! surface — declared-but-empty is never claimed as implemented (§66).
 
-#![forbid(unsafe_code)]
+// unsafe is *denied* here; the audited OS/ABI boundary modules
+// (`platform::linux`, `platform::unsafe_boundary`) carry the sole
+// `#[allow(unsafe_code)]` exceptions with per-site inventory entries
+// (addendum §49, spec §2).
+#![deny(unsafe_code)]
 
 /// Shared machinery: CLI parsing, output rendering, diagnostics,
 /// environment, resolver configuration, filesystem, TTY, time,

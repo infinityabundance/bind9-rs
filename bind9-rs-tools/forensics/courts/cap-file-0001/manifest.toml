@@ -1,0 +1,28 @@
+schema_version = 1
+court_id = "CAP-FILE-0001"
+question = "Do the Rust cap_set_file/cap_get_file/cap_set_nsowner/cap_get_nsowner and the VFS security.capability xattr serialization (v2 and v3/rootid forms) interop byte-exactly with the C libcap when both run in the same container against the same files, in both directions (C writes -> Rust reads, Rust writes -> C reads)?"
+subsystem = "compat/libcap"
+oracle_versions = ["2.78"]
+harness = "cap"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle container on the same filesystem so no nondeterminism is expected",
+]
+invariants = [
+    "cap_set_file(self) return value matches the C library (0 or -1)",
+    "cap_get_file(self) state (capabilities + rootid) matches the C library",
+    "the security.capability xattr bytes re-serialized by the Rust module match the raw kernel xattr bytes observed by the C probe",
+    "cross-read: each side reads the OTHER side's file and observes the same state and xattr bytes",
+    "cap_set_file on a symlink fails with the same errno as the C library",
+    "cap_set_file(self, NULL) removes the xattr with the same return value",
+    "the v3 rootid form serializes to the same 24-byte xattr and parses back identically",
+]
+timeout_secs = 300
+nondeterminism_policy = "both sides execute in the identical oracle-libcap-2.78 container sharing one /tmp, so kernel capability context, filesystem and xattr state are identical; output is deterministic"
+security_classification = "file capability xattr handling is security-sensitive; courts run with CAP_SETFCAP so the real kernel path is exercised"
+references = [
+    "libcap-2.78 libcap/cap_file.c (_fcaps_load/_fcaps_save, cap_get_file, cap_set_file, cap_get_nsowner, cap_set_fd)",
+    "linux kernel include/uapi/linux/capability.h (vfs_ns_cap_data, VFS_CAP_REVISION_*)",
+    "forensics/oracle/probes/probe-libcap-file.c",
+    "bind9-rs-tools/src/bin/cap-file-probe.rs",
+    "addendum §27 (libcap), §37 (C probe courts), §38 (four-corner interchange courts)",
+]

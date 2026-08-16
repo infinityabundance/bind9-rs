@@ -1,0 +1,12 @@
+cap_set_file(self) = 0
+  cap_net_bind_serviceep (rootid=0)
+  xattr(20): 01 00 00 02 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+cross-read:
+  cap_net_bind_servicep (rootid=1000)
+  xattr(24): 00 00 00 03 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 e8 03 00 00
+cap_set_file(symlink) = -1 errno=22
+cap_set_file(self,NULL) = 0
+  xattr: (error 61)
+cap_set_file(v3 rootid) = 0
+  cap_net_bind_servicep (rootid=1000)
+  xattr(24): 00 00 00 03 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 e8 03 00 00

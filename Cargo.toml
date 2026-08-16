@@ -59,8 +59,13 @@ debug = true
 # Workspace lint policy: infrastructure code expected to survive decades
 # (spec §67).  We are strict about what is warned and about documentation of
 # compatibility reasoning (spec §50, §51).
+#
+# unsafe_code is *deny* (not forbid) so that the audited OS/ABI boundary
+# modules (spec §2, addendum §49) can admit unsafe with an explicit
+# `#[allow(unsafe_code)]` + an unsafe-inventory entry; everywhere else unsafe
+# is a hard error.
 [workspace.lints.rust]
-unsafe_code = "forbid"
+unsafe_code = "deny"
 
 [workspace.lints.clippy]
 all = "warn"

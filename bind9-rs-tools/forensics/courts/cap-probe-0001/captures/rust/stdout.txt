@@ -1,0 +1,69 @@
+cap_max_bits = 41
+from_text(cap_kill=ep) -> [cap_kill=ep] len=11
+from_text(cap_kill=ep cap_net_bind_service+i) -> [cap_net_bind_service=i cap_kill+ep] len=34
+from_text(=ep) -> [=ep] len=3
+from_text(all=eip) -> [=eip] len=4
+from_text(=ep cap_net_raw+p) -> [=ep] len=3
+from_text(cap_chown,cap_net_bind_service+eip) -> [cap_chown,cap_net_bind_service=eip] len=34
+from_text(5=ep) -> [cap_kill=ep] len=11
+from_text(cap_kill=ep cap_kill+ip) -> [cap_kill=eip] len=12
+from_text(cap_kill=ep cap_kill-i) -> [cap_kill=ep] len=11
+from_text(=eip cap_kill-e) -> [=eip cap_kill-e] len=15
+from_text(cap_kill+ep) -> [cap_kill=ep] len=11
+from_text(= cap_kill+ep) -> [cap_kill=ep] len=11
+from_text(!cap_kill) -> NULL errno=22
+from_text(cap_kill=) -> [=] len=1
+from_text(cap_kill= cap_net_raw+ep) -> [cap_net_raw=ep] len=14
+from_text(cap_kill+) -> NULL errno=22
+from_text(=ep ) -> [=ep] len=3
+from_text(cap_unknownname+ep) -> NULL errno=22
+from_text(cap_kill==ep) -> NULL errno=22
+from_text(cap_kill=eip,) -> NULL errno=22
+from_text(41+ep) -> [= 41+ep] len=7
+from_text(cap_kill=ep,) -> NULL errno=22
+cap_from_name(chown) -> -1 v=-1
+cap_from_name(cap_chown) -> 0 v=0
+cap_from_name(CAP_CHOWN) -> 0 v=0
+cap_from_name(ChOwN) -> -1 v=-1
+cap_from_name(12) -> 0 v=12
+cap_from_name(0x2) -> 0 v=2
+cap_from_name(kill) -> -1 v=-1
+cap_from_name(cap_kill) -> 0 v=5
+cap_from_name(nonsense) -> -1 v=-1
+cap_from_name(41) -> 0 v=41
+cap_from_name(64) -> -1 v=-1
+cap_from_name(chownx) -> -1 v=-1
+cap_from_name(chow) -> -1 v=-1
+cap_to_name(0) = cap_chown
+cap_to_name(12) = cap_net_admin
+cap_to_name(41) = 41
+cap_to_name(64) = 64
+cap_to_name(-1) = 4294967295
+cap_compare(empty,empty) = 0
+cap_compare(a,a) = 0
+cap_compare(a,b) = 1
+cap_compare(a,b) = 2
+get_flag(chown,eff) = 1
+get_flag(chown,perm) = 0
+set_flag(500) ret = 0
+set_flag(0 values) ret = -1 errno=22
+after clear, get_flag(chown,eff) = 0
+fill_flag(perm->eff) chown = 1
+fill(inh<-eff) chown = 1
+cap_size = 29
+cap_copy_ext -> 29 bytes: 90 c2 01 51 08 01 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+cap_size = 29
+cap_copy_ext -> 29 bytes: 90 c2 01 51 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+cap_size = 29
+cap_copy_ext -> 29 bytes: 90 c2 01 51 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00
+copy_int compare = 0
+copy_int badmagic -> NULL errno=22
+copy_ext too small -> -1 errno=22
+iab init to_text = []
+iab inh chown to_text = [cap_chown]
+iab amb net_raw to_text = [cap_chown,^cap_net_raw]
+iab bound sys_admin to_text = [cap_chown,^cap_net_raw,!cap_sys_admin]
+iab from_text -> [(null)]
+cap_get_mode = 4
+cap_mode_name(0..4) = UNCERTAIN NOPRIV PURE1E_INIT PURE1E HYBRID
+cap_get_secbits = 0

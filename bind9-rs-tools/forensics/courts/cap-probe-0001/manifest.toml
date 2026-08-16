@@ -1,0 +1,23 @@
+schema_version = 1
+court_id = "CAP-PROBE-0001"
+question = "Does the Rust libcap conservation module reproduce the observable libcap 2.78 library surface (text grammar, names, flag ops, compare, external format, IAB, modes, secbits) byte-for-byte?"
+subsystem = "compat/libcap"
+oracle_versions = ["2.78"]
+harness = "cap"
+normalization = []
+invariants = [
+    "cap_from_text/cap_to_text round-trips match the C library for the probe corpus",
+    "cap_from_name/cap_to_name match (cap_ prefix, numeric, error cases)",
+    "cap_set_flag/cap_get_flag/cap_clear/cap_fill/compare match",
+    "cap_copy_ext/cap_copy_int byte layout and errors match",
+    "cap_iab text and vector operations match",
+]
+timeout_secs = 300
+nondeterminism_policy = "cap_max_bits is kernel-derived and identical for both sides (same host kernel); no other nondeterminism"
+security_classification = "none"
+references = [
+    "libcap-2.78 libcap/cap_text.c, cap_flag.c, cap_extint.c, cap_alloc.c, cap_proc.c",
+    "forensics/oracle/probes/probe-libcap.c (C probe)",
+    "bind9-rs-tools/tests/cap_probe.rs (Rust mirror)",
+    "addendum §27, §37, §38",
+]

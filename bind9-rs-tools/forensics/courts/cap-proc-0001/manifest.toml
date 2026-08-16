@@ -1,0 +1,23 @@
+schema_version = 1
+court_id = "CAP-PROC-0001"
+question = "Do the Rust cap_get_proc/cap_get_bound/cap_get_ambient/cap_get_mode/cap_get_secbits/cap_iab_get_proc observe identical kernel state to the C libcap when run in the same container?"
+subsystem = "compat/libcap"
+oracle_versions = ["2.78"]
+harness = "cap"
+normalization = []
+invariants = [
+    "the process capability triple (E/P/I) matches the C library's cap_get_proc",
+    "the bounding set observations match cap_get_bound",
+    "the ambient set observations match cap_get_ambient",
+    "cap_get_mode and cap_get_secbits agree",
+    "cap_iab_get_proc agrees",
+]
+timeout_secs = 300
+nondeterminism_policy = "both sides run in the identical oracle container so kernel state is the same; output is deterministic"
+security_classification = "none"
+references = [
+    "libcap-2.78 libcap/cap_proc.c (capget/capset, prctl PR_CAPBSET_*, PR_CAP_AMBIENT, secbits, modes, cap_iab_get_proc)",
+    "forensics/oracle/probes/probe-libcap-proc.c",
+    "bind9-rs-tools/src/bin/cap-proc-probe.rs",
+    "addendum §27 (libcap), §37 (C probe courts)",
+]

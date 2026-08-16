@@ -26,7 +26,13 @@ form via `bind9-api-coverage regen` (per-function detail lives in
 | EDNS OPT | PARTIAL | unit tests; court pending |
 | RCODE/class/type tables | PARTIAL | archaeology of `rcode.c`; court pending |
 | Masterfile lexer (`isc_lex` semantics) | PARTIAL | archaeology of `lex.c`/`rdata.c`; court pending |
-| dig CLI + output | PARTIAL | archaeology of `dig.c`/`dighost.c`/`masterdump.c`; court pending |
+| dig CLI + output | PARTIAL | archaeology of `dig.c`/`dighost.c`/`masterdump.c`; CLI-DIG-0001..0003 (0 residuals) |
+| libcap text grammar (`cap_from_text`/`cap_to_text`) | PROVEN | CAP-PROBE-0001 (0 residuals; byte-identical to C oracle) |
+| libcap external format (`cap_copy_ext`/`cap_copy_int`) | PROVEN | CAP-PROBE-0001 |
+| libcap flag/compare (`cap_set_flag`/`cap_get_flag`/`cap_compare`) | PROVEN | CAP-PROBE-0001 |
+| libcap IAB (`cap_iab_*`) | PROVEN | CAP-PROBE-0001 |
+| libcap process observables (`cap_get_proc`/bound/ambient/mode/secbits) | PROVEN | CAP-PROC-0001 (0 residuals; same-container kernel state) |
+| libcap VFS file xattr (`cap_get_file`/`cap_set_file`/rootid, v2+v3) | PROVEN | CAP-FILE-0001 (0 residuals; four-corner C↔Rust xattr interop, byte-exact) |
 | `named` runtime | UNKNOWN | |
 | Recursive resolver | UNKNOWN | |
 | DNSSEC | UNKNOWN | |

@@ -27,10 +27,28 @@ bind9-rs-core.workspace = true
 bind9-rs-platform.workspace = true
 idna = "1"
 unicode-normalization = "0.1"
+# libc: the audited FFI for the OS boundary (capget/capset, prctl, xattr,
+# setuid/setgroups, fork/execve, chroot).  Used ONLY inside the platform
+# boundary modules (platform::linux + platform::unsafe_boundary) where every
+# unsafe site is inventoried (addendum §49).
+libc = "0.2"
 
 [[bin]]
 name = "dig"
 path = "src/bin/dig.rs"
+
+# cap-proc-probe: forensic diagnostic for the CAP-PROC courts (compares the
+# process-observable libcap surface against the C oracle in an identical
+# container environment); not a BIND-compat tool.
+[[bin]]
+name = "cap-proc-probe"
+path = "src/bin/cap-proc-probe.rs"
+
+# cap-file-probe: forensic diagnostic for the CAP-FILE four-corner courts
+# (security.capability xattr interop); not a BIND-compat tool.
+[[bin]]
+name = "cap-file-probe"
+path = "src/bin/cap-file-probe.rs"
 
 [lints]
 workspace = true

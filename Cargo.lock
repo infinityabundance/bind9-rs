@@ -49,6 +49,7 @@ dependencies = [
  "bind9-rs-core",
  "bind9-rs-platform",
  "idna",
+ "libc",
  "unicode-normalization",
 ]
 
