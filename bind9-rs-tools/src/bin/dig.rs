@@ -5,6 +5,6 @@
 
 fn main() {
     let args: Vec<String> = std::env::args().skip(1).collect();
-    let rc = bind9_rs_tools::dig::run(&args);
+    let rc = bind9_rs_tools::tools::dig::run(&args);
     std::process::exit(rc);
 }

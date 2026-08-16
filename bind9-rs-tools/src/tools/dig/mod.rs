@@ -46,7 +46,7 @@ pub fn run(argv: &[String]) -> i32 {
         return 0;
     }
     if parsed.version {
-        println!("{}", crate::version::dig_version_line());
+        println!("{}", crate::common::versioning::dig_version_line());
         return 0;
     }
 

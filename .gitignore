@@ -11,6 +11,12 @@
 /forensics/sources/*.tar.gz
 /forensics/sources/*.tar.xz
 /forensics/sources/*.asc
+/bind9-rs-tools/forensics/oracle/work/
+/bind9-rs-tools/forensics/oracle/build/
+/bind9-rs-tools/forensics/sources/*.tar.gz
+/bind9-rs-tools/forensics/sources/*.tar.xz
+/bind9-rs-tools/forensics/sources/*.asc
 
 # Court run artifacts that are pure build products (not evidence).
 /forensics/courts/**/work/
+/bind9-rs-tools/forensics/courts/**/work/
