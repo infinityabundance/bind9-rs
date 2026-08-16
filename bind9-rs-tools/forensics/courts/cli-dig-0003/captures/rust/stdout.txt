@@ -1,0 +1,138 @@
+### CASE 1: @127.0.0.1 -p 5333 www.münchen.de
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 www.münchen.de
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19033
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.xn--mnchen-3ya.de.		IN	A
+
+;; ANSWER SECTION:
+www.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:25 UTC 2026
+;; MSG SIZE  rcvd: 76
+
+--- STDERR
+--- EXIT 0
+### CASE 2: @127.0.0.1 -p 5333 www.münchen.de +noidnin
+--- STDOUT
+;; Got bad packet: bad label type
+33 bytes
+ff 25 81 80 00 01 00 00 00 00 00 00 03 77 77 77          .%...........www
+07 6d c3 bc 6e 63 68 65 6e 02 64 65 00 00 01 00          .m..nchen.de....
+01                                                       .
+--- STDERR
+--- EXIT 0
+### CASE 3: @127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +idnout
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +idnout
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39072
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.münchen.de.		IN	A
+
+;; ANSWER SECTION:
+www.münchen.de.	3600	IN	A	192.0.2.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:25 UTC 2026
+;; MSG SIZE  rcvd: 76
+
+--- STDERR
+--- EXIT 0
+### CASE 4: @127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +noidnout
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +noidnout
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55982
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.xn--mnchen-3ya.de.		IN	A
+
+;; ANSWER SECTION:
+www.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:25 UTC 2026
+;; MSG SIZE  rcvd: 76
+
+--- STDERR
+--- EXIT 0
+### CASE 5: @127.0.0.1 -p 5333 idn.example.com NS +idnout
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 idn.example.com NS +idnout
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5843
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;idn.example.com.		IN	NS
+
+;; ANSWER SECTION:
+idn.example.com.	3600	IN	NS	ns.münchen.de.
+
+;; ADDITIONAL SECTION:
+ns.münchen.de.		3600	IN	A	192.0.2.77
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:25 UTC 2026
+;; MSG SIZE  rcvd: 118
+
+--- STDERR
+--- EXIT 0
+### CASE 6: @127.0.0.1 -p 5333 idn.example.com NS +noidnout
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 idn.example.com NS +noidnout
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5902
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;idn.example.com.		IN	NS
+
+;; ANSWER SECTION:
+idn.example.com.	3600	IN	NS	ns.xn--mnchen-3ya.de.
+
+;; ADDITIONAL SECTION:
+ns.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.77
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:25 UTC 2026
+;; MSG SIZE  rcvd: 118
+
+--- STDERR
+--- EXIT 0
+### RESPONDER QUERY LOG
+udp . 1 1
+udp www.xn--mnchen-3ya.de 1 1
+udp www.münchen.de 1 1
+udp www.xn--mnchen-3ya.de 1 1
+udp www.xn--mnchen-3ya.de 1 1
+udp idn.example.com 2 1
+udp idn.example.com 2 1

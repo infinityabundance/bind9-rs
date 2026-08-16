@@ -1,16 +1,18 @@
 //! Version identity for the tools (§32: `dig -v` output is courted against
-//! the oracle).  Shape matches BIND; content is bind9-rs's own identity.
+//! the oracle).  For the pinned BIND 9.20.26 profile the output is
+//! byte-exact: `DiG 9.20.26`.
 
 /// The bind9-rs release string.
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
-/// The BIND compatibility target line.
-pub const COMPAT_TARGET: &str = "9.20";
+/// The BIND compatibility target (the pinned oracle release line).
+pub const COMPAT_TARGET: &str = "9.20.26";
 
-/// `dig -v`-style line: `DiG <version> <copyright-flag>`.
+/// `dig -v`-style line: `DiG <version>`.
 #[must_use]
 pub fn dig_version_line() -> String {
-    format!("DiG {VERSION} (bind9-rs, BIND-compat target {COMPAT_TARGET})")
+    // Byte-exact BIND 9.20.26 surface (`dig -v` prints exactly this).
+    format!("DiG {COMPAT_TARGET}")
 }
 
 /// `dig -v` second line.

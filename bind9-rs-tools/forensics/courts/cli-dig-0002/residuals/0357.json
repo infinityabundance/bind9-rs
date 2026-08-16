@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "RESIDUAL-cli-dig-0002-0456",
+  "court_id": "cli-dig-0002",
+  "kind": "TEXT",
+  "oracle_raw": "big.example.com.\t3600\tIN\tTXT\t\"record number 2\"",
+  "rust_raw": "udp nonexistent.example.com 1 1",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

@@ -1,0 +1,8 @@
+# CLI-DIG-0003 cases: IDN behavior (requires the IDN-enabled oracle image,
+# oracle-bind-9.20.26-idn; the court harness sets ORACLE_IMAGE).
+@127.0.0.1 -p 5333 www.münchen.de
+@127.0.0.1 -p 5333 www.münchen.de +noidnin
+@127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +idnout
+@127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +noidnout
+@127.0.0.1 -p 5333 idn.example.com NS +idnout
+@127.0.0.1 -p 5333 idn.example.com NS +noidnout

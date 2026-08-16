@@ -628,7 +628,18 @@ pub fn free(_p: *mut u8) {}
 /// string for the query, with the NONTRANSITIONAL→TRANSITIONAL fallback and
 /// the case-preservation quirk: `idn2_to_ascii_lz` lowercases, but dig keeps
 /// the original spelling when the two differ only in case.
+///
+/// Locale sensitivity (archived): `idn2_to_ascii_lz` converts its input from
+/// the process locale encoding (`u8_strconv_from_locale`); under the C/POSIX
+/// locale (ASCII charset) any non-ASCII name fails conversion with an error
+/// that is *not* IDN2_DISALLOWED, so the NONTRANSITIONAL→TRANSITIONAL retry
+/// does not fire and dig passes the original name through unchanged — the
+/// raw UTF-8 bytes go on the wire.  Court CLI-DIG-0003 pins a UTF-8 locale
+/// for the conversion path; the C-locale pass-through is courted separately.
 pub fn idn_input(src: &str) -> String {
+    if locale_charset_is_ascii() && !src.is_ascii() {
+        return src.to_string();
+    }
     let ascii = to_ascii_lz(src, flags::NONTRANSITIONAL).or_else(|e| {
         if e == Error::Disallowed {
             to_ascii_lz(src, flags::TRANSITIONAL)
@@ -639,6 +650,26 @@ pub fn idn_input(src: &str) -> String {
     match ascii {
         Ok(ace) if !src.eq_ignore_ascii_case(&ace) => ace,
         _ => src.to_string(),
+    }
+}
+
+/// The effective locale charset, approximated from glibc's rules: LC_ALL,
+/// then LC_CTYPE, then LANG; unset/"C"/"POSIX" → ASCII; a locale name
+/// containing UTF-8 → UTF-8.  Other charsets are treated as UTF-8
+/// (best-effort; the courts pin C and C.UTF-8).
+fn locale_charset_is_ascii() -> bool {
+    let loc = std::env::var("LC_ALL")
+        .ok()
+        .filter(|s| !s.is_empty())
+        .or_else(|| std::env::var("LC_CTYPE").ok().filter(|s| !s.is_empty()))
+        .or_else(|| std::env::var("LANG").ok().filter(|s| !s.is_empty()));
+    match loc {
+        None => true, // C locale
+        Some(l) if l == "C" || l == "POSIX" || l.starts_with("C.") || l.starts_with("POSIX.") => {
+            // "C.UTF-8" is a UTF-8 charset despite the C prefix.
+            !l.to_ascii_lowercase().contains("utf-8") && !l.to_ascii_lowercase().contains("utf8")
+        }
+        Some(_) => false, // any other locale: best-effort UTF-8
     }
 }
 

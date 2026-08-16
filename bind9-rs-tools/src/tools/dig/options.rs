@@ -12,97 +12,14 @@ use std::net::IpAddr;
 
 use super::Lookup;
 
-/// The dig usage text (BIND 9.20 shape).
-pub const USAGE: &str = "Usage:  dig [@global-server] [domain] [q-type] [q-class] {q-opt}\n\
-            {global-d-opt} host [@local-server] {local-d-opt}\n\
-            [ host [@local-server] {local-d-opt} [...]]\n";
+/// The short usage printed for invalid options (dig.c `usage()`, captured
+/// byte-exact from the oracle; note the continuation lines carry NO leading
+/// spaces, unlike the full `-h` help).
+pub const USAGE: &str = "Usage:  dig [@global-server] [domain] [q-type] [q-class] {q-opt}\n            {global-d-opt} host [@local-server] {local-d-opt}\n            [ host [@local-server] {local-d-opt} [...]]\n\nUse \"dig -h\" (or \"dig -h | more\") for complete list of options\n";
 
-/// The dig help text (BIND 9.20 shape).
-pub const HELP: &str = "\
-Usage:  dig [@global-server] [domain] [q-type] [q-class] {q-opt}\n\
-            {global-d-opt} host [@local-server] {local-d-opt}\n\
-            [ host [@local-server] {local-d-opt} [...]]\n\
-Where:  domain	  is in the Domain Name System\n\
-        q-class  is one of (in,hs,ch,...) [default: in]\n\
-        q-type   is one of (a,any,mx,ns,soa,hinfo,axfr,txt,...) [default:a]\n\
-                 (Use ixfr=version for type ixfr)\n\
-        q-opt    is one of:\n\
-                 -4                  (use IPv4 query transport only)\n\
-                 -6                  (use IPv6 query transport only)\n\
-                 -b address[#port]   (bind to source address/port)\n\
-                 -c class            (set query class)\n\
-                 -f filename         (batch mode)\n\
-                 -k keyfile          (specify tsig key file)\n\
-                 -m                  (enable memory usage debugging)\n\
-                 -p port             (specify port number)\n\
-                 -q name             (specify query name)\n\
-                 -t type             (set query type)\n\
-                 -u                  (display times in usec instead of msec)\n\
-                 -x dot-notation     (shortcut for reverse lookups)\n\
-                 -y [hmac:]name:secret  (specify named base64 tsig key)\n\
-                 -h                  (print help and exit)\n\
-                 -v                  (print version and exit)\n\
-        global-d-opt    is one of:\n\
-                 +[no]aaflag         (+[no]aaflag is same as +[no]aaonly)\n\
-                 +[no]additional     (Control display of additional section)\n\
-                 +[no]adflag         (Set or clear the AD bit)\n\
-                 +[no]all            (Set or clear all display flags)\n\
-                 +[no]answer         (Control display of answer section)\n\
-                 +[no]authority      (Control display of authority section)\n\
-                 +[no]badcookie      (Retry with a new cookie if BADCOOKIE)\n\
-                 +[no]besteffort     (Try to parse DNS errors)\n\
-                 +bufsize=###        (Set EDNS0 Max UDP packet size)\n\
-                 +[no]cdflag         (Set or clear the CD bit)\n\
-                 +[no]class          (Control display of class in records)\n\
-                 +[no]cmd            (Control display of command line)\n\
-                 +[no]comments       (Control display of comment lines)\n\
-                 +[no]cookie         (Send a COOKIE option)\n\
-                 +[no]crypto         (Control display of cryptographic fields)\n\
-                 +[no]defname        (Use search list)\n\
-                 +[no]dnssec         (Request DNSSEC records)\n\
-                 +domain=###         (Set default domainname)\n\
-                 +[no]edns[=###]     (Set EDNS version)\n\
-                 +[no]ednsflags=###  (Set EDNS flags bits)\n\
-                 +[no]ednsnegotiation (Set EDNS version negotiation)\n\
-                 +ednsopt=###[:value] (Send specified EDNS option)\n\
-                 +[no]expandaaaa     (Expand AAAA records)\n\
-                 +[no]expire         (Request time to expire)\n\
-                 +[no]fail           (Do not try next server)\n\
-                 +[no]header-only    (Send query without a question section)\n\
-                 +[no]identify       (ID responders in short answers)\n\
-                 +[no]idnin          (Parse IDN names using IDNA2008)\n\
-                 +[no]idnout         (Convert IDN response names using IDNA2008)\n\
-                 +[no]ignore         (Don't revert to TCP for TC responses.)\n\
-                 +[no]keepopen       (Keep the TCP socket open between queries)\n\
-                 +[no]mapped         (Map IPv4 to IPv6 when displaying)\n\
-                 +[no]multiline      (Print records in an expanded format)\n\
-                 +ndots=###          (Set search NDOTS value)\n\
-                 +[no]nsid           (Request Name Server ID)\n\
-                 +[no]onesoa         (AXFR prints only one SOA record)\n\
-                 +opcode=###         (Set the opcode of the request)\n\
-                 +[no]qr             (Print question before sending)\n\
-                 +[no]question       (Control display of question section)\n\
-                 +[no]raflag         (Set or clear the RA bit)\n\
-                 +[no]rdflag         (Set or clear the RD bit)\n\
-                 +[no]recurse        (Recursive queries)\n\
-                 +retry=###          (Set number of UDP retries) [default=2]\n\
-                 +[no]rrcomments     (Control display of per-record comments)\n\
-                 +[no]search         (Set whether to use the searchlist)\n\
-                 +[no]short          (Short form answer)\n\
-                 +[no]showsearch     (Search with intermediate results)\n\
-                 +split=###          (Split long hex fields)\n\
-                 +[no]stats          (Control display of statistics)\n\
-                 +subnet=addr        (Set edns-client-subnet option)\n\
-                 +[no]tcp            (TCP mode)\n\
-                 +time=###           (Set query timeout) [default=5]\n\
-                 +tries=###          (Set number of UDP attempts) [default=3]\n\
-                 +[no]truncate       (Set the TC flag)\n\
-                 +trusted-key=###    (Trusted key for DNSSEC)\n\
-                 +[no]ttlid          (Control display of ttls in records)\n\
-                 +[no]ttlunits       (Display TTLs in human-readable units)\n\
-                 +[no]useedns        (Use EDNS)\n\
-                 +[no]yaml           (Present the results as YAML)\n\
-                 +[no]zflag          (Set or clear the Z flag)\n";
+/// The full help text printed by `-h` (byte-exact capture from the pinned
+/// oracle: `docker run --rm oracle-bind-9.20.26 dig -h`).
+pub const HELP: &str = include_str!("help.txt");
 
 /// Transport mode.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -112,6 +29,11 @@ pub enum Transport {
 }
 
 /// Parsed dig invocation.
+///
+/// Field names and defaults follow `dig_lookup_t` / the globals in dig.c
+/// (BIND 9.20.26): `make_empty_lookup` + `dig_setup` set `edns=0`,
+/// `adflag=true`, `sendcookie=true` on the default lookup, so EDNS (and
+/// therefore the COOKIE option) is on by default.
 #[derive(Debug, Clone)]
 pub struct DigOptions {
     pub lookups: Vec<Lookup>,
@@ -120,31 +42,75 @@ pub struct DigOptions {
     pub port: u16,
     pub ipv4_only: bool,
     pub ipv6_only: bool,
+    /// `tcp_mode`: whether queries go over TCP.
     pub transport: Transport,
+    /// Whether +tcp/+notcp/+vc/+novc was given (AXFR/ANY/ixfr force TCP
+    /// only when this is unset; dig.c `tcp_mode_set`).
+    pub tcp_mode_set: bool,
+    /// `recurse` (RD flag).
     pub recurse: bool,
+    /// `dnssec` (DO bit).
     pub dnssec: bool,
-    pub edns: bool,
+    /// `edns` version; `None` == -1 (EDNS disabled via +noedns).
+    pub edns: Option<u8>,
+    /// `udpsize`; `None` == -1 (default 1232 substituted at render time).
     pub udp_size: Option<u16>,
     pub timeout_secs: u64,
+    /// Total attempts (`retries`).
     pub tries: u32,
     pub print_qr: bool,
+    /// Global `printcmd` (set by +cmd/+all/+short/+yaml).
     pub print_cmd: bool,
     pub comments: bool,
     pub statistics: bool,
+    /// Global `short_form`.
     pub short: bool,
     pub section_question: bool,
     pub section_answer: bool,
     pub section_authority: bool,
     pub section_additional: bool,
-    pub aaflag: bool,
+    /// `aaonly` (set by +aaflag/+aaonly; drives the AA flag in queries).
+    pub aaonly: bool,
     pub adflag: bool,
     pub cdflag: bool,
     pub tcflag: bool,
     pub zflag: bool,
+    pub raflag: bool,
+    pub coflag: bool,
+    /// `ignore`: do not retry in TCP mode on a truncated response.
+    pub ignore: bool,
+    /// `badcookie`: retry on BADCOOKIE responses (default true).
+    pub badcookie: bool,
+    /// `sendcookie`: include a COOKIE option in queries (default true).
+    pub sendcookie: bool,
+    /// Fixed cookie from `+cookie=####` (hex); otherwise a per-process
+    /// random client cookie is used (dighost.c `compute_cookie`).
+    pub cookie_hex: Option<String>,
     pub multiline: bool,
     pub ttlunits: bool,
+    /// `nottl` (inverted by +ttl/+ttlid/+nottlunits).
     pub nottl: bool,
+    /// `noclass` (inverted by +class/+cl).
     pub noclass: bool,
+    /// `nocrypto` (inverted by +crypto).
+    pub nocrypto: bool,
+    pub header_only: bool,
+    pub besteffort: bool,
+    pub servfail_stops: bool,
+    pub nsid: bool,
+    pub expire: bool,
+    pub tcp_keepalive: bool,
+    pub keep_open: bool,
+    pub onesoa: bool,
+    pub expandaaaa: bool,
+    pub identify: bool,
+    pub ednsneg: bool,
+    pub ednsflags: u16,
+    /// `+ednsopt` list: (code, data).
+    pub ednsopts: Vec<(u16, Vec<u8>)>,
+    /// `-u`: display times in usec.
+    pub use_usec: bool,
+    pub print_unknown_format: bool,
     pub server: String,
     /// IDN conversion of query names (dighost.c make_empty_lookup: default
     /// on unless IDN_DISABLE is set; `+idnin`/`+noidnin` override).
@@ -152,11 +118,21 @@ pub struct DigOptions {
     /// IDN conversion of response names (default: stdout is a TTY;
     /// `+idnout`/`+noidnout` override).
     pub idnout: bool,
-    /// Whether +tcp/+notcp was given (AXFR/ANY/ixfr force TCP only when
-    /// this is unset; dig.c `tcp_mode_set`).
-    pub tcp_mode_set: bool,
     /// Serial for `-t ixfr=N` / positional `ixfr=N`.
     pub ixfr_serial: Option<u32>,
+    /// The full command line (argv joined by spaces) for the greeting.
+    pub cmdline: String,
+    /// Whether an @server argument was given (drives `; (N server found)`;
+    /// BIND resolves `addresscount` from the server at parse time).
+    pub server_explicit: bool,
+    /// `(print_cmd, short_form, server_seen)` at the moment the *first*
+    /// name was parsed (dig.c printgreeting reads the globals — and
+    /// `addresscount`, which is 0 until an @server argument has been
+    /// resolved — when the name is seen).  `None` until a name is pushed;
+    /// the no-name fallback captures the end-of-parse values.  This drives
+    /// greeting *construction*; the greeting *printing* re-checks the
+    /// current printcmd/short (dig.c:733).
+    pub first_name_greeting: Option<(bool, bool, bool)>,
 }
 
 impl Default for DigOptions {
@@ -169,9 +145,11 @@ impl Default for DigOptions {
             ipv4_only: false,
             ipv6_only: false,
             transport: Transport::Udp,
+            tcp_mode_set: false,
             recurse: true,
             dnssec: false,
-            edns: true,
+            // dig_setup: `default_lookup->edns = DEFAULT_EDNS_VERSION`.
+            edns: Some(0),
             udp_size: None,
             timeout_secs: 5,
             tries: 3,
@@ -184,15 +162,39 @@ impl Default for DigOptions {
             section_answer: true,
             section_authority: true,
             section_additional: true,
-            aaflag: false,
-            adflag: false,
+            aaonly: false,
+            // dig_setup: `default_lookup->adflag = true`.
+            adflag: true,
             cdflag: false,
             tcflag: false,
             zflag: false,
+            raflag: false,
+            coflag: false,
+            ignore: false,
+            badcookie: true,
+            // dig_setup: `default_lookup->sendcookie = true`.
+            sendcookie: true,
+            cookie_hex: None,
             multiline: false,
             ttlunits: false,
             nottl: false,
             noclass: false,
+            nocrypto: false,
+            header_only: false,
+            besteffort: true,
+            servfail_stops: true,
+            nsid: false,
+            expire: false,
+            tcp_keepalive: false,
+            keep_open: false,
+            onesoa: false,
+            expandaaaa: false,
+            identify: false,
+            ednsneg: true,
+            ednsflags: 0,
+            ednsopts: Vec::new(),
+            use_usec: false,
+            print_unknown_format: false,
             server: "127.0.0.1".to_string(),
             // dighost.c make_empty_lookup(): IDN defaults depend on the
             // IDN_DISABLE environment variable and on stdout being a TTY
@@ -201,8 +203,37 @@ impl Default for DigOptions {
             // the defaults match a libidn2-enabled build.
             idnin: std::env::var_os("IDN_DISABLE").is_none(),
             idnout: std::io::IsTerminal::is_terminal(&std::io::stdout()),
-            tcp_mode_set: false,
             ixfr_serial: None,
+            cmdline: String::new(),
+            server_explicit: false,
+            first_name_greeting: None,
+        }
+    }
+}
+
+/// Parse failure taxonomy, mirroring dig.c's exit paths:
+/// - `Usage`: message + usage to stderr, exit 1 (invalid options)
+/// - `Fatal`: `dig: <msg>` to stderr, exit 1 (`fatal()`)
+/// - `Warn`: `dig: <msg>` to stderr, exit 10 (`warn()` + `exit_or_usage`
+///   which ends in `digexit()` raising the exit code to >= 10)
+/// - `Bare`: message only to stderr, exit 1 (e.g. `-x` invalid IP)
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum ParseError {
+    Usage(String),
+    Fatal(String),
+    Warn(String),
+    Bare(String),
+}
+
+impl std::fmt::Display for ParseError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            ParseError::Usage(m)
+            | ParseError::Fatal(m)
+            | ParseError::Warn(m)
+            | ParseError::Bare(m) => {
+                write!(f, "{m}")
+            }
         }
     }
 }
@@ -215,7 +246,7 @@ impl Default for DigOptions {
 ///   (`dns_rdatatype_fromtext`), then as a class, and only then as a name;
 ///   a type/class applies to the current (last) lookup.
 /// - each name starts a new lookup carrying the accumulated type/class state.
-pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
+pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
     let mut opts = DigOptions::default();
     let mut server = String::new();
     let mut names: Vec<(String, RrType, Class)> = Vec::new();
@@ -231,29 +262,67 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
     while i < argv.len() {
         let arg = &argv[i];
         if let Some(rest) = arg.strip_prefix('@') {
-            if !server.is_empty() {
-                return Err("Multiple servers specified".to_string());
-            }
+            // Multiple @server arguments are legal in dig.c: each applies to
+            // the successive lookup; for our single-server model the last
+            // one wins.
             server = rest.to_string();
+            opts.server_explicit = true;
         } else if arg.starts_with('+') {
             parse_plus(&mut opts, &arg[1..])?;
         } else if let Some(rest) = arg.strip_prefix('-') {
             // Short options: -t, -c, -p, -q, -x, -4, -6, -v, -h, -b.
             if rest.is_empty() {
-                return Err("Invalid option: -".to_string());
+                return Err(ParseError::Usage("Invalid option: -".to_string()));
             }
             let opt = &rest[..1];
             let has_value = rest.len() > 1;
-            let mut value = if has_value {
+            let value = if has_value {
                 Some(rest[1..].to_string())
             } else {
                 None
             };
             match opt {
-                "4" => opts.ipv4_only = true,
-                "6" => opts.ipv6_only = true,
+                "4" => {
+                    if opts.ipv6_only {
+                        return Err(ParseError::Fatal(
+                            "only one of -4 and -6 allowed".to_string(),
+                        ));
+                    }
+                    opts.ipv4_only = true;
+                }
+                "6" => {
+                    if opts.ipv4_only {
+                        return Err(ParseError::Fatal(
+                            "only one of -4 and -6 allowed".to_string(),
+                        ));
+                    }
+                    opts.ipv6_only = true;
+                }
                 "v" => opts.version = true,
                 "h" | "?" => opts.help = true,
+                "d" => {
+                    // dig.c: -d enables debugging; accepted (debug output
+                    // itself is courted later).
+                }
+                "u" => opts.use_usec = true,
+                "m" => {
+                    // dig.c -m: memory debugging (handled in preparse).
+                }
+                "i" => {
+                    return Err(ParseError::Fatal("-i removed".to_string()));
+                }
+                "n" => {
+                    return Err(ParseError::Fatal("-n removed".to_string()));
+                }
+                "r" => {
+                    // dig.c preparse case 'r': do not read ~/.digrc.  We do
+                    // not read .digrc yet (courted later); accept the flag.
+                }
+                "f" => {
+                    // dig.c -f <file>: batch mode.  Accepted; batch parsing
+                    // lands with the batch-file courts.
+                    let _ = next_value(argv, &mut i, value)?;
+                }
                 "t" => {
                     // dig.c case 't': sets open_type_class = false; the
                     // type applies to the current lookup.
@@ -315,31 +384,64 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
                 }
                 "p" => {
                     let value = next_value(argv, &mut i, value)?;
-                    opts.port = value.parse().map_err(|_| "invalid port".to_string())?;
+                    let n = parse_uint("port number", &value, 0xffff)
+                        .map_err(|_| ParseError::Fatal("Couldn't parse port number".to_string()))?;
+                    opts.port = n as u16;
                 }
                 "b" => {
+                    // dig.c case 'b': address[#port] source binding.  The
+                    // address must parse as IPv6 or IPv4 (fatal otherwise).
                     let value = next_value(argv, &mut i, value)?;
-                    let _ = value; // source-address binding: accepted, not yet wired
+                    let (addr, port_part) = match value.rsplit_once('#') {
+                        Some((a, p)) => (a, Some(p)),
+                        None => (value.as_str(), None),
+                    };
+                    if let Some(p) = port_part {
+                        let _ = parse_uint("port number", p, 0xffff).map_err(|_| {
+                            ParseError::Fatal("Couldn't parse port number".to_string())
+                        })?;
+                    }
+                    if addr.parse::<std::net::Ipv6Addr>().is_ok() {
+                        opts.ipv4_only = false;
+                        opts.ipv6_only = true;
+                    } else if addr.parse::<std::net::Ipv4Addr>().is_ok() {
+                        opts.ipv6_only = false;
+                        opts.ipv4_only = true;
+                    } else {
+                        return Err(ParseError::Fatal(format!("invalid address {addr}")));
+                    }
                 }
                 "q" => {
                     // dig.c case 'q': sets the name directly.
                     let value = next_value(argv, &mut i, value)?;
+                    capture_first_greeting(&mut opts, &names);
                     names.push((value, rdtype, rdclass));
                 }
                 "x" => {
-                    // dig.c case 'x': reverse lookup; PTR/IN unless already set.
+                    // dig.c case 'x' -> get_reverse(value, strict=false):
+                    // IPv6 parses strictly; anything else is blindly treated
+                    // as a dotted-quad and its octets reversed (RFC 2317
+                    // names like 0.168.192. ", so `-x bogus` queries
+                    // "bogus.in-addr.arpa" rather than erroring.
                     let value = next_value(argv, &mut i, value)?;
-                    let ip: std::net::IpAddr = value.parse().map_err(|_| {
-                        // dig.c: fprintf(stderr, "Invalid IP address %s\n"); exit(1)
-                        format!("Invalid IP address {value}")
-                    })?;
-                    let rev = reverse_name(ip);
-                    let t = if rdtypeset { rdtype } else { RrType::Ptr };
-                    let c = if rdclassset { rdclass } else { Class::In };
-                    names.push((rev, t, c));
+                    if let Ok(ip6) = value.parse::<std::net::Ipv6Addr>() {
+                        let rev = reverse_name(std::net::IpAddr::V6(ip6));
+                        let t = if rdtypeset { rdtype } else { RrType::Ptr };
+                        let c = if rdclassset { rdclass } else { Class::In };
+                        capture_first_greeting(&mut opts, &names);
+                        names.push((rev, t, c));
+                    } else {
+                        let rev = reverse_octets(&value);
+                        let t = if rdtypeset { rdtype } else { RrType::Ptr };
+                        let c = if rdclassset { rdclass } else { Class::In };
+                        capture_first_greeting(&mut opts, &names);
+                        names.push((rev, t, c));
+                    }
                 }
-                other => {
-                    return Err(format!("Invalid option: -{other}"));
+                _other => {
+                    // dig.c prints the full option after the leading dash
+                    // (`Invalid option: -%s` with the whole remainder).
+                    return Err(ParseError::Usage(format!("Invalid option: -{rest}")));
                 }
             }
         } else {
@@ -396,16 +498,28 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
                         last.2 = c;
                     }
                 } else {
+                    capture_first_greeting(&mut opts, &names);
                     names.push((arg.clone(), rdtype, rdclass));
                 }
             } else {
+                capture_first_greeting(&mut opts, &names);
                 names.push((arg.clone(), rdtype, rdclass));
             }
         }
         i += 1;
     }
+
+    // dig.c: `If no lookup specified, search for root` — an empty lookup
+    // list (no name given) becomes a `.` NS query.  -v/-h short-circuit
+    // before this (BIND exits in dash_option).
+    if opts.version || opts.help {
+        return Ok(opts);
+    }
     if names.is_empty() {
-        return Err("no query name given".to_string());
+        // dig.c: the no-name fallback calls printgreeting at the end of
+        // parse_args with the final global values.
+        opts.first_name_greeting = Some((opts.print_cmd, opts.short, opts.server_explicit));
+        names.push((String::from("."), RrType::Ns, Class::In));
     }
     if server.is_empty() {
         server = "127.0.0.1".to_string();
@@ -416,34 +530,65 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
         .map(|(n, t, c)| {
             let qname =
                 bind9_rs_core::name::Name::from_text(n, Some(&bind9_rs_core::name::Name::root()))
-                    .map_err(|_| format!("invalid name '{n}'"))?;
+                    .map_err(|_| ParseError::Usage(format!("invalid name '{n}'")))?;
             Ok(Lookup {
                 server: server.clone(),
+                text: n.clone(),
                 names: vec![(qname, *t, *c)],
             })
         })
-        .collect::<Result<_, String>>()?;
+        .collect::<Result<_, ParseError>>()?;
 
     opts.lookups = lookups;
     opts.server = server;
+    opts.cmdline = argv.join(" ");
     Ok(opts)
 }
 
-/// Parse an IXFR serial (`parse_uint(..., MAXSERIAL, "serial number")`;
-/// dig.c `fatal("Couldn't parse serial number")` on failure).
-fn parse_serial(s: &str) -> Result<u32, String> {
-    s.parse::<u32>()
-        .map_err(|_| "Couldn't parse serial number".to_string())
+/// Parse an IXFR serial (dig.c `parse_uint(&serial, &value[5], MAXSERIAL,
+/// "serial number")` + `fatal("Couldn't parse serial number")` on failure).
+fn parse_serial(s: &str) -> Result<u32, ParseError> {
+    let n = parse_uint("serial number", s, u32::MAX as u64)
+        .map_err(|_| ParseError::Fatal("Couldn't parse serial number".to_string()))?;
+    Ok(n as u32)
 }
 
-fn next_value(argv: &[String], i: &mut usize, inline: Option<String>) -> Result<String, String> {
+/// dig.c: printgreeting fires when the first name is parsed (`firstarg`);
+/// record the globals it reads at that moment (including `addresscount`,
+/// which is only nonzero once an @server argument has been resolved).
+fn capture_first_greeting(opts: &mut DigOptions, names: &[(String, RrType, Class)]) {
+    if names.is_empty() && opts.first_name_greeting.is_none() {
+        opts.first_name_greeting = Some((opts.print_cmd, opts.short, opts.server_explicit));
+    }
+}
+
+fn next_value(
+    argv: &[String],
+    i: &mut usize,
+    inline: Option<String>,
+) -> Result<String, ParseError> {
     if let Some(v) = inline {
         return Ok(v);
     }
     *i += 1;
     argv.get(*i)
         .cloned()
-        .ok_or_else(|| "option requires an argument".to_string())
+        .ok_or_else(|| ParseError::Usage("option requires an argument".to_string()))
+}
+
+/// Blind octet reversal (dighost.c get_reverse/reverse_octets, non-strict):
+/// split on '.', reverse the tokens, append `.in-addr.arpa`.  RFC 2317
+/// names pass through; the result is lowercase.
+fn reverse_octets(value: &str) -> String {
+    let mut out = String::new();
+    for tok in value.split('.').rev() {
+        for c in tok.chars() {
+            out.push(c.to_ascii_lowercase());
+        }
+        out.push('.');
+    }
+    out.push_str("in-addr.arpa");
+    out
 }
 
 /// Compute the in-addr.arpa / ip6.arpa name for -x.
@@ -464,250 +609,1056 @@ fn reverse_name(ip: IpAddr) -> String {
     }
 }
 
-/// FULLCHECK semantics: `cmd` must be a case-insensitive prefix of `name`.
-/// BIND requires the prefix to be strictly shorter than the full name
-/// (`_l >= sizeof(A)` → invalid), so an exact full-length match is invalid.
+/// FULLCHECK semantics (dig.c): `cmd` must be a case-insensitive prefix of
+/// `name`, and no longer than it.  BIND compares `strlen(cmd) >= sizeof(name)`
+/// where `sizeof` includes the NUL, so an exact-length match is valid.
 fn matches(cmd: &str, name: &str) -> bool {
-    if cmd.len() >= name.len() {
+    if cmd.len() > name.len() {
         return false;
     }
     name[..cmd.len()].eq_ignore_ascii_case(cmd)
 }
 
-/// Parse one `+option` (without the leading `+`).
-fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), String> {
-    // Split off any =value.
-    let (base, value) = match option.split_once('=') {
-        Some((b, v)) => (b, Some(v.to_string())),
+/// `Invalid option: +<option>` + usage, exit 1 (dig.c `invalid_option:`).
+fn plus_invalid(option: &str) -> ParseError {
+    ParseError::Usage(format!("Invalid option: +{option}"))
+}
+
+/// The optnames table from dighost.c `save_opt` (name → code).
+const OPTNAMES: &[(&str, u16)] = &[
+    ("LLQ", 1),
+    ("UPDATE-LEASE", 2),
+    ("UL", 2),
+    ("NSID", 3),
+    ("DAU", 5),
+    ("DHU", 6),
+    ("N3U", 7),
+    ("ECS", 8),
+    ("EXPIRE", 9),
+    ("COOKIE", 10),
+    ("KEEPALIVE", 11),
+    ("PADDING", 12),
+    ("PAD", 12),
+    ("CHAIN", 13),
+    ("KEY-TAG", 14),
+    ("EDE", 15),
+    ("CLIENT-TAG", 16),
+    ("SERVER-TAG", 17),
+    ("REPORT-CHANNEL", 18),
+    ("RC", 18),
+    ("ZONEVERSION", 19),
+    ("DEVICEID", 26946),
+];
+
+/// `parse_uint` (dighost.c): prints `invalid <desc> '<value>': <reason>` to
+/// stdout and returns the reason; base 10.  The caller chooses the exit path
+/// (`fatal` exit 1 vs `warn`+`exit_or_usage` exit 10).
+fn parse_uint(what: &str, s: &str, max: u64) -> Result<u64, &'static str> {
+    let err = |r: &'static str| {
+        println!("invalid {what} '{s}': {r}");
+        r
+    };
+    if s.is_empty() {
+        return Err(err("not a valid number"));
+    }
+    // isc_parse_uint32: first char must be alphanumeric.
+    if !s.chars().next().unwrap().is_ascii_alphanumeric() {
+        return Err(err("not a valid number"));
+    }
+    match s.parse::<u64>() {
+        Ok(n) if n <= max => Ok(n),
+        Ok(_) => Err(err("out of range")),
+        Err(_) => Err(err("not a valid number")),
+    }
+}
+
+/// `parse_xint` (dighost.c): like parse_uint but base 0 (hex `0x` accepted).
+fn parse_xint(what: &str, s: &str, max: u64) -> Result<u64, &'static str> {
+    let err = |r: &'static str| {
+        println!("invalid {what} '{s}': {r}");
+        r
+    };
+    let parsed = if let Some(hex) = s.strip_prefix("0x").or_else(|| s.strip_prefix("0X")) {
+        u64::from_str_radix(hex, 16)
+    } else {
+        s.parse::<u64>()
+    };
+    match parsed {
+        Ok(n) if n <= max => Ok(n),
+        Ok(_) => Err(err("out of range")),
+        Err(_) => Err(err("not a valid number")),
+    }
+}
+
+/// `+option` parser (dig.c `plus_option`), a faithful transcription of the C
+/// state machine including its prefix-resolution quirks:
+///
+/// - the first `=` splits cmd/value;
+/// - a case-insensitive leading `no` inverts the state (but the remainder is
+///   matched case-sensitively);
+/// - an empty option (`dig +`) prints `;; Invalid option` to stdout and is
+///   otherwise ignored;
+/// - each `switch (cmd[N])` dispatches on the Nth character, so abbreviated
+///   options are accepted only where the C chain admits them (`+cd`, `+co`,
+///   `+cl`, `+ad`, `+ttl`, ...); `+sh`/`+sho` are rejected, `+shor` works;
+/// - parse failures of `+<kw>=<value>` print `invalid <what> '<v>': <reason>`
+///   to stdout, then `dig: Couldn't parse <what>` to stderr and exit 10
+///   (`warn` + `exit_or_usage` → `digexit()`);
+/// - removed options (`+mapped`, `+topdown`, `+sigchase`, `+trusted-key`,
+///   `+unexpected`) `fatal()` with exit 1.
+pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError> {
+    let (raw_cmd, value) = match option.split_once('=') {
+        Some((c, v)) => (c, Some(v.to_string())),
         None => (option, None),
     };
-    let neg = base.strip_prefix("no");
-    let cmd = neg.unwrap_or(base);
-    let state = neg.is_none();
+    // strtok_r(option, "=") returning NULL: the option is empty (`dig +`).
+    if raw_cmd.is_empty() {
+        println!(";; Invalid option {option}");
+        return Ok(());
+    }
+    let (cmd, state) = if raw_cmd.len() >= 2 && raw_cmd[..2].eq_ignore_ascii_case("no") {
+        (&raw_cmd[2..], false)
+    } else {
+        (raw_cmd, true)
+    };
+    if cmd.is_empty() {
+        // `+no` → cmd "" → default case → invalid.
+        return Err(plus_invalid(option));
+    }
 
-    // First matching chain wins (BIND's FULLCHECK ordering).
-    let handled = match cmd.chars().next() {
-        Some('a') => {
-            if matches(cmd, "aaflag") || matches(cmd, "aaonly") {
-                opts.aaflag = state;
-                true
-            } else if matches(cmd, "additional") {
-                opts.section_additional = state;
-                true
-            } else if matches(cmd, "adflag") {
-                opts.adflag = state;
-                true
-            } else if matches(cmd, "answer") {
-                opts.section_answer = state;
-                true
-            } else if matches(cmd, "authority") {
-                opts.section_authority = state;
-                true
-            } else if matches(cmd, "all") {
-                opts.section_question = state;
-                opts.section_authority = state;
-                opts.section_answer = state;
-                opts.section_additional = state;
-                opts.comments = state;
-                opts.statistics = state;
-                opts.print_cmd = state;
-                true
-            } else {
-                false
-            }
-        }
-        Some('b') => {
-            if matches(cmd, "bufsize") {
-                let n: u16 = value
-                    .as_deref()
-                    .and_then(|v| v.parse().ok())
-                    .ok_or_else(|| format!("Invalid option: +{option}"))?;
-                opts.udp_size = Some(n);
-                true
-            } else {
-                false
-            }
-        }
-        Some('c') => {
-            if matches(cmd, "cmd") {
-                opts.print_cmd = state;
-                true
-            } else if matches(cmd, "comments") {
-                opts.comments = state;
-                true
-            } else if matches(cmd, "cdflag") {
-                opts.cdflag = state;
-                true
-            } else if matches(cmd, "class") {
-                opts.noclass = !state;
-                true
-            } else {
-                false
-            }
-        }
-        Some('d') => {
-            if matches(cmd, "dnssec") {
-                opts.dnssec = state;
-                if state {
-                    opts.edns = true;
+    let removed = |m: &str| ParseError::Fatal(format!("{m} option no longer supported"));
+    // warn(...) + exit_or_usage → exit 10.
+    let warn_exit = |what: &str| ParseError::Warn(format!("Couldn't parse {what}"));
+
+    let c = cmd.as_bytes();
+    let c1 = || c.get(1).copied();
+    let c2 = || c.get(2).copied();
+    let c3 = || c.get(3).copied();
+    let c4 = || c.get(4).copied();
+    let c7 = || c.get(7).copied();
+
+    match c[0] {
+        b'a' => match c1() {
+            Some(b'a') => {
+                if matches(cmd, "aaonly") || matches(cmd, "aaflag") {
+                    opts.aaonly = state;
+                } else {
+                    return Err(plus_invalid(option));
                 }
-                true
-            } else {
-                false
             }
-        }
-        Some('e') => {
-            if matches(cmd, "edns") {
-                opts.edns = state;
-                if let Some(v) = value {
-                    // +edns=N: version — accepted, version 0 supported.
-                    if v != "0" {
-                        return Err(format!("EDNS version {v} not supported"));
+            Some(b'd') => match c2() {
+                Some(b'd') => {
+                    if matches(cmd, "additional") {
+                        opts.section_additional = state;
+                    } else {
+                        return Err(plus_invalid(option));
                     }
                 }
-                true
-            } else {
-                false
-            }
-        }
-        Some('i') => {
-            if matches(cmd, "ignore") {
-                // +ignore: do not retry over TCP on TC.  Stored but the
-                // retry path is not yet wired (TC handling courted later).
-                true
-            } else if matches(cmd, "idnin") {
-                opts.idnin = state;
-                true
-            } else if matches(cmd, "idnout") {
-                opts.idnout = state;
-                true
-            } else {
-                false
-            }
-        }
-        Some('k') => {
-            if matches(cmd, "keepopen") {
-                true
-            } else {
-                false
-            }
-        }
-        Some('m') => {
-            if matches(cmd, "multiline") {
-                opts.multiline = state;
-                true
-            } else {
-                false
-            }
-        }
-        Some('n') => {
-            if matches(cmd, "nsid") {
-                true
-            } else {
-                false
-            }
-        }
-        Some('q') => {
-            if matches(cmd, "qr") {
-                opts.print_qr = state;
-                true
-            } else if matches(cmd, "question") {
-                opts.section_question = state;
-                true
-            } else {
-                false
-            }
-        }
-        Some('r') => {
-            if matches(cmd, "recurse") {
-                opts.recurse = state;
-                true
-            } else if matches(cmd, "retry") || matches(cmd, "retries") {
-                let _: u32 = value
-                    .as_deref()
-                    .and_then(|v| v.parse().ok())
-                    .ok_or_else(|| format!("Invalid option: +{option}"))?;
-                true
-            } else if matches(cmd, "rrcomments") {
-                true
-            } else {
-                false
-            }
-        }
-        Some('s') => {
-            if matches(cmd, "short") {
-                opts.short = state;
-                true
-            } else if matches(cmd, "stats") {
-                opts.statistics = state;
-                true
-            } else if matches(cmd, "search") {
-                true
-            } else if matches(cmd, "split") {
-                true
-            } else {
-                false
-            }
-        }
-        Some('t') => {
-            if matches(cmd, "tcp") {
-                opts.transport = if state {
-                    Transport::Tcp
+                Some(b'f') | None => {
+                    // `+ad` is a synonym for `+adflag`.
+                    if matches(cmd, "adflag") {
+                        opts.adflag = state;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                _ => return Err(plus_invalid(option)),
+            },
+            Some(b'l') => {
+                if matches(cmd, "all") {
+                    opts.section_question = state;
+                    opts.section_authority = state;
+                    opts.section_answer = state;
+                    opts.section_additional = state;
+                    opts.comments = state;
+                    opts.statistics = state;
+                    opts.print_cmd = state;
                 } else {
-                    Transport::Udp
-                };
-                opts.tcp_mode_set = true;
-                true
-            } else if matches(cmd, "time") {
-                let n: u64 = value
-                    .as_deref()
-                    .and_then(|v| v.parse().ok())
-                    .ok_or_else(|| format!("Invalid option: +{option}"))?;
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'n') => {
+                if matches(cmd, "answer") {
+                    opts.section_answer = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'u') => {
+                if matches(cmd, "authority") {
+                    opts.section_authority = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'b' => match c1() {
+            Some(b'a') => {
+                if matches(cmd, "badcookie") {
+                    opts.badcookie = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'e') => {
+                if matches(cmd, "besteffort") {
+                    opts.besteffort = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'u') => {
+                if !matches(cmd, "bufsize") {
+                    return Err(plus_invalid(option));
+                }
+                if !state {
+                    return Err(plus_invalid(option));
+                }
+                match value {
+                    None => opts.udp_size = Some(1232), // DEFAULT_EDNS_BUFSIZE
+                    Some(v) => {
+                        let n = parse_uint("buffer size", &v, 0xffff)
+                            .map_err(|_| warn_exit("buffer size"))?;
+                        opts.udp_size = Some(n as u16);
+                    }
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'c' => match c1() {
+            Some(b'd') => {
+                if c2().is_some() && c2() != Some(b'f') {
+                    return Err(plus_invalid(option));
+                }
+                if matches(cmd, "cdflag") {
+                    opts.cdflag = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'l') => {
+                // `+cl` kept for backward compatibility.
+                if matches(cmd, "class") || matches(cmd, "cl") {
+                    opts.noclass = !state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'm') => {
+                if matches(cmd, "cmd") {
+                    opts.print_cmd = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'o') => match c2() {
+                Some(b'f') | None => {
+                    // `+co` is a synonym for `+coflag`.
+                    if matches(cmd, "coflag") {
+                        opts.coflag = state;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                Some(b'm') => {
+                    if matches(cmd, "comments") {
+                        opts.comments = state;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                Some(b'o') => {
+                    if !matches(cmd, "cookie") {
+                        return Err(plus_invalid(option));
+                    }
+                    if state && opts.edns.is_none() {
+                        opts.edns = Some(0); // DEFAULT_EDNS_VERSION
+                    }
+                    opts.sendcookie = state;
+                    match value {
+                        Some(v) => {
+                            // hexcookie[81] in dig.c: strlen >= 81 truncates.
+                            if v.len() >= 81 {
+                                return Err(ParseError::Warn("COOKIE data too large".into()));
+                            }
+                            opts.cookie_hex = Some(v);
+                        }
+                        None => opts.cookie_hex = None,
+                    }
+                }
+                _ => return Err(plus_invalid(option)),
+            },
+            Some(b'r') => {
+                if matches(cmd, "crypto") {
+                    opts.nocrypto = !state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'd' => match c1() {
+            Some(b'e') => {
+                if !matches(cmd, "defname") {
+                    return Err(plus_invalid(option));
+                }
+                eprintln!(";; +[no]defname option is deprecated; use +[no]search");
+            }
+            Some(b'n') => {
+                if c2() != Some(b's') {
+                    return Err(plus_invalid(option));
+                }
+                match c3() {
+                    Some(b'6') => {
+                        if !matches(cmd, "dns64prefix") {
+                            return Err(plus_invalid(option));
+                        }
+                        if state {
+                            opts.print_cmd = false;
+                            opts.section_additional = false;
+                            opts.section_answer = true;
+                            opts.section_authority = false;
+                            opts.section_question = false;
+                            opts.comments = false;
+                            opts.statistics = false;
+                        }
+                    }
+                    Some(b's') => {
+                        if !matches(cmd, "dnssec") {
+                            return Err(plus_invalid(option));
+                        }
+                        if state && opts.edns.is_none() {
+                            opts.edns = Some(0);
+                        }
+                        opts.dnssec = state;
+                    }
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            Some(b'o') => {
+                if c2().is_none() {
+                    // `+do` is a synonym for `+dnssec`.
+                    if state && opts.edns.is_none() {
+                        opts.edns = Some(0);
+                    }
+                    opts.dnssec = state;
+                } else if matches(cmd, "domain") {
+                    let v = value.ok_or_else(|| plus_invalid(option))?;
+                    if !state {
+                        return Err(plus_invalid(option));
+                    }
+                    let _ = v; // domainopt: search-domain override (no-op)
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'e' => match c1() {
+            Some(b'd') => {
+                if c2() != Some(b'n') || c3() != Some(b's') {
+                    return Err(plus_invalid(option));
+                }
+                match c4() {
+                    None => {
+                        if !matches(cmd, "edns") {
+                            return Err(plus_invalid(option));
+                        }
+                        if !state {
+                            opts.edns = None;
+                        } else {
+                            match value {
+                                None => opts.edns = Some(0),
+                                Some(v) => {
+                                    let n = parse_uint("edns", &v, 255)
+                                        .map_err(|_| warn_exit("edns"))?;
+                                    opts.edns = Some(n as u8);
+                                }
+                            }
+                        }
+                    }
+                    Some(b'f') => {
+                        if !matches(cmd, "ednsflags") {
+                            return Err(plus_invalid(option));
+                        }
+                        if !state {
+                            opts.ednsflags = 0;
+                        } else {
+                            let n = match value {
+                                None => 0,
+                                Some(v) => parse_xint("ednsflags", &v, 0xffff)
+                                    .map_err(|_| warn_exit("ednsflags"))?
+                                    as u16,
+                            };
+                            if opts.edns.is_none() {
+                                opts.edns = Some(0);
+                            }
+                            opts.ednsflags = n;
+                        }
+                    }
+                    Some(b'n') => {
+                        if !matches(cmd, "ednsnegotiation") {
+                            return Err(plus_invalid(option));
+                        }
+                        opts.ednsneg = state;
+                    }
+                    Some(b'o') => {
+                        if !matches(cmd, "ednsopt") {
+                            return Err(plus_invalid(option));
+                        }
+                        if !state {
+                            opts.ednsopts.clear();
+                        } else {
+                            let v = value.ok_or_else(|| {
+                                ParseError::Warn("ednsopt no code point specified".into())
+                            })?;
+                            let (code, extra) = match v.split_once(':') {
+                                Some((co, ex)) => (co, Some(ex)),
+                                None => (v.as_str(), None),
+                            };
+                            save_ednsopt(opts, code, extra)?;
+                        }
+                    }
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            Some(b'x') => {
+                if c2() != Some(b'p') {
+                    return Err(plus_invalid(option));
+                }
+                match c3() {
+                    Some(b'a') => {
+                        if matches(cmd, "expandaaaa") {
+                            opts.expandaaaa = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    Some(b'i') => {
+                        if matches(cmd, "expire") {
+                            opts.expire = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'f' => match c1() {
+            Some(b'a') => {
+                if matches(cmd, "fail") {
+                    opts.servfail_stops = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'u') => {
+                if !matches(cmd, "fuzztime") {
+                    return Err(plus_invalid(option));
+                }
+                if state {
+                    if let Some(v) = value {
+                        let _ = parse_uint("fuzztime", &v, 0xffffffff)
+                            .map_err(|_| warn_exit("fuzztime"))?;
+                    }
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'h' => match c1() {
+            Some(b'e') => {
+                if matches(cmd, "header-only") {
+                    opts.header_only = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b't') => {
+                // https / https-get / https-post / http-plain / http-plain-get /
+                // http-plain-post (FULLCHECK6).  DoH transport wiring lands with
+                // the transport courts; accept and record the mode.
+                const HTTPS: &[&str] = &[
+                    "https",
+                    "https-get",
+                    "https-post",
+                    "http-plain",
+                    "http-plain-get",
+                    "http-plain-post",
+                ];
+                if !HTTPS.iter().any(|h| matches(cmd, h)) {
+                    return Err(plus_invalid(option));
+                }
+                if !state {
+                    // https_mode = false (accepted; no transport yet)
+                } else if !opts.tcp_mode_set {
+                    opts.transport = Transport::Tcp;
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'i' => match c1() {
+            Some(b'd') => match c2() {
+                Some(b'e') => {
+                    if matches(cmd, "identify") {
+                        opts.identify = state;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                Some(b'n') => match c3() {
+                    None => {
+                        if matches(cmd, "idn") {
+                            opts.idnin = state;
+                            opts.idnout = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    Some(b'i') => {
+                        if matches(cmd, "idnin") {
+                            opts.idnin = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    Some(b'o') => {
+                        if matches(cmd, "idnout") {
+                            opts.idnout = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    _ => return Err(plus_invalid(option)),
+                },
+                _ => return Err(plus_invalid(option)),
+            },
+            // `+ig`... and the default fall through: FULLCHECK("ignore").
+            _ => {
+                if matches(cmd, "ignore") {
+                    opts.ignore = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+        },
+        b'k' => match c1() {
+            Some(b'e') => {
+                if c2() != Some(b'e') || c3() != Some(b'p') {
+                    return Err(plus_invalid(option));
+                }
+                match c4() {
+                    Some(b'a') => {
+                        if matches(cmd, "keepalive") {
+                            opts.tcp_keepalive = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    Some(b'o') => {
+                        if matches(cmd, "keepopen") {
+                            opts.keep_open = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'm' => match c1() {
+            Some(b'a') => {
+                if matches(cmd, "mapped") {
+                    return Err(removed("+mapped"));
+                }
+                return Err(plus_invalid(option));
+            }
+            Some(b'u') => {
+                if matches(cmd, "multiline") {
+                    opts.multiline = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'n' => match c1() {
+            Some(b'd') => {
+                if !matches(cmd, "ndots") {
+                    return Err(plus_invalid(option));
+                }
+                let v = value.ok_or_else(|| plus_invalid(option))?;
+                if !state {
+                    return Err(plus_invalid(option));
+                }
+                let _ = parse_uint("ndots", &v, 0xffff).map_err(|_| warn_exit("ndots"))?;
+            }
+            Some(b's') => match c2() {
+                Some(b'i') => {
+                    if !matches(cmd, "nsid") {
+                        return Err(plus_invalid(option));
+                    }
+                    if state && opts.edns.is_none() {
+                        opts.edns = Some(0);
+                    }
+                    opts.nsid = state;
+                }
+                Some(b's') => {
+                    if !matches(cmd, "nssearch") {
+                        return Err(plus_invalid(option));
+                    }
+                    if state {
+                        opts.recurse = true;
+                        opts.identify = true;
+                        opts.comments = false;
+                        opts.statistics = false;
+                        opts.section_additional = false;
+                        opts.section_authority = false;
+                        opts.section_question = false;
+                        opts.short = true;
+                        // ns_search_only: rdtype forced to NS at lookup build.
+                    }
+                }
+                _ => return Err(plus_invalid(option)),
+            },
+            _ => return Err(plus_invalid(option)),
+        },
+        b'o' => match c1() {
+            Some(b'n') => {
+                if matches(cmd, "onesoa") {
+                    opts.onesoa = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'p') => {
+                if !matches(cmd, "opcode") {
+                    return Err(plus_invalid(option));
+                }
+                if !state {
+                    // opcode = 0 (QUERY)
+                } else {
+                    let v = value.ok_or_else(|| plus_invalid(option))?;
+                    // opcodetext table match, then numeric.
+                    let names = ["QUERY", "IQUERY", "STATUS", "NOTIFY", "UPDATE"];
+                    let found = names.iter().position(|n| n.eq_ignore_ascii_case(&v));
+                    if found.is_none() {
+                        let _ = parse_uint("opcode", &v, 15).map_err(|_| warn_exit("opcode"))?;
+                    }
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'p' => match c1() {
+            Some(b'a') => {
+                if !matches(cmd, "padding") {
+                    return Err(plus_invalid(option));
+                }
+                if state && opts.edns.is_none() {
+                    opts.edns = Some(0);
+                }
+                let v = value.ok_or_else(|| plus_invalid(option))?;
+                let _ = parse_uint("padding", &v, 512).map_err(|_| warn_exit("padding"))?;
+            }
+            Some(b'r') => {
+                // +proxy* (plus_proxy_options): accepted, transport-level.
+                if !matches(cmd, "proxy") {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'q' => match c1() {
+            Some(b'i') => {
+                if !matches(cmd, "qid") {
+                    return Err(plus_invalid(option));
+                }
+                if state {
+                    let v = value.ok_or_else(|| plus_invalid(option))?;
+                    let _ = parse_uint("qid", &v, 0xffff).map_err(|_| warn_exit("qid"))?;
+                }
+            }
+            Some(b'r') => {
+                if matches(cmd, "qr") {
+                    opts.print_qr = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'u') => {
+                if matches(cmd, "question") {
+                    opts.section_question = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'r' => match c1() {
+            Some(b'a') => {
+                if matches(cmd, "raflag") {
+                    opts.raflag = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'd') => {
+                if matches(cmd, "rdflag") {
+                    opts.recurse = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'e') => match c2() {
+                Some(b'c') => {
+                    if matches(cmd, "recurse") {
+                        opts.recurse = state;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                Some(b't') => {
+                    if !(matches(cmd, "retry") || matches(cmd, "retries")) {
+                        return Err(plus_invalid(option));
+                    }
+                    let v = value.ok_or_else(|| plus_invalid(option))?;
+                    if !state {
+                        return Err(plus_invalid(option));
+                    }
+                    let n = parse_uint("retries", &v, u32::MAX as u64 - 1)
+                        .map_err(|_| warn_exit("retries"))?;
+                    opts.tries = n as u32 + 1;
+                }
+                _ => return Err(plus_invalid(option)),
+            },
+            Some(b'r') => {
+                if matches(cmd, "rrcomments") {
+                    // rrcomments = state ? 1 : -1 (rendering nuance; accepted)
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b's' => match c1() {
+            Some(b'e') => {
+                if matches(cmd, "search") {
+                    // usesearch = state (search-list resolution; no-op)
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'h') => {
+                if c2() != Some(b'o') {
+                    return Err(plus_invalid(option));
+                }
+                match c3() {
+                    Some(b'r') => {
+                        if !matches(cmd, "short") {
+                            return Err(plus_invalid(option));
+                        }
+                        opts.short = state;
+                        if state {
+                            opts.print_cmd = false;
+                            opts.section_additional = false;
+                            opts.section_answer = true;
+                            opts.section_authority = false;
+                            opts.section_question = false;
+                            opts.comments = false;
+                            opts.statistics = false;
+                        }
+                    }
+                    Some(b'w') => match c4() {
+                        Some(b'b') => match c7() {
+                            Some(b'c') => {
+                                if matches(cmd, "showbadcookie") {
+                                    // showbadcookie = state
+                                } else {
+                                    return Err(plus_invalid(option));
+                                }
+                            }
+                            Some(b'v') => {
+                                if matches(cmd, "showbadvers") {
+                                    // showbadvers = state
+                                } else {
+                                    return Err(plus_invalid(option));
+                                }
+                            }
+                            _ => return Err(plus_invalid(option)),
+                        },
+                        Some(b's') => {
+                            if matches(cmd, "showsearch") {
+                                // usesearch = state
+                            } else {
+                                return Err(plus_invalid(option));
+                            }
+                        }
+                        _ => return Err(plus_invalid(option)),
+                    },
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            Some(b'i') => {
+                if matches(cmd, "sigchase") {
+                    return Err(removed("+sigchase"));
+                }
+                return Err(plus_invalid(option));
+            }
+            Some(b'p') => {
+                if !matches(cmd, "split") {
+                    return Err(plus_invalid(option));
+                }
+                if value.is_some() && !state {
+                    return Err(plus_invalid(option));
+                }
+                if !state {
+                    // splitwidth = 0
+                } else if let Some(v) = value {
+                    let mut n = parse_uint("split", &v, 1023).map_err(|_| warn_exit("split"))?;
+                    if n % 4 != 0 {
+                        n = ((n + 3) / 4) * 4;
+                        eprintln!(";; Warning, split must be a multiple of 4; adjusting to {n}");
+                    }
+                }
+            }
+            Some(b't') => {
+                if matches(cmd, "stats") {
+                    opts.statistics = state;
+                } else {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'u') => {
+                if !matches(cmd, "subnet") {
+                    return Err(plus_invalid(option));
+                }
+                if state && value.is_none() {
+                    return Err(plus_invalid(option));
+                }
+                if state {
+                    if opts.edns.is_none() {
+                        opts.edns = Some(0);
+                    }
+                    let v = value.unwrap();
+                    // parse_netprefix: accepted; ECS wiring lands with the ECS
+                    // courts.
+                    let _ = v;
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b't' => match c1() {
+            Some(b'c') => match c2() {
+                Some(b'f') => {
+                    if matches(cmd, "tcflag") {
+                        opts.tcflag = state;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                Some(b'p') => {
+                    if matches(cmd, "tcp") {
+                        opts.transport = if state {
+                            Transport::Tcp
+                        } else {
+                            Transport::Udp
+                        };
+                        opts.tcp_mode_set = true;
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                _ => return Err(plus_invalid(option)),
+            },
+            Some(b'i') => {
+                if !matches(cmd, "timeout") {
+                    return Err(plus_invalid(option));
+                }
+                let v = value.ok_or_else(|| plus_invalid(option))?;
+                if !state {
+                    return Err(plus_invalid(option));
+                }
+                let mut n = parse_uint("timeout", &v, 0xffff).map_err(|_| warn_exit("timeout"))?;
+                if n == 0 {
+                    n = 1;
+                }
                 opts.timeout_secs = n;
-                true
-            } else if matches(cmd, "tries") {
-                let n: u32 = value
-                    .as_deref()
-                    .and_then(|v| v.parse().ok())
-                    .ok_or_else(|| format!("Invalid option: +{option}"))?;
-                opts.tries = n;
-                true
-            } else if matches(cmd, "ttlunits") {
-                opts.ttlunits = state;
-                true
-            } else if matches(cmd, "ttlid") {
-                opts.nottl = !state;
-                true
-            } else if matches(cmd, "tcflag") {
-                opts.tcflag = state;
-                true
+            }
+            Some(b'l') => {
+                // +tls* (plus_tls_options): accepted, transport-level.
+                if c2() != Some(b's') || !matches(cmd, "tls") {
+                    return Err(plus_invalid(option));
+                }
+            }
+            Some(b'o') => {
+                if matches(cmd, "topdown") {
+                    return Err(removed("+topdown"));
+                }
+                return Err(plus_invalid(option));
+            }
+            Some(b'r') => match c2() {
+                Some(b'a') => {
+                    if matches(cmd, "trace") {
+                        if state {
+                            opts.recurse = true;
+                            opts.identify = true;
+                            opts.comments = false;
+                            opts.statistics = false;
+                            opts.section_additional = false;
+                            opts.section_authority = true;
+                            opts.section_question = false;
+                            opts.dnssec = true;
+                            opts.sendcookie = true;
+                        }
+                    } else {
+                        return Err(plus_invalid(option));
+                    }
+                }
+                Some(b'i') => {
+                    if !matches(cmd, "tries") {
+                        return Err(plus_invalid(option));
+                    }
+                    let v = value.ok_or_else(|| plus_invalid(option))?;
+                    if !state {
+                        return Err(plus_invalid(option));
+                    }
+                    let mut n =
+                        parse_uint("tries", &v, u32::MAX as u64).map_err(|_| warn_exit("tries"))?;
+                    if n == 0 {
+                        n = 1;
+                    }
+                    opts.tries = n as u32;
+                }
+                Some(b'u') => {
+                    if matches(cmd, "trusted-key") {
+                        return Err(removed("+trusted-key"));
+                    }
+                    return Err(plus_invalid(option));
+                }
+                _ => return Err(plus_invalid(option)),
+            },
+            Some(b't') => {
+                if c2() != Some(b'l') {
+                    return Err(plus_invalid(option));
+                }
+                match c3() {
+                    None | Some(b'i') => {
+                        if matches(cmd, "ttl") || matches(cmd, "ttlid") {
+                            opts.nottl = !state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    Some(b'u') => {
+                        if matches(cmd, "ttlunits") {
+                            opts.nottl = false;
+                            opts.ttlunits = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            _ => return Err(plus_invalid(option)),
+        },
+        b'u' => {
+            // dig.c case 'u' has no default: `+u`, `+ux`, ... are silently
+            // accepted no-ops (archived quirk; verified against the oracle).
+            if c1() == Some(b'n') {
+                match c2() {
+                    Some(b'e') => {
+                        if matches(cmd, "unexpected") {
+                            return Err(removed("+unexpected"));
+                        }
+                        return Err(plus_invalid(option));
+                    }
+                    Some(b'k') => {
+                        if matches(cmd, "unknownformat") {
+                            opts.print_unknown_format = state;
+                        } else {
+                            return Err(plus_invalid(option));
+                        }
+                    }
+                    _ => return Err(plus_invalid(option)),
+                }
+            }
+            // else: silently accepted (BIND quirk).
+        }
+        b'v' => {
+            if !matches(cmd, "vc") {
+                return Err(plus_invalid(option));
+            }
+            opts.transport = if state {
+                Transport::Tcp
             } else {
-                false
+                Transport::Udp
+            };
+            opts.tcp_mode_set = true;
+        }
+        b'y' => {
+            if !matches(cmd, "yaml") {
+                return Err(plus_invalid(option));
+            }
+            if state {
+                opts.print_cmd = false;
+                opts.statistics = false;
             }
         }
-        Some('u') => {
-            if matches(cmd, "useedns") {
-                opts.edns = state;
-                true
-            } else {
-                false
-            }
-        }
-        Some('z') => {
+        b'z' => {
             if matches(cmd, "zflag") {
                 opts.zflag = state;
-                true
             } else {
-                false
+                return Err(plus_invalid(option));
             }
         }
-        _ => false,
-    };
-
-    if !handled {
-        return Err(format!("Invalid option: +{option}"));
+        _ => return Err(plus_invalid(option)),
     }
     Ok(())
+}
+
+/// dighost.c `save_opt`: resolve the option code by name or number and store
+/// (hex-decoded) value.
+fn save_ednsopt(opts: &mut DigOptions, code: &str, value: Option<&str>) -> Result<(), ParseError> {
+    let num = match OPTNAMES.iter().find(|(n, _)| n.eq_ignore_ascii_case(code)) {
+        Some((_, c)) => *c,
+        None => {
+            let n = parse_uint("ednsopt", code, 65535).map_err(|_| {
+                // fatal("bad edns code point: %s")
+                ParseError::Fatal(format!("bad edns code point: {code}"))
+            })?;
+            n as u16
+        }
+    };
+    let data = match value {
+        None => Vec::new(),
+        Some(v) => {
+            // isc_hex_decodestring
+            let bytes = hex_decode(v)
+                .map_err(|_| ParseError::Fatal("couldn't decode ednsopt value".to_string()))?;
+            bytes
+        }
+    };
+    opts.ednsopts.push((num, data));
+    Ok(())
+}
+
+/// Decode a hex string (even length, no separator).
+pub fn hex_decode(s: &str) -> Result<Vec<u8>, ()> {
+    if s.len() % 2 != 0 {
+        return Err(());
+    }
+    let mut out = Vec::with_capacity(s.len() / 2);
+    let b = s.as_bytes();
+    for i in (0..b.len()).step_by(2) {
+        let hi = (b[i] as char).to_digit(16).ok_or(())?;
+        let lo = (b[i + 1] as char).to_digit(16).ok_or(())?;
+        out.push(((hi << 4) | lo) as u8);
+    }
+    Ok(out)
 }
 
 #[cfg(test)]
@@ -771,5 +1722,116 @@ mod tests {
         // -q sets the name directly.
         let o = parse_args(&["-q".to_string(), "example.com".to_string()]).unwrap();
         assert_eq!(o.lookups.len(), 1);
+    }
+
+    /// The `+c` prefix quirks (dig.c `case 'c'` switch on cmd[1]): `+cd`,
+    /// `+co`, `+cl`, `+cmd`, `+com`, `+coo` are valid; bare `+c` is not.
+    #[test]
+    fn c_chain_prefix_quirks() {
+        assert!(matches!(
+            parse_args(&["+c".to_string(), "example.com".to_string()]),
+            Err(ParseError::Usage(_))
+        ));
+        let o = parse_args(&["+cd".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.cdflag);
+        let o = parse_args(&["+co".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.coflag);
+        let o = parse_args(&["+cl".to_string(), "example.com".to_string()]).unwrap();
+        // `+cl` is a back-compat synonym for `+class` (noclass = !state).
+        assert!(!o.noclass);
+        let o = parse_args(&["+nocl".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.noclass);
+        let o = parse_args(&["+com".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.comments);
+        let o = parse_args(&["+nocom".to_string(), "example.com".to_string()]).unwrap();
+        assert!(!o.comments);
+        let o = parse_args(&["+coo".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.sendcookie);
+        let o = parse_args(&["+nocoo".to_string(), "example.com".to_string()]).unwrap();
+        assert!(!o.sendcookie);
+        let o = parse_args(&["+cmd".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.print_cmd);
+    }
+
+    /// `+sh`/`+sho` are rejected; `+shor` works (dig.c `case 's'` cmd[2]/[3]
+    /// dispatch).  `+u` is a silently accepted no-op (no default in case 'u').
+    #[test]
+    fn short_and_u_quirks() {
+        assert!(matches!(
+            parse_args(&["+sh".to_string(), "example.com".to_string()]),
+            Err(ParseError::Usage(_))
+        ));
+        assert!(matches!(
+            parse_args(&["+sho".to_string(), "example.com".to_string()]),
+            Err(ParseError::Usage(_))
+        ));
+        let o = parse_args(&["+shor".to_string(), "example.com".to_string()]).unwrap();
+        assert!(o.short);
+        let o = parse_args(&["+u".to_string(), "example.com".to_string()]).unwrap();
+        assert_eq!(o.lookups.len(), 1);
+    }
+
+    /// The error taxonomy: `+time`/`+tries`/`+bufsize`/`+retry`/`+edns`
+    /// parse failures are `Warn` (exit 10); `-p`/`-t ixfr` are `Fatal` (exit
+    /// 1); removed options are `Fatal`; `+` alone is a stdout warning.
+    #[test]
+    fn error_taxonomy() {
+        assert!(matches!(
+            parse_args(&["+time=abc".to_string(), "example.com".to_string()]),
+            Err(ParseError::Warn(_))
+        ));
+        assert!(matches!(
+            parse_args(&["+tries=abc".to_string(), "example.com".to_string()]),
+            Err(ParseError::Warn(_))
+        ));
+        assert!(matches!(
+            parse_args(&["+bufsize=abc".to_string(), "example.com".to_string()]),
+            Err(ParseError::Warn(_))
+        ));
+        assert!(matches!(
+            parse_args(&["+retry=abc".to_string(), "example.com".to_string()]),
+            Err(ParseError::Warn(_))
+        ));
+        assert!(matches!(
+            parse_args(&["-p".to_string(), "99999".to_string()]),
+            Err(ParseError::Fatal(_))
+        ));
+        assert!(matches!(
+            parse_args(&["-t".to_string(), "ixfr=abc".to_string()]),
+            Err(ParseError::Fatal(_))
+        ));
+        assert!(matches!(
+            parse_args(&["+topdown".to_string(), "example.com".to_string()]),
+            Err(ParseError::Fatal(_))
+        ));
+        assert!(matches!(
+            parse_args(&["-i".to_string()]),
+            Err(ParseError::Fatal(_))
+        ));
+        assert!(matches!(
+            parse_args(&["-b".to_string(), "bad".to_string()]),
+            Err(ParseError::Fatal(_))
+        ));
+    }
+
+    /// The greeting build-time capture: `dig example.com +noall` records
+    /// (true, false, …) at the first name; `dig +noall example.com` records
+    /// (false, …) and therefore never builds a greeting.
+    #[test]
+    fn greeting_build_time_capture() {
+        let o = parse_args(&["example.com".to_string(), "+noall".to_string()]).unwrap();
+        assert_eq!(o.first_name_greeting, Some((true, false, false)));
+        let o = parse_args(&["+noall".to_string(), "example.com".to_string()]).unwrap();
+        assert_eq!(o.first_name_greeting, Some((false, false, false)));
+        // `-x` before `@server`: the server was not yet seen at build time.
+        let o = parse_args(&[
+            "-x".to_string(),
+            "192.0.2.1".to_string(),
+            "@127.0.0.1".to_string(),
+        ])
+        .unwrap();
+        assert_eq!(o.first_name_greeting, Some((true, false, false)));
+        let o = parse_args(&["@127.0.0.1".to_string(), "example.com".to_string()]).unwrap();
+        assert_eq!(o.first_name_greeting, Some((true, false, true)));
     }
 }

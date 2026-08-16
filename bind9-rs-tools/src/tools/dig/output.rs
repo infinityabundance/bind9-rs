@@ -6,6 +6,7 @@
 //! `masterdump.c indent()` computes it: tabs to the next tab stop, then
 //! spaces; if the target column is behind the cursor, one column of space.
 
+use bind9_rs_core::edns::{option_code, EdnsOption, Opt};
 use bind9_rs_core::message::{Message, Record};
 use bind9_rs_core::rcode::Rcode;
 use bind9_rs_core::rrtype::RrType;
@@ -28,6 +29,22 @@ pub struct StatisticsInfo {
     pub server_arg: String,
     pub proto: &'static str,
     pub received: usize,
+}
+
+/// The cookie verification state for a received OPT (dighost.c
+/// `process_cookie` → `msg->cc_ok`/`cc_bad`):
+/// - `Good`: server echoed our cookie plus a valid server cookie (>= 16
+///   bytes) → `; COOKIE: ... (good)`;
+/// - `Echoed`: only our cookie echoed (< 16 bytes) → `; COOKIE: ...
+///   (echoed)`;
+/// - `Bad`: echoed but mismatched / too short → `; COOKIE: ... (bad)`;
+/// - `None`: no COOKIE option in the response (no suffix).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum CookieState {
+    None,
+    Good,
+    Echoed,
+    Bad,
 }
 
 /// The indentation primitive from `masterdump.c indent()`: advance from
@@ -112,31 +129,157 @@ fn render_question_line(out: &mut Vec<u8>, name: &str, class: &str, type_: &str)
     out.push(b'\n');
 }
 
-/// Render the full response message, exactly in dig's order: header, flags,
-/// warnings, OPT pseudo-section, question/answer/authority/additional
-/// sections, then the trailing blank line before the statistics block.
+/// Render the full response message, exactly in dig's order (dig.c
+/// `printmessage`): greeting (already printed by the caller), `;; Got
+/// answer:`, header, flags, warnings, OPT pseudo-section, and the
+/// question/answer/authority/additional sections.  The `;; Got answer:`
+/// block, header and section-name comments are gated on `comments`; the
+/// short form prints answer rdata only (dig.c `short_answer`/`say_message`).
 pub fn render_message<W: Write>(
     msg: &Message,
     full_rcode: Rcode,
     opts: &DigOptions,
+    cookie_state: CookieState,
+    cmdline: &mut Option<String>,
     w: &mut W,
 ) -> std::io::Result<()> {
     let mut buf = Vec::new();
 
-    buf.extend_from_slice(b";; Got answer:\n");
+    // The greeting prints on the first printmessage call regardless of
+    // +nocomments (dig.c:733-738: gated only on cmdline/printcmd/short);
+    // it is cleared even when suppressed.
+    if let Some(g) = cmdline.take() {
+        if opts.print_cmd && !opts.short {
+            buf.extend_from_slice(g.as_bytes());
+        }
+    }
 
-    // ->>HEADER<<- line.
+    if opts.short {
+        // dig.c short_answer: answer RDATA only, one record per line.
+        for r in &msg.answer {
+            if r.type_ == RrType::Opt {
+                continue;
+            }
+            buf.extend_from_slice(r.rdata.to_text().as_bytes());
+            buf.push(b'\n');
+        }
+        w.write_all(&buf)?;
+        return Ok(());
+    }
+
+    // dig.c: `if (comments && !short_form && !dns64prefix)`.
+    if opts.comments {
+        buf.extend_from_slice(b";; Got answer:\n");
+
+        // ->>HEADER<<- line.
+        buf.extend_from_slice(
+            format!(
+                ";; ->>HEADER<<- opcode: {}, status: {}, id: {}\n",
+                opcode_text(msg.flags.opcode),
+                rcode_dig_text(full_rcode),
+                msg.id
+            )
+            .as_bytes(),
+        );
+
+        // Flags line + counts (dig.c printmessage).
+        render_flags_counts(&mut buf, msg);
+
+        // Recursion requested but not available.
+        if msg.flags.rd && !msg.flags.ra {
+            buf.extend_from_slice(b";; WARNING: recursion requested but not available\n");
+        }
+        // EDNS query returned FORMERR/NOTIMP without an OPT in the response.
+        // (dig.c: `edns != -1 && msg->opt == NULL && (FORMERR|NOTIMP)`).
+        if opts.edns.is_some()
+            && msg.opt.is_none()
+            && matches!(full_rcode, Rcode::FormErr | Rcode::NotImp)
+        {
+            buf.extend_from_slice(
+                format!(
+                    "\n;; WARNING: EDNS query returned status {} - retry with '{}noedns'\n",
+                    rcode_dig_text(full_rcode),
+                    if opts.dnssec { "+nodnssec " } else { "" },
+                )
+                .as_bytes(),
+            );
+        }
+
+        // Blank line separating the header block from the sections (dig.c
+        // printf("\n") before dumping the rendered buffer).
+        buf.push(b'\n');
+
+        // OPT pseudo-section (dig.c: `comments && headers`).
+        if let Some(opt) = &msg.opt {
+            render_opt_section(&mut buf, opt, cookie_state);
+        }
+    }
+
+    // Sections in dig's fixed order; the section-name comments are gated on
+    // `comments` (the NOCOMMENTS totext flag).
+    if opts.section_question {
+        render_section(
+            &mut buf,
+            "QUESTION",
+            &msg_question(msg),
+            render_question,
+            opts,
+        );
+    }
+    if opts.section_answer {
+        render_section(&mut buf, "ANSWER", &msg.answer, render_answer_record, opts);
+    }
+    if opts.section_authority {
+        render_section(
+            &mut buf,
+            "AUTHORITY",
+            &msg.authority,
+            render_answer_record,
+            opts,
+        );
+    }
+    if opts.section_additional {
+        render_section(
+            &mut buf,
+            "ADDITIONAL",
+            &msg.additional,
+            render_answer_record,
+            opts,
+        );
+    }
+
+    w.write_all(&buf)?;
+    Ok(())
+}
+
+/// Render the statistics block (dig `received()`).
+pub fn render_statistics<W: Write>(
+    info: &StatisticsInfo,
+    opts: &DigOptions,
+    w: &mut W,
+) -> std::io::Result<()> {
+    let mut buf = Vec::new();
+    if opts.use_usec {
+        buf.extend_from_slice(format!(";; Query time: {} usec\n", info.rtt_usec).as_bytes());
+    } else {
+        buf.extend_from_slice(format!(";; Query time: {} msec\n", info.rtt_usec / 1000).as_bytes());
+    }
     buf.extend_from_slice(
         format!(
-            ";; ->>HEADER<<- opcode: {}, status: {}, id: {}\n",
-            opcode_text(msg.flags.opcode),
-            rcode_dig_text(full_rcode),
-            msg.id
+            ";; SERVER: {}({}) ({})\n",
+            info.server_text, info.server_arg, info.proto
         )
         .as_bytes(),
     );
+    buf.extend_from_slice(format!(";; WHEN: {}\n", when_text()).as_bytes());
+    buf.extend_from_slice(format!(";; MSG SIZE  rcvd: {}\n", info.received).as_bytes());
+    buf.push(b'\n'); // BIND's received() ends the block with a blank line
+    w.write_all(&buf)?;
+    Ok(())
+}
 
-    // Flags line.
+/// The `;; flags: ...; QUERY: ...` line (dig.c printmessage).
+pub(super) fn render_flags_counts(buf: &mut Vec<u8>, msg: &Message) {
     buf.extend_from_slice(b";; flags:");
     if msg.flags.qr {
         buf.extend_from_slice(b" qr");
@@ -172,52 +315,166 @@ pub fn render_message<W: Write>(
         )
         .as_bytes(),
     );
+}
 
-    // Recursion requested but not available.
-    if msg.flags.rd && !msg.flags.ra {
-        buf.extend_from_slice(b";; WARNING: recursion requested but not available\n");
+/// Render the OPT pseudo-section (lib/dns/message.c
+/// `dns_message_pseudosectiontotext`): `;; OPT PSEUDOSECTION:`, the EDNS
+/// line, and one `; <NAME>: <render>` line per option.
+pub(super) fn render_opt_section(buf: &mut Vec<u8>, opt: &Opt, cookie_state: CookieState) {
+    buf.extend_from_slice(b";; OPT PSEUDOSECTION:\n");
+    // `; EDNS: version: %u, flags:%s%s; udp: %u` — flags are " do", " co";
+    // a nonzero MBZ (excluding DO|CO) prints `; MBZ: 0x%.4x, udp: `.
+    let mbz = opt.z() & !(0x8000 | 0x4000);
+    let mut line = format!("; EDNS: version: {}, flags:", opt.version());
+    if opt.do_flag() {
+        line.push_str(" do");
     }
-    // EDNS query returned FORMERR/NOTIMP without an OPT in the response.
-    if opts.edns && msg.opt.is_none() && matches!(full_rcode, Rcode::FormErr | Rcode::NotImp) {
+    if opt.co_flag() {
+        line.push_str(" co");
+    }
+    if mbz != 0 {
+        line.push_str(&format!("; MBZ: 0x{mbz:04x}, udp: "));
+    } else {
+        line.push_str("; udp: ");
+    }
+    line.push_str(&opt.udp_payload_size().to_string());
+    line.push('\n');
+    buf.extend_from_slice(line.as_bytes());
+    for o in opt.options() {
+        buf.extend_from_slice(b"; ");
+        buf.extend_from_slice(option_text(o.code).as_bytes());
+        buf.push(b':');
+        render_option_value(buf, o, cookie_state);
+        buf.push(b'\n');
+    }
+}
+
+/// Render one OPT option's value (message.c `pseudosectiontotext` switch):
+/// COOKIE gets lowercase hex without separators plus the (good|echoed|bad)
+/// suffix; PADDING prints ` (N bytes)`; ECS renders the prefix; the
+/// generic form is hex-with-spaces plus `("printable")`.
+fn render_option_value(buf: &mut Vec<u8>, o: &EdnsOption, cookie_state: CookieState) {
+    match o.code {
+        option_code::COOKIE => {
+            // message.c: `ADD_STRING(target, " ")` before the hex bytes.
+            buf.push(b' ');
+            for b in &o.data {
+                buf.extend_from_slice(format!("{b:02x}").as_bytes());
+            }
+            match cookie_state {
+                CookieState::Good => buf.extend_from_slice(b" (good)"),
+                CookieState::Echoed => buf.extend_from_slice(b" (echoed)"),
+                CookieState::Bad => buf.extend_from_slice(b" (bad)"),
+                CookieState::None => {}
+            }
+        }
+        option_code::PADDING => {
+            if !o.data.is_empty() {
+                buf.extend_from_slice(format!(" ({} bytes)", o.data.len()).as_bytes());
+            }
+        }
+        option_code::ECS => {
+            // message.c render_ecs: family/addrlen/scopelen/addr, e.g.
+            // ` 192.0.2.0/24/0` (malformed → generic hex fallback).
+            if o.data.len() >= 4 {
+                let family = u16::from_be_bytes([o.data[0], o.data[1]]);
+                let addrlen = o.data[2];
+                let scopelen = o.data[3];
+                let addrbytes = (usize::from(addrlen) + 7) / 8;
+                let valid = match family {
+                    0 => addrlen == 0 && scopelen == 0,
+                    1 => addrlen <= 32 && scopelen <= 32,
+                    2 => addrlen <= 128 && scopelen <= 128,
+                    _ => false,
+                };
+                if valid && o.data.len() >= 4 + addrbytes {
+                    let addr = &o.data[4..4 + addrbytes];
+                    let text = match family {
+                        1 => {
+                            let mut o4 = [0u8; 4];
+                            o4[..addrbytes.min(4)].copy_from_slice(&addr[..addrbytes.min(4)]);
+                            std::net::Ipv4Addr::from(o4).to_string()
+                        }
+                        2 => {
+                            let mut o6 = [0u8; 16];
+                            o6[..addrbytes.min(16)].copy_from_slice(&addr[..addrbytes.min(16)]);
+                            std::net::Ipv6Addr::from(o6).to_string()
+                        }
+                        _ => "0".to_string(),
+                    };
+                    buf.extend_from_slice(format!(" {text}/{addrlen}/{scopelen}").as_bytes());
+                    return;
+                }
+            }
+            render_option_hex(buf, o);
+        }
+        _ => render_option_hex(buf, o),
+    }
+}
+
+/// The generic option fallback (message.c): hex bytes separated by spaces,
+/// then `("printable")`.
+fn render_option_hex(buf: &mut Vec<u8>, o: &EdnsOption) {
+    if o.data.is_empty() {
+        return;
+    }
+    buf.push(b' ');
+    let mut printable = String::with_capacity(o.data.len());
+    for (i, b) in o.data.iter().enumerate() {
+        if i > 0 {
+            buf.push(b' ');
+        }
+        buf.extend_from_slice(format!("{b:02x}").as_bytes());
+        printable.push(if b.is_ascii_graphic() {
+            *b as char
+        } else {
+            '.'
+        });
+    }
+    buf.extend_from_slice(b"(\"");
+    buf.extend_from_slice(printable.as_bytes());
+    buf.push(b'"');
+    buf.push(b')');
+}
+
+/// Render the query (send) message for the `+qr` path (dig.c printmessage
+/// with `msg == lookup->sendmsg`): the greeting (deferred cmdline), `;;
+/// Sending:`, header block, OPT pseudo-section, question section, and the
+/// trailing blank line.  The `;; QUERY SIZE: N` line is printed by the
+/// caller (gated on `stats`).
+pub fn render_send_message<W: Write>(
+    msg: &Message,
+    opts: &DigOptions,
+    cmdline: &mut Option<String>,
+    w: &mut W,
+) -> std::io::Result<()> {
+    let mut buf = Vec::new();
+    // The greeting prints on the first printmessage call regardless of
+    // +nocomments (dig.c:733-738).
+    if let Some(g) = cmdline.take() {
+        if opts.print_cmd && !opts.short {
+            buf.extend_from_slice(g.as_bytes());
+        }
+    }
+    if opts.comments && !opts.short {
+        buf.extend_from_slice(b";; Sending:\n");
         buf.extend_from_slice(
             format!(
-                "\n;; WARNING: EDNS query returned status {} - retry with '{}noedns'\n",
-                rcode_dig_text(full_rcode),
-                if opts.dnssec { "+nodnssec " } else { "" },
+                ";; ->>HEADER<<- opcode: {}, status: {}, id: {}\n",
+                opcode_text(msg.flags.opcode),
+                "NOERROR",
+                msg.id
             )
             .as_bytes(),
         );
-    }
-
-    // Blank line separating the header block from the sections (dig.c
-    // printf("\n") before dumping the rendered buffer).
-    buf.push(b'\n');
-
-    // OPT pseudo-section.
-    if opts.comments && !opts.short {
+        render_flags_counts(&mut buf, msg);
+        // Blank line separating the header block from the sections.
+        buf.push(b'\n');
         if let Some(opt) = &msg.opt {
-            buf.extend_from_slice(b";; OPT PSEUDOSECTION:\n");
-            buf.extend_from_slice(
-                format!(
-                    "; EDNS: version: {}, flags:{}; udp: {}\n",
-                    opt.version(),
-                    if opt.do_flag() { " do" } else { "" },
-                    opt.udp_payload_size(),
-                )
-                .as_bytes(),
-            );
-            for o in opt.options() {
-                buf.extend_from_slice(b"; ");
-                buf.extend_from_slice(option_text(o.code).as_bytes());
-                buf.extend_from_slice(b":");
-                buf.extend_from_slice(format!(" ({} bytes)", o.data.len()).as_bytes());
-                buf.push(b'\n');
-            }
+            render_opt_section(&mut buf, opt, CookieState::None);
         }
     }
-
-    // Sections in dig's fixed order.
-    if opts.section_question {
+    if opts.section_question && msg.question.is_some() {
         render_section(
             &mut buf,
             "QUESTION",
@@ -226,48 +483,6 @@ pub fn render_message<W: Write>(
             opts,
         );
     }
-    if opts.section_answer {
-        render_section(&mut buf, "ANSWER", &msg.answer, render_answer_record, opts);
-    }
-    if opts.section_authority {
-        render_section(
-            &mut buf,
-            "AUTHORITY",
-            &msg.authority,
-            render_answer_record,
-            opts,
-        );
-    }
-    if opts.section_additional {
-        render_section(
-            &mut buf,
-            "ADDITIONAL",
-            &msg.additional,
-            render_answer_record,
-            opts,
-        );
-    }
-
-    // Trailing blank line before statistics (sectiontotext's trailing \n).
-    buf.push(b'\n');
-
-    w.write_all(&buf)?;
-    Ok(())
-}
-
-/// Render the statistics block (dig `received()`).
-pub fn render_statistics<W: Write>(info: &StatisticsInfo, w: &mut W) -> std::io::Result<()> {
-    let mut buf = Vec::new();
-    buf.extend_from_slice(format!(";; Query time: {} msec\n", info.rtt_usec / 1000).as_bytes());
-    buf.extend_from_slice(
-        format!(
-            ";; SERVER: {}({}) ({})\n",
-            info.server_text, info.server_arg, info.proto
-        )
-        .as_bytes(),
-    );
-    buf.extend_from_slice(format!(";; WHEN: {}\n", when_text()).as_bytes());
-    buf.extend_from_slice(format!(";; MSG SIZE  rcvd: {}\n", info.received).as_bytes());
     w.write_all(&buf)?;
     Ok(())
 }
@@ -466,11 +681,17 @@ fn render_section(
         return;
     }
     let mut section = Vec::new();
-    section.extend_from_slice(format!(";; {name} SECTION:\n").as_bytes());
+    if opts.comments {
+        section.extend_from_slice(format!(";; {name} SECTION:\n").as_bytes());
+    }
     for r in records {
         renderer(&mut section, r, opts);
     }
-    section.push(b'\n');
+    // The blank line separating sections is part of the comments rendering
+    // (BIND: +noall +answer emits the record without a trailing blank).
+    if opts.comments {
+        section.push(b'\n');
+    }
     buf.extend_from_slice(&section);
 }
 
@@ -495,8 +716,21 @@ fn render_answer_record(buf: &mut Vec<u8>, r: &Record, opts: &DigOptions) {
         ttl,
         &r.class.to_text(),
         &r.type_.to_text(),
-        &r.rdata.to_text(),
+        &rdata_text(opts, r),
     );
+}
+
+/// The RDATA text with dig's totext filter applied (dig.c printmessage sets
+/// the idn_filter via `dig_idnsetup(query->lookup, true)`; the filter covers
+/// every name in the message, including names inside RDATA).
+fn rdata_text(opts: &DigOptions, r: &Record) -> String {
+    if opts.idnout {
+        r.rdata.to_text_filtered(&mut |s| {
+            crate::compat::libidn2::idn_filter(s).unwrap_or_else(|| s.to_string())
+        })
+    } else {
+        r.rdata.to_text()
+    }
 }
 
 #[cfg(test)]

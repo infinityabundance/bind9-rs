@@ -126,44 +126,55 @@ pub enum Error {
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(self.bind_totext())
+    }
+}
+
+impl Error {
+    /// The BIND `isc_result_totext` / `dns_result_totext` string for this
+    /// error (the text dig prints in `;; Got bad packet: <text>` and in
+    /// fatal messages).  Kept separate from `Display` so internal
+    /// explanations stay distinct from the compatibility-facing text.
+    #[must_use]
+    pub fn bind_totext(&self) -> &str {
         match self {
-            Error::Success => f.write_str("success"),
-            Error::NoMemory => f.write_str("out of memory"),
-            Error::NoSpace => f.write_str("ran out of space"),
-            Error::TimedOut => f.write_str("timed out"),
-            Error::NotImplemented => f.write_str("not implemented"),
-            Error::Refused => f.write_str("refused"),
-            Error::ServFail => f.write_str("server failure"),
-            Error::FormErr => f.write_str("format error"),
-            Error::NotFound => f.write_str("not found"),
-            Error::Exists => f.write_str("already exists"),
-            Error::InvalidArgument => f.write_str("invalid argument"),
-            Error::BadData => f.write_str("bad data"),
-            Error::BadDottedQuad => f.write_str("bad dotted quad"),
-            Error::BadIpv6 => f.write_str("bad IPv6 address"),
-            Error::Range => f.write_str("out of range"),
-            Error::BadNumber => f.write_str("not a valid number"),
-            Error::BadHex => f.write_str("bad hex encoding"),
-            Error::Syntax => f.write_str("syntax error"),
-            Error::UnexpectedEnd => f.write_str("unexpected end of input"),
-            Error::MessageTooLong => f.write_str("message too long"),
-            Error::PermissionDenied => f.write_str("permission denied"),
-            Error::OutOfZone => f.write_str("out of zone"),
-            Error::CnameConflict => f.write_str("cname"),
-            Error::EmptyLabel => f.write_str("empty label"),
-            Error::LabelTooLong => f.write_str("label too long"),
-            Error::BadEscape => f.write_str("bad escape"),
-            Error::BadLabelType => f.write_str("bad label type"),
-            Error::NameTooLong => f.write_str("name too long"),
-            Error::BadName => f.write_str("bad name (check-names)"),
-            Error::BadPointer => f.write_str("bad compression pointer"),
-            Error::Disallowed => f.write_str("disallowed (by application policy)"),
-            Error::ExtraData => f.write_str("extra input data"),
-            Error::ExtraToken => f.write_str("extra input text"),
-            Error::MetaType => f.write_str("invalid use of a meta type"),
-            Error::Dnssec => f.write_str("DNSSEC error"),
-            Error::Network => f.write_str("network failure"),
-            Error::Other(s) => f.write_str(s),
+            Error::Success => "success",
+            Error::NoMemory => "out of memory",
+            Error::NoSpace => "ran out of space",
+            Error::TimedOut => "timed out",
+            Error::NotImplemented => "not implemented",
+            Error::Refused => "refused",
+            Error::ServFail => "server failure",
+            Error::FormErr => "FORMERR",
+            Error::NotFound => "not found",
+            Error::Exists => "already exists",
+            Error::InvalidArgument => "invalid argument",
+            Error::BadData => "bad data",
+            Error::BadDottedQuad => "bad dotted quad",
+            Error::BadIpv6 => "bad IPv6 address",
+            Error::Range => "out of range",
+            Error::BadNumber => "not a valid number",
+            Error::BadHex => "bad hex encoding",
+            Error::Syntax => "syntax error",
+            Error::UnexpectedEnd => "unexpected end",
+            Error::MessageTooLong => "message too long",
+            Error::PermissionDenied => "permission denied",
+            Error::OutOfZone => "out of zone",
+            Error::CnameConflict => "cname",
+            Error::EmptyLabel => "empty label",
+            Error::LabelTooLong => "label too long",
+            Error::BadEscape => "bad escape",
+            Error::BadLabelType => "bad label type",
+            Error::NameTooLong => "name too long",
+            Error::BadName => "bad name (check-names)",
+            Error::BadPointer => "bad compression pointer",
+            Error::Disallowed => "disallowed (by application policy)",
+            Error::ExtraData => "extra input data",
+            Error::ExtraToken => "extra input text",
+            Error::MetaType => "invalid use of a meta type",
+            Error::Dnssec => "DNSSEC error",
+            Error::Network => "network failure",
+            Error::Other(s) => s,
         }
     }
 }

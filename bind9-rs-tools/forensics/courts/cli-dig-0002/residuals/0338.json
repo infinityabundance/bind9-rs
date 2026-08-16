@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "RESIDUAL-cli-dig-0002-0436",
+  "court_id": "cli-dig-0002",
+  "kind": "TEXT",
+  "oracle_raw": ";; MSG SIZE  rcvd: 248",
+  "rust_raw": "### CASE 25: @127.0.0.1 -p 5333 example.com +norecurse",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

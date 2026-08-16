@@ -65,6 +65,12 @@ fn main() -> ExitCode {
 }
 
 fn courts_root() -> PathBuf {
+    // BIND9_COURTS_ROOT overrides the search root so courts living in the
+    // tools forensics tree (bind9-rs-tools/forensics/courts) are reachable
+    // from the same runner; defaults to the workspace forensics/courts.
+    if let Ok(root) = std::env::var("BIND9_COURTS_ROOT") {
+        return PathBuf::from(root);
+    }
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
         .expect("workspace")

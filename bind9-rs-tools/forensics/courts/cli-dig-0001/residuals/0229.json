@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "RESIDUAL-cli-dig-0001-0255",
+  "court_id": "cli-dig-0001",
+  "kind": "TEXT",
+  "oracle_raw": "dig: only one of -4 and -6 allowed",
+  "rust_raw": "",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

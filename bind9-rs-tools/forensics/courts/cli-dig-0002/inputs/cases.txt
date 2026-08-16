@@ -1,0 +1,27 @@
+# CLI-DIG-0002 cases: deterministic network queries against the scripted
+# responder (dns-responder.py on 127.0.0.1:5333).
+@127.0.0.1 -p 5333 example.com
+@127.0.0.1 -p 5333 example.com A
+@127.0.0.1 -p 5333 example.com AAAA
+@127.0.0.1 -p 5333 example.com MX
+@127.0.0.1 -p 5333 example.com TXT
+@127.0.0.1 -p 5333 example.com NS
+@127.0.0.1 -p 5333 example.com SOA
+@127.0.0.1 -p 5333 example.com ANY
+@127.0.0.1 -p 5333 nonexistent.example.com
+@127.0.0.1 -p 5333 nodata.example.com
+@127.0.0.1 -p 5333 servfail.example.com
+@127.0.0.1 -p 5333 refused.example.com
+@127.0.0.1 -p 5333 formerr.example.com
+@127.0.0.1 -p 5333 example.com +short
+@127.0.0.1 -p 5333 example.com +noall +answer
+@127.0.0.1 -p 5333 example.com +noall +authority +additional
+@127.0.0.1 -p 5333 example.com +qr
+@127.0.0.1 -p 5333 example.com +tcp
+@127.0.0.1 -p 5333 example.com +tries=1 +time=1
+@127.0.0.1 -p 5333 -x 192.0.2.1
+@127.0.0.1 -p 5333 big.example.com TXT
+@127.0.0.1 -p 5333 big.example.com TXT +ignore
+@127.0.0.1 -p 5333 example.com +noedns
+@127.0.0.1 -p 5333 example.com +bufsize=4096
+@127.0.0.1 -p 5333 example.com +norecurse

@@ -85,6 +85,21 @@ impl Opt {
         self
     }
 
+    /// A copy with the CO (0x4000, RFC 8764 "co" bit) set.  dig's `+coflag`.
+    #[must_use]
+    pub fn with_co(mut self) -> Self {
+        self.z |= 0x4000;
+        self
+    }
+
+    /// A copy with an EDNS option appended (dig's `+ednsopt`/`+cookie`
+    /// machinery and the resolver's option-forwarding path).
+    #[must_use]
+    pub fn with_option(mut self, code: u16, data: Vec<u8>) -> Self {
+        self.options.push(EdnsOption { code, data });
+        self
+    }
+
     #[must_use]
     pub fn udp_payload_size(&self) -> u16 {
         self.udp_size
@@ -103,6 +118,18 @@ impl Opt {
     #[must_use]
     pub fn do_flag(&self) -> bool {
         self.do_flag
+    }
+
+    /// The CO bit (RFC 8764).
+    #[must_use]
+    pub fn co_flag(&self) -> bool {
+        self.z & 0x4000 != 0
+    }
+
+    /// The raw Z field (15 bits).
+    #[must_use]
+    pub fn z(&self) -> u16 {
+        self.z & 0x7fff
     }
 
     #[must_use]

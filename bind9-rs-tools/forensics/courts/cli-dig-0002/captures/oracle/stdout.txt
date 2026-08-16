@@ -1,0 +1,563 @@
+### CASE 1: @127.0.0.1 -p 5333 example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37568
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 2: @127.0.0.1 -p 5333 example.com A
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25434
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 3: @127.0.0.1 -p 5333 example.com AAAA
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com AAAA
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49236
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	AAAA
+
+;; ANSWER SECTION:
+example.com.		3600	IN	AAAA	2001:db8::1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 68
+
+--- STDERR
+--- EXIT 0
+### CASE 4: @127.0.0.1 -p 5333 example.com MX
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com MX
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50345
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;example.com.			IN	MX
+
+;; ANSWER SECTION:
+example.com.		3600	IN	MX	10 mail.example.com.
+
+;; ADDITIONAL SECTION:
+mail.example.com.	3600	IN	A	192.0.2.10
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 104
+
+--- STDERR
+--- EXIT 0
+### CASE 5: @127.0.0.1 -p 5333 example.com TXT
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com TXT
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54404
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	TXT
+
+;; ANSWER SECTION:
+example.com.		3600	IN	TXT	"hello world"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 64
+
+--- STDERR
+--- EXIT 0
+### CASE 6: @127.0.0.1 -p 5333 example.com NS
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com NS
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15862
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; QUESTION SECTION:
+;example.com.			IN	NS
+
+;; ANSWER SECTION:
+example.com.		3600	IN	NS	ns1.example.com.
+
+;; ADDITIONAL SECTION:
+ns1.example.com.	3600	IN	A	192.0.2.53
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 100
+
+--- STDERR
+--- EXIT 0
+### CASE 7: @127.0.0.1 -p 5333 example.com SOA
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com SOA
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1084
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	SOA
+
+;; ANSWER SECTION:
+example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 3600
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 113
+
+--- STDERR
+--- EXIT 0
+### CASE 8: @127.0.0.1 -p 5333 example.com ANY
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com ANY
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52298
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	ANY
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Sun Aug 16 02:32:21 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 9: @127.0.0.1 -p 5333 nonexistent.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 nonexistent.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39215
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;nonexistent.example.com.	IN	A
+
+;; AUTHORITY SECTION:
+example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 3600
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 125
+
+--- STDERR
+--- EXIT 0
+### CASE 10: @127.0.0.1 -p 5333 nodata.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 nodata.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13403
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;nodata.example.com.		IN	A
+
+;; AUTHORITY SECTION:
+example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 3600
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 120
+
+--- STDERR
+--- EXIT 0
+### CASE 11: @127.0.0.1 -p 5333 servfail.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 servfail.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27255
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;servfail.example.com.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 38
+
+--- STDERR
+--- EXIT 0
+### CASE 12: @127.0.0.1 -p 5333 refused.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 refused.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49784
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;refused.example.com.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 37
+
+--- STDERR
+--- EXIT 0
+### CASE 13: @127.0.0.1 -p 5333 formerr.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 formerr.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30567
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;formerr.example.com.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 37
+
+--- STDERR
+--- EXIT 0
+### CASE 14: @127.0.0.1 -p 5333 example.com +short
+--- STDOUT
+192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 15: @127.0.0.1 -p 5333 example.com +noall +answer
+--- STDOUT
+example.com.		3600	IN	A	192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 16: @127.0.0.1 -p 5333 example.com +noall +authority +additional
+--- STDOUT
+--- STDERR
+--- EXIT 0
+### CASE 17: @127.0.0.1 -p 5333 example.com +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21877
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: ee3455eedeecacec
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21877
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 18: @127.0.0.1 -p 5333 example.com +tcp
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +tcp
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38374
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 19: @127.0.0.1 -p 5333 example.com +tries=1 +time=1
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +tries=1 +time=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49544
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 20: @127.0.0.1 -p 5333 -x 192.0.2.1
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 -x 192.0.2.1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41748
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;1.2.0.192.in-addr.arpa.		IN	PTR
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 40
+
+--- STDERR
+--- EXIT 0
+### CASE 21: @127.0.0.1 -p 5333 big.example.com TXT
+--- STDOUT
+;; Truncated, retrying in TCP mode.
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 big.example.com TXT
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41473
+;; flags: qr tc rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;big.example.com.		IN	TXT
+
+;; ANSWER SECTION:
+big.example.com.	3600	IN	TXT	"record number 0"
+big.example.com.	3600	IN	TXT	"record number 1"
+big.example.com.	3600	IN	TXT	"record number 2"
+big.example.com.	3600	IN	TXT	"record number 3"
+big.example.com.	3600	IN	TXT	"record number 4"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 248
+
+--- STDERR
+--- EXIT 0
+### CASE 22: @127.0.0.1 -p 5333 big.example.com TXT +ignore
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 big.example.com TXT +ignore
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4918
+;; flags: qr tc rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;big.example.com.		IN	TXT
+
+;; ANSWER SECTION:
+big.example.com.	3600	IN	TXT	"record number 0"
+big.example.com.	3600	IN	TXT	"record number 1"
+big.example.com.	3600	IN	TXT	"record number 2"
+big.example.com.	3600	IN	TXT	"record number 3"
+big.example.com.	3600	IN	TXT	"record number 4"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 248
+
+--- STDERR
+--- EXIT 0
+### CASE 23: @127.0.0.1 -p 5333 example.com +noedns
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +noedns
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20927
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:22 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 24: @127.0.0.1 -p 5333 example.com +bufsize=4096
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +bufsize=4096
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3459
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:23 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 25: @127.0.0.1 -p 5333 example.com +norecurse
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +norecurse
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29006
+;; flags: qr ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Sun Aug 16 02:32:23 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### RESPONDER QUERY LOG
+udp . 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 28 1
+udp example.com 15 1
+udp example.com 16 1
+udp example.com 2 1
+udp example.com 6 1
+tcp example.com 255 1
+udp nonexistent.example.com 1 1
+udp nodata.example.com 1 1
+udp servfail.example.com 1 1
+udp refused.example.com 1 1
+udp formerr.example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+tcp example.com 1 1
+udp example.com 1 1
+udp 1.2.0.192.in-addr.arpa 12 1
+udp big.example.com 16 1
+tcp big.example.com 16 1
+udp big.example.com 16 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1

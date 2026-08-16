@@ -1,0 +1,23 @@
+schema_version = 1
+court_id = "CLI-DIG-0002"
+question = "dig network behavior against a deterministic scripted DNS responder: record rendering, section toggles, +qr, +short, TCP, rcode paths, truncation/ignore, EDNS options"
+subsystem = "cli/dig"
+oracle_versions = ["9.20.26"]
+harness = "dig"
+normalization = [
+    "NONDETERMINISTIC-1: DNS transaction ID (`id: N`) — random per run; raw value retained in captures",
+    "NONDETERMINISTIC-2: `;; Query time: N msec` — wall clock",
+    "NONDETERMINISTIC-3: `;; WHEN: <date>` — wall clock, locale-dependent",
+]
+invariants = [
+    "all deterministic stdout lines match byte-for-byte after normalization",
+    "outbound query behavior (proto, qname, qtype, qclass) matches the responder log",
+]
+timeout_secs = 300
+nondeterminism_policy = "documented per-field normalization; raw retained"
+security_classification = "none"
+references = [
+    "bin/dig/dig.c + dighost.c query/print paths (9.20.26)",
+    "addendum §16, §17, §32, §44",
+    "court fixture: bind9-rs-tools/forensics/courts/common/dns-responder.py",
+]

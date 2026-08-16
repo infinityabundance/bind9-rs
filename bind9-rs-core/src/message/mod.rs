@@ -81,7 +81,6 @@ impl Message {
             h.flags.opcode,
             question.as_ref().map(|q| q.qclass),
         )?;
-        eprintln!("DBG after answer: pos={pos}");
         let authority = parse_section(
             buf,
             &mut pos,
@@ -93,11 +92,6 @@ impl Message {
         let mut opt: Option<Opt> = None;
         for _ in 0..h.arcount {
             let (name, type_, class, ttl, rdlen, mut rpos) = parse_record_prefix(buf, pos)?;
-            eprintln!(
-                "DBG additional@{pos}: type={} rdlen={rdlen} rpos={rpos} len={}",
-                type_.to_text(),
-                buf.len()
-            );
             if type_ == RrType::Opt {
                 // BIND: the OPT owner name must be the root, it must be in
                 // the additional section, and it must be the first OPT

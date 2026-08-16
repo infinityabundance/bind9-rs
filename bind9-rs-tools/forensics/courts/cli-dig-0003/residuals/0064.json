@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "RESIDUAL-cli-dig-0003-0089",
+  "court_id": "cli-dig-0003",
+  "kind": "TEXT",
+  "oracle_raw": ";; QUESTION SECTION:",
+  "rust_raw": "idn.example.com.\t3600\tIN\tNS\tns.münchen.de.",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

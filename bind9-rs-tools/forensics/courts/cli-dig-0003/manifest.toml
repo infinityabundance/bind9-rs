@@ -1,0 +1,23 @@
+schema_version = 1
+court_id = "CLI-DIG-0003"
+question = "dig IDN behavior (+idnin/+idnout) against a libidn2-enabled oracle (oracle-bind-9.20.26-idn)"
+subsystem = "cli/dig"
+oracle_versions = ["9.20.26-idn"]
+harness = "dig"
+normalization = [
+    "NONDETERMINISTIC-1: DNS transaction ID (`id: N`)",
+    "NONDETERMINISTIC-2: `;; Query time: N msec`",
+    "NONDETERMINISTIC-3: `;; WHEN: <date>`",
+]
+invariants = [
+    "the query name on the wire is the A-label form when +idnin is active",
+    "response names render as Unicode when +idnout is active",
+]
+timeout_secs = 300
+nondeterminism_policy = "documented per-field normalization; raw retained"
+security_classification = "none"
+references = [
+    "bin/dig/dighost.c idn_input / idn_filter / make_empty_lookup (9.20.26)",
+    "addendum §16, §28",
+    "bind9-rs-tools/src/compat/libidn2.rs",
+]

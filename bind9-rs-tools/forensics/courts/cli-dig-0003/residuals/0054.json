@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "RESIDUAL-cli-dig-0003-0079",
+  "court_id": "cli-dig-0003",
+  "kind": "TEXT",
+  "oracle_raw": "### CASE 5: @127.0.0.1 -p 5333 idn.example.com NS +idnout",
+  "rust_raw": "; (1 server found)",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

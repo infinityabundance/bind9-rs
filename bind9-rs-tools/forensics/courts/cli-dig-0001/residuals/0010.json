@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "RESIDUAL-cli-dig-0001-0440",
+  "court_id": "cli-dig-0001",
+  "kind": "TEXT",
+  "oracle_raw": "; (1 server found)",
+  "rust_raw": "; <<>> DiG 9.20.26 <<>> +noidnin @127.0.0.1 -p 1 +time=1 +tries=1",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

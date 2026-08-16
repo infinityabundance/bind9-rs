@@ -1,0 +1,20 @@
+schema_version = 1
+court_id = "CLI-DIG-0001"
+question = "dig CLI grammar: version/help output, invalid-option diagnostics, and exit statuses for arguments that never reach the network"
+subsystem = "cli/dig"
+oracle_versions = ["9.20.26"]
+harness = "dig"
+normalization = [
+    "none beyond the shared dig comparator (id / Query time / WHEN are not produced by these cases)",
+]
+invariants = [
+    "stdout bytes match byte-for-byte after documented normalization",
+    "stderr diagnostics and exit statuses match",
+]
+timeout_secs = 120
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "bin/dig/dig.c parse_args / dash_option / usage (9.20.26)",
+    "addendum §16, §32, §42",
+]

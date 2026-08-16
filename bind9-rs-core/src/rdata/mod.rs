@@ -482,20 +482,44 @@ impl Rdata {
     /// `dns_master_style` "default" style, courted by `TEXT-RDATA-*`).
     #[must_use]
     pub fn to_text(&self) -> String {
+        self.to_text_filtered(&mut |s| s.to_string())
+    }
+
+    /// Like `to_text`, but every name field is passed through `filter`
+    /// first — dig's `+idnout` totext filter (dighost.c `idn_filter` via
+    /// `dns_name_settotextfilter`) applies to every name in the message,
+    /// including names inside RDATA (NS targets, SOA, MX, ...).
+    #[must_use]
+    pub fn to_text_filtered(&self, filter: &mut dyn FnMut(&str) -> String) -> String {
         match self {
             Rdata::A(ip) => ip.to_string(),
             Rdata::Aaaa(ip) => ip.to_string(),
-            Rdata::Name { name, .. } => name.to_text(),
+            Rdata::Name { name, .. } => filter(&name.to_text()),
             Rdata::Soa(soa) => format!(
                 "{} {} {} {} {} {} {}",
-                soa.mname, soa.rname, soa.serial, soa.refresh, soa.retry, soa.expire, soa.minimum
+                filter(&soa.mname.to_text()),
+                filter(&soa.rname.to_text()),
+                soa.serial,
+                soa.refresh,
+                soa.retry,
+                soa.expire,
+                soa.minimum
             ),
-            Rdata::PrefName { value, .. } => format!("{} {}", value.preference, value.name),
+            Rdata::PrefName { value, .. } => {
+                format!("{} {}", value.preference, filter(&value.name.to_text()))
+            }
             Rdata::Srv(srv) => format!(
                 "{} {} {} {}",
-                srv.priority, srv.weight, srv.port, srv.target
+                srv.priority,
+                srv.weight,
+                srv.port,
+                filter(&srv.target.to_text())
             ),
-            Rdata::TwoNames { value, .. } => format!("{} {}", value.first, value.second),
+            Rdata::TwoNames { value, .. } => format!(
+                "{} {}",
+                filter(&value.first.to_text()),
+                filter(&value.second.to_text())
+            ),
             Rdata::Txt { value, .. } => value.to_text(),
             Rdata::Unknown(u) => u.to_text(),
         }

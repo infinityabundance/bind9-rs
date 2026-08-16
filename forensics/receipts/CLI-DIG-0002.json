@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "court_id": "CLI-DIG-0002",
+  "git_commit": "bc3f28db9db7c1024c908e4266e77cc635426708",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "010ea401c5fb7249b477997099ff7956217655ee72a029ee70fd3482143277a4",
+  "oracle_hashes": {},
+  "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
+  "completed_at": "2026-08-16T02:32:23Z",
+  "input_hashes": {
+    "cases.txt": "7fd5b264d9c59e3d68ec050794f6f3126834dd3b56ca2d2768d6064dc2e53da6"
+  },
+  "residual_ids": [],
+  "invariants_passed": [
+    "all deterministic stdout lines match byte-for-byte after normalization",
+    "outbound query behavior (proto, qname, qtype, qclass) matches the responder log"
+  ],
+  "captures_sha256": "5d5d3ec0351def88e07fb0f8597b8e1cafe6cdcf1d26641436c0c6864f0110b5",
+  "repro_command": "bind9-court run CLI-DIG-0002"
+}
