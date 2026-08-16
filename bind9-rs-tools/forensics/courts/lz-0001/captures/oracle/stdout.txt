@@ -1,0 +1,102 @@
+== locale UTF-8 ==
+  lz münchen.de             "m\xc3\xbcnchen.de" -> "xn--mnchen-3ya.de"
+  lz faß.de                 "fa\xc3\x9f.de" -> "xn--fa-hia.de"
+  lz ς.gr                   "\xcf\x82.gr" -> "xn--3xa.gr"
+  lz example.com             "example.com" -> "example.com"
+  lz _tcp.example.com        "_tcp.example.com" -> "_tcp.example.com"
+  lz XN--MNCHEN-3YA.DE       "XN--MNCHEN-3YA.DE" -> "xn--mnchen-3ya.de"
+  lz emoji.com               "\xf0\x9f\x98\x80.com" -> rc=-304 (DISALLOWED)
+  lz münchen.de latin1      "m\xfcnchen.de" -> rc=-102 (ICONV_FAIL)
+  lz faß.de latin1          "fa\xdf.de" -> rc=-102 (ICONV_FAIL)
+  8zlz xn--mnchen-3ya.de     "xn--mnchen-3ya.de" -> "m\xc3\xbcnchen.de"
+  8zlz XN--MNCHEN-3YA.DE     "XN--MNCHEN-3YA.DE" -> "M\xc3\xbcNCHEN.DE"
+  8zlz xn--e28h.com          "xn--e28h.com" -> "\xf0\x9f\x98\x80.com"
+  8zlz example.com           "example.com" -> "example.com"
+  8zlz a..b                  "a..b" -> "a..b"
+== locale ANSI_X3.4-1968 ==
+  lz münchen.de             "m\xc3\xbcnchen.de" -> rc=-102 (ICONV_FAIL)
+  lz faß.de                 "fa\xc3\x9f.de" -> rc=-102 (ICONV_FAIL)
+  lz ς.gr                   "\xcf\x82.gr" -> rc=-102 (ICONV_FAIL)
+  lz example.com             "example.com" -> "example.com"
+  lz _tcp.example.com        "_tcp.example.com" -> "_tcp.example.com"
+  lz XN--MNCHEN-3YA.DE       "XN--MNCHEN-3YA.DE" -> "xn--mnchen-3ya.de"
+  lz emoji.com               "\xf0\x9f\x98\x80.com" -> rc=-102 (ICONV_FAIL)
+  lz münchen.de latin1      "m\xfcnchen.de" -> rc=-102 (ICONV_FAIL)
+  lz faß.de latin1          "fa\xdf.de" -> rc=-102 (ICONV_FAIL)
+  8zlz xn--mnchen-3ya.de     "xn--mnchen-3ya.de" -> rc=-200 (ENCODING_ERROR)
+  8zlz XN--MNCHEN-3YA.DE     "XN--MNCHEN-3YA.DE" -> rc=-200 (ENCODING_ERROR)
+  8zlz xn--e28h.com          "xn--e28h.com" -> rc=-200 (ENCODING_ERROR)
+  8zlz example.com           "example.com" -> "example.com"
+  8zlz a..b                  "a..b" -> "a..b"
+== locale ISO-8859-1 ==
+  lz münchen.de             "m\xc3\xbcnchen.de" -> rc=-304 (DISALLOWED)
+  lz faß.de                 "fa\xc3\x9f.de" -> rc=-304 (DISALLOWED)
+  lz ς.gr                   "\xcf\x82.gr" -> rc=-304 (DISALLOWED)
+  lz example.com             "example.com" -> "example.com"
+  lz _tcp.example.com        "_tcp.example.com" -> "_tcp.example.com"
+  lz XN--MNCHEN-3YA.DE       "XN--MNCHEN-3YA.DE" -> "xn--mnchen-3ya.de"
+  lz emoji.com               "\xf0\x9f\x98\x80.com" -> rc=-304 (DISALLOWED)
+  lz münchen.de latin1      "m\xfcnchen.de" -> "xn--mnchen-3ya.de"
+  lz faß.de latin1          "fa\xdf.de" -> "xn--fa-hia.de"
+  8zlz xn--mnchen-3ya.de     "xn--mnchen-3ya.de" -> "m\xfcnchen.de"
+  8zlz XN--MNCHEN-3YA.DE     "XN--MNCHEN-3YA.DE" -> "M\xfcNCHEN.DE"
+  8zlz xn--e28h.com          "xn--e28h.com" -> rc=-200 (ENCODING_ERROR)
+  8zlz example.com           "example.com" -> "example.com"
+  8zlz a..b                  "a..b" -> "a..b"
+== NO_TR46 (pure IDNA2008) ==
+  no46 münchen.de           "m\xc3\xbcnchen.de" -> "xn--mnchen-3ya.de"
+  no46 MÜNCHEN.de           "M\xc3\x9cNCHEN.de" -> rc=-304 (DISALLOWED)
+  no46 EXAMPLE.COM           "EXAMPLE.COM" -> "EXAMPLE.COM"
+  no46 faß.de               "fa\xc3\x9f.de" -> "xn--fa-hia.de"
+  no46 ς.gr                 "\xcf\x82.gr" -> "xn--3xa.gr"
+  no46 βόλος.gr         "\xce\xb2\xcf\x8c\xce\xbb\xce\xbf\xcf\x82.gr" -> "xn--nxasmm1c.gr"
+  no46 xn--mnchen-3ya.de     "xn--mnchen-3ya.de" -> "xn--mnchen-3ya.de"
+  no46 XN--MNCHEN-3YA.DE     "XN--MNCHEN-3YA.DE" -> "XN--MNCHEN-3YA.DE"
+  no46 xn--0zwm56d.example   "xn--0zwm56d.example" -> "xn--0zwm56d.example"
+  no46 a\u00ADb.com          "a\xc2\xadb.com" -> rc=-304 (DISALLOWED)
+  no46 a\u200Cb.com          "a\xe2\x80\x8cb.com" -> rc=-305 (CONTEXTJ)
+  no46 a\u200Db.com          "a\xe2\x80\x8db.com" -> rc=-305 (CONTEXTJ)
+  no46 emoji.com             "\xf0\x9f\x98\x80.com" -> rc=-304 (DISALLOWED)
+  no46 ßß.com              "\xc3\x9f\xc3\x9f.com" -> "xn--zcaa.com"
+  no46 _tcp.example.com      "_tcp.example.com" -> "_tcp.example.com"
+  no46 1.2.3.4               "1.2.3.4" -> "1.2.3.4"
+  no46 a..b                  "a..b" -> "a..b"
+  no46 .leading-dot          ".leading-dot" -> ".leading-dot"
+  no46 trailing-dot.         "trailing-dot." -> "trailing-dot."
+  no46 www.xn--0.0.com       "www.xn--0.0.com" -> rc=-202 (PUNYCODE_BAD_INPUT)
+== flag taxonomy ==
+  TR|NT                      "example.com" -> rc=-209 (INVALID_FLAGS)
+  NT|NO_TR46                 "example.com" -> rc=-209 (INVALID_FLAGS)
+  TR|NO_TR46                 "example.com" -> rc=-209 (INVALID_FLAGS)
+  ALABEL|NO_ALABEL           "example.com" -> rc=-209 (INVALID_FLAGS)
+  0 flags                    "fa\xc3\x9f.de" -> "xn--fa-hia.de"
+  NO_ALABEL_ROUNDTRIP        "xn--mnchen-3ya.de" -> "xn--mnchen-3ya.de"
+== label tests ==
+  nt leading mark            "\xcc\x81a.com" -> rc=-303 (LEADING_COMBINING)
+  no46 leading mark          "\xcc\x81a.com" -> rc=-303 (LEADING_COMBINING)
+  nt 2hyphen                 "a\xc3\x9f--b.com" -> rc=-301 (2HYPHEN)
+  no46 2hyphen               "a\xc3\x9f--b.com" -> rc=-301 (2HYPHEN)
+  nt hyphen-start            "-a\xc3\xa4.com" -> rc=-302 (HYPHEN_STARTEND)
+  no46 hyphen-start          "-a\xc3\xa4.com" -> "xn---a-wia.com"
+  nt hyphen-end              "a\xc3\xa4-.com" -> rc=-302 (HYPHEN_STARTEND)
+  no46 hyphen-end            "a\xc3\xa4-.com" -> "xn--a--via.com"
+  nt unassigned              "\xcd\xb8.com" -> rc=-304 (DISALLOWED)
+  no46 unassigned            "\xcd\xb8.com" -> rc=-309 (UNASSIGNED)
+  nt bidi ok                 "\xd7\x90\xd7\x91.com" -> "xn--4dbc.com"
+  nt bidi bad                "a\xd7\x90b.com" -> rc=-310 (BIDI)
+  no46 bidi bad              "a\xd7\x90b.com" -> rc=-310 (BIDI)
+  nt zwnj valid              "\xd8\xa8\xe2\x80\x8c\xd8\xa8.com" -> "xn--ngba799q.com"
+  nt zwj invalid             "\xd8\xa8\xe2\x80\x8d\xd8\xa8.com" -> rc=-305 (CONTEXTJ)
+  nt zwnj a-b                "a\xe2\x80\x8cb.com" -> rc=-305 (CONTEXTJ)
+  nt middot l·l             "l\xc2\xb7l.com" -> "xn--ll-0ea.com"
+  nt middot a·b             "a\xc2\xb7b.com" -> "xn--ab-0ea.com"
+  nt keraia greek            "\xce\xb1\xcd\xb5a.com" -> "xn--a-jib3p.com"
+  nt keraia not              "a\xcd\xb5b.com" -> "xn--ab-63b.com"
+  nt katakana dot            "\xe3\x83\xbba.com" -> "xn--a-hju.com"
+  nt katakana dot kata       "\xe3\x82\xa2\xe3\x83\xbba.com" -> "xn--a-eeu1m.com"
+  nt std3 _ä                "_a\xc3\xa4.com" -> "xn--a-0fa.com"
+  no46 std3 _ä              "_a\xc3\xa4.com" -> rc=-304 (DISALLOWED)
+  nt _tcp +std3              "_tcp.example.com" -> "tcp.example.com"
+  nt longascii               "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com" -> rc=-206 (TOO_BIG_LABEL)
+  nt longlabel               "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\xc3\xa4.com" -> rc=-203 (PUNYCODE_BIG_OUTPUT)
+  no46 longlabel             "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\xc3\xa4.com" -> rc=-203 (PUNYCODE_BIG_OUTPUT)

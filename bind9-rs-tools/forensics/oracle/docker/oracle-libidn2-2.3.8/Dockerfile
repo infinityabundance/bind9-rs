@@ -7,7 +7,10 @@ FROM debian:bookworm-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential pkg-config libunistring-dev gettext gperf \
-    && rm -rf /var/lib/apt/lists/*
+        locales \
+    && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -f ISO-8859-1 en_US.ISO-8859-1 \
+    && localedef -i C -f UTF-8 C.UTF-8
 
 ARG SHA256=f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a
 COPY libidn2-2.3.8.tar.gz /usr/src/src.tar.gz

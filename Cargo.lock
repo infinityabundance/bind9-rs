@@ -48,6 +48,7 @@ version = "0.1.2"
 dependencies = [
  "bind9-rs-core",
  "bind9-rs-platform",
+ "icu_properties",
  "idna",
  "libc",
  "unicode-normalization",

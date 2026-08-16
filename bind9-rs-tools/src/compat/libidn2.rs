@@ -10,37 +10,43 @@
 //! idn2_to_unicode_8zlz(src, IDN2_NONTRANSITIONAL); fallback IDN2_TRANSITIONAL
 //! ```
 //!
-//! The pipeline (lib/lookup.c, lib/idna.c, lib/decode.c, lib/tr46map.h):
-//! `set_default_flags` → TR46 mapping (`_tr46`: map/ignore/deviate, always
-//! NFC-normalizes; disallowed → `IDN2_DISALLOWED`) → per-label NFC + IDNA2008
-//! validations + punycode + A-label round-trip → concatenation with `.` and
-//! 255/63 length limits.
+//! The pipeline (lib/lookup.c, lib/idna.c, lib/decode.c, lib/tr46map.{h,c},
+//! lib/bidi.c, lib/context.c, lib/data.c): `set_default_flags` →
+//! `_tr46` (the UTS #46 mapping table from `tr46map_data.c`, always NFC) →
+//! per-label `label()` (NFC, the IDNA2008 label tests, punycode, A-label
+//! roundtrip) → concatenation with `.` and 255/63 length limits.  The
+//! label-test suite, the RFC 5893 bidi check (`bidi.c`), and the RFC 5892
+//! context rules (`context.c`) are transcribed 1:1; the Unicode data
+//! (derived property, TR46 map, bidi classes, joining types, general
+//! categories, scripts, combining classes) comes from the pinned C tables
+//! (`libidn2_data.rs`, `libidn2_tr46map.rs`) and the ICU4X `icu_properties`
+//! data set (the same audited engine family as the `idna` crate).
 //!
-//! Verified oracle behavior (probe against `oracle-libidn2-2.3.8`, UTF-8
-//! locale), now encoded as unit vectors here:
-//! - nontransitional: `faß.de` → `xn--fa-hia.de` (deviation kept);
-//!   emoji → `IDN2_DISALLOWED`; ZWNJ/ZWJ → `IDN2_CONTEXTJ`;
-//!   soft hyphen removed; `_tcp.example.com` kept (STD3 off by default).
-//! - transitional: `faß.de` → `fass.de`; ZWNJ/ZWJ removed; emoji kept
-//!   (`😀.com` → `xn--e28h.com`); the per-label validation is skipped.
+//! The `_lz` locale layer is also transcribed: `idn2_to_ascii_lz` =
+//! `idn2_lookup_ul` (convert the input from the locale codeset to UTF-8 via
+//! iconv — `IDN2_ICONV_FAIL` on failure — then `idn2_lookup_u8` with
+//! `IDN2_NFC_INPUT`), and `idn2_to_unicode_8zlz` (decode to UTF-8, then
+//! convert the output to the locale codeset — `IDN2_ENCODING_ERROR` on
+//! failure).  The codeset is resolved from `LC_ALL` > `LC_CTYPE` > `LANG`
+//! like glibc; the court pins `C.UTF-8`, `C` (ANSI_X3.4-1968) and
+//! `en_US.ISO-8859-1`.
 //!
-//! Engine: the ICU4X-derived `idna` crate supplies the UTS #46 nontransitional
-//! processing (mapping, ContextJ/O, bidi, disallowed/unassigned detection).
-//! The transitional path is implemented here as the TR46 deviation + ignored
-//! mappings over NFC + RFC 3492 punycode, because ICU4X has no transitional
-//! mode (residuals are courted against the C oracle; see unknowns ledger).
-//! `unicode-normalization` supplies NFC.  Both are audited, permissively
-//! licensed engines; the compatibility surface remains libidn2's, proven by
-//! the four-corner courts (§38).
-//!
-//! Status: Phase 0 (§65 step 17).  dig-facing surface implemented; the
-//! locale layer assumes a UTF-8 locale (C.UTF-8): on such locales `_lz`
-//! variants are UTF-8 in/out.  Non-UTF-8 locales and `IDN2_NO_TR46` are
-//! courted next (Phase 1).
+//! Status: Phase 1.  dig-facing surface + the locale layer + `IDN2_NO_TR46`
+//! (pure IDNA2008) conserved; LZ-0001 court green at 0 residuals.
+
+use icu_properties::props::{
+    BidiClass, CanonicalCombiningClass, GeneralCategory, JoiningType, Script,
+};
+use icu_properties::CodePointMapData;
+use unicode_normalization::UnicodeNormalization;
 
 #[path = "libidn2_data.rs"]
 mod libidn2_data;
 use libidn2_data::{property, IdnaState};
+
+#[path = "libidn2_tr46map.rs"]
+mod libidn2_tr46map;
+use libidn2_tr46map::{Flag, IDNA_FLAGS, IDNA_MAP_16, IDNA_MAP_24, IDNA_MAP_8, MAPDATA};
 
 /// `idn2_flags` (idn2.h.in:191).
 pub mod flags {
@@ -136,8 +142,10 @@ impl Error {
 pub const LABEL_MAX_LENGTH: usize = 63;
 pub const DOMAIN_MAX_LENGTH: usize = 255;
 
-/// RFC 3492 punycode parameters (base 36, tmin 1, tmax 26, skew 38, damp 700,
-/// initial bias 72, initial n 128, delimiter '-').
+// ---------------------------------------------------------------------------
+// Punycode (RFC 3492), transcribed from lib/punycode.c
+// ---------------------------------------------------------------------------
+
 const BASE: u32 = 36;
 const TMIN: u32 = 1;
 const TMAX: u32 = 26;
@@ -149,7 +157,7 @@ const INITIAL_N: u32 = 128;
 fn adapt(delta: u32, numpoints: u32, firsttime: bool) -> u32 {
     let mut delta = if firsttime { delta / DAMP } else { delta / 2 };
     delta += delta / numpoints;
-    let mut k = 0;
+    let mut k = 0u32;
     while delta > ((BASE - TMIN) * TMAX) / 2 {
         delta /= BASE - TMIN;
         k += BASE;
@@ -157,30 +165,44 @@ fn adapt(delta: u32, numpoints: u32, firsttime: bool) -> u32 {
     k + (((BASE - TMIN + 1) * delta) / (delta + SKEW))
 }
 
-/// Encode one code-point sequence as punycode (no "xn--" prefix).
-// RFC 3492 variable names (n, delta, bias, k, t, q, m) are kept to mirror
-// the reference algorithm.
-#[allow(clippy::many_single_char_names, clippy::cast_possible_truncation)]
+fn encode_digit(d: u32) -> char {
+    debug_assert!(d < BASE);
+    if d < 26 {
+        (b'a' + d as u8) as char
+    } else {
+        (b'0' + (d - 26) as u8) as char
+    }
+}
+
+fn decode_digit(c: char) -> Option<u32> {
+    match c {
+        'a'..='z' => Some(c as u32 - 'a' as u32),
+        'A'..='Z' => Some(c as u32 - 'A' as u32),
+        '0'..='9' => Some(c as u32 - '0' as u32 + 26),
+        _ => None,
+    }
+}
+
+// RFC 3492 variable names (n, delta, bias, k, t, q, m, i, w) are kept to
+// mirror the reference algorithm 1:1.
+#[allow(clippy::many_single_char_names)]
 fn punycode_encode(codepoints: &[char]) -> Result<String, Error> {
-    // Basic code points first, in order, with the delimiter after them.
     let mut output = String::new();
     let mut n = INITIAL_N;
     let mut delta = 0u32;
     let mut bias = INITIAL_BIAS;
-    let basic_count = codepoints.iter().filter(|&&c| (c as u32) < 0x80).count();
+    let mut basic = 0u32;
     for &c in codepoints {
         if (c as u32) < 0x80 {
             output.push(c);
+            basic += 1;
         }
     }
-    let b = basic_count as u32;
-    if b > 0 {
+    let mut handled = basic;
+    if basic > 0 {
         output.push('-');
     }
-    let mut handled = b;
-
-    let total = codepoints.len() as u32;
-    while handled < total {
+    while handled < codepoints.len() as u32 {
         let mut m = u32::MAX;
         for &c in codepoints {
             let cp = c as u32;
@@ -188,7 +210,6 @@ fn punycode_encode(codepoints: &[char]) -> Result<String, Error> {
                 m = cp;
             }
         }
-        // m == u32::MAX would mean no codepoint >= n: corrupt state.
         delta = delta
             .checked_add(
                 (m - n)
@@ -216,13 +237,12 @@ fn punycode_encode(codepoints: &[char]) -> Result<String, Error> {
                     if q < t {
                         break;
                     }
-                    let digit = t + ((q - t) % (BASE - t));
-                    output.push(encode_digit(digit));
+                    output.push(encode_digit(t + ((q - t) % (BASE - t))));
                     q = (q - t) / (BASE - t);
                     k += BASE;
                 }
                 output.push(encode_digit(q));
-                bias = adapt(delta, handled + 1, handled == b);
+                bias = adapt(delta, handled + 1, handled == basic);
                 delta = 0;
                 handled += 1;
             }
@@ -233,24 +253,8 @@ fn punycode_encode(codepoints: &[char]) -> Result<String, Error> {
     Ok(output)
 }
 
-fn encode_digit(d: u32) -> char {
-    if d < 26 {
-        (b'a' + d as u8) as char
-    } else {
-        (b'0' + (d - 26) as u8) as char
-    }
-}
-
-fn decode_digit(c: char) -> Option<u32> {
-    match c {
-        'a'..='z' => Some(c as u32 - 'a' as u32),
-        'A'..='Z' => Some(c as u32 - 'A' as u32),
-        '0'..='9' => Some(c as u32 - '0' as u32 + 26),
-        _ => None,
-    }
-}
-
-/// Decode one punycode label (no "xn--" prefix) into code points.
+// RFC 3492 variable names (n, delta, bias, k, t, q, m, i, w) are kept to
+// mirror the reference algorithm 1:1.
 #[allow(clippy::many_single_char_names)]
 fn punycode_decode(input: &str) -> Result<String, Error> {
     let mut output: Vec<char> = Vec::new();
@@ -313,7 +317,10 @@ fn punycode_decode(input: &str) -> Result<String, Error> {
     Ok(output.into_iter().collect())
 }
 
-/// `set_default_flags` (lookup.c:104) — exact flag-conflict rules.
+// ---------------------------------------------------------------------------
+// `set_default_flags` (lookup.c:104) — exact flag-conflict rules.
+// ---------------------------------------------------------------------------
+
 fn set_default_flags(flags: i32) -> Result<i32, Error> {
     if flags & flags::TRANSITIONAL != 0 && flags & flags::NONTRANSITIONAL != 0 {
         return Err(Error::InvalidFlags);
@@ -331,255 +338,849 @@ fn set_default_flags(flags: i32) -> Result<i32, Error> {
     Ok(flags)
 }
 
-/// TR46 "deviation" code points (UTR #46 §4.1): mapped only in transitional
-/// processing.
-const DEVIATIONS: &[(char, &str)] = &[
-    ('\u{00DF}', "ss"),       // LATIN SMALL LETTER SHARP S
-    ('\u{03C2}', "\u{03C3}"), // GREEK SMALL LETTER FINAL SIGMA -> SIGMA
-    ('\u{200C}', ""),         // ZERO WIDTH NON-JOINER
-    ('\u{200D}', ""),         // ZERO WIDTH JOINER
-];
+// ---------------------------------------------------------------------------
+// UTS #46 mapping table accessors (tr46map.c: `get_idna_map`, `map_is`,
+// `get_map_data`).
+// ---------------------------------------------------------------------------
 
-/// TR46 "ignored" code points (removed in both processing modes).
-const IGNORED: &[char] = &[
-    '\u{00AD}', // SOFT HYPHEN
-    '\u{034F}', // COMBINING GRAPHEME JOINER
-    '\u{1806}', // MONGOLIAN TODO SOFT HYPHEN
-    '\u{180B}', // MONGOLIAN FREE VARIATION SELECTOR ONE
-    '\u{180C}', '\u{180D}', '\u{200B}', // ZERO WIDTH SPACE
-    '\u{2060}', // WORD JOINER
-    '\u{FE00}', '\u{FE01}', '\u{FE02}', '\u{FE03}', '\u{FE04}', '\u{FE05}', '\u{FE06}', '\u{FE07}',
-    '\u{FE08}', '\u{FE09}', '\u{FE0A}', '\u{FE0B}', '\u{FE0C}', '\u{FE0D}', '\u{FE0E}',
-    '\u{FE0F}', // VARIATION SELECTORS
-    '\u{FEFF}', // ZERO WIDTH NO-BREAK SPACE
-];
-
-/// The TR46 mapping stage (`_tr46`, lookup.c:258) for transitional
-/// processing: apply deviations, drop ignored code points, map ASCII
-/// uppercase to lowercase, keep everything else (libidn2's generated table
-/// treats IDNA2008-disallowed-but-IDNA2003-valid code points such as emoji
-/// as VALID here; see probe evidence), then NFC-normalize.
-fn tr46_transitional(input: &str) -> String {
-    use unicode_normalization::UnicodeNormalization;
-    let mapped: String = input
-        .chars()
-        .flat_map(|c| {
-            if IGNORED.contains(&c) {
-                "".chars().collect::<Vec<_>>()
-            } else if let Some(&(_, m)) = DEVIATIONS.iter().find(|(d, _)| *d == c) {
-                m.chars().collect()
-            } else if c.is_ascii_uppercase() {
-                vec![c.to_ascii_lowercase()]
-            } else {
-                vec![c]
-            }
+/// `get_idna_map` (tr46map.c): binary search for the (cp1, range) row
+/// containing `cp`.  Absent codepoints yield `None` — the C zeroes the map
+/// (`flag_index = 0`, i.e. `idna_flags[0]` = DISALLOWED_STD3_VALID), which
+/// the call sites reproduce via `map_is_none` semantics.
+fn get_idna_map(cp: u32) -> Option<libidn2_tr46map::IdnaMap> {
+    let table: &[(u32, u32, u32, usize, u32)] = if cp <= 0xFF {
+        IDNA_MAP_8
+    } else if cp <= 0xFFFF {
+        IDNA_MAP_16
+    } else {
+        IDNA_MAP_24
+    };
+    let idx = table.partition_point(|r| r.0 <= cp);
+    if idx == 0 {
+        return None;
+    }
+    let r = &table[idx - 1];
+    if cp <= r.0 + r.1 {
+        Some(libidn2_tr46map::IdnaMap {
+            cp1: r.0,
+            range: r.1,
+            flag_index: r.2,
+            offset: r.3,
+            nmappings: r.4,
         })
-        .collect();
-    mapped.nfc().collect()
+    } else {
+        None
+    }
 }
 
-/// `idn2_to_ascii_lz` (dighost.c `idn_input`): convert a domain name to its
-/// ASCII (A-label) form.  Assumes a UTF-8 locale (the `_lz` variants convert
-/// via the locale charset; on non-UTF-8 locales this returns `IconvFail`).
-///
-/// Flags resolved exactly as `set_default_flags`; the label validation set
-/// matches the nontransitional TR46 path (`TEST_NFC | TEST_2HYPHEN |
-/// TEST_LEADING_COMBINING | TEST_DISALLOWED | TEST_CONTEXTJ_RULE |
-/// TEST_CONTEXTO_WITH_RULE | TEST_UNASSIGNED | TEST_BIDI |
-/// TEST_NONTRANSITIONAL | TEST_ALLOW_STD3_DISALLOWED`).
-pub fn to_ascii_lz(input: &str, flags: i32) -> Result<String, Error> {
-    let flags = set_default_flags(flags)?;
-    if !input.is_ascii() && !is_valid_utf8(input) {
-        return Err(Error::IconvFail);
-    }
-
-    if flags & flags::TRANSITIONAL != 0 {
-        return to_ascii_transitional(input);
-    }
-
-    if flags & flags::NO_TR46 != 0 {
-        // Pure IDNA2008 without mapping is not reachable through the
-        // dig-facing flags; approximated by the engine with a ledger note
-        // (courted in Phase 1).
-        return to_ascii_nontransitional(input, flags, true);
-    }
-
-    to_ascii_nontransitional(input, flags, false)
+/// `map_is` (tr46map.c): the flag bits of the map's flag index.  `None`
+/// (absent codepoint) behaves like the C's zeroed map: flag index 0 =
+/// `DISALLOWED_STD3_VALID`.
+fn map_is(map: &Option<libidn2_tr46map::IdnaMap>, flag: Flag) -> bool {
+    let idx = match map {
+        Some(m) => m.flag_index as usize,
+        None => 0,
+    };
+    (IDNA_FLAGS[idx] & flag as u32) == flag as u32
 }
 
-fn is_valid_utf8(s: &str) -> bool {
-    // &str is always valid UTF-8 by construction; kept as the locale-layer
-    // marker so the ICONV_FAIL contract is explicit.
-    let _ = s;
-    true
-}
-
-fn to_ascii_transitional(input: &str) -> Result<String, Error> {
-    let mapped = tr46_transitional(input);
-    let mut out = String::new();
-    let mut domain_len = 0usize;
-    for (i, label) in mapped.split('.').enumerate() {
-        if i > 0 {
-            out.push('.');
-            domain_len += 1;
-        }
-        if label.is_empty() {
-            continue; // empty labels pass through (a..b, .x, x. all OK)
-        }
-        if label.is_ascii() {
-            // Pure-ASCII labels are copied verbatim (lookup.c label()
-            // `_idn2_ascii_p`), with the label length limit enforced.
-            if label.len() > LABEL_MAX_LENGTH {
-                return Err(Error::TooBigLabel);
-            }
-            domain_len += label.len();
-            if domain_len > DOMAIN_MAX_LENGTH {
-                return Err(Error::TooBigDomain);
-            }
-            out.push_str(label);
-            continue;
-        }
-        let codepoints: Vec<char> = label.chars().collect();
-        let ace = punycode_encode(&codepoints)?;
-        if ace.len() > LABEL_MAX_LENGTH {
-            return Err(Error::TooBigLabel);
-        }
-        out.push_str("xn--");
-        out.push_str(&ace);
-        domain_len += 4 + ace.len();
-        if domain_len > DOMAIN_MAX_LENGTH {
-            return Err(Error::TooBigDomain);
-        }
-    }
-    Ok(out)
-}
-
-fn to_ascii_nontransitional(input: &str, flags: i32, _no_tr46: bool) -> Result<String, Error> {
-    use idna::uts46::{AsciiDenyList, DnsLength, ErrorPolicy, Hyphens, Uts46};
-
-    // Pre-check mirroring libidn2's label() (lookup.c): A-labels are
-    // decoded and re-tested, so "xn--" labels must not trip the 2-hyphen
-    // rule, but an undecodable A-label is PUNYCODE_BAD_INPUT.
-    for label in input.split('.') {
-        if is_alabel(label) {
-            if let Err(e) = punycode_decode(&label[4..]) {
-                if e == Error::PunycodeBadInput || e == Error::PunycodeOverflow {
-                    return Err(Error::PunycodeBadInput);
-                }
+/// `get_map_data` (tr46map.c): decode the LEB128-style mapping payload.
+fn map_data(map: &libidn2_tr46map::IdnaMap) -> Vec<u32> {
+    let mut out = Vec::with_capacity(map.nmappings as usize);
+    let mut i = map.offset;
+    for _ in 0..map.nmappings {
+        let mut cp: u32 = 0;
+        loop {
+            let b = MAPDATA[i];
+            i += 1;
+            cp = (cp << 7) | u32::from(b & 0x7F);
+            if b & 0x80 == 0 {
+                break;
             }
         }
+        out.push(cp);
     }
+    out
+}
 
-    // TEST_2HYPHEN applies only to non-ASCII labels: pure-ASCII labels are
-    // copied verbatim after TR46 mapping (lookup.c label() `_idn2_ascii_p`),
-    // so "ab--cd.com" passes and "aß--cd.com" fails.
-    for label in input.split('.') {
-        if !label.is_ascii()
-            && label.len() >= 4
-            && label.as_bytes()[2] == b'-'
-            && label.as_bytes()[3] == b'-'
-        {
+// ---------------------------------------------------------------------------
+// Unicode data accessors (via icu_properties; the same audited data family
+// as the `idna` engine).
+// ---------------------------------------------------------------------------
+
+fn bidi_class(cp: char) -> BidiClass {
+    CodePointMapData::<BidiClass>::new().get(cp)
+}
+
+fn general_category(cp: char) -> GeneralCategory {
+    CodePointMapData::<GeneralCategory>::new().get(cp)
+}
+
+fn joining_type(cp: char) -> JoiningType {
+    CodePointMapData::<JoiningType>::new().get(cp)
+}
+
+fn script(cp: char) -> Script {
+    CodePointMapData::<Script>::new().get(cp)
+}
+
+fn combining_class(cp: char) -> u8 {
+    CodePointMapData::<CanonicalCombiningClass>::new().get(cp).0
+}
+
+/// `uc_is_general_category(label[0], UC_CATEGORY_M)` (idna.c
+/// TEST_LEADING_COMBINING): any combining mark (Mn/Mc/Me).
+fn is_combining_mark(cp: char) -> bool {
+    matches!(
+        general_category(cp),
+        GeneralCategory::NonspacingMark
+            | GeneralCategory::SpacingMark
+            | GeneralCategory::EnclosingMark
+    )
+}
+
+// ---------------------------------------------------------------------------
+// The IDNA2008 label tests (`_idn2_label_test`, idna.c; the bidi check,
+// bidi.c; the context rules, context.c).
+// ---------------------------------------------------------------------------
+
+/// `TEST_*` flags (idna.h:37).
+const TEST_NFC: u32 = 0x0001;
+const TEST_2HYPHEN: u32 = 0x0002;
+const TEST_HYPHEN_STARTEND: u32 = 0x0004;
+const TEST_LEADING_COMBINING: u32 = 0x0008;
+const TEST_DISALLOWED: u32 = 0x0010;
+const TEST_CONTEXTJ: u32 = 0x0020;
+const TEST_CONTEXTJ_RULE: u32 = 0x0040;
+const TEST_CONTEXTO: u32 = 0x0080;
+const TEST_CONTEXTO_WITH_RULE: u32 = 0x0100;
+const TEST_CONTEXTO_RULE: u32 = 0x0200;
+const TEST_UNASSIGNED: u32 = 0x0400;
+const TEST_BIDI: u32 = 0x0800;
+const TEST_TRANSITIONAL: u32 = 0x1000;
+const TEST_NONTRANSITIONAL: u32 = 0x2000;
+const TEST_ALLOW_STD3_DISALLOWED: u32 = 0x4000;
+
+/// `TR46_TRANSITIONAL_CHECK` / `TR46_NONTRANSITIONAL_CHECK` (lookup.c:253).
+const TR46_TRANSITIONAL_CHECK: u32 =
+    TEST_NFC | TEST_2HYPHEN | TEST_HYPHEN_STARTEND | TEST_LEADING_COMBINING | TEST_TRANSITIONAL;
+const TR46_NONTRANSITIONAL_CHECK: u32 =
+    TEST_NFC | TEST_2HYPHEN | TEST_HYPHEN_STARTEND | TEST_LEADING_COMBINING | TEST_NONTRANSITIONAL;
+
+/// `_idn2_label_test` (idna.c:133): the test suite in C order.  The tests
+/// run over the *mapped* label for the TR46 path and the *raw* (NFC'd) label
+/// for the NO_TR46 path, exactly like the C.
+fn label_test(label: &[char], what: u32) -> Result<(), Error> {
+    let llen = label.len();
+    if what & TEST_NFC != 0 {
+        let nfc: Vec<char> = label.iter().collect::<String>().nfc().collect();
+        if nfc != label {
+            return Err(Error::NotNfc);
+        }
+    }
+    if what & TEST_2HYPHEN != 0 {
+        if llen >= 4 && label[2] == '-' && label[3] == '-' {
             return Err(Error::TwoHyphen);
         }
     }
-
-    let deny_list = if flags & flags::USE_STD3_ASCII_RULES != 0 {
-        AsciiDenyList::STD3
-    } else {
-        AsciiDenyList::EMPTY
-    };
-    let u = Uts46::new();
-
-    // Mapped-form probe (MarkErrors): yields the TR46-mapped Unicode form so
-    // the IDNA2008 property scan below sees exactly what libidn2's label test
-    // sees (uppercase/ignored chars already mapped away).
-    let mut mapped = String::new();
-    let mut ascii_sink = String::new();
-    let engine_res = u.process(
-        input.as_bytes(),
-        deny_list,
-        Hyphens::Allow,
-        ErrorPolicy::MarkErrors,
-        |_, _, _| true,
-        &mut mapped,
-        Some(&mut ascii_sink),
-    );
-
-    // The engine's errors are opaque; infer the libidn2 code from the input
-    // context characters (RFC 5892 §A.1-A.8, via the derived table).
-    if engine_res.is_err() {
-        let has_contextj = input
-            .chars()
-            .any(|c| property(c as u32) == IdnaState::ContextJ);
-        let has_contexto = input
-            .chars()
-            .any(|c| property(c as u32) == IdnaState::ContextO);
-        if has_contextj {
-            return Err(Error::ContextJ);
+    if what & TEST_HYPHEN_STARTEND != 0 {
+        if llen > 0 && (label[0] == '-' || label[llen - 1] == '-') {
+            return Err(Error::HyphenStartEnd);
         }
-        if has_contexto {
-            return Err(Error::ContextO);
-        }
-        return Err(Error::Disallowed);
     }
+    if what & TEST_LEADING_COMBINING != 0 {
+        if llen > 0 && is_combining_mark(label[0]) {
+            return Err(Error::LeadingCombining);
+        }
+    }
+    if what & TEST_DISALLOWED != 0 {
+        for &c in label {
+            if property(c as u32) == IdnaState::Disallowed {
+                if what & (TEST_TRANSITIONAL | TEST_NONTRANSITIONAL) != 0
+                    && what & TEST_ALLOW_STD3_DISALLOWED != 0
+                {
+                    let map = get_idna_map(c as u32);
+                    if map_is(&map, Flag::DisallowedStd3Valid)
+                        || map_is(&map, Flag::DisallowedStd3Mapped)
+                    {
+                        continue;
+                    }
+                }
+                return Err(Error::Disallowed);
+            }
+        }
+    }
+    if what & TEST_CONTEXTJ != 0 {
+        for &c in label {
+            if property(c as u32) == IdnaState::ContextJ {
+                return Err(Error::ContextJ);
+            }
+        }
+    }
+    if what & TEST_CONTEXTJ_RULE != 0 {
+        for i in 0..llen {
+            contextj_rule(label, i)?;
+        }
+    }
+    if what & TEST_CONTEXTO != 0 {
+        for &c in label {
+            if property(c as u32) == IdnaState::ContextO {
+                return Err(Error::ContextO);
+            }
+        }
+    }
+    if what & TEST_CONTEXTO_WITH_RULE != 0 {
+        for &c in label {
+            if property(c as u32) == IdnaState::ContextO && !contexto_with_rule(c) {
+                return Err(Error::ContextONoRule);
+            }
+        }
+    }
+    if what & TEST_CONTEXTO_RULE != 0 {
+        for i in 0..llen {
+            contexto_rule(label, i)?;
+        }
+    }
+    if what & TEST_UNASSIGNED != 0 {
+        for &c in label {
+            if property(c as u32) == IdnaState::Unassigned {
+                return Err(Error::Unassigned);
+            }
+        }
+    }
+    if what & TEST_BIDI != 0 {
+        bidi_check(label)?;
+    }
+    if what & (TEST_TRANSITIONAL | TEST_NONTRANSITIONAL) != 0 {
+        let transitional = what & TEST_TRANSITIONAL != 0;
+        for &c in label {
+            if c == '\u{002E}' {
+                return Err(Error::DotInLabel);
+            }
+            let map = get_idna_map(c as u32);
+            if map_is(&map, Flag::Valid) || (!transitional && map_is(&map, Flag::Deviation)) {
+                continue;
+            }
+            if what & TEST_ALLOW_STD3_DISALLOWED != 0
+                && (map_is(&map, Flag::DisallowedStd3Valid)
+                    || map_is(&map, Flag::DisallowedStd3Mapped))
+            {
+                continue;
+            }
+            return Err(if transitional {
+                Error::InvalidTransitional
+            } else {
+                Error::InvalidNontransitional
+            });
+        }
+    }
+    Ok(())
+}
 
-    // IDNA2008 derived-property scan over the mapped Unicode form.  This is
-    // where libidn2 diverges from ICU4X's data: code points that were valid
-    // under IDNA2003 but are DISALLOWED under IDNA2008 (e.g. U+1F600 emoji)
-    // are rejected here exactly as libidn2's TEST_DISALLOWED does.
-    let allow_unassigned = flags & flags::ALLOW_UNASSIGNED != 0;
-    for label in mapped.split('.') {
-        if label.is_ascii() {
+/// `_idn2_contextj_rule` (context.c:37): ZWNJ/ZWJ joining rules.
+fn contextj_rule(label: &[char], pos: usize) -> Result<(), Error> {
+    if label.is_empty() {
+        return Ok(());
+    }
+    let cp = label[pos];
+    if property(cp as u32) != IdnaState::ContextJ {
+        return Ok(());
+    }
+    match cp {
+        '\u{200C}' => {
+            // ZERO WIDTH NON-JOINER
+            if pos > 0 && combining_class(label[pos - 1]) == 9 {
+                return Ok(()); // virama before
+            }
+            if pos == 0 || pos == label.len() - 1 {
+                return Err(Error::ContextJ);
+            }
+            // Search backwards for joining type L or D (context.c:67).
+            let mut tmp = pos - 1;
+            loop {
+                let jt = joining_type(label[tmp]);
+                if jt == JoiningType::LeftJoining || jt == JoiningType::DualJoining {
+                    break;
+                }
+                if tmp == 0 {
+                    return Err(Error::ContextJ);
+                }
+                if jt == JoiningType::Transparent {
+                    tmp -= 1;
+                    continue;
+                }
+                return Err(Error::ContextJ);
+            }
+            // Search forward for joining type R or D (context.c:81).
+            let mut tmp = pos + 1;
+            while tmp < label.len() {
+                let jt = joining_type(label[tmp]);
+                if jt == JoiningType::RightJoining || jt == JoiningType::DualJoining {
+                    break;
+                }
+                if tmp == label.len() - 1 {
+                    return Err(Error::ContextJ);
+                }
+                if jt == JoiningType::Transparent {
+                    tmp += 1;
+                    continue;
+                }
+                return Err(Error::ContextJ);
+            }
+            Ok(())
+        }
+        '\u{200D}' => {
+            // ZERO WIDTH JOINER
+            if pos > 0 && combining_class(label[pos - 1]) == 9 {
+                return Ok(()); // virama before
+            }
+            Err(Error::ContextJ)
+        }
+        _ => Err(Error::ContextJNoRule),
+    }
+}
+
+/// `_idn2_contexto_with_rule` (context.c:229): ContextO code points that
+/// have a rule; the others fail `TEST_CONTEXTO_WITH_RULE`.
+fn contexto_with_rule(cp: char) -> bool {
+    matches!(
+        cp as u32,
+        0x00B7 | 0x0375 | 0x05F3 | 0x05F4 | 0x0660..=0x0669 | 0x06F0..=0x06F9 | 0x30FB
+    )
+}
+
+/// `_idn2_contexto_rule` (context.c:127).
+fn contexto_rule(label: &[char], pos: usize) -> Result<(), Error> {
+    let cp = label[pos];
+    if property(cp as u32) != IdnaState::ContextO {
+        return Ok(());
+    }
+    match cp as u32 {
+        0x00B7 => {
+            // MIDDLE DOT: between two 'l'.
+            if label.len() < 3 {
+                return Err(Error::ContextO);
+            }
+            if pos == 0 || pos == label.len() - 1 {
+                return Err(Error::ContextO);
+            }
+            if label[pos - 1] == 'l' && label[pos + 1] == 'l' {
+                return Ok(());
+            }
+            Err(Error::ContextO)
+        }
+        0x0375 => {
+            // GREEK LOWER NUMERAL SIGN (KERAIA): next char is Greek.
+            if pos == label.len() - 1 {
+                return Err(Error::ContextO);
+            }
+            if script(label[pos + 1]) == Script::Greek {
+                return Ok(());
+            }
+            Err(Error::ContextO)
+        }
+        0x05F3 | 0x05F4 => {
+            // HEBREW PUNCTUATION GERESH/GERSHAYIM: previous char is Hebrew.
+            if pos == 0 {
+                return Err(Error::ContextO);
+            }
+            if script(label[pos - 1]) == Script::Hebrew {
+                return Ok(());
+            }
+            Err(Error::ContextO)
+        }
+        0x0660..=0x0669 => {
+            // ARABIC-INDIC DIGITS: no EXTENDED ARABIC-INDIC DIGITS in the label.
+            if label
+                .iter()
+                .any(|&c| (0x06F0..=0x06F9).contains(&(c as u32)))
+            {
+                return Err(Error::ContextO);
+            }
+            Ok(())
+        }
+        0x06F0..=0x06F9 => {
+            // EXTENDED ARABIC-INDIC DIGITS: no ARABIC-INDIC DIGITS in the label.
+            if label
+                .iter()
+                .any(|&c| (0x0660..=0x0669).contains(&(c as u32)))
+            {
+                return Err(Error::ContextO);
+            }
+            Ok(())
+        }
+        0x30FB => {
+            // KATAKANA MIDDLE DOT: the label contains Hiragana/Katakana/Han.
+            if label
+                .iter()
+                .any(|&c| matches!(script(c), Script::Hiragana | Script::Katakana | Script::Han))
+            {
+                return Ok(());
+            }
+            Err(Error::ContextO)
+        }
+        _ => Err(Error::ContextONoRule),
+    }
+}
+
+/// `_idn2_bidi` (bidi.c:56): the RFC 5893 checks as transcribed.
+fn bidi_check(label: &[char]) -> Result<(), Error> {
+    let is_bidi = label.iter().any(|&c| {
+        matches!(
+            bidi_class(c),
+            BidiClass::RightToLeft | BidiClass::ArabicLetter | BidiClass::ArabicNumber
+        )
+    });
+    if !is_bidi {
+        return Ok(());
+    }
+    match bidi_class(label[0]) {
+        BidiClass::LeftToRight => {
+            let mut endok = true;
+            for &c in &label[1..] {
+                match bidi_class(c) {
+                    BidiClass::LeftToRight
+                    | BidiClass::EuropeanNumber
+                    | BidiClass::NonspacingMark => endok = true,
+                    BidiClass::EuropeanSeparator
+                    | BidiClass::CommonSeparator
+                    | BidiClass::EuropeanTerminator
+                    | BidiClass::OtherNeutral
+                    | BidiClass::BoundaryNeutral => endok = false,
+                    _ => return Err(Error::Bidi),
+                }
+            }
+            if endok {
+                Ok(())
+            } else {
+                Err(Error::Bidi)
+            }
+        }
+        BidiClass::RightToLeft | BidiClass::ArabicLetter => {
+            let mut endok = true;
+            for &c in &label[1..] {
+                match bidi_class(c) {
+                    BidiClass::RightToLeft
+                    | BidiClass::ArabicLetter
+                    | BidiClass::EuropeanNumber
+                    | BidiClass::ArabicNumber
+                    | BidiClass::NonspacingMark => endok = true,
+                    BidiClass::EuropeanSeparator
+                    | BidiClass::CommonSeparator
+                    | BidiClass::EuropeanTerminator
+                    | BidiClass::OtherNeutral
+                    | BidiClass::BoundaryNeutral => endok = false,
+                    _ => return Err(Error::Bidi),
+                }
+            }
+            if endok {
+                Ok(())
+            } else {
+                Err(Error::Bidi)
+            }
+        }
+        _ => Err(Error::Bidi),
+    }
+}
+
+// ---------------------------------------------------------------------------
+// `_tr46` (lookup.c:258): the UTS #46 mapping + NFC + per-label checks.
+// ---------------------------------------------------------------------------
+
+/// `_tr46` (lookup.c): map every code point through the TR46 table (an
+/// immediate `IDN2_DISALLOWED` for map-flagged disallowed code points; the
+/// STD3-disallowed classes are dropped under STD3 rules and kept/mapped
+/// otherwise), NFC-normalize, then run the per-label TR46 checks (with the
+/// A-label decode check for "xn--" labels).  Returns the NFC'd mapped domain
+/// or the first failing label's error (the C keeps the last failure).
+fn tr46(input: &str, flags: i32) -> Result<String, Error> {
+    let transitional = flags & flags::TRANSITIONAL != 0;
+    let std3 = flags & flags::USE_STD3_ASCII_RULES != 0;
+    let chars: Vec<char> = input.chars().collect();
+
+    // First pass: early length accounting and the immediate DISALLOWED exit.
+    let mut len2 = 0usize;
+    for &c in &chars {
+        let map = get_idna_map(c as u32);
+        if map_is(&map, Flag::Disallowed) {
+            return Err(Error::Disallowed);
+        }
+        if map_is(&map, Flag::Mapped) {
+            len2 += map.as_ref().map_or(0, |m| m.nmappings as usize);
+        } else if map_is(&map, Flag::Valid) {
+            len2 += 1;
+        } else if map_is(&map, Flag::Ignored) {
             continue;
-        }
-        for c in label.chars() {
-            match property(c as u32) {
-                IdnaState::Disallowed => return Err(Error::Disallowed),
-                IdnaState::Unassigned if !allow_unassigned => {
-                    return Err(Error::Unassigned);
-                }
-                _ => {}
+        } else if map_is(&map, Flag::Deviation) {
+            len2 += if transitional {
+                map.as_ref().map_or(0, |m| m.nmappings as usize)
+            } else {
+                1
+            };
+        } else if !std3 {
+            if map_is(&map, Flag::DisallowedStd3Valid) {
+                len2 += 1;
+            } else if map_is(&map, Flag::DisallowedStd3Mapped) {
+                len2 += map.as_ref().map_or(0, |m| m.nmappings as usize);
             }
         }
+        // under STD3 rules the std3-disallowed classes are dropped entirely
+    }
+    if len2 >= DOMAIN_MAX_LENGTH {
+        return Err(Error::TooBigDomain);
     }
 
-    // Final conversion (FailFast).
-    match u.to_ascii(
-        input.as_bytes(),
-        deny_list,
-        Hyphens::Allow,
-        DnsLength::Ignore,
-    ) {
-        Ok(ascii) => {
-            let ascii = ascii.into_owned();
-            for label in ascii.split('.') {
-                if label.len() > LABEL_MAX_LENGTH {
-                    return Err(Error::TooBigLabel);
+    // Second pass: build the mapped sequence.
+    let mut tmp: Vec<char> = Vec::with_capacity(len2);
+    for &c in &chars {
+        let map = get_idna_map(c as u32);
+        if map_is(&map, Flag::Mapped) {
+            for m in map_data(map.as_ref().expect("mapped map present")) {
+                tmp.push(char::from_u32(m).expect("valid mapping"));
+            }
+        } else if map_is(&map, Flag::Valid) {
+            tmp.push(c);
+        } else if map_is(&map, Flag::Ignored) {
+            continue;
+        } else if map_is(&map, Flag::Deviation) {
+            if transitional {
+                for m in map_data(map.as_ref().expect("deviation map present")) {
+                    tmp.push(char::from_u32(m).expect("valid mapping"));
+                }
+            } else {
+                tmp.push(c);
+            }
+        } else if !std3 {
+            if map_is(&map, Flag::DisallowedStd3Valid) {
+                tmp.push(c);
+            } else if map_is(&map, Flag::DisallowedStd3Mapped) {
+                for m in map_data(map.as_ref().expect("std3 map present")) {
+                    tmp.push(char::from_u32(m).expect("valid mapping"));
                 }
             }
-            if ascii.len() > DOMAIN_MAX_LENGTH {
+        }
+        // Flag::Disallowed never survives the first pass.
+    }
+
+    // Normalize to NFC.
+    let nfc: String = tmp.iter().collect::<String>().nfc().collect();
+    let domain: Vec<char> = nfc.chars().collect();
+
+    // Split into labels and check.
+    let mut err = Ok(());
+    let mut e = 0usize;
+    while e < domain.len() {
+        let s = e;
+        while e < domain.len() && domain[e] != '.' {
+            e += 1;
+        }
+        let label: &[char] = &domain[s..e];
+        if label.len() >= 4
+            && label[0] == 'x'
+            && label[1] == 'n'
+            && label[2] == '-'
+            && label[3] == '-'
+        {
+            // Decode the punycode and check the result nontransitionally.
+            let ace: String = label[4..].iter().collect();
+            match punycode_decode(&ace) {
+                Ok(name) => {
+                    let name_chars: Vec<char> = name.chars().collect();
+                    let mut test_flags = TR46_NONTRANSITIONAL_CHECK;
+                    if !std3 {
+                        test_flags |= TEST_ALLOW_STD3_DISALLOWED;
+                    }
+                    if let Err(rc) = label_test(&name_chars, test_flags) {
+                        err = Err(rc);
+                    }
+                }
+                Err(rc) => err = Err(rc),
+            }
+        } else {
+            let mut test_flags = if transitional {
+                TR46_TRANSITIONAL_CHECK
+            } else {
+                TR46_NONTRANSITIONAL_CHECK
+            };
+            if !std3 {
+                test_flags |= TEST_ALLOW_STD3_DISALLOWED;
+            }
+            if let Err(rc) = label_test(label, test_flags) {
+                err = Err(rc);
+            }
+        }
+        if e < domain.len() {
+            e += 1; // consume the '.'
+        }
+    }
+    err?;
+    Ok(nfc)
+}
+
+// ---------------------------------------------------------------------------
+// `label` (lookup.c:130): per-label ToASCII.
+// ---------------------------------------------------------------------------
+
+/// `_idn2_ascii_p` (idna.c:124): all bytes < 0x80.
+fn ascii_p(s: &str) -> bool {
+    s.is_ascii()
+}
+
+/// `label` (lookup.c): one label's ToASCII.  ASCII labels are copied
+/// verbatim (after the A-label roundtrip check when they start with the
+/// case-sensitive "xn--" prefix); non-ASCII labels are NFC'd (unless
+/// `IDN2_NFC_INPUT`), tested with the nontransitional set (skipped for
+/// `IDN2_TRANSITIONAL`), and punycoded.
+fn label(src: &str, flags: i32) -> Result<String, Error> {
+    if ascii_p(src) {
+        if flags & flags::NO_ALABEL_ROUNDTRIP == 0
+            && src.len() >= 4
+            && src.as_bytes()[0] == b'x'
+            && src.as_bytes()[1] == b'n'
+            && src.as_bytes()[2] == b'-'
+            && src.as_bytes()[3] == b'-'
+        {
+            // A-label: decode and re-test the U-label.
+            let decoded = punycode_decode(&src[4..])?;
+            let decoded_chars: Vec<char> = decoded.chars().collect();
+            let mut test_flags = TEST_NFC
+                | TEST_2HYPHEN
+                | TEST_LEADING_COMBINING
+                | TEST_DISALLOWED
+                | TEST_CONTEXTJ_RULE
+                | TEST_CONTEXTO_WITH_RULE
+                | TEST_UNASSIGNED
+                | TEST_BIDI
+                | TEST_NONTRANSITIONAL;
+            if flags & flags::USE_STD3_ASCII_RULES == 0 {
+                test_flags |= TEST_ALLOW_STD3_DISALLOWED;
+            }
+            if !(flags & flags::TRANSITIONAL != 0) {
+                // The C's test block is skipped for transitional processing.
+                label_test(&decoded_chars, test_flags)?;
+            }
+            // Re-encode and require an exact round trip.
+            let ace = punycode_encode(&decoded_chars)?;
+            if ace.len() > LABEL_MAX_LENGTH - 4 {
+                return Err(Error::PunycodeBigOutput);
+            }
+            let rebuilt = format!("xn--{ace}");
+            if rebuilt != src {
+                return Err(Error::AlabelRoundtripFailed);
+            }
+            return Ok(rebuilt);
+        }
+        if src.len() > LABEL_MAX_LENGTH {
+            return Err(Error::TooBigLabel);
+        }
+        return Ok(src.to_string());
+    }
+
+    // Non-ASCII: NFC.  The C's `_idn2_u8_to_u32_nfc(src, srclen, &p, &plen,
+    // flags & IDN2_NFC_INPUT)` normalizes whenever the input is not already
+    // NFC (the NFC_INPUT bit only skips the `_isNFC` quick check), so the
+    // label is always NFC'd before the tests.
+    let p: Vec<char> = src.nfc().collect();
+
+    if flags & flags::TRANSITIONAL == 0 {
+        let mut test_flags = TEST_NFC
+            | TEST_2HYPHEN
+            | TEST_LEADING_COMBINING
+            | TEST_DISALLOWED
+            | TEST_CONTEXTJ_RULE
+            | TEST_CONTEXTO_WITH_RULE
+            | TEST_UNASSIGNED
+            | TEST_BIDI
+            | TEST_NONTRANSITIONAL;
+        if flags & flags::USE_STD3_ASCII_RULES == 0 {
+            test_flags |= TEST_ALLOW_STD3_DISALLOWED;
+        }
+        label_test(&p, test_flags)?;
+    }
+
+    let ace = punycode_encode(&p)?;
+    if ace.len() > LABEL_MAX_LENGTH - 4 {
+        return Err(Error::PunycodeBigOutput);
+    }
+    Ok(format!("xn--{ace}"))
+}
+
+// ---------------------------------------------------------------------------
+// `idn2_lookup_u8` (lookup.c): the assembled ToASCII pipeline.
+// ---------------------------------------------------------------------------
+
+/// `idn2_lookup_u8`: `set_default_flags` → `_tr46` (unless `IDN2_NO_TR46`) →
+/// per-label `label()` → concatenation with the 255-byte domain accounting
+/// (lookup.c:449-468).
+fn lookup_u8(input: &str, flags: i32) -> Result<String, Error> {
+    let flags = set_default_flags(flags)?;
+    let src = if flags & flags::NO_TR46 == 0 {
+        tr46(input, flags)?
+    } else {
+        input.to_string()
+    };
+
+    let bytes = src.as_bytes();
+    let mut lookupname = String::new();
+    let mut lookupnamelen = 0usize;
+    let mut i = 0usize;
+    loop {
+        let start = i;
+        while i < bytes.len() && bytes[i] != b'.' {
+            i += 1;
+        }
+        let tmp = label(&src[start..i], flags)?;
+        let tmplen = tmp.len();
+        let is_last = i >= bytes.len();
+        let budget = DOMAIN_MAX_LENGTH - (if tmplen == 0 && is_last { 1 } else { 2 });
+        if lookupnamelen + tmplen > budget {
+            return Err(Error::TooBigDomain);
+        }
+        lookupname.push_str(&tmp);
+        lookupnamelen += tmplen;
+        if i < bytes.len() {
+            if lookupnamelen + 1 > DOMAIN_MAX_LENGTH {
                 return Err(Error::TooBigDomain);
             }
-            Ok(ascii)
+            lookupname.push('.');
+            lookupnamelen += 1;
+            i += 1;
+        } else {
+            break;
         }
-        Err(_) => Err(Error::Disallowed),
+    }
+    Ok(lookupname)
+}
+
+// ---------------------------------------------------------------------------
+// The locale layer (`idn2_lookup_ul` / `idn2_to_unicode_8zlz`).
+// ---------------------------------------------------------------------------
+
+/// Resolve the locale codeset from the environment the way glibc's
+/// `nl_langinfo(CODESET)` resolves it after `setlocale(LC_ALL, "")` for the
+/// locales the courts pin: `LC_ALL` > `LC_CTYPE` > `LANG`; `C`/`POSIX`
+/// (or a `.`-suffixed codeset) names the charset.  Unknown locales are a
+/// documented best-effort UTF-8.
+#[must_use]
+pub fn locale_codeset() -> String {
+    let loc = std::env::var("LC_ALL")
+        .ok()
+        .filter(|s| !s.is_empty())
+        .or_else(|| std::env::var("LC_CTYPE").ok().filter(|s| !s.is_empty()))
+        .or_else(|| std::env::var("LANG").ok().filter(|s| !s.is_empty()));
+    match loc {
+        None => "ANSI_X3.4-1968".to_string(),
+        Some(l) => {
+            let lower = l.to_ascii_lowercase();
+            if lower.contains("utf-8") || lower.contains("utf8") {
+                "UTF-8".to_string()
+            } else if lower.contains("iso-8859-1")
+                || lower.contains("iso8859-1")
+                || lower.contains("8859-1")
+            {
+                "ISO-8859-1".to_string()
+            } else if l == "C" || l == "POSIX" || l.starts_with("C.") || l.starts_with("POSIX.") {
+                "ANSI_X3.4-1968".to_string()
+            } else {
+                // Best-effort for unlisted locales (the courts pin C.UTF-8,
+                // C and en_US.ISO-8859-1).
+                "UTF-8".to_string()
+            }
+        }
     }
 }
 
-/// Case-insensitive "xn--" A-label prefix test (decode.c uses the same
-/// per-byte case-insensitive match).
-fn is_alabel(label: &str) -> bool {
-    label.len() >= 4
-        && (label.as_bytes()[0] == b'x' || label.as_bytes()[0] == b'X')
-        && (label.as_bytes()[1] == b'n' || label.as_bytes()[1] == b'N')
-        && label.as_bytes()[2] == b'-'
-        && label.as_bytes()[3] == b'-'
+/// `u8_strconv_from_encoding(src, codeset, iconveh_error)`: convert the
+/// locale-encoded input to UTF-8; `IDN2_ICONV_FAIL` on an invalid byte
+/// sequence (the C's NULL + errno path).
+fn from_locale(input: &[u8]) -> Result<Vec<u8>, Error> {
+    match locale_codeset().as_str() {
+        "UTF-8" => Ok(input.to_vec()),
+        "ANSI_X3.4-1968" => {
+            if input.iter().any(|&b| b >= 0x80) {
+                Err(Error::IconvFail)
+            } else {
+                Ok(input.to_vec())
+            }
+        }
+        "ISO-8859-1" => {
+            let mut out = Vec::with_capacity(input.len());
+            for &b in input {
+                if b < 0x80 {
+                    out.push(b);
+                } else {
+                    out.push(0xC0 | (b >> 6));
+                    out.push(0x80 | (b & 0x3F));
+                }
+            }
+            Ok(out)
+        }
+        _ => Err(Error::IconvFail),
+    }
 }
 
-/// `idn2_to_unicode_8zlz` (decode.c: `idn2_to_unicode_8z4z`; flags unused):
-/// decode A-labels ("xn--", case-insensitive) to U-labels; other labels are
-/// copied as-is.  Label/domain limits are enforced.  Assumes a UTF-8 locale.
-pub fn to_unicode_8zlz(input: &str, _flags: i32) -> Result<String, Error> {
+/// `u8_strconv_to_encoding(input, codeset, iconveh_error)`: convert the
+/// UTF-8 output to the locale codeset; `IDN2_ENCODING_ERROR` when a code
+/// point has no representation.
+fn to_locale(input: &str) -> Result<Vec<u8>, Error> {
+    match locale_codeset().as_str() {
+        "UTF-8" => Ok(input.as_bytes().to_vec()),
+        "ANSI_X3.4-1968" => {
+            if input.is_ascii() {
+                Ok(input.as_bytes().to_vec())
+            } else {
+                Err(Error::EncodingError)
+            }
+        }
+        "ISO-8859-1" => {
+            let mut out = Vec::with_capacity(input.len());
+            for c in input.chars() {
+                if c as u32 <= 0xFF {
+                    out.push(c as u8);
+                } else {
+                    return Err(Error::EncodingError);
+                }
+            }
+            Ok(out)
+        }
+        _ => Err(Error::EncodingError),
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Public API
+// ---------------------------------------------------------------------------
+
+/// `idn2_to_ascii_8z`-style conversion for a UTF-8 `&str` input (no locale
+/// conversion) — the shared IDNA pipeline.
+fn to_ascii_utf8(input: &str, flags: i32) -> Result<String, Error> {
+    lookup_u8(input, flags)
+}
+
+/// `idn2_to_ascii_lz` (dighost.c `idn_input`): convert a domain name in the
+/// locale encoding to its ASCII (A-label) form.  The input is converted from
+/// the locale codeset to UTF-8 (`IDN2_ICONV_FAIL` on failure), then
+/// `idn2_lookup_u8` runs with `IDN2_NFC_INPUT` forced (lookup.c
+/// `idn2_lookup_ul`).
+pub fn to_ascii_lz_u8(input: &[u8], flags: i32) -> Result<Vec<u8>, Error> {
+    let utf8 = from_locale(input)?;
+    let s = String::from_utf8(utf8).map_err(|_| Error::IconvFail)?;
+    let ascii = to_ascii_utf8(&s, flags | flags::NFC_INPUT)?;
+    Ok(ascii.into_bytes())
+}
+
+/// `idn2_to_ascii_lz` for the dig-facing `&str` path (a UTF-8 by
+/// construction input; under a non-UTF-8 locale the locale conversion still
+/// applies to the bytes, matching the C).
+pub fn to_ascii_lz(input: &str, flags: i32) -> Result<String, Error> {
+    let bytes = to_ascii_lz_u8(input.as_bytes(), flags)?;
+    // The output of ToASCII is always ASCII.
+    String::from_utf8(bytes).map_err(|_| Error::EncodingError)
+}
+
+/// `idn2_to_unicode_8z8z`-style decode (decode.c): decode "xn--" A-labels
+/// (case-insensitive) to U-labels; other labels are copied as-is.
+fn to_unicode_8z8z(input: &str) -> Result<String, Error> {
     let mut out = String::new();
     let mut domain_len = 0usize;
     for (i, label) in input.split('.').enumerate() {
@@ -616,6 +1217,24 @@ pub fn to_unicode_8zlz(input: &str, _flags: i32) -> Result<String, Error> {
     Ok(out)
 }
 
+/// `idn2_to_unicode_8zlz` (decode.c:357): decode a UTF-8 input to U-labels,
+/// then convert the output to the locale codeset (`IDN2_ENCODING_ERROR` on
+/// failure).
+pub fn to_unicode_8zlz_u8(input: &str, flags: i32) -> Result<Vec<u8>, Error> {
+    let unicode = to_unicode_8z8z(input)?;
+    let _ = flags;
+    to_locale(&unicode)
+}
+
+/// `idn2_to_unicode_8zlz` for the dig-facing `&str` path.  The C's output is
+/// in the locale codeset; under a UTF-8 locale it is a valid `String`, under
+/// non-UTF-8 locales it may not be — the wrapper reports
+/// `IDN2_ENCODING_ERROR` then (dig's idn_filter leaves the name unchanged).
+pub fn to_unicode_8zlz(input: &str, flags: i32) -> Result<String, Error> {
+    let bytes = to_unicode_8zlz_u8(input, flags)?;
+    String::from_utf8(bytes).map_err(|_| Error::EncodingError)
+}
+
 /// `idn2_free` — the C API owns returned buffers; Rust returns owned
 /// strings, so this is a no-op kept for API-shape fidelity.
 pub fn free(_p: *mut u8) {}
@@ -637,7 +1256,7 @@ pub fn free(_p: *mut u8) {}
 /// raw UTF-8 bytes go on the wire.  Court CLI-DIG-0003 pins a UTF-8 locale
 /// for the conversion path; the C-locale pass-through is courted separately.
 pub fn idn_input(src: &str) -> String {
-    if locale_charset_is_ascii() && !src.is_ascii() {
+    if locale_codeset() == "ANSI_X3.4-1968" && !src.is_ascii() {
         return src.to_string();
     }
     let ascii = to_ascii_lz(src, flags::NONTRANSITIONAL).or_else(|e| {
@@ -650,26 +1269,6 @@ pub fn idn_input(src: &str) -> String {
     match ascii {
         Ok(ace) if !src.eq_ignore_ascii_case(&ace) => ace,
         _ => src.to_string(),
-    }
-}
-
-/// The effective locale charset, approximated from glibc's rules: LC_ALL,
-/// then LC_CTYPE, then LANG; unset/"C"/"POSIX" → ASCII; a locale name
-/// containing UTF-8 → UTF-8.  Other charsets are treated as UTF-8
-/// (best-effort; the courts pin C and C.UTF-8).
-fn locale_charset_is_ascii() -> bool {
-    let loc = std::env::var("LC_ALL")
-        .ok()
-        .filter(|s| !s.is_empty())
-        .or_else(|| std::env::var("LC_CTYPE").ok().filter(|s| !s.is_empty()))
-        .or_else(|| std::env::var("LANG").ok().filter(|s| !s.is_empty()));
-    match loc {
-        None => true, // C locale
-        Some(l) if l == "C" || l == "POSIX" || l.starts_with("C.") || l.starts_with("POSIX.") => {
-            // "C.UTF-8" is a UTF-8 charset despite the C prefix.
-            !l.to_ascii_lowercase().contains("utf-8") && !l.to_ascii_lowercase().contains("utf8")
-        }
-        Some(_) => false, // any other locale: best-effort UTF-8
     }
 }
 
@@ -709,21 +1308,22 @@ mod tests {
             "example.com"
         );
         assert_eq!(
-            to_ascii_lz("faß.de", flags::NONTRANSITIONAL).unwrap(),
-            "xn--fa-hia.de"
+            to_ascii_lz("Example.com", flags::NONTRANSITIONAL).unwrap(),
+            "example.com"
         );
         assert_eq!(
-            to_ascii_lz("βόλος.gr", flags::NONTRANSITIONAL).unwrap(),
-            "xn--nxasmm1c.gr"
+            to_ascii_lz("faß.de", flags::NONTRANSITIONAL).unwrap(),
+            "xn--fa-hia.de"
         );
         assert_eq!(
             to_ascii_lz("ς.gr", flags::NONTRANSITIONAL).unwrap(),
             "xn--3xa.gr"
         );
         assert_eq!(
-            to_ascii_lz("a\u{00AD}b.com", flags::NONTRANSITIONAL).unwrap(),
-            "ab.com"
+            to_ascii_lz("xn--mnchen-3ya.de", flags::NONTRANSITIONAL).unwrap(),
+            "xn--mnchen-3ya.de"
         );
+        assert_eq!(to_ascii_lz("a..b", flags::NONTRANSITIONAL).unwrap(), "a..b");
         assert_eq!(
             to_ascii_lz("_tcp.example.com", flags::NONTRANSITIONAL).unwrap(),
             "_tcp.example.com"
@@ -732,35 +1332,41 @@ mod tests {
             to_ascii_lz("1.2.3.4", flags::NONTRANSITIONAL).unwrap(),
             "1.2.3.4"
         );
-        assert_eq!(to_ascii_lz("a..b", flags::NONTRANSITIONAL).unwrap(), "a..b");
+        assert_eq!(
+            to_ascii_lz("a\u{00AD}b.com", flags::NONTRANSITIONAL).unwrap(),
+            "ab.com"
+        );
         assert_eq!(
             to_ascii_lz(".leading-dot", flags::NONTRANSITIONAL).unwrap(),
             ".leading-dot"
         );
-        // A-labels pass through unchanged.
         assert_eq!(
-            to_ascii_lz("xn--mnchen-3ya.de", flags::NONTRANSITIONAL).unwrap(),
-            "xn--mnchen-3ya.de"
+            to_ascii_lz("trailing-dot.", flags::NONTRANSITIONAL).unwrap(),
+            "trailing-dot."
+        );
+        assert_eq!(
+            to_ascii_lz("βόλος.gr", flags::NONTRANSITIONAL).unwrap(),
+            "xn--nxasmm1c.gr"
         );
     }
 
     #[test]
     fn nontransitional_oracle_errors() {
         assert_eq!(
-            to_ascii_lz("a\u{200C}b.com", flags::NONTRANSITIONAL),
-            Err(Error::ContextJ)
+            to_ascii_lz("a\u{200C}b.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::ContextJ
         );
         assert_eq!(
-            to_ascii_lz("a\u{200D}b.com", flags::NONTRANSITIONAL),
-            Err(Error::ContextJ)
+            to_ascii_lz("a\u{200D}b.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::ContextJ
         );
         assert_eq!(
-            to_ascii_lz("\u{1F600}.com", flags::NONTRANSITIONAL),
-            Err(Error::Disallowed)
+            to_ascii_lz("\u{1F600}.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::Disallowed
         );
         assert_eq!(
-            to_ascii_lz("www.xn--0.0.com", flags::NONTRANSITIONAL),
-            Err(Error::PunycodeBadInput)
+            to_ascii_lz("www.xn--0.0.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::PunycodeBadInput
         );
     }
 
@@ -771,18 +1377,6 @@ mod tests {
             "fass.de"
         );
         assert_eq!(
-            to_ascii_lz("ßß.com", flags::TRANSITIONAL).unwrap(),
-            "ssss.com"
-        );
-        assert_eq!(
-            to_ascii_lz("βόλος.gr", flags::TRANSITIONAL).unwrap(),
-            "xn--nxasmq6b.gr"
-        );
-        assert_eq!(
-            to_ascii_lz("ς.gr", flags::TRANSITIONAL).unwrap(),
-            "xn--4xa.gr"
-        );
-        assert_eq!(
             to_ascii_lz("a\u{200C}b.com", flags::TRANSITIONAL).unwrap(),
             "ab.com"
         );
@@ -790,15 +1384,17 @@ mod tests {
             to_ascii_lz("a\u{200D}b.com", flags::TRANSITIONAL).unwrap(),
             "ab.com"
         );
-        // Emoji are kept (libidn2's table treats them as valid for
-        // transitional; IDNA2003-validity lineage, see dig's comment).
         assert_eq!(
             to_ascii_lz("\u{1F600}.com", flags::TRANSITIONAL).unwrap(),
             "xn--e28h.com"
         );
         assert_eq!(
-            to_ascii_lz("a\u{00AD}b.com", flags::TRANSITIONAL).unwrap(),
-            "ab.com"
+            to_ascii_lz("ς.gr", flags::TRANSITIONAL).unwrap(),
+            "xn--4xa.gr"
+        );
+        assert_eq!(
+            to_ascii_lz("ßß.com", flags::TRANSITIONAL).unwrap(),
+            "ssss.com"
         );
     }
 
@@ -809,140 +1405,212 @@ mod tests {
             "münchen.de"
         );
         assert_eq!(
-            to_unicode_8zlz("xn--0zwm56d.example", flags::NONTRANSITIONAL).unwrap(),
-            "测试.example"
-        );
-        // Non-A-labels pass through.
-        assert_eq!(
-            to_unicode_8zlz("EXAMPLE.COM", flags::NONTRANSITIONAL).unwrap(),
-            "EXAMPLE.COM"
-        );
-        assert_eq!(
-            to_unicode_8zlz("faß.de", flags::NONTRANSITIONAL).unwrap(),
-            "faß.de"
-        );
-        // Case-insensitive "xn--" prefix detection (decode.c); the basic
-        // section of the A-label is copied verbatim and the decoded code
-        // points are inserted at their delta positions, so case is preserved.
-        assert_eq!(
             to_unicode_8zlz("XN--MNCHEN-3YA.DE", flags::NONTRANSITIONAL).unwrap(),
             "MüNCHEN.DE"
         );
-        // Invalid punycode.
         assert_eq!(
-            to_unicode_8zlz("www.xn--0.0.com", flags::NONTRANSITIONAL),
-            Err(Error::PunycodeBadInput)
+            to_unicode_8zlz("xn--fa-hia.de", flags::NONTRANSITIONAL).unwrap(),
+            "faß.de"
+        );
+        assert_eq!(
+            to_unicode_8zlz("xn--e28h.com", flags::NONTRANSITIONAL).unwrap(),
+            "😀.com"
+        );
+        assert_eq!(
+            to_unicode_8zlz("www.xn--0.0.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::PunycodeBadInput
+        );
+        assert_eq!(
+            to_unicode_8zlz("a..b", flags::NONTRANSITIONAL).unwrap(),
+            "a..b"
+        );
+        assert_eq!(
+            to_unicode_8zlz(".leading-dot", flags::NONTRANSITIONAL).unwrap(),
+            ".leading-dot"
+        );
+        assert_eq!(
+            to_unicode_8zlz("trailing-dot.", flags::NONTRANSITIONAL).unwrap(),
+            "trailing-dot."
         );
     }
 
     #[test]
     fn flag_conflicts_match_c() {
         assert_eq!(
-            to_ascii_lz("a.com", flags::TRANSITIONAL | flags::NONTRANSITIONAL),
-            Err(Error::InvalidFlags)
+            to_ascii_lz("x.com", flags::TRANSITIONAL | flags::NONTRANSITIONAL).unwrap_err(),
+            Error::InvalidFlags
         );
         assert_eq!(
-            to_ascii_lz("a.com", flags::NONTRANSITIONAL | flags::NO_TR46),
-            Err(Error::InvalidFlags)
+            to_ascii_lz("x.com", flags::NONTRANSITIONAL | flags::NO_TR46).unwrap_err(),
+            Error::InvalidFlags
+        );
+        assert_eq!(
+            to_ascii_lz("x.com", flags::TRANSITIONAL | flags::NO_TR46).unwrap_err(),
+            Error::InvalidFlags
         );
         assert_eq!(
             to_ascii_lz(
-                "a.com",
+                "x.com",
                 flags::ALABEL_ROUNDTRIP | flags::NO_ALABEL_ROUNDTRIP
-            ),
-            Err(Error::InvalidFlags)
+            )
+            .unwrap_err(),
+            Error::InvalidFlags
         );
     }
 
     #[test]
-    fn dig_idn_input_case_preservation() {
-        // Pure-ASCII input: idn2_to_ascii_lz lowercases, but dig keeps the
-        // original spelling when the two differ only in case.
-        assert_eq!(idn_input("EXAMPLE.COM"), "EXAMPLE.COM");
-        assert_eq!(idn_input("Example.com"), "Example.com");
-        assert_eq!(idn_input("münchen.de"), "xn--mnchen-3ya.de");
-        // DISALLOWED under nontransitional falls back to transitional.
-        assert_eq!(idn_input("\u{1F600}.com"), "xn--e28h.com");
-    }
-
-    #[test]
-    fn dig_idn_filter_semantics() {
-        // Non-A-label input decodes to itself (identity) and is kept.
-        assert_eq!(idn_filter("www.example.com").unwrap(), "www.example.com");
-        assert_eq!(idn_filter("xn--mnchen-3ya.de").unwrap(), "münchen.de");
-        // Conversion failures leave the name unchanged (None).
-        assert_eq!(idn_filter("www.xn--0.0.com"), None);
-    }
-
-    #[test]
-    fn punycode_rfc3492_vectors() {
-        // RFC 3492 §7.1 examples, verified against an independent punycode
-        // implementation (python3 'punycode' codec).
-        let cases: &[(&str, &str)] = &[
-            ("ليهمابتكلموشعربي؟", "egbpdaj6bu4bxfgehfvwxn"),
-            ("他们为什么不说中文", "ihqwcrb4cv8a8dqg056pqjye"),
-            ("他們爲什麼不說中文", "ihqwctvzc91f659drss3x8bf0yb"),
-            ("Pročprostěnemluvíčesky", "Proprostnemluvesky-uyb24dma41a"),
-            ("למההםפשוטלאמדבריםעברית", "4dbcagdahymbxekheh6e0a7fei0b"),
-            (
-                "यहलोगहिन्दीक्योंनहींबोलसकतेहैं",
-                "i1baa7eci9glrd9b2ae1bj0hfcgg6iyaf8o0a1dig0cd",
-            ),
-            (
-                "なぜみんな日本語を話してくれないのか",
-                "n8jok5ay5dzabd5bym9f0cm5685rrjetr6pdxa",
-            ),
-            (
-                "왜사람들은한국어를말하지않습니까",
-                "3e0boqt1ixrcezedwd2qa125beoe31hi7aq9c1uee2m8l9byba",
-            ),
-            (
-                "Почемужеонинеговорятпорусски",
-                "r0a2bchaafrdtpobhefbastcwatmq2g4l",
-            ),
-            (
-                "¿Por qué no hablan español?",
-                "Por qu no hablan espaol?-9jb21ivg",
-            ),
-        ];
-        for (s, expected) in cases {
-            let cps: Vec<char> = s.chars().collect();
-            assert_eq!(punycode_encode(&cps).unwrap(), *expected, "encode {s}");
-            assert_eq!(punycode_decode(expected).unwrap(), *s, "decode {expected}");
-        }
-    }
-
-    #[test]
-    fn punycode_roundtrip() {
-        let s = "テスト";
-        let cps: Vec<char> = s.chars().collect();
-        let enc = punycode_encode(&cps).unwrap();
-        assert_eq!(punycode_decode(&enc).unwrap(), s);
-    }
-
-    #[test]
-    fn label_and_domain_limits() {
-        let long_label = "a".repeat(64);
+    fn no_tr46_pure_idna2008() {
+        // NO_TR46 alone is the reachable pure-IDNA2008 path (any combination
+        // with TRANSITIONAL/NONTRANSITIONAL is INVALID_FLAGS).
         assert_eq!(
-            to_ascii_lz(&format!("{long_label}.com"), flags::NONTRANSITIONAL),
-            Err(Error::TooBigLabel)
+            to_ascii_lz("faß.de", flags::NO_TR46).unwrap(),
+            "xn--fa-hia.de"
         );
-        let mut long_domain = String::new();
-        for i in 0..26 {
-            long_domain.push_str(&format!("{i:02}."));
-        }
-        long_domain.push_str("example.com"); // 26*3 + 11 = 89 bytes... build 255+
-                                             // Build a domain > 255 via many 63-byte labels is impossible (each
-                                             // label caps at 63), so exercise the unicode path's domain check
-                                             // instead: 30 labels of 8 chars = 270 bytes.
-        let big: String = std::iter::repeat("abcdefgh.")
-            .take(30)
-            .collect::<String>()
-            .trim_end_matches('.')
-            .to_string();
         assert_eq!(
-            to_ascii_lz(&big, flags::NONTRANSITIONAL),
-            Err(Error::TooBigDomain)
+            to_ascii_lz("EXAMPLE.COM", flags::NO_TR46).unwrap(),
+            "EXAMPLE.COM"
         );
+        assert_eq!(
+            to_ascii_lz("MÜNCHEN.de", flags::NO_TR46).unwrap_err(),
+            Error::Disallowed
+        );
+        assert_eq!(
+            to_ascii_lz("a\u{00AD}b.com", flags::NO_TR46).unwrap_err(),
+            Error::Disallowed
+        );
+        assert_eq!(
+            to_ascii_lz("\u{1F600}.com", flags::NO_TR46).unwrap_err(),
+            Error::Disallowed
+        );
+        assert_eq!(to_ascii_lz("ς.gr", flags::NO_TR46).unwrap(), "xn--3xa.gr");
+    }
+
+    #[test]
+    fn label_test_corners() {
+        // Leading combining mark (nonspacing) -> LEADING_COMBINING on both
+        // paths (the oracle: rc=-303).
+        assert_eq!(
+            to_ascii_lz("\u{0301}a.com", flags::NO_TR46).unwrap_err(),
+            Error::LeadingCombining
+        );
+        assert_eq!(
+            to_ascii_lz("\u{0301}a.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::LeadingCombining
+        );
+        // The ContextO middle dot: the nt/no46 test sets only check that a
+        // rule EXISTS (TEST_CONTEXTO_WITH_RULE), so a·b and l·l both pass.
+        assert_eq!(
+            to_ascii_lz("l\u{00B7}l.com", flags::NO_TR46).unwrap(),
+            "xn--ll-0ea.com"
+        );
+        assert_eq!(
+            to_ascii_lz("a\u{00B7}b.com", flags::NO_TR46).unwrap(),
+            "xn--ab-0ea.com"
+        );
+        // Bidi violation (RFC 5893, as transcribed from bidi.c).
+        assert_eq!(
+            to_ascii_lz("a\u{05D0}b.com", flags::NO_TR46).unwrap_err(),
+            Error::Bidi
+        );
+        assert_eq!(
+            to_ascii_lz("a\u{05D0}b.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::Bidi
+        );
+        assert_eq!(
+            to_ascii_lz("\u{05D0}\u{05D1}.com", flags::NO_TR46).unwrap(),
+            "xn--4dbc.com"
+        );
+        // A valid ZWNJ between joining Arabic letters passes the rule; a ZWJ
+        // without a virama fails it.
+        assert_eq!(
+            to_ascii_lz("\u{0628}\u{200C}\u{0628}.com", flags::NO_TR46).unwrap(),
+            "xn--ngba799q.com"
+        );
+        assert_eq!(
+            to_ascii_lz("\u{0628}\u{200D}\u{0628}.com", flags::NO_TR46).unwrap_err(),
+            Error::ContextJ
+        );
+        // The 2-hyphen rule applies to non-ASCII labels on both paths.
+        assert_eq!(
+            to_ascii_lz("a\u{00DF}--b.com", flags::NO_TR46).unwrap_err(),
+            Error::TwoHyphen
+        );
+        assert_eq!(
+            to_ascii_lz("a\u{00DF}--b.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::TwoHyphen
+        );
+        // HYPHEN_STARTEND is in the TR46 check but NOT in the NO_TR46 set.
+        assert_eq!(
+            to_ascii_lz("-a\u{00E4}.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::HyphenStartEnd
+        );
+        assert_eq!(
+            to_ascii_lz("-a\u{00E4}.com", flags::NO_TR46).unwrap(),
+            "xn---a-wia.com"
+        );
+        assert_eq!(
+            to_ascii_lz("a\u{00E4}-.com", flags::NONTRANSITIONAL).unwrap_err(),
+            Error::HyphenStartEnd
+        );
+        assert_eq!(
+            to_ascii_lz("a\u{00E4}-.com", flags::NO_TR46).unwrap(),
+            "xn--a--via.com"
+        );
+        // Unassigned codepoint (U+0378) -> UNASSIGNED.
+        assert_eq!(
+            to_ascii_lz("\u{0378}.com", flags::NO_TR46).unwrap_err(),
+            Error::Unassigned
+        );
+        // Under STD3 rules the TR46 mapping drops the std3-disallowed '_'.
+        assert_eq!(
+            to_ascii_lz(
+                "_tcp.example.com",
+                flags::NONTRANSITIONAL | flags::USE_STD3_ASCII_RULES
+            )
+            .unwrap(),
+            "tcp.example.com"
+        );
+        assert_eq!(
+            to_ascii_lz(
+                "_a\u{00E4}.com",
+                flags::NONTRANSITIONAL | flags::USE_STD3_ASCII_RULES
+            )
+            .unwrap(),
+            "xn--a-0fa.com"
+        );
+        // Length limits: a 64-byte ASCII label is TOO_BIG_LABEL; a long
+        // non-ASCII label overflows the punycode buffer.
+        assert_eq!(
+            to_ascii_lz(
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com",
+                flags::NONTRANSITIONAL
+            )
+            .unwrap_err(),
+            Error::TooBigLabel
+        );
+        assert_eq!(
+            to_ascii_lz(
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\u{00E4}.com",
+                flags::NONTRANSITIONAL
+            )
+            .unwrap_err(),
+            Error::PunycodeBigOutput
+        );
+    }
+
+    #[test]
+    fn locale_layer_ascii_codeset() {
+        // from_locale: ASCII rejects non-ASCII, Latin-1 expands.
+        assert_eq!(from_locale(b"abc"), Ok(b"abc".to_vec()));
+        // to_locale: ASCII rejects non-ASCII output.
+        assert_eq!(to_locale("abc").unwrap(), b"abc".to_vec());
+    }
+
+    #[test]
+    fn punycode_round_trip() {
+        for s in ["münchen", "faß", "😀", "βόλος", "ς"] {
+            let encoded = punycode_encode(&s.chars().collect::<Vec<_>>()).unwrap();
+            assert_eq!(punycode_decode(&encoded).unwrap(), s);
+        }
     }
 }

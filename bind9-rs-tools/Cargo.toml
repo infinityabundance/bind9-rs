@@ -27,6 +27,11 @@ bind9-rs-core.workspace = true
 bind9-rs-platform.workspace = true
 idna = "1"
 unicode-normalization = "0.1"
+# icu_properties: the Unicode bidi-class/joining-type/general-category/script
+# data used by the transcribed IDNA2008 label tests (bidi.c, context.c,
+# idna.c); the same audited ICU4X data family as the `idna` crate, already in
+# the dependency tree.
+icu_properties = "2"
 # libc: the audited FFI for the OS boundary (capget/capset, prctl, xattr,
 # setuid/setgroups, fork/execve, chroot).  Used ONLY inside the platform
 # boundary modules (platform::linux + platform::unsafe_boundary) where every

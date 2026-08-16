@@ -30,9 +30,9 @@
       "tag": "latest"
     },
     "oracle-libidn2-2.3.8": {
-      "built_at": "2026-08-16T00:56:14Z",
+      "built_at": "2026-08-16T08:20:00Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libidn2-2.3.8/Dockerfile",
-      "image_id": "74c356544490",
+      "image_id": "29e974369687",
       "repo_digest": "<none>",
       "tag": "latest"
     },
