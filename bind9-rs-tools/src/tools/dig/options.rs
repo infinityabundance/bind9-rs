@@ -146,6 +146,17 @@ pub struct DigOptions {
     pub nottl: bool,
     pub noclass: bool,
     pub server: String,
+    /// IDN conversion of query names (dighost.c make_empty_lookup: default
+    /// on unless IDN_DISABLE is set; `+idnin`/`+noidnin` override).
+    pub idnin: bool,
+    /// IDN conversion of response names (default: stdout is a TTY;
+    /// `+idnout`/`+noidnout` override).
+    pub idnout: bool,
+    /// Whether +tcp/+notcp was given (AXFR/ANY/ixfr force TCP only when
+    /// this is unset; dig.c `tcp_mode_set`).
+    pub tcp_mode_set: bool,
+    /// Serial for `-t ixfr=N` / positional `ixfr=N`.
+    pub ixfr_serial: Option<u32>,
 }
 
 impl Default for DigOptions {
@@ -183,33 +194,53 @@ impl Default for DigOptions {
             nottl: false,
             noclass: false,
             server: "127.0.0.1".to_string(),
+            // dighost.c make_empty_lookup(): IDN defaults depend on the
+            // IDN_DISABLE environment variable and on stdout being a TTY
+            // (idnout).  The oracle binary was built without libidn2, where
+            // both default to false; our binary always has IDN support, so
+            // the defaults match a libidn2-enabled build.
+            idnin: std::env::var_os("IDN_DISABLE").is_none(),
+            idnout: std::io::IsTerminal::is_terminal(&std::io::stdout()),
+            tcp_mode_set: false,
+            ixfr_serial: None,
         }
     }
 }
 
-/// Parse the dig argv (BIND 9.20 semantics for the implemented subset).
+/// Parse the dig argv with BIND 9.20 semantics (dig.c parse_args).
+///
+/// Positional handling mirrors the C state machine exactly:
+/// - `open_type_class` starts true; `-t`/`-c` set it false.
+/// - while true, each positional is tried as `ixfr=N`, then as a type
+///   (`dns_rdatatype_fromtext`), then as a class, and only then as a name;
+///   a type/class applies to the current (last) lookup.
+/// - each name starts a new lookup carrying the accumulated type/class state.
 pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
     let mut opts = DigOptions::default();
     let mut server = String::new();
-    let mut qtype = RrType::A;
-    let mut qclass = Class::In;
     let mut names: Vec<(String, RrType, Class)> = Vec::new();
-    let mut pending: Option<(String, RrType, Class)> = None;
+
+    // The lookup state that positionals mutate (dig.c `lookup`):
+    let mut open_type_class = true;
+    let mut rdtype = RrType::A;
+    let mut rdclass = Class::In;
+    let mut rdtypeset = false;
+    let mut rdclassset = false;
 
     let mut i = 0;
     while i < argv.len() {
         let arg = &argv[i];
         if let Some(rest) = arg.strip_prefix('@') {
-            if !server.is_empty() && !names.is_empty() {
+            if !server.is_empty() {
                 return Err("Multiple servers specified".to_string());
             }
             server = rest.to_string();
         } else if arg.starts_with('+') {
             parse_plus(&mut opts, &arg[1..])?;
         } else if let Some(rest) = arg.strip_prefix('-') {
-            // Short options: -t, -c, -p, -x, -4, -6, -v, -h, -b.
+            // Short options: -t, -c, -p, -q, -x, -4, -6, -v, -h, -b.
             if rest.is_empty() {
-                return Err(format!("Invalid option: -"));
+                return Err("Invalid option: -".to_string());
             }
             let opt = &rest[..1];
             let has_value = rest.len() > 1;
@@ -224,53 +255,154 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
                 "v" => opts.version = true,
                 "h" | "?" => opts.help = true,
                 "t" => {
-                    value = Some(next_value(argv, &mut i, value)?);
-                    qtype = RrType::from_text(&value.clone().unwrap())
-                        .map_err(|_| format!("Invalid type: {}", value.as_deref().unwrap_or("")))?;
+                    // dig.c case 't': sets open_type_class = false; the
+                    // type applies to the current lookup.
+                    open_type_class = false;
+                    let value = next_value(argv, &mut i, value)?;
+                    if value.len() >= 5 && value[..5].eq_ignore_ascii_case("ixfr=") {
+                        rdtype = RrType::Ixfr;
+                        if rdtypeset {
+                            eprintln!(";; Warning, extra type option");
+                        }
+                        let serial = parse_serial(&value[5..])?;
+                        rdtypeset = true;
+                        opts.ixfr_serial = Some(serial);
+                        opts.section_question = true;
+                        opts.comments = true;
+                        if !opts.tcp_mode_set {
+                            opts.transport = Transport::Tcp;
+                        }
+                    } else {
+                        match RrType::from_text(&value) {
+                            Ok(t) if t != RrType::Ixfr => {
+                                if rdtypeset {
+                                    eprintln!(";; Warning, extra type option");
+                                }
+                                rdtype = t;
+                                rdtypeset = true;
+                                opts.ixfr_serial = None;
+                                if t == RrType::Axfr {
+                                    opts.section_question = true;
+                                    opts.comments = true;
+                                    // dighost.c setup_lookup: AXFR forces TCP.
+                                    if !opts.tcp_mode_set {
+                                        opts.transport = Transport::Tcp;
+                                    }
+                                } else if t == RrType::Any && !opts.tcp_mode_set {
+                                    opts.transport = Transport::Tcp;
+                                }
+                            }
+                            // `-t ixfr` without a serial is treated as an
+                            // unknown type (dig.c: `result = DNS_R_UNKNOWN`).
+                            _ => eprintln!(";; Warning, ignoring invalid type {value}"),
+                        }
+                    }
                 }
                 "c" => {
-                    value = Some(next_value(argv, &mut i, value)?);
-                    qclass = Class::from_text(&value.clone().unwrap()).map_err(|_| {
-                        format!("Invalid class: {}", value.as_deref().unwrap_or(""))
-                    })?;
+                    // dig.c case 'c': sets open_type_class = false.
+                    open_type_class = false;
+                    let value = next_value(argv, &mut i, value)?;
+                    match Class::from_text(&value) {
+                        Ok(c) => {
+                            if rdclassset {
+                                eprintln!(";; Warning, extra class option");
+                            }
+                            rdclass = c;
+                            rdclassset = true;
+                        }
+                        Err(_) => eprintln!(";; Warning, ignoring invalid class {value}"),
+                    }
                 }
                 "p" => {
-                    value = Some(next_value(argv, &mut i, value)?);
-                    opts.port = value
-                        .as_deref()
-                        .and_then(|v| v.parse().ok())
-                        .ok_or_else(|| "invalid port".to_string())?;
+                    let value = next_value(argv, &mut i, value)?;
+                    opts.port = value.parse().map_err(|_| "invalid port".to_string())?;
                 }
                 "b" => {
-                    value = Some(next_value(argv, &mut i, value)?);
+                    let value = next_value(argv, &mut i, value)?;
                     let _ = value; // source-address binding: accepted, not yet wired
                 }
+                "q" => {
+                    // dig.c case 'q': sets the name directly.
+                    let value = next_value(argv, &mut i, value)?;
+                    names.push((value, rdtype, rdclass));
+                }
                 "x" => {
-                    value = Some(next_value(argv, &mut i, value)?);
-                    let ip: IpAddr = value
-                        .as_deref()
-                        .unwrap_or("")
-                        .parse()
-                        .map_err(|_| "invalid IP address".to_string())?;
+                    // dig.c case 'x': reverse lookup; PTR/IN unless already set.
+                    let value = next_value(argv, &mut i, value)?;
+                    let ip: std::net::IpAddr = value.parse().map_err(|_| {
+                        // dig.c: fprintf(stderr, "Invalid IP address %s\n"); exit(1)
+                        format!("Invalid IP address {value}")
+                    })?;
                     let rev = reverse_name(ip);
-                    names.push((rev, RrType::Ptr, Class::In));
+                    let t = if rdtypeset { rdtype } else { RrType::Ptr };
+                    let c = if rdclassset { rdclass } else { Class::In };
+                    names.push((rev, t, c));
                 }
                 other => {
                     return Err(format!("Invalid option: -{other}"));
                 }
             }
         } else {
-            // Positional: name, then possibly a type and class.
-            match pending.take() {
-                Some((n, t, c)) => names.push((n, t, c)),
-                None => {}
+            // Positional argument (dig.c main parsing loop).
+            if open_type_class {
+                // `ixfr=N` is special (serial follows).
+                if arg.len() >= 5 && arg[..5].eq_ignore_ascii_case("ixfr=") {
+                    if rdtypeset {
+                        eprintln!(";; Warning, extra type option");
+                    }
+                    rdtype = RrType::Ixfr;
+                    rdtypeset = true;
+                    let serial = parse_serial(&arg[5..])?;
+                    opts.ixfr_serial = Some(serial);
+                    opts.section_question = true;
+                    opts.comments = true;
+                    if !opts.tcp_mode_set {
+                        opts.transport = Transport::Tcp;
+                    }
+                } else if let Ok(t) = RrType::from_text(arg) {
+                    if rdtypeset {
+                        eprintln!(";; Warning, extra type option");
+                    }
+                    // A bare `ixfr` positional needs a serial number.
+                    if t == RrType::Ixfr {
+                        eprintln!(";; Warning, ixfr requires a serial number");
+                        continue;
+                    }
+                    rdtype = t;
+                    rdtypeset = true;
+                    opts.ixfr_serial = None;
+                    if t == RrType::Axfr {
+                        opts.section_question = true;
+                        opts.comments = true;
+                        // dighost.c setup_lookup: AXFR forces TCP.
+                        if !opts.tcp_mode_set {
+                            opts.transport = Transport::Tcp;
+                        }
+                    } else if t == RrType::Any && !opts.tcp_mode_set {
+                        opts.transport = Transport::Tcp;
+                    }
+                    // A type parsed after a name was created applies to that
+                    // lookup (dig.c mutates `lookup` directly).
+                    if let Some(last) = names.last_mut() {
+                        last.1 = t;
+                    }
+                } else if let Ok(c) = Class::from_text(arg) {
+                    if rdclassset {
+                        eprintln!(";; Warning, extra class option");
+                    }
+                    rdclass = c;
+                    rdclassset = true;
+                    if let Some(last) = names.last_mut() {
+                        last.2 = c;
+                    }
+                } else {
+                    names.push((arg.clone(), rdtype, rdclass));
+                }
+            } else {
+                names.push((arg.clone(), rdtype, rdclass));
             }
-            pending = Some((arg.clone(), qtype, qclass));
         }
         i += 1;
-    }
-    if let Some(p) = pending.take() {
-        names.push(p);
     }
     if names.is_empty() {
         return Err("no query name given".to_string());
@@ -282,8 +414,9 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
     let lookups: Vec<Lookup> = names
         .iter()
         .map(|(n, t, c)| {
-            let qname = bind9_rs_core::name::Name::from_text(n, Some(&bind9_rs_core::name::Name::root()))
-                .map_err(|_| format!("invalid name '{n}'"))?;
+            let qname =
+                bind9_rs_core::name::Name::from_text(n, Some(&bind9_rs_core::name::Name::root()))
+                    .map_err(|_| format!("invalid name '{n}'"))?;
             Ok(Lookup {
                 server: server.clone(),
                 names: vec![(qname, *t, *c)],
@@ -294,6 +427,13 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, String> {
     opts.lookups = lookups;
     opts.server = server;
     Ok(opts)
+}
+
+/// Parse an IXFR serial (`parse_uint(..., MAXSERIAL, "serial number")`;
+/// dig.c `fatal("Couldn't parse serial number")` on failure).
+fn parse_serial(s: &str) -> Result<u32, String> {
+    s.parse::<u32>()
+        .map_err(|_| "Couldn't parse serial number".to_string())
 }
 
 fn next_value(argv: &[String], i: &mut usize, inline: Option<String>) -> Result<String, String> {
@@ -435,6 +575,12 @@ fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), String> {
                 // +ignore: do not retry over TCP on TC.  Stored but the
                 // retry path is not yet wired (TC handling courted later).
                 true
+            } else if matches(cmd, "idnin") {
+                opts.idnin = state;
+                true
+            } else if matches(cmd, "idnout") {
+                opts.idnout = state;
+                true
             } else {
                 false
             }
@@ -510,6 +656,7 @@ fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), String> {
                 } else {
                     Transport::Udp
                 };
+                opts.tcp_mode_set = true;
                 true
             } else if matches(cmd, "time") {
                 let n: u64 = value
@@ -569,8 +716,60 @@ mod tests {
 
     #[test]
     fn basic_parse() {
-        let args = vec!["example.com".to_string(), "A".to_string()];
-        let o = parse_args(&args).unwrap();
-        assert_eq!(o.lookups.len(), 2); // "example.com" and "A" both names? no —
+        // `example.com A`: one lookup, type A (dig.c open_type_class).
+        let o = parse_args(&["example.com".to_string(), "A".to_string()]).unwrap();
+        assert_eq!(o.lookups.len(), 1);
+        assert_eq!(o.lookups[0].names[0].1, RrType::A);
+
+        // `A example.com`: type can precede the name.
+        let o = parse_args(&["A".to_string(), "example.com".to_string()]).unwrap();
+        assert_eq!(o.lookups.len(), 1);
+        assert_eq!(o.lookups[0].names[0].1, RrType::A);
+
+        // `example.com TXT`: the last type applies to the current lookup.
+        let o = parse_args(&["example.com".to_string(), "TXT".to_string()]).unwrap();
+        assert_eq!(o.lookups.len(), 1);
+        assert_eq!(o.lookups[0].names[0].1, RrType::Tx);
+
+        // Two names: two lookups; a trailing type applies to the current
+        // (last) lookup only (dig.c mutates `lookup` directly).
+        let o = parse_args(&[
+            "a.example.com".to_string(),
+            "b.example.com".to_string(),
+            "MX".to_string(),
+        ])
+        .unwrap();
+        assert_eq!(o.lookups.len(), 2);
+        assert_eq!(o.lookups[0].names[0].1, RrType::A);
+        assert_eq!(o.lookups[1].names[0].1, RrType::Mx);
+
+        // After -t, positionals are names only.
+        let o = parse_args(&[
+            "-t".to_string(),
+            "NS".to_string(),
+            "example.com".to_string(),
+        ])
+        .unwrap();
+        assert_eq!(o.lookups.len(), 1);
+        assert_eq!(o.lookups[0].names[0].1, RrType::Ns);
+
+        // Class positional: `example.com MX IN`.
+        let o = parse_args(&[
+            "example.com".to_string(),
+            "MX".to_string(),
+            "IN".to_string(),
+        ])
+        .unwrap();
+        assert_eq!(o.lookups.len(), 1);
+        assert_eq!(o.lookups[0].names[0].1, RrType::Mx);
+        assert_eq!(o.lookups[0].names[0].2, Class::In);
+
+        // AXFR forces TCP (dig.c).
+        let o = parse_args(&["example.com".to_string(), "AXFR".to_string()]).unwrap();
+        assert_eq!(o.transport, Transport::Tcp);
+
+        // -q sets the name directly.
+        let o = parse_args(&["-q".to_string(), "example.com".to_string()]).unwrap();
+        assert_eq!(o.lookups.len(), 1);
     }
 }

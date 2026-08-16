@@ -25,6 +25,8 @@ description = "bind9-rs BIND 9 command-line utilities"
 [dependencies]
 bind9-rs-core.workspace = true
 bind9-rs-platform.workspace = true
+idna = "1"
+unicode-normalization = "0.1"
 
 [[bin]]
 name = "dig"

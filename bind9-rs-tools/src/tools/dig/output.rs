@@ -85,6 +85,18 @@ fn render_record_line(
     out.push(b'\n');
 }
 
+/// The IDN to-text filter (dighost.c idn_filter via
+/// `dns_name_settotextfilter` when `+idnout`): response names are converted
+/// to Unicode; the filter is skipped when conversion fails (name unchanged).
+fn filtered_name(opts: &DigOptions, name: &bind9_rs_core::name::Name) -> String {
+    if opts.idnout {
+        if let Some(unicode) = crate::compat::libidn2::idn_filter(&name.to_text()) {
+            return unicode;
+        }
+    }
+    name.to_text()
+}
+
 /// Render one question line: `;name <class> <type>` with class at column 32
 /// and type at column 40 (`dns_master_questiontotext`).
 fn render_question_line(out: &mut Vec<u8>, name: &str, class: &str, type_: &str) {
@@ -206,13 +218,25 @@ pub fn render_message<W: Write>(
 
     // Sections in dig's fixed order.
     if opts.section_question {
-        render_section(&mut buf, "QUESTION", &msg_question(msg), render_question);
+        render_section(
+            &mut buf,
+            "QUESTION",
+            &msg_question(msg),
+            render_question,
+            opts,
+        );
     }
     if opts.section_answer {
-        render_section(&mut buf, "ANSWER", &msg.answer, render_answer_record);
+        render_section(&mut buf, "ANSWER", &msg.answer, render_answer_record, opts);
     }
     if opts.section_authority {
-        render_section(&mut buf, "AUTHORITY", &msg.authority, render_answer_record);
+        render_section(
+            &mut buf,
+            "AUTHORITY",
+            &msg.authority,
+            render_answer_record,
+            opts,
+        );
     }
     if opts.section_additional {
         render_section(
@@ -220,6 +244,7 @@ pub fn render_message<W: Write>(
             "ADDITIONAL",
             &msg.additional,
             render_answer_record,
+            opts,
         );
     }
 
@@ -428,31 +453,37 @@ fn msg_question(msg: &Message) -> Vec<Record> {
     v
 }
 
-type RecordRenderer = fn(&mut Vec<u8>, &Record);
+type RecordRenderer = fn(&mut Vec<u8>, &Record, &DigOptions);
 
-fn render_section(buf: &mut Vec<u8>, name: &str, records: &[Record], renderer: RecordRenderer) {
+fn render_section(
+    buf: &mut Vec<u8>,
+    name: &str,
+    records: &[Record],
+    renderer: RecordRenderer,
+    opts: &DigOptions,
+) {
     if records.is_empty() {
         return;
     }
     let mut section = Vec::new();
     section.extend_from_slice(format!(";; {name} SECTION:\n").as_bytes());
     for r in records {
-        renderer(&mut section, r);
+        renderer(&mut section, r, opts);
     }
     section.push(b'\n');
     buf.extend_from_slice(&section);
 }
 
-fn render_question(buf: &mut Vec<u8>, r: &Record) {
+fn render_question(buf: &mut Vec<u8>, r: &Record, opts: &DigOptions) {
     render_question_line(
         buf,
-        &r.name.to_text(),
+        &filtered_name(opts, &r.name),
         &r.class.to_text(),
         &r.type_.to_text(),
     );
 }
 
-fn render_answer_record(buf: &mut Vec<u8>, r: &Record) {
+fn render_answer_record(buf: &mut Vec<u8>, r: &Record, opts: &DigOptions) {
     let ttl = if r.type_ == RrType::Opt {
         None
     } else {
@@ -460,7 +491,7 @@ fn render_answer_record(buf: &mut Vec<u8>, r: &Record) {
     };
     render_record_line(
         buf,
-        &r.name.to_text(),
+        &filtered_name(opts, &r.name),
         ttl,
         &r.class.to_text(),
         &r.type_.to_text(),

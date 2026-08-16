@@ -90,6 +90,16 @@ fn resolve_server(server: &str, port: u16, v4: bool, v6: bool) -> Result<SocketA
 
 fn query_once(parsed: &DigOptions, lookup: &Lookup) -> Result<(), String> {
     let (qname, qtype, qclass) = lookup.names[0].clone();
+    // dighost.c: `if (lookup->idnin) { idn_input(textname, ...) }` — the
+    // query name is converted to its A-label form before the wire message
+    // is built; the case-preservation quirk lives inside idn_input.
+    let qname = if parsed.idnin {
+        let text = crate::compat::libidn2::idn_input(&qname.to_text());
+        bind9_rs_core::name::Name::from_text(&text, Some(&bind9_rs_core::name::Name::root()))
+            .map_err(|_| format!("invalid name after IDN conversion '{text}'"))?
+    } else {
+        qname
+    };
     let port = parsed.port;
     let server_addr = resolve_server(&lookup.server, port, parsed.ipv4_only, parsed.ipv6_only)?;
 
