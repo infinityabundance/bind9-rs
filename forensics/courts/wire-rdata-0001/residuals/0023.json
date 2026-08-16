@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "WIRE-RDATA-0001-0060",
+  "court_id": "WIRE-RDATA-0001",
+  "kind": "TEXT",
+  "oracle_raw": "OK \"with ; comment chars\"|1477697468203b20636f6d6d656e74206368617273|1477697468203b20636f6d6d656e74206368617273|\"with ; comment chars\"",
+  "rust_raw": "OK \"with\\040;\\040comment\\040chars\"|1477697468203b20636f6d6d656e74206368617273|1477697468203b20636f6d6d656e74206368617273|\"with\\040;\\040comment\\040chars\"",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

@@ -405,17 +405,499 @@
     "tests/bench/load-names.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void item_check",
+          "detailed": "\n        ",
+          "name": "item_check",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpkey_t key, void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t item_makekey",
+          "detailed": "\n        ",
+          "name": "item_makekey",
+          "params": [
+            "key",
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, char *buf, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void testname",
+          "detailed": "\n        ",
+          "name": "testname",
+          "params": [
+            "ctx",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mem ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void * new_lfht",
+          "detailed": "\n        ",
+          "name": "new_lfht",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct cds_lfht_node *ht_node, const void *_key)",
+          "brief": "\n        ",
+          "definition": "static int lfht_match",
+          "detailed": "\n        ",
+          "name": "lfht_match",
+          "params": [
+            "ht_node",
+            "_key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *lfht, size_t count)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_lfht",
+          "detailed": "\n        ",
+          "name": "add_lfht",
+          "params": [
+            "lfht",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *lfht, size_t count, void **pval)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t get_lfht",
+          "detailed": "\n        ",
+          "name": "get_lfht",
+          "params": [
+            "lfht",
+            "count",
+            "pval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_lfht",
+          "detailed": "\n        ",
+          "name": "thread_lfht",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mem)",
+          "brief": "\n        ",
+          "definition": "static void * new_hashmap",
+          "detailed": "\n        ",
+          "name": "new_hashmap",
+          "params": [
+            "mem"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *node, const void *key)",
+          "brief": "\n        ",
+          "definition": "static bool name_match",
+          "detailed": "\n        ",
+          "name": "name_match",
+          "params": [
+            "node",
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *hashmap, size_t count)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_hashmap",
+          "detailed": "\n        ",
+          "name": "add_hashmap",
+          "params": [
+            "hashmap",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *hashmap, size_t count, void **pval)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t get_hashmap",
+          "detailed": "\n        ",
+          "name": "get_hashmap",
+          "params": [
+            "hashmap",
+            "count",
+            "pval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_hashmap",
+          "detailed": "\n        ",
+          "name": "thread_hashmap",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mem)",
+          "brief": "\n        ",
+          "definition": "static void * new_ht",
+          "detailed": "\n        ",
+          "name": "new_ht",
+          "params": [
+            "mem"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ht, size_t count)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_ht",
+          "detailed": "\n        ",
+          "name": "add_ht",
+          "params": [
+            "ht",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ht, size_t count, void **pval)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t get_ht",
+          "detailed": "\n        ",
+          "name": "get_ht",
+          "params": [
+            "ht",
+            "count",
+            "pval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_ht",
+          "detailed": "\n        ",
+          "name": "thread_ht",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mem)",
+          "brief": "\n        ",
+          "definition": "static void * new_rbt",
+          "detailed": "\n        ",
+          "name": "new_rbt",
+          "params": [
+            "mem"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *rbt, size_t count)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_rbt",
+          "detailed": "\n        ",
+          "name": "add_rbt",
+          "params": [
+            "rbt",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *rbt, size_t count, void **pval)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t get_rbt",
+          "detailed": "\n        ",
+          "name": "get_rbt",
+          "params": [
+            "rbt",
+            "count",
+            "pval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_rbt",
+          "detailed": "\n        ",
+          "name": "thread_rbt",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mem)",
+          "brief": "\n        ",
+          "definition": "static void * new_qp",
+          "detailed": "\n        ",
+          "name": "new_qp",
+          "params": [
+            "mem"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *qp, size_t count)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_qp",
+          "detailed": "\n        ",
+          "name": "add_qp",
+          "params": [
+            "qp",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *qp)",
+          "brief": "\n        ",
+          "definition": "static void sqz_qp",
+          "detailed": "\n        ",
+          "name": "sqz_qp",
+          "params": [
+            "qp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *qp, size_t count, void **pval)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t get_qp",
+          "detailed": "\n        ",
+          "name": "get_qp",
+          "params": [
+            "qp",
+            "count",
+            "pval"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0, bool sqz, bool brr)",
+          "brief": "\n        ",
+          "definition": "static void * _thread_qp",
+          "detailed": "\n        ",
+          "name": "_thread_qp",
+          "params": [
+            "arg0",
+            "sqz",
+            "brr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_qp",
+          "detailed": "\n        ",
+          "name": "thread_qp",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_qp_nosqz",
+          "detailed": "\n        ",
+          "name": "thread_qp_nosqz",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg0)",
+          "brief": "\n        ",
+          "definition": "static void * thread_qp_brr",
+          "detailed": "\n        ",
+          "name": "thread_qp_brr",
+          "params": [
+            "arg0"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECKN",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FILE_CHECK",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
         {
+          "args": "[1024 *1024]",
+          "brief": "\n        ",
+          "definition": "struct item_s item[1024 * 1024]",
+          "detailed": "\n        ",
+          "name": "item",
+          "params": [],
+          "static": false
+        },
+        {
           "args": "",
           "brief": "\n        ",
-          "definition": "isc_thread_t thread_s::thread",
+          "definition": "isc_barrier_t barrier",
+          "detailed": "\n        ",
+          "name": "barrier",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_rwlock_t rwl",
+          "detailed": "\n        ",
+          "name": "rwl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[1024]",
+          "brief": "\n        ",
+          "definition": "struct thread_s threads[1024]",
+          "detailed": "\n        ",
+          "name": "threads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_qpmethods_t qpmethods",
+          "detailed": "\n        ",
+          "name": "qpmethods",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct fun fun_list[]",
+          "detailed": "\n        ",
+          "name": "fun_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* fun::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(isc_mem_t *mem)",
+          "brief": "\n        ",
+          "definition": "void *(* fun::new) (isc_mem_t *mem)",
+          "detailed": "\n        ",
+          "name": "new",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_threadfunc_t fun::thread",
           "detailed": "\n        ",
           "name": "thread",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* item_s::text",
+          "detailed": "\n        ",
+          "name": "text",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t item_s::fixed",
+          "detailed": "\n        ",
+          "name": "fixed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct cds_lfht_node item_s::ht_node",
+          "detailed": "\n        ",
+          "name": "ht_node",
           "params": [],
           "static": false
         },
@@ -889,17 +1371,495 @@
       ]
     },
     "tests/bench/qpmulti.c": {
-      "enum_values": [],
-      "enums": [],
-      "functions": [],
-      "macros": [],
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "init",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_max_items_rw",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_max_items_ro",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_mut_read",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_read_only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_mut_ops_per_tx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_mut_tx_per_loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_read_ops_per_tx_rw",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_read_ops_per_tx_ro",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_read_tx_per_loop_rw",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_read_tx_per_loop_ro",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "vary_zipf_skew",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "benchmode",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static void item_refcount",
+          "detailed": "\n        ",
+          "name": "item_refcount",
+          "params": [
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_qpkey_t key, void *ctx, void *pval, uint32_t ival)",
+          "brief": "\n        ",
+          "definition": "static size_t item_makekey",
+          "detailed": "\n        ",
+          "name": "item_makekey",
+          "params": [
+            "key",
+            "ctx",
+            "pval",
+            "ival"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *ctx, char *buf, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void benchname",
+          "detailed": "\n        ",
+          "name": "benchname",
+          "params": [
+            "ctx",
+            "buf",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static uint8_t random_byte",
+          "detailed": "\n        ",
+          "name": "random_byte",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx)",
+          "brief": "\n        ",
+          "definition": "static void init_items",
+          "detailed": "\n        ",
+          "name": "init_items",
+          "params": [
+            "mctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx)",
+          "brief": "\n        ",
+          "definition": "static void init_logging",
+          "detailed": "\n        ",
+          "name": "init_logging",
+          "params": [
+            "mctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *)",
+          "brief": "\n        ",
+          "definition": "static void collect",
+          "detailed": "\n        ",
+          "name": "collect",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *varg)",
+          "brief": "\n        ",
+          "definition": "static void first_loop",
+          "detailed": "\n        ",
+          "name": "first_loop",
+          "params": [
+            "varg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct thread_args *args, isc_nanosecs_t start)",
+          "brief": "\n        ",
+          "definition": "static void next_loop",
+          "detailed": "\n        ",
+          "name": "next_loop",
+          "params": [
+            "args",
+            "start"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *varg)",
+          "brief": "\n        ",
+          "definition": "static void read_transactions",
+          "detailed": "\n        ",
+          "name": "read_transactions",
+          "params": [
+            "varg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *varg)",
+          "brief": "\n        ",
+          "definition": "static void mutate_transactions",
+          "detailed": "\n        ",
+          "name": "mutate_transactions",
+          "params": [
+            "varg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct bench_state *bctx)",
+          "brief": "\n        ",
+          "definition": "static void load_multi",
+          "detailed": "\n        ",
+          "name": "load_multi",
+          "params": [
+            "bctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void tsv_header",
+          "detailed": "\n        ",
+          "name": "tsv_header",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct bench_state *bctx)",
+          "brief": "\n        ",
+          "definition": "static void dispatch",
+          "detailed": "\n        ",
+          "name": "dispatch",
+          "params": [
+            "bctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void startup",
+          "detailed": "\n        ",
+          "name": "startup",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *varg)",
+          "brief": "\n        ",
+          "definition": "static void tick",
+          "detailed": "\n        ",
+          "name": "tick",
+          "params": [
+            "varg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *varg)",
+          "brief": "\n        ",
+          "definition": "static void start_ticker",
+          "detailed": "\n        ",
+          "name": "start_ticker",
+          "params": [
+            "varg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *varg)",
+          "brief": "\n        ",
+          "definition": "static void stop_ticker",
+          "detailed": "\n        ",
+          "name": "stop_ticker",
+          "params": [
+            "varg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, isc_loopmgr_t *loopmgr)",
+          "brief": "\n        ",
+          "definition": "static void setup_tickers",
+          "detailed": "\n        ",
+          "name": "setup_tickers",
+          "params": [
+            "mctx",
+            "loopmgr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ITEM_COUNT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RUNTIME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_OPS_PER_LOOP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VERBOSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZIPF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TRACE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "read_zipf",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "isc_loopmgr_t* ticker::loopmgr",
+          "definition": "size_t len",
+          "detailed": "\n        ",
+          "name": "len",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool present",
+          "detailed": "\n        ",
+          "name": "present",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_qpkey_t key",
+          "detailed": "\n        ",
+          "name": "key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct @142017240174162003261333234237331023131251150046 * item",
+          "detailed": "\n        ",
+          "name": "item",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_qpmethods_t item_methods",
+          "detailed": "\n        ",
+          "name": "item_methods",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* bench_state::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_barrier_t bench_state::barrier",
+          "detailed": "\n        ",
+          "name": "barrier",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* bench_state::loopmgr",
           "detailed": "\n        ",
           "name": "loopmgr",
           "params": [],
@@ -908,9 +1868,252 @@
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "isc_mem_t* ticker::mctx",
+          "definition": "dns_qpmulti_t* bench_state::multi",
           "detailed": "\n        ",
-          "name": "mctx",
+          "name": "multi",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "enum benchmode bench_state::mode",
+          "detailed": "\n        ",
+          "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t bench_state::bytes",
+          "detailed": "\n        ",
+          "name": "bytes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t bench_state::qp_bytes",
+          "detailed": "\n        ",
+          "name": "qp_bytes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t bench_state::qp_items",
+          "detailed": "\n        ",
+          "name": "qp_items",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nanosecs_t bench_state::load_time",
+          "detailed": "\n        ",
+          "name": "load_time",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::nloops",
+          "detailed": "\n        ",
+          "name": "nloops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::waiting",
+          "detailed": "\n        ",
+          "name": "waiting",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::max_item",
+          "detailed": "\n        ",
+          "name": "max_item",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::mutate",
+          "detailed": "\n        ",
+          "name": "mutate",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::mut_ops_per_tx",
+          "detailed": "\n        ",
+          "name": "mut_ops_per_tx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::mut_tx_per_loop",
+          "detailed": "\n        ",
+          "name": "mut_tx_per_loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::readers",
+          "detailed": "\n        ",
+          "name": "readers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::read_ops_per_tx",
+          "detailed": "\n        ",
+          "name": "read_ops_per_tx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t bench_state::read_tx_per_loop",
+          "detailed": "\n        ",
+          "name": "read_tx_per_loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "double bench_state::zipf_skew",
+          "detailed": "\n        ",
+          "name": "zipf_skew",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct thread_args bench_state::thread[]",
+          "detailed": "\n        ",
+          "name": "thread",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct bench_state* thread_args::bctx",
+          "detailed": "\n        ",
+          "name": "bctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_job_t thread_args::job",
+          "detailed": "\n        ",
+          "name": "job",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_job_cb thread_args::cb",
+          "detailed": "\n        ",
+          "name": "cb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t thread_args::ops_per_tx",
+          "detailed": "\n        ",
+          "name": "ops_per_tx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t thread_args::tx_per_loop",
+          "detailed": "\n        ",
+          "name": "tx_per_loop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t thread_args::absent",
+          "detailed": "\n        ",
+          "name": "absent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t thread_args::compactions",
+          "detailed": "\n        ",
+          "name": "compactions",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t thread_args::transactions",
+          "detailed": "\n        ",
+          "name": "transactions",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nanosecs_t thread_args::worked",
+          "detailed": "\n        ",
+          "name": "worked",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nanosecs_t thread_args::start",
+          "detailed": "\n        ",
+          "name": "start",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nanosecs_t thread_args::stop",
+          "detailed": "\n        ",
+          "name": "stop",
           "params": [],
           "static": false
         },

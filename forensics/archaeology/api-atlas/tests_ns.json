@@ -150,8 +150,42 @@
     "tests/ns/plugin_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(const ns_plugin_expandpath_test_params_t *test, void **state)",
+          "brief": "Perform a single ns_plugin_expandpath() check using given parameters.",
+          "definition": "static void run_full_path_test",
+          "detailed": "\n        ",
+          "name": "run_full_path_test",
+          "params": [
+            "test",
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_plugin_expandpath)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
@@ -252,15 +286,605 @@
           "static": false
         }
       ],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(isc_buffer_t *buffer)",
+          "brief": "\n        ",
+          "definition": "static void send_noop",
+          "detailed": "\n        ",
+          "name": "send_noop",
+          "params": [
+            "buffer"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ns__query_sfcache_test_params_t *test)",
+          "brief": "Perform a single ns__query_sfcache() check using given parameters.",
+          "definition": "static void run_sfcache_test",
+          "detailed": "\n        ",
+          "name": "run_sfcache_test",
+          "params": [
+            "test"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns__query_sfcache)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const ns__query_start_test_params_t *test)",
+          "brief": "Perform a single ns__query_start() check using given parameters.",
+          "definition": "static void run_start_test",
+          "detailed": "\n        ",
+          "name": "run_start_test",
+          "params": [
+            "test"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns__query_start)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ns_hookasync_t **ctxp)",
+          "brief": "\n        ",
+          "definition": "static void destroy_hookactx",
+          "detailed": "\n        ",
+          "name": "destroy_hookactx",
+          "params": [
+            "ctxp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_hookasync_t *ctx)",
+          "brief": "\n        ",
+          "definition": "static void cancel_hookactx",
+          "detailed": "\n        ",
+          "name": "cancel_hookactx",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(query_ctx_t *qctx, isc_mem_t *memctx, void *arg, isc_loop_t *loop, isc_job_cb cb, void *evarg, ns_hookasync_t **ctxp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t test_hookasync",
+          "detailed": "\n        ",
+          "name": "test_hookasync",
+          "params": [
+            "qctx",
+            "memctx",
+            "arg",
+            "loop",
+            "cb",
+            "evarg",
+            "ctxp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp, ns_hookpoint_t hookpoint)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_common",
+          "detailed": "\n        ",
+          "name": "hook_async_common",
+          "params": [
+            "arg",
+            "data",
+            "resultp",
+            "hookpoint"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_setup",
+          "detailed": "\n        ",
+          "name": "hook_async_query_setup",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_start_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_start_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_lookup_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_lookup_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_resume_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_resume_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_got_answer_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_got_answer_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_respond_any_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_respond_any_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_addanswer_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_addanswer_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_notfound_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_notfound_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_prep_delegation_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_prep_delegation_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_zone_delegation_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_zone_delegation_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_delegation_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_delegation_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_delegation_recurse_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_delegation_recurse_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_nodata_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_nodata_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_nxdomain_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_nxdomain_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_ncache_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_ncache_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_cname_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_cname_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_dname_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_dname_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_respond_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_respond_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_response_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_response_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_query_done_begin",
+          "detailed": "\n        ",
+          "name": "hook_async_query_done_begin",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t ns_test_qctx_destroy_hook",
+          "detailed": "\n        ",
+          "name": "ns_test_qctx_destroy_hook",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ns__query_hookasync_test_params_t *test)",
+          "brief": "\n        ",
+          "definition": "static void run_hookasync_test",
+          "detailed": "\n        ",
+          "name": "run_hookasync_test",
+          "params": [
+            "test"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns__query_hookasync)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ns_hookasync_t *ctx)",
+          "brief": "\n        ",
+          "definition": "static void cancel_e2ehookactx",
+          "detailed": "\n        ",
+          "name": "cancel_e2ehookactx",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(query_ctx_t *qctx, isc_mem_t *memctx, void *arg, isc_loop_t *loop, isc_job_cb cb, void *evarg, ns_hookasync_t **ctxp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t test_hookasync_e2e",
+          "detailed": "\n        ",
+          "name": "test_hookasync_e2e",
+          "params": [
+            "qctx",
+            "memctx",
+            "arg",
+            "loop",
+            "cb",
+            "evarg",
+            "ctxp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_async_e2e",
+          "detailed": "\n        ",
+          "name": "hook_async_e2e",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t hook_donesend",
+          "detailed": "\n        ",
+          "name": "hook_donesend",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const ns__query_hookasync_e2e_test_params_t *test)",
+          "brief": "\n        ",
+          "definition": "static void run_hookasync_e2e_test",
+          "detailed": "\n        ",
+          "name": "run_hookasync_e2e_test",
+          "params": [
+            "test"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns__query_hookasync_e2e)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct hookasync_data hookasync_data_t",
+          "detailed": "\n        ",
+          "name": "hookasync_data_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct hookasync_e2e_data hookasync_e2e_data_t",
+          "detailed": "\n        ",
+          "name": "hookasync_e2e_data_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "const ns_test_id_t ns__query_start_test_params_t::id",
+          "definition": "bool hookasync_data::async",
+          "detailed": "\n        ",
+          "name": "async",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool hookasync_data::canceled",
+          "detailed": "\n        ",
+          "name": "canceled",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_result_t hookasync_data::start_result",
+          "detailed": "\n        ",
+          "name": "start_result",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_hook_resume_t* hookasync_data::rev",
+          "detailed": "\n        ",
+          "name": "rev",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "query_ctx_t hookasync_data::qctx",
+          "detailed": "\n        ",
+          "name": "qctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_hookpoint_t hookasync_data::hookpoint",
+          "detailed": "\n        ",
+          "name": "hookpoint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_hookpoint_t hookasync_data::lasthookpoint",
+          "detailed": "\n        ",
+          "name": "lasthookpoint",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rcode_t hookasync_e2e_data::expected_rcode",
+          "detailed": "\n        ",
+          "name": "expected_rcode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool hookasync_e2e_data::done",
+          "detailed": "\n        ",
+          "name": "done",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const ns_test_id_t ns__query_hookasync_e2e_test_params_t::id",
           "detailed": "\n        ",
           "name": "id",
           "params": [],
@@ -269,9 +893,81 @@
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "const char* ns__query_start_test_params_t::qname",
+          "definition": "const char* ns__query_hookasync_e2e_test_params_t::qname",
           "detailed": "\n        ",
           "name": "qname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns__query_hookasync_e2e_test_params_t::do_cancel",
+          "detailed": "\n        ",
+          "name": "do_cancel",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_hookpoint_t ns__query_hookasync_test_params_t::hookpoint2",
+          "detailed": "\n        ",
+          "name": "hookpoint2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_hook_action_t ns__query_hookasync_test_params_t::action",
+          "detailed": "\n        ",
+          "name": "action",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns__query_hookasync_test_params_t::quota_ok",
+          "detailed": "\n        ",
+          "name": "quota_ok",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int ns__query_sfcache_test_params_t::qflags",
+          "detailed": "\n        ",
+          "name": "qflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns__query_sfcache_test_params_t::cache_entry_present",
+          "detailed": "\n        ",
+          "name": "cache_entry_present",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t ns__query_sfcache_test_params_t::cache_entry_flags",
+          "detailed": "\n        ",
+          "name": "cache_entry_flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ns__query_sfcache_test_params_t::servfail_expected",
+          "detailed": "\n        ",
+          "name": "servfail_expected",
           "params": [],
           "static": false
         },
@@ -281,15 +977,6 @@
           "definition": "dns_rdatatype_t ns__query_start_test_params_t::qtype",
           "detailed": "\n        ",
           "name": "qtype",
-          "params": [],
-          "static": false
-        },
-        {
-          "args": "",
-          "brief": "\n        ",
-          "definition": "unsigned int ns__query_start_test_params_t::qflags",
-          "detailed": "\n        ",
-          "name": "qflags",
           "params": [],
           "static": false
         },

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "WIRE-RDATA-0001-0044",
+  "court_id": "WIRE-RDATA-0001",
+  "kind": "TEXT",
+  "oracle_raw": "ERR unexpected end of input",
+  "rust_raw": "ERR bad data",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

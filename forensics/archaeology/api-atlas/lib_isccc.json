@@ -1367,10 +1367,107 @@
     "lib/isccc/include/isccc/ccmsg.h": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, isc_nmhandle_t *handle, isccc_ccmsg_t *ccmsg)",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS void isccc_ccmsg_init",
+          "detailed": "\n        ",
+          "name": "isccc_ccmsg_init",
+          "params": [
+            "mctx",
+            "handle",
+            "ccmsg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, unsigned int maxsize)",
+          "brief": "Associate a cc message state with a given memory context and netmgr handle. (Note that the caller must hold a reference to the handle during asynchronous ccmsg operations; the ccmsg code does not hold the reference itself.).",
+          "definition": "void isccc_ccmsg_setmaxsize",
+          "detailed": "Requires:\n\n\"mctx\" be a valid memory context.\n\n\n\n\"handle\" be a netmgr handle for a stream socket.\n\n\n\n\"ccmsg\" be non-NULL and an uninitialized or invalidated structure.\n\n\nEnsures:\n\"mctx\" be a valid memory context.\n\"handle\" be a netmgr handle for a stream socket.\n\"ccmsg\" be non-NULL and an uninitialized or invalidated structure.\n\n\"ccmsg\" is a valid structure. \n\n\n\n\"ccmsg\" is a valid structure.",
+          "name": "isccc_ccmsg_setmaxsize",
+          "params": [
+            "ccmsg",
+            "maxsize"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, isc_nm_cb_t cb, void *cbarg)",
+          "brief": "Set the maximum packet size to \"maxsize\".",
+          "definition": "void isccc_ccmsg_readmessage",
+          "detailed": "Requires:\n\n\"ccmsg\" be valid.\n\n\n\n512 <= \"maxsize\" <= 4294967296 \n\n\n\n\"ccmsg\" be valid.\n512 <= \"maxsize\" <= 4294967296",
+          "name": "isccc_ccmsg_readmessage",
+          "params": [
+            "ccmsg",
+            "cb",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, isc_region_t *region, isc_nm_cb_t cb, void *cbarg)",
+          "brief": "Schedule an event to be delivered when a command channel message is readable, or when an error occurs on the socket.",
+          "definition": "void isccc_ccmsg_sendmessage",
+          "detailed": "Requires:\n\n\"ccmsg\" be valid.\n\n\nNotes:\n\"ccmsg\" be valid.\n\nThe event delivered is a fully generic event. It will contain no actual data. The sender will be a pointer to the isccc_ccmsg_t. The result code inside that structure should be checked to see what the final result was. \n\n\n\nThe event delivered is a fully generic event. It will contain no actual data. The sender will be a pointer to the isccc_ccmsg_t. The result code inside that structure should be checked to see what the final result was.",
+          "name": "isccc_ccmsg_sendmessage",
+          "params": [
+            "ccmsg",
+            "region",
+            "cb",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg)",
+          "brief": "Sends region over the command channel message.",
+          "definition": "void isccc_ccmsg_disconnect",
+          "detailed": "CAVEAT: Only a single send message can be scheduled at the time.",
+          "name": "isccc_ccmsg_disconnect",
+          "params": [
+            "ccmsg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg)",
+          "brief": "Disconnect from the connected netmgr handle associated with a command channel message.",
+          "definition": "void isccc_ccmsg_invalidate",
+          "detailed": "Requires:\n\n\"ccmsg\" to be valid. \n\n\n\n\"ccmsg\" to be valid.",
+          "name": "isccc_ccmsg_invalidate",
+          "params": [
+            "ccmsg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_ccmsg_t *ccmsg, isccc_region_t *ccregion)",
+          "brief": "Clean up the magic number and the dynamic buffer associated with a command channel message.",
+          "definition": "void isccc_ccmsg_toregion",
+          "detailed": "Requires:\n\n\"ccmsg\" to be valid. \n\n\n\n\"ccmsg\" to be valid.",
+          "name": "isccc_ccmsg_toregion",
+          "params": [
+            "ccmsg",
+            "ccregion"
+          ],
+          "static": false
+        }
+      ],
       "macros": [],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "ISCCC Message Structure.",
+          "definition": "typedef struct isccc_ccmsg isccc_ccmsg_t",
+          "detailed": "\n        ",
+          "name": "isccc_ccmsg_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",
@@ -1467,11 +1564,290 @@
     "lib/isccc/include/isccc/sexpr.h": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(isccc_sexpr_t *car, isccc_sexpr_t *cdr)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_cons",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_cons",
+          "params": [
+            "car",
+            "cdr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_tconst",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_tconst",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *str)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_fromstring",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_fromstring",
+          "params": [
+            "str"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const isccc_region_t *region)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_frombinary",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_frombinary",
+          "params": [
+            "region"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t **sexprp)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_free",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_free",
+          "params": [
+            "sexprp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr, FILE *stream)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_print",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_print",
+          "params": [
+            "sexpr",
+            "stream"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *list)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_car",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_car",
+          "params": [
+            "list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *list)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_cdr",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_cdr",
+          "params": [
+            "list"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *pair, isccc_sexpr_t *car)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_setcar",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_setcar",
+          "params": [
+            "pair",
+            "car"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *pair, isccc_sexpr_t *cdr)",
+          "brief": "\n        ",
+          "definition": "void isccc_sexpr_setcdr",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_setcdr",
+          "params": [
+            "pair",
+            "cdr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t **l1p, isccc_sexpr_t *l2)",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t * isccc_sexpr_addtolist",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_addtolist",
+          "params": [
+            "l1p",
+            "l2"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_listp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_listp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_emptyp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_emptyp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_stringp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_stringp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "bool isccc_sexpr_binaryp",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_binaryp",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "char * isccc_sexpr_tostring",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_tostring",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_sexpr_t *sexpr)",
+          "brief": "\n        ",
+          "definition": "isccc_region_t * isccc_sexpr_tobinary",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_tobinary",
+          "params": [
+            "sexpr"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "Illegal.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPRTYPE_NONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPRTYPE_T",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPRTYPE_STRING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPRTYPE_DOTTEDPAIR",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPRTYPE_BINARY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPR_CAR",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ISCCC_SEXPR_CDR",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t* isccc_dottedpair::car",
+          "detailed": "\n        ",
+          "name": "car",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isccc_sexpr_t* isccc_dottedpair::cdr",
+          "detailed": "\n        ",
+          "name": "cdr",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -1520,12 +1896,160 @@
       ]
     },
     "lib/isccc/include/isccc/symtab.h": {
-      "enum_values": [],
-      "enums": [],
-      "functions": [],
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isccc_symexists_reject",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isccc_symexists_replace",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "isccc_symexists_add",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "isccc_symexists_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(unsigned int size, isccc_symtabundefaction_t undefine_action, void *undefine_arg, bool case_sensitive, isccc_symtab_t **symtabp)",
+          "brief": "\n        ",
+          "definition": "ISC_LANG_BEGINDECLS isc_result_t isccc_symtab_create",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_create",
+          "params": [
+            "size",
+            "undefine_action",
+            "undefine_arg",
+            "case_sensitive",
+            "symtabp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t **symtabp)",
+          "brief": "\n        ",
+          "definition": "void isccc_symtab_destroy",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_destroy",
+          "params": [
+            "symtabp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, const char *key, unsigned int type, isccc_symvalue_t *value)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_lookup",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_lookup",
+          "params": [
+            "symtab",
+            "key",
+            "type",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, char *key, unsigned int type, isccc_symvalue_t value, isccc_symexists_t exists_policy)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_define",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_define",
+          "params": [
+            "symtab",
+            "key",
+            "type",
+            "value",
+            "exists_policy"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, const char *key, unsigned int type)",
+          "brief": "\n        ",
+          "definition": "isc_result_t isccc_symtab_undefine",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_undefine",
+          "params": [
+            "symtab",
+            "key",
+            "type"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isccc_symtab_t *symtab, isccc_symtabforeachaction_t action, void *arg)",
+          "brief": "\n        ",
+          "definition": "void isccc_symtab_foreach",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_foreach",
+          "params": [
+            "symtab",
+            "action",
+            "arg"
+          ],
+          "static": false
+        }
+      ],
       "macros": [],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef union isccc_symvalue isccc_symvalue_t",
+          "detailed": "\n        ",
+          "name": "isccc_symvalue_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(char *key, unsigned int type, isccc_symvalue_t value, void *userarg)",
+          "brief": "\n        ",
+          "definition": "typedef void(* isccc_symtabundefaction_t) (char *key, unsigned int type, isccc_symvalue_t value, void *userarg)",
+          "detailed": "\n        ",
+          "name": "isccc_symtabundefaction_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(char *key, unsigned int type, isccc_symvalue_t value, void *userarg)",
+          "brief": "\n        ",
+          "definition": "typedef bool(* isccc_symtabforeachaction_t) (char *key, unsigned int type, isccc_symvalue_t value, void *userarg)",
+          "detailed": "\n        ",
+          "name": "isccc_symtabforeachaction_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",
@@ -1608,7 +2132,53 @@
       "functions": [],
       "macros": [],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "isccc_time_t typedef",
+          "definition": "typedef uint32_t isccc_time_t",
+          "detailed": "\n        ",
+          "name": "isccc_time_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "isccc_sexpr_t typedef",
+          "definition": "typedef struct isccc_sexpr isccc_sexpr_t",
+          "detailed": "\n        ",
+          "name": "isccc_sexpr_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "isccc_dottedpair_t typedef",
+          "definition": "typedef struct isccc_dottedpair isccc_dottedpair_t",
+          "detailed": "\n        ",
+          "name": "isccc_dottedpair_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "isccc_symtab_t typedef",
+          "definition": "typedef struct isccc_symtab isccc_symtab_t",
+          "detailed": "\n        ",
+          "name": "isccc_symtab_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "iscc region structure",
+          "definition": "typedef struct isccc_region isccc_region_t",
+          "detailed": "\n        ",
+          "name": "isccc_region_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",

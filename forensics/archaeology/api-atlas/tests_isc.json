@@ -425,26 +425,280 @@
     "tests/isc/dnsstream_utils_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
-      "structs": [],
-      "typedefs": [],
-      "variables": [
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test_dnsbuf",
+          "detailed": "\n        ",
+          "name": "setup_test_dnsbuf",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test_dnsbuf",
+          "detailed": "\n        ",
+          "name": "teardown_test_dnsbuf",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_dnsstream_assembler_t *dnsasm, const isc_result_t result, isc_region_t *restrict region, void *cbarg, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static bool dnsasm_dummy",
+          "detailed": "\n        ",
+          "name": "dnsasm_dummy",
+          "params": [
+            "dnsasm",
+            "result",
+            "region",
+            "cbarg",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test_dnsasm",
+          "detailed": "\n        ",
+          "name": "setup_test_dnsasm",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test_dnsasm",
+          "detailed": "\n        ",
+          "name": "teardown_test_dnsasm",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dnsbuffer_generic_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsbuffer_resize_alloc_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsbuffer_be_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_dnsstream_assembler_t *dnsasm, const isc_result_t result, isc_region_t *restrict region, void *cbarg, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static bool verify_dnsmsg",
+          "detailed": "\n        ",
+          "name": "verify_dnsmsg",
+          "params": [
+            "dnsasm",
+            "result",
+            "region",
+            "cbarg",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_dnsstream_assembler_t *dnsasm, const isc_result_t result, isc_region_t *restrict region, void *cbarg, void *userarg)",
+          "brief": "\n        ",
+          "definition": "static bool verify_dnsmsg_regions",
+          "detailed": "\n        ",
+          "name": "verify_dnsmsg_regions",
+          "params": [
+            "dnsasm",
+            "result",
+            "region",
+            "cbarg",
+            "userarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dnsasm_sequence_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsasm_multiple_messages_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsasm_torn_apart_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsasm_error_data_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsasm_torn_randomly_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dnsasm_clear_buffer_within_cb_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "isc_region_t* verify_regions_cbdata::packets",
+          "definition": "",
           "detailed": "\n        ",
-          "name": "packets",
+          "name": "UNIT_TESTING",
           "params": [],
           "static": false
         },
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "bool verify_regions_cbdata::cont_on_success",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STATIC_BUFFER_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DYNAMIC_BUFFER_SIZE",
+          "params": [],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct verify_cbdata verify_cbdata_t",
+          "detailed": "\n        ",
+          "name": "verify_cbdata_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct verify_regions_cbdata verify_regions_cbdata_t",
+          "detailed": "\n        ",
+          "name": "verify_regions_cbdata_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint8_t* verify_cbdata::verify_message",
+          "detailed": "\n        ",
+          "name": "verify_message",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verify_cbdata::cont_on_success",
           "detailed": "\n        ",
           "name": "cont_on_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verify_cbdata::clear_on_success",
+          "detailed": "\n        ",
+          "name": "clear_on_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_region_t* verify_regions_cbdata::packets",
+          "detailed": "\n        ",
+          "name": "packets",
           "params": [],
           "static": false
         }
@@ -499,11 +753,1729 @@
     "tests/isc/doh_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static isc_nm_proxy_type_t get_proxy_type",
+          "detailed": "\n        ",
+          "name": "get_proxy_type",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle)",
+          "brief": "\n        ",
+          "definition": "static void proxy_verify_unspec_endpoint",
+          "detailed": "\n        ",
+          "name": "proxy_verify_unspec_endpoint",
+          "params": [
+            "handle"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t result, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void connect_send_cb",
+          "detailed": "\n        ",
+          "name": "connect_send_cb",
+          "params": [
+            "handle",
+            "result",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nm_t *mgr, const char *uri, bool post, isc_region_t *region, isc_nm_recv_cb_t cb, void *cbarg, bool tls, unsigned int timeout)",
+          "brief": "\n        ",
+          "definition": "static void connect_send_request",
+          "detailed": "\n        ",
+          "name": "connect_send_request",
+          "params": [
+            "mgr",
+            "uri",
+            "post",
+            "region",
+            "cb",
+            "cbarg",
+            "tls",
+            "timeout"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_sockaddr_t *addr, sa_family_t family)",
+          "brief": "\n        ",
+          "definition": "static int setup_ephemeral_port",
+          "detailed": "\n        ",
+          "name": "setup_ephemeral_port",
+          "params": [
+            "addr",
+            "family"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t result, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void noop_read_cb",
+          "detailed": "\n        ",
+          "name": "noop_read_cb",
+          "params": [
+            "handle",
+            "result",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_sockaddr_t *sa, const bool https, char *outbuf, size_t outbuf_len, const char *append)",
+          "brief": "\n        ",
+          "definition": "static void sockaddr_to_url",
+          "detailed": "\n        ",
+          "name": "sockaddr_to_url",
+          "params": [
+            "sa",
+            "https",
+            "outbuf",
+            "outbuf_len",
+            "append"
+          ],
+          "static": true
+        },
+        {
+          "args": "(size_t nthreads)",
+          "brief": "\n        ",
+          "definition": "static isc_quota_t * init_listener_quota",
+          "detailed": "\n        ",
+          "name": "init_listener_quota",
+          "params": [
+            "nthreads"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void doh_receive_reply_cb",
+          "detailed": "\n        ",
+          "name": "doh_receive_reply_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void doh_reply_sent_cb",
+          "detailed": "\n        ",
+          "name": "doh_reply_sent_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void doh_receive_request_cb",
+          "detailed": "\n        ",
+          "name": "doh_receive_request_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(mock_doh_uv_tcp_bind)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void listen_sock_close",
+          "detailed": "\n        ",
+          "name": "listen_sock_close",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void doh_noop",
+          "detailed": "\n        ",
+          "name": "doh_noop",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_noop_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_noop_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void doh_noresponse",
+          "detailed": "\n        ",
+          "name": "doh_noresponse",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_noresponse_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_noresponse_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void timeout_query_sent_cb",
+          "detailed": "\n        ",
+          "name": "timeout_query_sent_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region ISC_ATTR_UNUSED, void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void timeout_retry_cb",
+          "detailed": "\n        ",
+          "name": "timeout_retry_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t result, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void timeout_request_cb",
+          "detailed": "\n        ",
+          "name": "timeout_request_cb",
+          "params": [
+            "handle",
+            "result",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void doh_timeout_recovery",
+          "detailed": "\n        ",
+          "name": "doh_timeout_recovery",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int doh_timeout_recovery_teardown",
+          "detailed": "\n        ",
+          "name": "doh_timeout_recovery_teardown",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_timeout_recovery_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_timeout_recovery_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void doh_connect_thread",
+          "detailed": "\n        ",
+          "name": "doh_connect_thread",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void doh_receive_send_reply_cb",
+          "detailed": "\n        ",
+          "name": "doh_receive_send_reply_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void doh_recv_one",
+          "detailed": "\n        ",
+          "name": "doh_recv_one",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int doh_recv_one_teardown",
+          "detailed": "\n        ",
+          "name": "doh_recv_one_teardown",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_recv_one_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_POST_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_GET_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_one_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t result, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void doh_connect_send_two_requests_cb",
+          "detailed": "\n        ",
+          "name": "doh_connect_send_two_requests_cb",
+          "params": [
+            "handle",
+            "result",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void doh_recv_two",
+          "detailed": "\n        ",
+          "name": "doh_recv_two",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int doh_recv_two_teardown",
+          "detailed": "\n        ",
+          "name": "doh_recv_two_teardown",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_recv_two_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_POST_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_GET_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_two_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void doh_recv_send",
+          "detailed": "\n        ",
+          "name": "doh_recv_send",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int doh_recv_send_teardown",
+          "detailed": "\n        ",
+          "name": "doh_recv_send_teardown",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_recv_send_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_POST_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_GET_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_recv_send_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int doh_bad_connect_uri_teardown",
+          "detailed": "\n        ",
+          "name": "doh_bad_connect_uri_teardown",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(doh_bad_connect_uri)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_parse_GET_query_string)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_base64url_to_base64)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_base64_to_base64url)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_path_validation)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(doh_connect_makeuri)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_noop_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_noop_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_noresponse_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_noresponse_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_timeout_recovery_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_timeout_recovery_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_POST_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_GET_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_one_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_POST_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_GET_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_two_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_POST)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_GET)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_POST_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_GET_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxy_doh_recv_send_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_one_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_one_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_one_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_one_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_two_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_two_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_two_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_two_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_send_POST_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_send_GET_TLS)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_send_POST_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxytls_doh_recv_send_GET_TLS_quota)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KEEP_BEFORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_NM",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "have_expected_ssends",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "have_expected_sreads",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "have_expected_csends",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "have_expected_cconnects",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "have_expected_creads",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "have_expected_ctimeouts",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "T_SOFT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "T_CONNECT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NSENDS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NWRITES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_RANGE_FULL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CHECK_RANGE_HALF",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "X",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct csdata csdata_t",
+          "detailed": "\n        ",
+          "name": "csdata_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t tcp_listen_addr",
+          "detailed": "\n        ",
+          "name": "tcp_listen_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t send_magic",
+          "detailed": "\n        ",
+          "name": "send_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t stop_magic",
+          "detailed": "\n        ",
+          "name": "stop_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uv_buf_t send_msg",
+          "detailed": "\n        ",
+          "name": "send_msg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t active_cconnects",
+          "detailed": "\n        ",
+          "name": "active_cconnects",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t nsends",
+          "detailed": "\n        ",
+          "name": "nsends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t ssends",
+          "detailed": "\n        ",
+          "name": "ssends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t sreads",
+          "detailed": "\n        ",
+          "name": "sreads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t csends",
+          "detailed": "\n        ",
+          "name": "csends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t creads",
+          "detailed": "\n        ",
+          "name": "creads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t ctimeouts",
+          "detailed": "\n        ",
+          "name": "ctimeouts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t total_sends",
+          "detailed": "\n        ",
+          "name": "total_sends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_ssends",
+          "detailed": "\n        ",
+          "name": "expected_ssends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_sreads",
+          "detailed": "\n        ",
+          "name": "expected_sreads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_csends",
+          "detailed": "\n        ",
+          "name": "expected_csends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_cconnects",
+          "detailed": "\n        ",
+          "name": "expected_cconnects",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_creads",
+          "detailed": "\n        ",
+          "name": "expected_creads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_ctimeouts",
+          "detailed": "\n        ",
+          "name": "expected_ctimeouts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool noanswer",
+          "detailed": "\n        ",
+          "name": "noanswer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool POST",
+          "detailed": "\n        ",
+          "name": "POST",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool use_TLS",
+          "detailed": "\n        ",
+          "name": "use_TLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_t* server_tlsctx",
+          "detailed": "\n        ",
+          "name": "server_tlsctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_t* client_tlsctx",
+          "detailed": "\n        ",
+          "name": "client_tlsctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_client_session_cache_t* client_sess_cache",
+          "detailed": "\n        ",
+          "name": "client_sess_cache",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_quota_t listener_quota",
+          "detailed": "\n        ",
+          "name": "listener_quota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool check_listener_quota",
+          "detailed": "\n        ",
+          "name": "check_listener_quota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_http_endpoints_t* endpoints",
+          "detailed": "\n        ",
+          "name": "endpoints",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool use_PROXY",
+          "detailed": "\n        ",
+          "name": "use_PROXY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool use_PROXY_over_TLS",
+          "detailed": "\n        ",
+          "name": "use_PROXY_over_TLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t** nm",
+          "detailed": "\n        ",
+          "name": "nm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4096]",
+          "brief": "\n        ",
+          "definition": "uint8_t tcp_buffer_storage[4096]",
+          "detailed": "\n        ",
+          "name": "tcp_buffer_storage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t tcp_buffer_length",
+          "detailed": "\n        ",
+          "name": "tcp_buffer_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t nwrites",
+          "detailed": "\n        ",
+          "name": "nwrites",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -545,11 +2517,42 @@
     "tests/isc/errno_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(isc_errno_toresult)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "testpair_t testpair[]",
+          "detailed": "\n        ",
+          "name": "testpair",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -772,10 +2775,222 @@
     "tests/isc/hashmap_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void *node0, const void *key)",
+          "brief": "\n        ",
+          "definition": "static bool nodes_match",
+          "detailed": "\n        ",
+          "name": "nodes_match",
+          "params": [
+            "node0",
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *node0, const void *key)",
+          "brief": "\n        ",
+          "definition": "static bool long_nodes_match",
+          "detailed": "\n        ",
+          "name": "long_nodes_match",
+          "params": [
+            "node0",
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *node0, const void *key)",
+          "brief": "\n        ",
+          "definition": "static bool upper_nodes_match",
+          "detailed": "\n        ",
+          "name": "upper_nodes_match",
+          "params": [
+            "node0",
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint8_t init_bits, uintptr_t count)",
+          "brief": "\n        ",
+          "definition": "static void test_hashmap_full",
+          "detailed": "\n        ",
+          "name": "test_hashmap_full",
+          "params": [
+            "init_bits",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool random_data)",
+          "brief": "\n        ",
+          "definition": "static void test_hashmap_iterator",
+          "detailed": "\n        ",
+          "name": "test_hashmap_iterator",
+          "params": [
+            "random_data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_hashmap_1_120)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_6_1000)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_24_200000)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_1_48000)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_8_20000)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_iterator)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_iterator_static)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_hashmap_hash_zero_length)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *node0, const void *key)",
+          "brief": "\n        ",
+          "definition": "static bool case_match",
+          "detailed": "\n        ",
+          "name": "case_match",
+          "params": [
+            "node0",
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *node0, const void *key)",
+          "brief": "\n        ",
+          "definition": "static bool nocase_match",
+          "detailed": "\n        ",
+          "name": "nocase_match",
+          "params": [
+            "node0",
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_hashmap_case)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct test_node test_node_t",
+          "detailed": "\n        ",
+          "name": "test_node_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",
@@ -800,8 +3015,54 @@
     "tests/isc/heap_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void *p1, void *p2)",
+          "brief": "\n        ",
+          "definition": "static bool compare",
+          "detailed": "\n        ",
+          "name": "compare",
+          "params": [
+            "p1",
+            "p2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *p, unsigned int i)",
+          "brief": "\n        ",
+          "definition": "static void idx",
+          "detailed": "\n        ",
+          "name": "idx",
+          "params": [
+            "p",
+            "i"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_heap_delete)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
@@ -1275,11 +3536,180 @@
     "tests/isc/job_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void shutdown_cb",
+          "detailed": "\n        ",
+          "name": "shutdown_cb",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void job_cb",
+          "detailed": "\n        ",
+          "name": "job_cb",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void job_run_cb",
+          "detailed": "\n        ",
+          "name": "job_run_cb",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_job_run)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void append",
+          "detailed": "\n        ",
+          "name": "append",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void job_multiple",
+          "detailed": "\n        ",
+          "name": "job_multiple",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_job_multiple)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_EXECUTED",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint scheduled",
+          "detailed": "\n        ",
+          "name": "scheduled",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint executed",
+          "detailed": "\n        ",
+          "name": "executed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "char string[32]",
+          "detailed": "\n        ",
+          "name": "string",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_arg n1",
+          "detailed": "\n        ",
+          "name": "n1",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_arg n2",
+          "detailed": "\n        ",
+          "name": "n2",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_arg n3",
+          "detailed": "\n        ",
+          "name": "n3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_arg n4",
+          "detailed": "\n        ",
+          "name": "n4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct test_arg n5",
+          "detailed": "\n        ",
+          "name": "n5",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -2339,11 +4769,2350 @@
     "tests/isc/netmgr_common.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_netmgr_test",
+          "detailed": "\n        ",
+          "name": "setup_netmgr_test",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int teardown_netmgr_test",
+          "detailed": "\n        ",
+          "name": "teardown_netmgr_test",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stop_listening",
+          "detailed": "\n        ",
+          "name": "stop_listening",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle ISC_ATTR_UNUSED, isc_result_t eresult ISC_ATTR_UNUSED, isc_region_t *region ISC_ATTR_UNUSED, void *cbarg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void noop_recv_cb",
+          "detailed": "\n        ",
+          "name": "noop_recv_cb",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle ISC_ATTR_UNUSED, isc_result_t eresult, void *cbarg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "isc_result_t noop_accept_cb",
+          "detailed": "\n        ",
+          "name": "noop_accept_cb",
+          "params": [
+            "ISC_ATTR_UNUSED",
+            "eresult",
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void connect_send_cb",
+          "detailed": "\n        ",
+          "name": "connect_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle)",
+          "brief": "\n        ",
+          "definition": "void connect_send",
+          "detailed": "\n        ",
+          "name": "connect_send",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void connect_read_cb",
+          "detailed": "\n        ",
+          "name": "connect_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void connect_connect_cb",
+          "detailed": "\n        ",
+          "name": "connect_connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void listen_send_cb",
+          "detailed": "\n        ",
+          "name": "listen_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void listen_read_cb",
+          "detailed": "\n        ",
+          "name": "listen_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "isc_result_t listen_accept_cb",
+          "detailed": "\n        ",
+          "name": "listen_accept_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "isc_result_t stream_accept_cb",
+          "detailed": "\n        ",
+          "name": "stream_accept_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "void stream_recv_send_connect",
+          "detailed": "\n        ",
+          "name": "stream_recv_send_connect",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void timeout_retry_cb",
+          "detailed": "\n        ",
+          "name": "timeout_retry_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(size_t nthreads)",
+          "brief": "\n        ",
+          "definition": "isc_quota_t * tcp_listener_init_quota",
+          "detailed": "\n        ",
+          "name": "tcp_listener_init_quota",
+          "params": [
+            "nthreads"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nm_t *nm)",
+          "brief": "\n        ",
+          "definition": "static void tcp_connect",
+          "detailed": "\n        ",
+          "name": "tcp_connect",
+          "params": [
+            "nm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nm_t *nm)",
+          "brief": "\n        ",
+          "definition": "static void tls_connect",
+          "detailed": "\n        ",
+          "name": "tls_connect",
+          "params": [
+            "nm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nm_proxyheader_info_t *pi)",
+          "brief": "\n        ",
+          "definition": "void set_proxyheader_info",
+          "detailed": "\n        ",
+          "name": "set_proxyheader_info",
+          "params": [
+            "pi"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "isc_nm_proxyheader_info_t * get_proxyheader_info",
+          "detailed": "\n        ",
+          "name": "get_proxyheader_info",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nm_t *nm)",
+          "brief": "\n        ",
+          "definition": "static void proxystream_connect",
+          "detailed": "\n        ",
+          "name": "proxystream_connect",
+          "params": [
+            "nm"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "stream_connect_function get_stream_connect_function",
+          "detailed": "\n        ",
+          "name": "get_stream_connect_function",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nm_accept_cb_t accept_cb, void *accept_cbarg, int backlog, isc_quota_t *quota, isc_nmsocket_t **sockp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t stream_listen",
+          "detailed": "\n        ",
+          "name": "stream_listen",
+          "params": [
+            "accept_cb",
+            "accept_cbarg",
+            "backlog",
+            "quota",
+            "sockp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nm_cb_t cb, void *cbarg, unsigned int timeout)",
+          "brief": "\n        ",
+          "definition": "void stream_connect",
+          "detailed": "\n        ",
+          "name": "stream_connect",
+          "params": [
+            "cb",
+            "cbarg",
+            "timeout"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "isc_nm_proxy_type_t get_proxy_type",
+          "detailed": "\n        ",
+          "name": "get_proxy_type",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "void connect_success_cb",
+          "detailed": "\n        ",
+          "name": "connect_success_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_noop_setup",
+          "detailed": "\n        ",
+          "name": "stream_noop_setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_noop_setup",
+          "detailed": "\n        ",
+          "name": "proxystream_noop_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_noop_setup",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_noop_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stream_noop",
+          "detailed": "\n        ",
+          "name": "stream_noop",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_noop_teardown",
+          "detailed": "\n        ",
+          "name": "stream_noop_teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_noop_teardown",
+          "detailed": "\n        ",
+          "name": "proxystream_noop_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_noop_teardown",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_noop_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void noresponse_readcb",
+          "detailed": "\n        ",
+          "name": "noresponse_readcb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void noresponse_sendcb",
+          "detailed": "\n        ",
+          "name": "noresponse_sendcb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void noresponse_connectcb",
+          "detailed": "\n        ",
+          "name": "noresponse_connectcb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_noresponse_setup",
+          "detailed": "\n        ",
+          "name": "stream_noresponse_setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_noresponse_setup",
+          "detailed": "\n        ",
+          "name": "proxystream_noresponse_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_noresponse_teardown",
+          "detailed": "\n        ",
+          "name": "proxystream_noresponse_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_noresponse_setup",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_noresponse_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_noresponse_teardown",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_noresponse_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stream_noresponse",
+          "detailed": "\n        ",
+          "name": "stream_noresponse",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_noresponse_teardown",
+          "detailed": "\n        ",
+          "name": "stream_noresponse_teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_timeout_recovery_setup",
+          "detailed": "\n        ",
+          "name": "stream_timeout_recovery_setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const isc_result_t result, const isc_proxy2_command_t cmd, const int socktype, const isc_sockaddr_t *restrict src_addr, const isc_sockaddr_t *restrict dst_addr, const isc_region_t *restrict tlv_data, const isc_region_t *restrict extra, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void proxy2_handler_save_addrs_cb",
+          "detailed": "\n        ",
+          "name": "proxy2_handler_save_addrs_cb",
+          "params": [
+            "result",
+            "cmd",
+            "socktype",
+            "src_addr",
+            "dst_addr",
+            "tlv_data",
+            "extra",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle)",
+          "brief": "\n        ",
+          "definition": "void proxy_verify_endpoints",
+          "detailed": "\n        ",
+          "name": "proxy_verify_endpoints",
+          "params": [
+            "handle"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_timeout_recovery_setup",
+          "detailed": "\n        ",
+          "name": "proxystream_timeout_recovery_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_timeout_recovery_teardown",
+          "detailed": "\n        ",
+          "name": "proxystream_timeout_recovery_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_timeout_recovery_setup",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_timeout_recovery_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_timeout_recovery_teardown",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_timeout_recovery_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stream_timeout_recovery",
+          "detailed": "\n        ",
+          "name": "stream_timeout_recovery",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_timeout_recovery_teardown",
+          "detailed": "\n        ",
+          "name": "stream_timeout_recovery_teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_recv_one_setup",
+          "detailed": "\n        ",
+          "name": "stream_recv_one_setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_recv_one_setup",
+          "detailed": "\n        ",
+          "name": "proxystream_recv_one_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_recv_one_teardown",
+          "detailed": "\n        ",
+          "name": "proxystream_recv_one_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_recv_one_setup",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_recv_one_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_recv_one_teardown",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_recv_one_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stream_recv_one",
+          "detailed": "\n        ",
+          "name": "stream_recv_one",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_recv_one_teardown",
+          "detailed": "\n        ",
+          "name": "stream_recv_one_teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_recv_two_setup",
+          "detailed": "\n        ",
+          "name": "stream_recv_two_setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_recv_two_setup",
+          "detailed": "\n        ",
+          "name": "proxystream_recv_two_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_recv_two_teardown",
+          "detailed": "\n        ",
+          "name": "proxystream_recv_two_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_recv_two_setup",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_recv_two_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_recv_two_teardown",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_recv_two_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stream_recv_two",
+          "detailed": "\n        ",
+          "name": "stream_recv_two",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_recv_two_teardown",
+          "detailed": "\n        ",
+          "name": "stream_recv_two_teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_recv_send_setup",
+          "detailed": "\n        ",
+          "name": "stream_recv_send_setup",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_recv_send_setup",
+          "detailed": "\n        ",
+          "name": "proxystream_recv_send_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystream_recv_send_teardown",
+          "detailed": "\n        ",
+          "name": "proxystream_recv_send_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_recv_send_setup",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_recv_send_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxystreamtls_recv_send_teardown",
+          "detailed": "\n        ",
+          "name": "proxystreamtls_recv_send_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void stream_recv_send",
+          "detailed": "\n        ",
+          "name": "stream_recv_send",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "int stream_recv_send_teardown",
+          "detailed": "\n        ",
+          "name": "stream_recv_send_teardown",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_udp_test",
+          "detailed": "\n        ",
+          "name": "setup_udp_test",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int teardown_udp_test",
+          "detailed": "\n        ",
+          "name": "teardown_udp_test",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nm_cb_t cb, void *cbarg, unsigned int timeout)",
+          "brief": "\n        ",
+          "definition": "static void udp_connect",
+          "detailed": "\n        ",
+          "name": "udp_connect",
+          "params": [
+            "cb",
+            "cbarg",
+            "timeout"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_listen_read_cb",
+          "detailed": "\n        ",
+          "name": "udp_listen_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t nworkers, isc_nm_recv_cb_t cb)",
+          "brief": "\n        ",
+          "definition": "static void udp_start_listening",
+          "detailed": "\n        ",
+          "name": "udp_start_listening",
+          "params": [
+            "nworkers",
+            "cb"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp__send_cb",
+          "detailed": "\n        ",
+          "name": "udp__send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp__connect_cb",
+          "detailed": "\n        ",
+          "name": "udp__connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void udp_enqueue_connect",
+          "detailed": "\n        ",
+          "name": "udp_enqueue_connect",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp__connect_read_cb",
+          "detailed": "\n        ",
+          "name": "udp__connect_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_noop_setup",
+          "detailed": "\n        ",
+          "name": "udp_noop_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_noop_teardown",
+          "detailed": "\n        ",
+          "name": "udp_noop_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_noop",
+          "detailed": "\n        ",
+          "name": "udp_noop",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_noop_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_noop_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_noop_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_noop_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_noresponse_recv_cb",
+          "detailed": "\n        ",
+          "name": "udp_noresponse_recv_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_noresponse_read_cb",
+          "detailed": "\n        ",
+          "name": "udp_noresponse_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_noresponse_send_cb",
+          "detailed": "\n        ",
+          "name": "udp_noresponse_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_noresponse_connect_cb",
+          "detailed": "\n        ",
+          "name": "udp_noresponse_connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_noresponse_setup",
+          "detailed": "\n        ",
+          "name": "udp_noresponse_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_noresponse_teardown",
+          "detailed": "\n        ",
+          "name": "udp_noresponse_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_noresponse",
+          "detailed": "\n        ",
+          "name": "udp_noresponse",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_noresponse_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_noresponse_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_noresponse_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_noresponse_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_timeout_recovery_ssend_cb",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_ssend_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_timeout_recovery_recv_cb",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_recv_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_timeout_recovery_read_cb",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_timeout_recovery_send_cb",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_timeout_recovery_connect_cb",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_timeout_recovery_setup",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_timeout_recovery_teardown",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_timeout_recovery",
+          "detailed": "\n        ",
+          "name": "udp_timeout_recovery",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_timeout_recovery_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_timeout_recovery_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_timeout_recovery_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_timeout_recovery_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void udp_shutdown_connect_async_cb",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_connect_async_cb",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_shutdown_connect_connect_cb",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_connect_connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_shutdown_connect_setup",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_connect_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_shutdown_connect_teardown",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_connect_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_shutdown_connect",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_connect",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_shutdown_connect_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_shutdown_connect_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_shutdown_connect_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_shutdown_connect_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_shutdown_read_recv_cb",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read_recv_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_shutdown_read_send_cb",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_shutdown_read_read_cb",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_shutdown_read_connect_cb",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read_connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_shutdown_read_setup",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_shutdown_read_teardown",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_shutdown_read",
+          "detailed": "\n        ",
+          "name": "udp_shutdown_read",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_shutdown_read_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_shutdown_read_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_shutdown_read_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_shutdown_read_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_cancel_read_recv_cb",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read_recv_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_cancel_read_send_cb",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_cancel_read_read_cb",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_cancel_read_connect_cb",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read_connect_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_cancel_read_setup",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_cancel_read_teardown",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_cancel_read",
+          "detailed": "\n        ",
+          "name": "udp_cancel_read",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_cancel_read_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_cancel_read_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_cancel_read_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_cancel_read_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_recv_one_setup",
+          "detailed": "\n        ",
+          "name": "udp_recv_one_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_recv_one_teardown",
+          "detailed": "\n        ",
+          "name": "udp_recv_one_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_recv_one",
+          "detailed": "\n        ",
+          "name": "udp_recv_one",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_recv_one_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_recv_one_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_recv_one_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_recv_one_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_recv_two_setup",
+          "detailed": "\n        ",
+          "name": "udp_recv_two_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_recv_two_teardown",
+          "detailed": "\n        ",
+          "name": "udp_recv_two_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_recv_two",
+          "detailed": "\n        ",
+          "name": "udp_recv_two",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_recv_two_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_recv_two_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_recv_two_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_recv_two_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_recv_send_setup",
+          "detailed": "\n        ",
+          "name": "udp_recv_send_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_recv_send_teardown",
+          "detailed": "\n        ",
+          "name": "udp_recv_send_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_recv_send",
+          "detailed": "\n        ",
+          "name": "udp_recv_send",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_recv_send_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_recv_send_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_recv_send_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_recv_send_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_double_read_send_cb",
+          "detailed": "\n        ",
+          "name": "udp_double_read_send_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_double_read_listen_cb",
+          "detailed": "\n        ",
+          "name": "udp_double_read_listen_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void udp_double_read_cb",
+          "detailed": "\n        ",
+          "name": "udp_double_read_cb",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_double_read_setup",
+          "detailed": "\n        ",
+          "name": "udp_double_read_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int udp_double_read_teardown",
+          "detailed": "\n        ",
+          "name": "udp_double_read_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void udp_double_read",
+          "detailed": "\n        ",
+          "name": "udp_double_read",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_double_read_setup",
+          "detailed": "\n        ",
+          "name": "proxyudp_double_read_setup",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int proxyudp_double_read_teardown",
+          "detailed": "\n        ",
+          "name": "proxyudp_double_read_teardown",
+          "params": [
+            "state"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KEEP_BEFORE",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct proxy_addrs proxy_addrs_t",
+          "detailed": "\n        ",
+          "name": "proxy_addrs_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* listen_nm",
+          "detailed": "\n        ",
+          "name": "listen_nm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* connect_nm",
+          "detailed": "\n        ",
+          "name": "connect_nm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t tcp_listen_addr",
+          "detailed": "\n        ",
+          "name": "tcp_listen_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t tcp_connect_addr",
+          "detailed": "\n        ",
+          "name": "tcp_connect_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_t* tcp_listen_tlsctx",
+          "detailed": "\n        ",
+          "name": "tcp_listen_tlsctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_t* tcp_connect_tlsctx",
+          "detailed": "\n        ",
+          "name": "tcp_connect_tlsctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_client_session_cache_t* tcp_tlsctx_client_sess_cache",
+          "detailed": "\n        ",
+          "name": "tcp_tlsctx_client_sess_cache",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t udp_listen_addr",
+          "detailed": "\n        ",
+          "name": "udp_listen_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t udp_connect_addr",
+          "detailed": "\n        ",
+          "name": "udp_connect_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t send_magic",
+          "detailed": "\n        ",
+          "name": "send_magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_region_t send_msg",
+          "detailed": "\n        ",
+          "name": "send_msg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool do_send",
+          "detailed": "\n        ",
+          "name": "do_send",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t nsends",
+          "detailed": "\n        ",
+          "name": "nsends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int_fast64_t esends",
+          "detailed": "\n        ",
+          "name": "esends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t ssends",
+          "detailed": "\n        ",
+          "name": "ssends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t sreads",
+          "detailed": "\n        ",
+          "name": "sreads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t saccepts",
+          "detailed": "\n        ",
+          "name": "saccepts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t cconnects",
+          "detailed": "\n        ",
+          "name": "cconnects",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t csends",
+          "detailed": "\n        ",
+          "name": "csends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t creads",
+          "detailed": "\n        ",
+          "name": "creads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_int_fast64_t ctimeouts",
+          "detailed": "\n        ",
+          "name": "ctimeouts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_ssends",
+          "detailed": "\n        ",
+          "name": "expected_ssends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_sreads",
+          "detailed": "\n        ",
+          "name": "expected_sreads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_csends",
+          "detailed": "\n        ",
+          "name": "expected_csends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_cconnects",
+          "detailed": "\n        ",
+          "name": "expected_cconnects",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_creads",
+          "detailed": "\n        ",
+          "name": "expected_creads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_saccepts",
+          "detailed": "\n        ",
+          "name": "expected_saccepts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int expected_ctimeouts",
+          "detailed": "\n        ",
+          "name": "expected_ctimeouts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ssends_shutdown",
+          "detailed": "\n        ",
+          "name": "ssends_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool sreads_shutdown",
+          "detailed": "\n        ",
+          "name": "sreads_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool saccepts_shutdown",
+          "detailed": "\n        ",
+          "name": "saccepts_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool csends_shutdown",
+          "detailed": "\n        ",
+          "name": "csends_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool cconnects_shutdown",
+          "detailed": "\n        ",
+          "name": "cconnects_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool creads_shutdown",
+          "detailed": "\n        ",
+          "name": "creads_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ctimeouts_shutdown",
+          "detailed": "\n        ",
+          "name": "ctimeouts_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t active_cconnects",
+          "detailed": "\n        ",
+          "name": "active_cconnects",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t active_csends",
+          "detailed": "\n        ",
+          "name": "active_csends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t active_creads",
+          "detailed": "\n        ",
+          "name": "active_creads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t active_ssends",
+          "detailed": "\n        ",
+          "name": "active_ssends",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t active_sreads",
+          "detailed": "\n        ",
+          "name": "active_sreads",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nmsocket_t* listen_sock",
+          "detailed": "\n        ",
+          "name": "listen_sock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_quota_t listener_quota",
+          "detailed": "\n        ",
+          "name": "listener_quota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool check_listener_quota",
+          "detailed": "\n        ",
+          "name": "check_listener_quota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool allow_send_back",
+          "detailed": "\n        ",
+          "name": "allow_send_back",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool noanswer",
+          "detailed": "\n        ",
+          "name": "noanswer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool stream_use_TLS",
+          "detailed": "\n        ",
+          "name": "stream_use_TLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool stream_use_PROXY",
+          "detailed": "\n        ",
+          "name": "stream_use_PROXY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool stream_PROXY_over_TLS",
+          "detailed": "\n        ",
+          "name": "stream_PROXY_over_TLS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool stream",
+          "detailed": "\n        ",
+          "name": "stream",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "in_port_t stream_port",
+          "detailed": "\n        ",
+          "name": "stream_port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool udp_use_PROXY",
+          "detailed": "\n        ",
+          "name": "udp_use_PROXY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_recv_cb_t connect_readcb",
+          "detailed": "\n        ",
+          "name": "connect_readcb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_proxyheader_info_t proxy_info_data",
+          "detailed": "\n        ",
+          "name": "proxy_info_data",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_proxyheader_info_t* proxy_info",
+          "detailed": "\n        ",
+          "name": "proxy_info",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t proxy_src",
+          "detailed": "\n        ",
+          "name": "proxy_src",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t proxy_dst",
+          "detailed": "\n        ",
+          "name": "proxy_dst",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -4956,10 +9725,399 @@
     "tests/isc/proxyheader_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(const uint8_t client, const bool client_cert_verified, const isc_proxy2_tlv_subtype_tls_t tls_subtlv_type, const isc_region_t *restrict data, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static bool dummy_subtlv_iter_cb",
+          "detailed": "\n        ",
+          "name": "dummy_subtlv_iter_cb",
+          "params": [
+            "client",
+            "client_cert_verified",
+            "tls_subtlv_type",
+            "data",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const isc_proxy2_tlv_type_t tlv_type, const isc_region_t *restrict data, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static bool dummy_tlv_iter_cb",
+          "detailed": "\n        ",
+          "name": "dummy_tlv_iter_cb",
+          "params": [
+            "tlv_type",
+            "data",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const isc_result_t result, const isc_proxy2_command_t cmd, const int socktype, const isc_sockaddr_t *restrict src_addr, const isc_sockaddr_t *restrict dst_addr, const isc_region_t *restrict tlv_blob, const isc_region_t *restrict extra, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void proxy2_handler_dummy",
+          "detailed": "\n        ",
+          "name": "proxy2_handler_dummy",
+          "params": [
+            "result",
+            "cmd",
+            "socktype",
+            "src_addr",
+            "dst_addr",
+            "tlv_blob",
+            "extra",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test_proxy",
+          "detailed": "\n        ",
+          "name": "setup_test_proxy",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test_proxy",
+          "detailed": "\n        ",
+          "name": "teardown_test_proxy",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy2_handler_t *handler, const void *data, const size_t size, const bool tear_apart, const bool tear_randomly)",
+          "brief": "\n        ",
+          "definition": "static void test_header_data",
+          "detailed": "\n        ",
+          "name": "test_header_data",
+          "params": [
+            "handler",
+            "data",
+            "size",
+            "tear_apart",
+            "tear_randomly"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy2_handler_t *handler, dummy_handler_cbarg_t *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void verify_proxy_v2_header",
+          "detailed": "\n        ",
+          "name": "verify_proxy_v2_header",
+          "params": [
+            "handler",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy2_handler_t *handler, dummy_handler_cbarg_t *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void verify_proxy_v2_header_with_TLS",
+          "detailed": "\n        ",
+          "name": "verify_proxy_v2_header_with_TLS",
+          "params": [
+            "handler",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy2_handler_t *handler, dummy_handler_cbarg_t *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void verify_proxy_v2_header_with_TLS_CN",
+          "detailed": "\n        ",
+          "name": "verify_proxy_v2_header_with_TLS_CN",
+          "params": [
+            "handler",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy2_handler_t *handler, dummy_handler_cbarg_t *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void verify_proxy_v2_header_with_AF_UNIX",
+          "detailed": "\n        ",
+          "name": "verify_proxy_v2_header_with_AF_UNIX",
+          "params": [
+            "handler",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(proxyheader_generic_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_generic_byte_by_byte_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_generic_torn_apart_randomly_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_direct_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_detect_bad_signature_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_extra_data_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_max_size_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_make_header_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const uint8_t client, const bool client_cert_verified, const isc_proxy2_tlv_subtype_tls_t tls_subtlv_type, const isc_region_t *restrict data, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static bool rebuild_subtlv_iter_cb",
+          "detailed": "\n        ",
+          "name": "rebuild_subtlv_iter_cb",
+          "params": [
+            "client",
+            "client_cert_verified",
+            "tls_subtlv_type",
+            "data",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const isc_proxy2_tlv_type_t tlv_type, const isc_region_t *restrict data, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static bool rebuild_tlv_iter_cb",
+          "detailed": "\n        ",
+          "name": "rebuild_tlv_iter_cb",
+          "params": [
+            "tlv_type",
+            "data",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const isc_result_t header_result, const isc_proxy2_command_t cmd, const int socktype, const isc_sockaddr_t *restrict src_addr, const isc_sockaddr_t *restrict dst_addr, const isc_region_t *restrict tlv_blob, const isc_region_t *restrict extra, void *cbarg)",
+          "brief": "\n        ",
+          "definition": "static void proxy2_handler_rebuild_cb",
+          "detailed": "\n        ",
+          "name": "proxy2_handler_rebuild_cb",
+          "params": [
+            "header_result",
+            "cmd",
+            "socktype",
+            "src_addr",
+            "dst_addr",
+            "tlv_blob",
+            "extra",
+            "cbarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_buffer_t *restrict outbuf, const void *data, const size_t size)",
+          "brief": "\n        ",
+          "definition": "static void proxy2_handler_rebuild",
+          "detailed": "\n        ",
+          "name": "proxy2_handler_rebuild",
+          "params": [
+            "outbuf",
+            "data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *data, size_t size)",
+          "brief": "\n        ",
+          "definition": "static void try_rebuild_header",
+          "detailed": "\n        ",
+          "name": "try_rebuild_header",
+          "params": [
+            "data",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(proxyheader_rebuild_header_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_bad_header_signature_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_bad_proto_version_command_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_bad_family_socktype_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint8_t *botched_header, uint16_t newlen)",
+          "brief": "\n        ",
+          "definition": "static void update_header_length",
+          "detailed": "\n        ",
+          "name": "update_header_length",
+          "params": [
+            "botched_header",
+            "newlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(proxyheader_bad_unexpected_not_enough_length_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(proxyheader_tlv_data_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct dummy_handler_cbarg dummy_handler_cbarg_t",
+          "detailed": "\n        ",
+          "name": "dummy_handler_cbarg_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",
@@ -5678,11 +10836,189 @@
     "tests/isc/quota_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(isc_quota_get_set)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_quota_t *source, isc_result_t expected_result, int expected_used)",
+          "brief": "\n        ",
+          "definition": "static void add_quota",
+          "detailed": "\n        ",
+          "name": "add_quota",
+          "params": [
+            "source",
+            "expected_result",
+            "expected_used"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_quota_hard)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_quota_soft)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *data)",
+          "brief": "\n        ",
+          "definition": "static void callback",
+          "detailed": "\n        ",
+          "name": "callback",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_quota_callback)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void * quota_release",
+          "detailed": "\n        ",
+          "name": "quota_release",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *data)",
+          "brief": "\n        ",
+          "definition": "static void quota_callback",
+          "detailed": "\n        ",
+          "name": "quota_callback",
+          "params": [
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *qtip)",
+          "brief": "\n        ",
+          "definition": "static void * quota_thread",
+          "detailed": "\n        ",
+          "name": "quota_thread",
+          "params": [
+            "qtip"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_quota_callback_mt)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct qthreadinfo qthreadinfo_t",
+          "detailed": "\n        ",
+          "name": "qthreadinfo_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_quota_t quota",
+          "detailed": "\n        ",
+          "name": "quota",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t cb_calls",
+          "detailed": "\n        ",
+          "name": "cb_calls",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[30]",
+          "brief": "\n        ",
+          "definition": "isc_job_t cbs[30]",
+          "detailed": "\n        ",
+          "name": "cbs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t g_tnum",
+          "detailed": "\n        ",
+          "name": "g_tnum",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[10 *100]",
+          "brief": "\n        ",
+          "definition": "isc_thread_t g_threads[10 *100]",
+          "detailed": "\n        ",
+          "name": "g_threads",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -5757,11 +11093,330 @@
     "tests/isc/ratelimiter_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(ratelimiter_create)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_shutdown)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_detach)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void tick",
+          "detailed": "\n        ",
+          "name": "tick",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ratelimiter_common)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_SETUP_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_enqueue)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_SETUP_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_enqueue)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_enqueue)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_enqueue_shutdown)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_SETUP_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_enqueue_shutdown)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_enqueue_shutdown)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_dequeue)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_SETUP_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_dequeue)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_dequeue)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void tock",
+          "detailed": "\n        ",
+          "name": "tock",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ratelimiter_pertick_interval)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_SETUP_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_pertick_interval)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_pertick_interval)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_pushpop)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_SETUP_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_SETUP_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_pushpop)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ratelimiter_pushpop)",
+          "brief": "\n        ",
+          "definition": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_LOOP_TEST_SETUP_TEARDOWN_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int setup_test",
+          "detailed": "\n        ",
+          "name": "setup_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "static int teardown_test",
+          "detailed": "\n        ",
+          "name": "teardown_test",
+          "params": [
+            "state"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct rlstat rlstat_t",
+          "detailed": "\n        ",
+          "name": "rlstat_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_ratelimiter_t* rl",
+          "detailed": "\n        ",
+          "name": "rl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ticks",
+          "detailed": "\n        ",
+          "name": "ticks",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_time_t start_time",
+          "detailed": "\n        ",
+          "name": "start_time",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_time_t tick_time",
+          "detailed": "\n        ",
+          "name": "tick_time",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_time_t tock_time",
+          "detailed": "\n        ",
+          "name": "tock_time",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -7140,11 +12795,159 @@
     "tests/isc/time_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(isc_time_add_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_sub_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_parsehttptimestamp_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatISO8601_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatISO8601ms_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatISO8601us_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatISO8601L_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatISO8601Lms_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatISO8601Lus_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_time_formatshorttimestamp_test)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_NS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
+        {
+          "args": "[8]",
+          "brief": "\n        ",
+          "definition": "const struct time_vectors vectors_add[8]",
+          "detailed": "\n        ",
+          "name": "vectors_add",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[7]",
+          "brief": "\n        ",
+          "definition": "const struct time_vectors vectors_sub[7]",
+          "detailed": "\n        ",
+          "name": "vectors_sub",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",

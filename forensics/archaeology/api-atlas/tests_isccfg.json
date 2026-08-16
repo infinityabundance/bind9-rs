@@ -3,11 +3,87 @@
     "tests/isccfg/duration_test.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(group)",
+          "brief": "\n        ",
+          "definition": "ISC_SETUP_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_SETUP_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(group)",
+          "brief": "\n        ",
+          "definition": "ISC_TEARDOWN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_TEARDOWN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *closure, const char *text, int textlen)",
+          "brief": "\n        ",
+          "definition": "static void output",
+          "detailed": "\n        ",
+          "name": "output",
+          "params": [
+            "closure",
+            "text",
+            "textlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(duration)",
+          "brief": "\n        ",
+          "definition": "ISC_RUN_TEST_IMPL",
+          "detailed": "\n        ",
+          "name": "ISC_RUN_TEST_IMPL",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UNIT_TESTING",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct duration_conf duration_conf_t",
+          "detailed": "\n        ",
+          "name": "duration_conf_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "isc_logcategory_t categories[]",
+          "detailed": "\n        ",
+          "name": "categories",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",

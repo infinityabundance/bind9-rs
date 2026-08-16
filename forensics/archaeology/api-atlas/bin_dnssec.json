@@ -1,13 +1,744 @@
 {
   "files": {
     "bin/dnssec/dnssec-cds.c": {
-      "enum_values": [],
-      "enums": [],
-      "functions": [],
-      "macros": [],
+      "enum_values": [
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "LOOSE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "TIGHT",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "strictness_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(int level, const char *msg, isc_stdtime_t time)",
+          "brief": "\n        ",
+          "definition": "static void verbose_time",
+          "detailed": "\n        ",
+          "name": "verbose_time",
+          "params": [
+            "level",
+            "msg",
+            "time"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *setname)",
+          "brief": "\n        ",
+          "definition": "static void initname",
+          "detailed": "\n        ",
+          "name": "initname",
+          "params": [
+            "setname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_rdatatype_t type, dns_rdataset_t *rdataset, dns_rdataset_t *sigrdataset)",
+          "brief": "\n        ",
+          "definition": "static void findset",
+          "detailed": "\n        ",
+          "name": "findset",
+          "params": [
+            "db",
+            "node",
+            "type",
+            "rdataset",
+            "sigrdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rdataset)",
+          "brief": "\n        ",
+          "definition": "static void freeset",
+          "detailed": "\n        ",
+          "name": "freeset",
+          "params": [
+            "rdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rdataset)",
+          "brief": "\n        ",
+          "definition": "static void freelist",
+          "detailed": "\n        ",
+          "name": "freelist",
+          "params": [
+            "rdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void free_all_sets",
+          "detailed": "\n        ",
+          "name": "free_all_sets",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *filename, dns_db_t **dbp, dns_dbnode_t **nodep)",
+          "brief": "\n        ",
+          "definition": "static void load_db",
+          "detailed": "\n        ",
+          "name": "load_db",
+          "params": [
+            "filename",
+            "dbp",
+            "nodep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t **dbp, dns_dbnode_t **nodep, dns_dbversion_t **versionp)",
+          "brief": "\n        ",
+          "definition": "static void free_db",
+          "detailed": "\n        ",
+          "name": "free_db",
+          "params": [
+            "dbp",
+            "nodep",
+            "versionp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *file)",
+          "brief": "\n        ",
+          "definition": "static void load_child_sets",
+          "detailed": "\n        ",
+          "name": "load_child_sets",
+          "params": [
+            "file"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *filename, size_t size, const char *path, const char *suffix)",
+          "brief": "\n        ",
+          "definition": "static void get_dsset_name",
+          "detailed": "\n        ",
+          "name": "get_dsset_name",
+          "params": [
+            "filename",
+            "size",
+            "path",
+            "suffix"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path)",
+          "brief": "\n        ",
+          "definition": "static void load_parent_set",
+          "detailed": "\n        ",
+          "name": "load_parent_set",
+          "params": [
+            "path"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rdataset)",
+          "brief": "\n        ",
+          "definition": "static isc_buffer_t * formatset",
+          "detailed": "\n        ",
+          "name": "formatset",
+          "params": [
+            "rdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *path, const char *inplace, bool nsupdate, dns_rdataset_t *rdataset)",
+          "brief": "\n        ",
+          "definition": "static void write_parent_set",
+          "detailed": "\n        ",
+          "name": "write_parent_set",
+          "params": [
+            "path",
+            "inplace",
+            "nsupdate",
+            "rdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(keyinfo_t *ki, dns_rdataset_t *dsset, strictness_t strictness)",
+          "brief": "\n        ",
+          "definition": "static bool match_key_dsset",
+          "detailed": "\n        ",
+          "name": "match_key_dsset",
+          "params": [
+            "ki",
+            "dsset",
+            "strictness"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *keyset, dns_rdataset_t *dsset, strictness_t strictness)",
+          "brief": "\n        ",
+          "definition": "static keyinfo_t * match_keyset_dsset",
+          "detailed": "\n        ",
+          "name": "match_keyset_dsset",
+          "params": [
+            "keyset",
+            "dsset",
+            "strictness"
+          ],
+          "static": true
+        },
+        {
+          "args": "(keyinfo_t **keytable_p)",
+          "brief": "\n        ",
+          "definition": "static void free_keytable",
+          "detailed": "\n        ",
+          "name": "free_keytable",
+          "params": [
+            "keytable_p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(keyinfo_t *keytbl, dns_rdataset_t *rdataset, dns_rdataset_t *sigset)",
+          "brief": "\n        ",
+          "definition": "static dns_secalg_t * matching_sigs",
+          "detailed": "\n        ",
+          "name": "matching_sigs",
+          "params": [
+            "keytbl",
+            "rdataset",
+            "sigset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_secalg_t *algo)",
+          "brief": "\n        ",
+          "definition": "static bool signed_loose",
+          "detailed": "\n        ",
+          "name": "signed_loose",
+          "params": [
+            "algo"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *dsset, dns_secalg_t *algo)",
+          "brief": "\n        ",
+          "definition": "static bool signed_strict",
+          "detailed": "\n        ",
+          "name": "signed_strict",
+          "params": [
+            "dsset",
+            "algo"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_buffer_t *buf, dns_rdata_t *rds, dns_dsdigest_t dt, dns_rdata_t *cds)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t ds_from_cds",
+          "detailed": "\n        ",
+          "name": "ds_from_cds",
+          "params": [
+            "buf",
+            "rds",
+            "dt",
+            "cds"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_buffer_t *buf, dns_rdata_t *ds, dns_dsdigest_t dt, dns_rdata_t *cdnskey)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t ds_from_cdnskey",
+          "detailed": "\n        ",
+          "name": "ds_from_cdnskey",
+          "params": [
+            "buf",
+            "ds",
+            "dt",
+            "cdnskey"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ds_maker_func_t *ds_from_rdata, isc_buffer_t *buf, dns_rdatalist_t *dslist, dns_dsdigest_t dt, dns_rdataset_t *crdset)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t append_new_ds_set",
+          "detailed": "\n        ",
+          "name": "append_new_ds_set",
+          "params": [
+            "ds_from_rdata",
+            "buf",
+            "dslist",
+            "dt",
+            "crdset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ds_maker_func_t *ds_from_rdata, uint32_t ttl, dns_rdataset_t *crdset)",
+          "brief": "\n        ",
+          "definition": "static void make_new_ds_set",
+          "detailed": "\n        ",
+          "name": "make_new_ds_set",
+          "params": [
+            "ds_from_rdata",
+            "ttl",
+            "crdset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *rdata1, const void *rdata2)",
+          "brief": "\n        ",
+          "definition": "static int rdata_cmp",
+          "detailed": "\n        ",
+          "name": "rdata_cmp",
+          "params": [
+            "rdata1",
+            "rdata2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *dsset)",
+          "brief": "\n        ",
+          "definition": "static bool consistent_digests",
+          "detailed": "\n        ",
+          "name": "consistent_digests",
+          "params": [
+            "dsset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *cmd, dns_rdataset_t *rdataset)",
+          "brief": "\n        ",
+          "definition": "static void print_diff",
+          "detailed": "\n        ",
+          "name": "print_diff",
+          "params": [
+            "cmd",
+            "rdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *cmd, uint32_t ttl, dns_rdataset_t *addset, dns_rdataset_t *delset)",
+          "brief": "\n        ",
+          "definition": "static void update_diff",
+          "detailed": "\n        ",
+          "name": "update_diff",
+          "params": [
+            "cmd",
+            "ttl",
+            "addset",
+            "delset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t ttl, dns_rdataset_t *oldset, dns_rdataset_t *newset)",
+          "brief": "\n        ",
+          "definition": "static void nsdiff",
+          "detailed": "\n        ",
+          "name": "nsdiff",
+          "params": [
+            "ttl",
+            "oldset",
+            "newset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_CDS_RDATA_TEXT_SIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "OPTIONS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct keyinfo keyinfo_t",
+          "detailed": "\n        ",
+          "name": "keyinfo_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "(isc_buffer_t *buf, dns_rdata_t *ds, dns_dsdigest_t dt, dns_rdata_t *crdata)",
+          "brief": "\n        ",
+          "definition": "typedef isc_result_t ds_maker_func_t(isc_buffer_t *buf, dns_rdata_t *ds, dns_dsdigest_t dt, dns_rdata_t *crdata)",
+          "detailed": "\n        ",
+          "name": "ds_maker_func_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "program name, statically initialized in each program",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* lctx",
+          "detailed": "\n        ",
+          "name": "lctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* namestr",
+          "detailed": "\n        ",
+          "name": "namestr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t fixed",
+          "detailed": "\n        ",
+          "name": "fixed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataclass_t rdclass",
+          "detailed": "\n        ",
+          "name": "rdclass",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* startstr",
+          "detailed": "\n        ",
+          "name": "startstr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t notbefore",
+          "detailed": "\n        ",
+          "name": "notbefore",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdata_rrsig_t oldestsig",
+          "detailed": "\n        ",
+          "name": "oldestsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int nkey",
+          "detailed": "\n        ",
+          "name": "nkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t cdnskey_set",
+          "detailed": "\n        ",
+          "name": "cdnskey_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t cdnskey_sig",
+          "detailed": "\n        ",
+          "name": "cdnskey_sig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t cds_set",
+          "detailed": "\n        ",
+          "name": "cds_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t cds_sig",
+          "detailed": "\n        ",
+          "name": "cds_sig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t dnskey_set",
+          "detailed": "\n        ",
+          "name": "dnskey_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t dnskey_sig",
+          "detailed": "\n        ",
+          "name": "dnskey_sig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t old_ds_set",
+          "detailed": "\n        ",
+          "name": "old_ds_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataset_t new_ds_set",
+          "detailed": "\n        ",
+          "name": "new_ds_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "keyinfo_t* old_key_tbl",
+          "detailed": "\n        ",
+          "name": "old_key_tbl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "keyinfo_t * new_key_tbl",
+          "detailed": "\n        ",
+          "name": "new_key_tbl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t* new_ds_buf",
+          "detailed": "\n        ",
+          "name": "new_ds_buf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* child_db",
+          "detailed": "\n        ",
+          "name": "child_db",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbnode_t* child_node",
+          "detailed": "\n        ",
+          "name": "child_node",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* parent_db",
+          "detailed": "\n        ",
+          "name": "parent_db",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbnode_t* parent_node",
+          "detailed": "\n        ",
+          "name": "parent_node",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* update_db",
+          "detailed": "\n        ",
+          "name": "update_db",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbnode_t* update_node",
+          "detailed": "\n        ",
+          "name": "update_node",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbversion_t* update_version",
+          "detailed": "\n        ",
+          "name": "update_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool cleanup_dst",
+          "detailed": "\n        ",
+          "name": "cleanup_dst",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool print_mem_stats",
+          "detailed": "\n        ",
+          "name": "print_mem_stats",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -584,11 +1315,127 @@
     "bin/dnssec/dnssec-keygen.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(int ret)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "ret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int p)",
+          "brief": "\n        ",
+          "definition": "static void progress",
+          "detailed": "\n        ",
+          "name": "progress",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(keygen_ctx_t *ctx, isc_mem_t *mctx, int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void keygen",
+          "detailed": "\n        ",
+          "name": "keygen",
+          "params": [
+            "ctx",
+            "mctx",
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(keygen_ctx_t *ctx)",
+          "brief": "\n        ",
+          "definition": "static void check_keystore_options",
+          "detailed": "\n        ",
+          "name": "check_keystore_options",
+          "params": [
+            "ctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_FLAGS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct keygen_ctx keygen_ctx_t",
+          "detailed": "\n        ",
+          "name": "keygen_ctx_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "program name, statically initialized in each program",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int min_rsa",
+          "detailed": "\n        ",
+          "name": "min_rsa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int min_dh",
+          "detailed": "\n        ",
+          "name": "min_dh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* lctx",
+          "detailed": "\n        ",
+          "name": "lctx",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -1053,11 +1900,466 @@
     "bin/dnssec/dnssec-ksr.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(int ret)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "ret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_stdtime_t t, isc_stdtime_t start, isc_stdtime_t end)",
+          "brief": "\n        ",
+          "definition": "static isc_stdtime_t between",
+          "detailed": "\n        ",
+          "name": "between",
+          "params": [
+            "t",
+            "start",
+            "end"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, const char *command)",
+          "brief": "\n        ",
+          "definition": "static void checkparams",
+          "detailed": "\n        ",
+          "name": "checkparams",
+          "params": [
+            "ksr",
+            "command"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, dns_kasp_t **kasp)",
+          "brief": "\n        ",
+          "definition": "static void getkasp",
+          "detailed": "\n        ",
+          "name": "getkasp",
+          "params": [
+            "ksr",
+            "kasp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *k1, const void *k2)",
+          "brief": "\n        ",
+          "definition": "static int keyalgtag_cmp",
+          "detailed": "\n        ",
+          "name": "keyalgtag_cmp",
+          "params": [
+            "k1",
+            "k2"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, dns_dnsseckeylist_t *keys)",
+          "brief": "\n        ",
+          "definition": "static void get_dnskeys",
+          "detailed": "\n        ",
+          "name": "get_dnskeys",
+          "params": [
+            "ksr",
+            "keys"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, dns_kasp_t *kasp)",
+          "brief": "\n        ",
+          "definition": "static void setcontext",
+          "detailed": "\n        ",
+          "name": "setcontext",
+          "params": [
+            "ksr",
+            "kasp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckeylist_t *keys, dns_kasp_t *kasp)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            "keys",
+            "kasp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int p)",
+          "brief": "\n        ",
+          "definition": "static void progress",
+          "detailed": "\n        ",
+          "name": "progress",
+          "params": [
+            "p"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rdataset)",
+          "brief": "\n        ",
+          "definition": "static void freerrset",
+          "detailed": "\n        ",
+          "name": "freerrset",
+          "params": [
+            "rdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, dns_kasp_t *kasp, dns_kasp_key_t *kaspkey, dns_dnsseckeylist_t *keys, isc_stdtime_t inception, isc_stdtime_t active, isc_stdtime_t *expiration)",
+          "brief": "\n        ",
+          "definition": "static void create_key",
+          "detailed": "\n        ",
+          "name": "create_key",
+          "params": [
+            "ksr",
+            "kasp",
+            "kaspkey",
+            "keys",
+            "inception",
+            "active",
+            "expiration"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rrset)",
+          "brief": "\n        ",
+          "definition": "static void print_rdata",
+          "detailed": "\n        ",
+          "name": "print_rdata",
+          "params": [
+            "rrset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_kasp_key_t *kaspkey, dns_ttl_t ttl, dns_dnsseckeylist_t *keys, isc_stdtime_t inception, isc_stdtime_t next_inception)",
+          "brief": "\n        ",
+          "definition": "static isc_stdtime_t print_dnskeys",
+          "detailed": "\n        ",
+          "name": "print_dnskeys",
+          "params": [
+            "kaspkey",
+            "ttl",
+            "keys",
+            "inception",
+            "next_inception"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, isc_stdtime_t inception, isc_stdtime_t expiration, dns_rdataset_t *rrset, dns_dnsseckeylist_t *keys)",
+          "brief": "\n        ",
+          "definition": "static isc_stdtime_t sign_rrset",
+          "detailed": "\n        ",
+          "name": "sign_rrset",
+          "params": [
+            "ksr",
+            "inception",
+            "expiration",
+            "rrset",
+            "keys"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, dns_kasp_t *kasp, isc_stdtime_t inception, isc_stdtime_t next_inception, dns_dnsseckeylist_t *keys, dns_rdataset_t *dnskeyset, dns_rdataset_t *cdnskeyset, dns_rdataset_t *cdsset)",
+          "brief": "\n        ",
+          "definition": "static isc_stdtime_t get_keymaterial",
+          "detailed": "\n        ",
+          "name": "get_keymaterial",
+          "params": [
+            "ksr",
+            "kasp",
+            "inception",
+            "next_inception",
+            "keys",
+            "dnskeyset",
+            "cdnskeyset",
+            "cdsset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr, dns_kasp_t *kasp, isc_stdtime_t inception, isc_stdtime_t next_inception, dns_rdatalist_t *zsklist, dns_dnsseckeylist_t *keys)",
+          "brief": "\n        ",
+          "definition": "static void sign_bundle",
+          "detailed": "\n        ",
+          "name": "sign_bundle",
+          "params": [
+            "ksr",
+            "kasp",
+            "inception",
+            "next_inception",
+            "zsklist",
+            "keys"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_lex_t *lex, char *owner, isc_buffer_t *buf, dns_ttl_t *ttl)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_dnskey",
+          "detailed": "\n        ",
+          "name": "parse_dnskey",
+          "params": [
+            "lex",
+            "owner",
+            "buf",
+            "ttl"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr)",
+          "brief": "\n        ",
+          "definition": "static void keygen",
+          "detailed": "\n        ",
+          "name": "keygen",
+          "params": [
+            "ksr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr)",
+          "brief": "\n        ",
+          "definition": "static void request",
+          "detailed": "\n        ",
+          "name": "request",
+          "params": [
+            "ksr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ksr_ctx_t *ksr)",
+          "brief": "\n        ",
+          "definition": "static void sign",
+          "detailed": "\n        ",
+          "name": "sign",
+          "params": [
+            "ksr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "KSR_LINESIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DATETIME_INDEX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXWIRE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STR",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "READLINE",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NEXTTOKEN",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BADTOKEN",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "OPTIONS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct ksr_ctx ksr_ctx_t",
+          "detailed": "\n        ",
+          "name": "ksr_ctx_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "program name, statically initialized in each program",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* lctx",
+          "detailed": "\n        ",
+          "name": "lctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* engine",
+          "detailed": "\n        ",
+          "name": "engine",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* namestr",
+          "detailed": "\n        ",
+          "name": "namestr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t fname",
+          "detailed": "\n        ",
+          "name": "fname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int min_rsa",
+          "detailed": "\n        ",
+          "name": "min_rsa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int min_dh",
+          "detailed": "\n        ",
+          "name": "min_dh",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_bufferlist_t cleanup_list",
+          "detailed": "\n        ",
+          "name": "cleanup_list",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -1421,11 +2723,1585 @@
     "bin/dnssec/dnssec-signzone.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(dns_fixedname_t *fzonecut, dns_name_t *name)",
+          "brief": "Store a copy of 'name' in 'fzonecut' and return a pointer to that copy.",
+          "definition": "static dns_name_t * savezonecut",
+          "detailed": "\n        ",
+          "name": "savezonecut",
+          "params": [
+            "fzonecut",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_dbnode_t *node)",
+          "brief": "\n        ",
+          "definition": "static void dumpnode",
+          "detailed": "\n        ",
+          "name": "dumpnode",
+          "params": [
+            "name",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_dbnode_t *node)",
+          "brief": "\n        ",
+          "definition": "static void lock_and_dumpnode",
+          "detailed": "\n        ",
+          "name": "lock_and_dumpnode",
+          "params": [
+            "name",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_rdataset_t *rdataset, dst_key_t *key, dns_ttl_t ttl, dns_diff_t *add, const char *logmsg)",
+          "brief": "Sign the given RRset with given key, and add the signature record to the given tuple.",
+          "definition": "static void signwithkey",
+          "detailed": "\n        ",
+          "name": "signwithkey",
+          "params": [
+            "name",
+            "rdataset",
+            "key",
+            "ttl",
+            "add",
+            "logmsg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckey_t *key)",
+          "brief": "\n        ",
+          "definition": "static bool issigningkey",
+          "detailed": "\n        ",
+          "name": "issigningkey",
+          "params": [
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckey_t *key)",
+          "brief": "\n        ",
+          "definition": "static bool ispublishedkey",
+          "detailed": "\n        ",
+          "name": "ispublishedkey",
+          "params": [
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckey_t *key)",
+          "brief": "\n        ",
+          "definition": "static bool iszonekey",
+          "detailed": "\n        ",
+          "name": "iszonekey",
+          "params": [
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckey_t *key)",
+          "brief": "\n        ",
+          "definition": "static bool isksk",
+          "detailed": "\n        ",
+          "name": "isksk",
+          "params": [
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckey_t *key)",
+          "brief": "\n        ",
+          "definition": "static bool iszsk",
+          "detailed": "\n        ",
+          "name": "iszsk",
+          "params": [
+            "key"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdata_rrsig_t *rrsig)",
+          "brief": "Find the key that generated an RRSIG, if it is in the key list. If so, return a pointer to it, otherwise return NULL.",
+          "definition": "static dns_dnsseckey_t * keythatsigned_unlocked",
+          "detailed": "No locking is performed here, this must be done by the caller.",
+          "name": "keythatsigned_unlocked",
+          "params": [
+            "rrsig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdata_rrsig_t *rrsig)",
+          "brief": "Finds the key that generated a RRSIG, if possible. First look at the keys that we've loaded already, and then see if there's a key on disk.",
+          "definition": "static dns_dnsseckey_t * keythatsigned",
+          "detailed": "\n        ",
+          "name": "keythatsigned",
+          "params": [
+            "rrsig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name)",
+          "brief": "Check to see if we expect to find a key at this name. If we see a RRSIG and can't find the signing key that we expect to find, we drop the rrsig. I'm not sure if this is completely correct, but it seems to work.",
+          "definition": "static bool expecttofindkey",
+          "detailed": "\n        ",
+          "name": "expecttofindkey",
+          "params": [
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_rdataset_t *set, dst_key_t *key, dns_rdata_t *rrsig)",
+          "brief": "\n        ",
+          "definition": "static bool setverifies",
+          "detailed": "\n        ",
+          "name": "setverifies",
+          "params": [
+            "name",
+            "set",
+            "key",
+            "rrsig"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_diff_t *del, dns_diff_t *add, dns_dbnode_t *node, dns_name_t *name, dns_rdataset_t *set)",
+          "brief": "Signs a set. Goes through contortions to decide if each RRSIG should be dropped or retained, and then determines if any new SIGs need to be generated.",
+          "definition": "static void signset",
+          "detailed": "\n        ",
+          "name": "signset",
+          "params": [
+            "del",
+            "add",
+            "node",
+            "name",
+            "set"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l, unsigned int nodes, unsigned int length)",
+          "brief": "\n        ",
+          "definition": "static void hashlist_init",
+          "detailed": "\n        ",
+          "name": "hashlist_init",
+          "params": [
+            "l",
+            "nodes",
+            "length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l)",
+          "brief": "\n        ",
+          "definition": "static void hashlist_free",
+          "detailed": "\n        ",
+          "name": "hashlist_free",
+          "params": [
+            "l"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l, const unsigned char *hash, size_t len)",
+          "brief": "\n        ",
+          "definition": "static void hashlist_add",
+          "detailed": "\n        ",
+          "name": "hashlist_add",
+          "params": [
+            "l",
+            "hash",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l, dns_name_t *name, unsigned int hashalg, unsigned int iterations, const unsigned char *salt, size_t salt_len, bool speculative)",
+          "brief": "\n        ",
+          "definition": "static void hashlist_add_dns_name",
+          "detailed": "\n        ",
+          "name": "hashlist_add_dns_name",
+          "params": [
+            "l",
+            "name",
+            "hashalg",
+            "iterations",
+            "salt",
+            "salt_len",
+            "speculative"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const void *a, const void *b)",
+          "brief": "\n        ",
+          "definition": "static int hashlist_comp",
+          "detailed": "\n        ",
+          "name": "hashlist_comp",
+          "params": [
+            "a",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l)",
+          "brief": "\n        ",
+          "definition": "static void hashlist_sort",
+          "detailed": "\n        ",
+          "name": "hashlist_sort",
+          "params": [
+            "l"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l)",
+          "brief": "\n        ",
+          "definition": "static bool hashlist_hasdup",
+          "detailed": "\n        ",
+          "name": "hashlist_hasdup",
+          "params": [
+            "l"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const hashlist_t *l, const unsigned char hash[NSEC3_MAX_HASH_LENGTH])",
+          "brief": "\n        ",
+          "definition": "static const unsigned char * hashlist_findnext",
+          "detailed": "\n        ",
+          "name": "hashlist_findnext",
+          "params": [
+            "l",
+            "hash"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const hashlist_t *l, const unsigned char hash[NSEC3_MAX_HASH_LENGTH])",
+          "brief": "\n        ",
+          "definition": "static bool hashlist_exists",
+          "detailed": "\n        ",
+          "name": "hashlist_exists",
+          "params": [
+            "l",
+            "hash"
+          ],
+          "static": true
+        },
+        {
+          "args": "(hashlist_t *l, dns_name_t *name, unsigned int hashalg, unsigned int iterations, const unsigned char *salt, size_t salt_len)",
+          "brief": "\n        ",
+          "definition": "static void addnowildcardhash",
+          "detailed": "\n        ",
+          "name": "addnowildcardhash",
+          "params": [
+            "l",
+            "name",
+            "hashalg",
+            "iterations",
+            "salt",
+            "salt_len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *prefix, dns_name_t *name, dns_rdataclass_t rdclass, dns_db_t **dbp)",
+          "brief": "\n        ",
+          "definition": "static void opendb",
+          "detailed": "\n        ",
+          "name": "opendb",
+          "params": [
+            "prefix",
+            "name",
+            "rdclass",
+            "dbp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, uint32_t ttl, dns_rdataset_t *dsset)",
+          "brief": "Load the DS set for a child zone, if a dsset-* file can be found. If not, try to find a keyset-* file from an earlier version of dnssec-signzone, and build DS records from that.",
+          "definition": "static isc_result_t loadds",
+          "detailed": "\n        ",
+          "name": "loadds",
+          "params": [
+            "name",
+            "ttl",
+            "dsset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_dbnode_t *node)",
+          "brief": "\n        ",
+          "definition": "static bool secure",
+          "detailed": "\n        ",
+          "name": "secure",
+          "params": [
+            "name",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *ver, dns_name_t *origin, dns_name_t *name, dns_dbnode_t *node, uint32_t *ttlp)",
+          "brief": "\n        ",
+          "definition": "static bool is_delegation",
+          "detailed": "\n        ",
+          "name": "is_delegation",
+          "params": [
+            "db",
+            "ver",
+            "origin",
+            "name",
+            "node",
+            "ttlp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *ver, dns_dbnode_t *node)",
+          "brief": "Return true if version 'ver' of database 'db' contains a DNAME RRset at 'node'; return false otherwise.",
+          "definition": "static bool has_dname",
+          "detailed": "\n        ",
+          "name": "has_dname",
+          "params": [
+            "db",
+            "ver",
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dbnode_t *node, bool apex, dns_name_t *name)",
+          "brief": "Signs all records at a name.",
+          "definition": "static void signname",
+          "detailed": "\n        ",
+          "name": "signname",
+          "params": [
+            "node",
+            "apex",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dbnode_t *node)",
+          "brief": "\n        ",
+          "definition": "static bool active_node",
+          "detailed": "\n        ",
+          "name": "active_node",
+          "params": [
+            "node"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Extracts the minimum TTL from the SOA record, and the SOA record's TTL.",
+          "definition": "static void get_soa_ttls",
+          "detailed": "\n        ",
+          "name": "get_soa_ttls",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t serial, dns_updatemethod_t method)",
+          "brief": "Increment (or set if nonzero) the SOA serial.",
+          "definition": "static isc_result_t setsoaserial",
+          "detailed": "\n        ",
+          "name": "setsoaserial",
+          "params": [
+            "serial",
+            "method"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Set up the iterator and global state before starting the tasks.",
+          "definition": "static void presign",
+          "detailed": "\n        ",
+          "name": "presign",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Clean up the iterator and global state after the tasks complete.",
+          "definition": "static void postsign",
+          "detailed": "\n        ",
+          "name": "postsign",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Sign the apex of the zone. Note the origin may not be the first node if there are out of zone records.",
+          "definition": "static void signapex",
+          "detailed": "\n        ",
+          "name": "signapex",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void abortwork",
+          "detailed": "\n        ",
+          "name": "abortwork",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "Assigns a node to a worker thread. This is protected by the main task's lock.",
+          "definition": "static void assignwork",
+          "detailed": "\n        ",
+          "name": "assignwork",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_dbnode_t *node, uint32_t nsttl)",
+          "brief": "Update / remove the DS RRset. Preserve RRSIG(DS) if possible.",
+          "definition": "static void add_ds",
+          "detailed": "\n        ",
+          "name": "add_ds",
+          "params": [
+            "name",
+            "node",
+            "nsttl"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dbnode_t *node, dns_rdatatype_t which, bool checknsec)",
+          "brief": "\n        ",
+          "definition": "static void remove_records",
+          "detailed": "\n        ",
+          "name": "remove_records",
+          "params": [
+            "node",
+            "which",
+            "checknsec"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dbnode_t *node, bool delegation, dns_rdatatype_t which)",
+          "brief": "\n        ",
+          "definition": "static void remove_sigs",
+          "detailed": "\n        ",
+          "name": "remove_sigs",
+          "params": [
+            "node",
+            "delegation",
+            "which"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Generate NSEC records for the zone and remove NSEC3/NSEC3PARAM records.",
+          "definition": "static void nsecify",
+          "detailed": "\n        ",
+          "name": "nsecify",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const unsigned char *salt, size_t salt_len, dns_iterations_t iterations)",
+          "brief": "\n        ",
+          "definition": "static void addnsec3param",
+          "detailed": "\n        ",
+          "name": "addnsec3param",
+          "params": [
+            "salt",
+            "salt_len",
+            "iterations"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_dbnode_t *node, const unsigned char *salt, size_t salt_len, unsigned int iterations, hashlist_t *hashlist, dns_ttl_t ttl)",
+          "brief": "\n        ",
+          "definition": "static void addnsec3",
+          "detailed": "\n        ",
+          "name": "addnsec3",
+          "params": [
+            "name",
+            "node",
+            "salt",
+            "salt_len",
+            "iterations",
+            "hashlist",
+            "ttl"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_dbnode_t *node, unsigned int hashalg, unsigned int iterations, const unsigned char *salt, size_t salt_len, hashlist_t *hashlist)",
+          "brief": "Clean out NSEC3 record and RRSIG(NSEC3) that are not in the hash list.",
+          "definition": "static void nsec3clean",
+          "detailed": "Extract the hash from the first label of 'name' then see if it is in hashlist. If 'name' is not in the hashlist then delete the any NSEC3 records which have the same parameters as the chain we are building.\nXXXMPA Should we also check that it of the form <hash>.<origin>?",
+          "name": "nsec3clean",
+          "params": [
+            "name",
+            "node",
+            "hashalg",
+            "iterations",
+            "salt",
+            "salt_len",
+            "hashlist"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, dns_rdataset_t *rdataset, dns_diff_t *add, dns_diff_t *del)",
+          "brief": "\n        ",
+          "definition": "static void rrset_cleanup",
+          "detailed": "\n        ",
+          "name": "rrset_cleanup",
+          "params": [
+            "name",
+            "rdataset",
+            "add",
+            "del"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cleanup_zone",
+          "detailed": "\n        ",
+          "name": "cleanup_zone",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int hashalg, dns_iterations_t iterations, const unsigned char *salt, size_t salt_len, hashlist_t *hashlist)",
+          "brief": "\n        ",
+          "definition": "static void nsec3ify",
+          "detailed": "\n        ",
+          "name": "nsec3ify",
+          "params": [
+            "hashalg",
+            "iterations",
+            "salt",
+            "salt_len",
+            "hashlist"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *file, const char *origin, dns_rdataclass_t rdclass, dns_db_t **db)",
+          "brief": "Load the zone file from disk.",
+          "definition": "static void loadzone",
+          "detailed": "\n        ",
+          "name": "loadzone",
+          "params": [
+            "file",
+            "origin",
+            "rdclass",
+            "db"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool preserve_keys, bool load_public)",
+          "brief": "Finds all public zone keys in the zone, and attempts to load the private keys from disk.",
+          "definition": "static void loadzonekeys",
+          "detailed": "\n        ",
+          "name": "loadzonekeys",
+          "params": [
+            "preserve_keys",
+            "load_public"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *keyfiles[], int n, bool setksk)",
+          "brief": "\n        ",
+          "definition": "static void loadexplicitkeys",
+          "detailed": "\n        ",
+          "name": "loadexplicitkeys",
+          "params": [
+            "keyfiles",
+            "n",
+            "setksk"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void report",
+          "detailed": "\n        ",
+          "name": "report",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dnsseckeylist_t *list)",
+          "brief": "\n        ",
+          "definition": "static void clear_keylist",
+          "detailed": "\n        ",
+          "name": "clear_keylist",
+          "params": [
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *str, size_t dlen, dns_kasp_digestlist_t *digests, bool *cdnskey)",
+          "brief": "\n        ",
+          "definition": "static void add_digest",
+          "detailed": "\n        ",
+          "name": "add_digest",
+          "params": [
+            "str",
+            "dlen",
+            "digests",
+            "cdnskey"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void build_final_keylist",
+          "detailed": "\n        ",
+          "name": "build_final_keylist",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db)",
+          "brief": "\n        ",
+          "definition": "static void warnifallksk",
+          "detailed": "\n        ",
+          "name": "warnifallksk",
+          "params": [
+            "db"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool update, bool set_salt, bool set_optout, bool set_iter)",
+          "brief": "\n        ",
+          "definition": "static void set_nsec3params",
+          "detailed": "\n        ",
+          "name": "set_nsec3params",
+          "params": [
+            "update",
+            "set_salt",
+            "set_optout",
+            "set_iter"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *prefix, dns_rdatatype_t type)",
+          "brief": "\n        ",
+          "definition": "static void writeset",
+          "detailed": "\n        ",
+          "name": "writeset",
+          "params": [
+            "prefix",
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *fp) ISC_ATTR_NONNULL(1)",
+          "brief": "\n        ",
+          "definition": "static void print_time",
+          "detailed": "\n        ",
+          "name": "print_time",
+          "params": [
+            "fp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *fp) ISC_ATTR_NONNULL(1)",
+          "brief": "\n        ",
+          "definition": "static void print_version",
+          "detailed": "\n        ",
+          "name": "print_version",
+          "params": [
+            "fp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int ret)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            "ret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void removetempfile",
+          "detailed": "\n        ",
+          "name": "removetempfile",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_time_t *timer_start, isc_time_t *timer_finish, isc_time_t *sign_start, isc_time_t *sign_finish)",
+          "brief": "\n        ",
+          "definition": "static void print_stats",
+          "detailed": "\n        ",
+          "name": "print_stats",
+          "params": [
+            "timer_start",
+            "timer_finish",
+            "sign_start",
+            "sign_finish"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char *argv[])",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "check_dns_dbiterator_current",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "IS_NSEC3",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "OPTOUT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "REVOKE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXDSKEYS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIGNER_EVENTCLASS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIGNER_EVENT_WRITE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SIGNER_EVENT_WORK",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SOA_SERIAL_KEEP",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SOA_SERIAL_INCREMENT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SOA_SERIAL_UNIXTIME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SOA_SERIAL_DATE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INCSTAT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "CMDLINE_FLAGS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct hashlist hashlist_t",
+          "detailed": "\n        ",
+          "name": "hashlist_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* program",
+          "detailed": "program name, statically initialized in each program",
+          "name": "program",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int nsec_datatype",
+          "detailed": "\n        ",
+          "name": "nsec_datatype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dnsseckeylist_t keylist",
+          "detailed": "\n        ",
+          "name": "keylist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int keycount",
+          "detailed": "\n        ",
+          "name": "keycount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_rwlock_t keylist_lock",
+          "detailed": "\n        ",
+          "name": "keylist_lock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t starttime",
+          "detailed": "\n        ",
+          "name": "starttime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t endtime",
+          "detailed": "\n        ",
+          "name": "endtime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t dnskey_endtime",
+          "detailed": "\n        ",
+          "name": "dnskey_endtime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t now",
+          "detailed": "\n        ",
+          "name": "now",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int cycle",
+          "detailed": "\n        ",
+          "name": "cycle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int jitter",
+          "detailed": "\n        ",
+          "name": "jitter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool tryverify",
+          "detailed": "\n        ",
+          "name": "tryverify",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool printstats",
+          "detailed": "\n        ",
+          "name": "printstats",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t zone_soa_min_ttl",
+          "detailed": "\n        ",
+          "name": "zone_soa_min_ttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t soa_ttl",
+          "detailed": "\n        ",
+          "name": "soa_ttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* outfp",
+          "detailed": "\n        ",
+          "name": "outfp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* tempfile",
+          "detailed": "\n        ",
+          "name": "tempfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_master_style_t* masterstyle",
+          "detailed": "\n        ",
+          "name": "masterstyle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_masterformat_t inputformat",
+          "detailed": "\n        ",
+          "name": "inputformat",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_masterformat_t outputformat",
+          "detailed": "\n        ",
+          "name": "outputformat",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t rawversion",
+          "detailed": "\n        ",
+          "name": "rawversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t serialnum",
+          "detailed": "\n        ",
+          "name": "serialnum",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool snset",
+          "detailed": "\n        ",
+          "name": "snset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t nsigned",
+          "detailed": "\n        ",
+          "name": "nsigned",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t nretained",
+          "detailed": "\n        ",
+          "name": "nretained",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t ndropped",
+          "detailed": "\n        ",
+          "name": "ndropped",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t nverified",
+          "detailed": "\n        ",
+          "name": "nverified",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t nverifyfailed",
+          "detailed": "\n        ",
+          "name": "nverifyfailed",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* directory",
+          "detailed": "\n        ",
+          "name": "directory",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char * dsdir",
+          "detailed": "\n        ",
+          "name": "dsdir",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mutex_t namelock",
+          "detailed": "\n        ",
+          "name": "namelock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_db_t* gdb",
+          "detailed": "\n        ",
+          "name": "gdb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbversion_t* gversion",
+          "detailed": "\n        ",
+          "name": "gversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbiterator_t* gdbiter",
+          "detailed": "\n        ",
+          "name": "gdbiter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataclass_t gclass",
+          "detailed": "\n        ",
+          "name": "gclass",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* gorigin",
+          "detailed": "\n        ",
+          "name": "gorigin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int nsec3flags",
+          "detailed": "\n        ",
+          "name": "nsec3flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_iterations_t nsec3iter",
+          "detailed": "\n        ",
+          "name": "nsec3iter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[255]",
+          "brief": "\n        ",
+          "definition": "unsigned char saltbuf[255]",
+          "detailed": "\n        ",
+          "name": "saltbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned char* gsalt",
+          "detailed": "\n        ",
+          "name": "gsalt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "size_t salt_length",
+          "detailed": "\n        ",
+          "name": "salt_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int nloops",
+          "detailed": "\n        ",
+          "name": "nloops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool shuttingdown",
+          "detailed": "\n        ",
+          "name": "shuttingdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "atomic_bool finished",
+          "detailed": "\n        ",
+          "name": "finished",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool nokeys",
+          "detailed": "\n        ",
+          "name": "nokeys",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool removefile",
+          "detailed": "\n        ",
+          "name": "removefile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool generateds",
+          "detailed": "\n        ",
+          "name": "generateds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ignore_kskflag",
+          "detailed": "\n        ",
+          "name": "ignore_kskflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool keyset_kskonly",
+          "detailed": "\n        ",
+          "name": "keyset_kskonly",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_master_style_t* dsstyle",
+          "detailed": "\n        ",
+          "name": "dsstyle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int serialformat",
+          "detailed": "\n        ",
+          "name": "serialformat",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int hash_length",
+          "detailed": "\n        ",
+          "name": "hash_length",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool unknownalg",
+          "detailed": "\n        ",
+          "name": "unknownalg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool disable_zone_check",
+          "detailed": "\n        ",
+          "name": "disable_zone_check",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool update_chain",
+          "detailed": "\n        ",
+          "name": "update_chain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool set_keyttl",
+          "detailed": "\n        ",
+          "name": "set_keyttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t keyttl",
+          "detailed": "\n        ",
+          "name": "keyttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool smartsign",
+          "detailed": "\n        ",
+          "name": "smartsign",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool remove_orphansigs",
+          "detailed": "\n        ",
+          "name": "remove_orphansigs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool remove_inactkeysigs",
+          "detailed": "\n        ",
+          "name": "remove_inactkeysigs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool output_dnssec_only",
+          "detailed": "\n        ",
+          "name": "output_dnssec_only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool output_stdout",
+          "detailed": "\n        ",
+          "name": "output_stdout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool set_maxttl",
+          "detailed": "\n        ",
+          "name": "set_maxttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ttl_t maxttl",
+          "detailed": "\n        ",
+          "name": "maxttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool no_max_check",
+          "detailed": "\n        ",
+          "name": "no_max_check",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* sync_records",
+          "detailed": "\n        ",
+          "name": "sync_records",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",

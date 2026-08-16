@@ -3,11 +3,1492 @@
     "bin/nsupdate/nsupdate.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(isc_sockaddr_t *destaddr, dns_message_t *msg, dns_request_t **request)",
+          "brief": "\n        ",
+          "definition": "static void sendrequest",
+          "detailed": "\n        ",
+          "name": "sendrequest",
+          "params": [
+            "destaddr",
+            "msg",
+            "request"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *zonename, isc_sockaddr_t *primary)",
+          "brief": "\n        ",
+          "definition": "static void send_update",
+          "detailed": "\n        ",
+          "name": "send_update",
+          "params": [
+            "zonename",
+            "primary"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void getinput",
+          "detailed": "\n        ",
+          "name": "getinput",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "static noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "static noreturn void static void debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "static void ddebug",
+          "detailed": "\n        ",
+          "name": "ddebug",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "static void error",
+          "detailed": "\n        ",
+          "name": "error",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void primary_from_servers",
+          "detailed": "\n        ",
+          "name": "primary_from_servers",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static dns_rdataclass_t getzoneclass",
+          "detailed": "\n        ",
+          "name": "getzoneclass",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataclass_t rdclass)",
+          "brief": "\n        ",
+          "definition": "static bool setzoneclass",
+          "detailed": "\n        ",
+          "name": "setzoneclass",
+          "params": [
+            "rdclass"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_result_t result, const char *msg)",
+          "brief": "\n        ",
+          "definition": "static ISC_NO_SANITIZE_ADDRESS void check_result",
+          "detailed": "\n        ",
+          "name": "check_result",
+          "params": [
+            "result",
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char **stringp, const char *delim)",
+          "brief": "\n        ",
+          "definition": "static char * nsu_strsep",
+          "detailed": "\n        ",
+          "name": "nsu_strsep",
+          "params": [
+            "stringp",
+            "delim"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void reset_system",
+          "detailed": "\n        ",
+          "name": "reset_system",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *hmacstr, size_t len, dst_algorithm_t *hmac_alg, uint16_t *digestbitsp)",
+          "brief": "\n        ",
+          "definition": "static bool parse_hmac",
+          "detailed": "\n        ",
+          "name": "parse_hmac",
+          "params": [
+            "hmacstr",
+            "len",
+            "hmac_alg",
+            "digestbitsp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *file)",
+          "brief": "\n        ",
+          "definition": "static int basenamelen",
+          "detailed": "\n        ",
+          "name": "basenamelen",
+          "params": [
+            "file"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void setup_keystr",
+          "detailed": "\n        ",
+          "name": "setup_keystr",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, isc_log_t *lctx)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t read_sessionkey",
+          "detailed": "\n        ",
+          "name": "read_sessionkey",
+          "params": [
+            "mctx",
+            "lctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, isc_log_t *lctx)",
+          "brief": "\n        ",
+          "definition": "static void setup_keyfile",
+          "detailed": "\n        ",
+          "name": "setup_keyfile",
+          "params": [
+            "mctx",
+            "lctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void doshutdown",
+          "detailed": "\n        ",
+          "name": "doshutdown",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void maybeshutdown",
+          "detailed": "\n        ",
+          "name": "maybeshutdown",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void shutdown_program",
+          "detailed": "\n        ",
+          "name": "shutdown_program",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_dispatchmgr_t *manager)",
+          "brief": "\n        ",
+          "definition": "static void set_source_ports",
+          "detailed": "\n        ",
+          "name": "set_source_ports",
+          "params": [
+            "manager"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *str, char *namedata, size_t len, dns_name_t *name)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t create_name",
+          "detailed": "\n        ",
+          "name": "create_name",
+          "params": [
+            "str",
+            "namedata",
+            "len",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "static void setup_system",
+          "detailed": "\n        ",
+          "name": "setup_system",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *host, in_port_t port, isc_sockaddr_t *sockaddr, int naddrs)",
+          "brief": "\n        ",
+          "definition": "static int get_addresses",
+          "detailed": "\n        ",
+          "name": "get_addresses",
+          "params": [
+            "host",
+            "port",
+            "sockaddr",
+            "naddrs"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void pre_parse_args",
+          "detailed": "\n        ",
+          "name": "pre_parse_args",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char **cmdlinep, dns_message_t *msg, dns_name_t **namep)",
+          "brief": "\n        ",
+          "definition": "static uint16_t parse_name",
+          "detailed": "\n        ",
+          "name": "parse_name",
+          "params": [
+            "cmdlinep",
+            "msg",
+            "namep"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char **cmdlinep, dns_rdataclass_t rdataclass, dns_rdatatype_t rdatatype, dns_message_t *msg, dns_rdata_t *rdata)",
+          "brief": "\n        ",
+          "definition": "static uint16_t parse_rdata",
+          "detailed": "\n        ",
+          "name": "parse_rdata",
+          "params": [
+            "cmdlinep",
+            "rdataclass",
+            "rdatatype",
+            "msg",
+            "rdata"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline, bool ispositive, bool isrrset)",
+          "brief": "\n        ",
+          "definition": "static uint16_t make_prereq",
+          "detailed": "\n        ",
+          "name": "make_prereq",
+          "params": [
+            "cmdline",
+            "ispositive",
+            "isrrset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_prereq",
+          "detailed": "\n        ",
+          "name": "evaluate_prereq",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void updateopt",
+          "detailed": "\n        ",
+          "name": "updateopt",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_lease",
+          "detailed": "\n        ",
+          "name": "evaluate_lease",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_server",
+          "detailed": "\n        ",
+          "name": "evaluate_server",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_local",
+          "detailed": "\n        ",
+          "name": "evaluate_local",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_key",
+          "detailed": "\n        ",
+          "name": "evaluate_key",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_zone",
+          "detailed": "\n        ",
+          "name": "evaluate_zone",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_realm",
+          "detailed": "\n        ",
+          "name": "evaluate_realm",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_ttl",
+          "detailed": "\n        ",
+          "name": "evaluate_ttl",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_class",
+          "detailed": "\n        ",
+          "name": "evaluate_class",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline, bool isdelete)",
+          "brief": "\n        ",
+          "definition": "static uint16_t update_addordelete",
+          "detailed": "\n        ",
+          "name": "update_addordelete",
+          "params": [
+            "cmdline",
+            "isdelete"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_update",
+          "detailed": "\n        ",
+          "name": "evaluate_update",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_checknames",
+          "detailed": "\n        ",
+          "name": "evaluate_checknames",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t evaluate_checksvcb",
+          "detailed": "\n        ",
+          "name": "evaluate_checksvcb",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *zonename)",
+          "brief": "\n        ",
+          "definition": "static void setzone",
+          "detailed": "\n        ",
+          "name": "setzone",
+          "params": [
+            "zonename"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *stream, dns_message_t *msg, const char *description)",
+          "brief": "\n        ",
+          "definition": "static void show_message",
+          "detailed": "\n        ",
+          "name": "show_message",
+          "params": [
+            "stream",
+            "msg",
+            "description"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *cmdline)",
+          "brief": "\n        ",
+          "definition": "static uint16_t do_next_command",
+          "detailed": "\n        ",
+          "name": "do_next_command",
+          "params": [
+            "cmdline"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static uint16_t get_next_command",
+          "detailed": "\n        ",
+          "name": "get_next_command",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static bool user_interaction",
+          "detailed": "\n        ",
+          "name": "user_interaction",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void done_update",
+          "detailed": "\n        ",
+          "name": "done_update",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rdataset, isc_buffer_t *b)",
+          "brief": "\n        ",
+          "definition": "static void check_tsig_error",
+          "detailed": "\n        ",
+          "name": "check_tsig_error",
+          "params": [
+            "rdataset",
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *caller, isc_sockaddr_t *addr, isc_result_t eresult)",
+          "brief": "\n        ",
+          "definition": "static bool next_primary",
+          "detailed": "\n        ",
+          "name": "next_primary",
+          "params": [
+            "caller",
+            "addr",
+            "eresult"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void update_completed",
+          "detailed": "\n        ",
+          "name": "update_completed",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *caller, isc_sockaddr_t *addr, isc_result_t eresult)",
+          "brief": "\n        ",
+          "definition": "static void next_server",
+          "detailed": "\n        ",
+          "name": "next_server",
+          "params": [
+            "caller",
+            "addr",
+            "eresult"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "static void recvsoa",
+          "detailed": "\n        ",
+          "name": "recvsoa",
+          "params": [
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void start_update",
+          "detailed": "\n        ",
+          "name": "start_update",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void cleanup",
+          "detailed": "\n        ",
+          "name": "cleanup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXCMD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXWIRE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "INITTEXT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXTEXT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TTL_MAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DNSDEFAULTPORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_EDNS_BUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_SERVERADDRS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RESOLV_CONF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STATUS_MORE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STATUS_SEND",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STATUS_QUIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "STATUS_SYNTAX",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "PARSE_ARGS_FMT",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct nsu_requestinfo nsu_requestinfo_t",
+          "detailed": "\n        ",
+          "name": "nsu_requestinfo_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t dnsport",
+          "detailed": "\n        ",
+          "name": "dnsport",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debugging",
+          "detailed": "\n        ",
+          "name": "debugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ddebugging",
+          "detailed": "\n        ",
+          "name": "ddebugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool memdebugging",
+          "detailed": "\n        ",
+          "name": "memdebugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv4",
+          "detailed": "\n        ",
+          "name": "have_ipv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv6",
+          "detailed": "\n        ",
+          "name": "have_ipv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool is_dst_up",
+          "detailed": "\n        ",
+          "name": "is_dst_up",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool use_tls",
+          "detailed": "\n        ",
+          "name": "use_tls",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool usevc",
+          "detailed": "\n        ",
+          "name": "usevc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool usegsstsig",
+          "detailed": "\n        ",
+          "name": "usegsstsig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool local_only",
+          "detailed": "\n        ",
+          "name": "local_only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* glctx",
+          "detailed": "\n        ",
+          "name": "glctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* gmctx",
+          "detailed": "\n        ",
+          "name": "gmctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatchmgr_t* dispatchmgr",
+          "detailed": "\n        ",
+          "name": "dispatchmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_requestmgr_t* requestmgr",
+          "detailed": "\n        ",
+          "name": "requestmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatch_t* dispatchv4",
+          "detailed": "\n        ",
+          "name": "dispatchv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatch_t* dispatchv6",
+          "detailed": "\n        ",
+          "name": "dispatchv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_message_t* updatemsg",
+          "detailed": "\n        ",
+          "name": "updatemsg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t fuserzone",
+          "detailed": "\n        ",
+          "name": "fuserzone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t fzname",
+          "detailed": "\n        ",
+          "name": "fzname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* userzone",
+          "detailed": "\n        ",
+          "name": "userzone",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* zname",
+          "detailed": "\n        ",
+          "name": "zname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t tmpzonename",
+          "detailed": "\n        ",
+          "name": "tmpzonename",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t restart_primary",
+          "detailed": "\n        ",
+          "name": "restart_primary",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkeyring_t* gssring",
+          "detailed": "\n        ",
+          "name": "gssring",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkey_t* tsigkey",
+          "detailed": "\n        ",
+          "name": "tsigkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_key_t* sig0key",
+          "detailed": "\n        ",
+          "name": "sig0key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* servers",
+          "detailed": "\n        ",
+          "name": "servers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* primary_servers",
+          "detailed": "\n        ",
+          "name": "primary_servers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_transport_list_t* transport_list",
+          "detailed": "\n        ",
+          "name": "transport_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_transport_t* transport",
+          "detailed": "\n        ",
+          "name": "transport",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_cache_t* tls_ctx_cache",
+          "detailed": "\n        ",
+          "name": "tls_ctx_cache",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* tls_hostname",
+          "detailed": "\n        ",
+          "name": "tls_hostname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* tls_client_key_file",
+          "detailed": "\n        ",
+          "name": "tls_client_key_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* tls_client_cert_file",
+          "detailed": "\n        ",
+          "name": "tls_client_cert_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* tls_ca_file",
+          "detailed": "\n        ",
+          "name": "tls_ca_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool tls_always_verify_remote",
+          "detailed": "\n        ",
+          "name": "tls_always_verify_remote",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool default_servers",
+          "detailed": "\n        ",
+          "name": "default_servers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ns_inuse",
+          "detailed": "\n        ",
+          "name": "ns_inuse",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int primary_inuse",
+          "detailed": "\n        ",
+          "name": "primary_inuse",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ns_total",
+          "detailed": "\n        ",
+          "name": "ns_total",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ns_alloc",
+          "detailed": "\n        ",
+          "name": "ns_alloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int primary_total",
+          "detailed": "\n        ",
+          "name": "primary_total",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int primary_alloc",
+          "detailed": "\n        ",
+          "name": "primary_alloc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* localaddr4",
+          "detailed": "\n        ",
+          "name": "localaddr4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* localaddr6",
+          "detailed": "\n        ",
+          "name": "localaddr6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* keyfile",
+          "detailed": "\n        ",
+          "name": "keyfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* keystr",
+          "detailed": "\n        ",
+          "name": "keystr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool shuttingdown",
+          "detailed": "\n        ",
+          "name": "shuttingdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* input",
+          "detailed": "\n        ",
+          "name": "input",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool interactive",
+          "detailed": "\n        ",
+          "name": "interactive",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool seenerror",
+          "detailed": "\n        ",
+          "name": "seenerror",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const dns_master_style_t* style",
+          "detailed": "\n        ",
+          "name": "style",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int requests",
+          "detailed": "\n        ",
+          "name": "requests",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int logdebuglevel",
+          "detailed": "\n        ",
+          "name": "logdebuglevel",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int timeout",
+          "detailed": "\n        ",
+          "name": "timeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int udp_timeout",
+          "detailed": "\n        ",
+          "name": "udp_timeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int udp_retries",
+          "detailed": "\n        ",
+          "name": "udp_retries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataclass_t defaultclass",
+          "detailed": "\n        ",
+          "name": "defaultclass",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataclass_t zoneclass",
+          "detailed": "\n        ",
+          "name": "zoneclass",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mutex_t answer_lock",
+          "detailed": "\n        ",
+          "name": "answer_lock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_message_t* answer",
+          "detailed": "\n        ",
+          "name": "answer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t default_ttl",
+          "detailed": "\n        ",
+          "name": "default_ttl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool default_ttl_set",
+          "detailed": "\n        ",
+          "name": "default_ttl_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t lease",
+          "detailed": "\n        ",
+          "name": "lease",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t keylease",
+          "detailed": "\n        ",
+          "name": "keylease",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool lease_set",
+          "detailed": "\n        ",
+          "name": "lease_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool keylease_set",
+          "detailed": "\n        ",
+          "name": "keylease_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool checknames",
+          "detailed": "\n        ",
+          "name": "checknames",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool checksvcb",
+          "detailed": "\n        ",
+          "name": "checksvcb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* resolvconf",
+          "detailed": "\n        ",
+          "name": "resolvconf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool done",
+          "detailed": "\n        ",
+          "name": "done",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",

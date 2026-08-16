@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "WIRE-RDATA-0001-0095",
+  "court_id": "WIRE-RDATA-0001",
+  "kind": "TEXT",
+  "oracle_raw": "OK \"#\" \"hello\"|01230568656c6c6f|01230568656c6c6f|\"#\" \"hello\"",
+  "rust_raw": "",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

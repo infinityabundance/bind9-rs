@@ -3,11 +3,741 @@
     "bin/dig/dig.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(dns_rcode_t rcode)",
+          "brief": "\n        ",
+          "definition": "static const char * rcode_totext",
+          "detailed": "\n        ",
+          "name": "rcode_totext",
+          "params": [
+            "rcode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(FILE *fp)",
+          "brief": "print usage",
+          "definition": "static void print_usage",
+          "detailed": "\n        ",
+          "name": "print_usage",
+          "params": [
+            "fp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void usage",
+          "detailed": "\n        ",
+          "name": "usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "help",
+          "definition": "static void help",
+          "detailed": "\n        ",
+          "name": "help",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int bytes, isc_sockaddr_t *from, dig_query_t *query)",
+          "brief": "Callback from dighost.c to print the received message.",
+          "definition": "static void received",
+          "detailed": "\n        ",
+          "name": "received",
+          "params": [
+            "bytes",
+            "from",
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *frm, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "static void trying",
+          "detailed": "\n        ",
+          "name": "trying",
+          "params": [
+            "frm",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdata_t *rdata, dig_query_t *query, isc_buffer_t *buf)",
+          "brief": "Internal print routine used to print short form replies.",
+          "definition": "static isc_result_t say_message",
+          "detailed": "\n        ",
+          "name": "say_message",
+          "params": [
+            "rdata",
+            "query",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg, isc_buffer_t *buf)",
+          "brief": "short_form message print handler. Calls above say_message()",
+          "definition": "static isc_result_t dns64prefix_answer",
+          "detailed": "\n        ",
+          "name": "dns64prefix_answer",
+          "params": [
+            "msg",
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg, dns_messagetextflag_t flags, isc_buffer_t *buf, dig_query_t *query)",
+          "brief": "short_form message print handler. Calls above say_message()",
+          "definition": "static isc_result_t short_answer",
+          "detailed": "\n        ",
+          "name": "short_answer",
+          "params": [
+            "msg",
+            "flags",
+            "buf",
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg)",
+          "brief": "\n        ",
+          "definition": "static bool isdotlocal",
+          "detailed": "\n        ",
+          "name": "isdotlocal",
+          "params": [
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query, const isc_buffer_t *msgbuf, dns_message_t *msg, bool headers)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t printmessage",
+          "detailed": "\n        ",
+          "name": "printmessage",
+          "params": [
+            "query",
+            "msgbuf",
+            "msg",
+            "headers"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv, dig_lookup_t *lookup)",
+          "brief": "print the greeting message when the program first starts up.",
+          "definition": "static void printgreeting",
+          "detailed": "\n        ",
+          "name": "printgreeting",
+          "params": [
+            "argc",
+            "argv",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy_addrs_parser_state_t *st)",
+          "brief": "\n        ",
+          "definition": "static bool rule_proxy_addrs",
+          "detailed": "\n        ",
+          "name": "rule_proxy_addrs",
+          "params": [
+            "st"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy_addrs_parser_state_t *st)",
+          "brief": "\n        ",
+          "definition": "static bool rule_addr",
+          "detailed": "\n        ",
+          "name": "rule_addr",
+          "params": [
+            "st"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy_addrs_parser_state_t *st)",
+          "brief": "\n        ",
+          "definition": "static bool rule_port",
+          "detailed": "\n        ",
+          "name": "rule_port",
+          "params": [
+            "st"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_proxy_addrs_parser_state_t *st)",
+          "brief": "\n        ",
+          "definition": "static bool rule_addr_char",
+          "detailed": "\n        ",
+          "name": "rule_addr_char",
+          "params": [
+            "st"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *port_start, const size_t port_len, in_port_t *pport)",
+          "brief": "\n        ",
+          "definition": "static void proxy_handle_port_string",
+          "detailed": "\n        ",
+          "name": "proxy_handle_port_string",
+          "params": [
+            "port_start",
+            "port_len",
+            "pport"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *addr_start, const size_t addr_len, const in_port_t addr_port, isc_sockaddr_t *addr)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t proxy_handle_addr_string",
+          "detailed": "\n        ",
+          "name": "proxy_handle_addr_string",
+          "params": [
+            "addr_start",
+            "addr_len",
+            "addr_port",
+            "addr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *addrs, isc_sockaddr_t *psrc, isc_sockaddr_t *pdst)",
+          "brief": "\n        ",
+          "definition": "static bool parse_proxy_addresses",
+          "detailed": "\n        ",
+          "name": "parse_proxy_addresses",
+          "params": [
+            "addrs",
+            "psrc",
+            "pdst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *value, const bool state, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "static bool plus_proxy_handle_addresses",
+          "detailed": "\n        ",
+          "name": "plus_proxy_handle_addresses",
+          "params": [
+            "value",
+            "state",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *cmd, const char *value, const bool state, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "static bool plus_proxy_options",
+          "detailed": "\n        ",
+          "name": "plus_proxy_options",
+          "params": [
+            "cmd",
+            "value",
+            "state",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *cmd, const char *value, const bool state, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "static bool plus_tls_options",
+          "detailed": "\n        ",
+          "name": "plus_tls_options",
+          "params": [
+            "cmd",
+            "value",
+            "state",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *option, bool is_batchfile, bool *need_clone, dig_lookup_t *lookup)",
+          "brief": "We're not using isc_commandline_parse() here since the command line syntax of dig is quite a bit different from that which can be described by that routine. XXX doc options.",
+          "definition": "static dig_lookup_t * plus_option",
+          "detailed": "\n        ",
+          "name": "plus_option",
+          "params": [
+            "option",
+            "is_batchfile",
+            "need_clone",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *option, char *next, dig_lookup_t **lookup, bool *open_type_class, bool *need_clone, bool config_only, int argc, char **argv, bool *firstarg)",
+          "brief": "\n        ",
+          "definition": "static bool dash_option",
+          "detailed": "\n        ",
+          "name": "dash_option",
+          "params": [
+            "option",
+            "next",
+            "lookup",
+            "open_type_class",
+            "need_clone",
+            "config_only",
+            "argc",
+            "argv",
+            "firstarg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "Because we may be trying to do memory allocation recording, we're going to need to parse the arguments for the -m before we start the main argument parsing routine.",
+          "definition": "static void preparse_args",
+          "detailed": "I'd prefer not to have to do this, but I am not quite sure how else to fix the problem. Argument parsing in dig involves memory allocation by its nature, so it can't be done in the main argument parser.",
+          "name": "preparse_args",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *batchline, char **bargv, int len, const char *msg)",
+          "brief": "\n        ",
+          "definition": "static int split_batchline",
+          "detailed": "\n        ",
+          "name": "split_batchline",
+          "params": [
+            "batchline",
+            "bargv",
+            "len",
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool is_batchfile, bool config_only, int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "is_batchfile",
+            "config_only",
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void query_finished",
+          "detailed": "\n        ",
+          "name": "query_finished",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void dig_error",
+          "detailed": "\n        ",
+          "name": "dig_error",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void dig_warning",
+          "detailed": "\n        ",
+          "name": "dig_warning",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void dig_comments",
+          "detailed": "\n        ",
+          "name": "dig_comments",
+          "params": [
+            "lookup",
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "Call once only to set up libraries, parse global parameters and initial command line query parameters.",
+          "definition": "void dig_setup",
+          "detailed": "\n        ",
+          "name": "dig_setup",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool is_batchfile, bool config_only, int argc, char **argv)",
+          "brief": "Call to supply new parameters for the next lookup.",
+          "definition": "void dig_query_setup",
+          "detailed": "\n        ",
+          "name": "dig_query_setup",
+          "params": [
+            "is_batchfile",
+            "config_only",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "set the main application event cycle running",
+          "definition": "void dig_startup",
+          "detailed": "\n        ",
+          "name": "dig_startup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Cleans up the application.",
+          "definition": "void dig_shutdown",
+          "detailed": "\n        ",
+          "name": "dig_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "Main processing routine for dig.",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ADD_STRING",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIG_MAX_ADDRESSES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FULLCHECK",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FULLCHECK2",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FULLCHECK6",
+          "params": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MATCH",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MATCH_DIGIT",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ADVANCE",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "GETP",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct isc_proxy_addrs_parser_state isc_proxy_addrs_parser_state_t",
+          "detailed": "\n        ",
+          "name": "isc_proxy_addrs_parser_state_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_lookup_t* default_lookup",
+          "detailed": "\n        ",
+          "name": "default_lookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* batchname",
+          "detailed": "\n        ",
+          "name": "batchname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* batchfp",
+          "detailed": "\n        ",
+          "name": "batchfp",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* argv0",
+          "detailed": "\n        ",
+          "name": "argv0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int addresscount",
+          "detailed": "\n        ",
+          "name": "addresscount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[DNS_NAME_MAXTEXT]",
+          "brief": "\n        ",
+          "definition": "char domainopt[DNS_NAME_MAXTEXT]",
+          "detailed": "\n        ",
+          "name": "domainopt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[81]",
+          "brief": "\n        ",
+          "definition": "char hexcookie[81]",
+          "detailed": "\n        ",
+          "name": "hexcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool short_form",
+          "detailed": "\n        ",
+          "name": "short_form",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool printcmd",
+          "detailed": "\n        ",
+          "name": "printcmd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool plusquest",
+          "detailed": "\n        ",
+          "name": "plusquest",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool pluscomm",
+          "detailed": "\n        ",
+          "name": "pluscomm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ipv4only",
+          "detailed": "\n        ",
+          "name": "ipv4only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ipv6only",
+          "detailed": "\n        ",
+          "name": "ipv6only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool digrc",
+          "detailed": "\n        ",
+          "name": "digrc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t splitwidth",
+          "detailed": "\n        ",
+          "name": "splitwidth",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "opcode text",
+          "definition": "const char* const opcodetext[]",
+          "detailed": "\n        ",
+          "name": "opcodetext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "true returned if value was used",
+          "definition": "const char* single_dash_opts",
+          "detailed": "\n        ",
+          "name": "single_dash_opts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* dash_opts",
+          "detailed": "\n        ",
+          "name": "dash_opts",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -130,11 +860,1719 @@
     "bin/dig/dighost.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void default_warnerr",
+          "detailed": "\n        ",
+          "name": "default_warnerr",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup, const char *format,...)",
+          "brief": "\n        ",
+          "definition": "static void default_comments",
+          "detailed": "\n        ",
+          "name": "default_comments",
+          "params": [
+            "lookup",
+            "format",
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup, const char *file, unsigned int line)",
+          "brief": "Cancel a lookup, sending canceling reads on all existing sockets.",
+          "definition": "static void _cancel_lookup",
+          "detailed": "\n        ",
+          "name": "_cancel_lookup",
+          "params": [
+            "lookup",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, isc_region_t *region, void *arg)",
+          "brief": "Event handler for recv complete. Perform whatever actions are necessary, based on the specifics of the user's request.",
+          "definition": "static void recv_done",
+          "detailed": "\n        ",
+          "name": "recv_done",
+          "params": [
+            "handle",
+            "eresult",
+            "region",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "Send a UDP packet to the remote nameserver, possible starting the recv action as well. Also make sure that the timer is running and is properly reset.",
+          "definition": "static void start_udp",
+          "detailed": "\n        ",
+          "name": "start_udp",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "Unlike start_udp, this can't be called multiple times with the same query. When we retry TCP, we requeue the whole lookup, which should start anew.",
+          "definition": "static void start_tcp",
+          "detailed": "\n        ",
+          "name": "start_tcp",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static void force_next",
+          "detailed": "\n        ",
+          "name": "force_next",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "For transfers that involve multiple recvs (XFR's in particular), launch the next recv.",
+          "definition": "static void launch_next_query",
+          "detailed": "\n        ",
+          "name": "launch_next_query",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "If we can, clear the current lookup and start the next one running. (Note that while the reference count of current_lookup may be decremented, current_lookup will not be set to NULL.).",
+          "definition": "static void clear_current_lookup",
+          "detailed": "\n        ",
+          "name": "clear_current_lookup",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *oldlookup)",
+          "brief": "Create and queue a new lookup using the next origin from the search list, read in setup_system().",
+          "definition": "static bool next_origin",
+          "detailed": "Return true iff there was another searchlist entry.",
+          "name": "next_origin",
+          "params": [
+            "oldlookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *string)",
+          "brief": "\n        ",
+          "definition": "static int count_dots",
+          "detailed": "\n        ",
+          "name": "count_dots",
+          "params": [
+            "string"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_buffer_t *b)",
+          "brief": "\n        ",
+          "definition": "static void hex_dump",
+          "detailed": "\n        ",
+          "name": "hex_dump",
+          "params": [
+            "b"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *text, size_t len, char **p, char *end)",
+          "brief": "Append 'len' bytes of 'text' at '*p', failing with ISC_R_NOSPACE if that would advance p past 'end'.",
+          "definition": "static isc_result_t append",
+          "detailed": "\n        ",
+          "name": "append",
+          "params": [
+            "text",
+            "len",
+            "p",
+            "end"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *in, char **p, char *end)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t reverse_octets",
+          "detailed": "\n        ",
+          "name": "reverse_octets",
+          "params": [
+            "in",
+            "p",
+            "end"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *reverse, size_t len, char *value, bool strict)",
+          "brief": "\n        ",
+          "definition": "isc_result_t get_reverse",
+          "detailed": "\n        ",
+          "name": "get_reverse",
+          "params": [
+            "reverse",
+            "len",
+            "value",
+            "strict"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void warn",
+          "detailed": "\n        ",
+          "name": "warn",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void digexit",
+          "detailed": "\n        ",
+          "name": "digexit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_result_t result, const char *msg)",
+          "brief": "\n        ",
+          "definition": "void check_result",
+          "detailed": "\n        ",
+          "name": "check_result",
+          "params": [
+            "result",
+            "msg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *servname, const char *userarg)",
+          "brief": "Create a server structure, which is part of the lookup structure. This is little more than a linked list of servers to query in hopes of finding the answer the user is looking for.",
+          "definition": "dig_server_t * make_server",
+          "detailed": "\n        ",
+          "name": "make_server",
+          "params": [
+            "servname",
+            "userarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "Create a copy of the server list from the resolver configuration structure. The dest list must have already had ISC_LIST_INIT applied.",
+          "definition": "static void get_server_list",
+          "detailed": "\n        ",
+          "name": "get_server_list",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void flush_server_list",
+          "detailed": "\n        ",
+          "name": "flush_server_list",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *opt)",
+          "brief": "\n        ",
+          "definition": "void set_nameserver",
+          "detailed": "\n        ",
+          "name": "set_nameserver",
+          "params": [
+            "opt"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_serverlist_t src, dig_serverlist_t *dest)",
+          "brief": "Produce a cloned server list. The dest list must have already had ISC_LIST_INIT applied.",
+          "definition": "void clone_server_list",
+          "detailed": "\n        ",
+          "name": "clone_server_list",
+          "params": [
+            "src",
+            "dest"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Create an empty lookup structure, which holds all the information needed to get an answer to a user's question. This structure contains two linked lists: the server list (servers to query) and the query list (outstanding queries which have been made to the listed servers).",
+          "definition": "dig_lookup_t * make_empty_lookup",
+          "detailed": "\n        ",
+          "name": "make_empty_lookup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *looknew, dig_lookup_t *lookold)",
+          "brief": "\n        ",
+          "definition": "static void cloneopts",
+          "detailed": "\n        ",
+          "name": "cloneopts",
+          "params": [
+            "looknew",
+            "lookold"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookold, bool servers)",
+          "brief": "Clone a lookup, perhaps copying the server list. This does not clone the query list, since it will be regenerated by the setup_lookup() function, nor does it queue up the new lookup for processing. Caution: If you don't clone the servers, you MUST clone the server list separately from somewhere else, or construct it by hand.",
+          "definition": "dig_lookup_t * clone_lookup",
+          "detailed": "\n        ",
+          "name": "clone_lookup",
+          "params": [
+            "lookold",
+            "servers"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookold, bool servers)",
+          "brief": "Requeue a lookup for further processing, perhaps copying the server list. The new lookup structure is returned to the caller, and is queued for processing. If servers are not cloned in the requeue, they must be added before allowing the current event to complete, since the completion of the event may result in the next entry on the lookup queue getting run.",
+          "definition": "dig_lookup_t * requeue_lookup",
+          "detailed": "\n        ",
+          "name": "requeue_lookup",
+          "params": [
+            "lookold",
+            "servers"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void setup_text_key",
+          "detailed": "\n        ",
+          "name": "setup_text_key",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc, int base)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_uint_helper",
+          "detailed": "\n        ",
+          "name": "parse_uint_helper",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc",
+            "base"
+          ],
+          "static": true
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc)",
+          "brief": "\n        ",
+          "definition": "isc_result_t parse_uint",
+          "detailed": "\n        ",
+          "name": "parse_uint",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc)",
+          "brief": "\n        ",
+          "definition": "isc_result_t parse_xint",
+          "detailed": "\n        ",
+          "name": "parse_xint",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *arg, const char *desc, uint32_t max)",
+          "brief": "\n        ",
+          "definition": "static uint32_t parse_bits",
+          "detailed": "\n        ",
+          "name": "parse_bits",
+          "params": [
+            "arg",
+            "desc",
+            "max"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_sockaddr_t **sap, const char *value)",
+          "brief": "\n        ",
+          "definition": "isc_result_t parse_netprefix",
+          "detailed": "\n        ",
+          "name": "parse_netprefix",
+          "params": [
+            "sap",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *algname)",
+          "brief": "\n        ",
+          "definition": "void parse_hmac",
+          "detailed": "\n        ",
+          "name": "parse_hmac",
+          "params": [
+            "algname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t read_confkey",
+          "detailed": "\n        ",
+          "name": "read_confkey",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void setup_file_key",
+          "detailed": "\n        ",
+          "name": "setup_file_key",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *domain)",
+          "brief": "\n        ",
+          "definition": "static dig_searchlist_t * make_searchlist_entry",
+          "detailed": "\n        ",
+          "name": "make_searchlist_entry",
+          "params": [
+            "domain"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void clear_searchlist",
+          "detailed": "\n        ",
+          "name": "clear_searchlist",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(irs_resconf_t *resconf)",
+          "brief": "\n        ",
+          "definition": "static void create_search_list",
+          "detailed": "\n        ",
+          "name": "create_search_list",
+          "params": [
+            "resconf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *addr)",
+          "brief": "Append 'addr' to the list of servers to be queried. This function is only called when no server addresses are explicitly specified and either libirs returns an empty list of servers to use or none of the addresses returned by libirs are usable due to the specified address family restrictions.",
+          "definition": "static void add_fallback_nameserver",
+          "detailed": "\n        ",
+          "name": "add_fallback_nameserver",
+          "params": [
+            "addr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool ipv4only, bool ipv6only)",
+          "brief": "Setup the system as a whole, reading key information and resolv.conf settings.",
+          "definition": "void setup_system",
+          "detailed": "\n        ",
+          "name": "setup_system",
+          "params": [
+            "ipv4only",
+            "ipv6only"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *domain)",
+          "brief": "Override the search list derived from resolv.conf by 'domain'.",
+          "definition": "void set_search_domain",
+          "detailed": "\n        ",
+          "name": "set_search_domain",
+          "params": [
+            "domain"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Setup the ISC and DNS libraries for use by the system.",
+          "definition": "void setup_libs",
+          "detailed": "\n        ",
+          "name": "setup_libs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup, char *code, char *value)",
+          "brief": "\n        ",
+          "definition": "void save_opt",
+          "detailed": "\n        ",
+          "name": "save_opt",
+          "params": [
+            "lookup",
+            "code",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_message_t *msg, uint16_t udpsize, uint16_t edns, unsigned int flags, dns_ednsopt_t *opts, size_t count)",
+          "brief": "Add EDNS0 option record to a message. Currently, the only supported options are UDP buffer size, the DO bit, and EDNS options (e.g., NSID, COOKIE, client-subnet).",
+          "definition": "static void add_opt",
+          "detailed": "\n        ",
+          "name": "add_opt",
+          "params": [
+            "msg",
+            "udpsize",
+            "edns",
+            "flags",
+            "opts",
+            "count"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *message, dns_name_t *name, dns_rdataclass_t rdclass, dns_rdatatype_t rdtype)",
+          "brief": "Add a question section to a message, asking for the specified name, type, and class.",
+          "definition": "static void add_question",
+          "detailed": "\n        ",
+          "name": "add_question",
+          "params": [
+            "message",
+            "name",
+            "rdclass",
+            "rdtype"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "Check if we're done with all the queued lookups, which is true iff all sockets, sends, and recvs are accounted for (counters == 0), and the lookup list is empty. If we are done, pass control back out to dighost_shutdown() (which is part of dig.c, host.c, or nslookup.c) to either shutdown the system as a whole or reseed the lookup list.",
+          "definition": "static void check_if_done",
+          "detailed": "\n        ",
+          "name": "check_if_done",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *l, dig_query_t *except_q)",
+          "brief": "Check if we're done with all the queries in the lookup, except for the except_q query (can be NULL if no exception is required). Expects l to be a valid and locked lookup.",
+          "definition": "static bool check_if_queries_done",
+          "detailed": "\n        ",
+          "name": "check_if_queries_done",
+          "params": [
+            "l",
+            "except_q"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "static void _destroy_lookup",
+          "detailed": "\n        ",
+          "name": "_destroy_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup, dig_lookup_t **lookupp, const char *file, unsigned int line)",
+          "brief": "\n        ",
+          "definition": "static void _lookup_attach",
+          "detailed": "\n        ",
+          "name": "_lookup_attach",
+          "params": [
+            "lookup",
+            "lookupp",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t **lookupp, const char *file, unsigned int line)",
+          "brief": "\n        ",
+          "definition": "static void _lookup_detach",
+          "detailed": "\n        ",
+          "name": "_lookup_detach",
+          "params": [
+            "lookupp",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "void destroy_lookup",
+          "detailed": "\n        ",
+          "name": "destroy_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_query_t *query, const char *file, unsigned int line)",
+          "brief": "Destroy a query when we're done with it. WARNING: This routine WILL invalidate the query pointer.",
+          "definition": "static void destroy_query",
+          "detailed": "\n        ",
+          "name": "destroy_query",
+          "params": [
+            "query",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *source, dig_query_t **targetp, const char *file, unsigned int line)",
+          "brief": "\n        ",
+          "definition": "static void _query_attach",
+          "detailed": "\n        ",
+          "name": "_query_attach",
+          "params": [
+            "source",
+            "targetp",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t **queryp, const char *file, unsigned int line)",
+          "brief": "\n        ",
+          "definition": "static void _query_detach",
+          "detailed": "\n        ",
+          "name": "_query_detach",
+          "params": [
+            "queryp",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "If we can, start the next lookup in the queue running. This assumes that the lookup on the head of the queue hasn't been started yet. It also removes the lookup from the head of the queue, setting the current_lookup pointer pointing to it.",
+          "definition": "void start_lookup",
+          "detailed": "\n        ",
+          "name": "start_lookup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_message_t *msg, dig_query_t *query, dns_section_t section)",
+          "brief": "Create and queue a new lookup as a followup to the current lookup, based on the supplied message and section. This is used in trace and name server search modes to start a new lookup using servers from NS records in a reply. Returns the number of followup lookups made.",
+          "definition": "static int followup_lookup",
+          "detailed": "\n        ",
+          "name": "followup_lookup",
+          "params": [
+            "msg",
+            "query",
+            "section"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "Insert an SOA record into the sendmessage in a lookup. Used for creating IXFR queries.",
+          "definition": "static void insert_soa",
+          "detailed": "\n        ",
+          "name": "insert_soa",
+          "params": [
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *clientcookie, size_t len)",
+          "brief": "\n        ",
+          "definition": "static void compute_cookie",
+          "detailed": "\n        ",
+          "name": "compute_cookie",
+          "params": [
+            "clientcookie",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup, char *servname, char *userarg, const char *file, unsigned int line)",
+          "brief": "\n        ",
+          "definition": "static dig_query_t * _new_query",
+          "detailed": "\n        ",
+          "name": "_new_query",
+          "params": [
+            "lookup",
+            "servname",
+            "userarg",
+            "file",
+            "line"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "Setup the supplied lookup structure, making it ready to start sending queries to servers. Create and initialize the message to be sent as well as the query structures and buffer space for the replies. If the server list is empty, clone it from the system default list.",
+          "definition": "bool setup_lookup",
+          "detailed": "\n        ",
+          "name": "setup_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *l, dig_query_t *q)",
+          "brief": "NSSEARCH mode special mode handling function to start the next query in the list. The lookup lock must be held by the caller. The function will detach both the lookup and the query, and may cancel the lookup and clear the current lookup.",
+          "definition": "static void nssearch_next",
+          "detailed": "\n        ",
+          "name": "nssearch_next",
+          "params": [
+            "l",
+            "q"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *arg)",
+          "brief": "Event handler for send completion. Track send counter, and clear out the query if the send was canceled.",
+          "definition": "static void send_done",
+          "detailed": "\n        ",
+          "name": "send_done",
+          "params": [
+            "handle",
+            "eresult",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static const char * get_tls_sni_hostname",
+          "detailed": "\n        ",
+          "name": "get_tls_sni_hostname",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query, const bool is_https, isc_tlsctx_client_session_cache_t **psess_cache)",
+          "brief": "\n        ",
+          "definition": "static isc_tlsctx_t * get_create_tls_context",
+          "detailed": "\n        ",
+          "name": "get_create_tls_context",
+          "params": [
+            "query",
+            "is_https",
+            "psess_cache"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *arg)",
+          "brief": "Event handler for TCP connect complete. Make sure the connection was successful, then pass into launch_next_query to actually send the question.",
+          "definition": "static void tcp_connected",
+          "detailed": "\n        ",
+          "name": "tcp_connected",
+          "params": [
+            "handle",
+            "eresult",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static void print_query_size",
+          "detailed": "\n        ",
+          "name": "print_query_size",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static void send_udp",
+          "detailed": "\n        ",
+          "name": "send_udp",
+          "params": [
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_nmhandle_t *handle, isc_result_t eresult, void *arg)",
+          "brief": "\n        ",
+          "definition": "static void udp_ready",
+          "detailed": "\n        ",
+          "name": "udp_ready",
+          "params": [
+            "handle",
+            "eresult",
+            "arg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "If there are more servers available for querying within 'lookup', initiate a TCP or UDP query to the next available server and return true; otherwise, return false.",
+          "definition": "static bool try_next_server",
+          "detailed": "\n        ",
+          "name": "try_next_server",
+          "params": [
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *lookup, dig_query_t *query, dns_message_t *msg, isc_sockaddr_t *peer, int len)",
+          "brief": "Check if the ongoing XFR needs more data before it's complete, using the semantics of IXFR and AXFR protocols. Much of the complexity of this routine comes from determining when an IXFR is complete. false means more data is on the way, and the recv has been issued.",
+          "definition": "static bool check_for_more_data",
+          "detailed": "\n        ",
+          "name": "check_for_more_data",
+          "params": [
+            "lookup",
+            "query",
+            "msg",
+            "peer",
+            "len"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *l, dns_message_t *msg, isc_buffer_t *optbuf, size_t optlen)",
+          "brief": "\n        ",
+          "definition": "static void process_cookie",
+          "detailed": "\n        ",
+          "name": "process_cookie",
+          "params": [
+            "l",
+            "msg",
+            "optbuf",
+            "optlen"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_lookup_t *l, dns_message_t *msg)",
+          "brief": "\n        ",
+          "definition": "static void process_opt",
+          "detailed": "\n        ",
+          "name": "process_opt",
+          "params": [
+            "l",
+            "msg"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *opt)",
+          "brief": "\n        ",
+          "definition": "static int ednsvers",
+          "detailed": "\n        ",
+          "name": "ednsvers",
+          "params": [
+            "opt"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *host, in_port_t myport, isc_sockaddr_t *sockaddr)",
+          "brief": "Turn a name into an address, using system-supplied routines. This is used in looking up server names, etc... and needs to use system-supplied routines, since they may be using a non-DNS system for these lookups.",
+          "definition": "isc_result_t get_address",
+          "detailed": "\n        ",
+          "name": "get_address",
+          "params": [
+            "host",
+            "myport",
+            "sockaddr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup, const char *host, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "int getaddresses",
+          "detailed": "\n        ",
+          "name": "getaddresses",
+          "params": [
+            "lookup",
+            "host",
+            "resultp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "Initiate either a TCP or UDP lookup.",
+          "definition": "void do_lookup",
+          "detailed": "\n        ",
+          "name": "do_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "Start everything in action upon task startup.",
+          "definition": "void onrun_callback",
+          "detailed": "\n        ",
+          "name": "onrun_callback",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "void run_loop",
+          "detailed": "\n        ",
+          "name": "run_loop",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Make everything on the lookup queue go away. Mainly used by the SIGINT handler.",
+          "definition": "void cancel_all",
+          "detailed": "\n        ",
+          "name": "cancel_all",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void cleanup_openssl_refs",
+          "detailed": "\n        ",
+          "name": "cleanup_openssl_refs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Destroy all of the libs we are using, and get everything ready for a clean shutdown.",
+          "definition": "void destroy_libs",
+          "detailed": "\n        ",
+          "name": "destroy_libs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup, bool active)",
+          "brief": "Activate/deactivate IDN filtering of output.",
+          "definition": "void dig_idnsetup",
+          "detailed": "\n        ",
+          "name": "dig_idnsetup",
+          "params": [
+            "lookup",
+            "active"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup_is_tls",
+          "detailed": "\n        ",
+          "name": "dig_lookup_is_tls",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "systemlocale",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "resetlocale",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIG_MAX_ADDRESSES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "cancel_lookup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "EDNSOPT_OPTIONS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "N_EDNS_OPTNAMES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "lookup_attach",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "lookup_detach",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "query_attach",
+          "params": [
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "query_detach",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "new_query",
+          "params": [
+            "",
+            "",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXOPTS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct dig_ednsoptname dig_ednsoptname_t",
+          "detailed": "\n        ",
+          "name": "dig_ednsoptname_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_lookuplist_t lookup_list",
+          "detailed": "\n        ",
+          "name": "lookup_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_serverlist_t server_list",
+          "detailed": "\n        ",
+          "name": "server_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_searchlistlist_t search_list",
+          "detailed": "\n        ",
+          "name": "search_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool cancel_now",
+          "detailed": "\n        ",
+          "name": "cancel_now",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool check_ra",
+          "detailed": "\n        ",
+          "name": "check_ra",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv4",
+          "detailed": "\n        ",
+          "name": "have_ipv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv6",
+          "detailed": "\n        ",
+          "name": "have_ipv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool specified_source",
+          "detailed": "\n        ",
+          "name": "specified_source",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool free_now",
+          "detailed": "\n        ",
+          "name": "free_now",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool usesearch",
+          "detailed": "\n        ",
+          "name": "usesearch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool showsearch",
+          "detailed": "\n        ",
+          "name": "showsearch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool is_dst_up",
+          "detailed": "\n        ",
+          "name": "is_dst_up",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool keep_open",
+          "detailed": "\n        ",
+          "name": "keep_open",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "verbosity: set by -v and -q option in each program, defined in dnssectool.c",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool yaml",
+          "detailed": "\n        ",
+          "name": "yaml",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "in_port_t port",
+          "detailed": "\n        ",
+          "name": "port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool port_set",
+          "detailed": "\n        ",
+          "name": "port_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int timeout",
+          "detailed": "\n        ",
+          "name": "timeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int extrabytes",
+          "detailed": "\n        ",
+          "name": "extrabytes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_log_t* lctx",
+          "detailed": "\n        ",
+          "name": "lctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nm_t* netmgr",
+          "detailed": "\n        ",
+          "name": "netmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loop_t* mainloop",
+          "detailed": "\n        ",
+          "name": "mainloop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t localaddr",
+          "detailed": "\n        ",
+          "name": "localaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t sendcount",
+          "detailed": "\n        ",
+          "name": "sendcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t recvcount",
+          "detailed": "\n        ",
+          "name": "recvcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ndots",
+          "detailed": "\n        ",
+          "name": "ndots",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int tries",
+          "detailed": "\n        ",
+          "name": "tries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int lookup_counter",
+          "detailed": "\n        ",
+          "name": "lookup_counter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[256]",
+          "brief": "\n        ",
+          "definition": "char servercookie[256]",
+          "detailed": "\n        ",
+          "name": "servercookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nmhandle_t* keep",
+          "detailed": "\n        ",
+          "name": "keep",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t keepaddr",
+          "detailed": "\n        ",
+          "name": "keepaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Exit Codes:",
+          "definition": "int exitcode",
+          "detailed": "0 Everything went well, including things like NXDOMAIN \n\n1 Usage error \n\n7 Got too many RR's or Names \n\n8 Couldn't open batch file \n\n9 No reply from server \n\n10 Internal error \n\n\n\n0 Everything went well, including things like NXDOMAIN \n1 Usage error \n7 Got too many RR's or Names \n8 Couldn't open batch file \n9 No reply from server \n10 Internal error",
+          "name": "exitcode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int fatalexit",
+          "detailed": "\n        ",
+          "name": "fatalexit",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char keynametext[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "keynametext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char keyfile[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "keyfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char keysecret[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "keysecret",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[33]",
+          "brief": "\n        ",
+          "definition": "unsigned char cookie_secret[33]",
+          "detailed": "\n        ",
+          "name": "cookie_secret",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[8]",
+          "brief": "\n        ",
+          "definition": "unsigned char cookie[8]",
+          "detailed": "\n        ",
+          "name": "cookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_algorithm_t hmac_alg",
+          "detailed": "\n        ",
+          "name": "hmac_alg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int digestbits",
+          "detailed": "\n        ",
+          "name": "digestbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t* namebuf",
+          "detailed": "\n        ",
+          "name": "namebuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkey_t* tsigkey",
+          "detailed": "\n        ",
+          "name": "tsigkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_key_t* sig0key",
+          "detailed": "\n        ",
+          "name": "sig0key",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "static void validated",
+          "detailed": "\n        ",
+          "name": "validated",
+          "params": [],
+          "static": true
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debugging",
+          "detailed": "\n        ",
+          "name": "debugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debugtiming",
+          "detailed": "\n        ",
+          "name": "debugtiming",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool memdebugging",
+          "detailed": "\n        ",
+          "name": "memdebugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_lookup_t* current_lookup",
+          "detailed": "\n        ",
+          "name": "current_lookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(dig_query_t *query, const isc_buffer_t *msgbuf, dns_message_t *msg, bool headers)",
+          "brief": "\n        ",
+          "definition": "isc_result_t(* dighost_printmessage) (dig_query_t *query, const isc_buffer_t *msgbuf, dns_message_t *msg, bool headers)",
+          "detailed": "\n        ",
+          "name": "dighost_printmessage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const char *format,...)=default_warnerr",
+          "brief": "\n        ",
+          "definition": "void(* dighost_error) (const char *format,...)=default_warnerr",
+          "detailed": "\n        ",
+          "name": "dighost_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const char *format,...)=default_warnerr",
+          "brief": "\n        ",
+          "definition": "void(* dighost_warning) (const char *format,...)=default_warnerr",
+          "detailed": "\n        ",
+          "name": "dighost_warning",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(dig_lookup_t *lookup, const char *format,...)=default_comments",
+          "brief": "Print the final result of the lookup.",
+          "definition": "void(* dighost_comments) (dig_lookup_t *lookup, const char *format,...)=default_comments",
+          "detailed": "\n        ",
+          "name": "dighost_comments",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(unsigned int bytes, isc_sockaddr_t *from, dig_query_t *query)",
+          "brief": "Print a message about where and when the response was received from, like the final comment in the output of \"dig\".",
+          "definition": "void(* dighost_received) (unsigned int bytes, isc_sockaddr_t *from, dig_query_t *query)",
+          "detailed": "\n        ",
+          "name": "dighost_received",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(char *frm, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_trying) (char *frm, dig_lookup_t *lookup)",
+          "detailed": "\n        ",
+          "name": "dighost_trying",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_shutdown) (void)",
+          "detailed": "\n        ",
+          "name": "dighost_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "dig_ednsoptname_t optnames[]",
+          "detailed": "\n        ",
+          "name": "optnames",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -160,13 +2598,2753 @@
       "enums": [],
       "functions": [
         {
-          "args": "(dig_server_t) link",
+          "args": "(dig_server_t) dig_serverlist_t",
           "brief": "\n        ",
-          "definition": "dig_server::ISC_LINK",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_searchlist_t) dig_searchlistlist_t",
+          "brief": "\n        ",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t) dig_lookuplist_t",
+          "brief": "\n        ",
+          "definition": "typedef ISC_LIST",
+          "detailed": "\n        ",
+          "name": "ISC_LIST",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *host, in_port_t myport, isc_sockaddr_t *sockaddr)",
+          "brief": "Turn a name into an address, using system-supplied routines. This is used in looking up server names, etc... and needs to use system-supplied routines, since they may be using a non-DNS system for these lookups.",
+          "definition": "isc_result_t get_address",
+          "detailed": "\n        ",
+          "name": "get_address",
+          "params": [
+            "host",
+            "myport",
+            "sockaddr"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup, const char *host, isc_result_t *resultp)",
+          "brief": "\n        ",
+          "definition": "int getaddresses",
+          "detailed": "\n        ",
+          "name": "getaddresses",
+          "params": [
+            "lookup",
+            "host",
+            "resultp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *reverse, size_t len, char *value, bool strict)",
+          "brief": "\n        ",
+          "definition": "isc_result_t get_reverse",
+          "detailed": "\n        ",
+          "name": "get_reverse",
+          "params": [
+            "reverse",
+            "len",
+            "value",
+            "strict"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "noreturn void fatal",
+          "detailed": "\n        ",
+          "name": "fatal",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "noreturn void void warn",
+          "detailed": "\n        ",
+          "name": "warn",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "noreturn void void noreturn void digexit",
+          "detailed": "\n        ",
+          "name": "digexit",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void cleanup_openssl_refs",
+          "detailed": "\n        ",
+          "name": "cleanup_openssl_refs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *format,...) ISC_FORMAT_PRINTF(1",
+          "brief": "\n        ",
+          "definition": "void debug",
+          "detailed": "\n        ",
+          "name": "debug",
+          "params": [
+            "format",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_result_t result, const char *msg)",
+          "brief": "\n        ",
+          "definition": "void void check_result",
+          "detailed": "\n        ",
+          "name": "check_result",
+          "params": [
+            "result",
+            "msg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "Setup the supplied lookup structure, making it ready to start sending queries to servers. Create and initialize the message to be sent as well as the query structures and buffer space for the replies. If the server list is empty, clone it from the system default list.",
+          "definition": "bool setup_lookup",
+          "detailed": "\n        ",
+          "name": "setup_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "void destroy_lookup",
+          "detailed": "\n        ",
+          "name": "destroy_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup)",
+          "brief": "Initiate either a TCP or UDP lookup.",
+          "definition": "void do_lookup",
+          "detailed": "\n        ",
+          "name": "do_lookup",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "If we can, start the next lookup in the queue running. This assumes that the lookup on the head of the queue hasn't been started yet. It also removes the lookup from the head of the queue, setting the current_lookup pointer pointing to it.",
+          "definition": "void start_lookup",
+          "detailed": "\n        ",
+          "name": "start_lookup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "Start everything in action upon task startup.",
+          "definition": "void onrun_callback",
+          "detailed": "\n        ",
+          "name": "onrun_callback",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg)",
+          "brief": "\n        ",
+          "definition": "void run_loop",
+          "detailed": "\n        ",
+          "name": "run_loop",
+          "params": [
+            "arg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int dhmain",
+          "detailed": "\n        ",
+          "name": "dhmain",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Setup the ISC and DNS libraries for use by the system.",
+          "definition": "void setup_libs",
+          "detailed": "\n        ",
+          "name": "setup_libs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool ipv4only, bool ipv6only)",
+          "brief": "Setup the system as a whole, reading key information and resolv.conf settings.",
+          "definition": "void setup_system",
+          "detailed": "\n        ",
+          "name": "setup_system",
+          "params": [
+            "ipv4only",
+            "ipv6only"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc)",
+          "brief": "\n        ",
+          "definition": "isc_result_t parse_uint",
+          "detailed": "\n        ",
+          "name": "parse_uint",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t *uip, const char *value, uint32_t max, const char *desc)",
+          "brief": "\n        ",
+          "definition": "isc_result_t parse_xint",
+          "detailed": "\n        ",
+          "name": "parse_xint",
+          "params": [
+            "uip",
+            "value",
+            "max",
+            "desc"
+          ],
+          "static": false
+        },
+        {
+          "args": "(isc_sockaddr_t **sap, const char *value)",
+          "brief": "\n        ",
+          "definition": "isc_result_t parse_netprefix",
+          "detailed": "\n        ",
+          "name": "parse_netprefix",
+          "params": [
+            "sap",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *algname)",
+          "brief": "\n        ",
+          "definition": "void parse_hmac",
+          "detailed": "\n        ",
+          "name": "parse_hmac",
+          "params": [
+            "algname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookold, bool servers)",
+          "brief": "Requeue a lookup for further processing, perhaps copying the server list. The new lookup structure is returned to the caller, and is queued for processing. If servers are not cloned in the requeue, they must be added before allowing the current event to complete, since the completion of the event may result in the next entry on the lookup queue getting run.",
+          "definition": "dig_lookup_t * requeue_lookup",
+          "detailed": "\n        ",
+          "name": "requeue_lookup",
+          "params": [
+            "lookold",
+            "servers"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Create an empty lookup structure, which holds all the information needed to get an answer to a user's question. This structure contains two linked lists: the server list (servers to query) and the query list (outstanding queries which have been made to the listed servers).",
+          "definition": "dig_lookup_t * make_empty_lookup",
+          "detailed": "\n        ",
+          "name": "make_empty_lookup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookold, bool servers)",
+          "brief": "Clone a lookup, perhaps copying the server list. This does not clone the query list, since it will be regenerated by the setup_lookup() function, nor does it queue up the new lookup for processing. Caution: If you don't clone the servers, you MUST clone the server list separately from somewhere else, or construct it by hand.",
+          "definition": "dig_lookup_t * clone_lookup",
+          "detailed": "\n        ",
+          "name": "clone_lookup",
+          "params": [
+            "lookold",
+            "servers"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *servname, const char *userarg)",
+          "brief": "Create a server structure, which is part of the lookup structure. This is little more than a linked list of servers to query in hopes of finding the answer the user is looking for.",
+          "definition": "dig_server_t * make_server",
+          "detailed": "\n        ",
+          "name": "make_server",
+          "params": [
+            "servname",
+            "userarg"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void flush_server_list",
+          "detailed": "\n        ",
+          "name": "flush_server_list",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *opt)",
+          "brief": "\n        ",
+          "definition": "void set_nameserver",
+          "detailed": "\n        ",
+          "name": "set_nameserver",
+          "params": [
+            "opt"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_serverlist_t src, dig_serverlist_t *dest)",
+          "brief": "Produce a cloned server list. The dest list must have already had ISC_LIST_INIT applied.",
+          "definition": "void clone_server_list",
+          "detailed": "\n        ",
+          "name": "clone_server_list",
+          "params": [
+            "src",
+            "dest"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Make everything on the lookup queue go away. Mainly used by the SIGINT handler.",
+          "definition": "void cancel_all",
+          "detailed": "\n        ",
+          "name": "cancel_all",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Destroy all of the libs we are using, and get everything ready for a clean shutdown.",
+          "definition": "void destroy_libs",
+          "detailed": "\n        ",
+          "name": "destroy_libs",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(char *domain)",
+          "brief": "Override the search list derived from resolv.conf by 'domain'.",
+          "definition": "void set_search_domain",
+          "detailed": "\n        ",
+          "name": "set_search_domain",
+          "params": [
+            "domain"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup, char *code, char *value)",
+          "brief": "\n        ",
+          "definition": "void save_opt",
+          "detailed": "\n        ",
+          "name": "save_opt",
+          "params": [
+            "lookup",
+            "code",
+            "value"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void setup_file_key",
+          "detailed": "\n        ",
+          "name": "setup_file_key",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void setup_text_key",
+          "detailed": "\n        ",
+          "name": "setup_text_key",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "Call once only to set up libraries, parse global parameters and initial command line query parameters.",
+          "definition": "void dig_setup",
+          "detailed": "\n        ",
+          "name": "dig_setup",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(bool, bool, int argc, char **argv)",
+          "brief": "Call to supply new parameters for the next lookup.",
+          "definition": "void dig_query_setup",
+          "detailed": "\n        ",
+          "name": "dig_query_setup",
+          "params": [
+            "is_batchfile",
+            "config_only",
+            "argc",
+            "argv"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "set the main application event cycle running",
+          "definition": "void dig_startup",
+          "detailed": "\n        ",
+          "name": "dig_startup",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t *lookup, bool active)",
+          "brief": "Activate/deactivate IDN filtering of output.",
+          "definition": "void dig_idnsetup",
+          "detailed": "\n        ",
+          "name": "dig_idnsetup",
+          "params": [
+            "lookup",
+            "active"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Cleans up the application.",
+          "definition": "void dig_shutdown",
+          "detailed": "\n        ",
+          "name": "dig_shutdown",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(const dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup_is_tls",
+          "detailed": "\n        ",
+          "name": "dig_lookup_is_tls",
+          "params": [
+            "lookup"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dig_lookup_t) link",
+          "brief": "\n        ",
+          "definition": "dig_lookup::ISC_LINK",
           "detailed": "\n        ",
           "name": "ISC_LINK",
           "params": [
             ""
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MXSERV",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MXNAME",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MXRD",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Buffer Size.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "COMMSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "location of resolve.conf",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RESOLV_CONF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "output buffer",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "OUTPUTBUF",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Max RR Limit.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXRRLIMIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXTIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Max number of tries.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXTRIES",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Max number of dots.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXNDOTS",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Max number of ports.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXPORT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Max serial number.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXSERIAL",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Max query ID.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAXQID",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Default TCP Timeout.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TCP_TIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Default UDP Timeout.",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "UDP_TIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SERVER_TIMEOUT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "LOOKUP_LIMIT",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_EDNS_VERSION",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_EDNS_BUFSIZE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DEFAULT_HTTPS_QUERY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIG_LOOKUP_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIG_VALID_LOOKUP",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIG_QUERY_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "DIG_VALID_QUERY",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "Lookup_limit is just a limiter, keeping too many lookups from being created. It's job is mainly to prevent the program from running away in a tight loop of constant lookups. It's value is arbitrary.",
+          "definition": "typedef typedefISC_LANG_BEGINDECLS struct dig_lookup dig_lookup_t",
+          "detailed": "\n        ",
+          "name": "dig_lookup_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct dig_query dig_query_t",
+          "detailed": "\n        ",
+          "name": "dig_query_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct dig_server dig_server_t",
+          "detailed": "\n        ",
+          "name": "dig_server_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct dig_searchlist dig_searchlist_t",
+          "detailed": "\n        ",
+          "name": "dig_searchlist_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_lookuplist_t lookup_list",
+          "detailed": "\n        ",
+          "name": "lookup_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_serverlist_t server_list",
+          "detailed": "\n        ",
+          "name": "server_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_searchlistlist_t search_list",
+          "detailed": "\n        ",
+          "name": "search_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int extrabytes",
+          "detailed": "\n        ",
+          "name": "extrabytes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool check_ra",
+          "detailed": "\n        ",
+          "name": "check_ra",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv4",
+          "detailed": "\n        ",
+          "name": "have_ipv4",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool have_ipv6",
+          "detailed": "\n        ",
+          "name": "have_ipv6",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool specified_source",
+          "detailed": "\n        ",
+          "name": "specified_source",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool usesearch",
+          "detailed": "\n        ",
+          "name": "usesearch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool showsearch",
+          "detailed": "\n        ",
+          "name": "showsearch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool yaml",
+          "detailed": "\n        ",
+          "name": "yaml",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "in_port_t port",
+          "detailed": "\n        ",
+          "name": "port",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool port_set",
+          "detailed": "\n        ",
+          "name": "port_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int timeout",
+          "detailed": "\n        ",
+          "name": "timeout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t* mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t sendcount",
+          "detailed": "\n        ",
+          "name": "sendcount",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ndots",
+          "detailed": "\n        ",
+          "name": "ndots",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int lookup_counter",
+          "detailed": "\n        ",
+          "name": "lookup_counter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Exit Codes:",
+          "definition": "int exitcode",
+          "detailed": "0 Everything went well, including things like NXDOMAIN \n\n1 Usage error \n\n7 Got too many RR's or Names \n\n8 Couldn't open batch file \n\n9 No reply from server \n\n10 Internal error \n\n\n\n0 Everything went well, including things like NXDOMAIN \n1 Usage error \n7 Got too many RR's or Names \n8 Couldn't open batch file \n9 No reply from server \n10 Internal error",
+          "name": "exitcode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t localaddr",
+          "detailed": "\n        ",
+          "name": "localaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char keynametext[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "keynametext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char keyfile[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "keyfile",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char keysecret[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "keysecret",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_algorithm_t hmac_alg",
+          "detailed": "\n        ",
+          "name": "hmac_alg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int digestbits",
+          "detailed": "\n        ",
+          "name": "digestbits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_tsigkey_t* tsigkey",
+          "detailed": "\n        ",
+          "name": "tsigkey",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool validated",
+          "detailed": "\n        ",
+          "name": "validated",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loopmgr_t* loopmgr",
+          "detailed": "\n        ",
+          "name": "loopmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_loop_t* mainloop",
+          "detailed": "\n        ",
+          "name": "mainloop",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool free_now",
+          "detailed": "\n        ",
+          "name": "free_now",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debugging",
+          "detailed": "\n        ",
+          "name": "debugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool debugtiming",
+          "detailed": "\n        ",
+          "name": "debugtiming",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool memdebugging",
+          "detailed": "\n        ",
+          "name": "memdebugging",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool keep_open",
+          "detailed": "\n        ",
+          "name": "keep_open",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* progname",
+          "detailed": "\n        ",
+          "name": "progname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int tries",
+          "detailed": "\n        ",
+          "name": "tries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int fatalexit",
+          "detailed": "\n        ",
+          "name": "fatalexit",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool verbose",
+          "detailed": "\n        ",
+          "name": "verbose",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(dig_query_t *query, const isc_buffer_t *msgbuf, dns_message_t *msg, bool headers)",
+          "brief": "\n        ",
+          "definition": "isc_result_t(* dighost_printmessage) (dig_query_t *query, const isc_buffer_t *msgbuf, dns_message_t *msg, bool headers)",
+          "detailed": "\n        ",
+          "name": "dighost_printmessage",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_error) (const char *format,...)",
+          "detailed": "\n        ",
+          "name": "dighost_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(const char *format,...)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_warning) (const char *format,...)",
+          "detailed": "\n        ",
+          "name": "dighost_warning",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(dig_lookup_t *lookup, const char *format,...)",
+          "brief": "Print the final result of the lookup.",
+          "definition": "void(* dighost_comments) (dig_lookup_t *lookup, const char *format,...)",
+          "detailed": "\n        ",
+          "name": "dighost_comments",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(unsigned int bytes, isc_sockaddr_t *from, dig_query_t *query)",
+          "brief": "Print a message about where and when the response was received from, like the final comment in the output of \"dig\".",
+          "definition": "void(* dighost_received) (unsigned int bytes, isc_sockaddr_t *from, dig_query_t *query)",
+          "detailed": "\n        ",
+          "name": "dighost_received",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(char *frm, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_trying) (char *frm, dig_lookup_t *lookup)",
+          "detailed": "\n        ",
+          "name": "dighost_trying",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_shutdown) (void)",
+          "detailed": "\n        ",
+          "name": "dighost_shutdown",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": ")(void)",
+          "brief": "\n        ",
+          "definition": "void(* dighost_pre_exit_hook) (void)",
+          "detailed": "\n        ",
+          "name": "dighost_pre_exit_hook",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int dig_lookup::magic",
+          "detailed": "\n        ",
+          "name": "magic",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_refcount_t dig_lookup::references",
+          "detailed": "\n        ",
+          "name": "references",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::aaonly",
+          "detailed": "\n        ",
+          "name": "aaonly",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::adflag",
+          "detailed": "\n        ",
+          "name": "adflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::badcookie",
+          "detailed": "\n        ",
+          "name": "badcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::besteffort",
+          "detailed": "\n        ",
+          "name": "besteffort",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::cdflag",
+          "detailed": "\n        ",
+          "name": "cdflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::cleared",
+          "detailed": "\n        ",
+          "name": "cleared",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::coflag",
+          "detailed": "\n        ",
+          "name": "coflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::comments",
+          "detailed": "\n        ",
+          "name": "comments",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::dns64prefix",
+          "detailed": "\n        ",
+          "name": "dns64prefix",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::dnssec",
+          "detailed": "\n        ",
+          "name": "dnssec",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::doing_xfr",
+          "detailed": "\n        ",
+          "name": "doing_xfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::done_as_is",
+          "detailed": "\n        ",
+          "name": "done_as_is",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::ednsneg",
+          "detailed": "\n        ",
+          "name": "ednsneg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::expandaaaa",
+          "detailed": "\n        ",
+          "name": "expandaaaa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::expire",
+          "detailed": "\n        ",
+          "name": "expire",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::fuzzing",
+          "detailed": "\n        ",
+          "name": "fuzzing",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::header_only",
+          "detailed": "\n        ",
+          "name": "header_only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Append an \"on server <foo>\" message.",
+          "definition": "bool dig_lookup::identify",
+          "detailed": "\n        ",
+          "name": "identify",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::identify_previous_line",
+          "detailed": "\n        ",
+          "name": "identify_previous_line",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Prepend a \"Nameserver <foo>:\" message, with newline and tab.",
+          "definition": "bool dig_lookup::idnin",
+          "detailed": "\n        ",
+          "name": "idnin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::idnout",
+          "detailed": "\n        ",
+          "name": "idnout",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::ignore",
+          "detailed": "\n        ",
+          "name": "ignore",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::multiline",
+          "detailed": "\n        ",
+          "name": "multiline",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::need_search",
+          "detailed": "\n        ",
+          "name": "need_search",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::new_search",
+          "detailed": "\n        ",
+          "name": "new_search",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::noclass",
+          "detailed": "\n        ",
+          "name": "noclass",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::nocrypto",
+          "detailed": "\n        ",
+          "name": "nocrypto",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::nottl",
+          "detailed": "\n        ",
+          "name": "nottl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "dig +nssearch, host -C",
+          "definition": "bool dig_lookup::ns_search_only",
+          "detailed": "\n        ",
+          "name": "ns_search_only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::ns_search_success",
+          "detailed": "\n        ",
+          "name": "ns_search_success",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::nsid",
+          "detailed": "\n        ",
+          "name": "nsid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Name Server ID (RFC 5001).",
+          "definition": "bool dig_lookup::onesoa",
+          "detailed": "\n        ",
+          "name": "onesoa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Pending a successful answer.",
+          "definition": "bool dig_lookup::pending",
+          "detailed": "\n        ",
+          "name": "pending",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::print_unknown_format",
+          "detailed": "\n        ",
+          "name": "print_unknown_format",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::qr",
+          "detailed": "\n        ",
+          "name": "qr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::raflag",
+          "detailed": "\n        ",
+          "name": "raflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::recurse",
+          "detailed": "\n        ",
+          "name": "recurse",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::section_additional",
+          "detailed": "\n        ",
+          "name": "section_additional",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::section_answer",
+          "detailed": "\n        ",
+          "name": "section_answer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::section_authority",
+          "detailed": "\n        ",
+          "name": "section_authority",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::section_question",
+          "detailed": "\n        ",
+          "name": "section_question",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::seenbadcookie",
+          "detailed": "\n        ",
+          "name": "seenbadcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::sendcookie",
+          "detailed": "\n        ",
+          "name": "sendcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::servfail_stops",
+          "detailed": "\n        ",
+          "name": "servfail_stops",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::setqid",
+          "detailed": "\n        ",
+          "name": "setqid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "use a speciied query ID",
+          "definition": "bool dig_lookup::showbadcookie",
+          "detailed": "\n        ",
+          "name": "showbadcookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::showbadvers",
+          "detailed": "\n        ",
+          "name": "showbadvers",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::stats",
+          "detailed": "\n        ",
+          "name": "stats",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tcflag",
+          "detailed": "\n        ",
+          "name": "tcflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tcp_keepalive",
+          "detailed": "\n        ",
+          "name": "tcp_keepalive",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tcp_mode",
+          "detailed": "\n        ",
+          "name": "tcp_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tcp_mode_set",
+          "detailed": "\n        ",
+          "name": "tcp_mode_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tls_mode",
+          "detailed": "\n        ",
+          "name": "tls_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "connect using TLS",
+          "definition": "bool dig_lookup::trace",
+          "detailed": "\n        ",
+          "name": "trace",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "dig +trace",
+          "definition": "bool dig_lookup::trace_root",
+          "detailed": "\n        ",
+          "name": "trace_root",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "initial query for either +trace or +nssearch",
+          "definition": "bool dig_lookup::ttlunits",
+          "detailed": "\n        ",
+          "name": "ttlunits",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::use_usec",
+          "detailed": "\n        ",
+          "name": "use_usec",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::waiting_connect",
+          "detailed": "\n        ",
+          "name": "waiting_connect",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::zflag",
+          "detailed": "\n        ",
+          "name": "zflag",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char dig_lookup::textname[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "textname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "Name we're going to be looking up.",
+          "definition": "char dig_lookup::cmdline[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "cmdline",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdatatype_t dig_lookup::rdtype",
+          "detailed": "\n        ",
+          "name": "rdtype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdatatype_t dig_lookup::qrdtype",
+          "detailed": "\n        ",
+          "name": "qrdtype",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdataclass_t dig_lookup::rdclass",
+          "detailed": "\n        ",
+          "name": "rdclass",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::rdtypeset",
+          "detailed": "\n        ",
+          "name": "rdtypeset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::rdclassset",
+          "detailed": "\n        ",
+          "name": "rdclassset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "char dig_lookup::name_space[512]",
+          "detailed": "\n        ",
+          "name": "name_space",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[512]",
+          "brief": "\n        ",
+          "definition": "char dig_lookup::oname_space[512]",
+          "detailed": "\n        ",
+          "name": "oname_space",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t dig_lookup::namebuf",
+          "detailed": "\n        ",
+          "name": "namebuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t dig_lookup::onamebuf",
+          "detailed": "\n        ",
+          "name": "onamebuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t dig_lookup::renderbuf",
+          "detailed": "\n        ",
+          "name": "renderbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::sendspace",
+          "detailed": "\n        ",
+          "name": "sendspace",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* dig_lookup::name",
+          "detailed": "\n        ",
+          "name": "name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_interval_t dig_lookup::interval",
+          "detailed": "\n        ",
+          "name": "interval",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_message_t* dig_lookup::sendmsg",
+          "detailed": "\n        ",
+          "name": "sendmsg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_name_t* dig_lookup::oname",
+          "detailed": "\n        ",
+          "name": "oname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_query_t* dig_lookup::current_query",
+          "detailed": "\n        ",
+          "name": "current_query",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_serverlist_t dig_lookup::my_server_list",
+          "detailed": "\n        ",
+          "name": "my_server_list",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_searchlist_t* dig_lookup::origin",
+          "detailed": "\n        ",
+          "name": "origin",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_query_t* dig_lookup::xfr_q",
+          "detailed": "\n        ",
+          "name": "xfr_q",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_lookup::retries",
+          "detailed": "\n        ",
+          "name": "retries",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int dig_lookup::nsfound",
+          "detailed": "\n        ",
+          "name": "nsfound",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int16_t dig_lookup::udpsize",
+          "detailed": "\n        ",
+          "name": "udpsize",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int16_t dig_lookup::edns",
+          "detailed": "\n        ",
+          "name": "edns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int16_t dig_lookup::original_edns",
+          "detailed": "\n        ",
+          "name": "original_edns",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int16_t dig_lookup::padding",
+          "detailed": "\n        ",
+          "name": "padding",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_lookup::ixfr_serial",
+          "detailed": "\n        ",
+          "name": "ixfr_serial",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t dig_lookup::rdatabuf",
+          "detailed": "\n        ",
+          "name": "rdatabuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char dig_lookup::rdatastore[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "rdatastore",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dst_context_t* dig_lookup::tsigctx",
+          "detailed": "\n        ",
+          "name": "tsigctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t* dig_lookup::querysig",
+          "detailed": "\n        ",
+          "name": "querysig",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_lookup::msgcounter",
+          "detailed": "\n        ",
+          "name": "msgcounter",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_fixedname_t dig_lookup::fdomain",
+          "detailed": "\n        ",
+          "name": "fdomain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t* dig_lookup::ecs_addr",
+          "detailed": "\n        ",
+          "name": "ecs_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::cookie",
+          "detailed": "\n        ",
+          "name": "cookie",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_ednsopt_t* dig_lookup::ednsopts",
+          "detailed": "\n        ",
+          "name": "ednsopts",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int dig_lookup::ednsoptscnt",
+          "detailed": "\n        ",
+          "name": "ednsoptscnt",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "unsigned int dig_lookup::ednsflags",
+          "detailed": "\n        ",
+          "name": "ednsflags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_opcode_t dig_lookup::opcode",
+          "detailed": "\n        ",
+          "name": "opcode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int dig_lookup::rrcomments",
+          "detailed": "\n        ",
+          "name": "rrcomments",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint16_t dig_lookup::qid",
+          "detailed": "\n        ",
+          "name": "qid",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::http_plain",
+          "detailed": "\n        ",
+          "name": "http_plain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::https_mode",
+          "detailed": "\n        ",
+          "name": "https_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::https_get",
+          "detailed": "\n        ",
+          "name": "https_get",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::https_path",
+          "detailed": "\n        ",
+          "name": "https_path",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct dig_lookup::@035323334136134177354314350066005230324250026171 dig_lookup::@072272131263134067205025077133116341345353101216",
+          "detailed": "\n        ",
+          "name": "@072272131263134067205025077133116341345353101216",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tls_ca_set",
+          "detailed": "\n        ",
+          "name": "tls_ca_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::tls_ca_file",
+          "detailed": "\n        ",
+          "name": "tls_ca_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tls_hostname_set",
+          "detailed": "\n        ",
+          "name": "tls_hostname_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::tls_hostname",
+          "detailed": "\n        ",
+          "name": "tls_hostname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tls_cert_file_set",
+          "detailed": "\n        ",
+          "name": "tls_cert_file_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::tls_cert_file",
+          "detailed": "\n        ",
+          "name": "tls_cert_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::tls_key_file_set",
+          "detailed": "\n        ",
+          "name": "tls_key_file_set",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_lookup::tls_key_file",
+          "detailed": "\n        ",
+          "name": "tls_key_file",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_tlsctx_cache_t* dig_lookup::tls_ctx_cache",
+          "detailed": "\n        ",
+          "name": "tls_ctx_cache",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct dig_lookup::@373010012242014151263351021367064114041223225054 dig_lookup::@002361374011076367142020240366270221147073230061",
+          "detailed": "\n        ",
+          "name": "@002361374011076367142020240366270221147073230061",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::proxy_mode",
+          "detailed": "\n        ",
+          "name": "proxy_mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::proxy_plain",
+          "detailed": "\n        ",
+          "name": "proxy_plain",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_lookup::proxy_local",
+          "detailed": "\n        ",
+          "name": "proxy_local",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t dig_lookup::proxy_src_addr",
+          "detailed": "\n        ",
+          "name": "proxy_src_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t dig_lookup::proxy_dst_addr",
+          "detailed": "\n        ",
+          "name": "proxy_dst_addr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "struct dig_lookup::@036070135077164160267251175266111077251173222037 dig_lookup::@167030155235061005015371063336353336145370120367",
+          "detailed": "\n        ",
+          "name": "@167030155235061005015371063336353336145370120367",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_stdtime_t dig_lookup::fuzztime",
+          "detailed": "\n        ",
+          "name": "fuzztime",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dig_lookup_t* dig_query::lookup",
+          "detailed": "\n        ",
+          "name": "lookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::started",
+          "detailed": "\n        ",
+          "name": "started",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::first_soa_rcvd",
+          "detailed": "\n        ",
+          "name": "first_soa_rcvd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::second_rr_rcvd",
+          "detailed": "\n        ",
+          "name": "second_rr_rcvd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::first_repeat_rcvd",
+          "detailed": "\n        ",
+          "name": "first_repeat_rcvd",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::warn_id",
+          "detailed": "\n        ",
+          "name": "warn_id",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::canceled",
+          "detailed": "\n        ",
+          "name": "canceled",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_query::first_rr_serial",
+          "detailed": "\n        ",
+          "name": "first_rr_serial",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_query::second_rr_serial",
+          "detailed": "\n        ",
+          "name": "second_rr_serial",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_query::msg_count",
+          "detailed": "\n        ",
+          "name": "msg_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t dig_query::rr_count",
+          "detailed": "\n        ",
+          "name": "rr_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dig_query::ixfr_axfr",
+          "detailed": "\n        ",
+          "name": "ixfr_axfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_query::servname",
+          "detailed": "\n        ",
+          "name": "servname",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_query::userarg",
+          "detailed": "\n        ",
+          "name": "userarg",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_buffer_t dig_query::sendbuf",
+          "detailed": "\n        ",
+          "name": "sendbuf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dig_query::recvspace",
+          "detailed": "\n        ",
+          "name": "recvspace",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char * dig_query::tmpsendspace",
+          "detailed": "\n        ",
+          "name": "tmpsendspace",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[4]",
+          "brief": "\n        ",
+          "definition": "char dig_query::lengthspace[4]",
+          "detailed": "\n        ",
+          "name": "lengthspace",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nmhandle_t* dig_query::handle",
+          "detailed": "\n        ",
+          "name": "handle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nmhandle_t* dig_query::readhandle",
+          "detailed": "\n        ",
+          "name": "readhandle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_nmhandle_t* dig_query::sendhandle",
+          "detailed": "\n        ",
+          "name": "sendhandle",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_sockaddr_t dig_query::sockaddr",
+          "detailed": "\n        ",
+          "name": "sockaddr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_time_t dig_query::time_sent",
+          "detailed": "\n        ",
+          "name": "time_sent",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_time_t dig_query::time_recv",
+          "detailed": "\n        ",
+          "name": "time_recv",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint64_t dig_query::byte_count",
+          "detailed": "\n        ",
+          "name": "byte_count",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_timer_t* dig_query::timer",
+          "detailed": "\n        ",
+          "name": "timer",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "brief": "\n        ",
+          "definition": "char dig_server::servername[(DNS_NAME_MAXTEXT+1)]",
+          "detailed": "\n        ",
+          "name": "servername",
+          "params": [],
+          "static": false
+        }
+      ]
+    },
+    "bin/dig/host.c": {
+      "enum_values": [],
+      "enums": [],
+      "functions": [
+        {
+          "args": "(dns_rcode_t rcode)",
+          "brief": "\n        ",
+          "definition": "static char * rcode_totext",
+          "detailed": "\n        ",
+          "name": "rcode_totext",
+          "params": [
+            "rcode"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void show_usage",
+          "detailed": "\n        ",
+          "name": "show_usage",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "static void host_shutdown",
+          "detailed": "\n        ",
+          "name": "host_shutdown",
+          "params": [
+            ""
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int bytes, isc_sockaddr_t *from, dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static void received",
+          "detailed": "\n        ",
+          "name": "received",
+          "params": [
+            "bytes",
+            "from",
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *frm, dig_lookup_t *lookup)",
+          "brief": "\n        ",
+          "definition": "static void trying",
+          "detailed": "\n        ",
+          "name": "trying",
+          "params": [
+            "frm",
+            "lookup"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_name_t *name, const char *msg, dns_rdata_t *rdata, dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static void say_message",
+          "detailed": "\n        ",
+          "name": "say_message",
+          "params": [
+            "name",
+            "msg",
+            "rdata",
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg, dns_section_t sectionid, const char *section_name, bool headers, dig_query_t *query)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t printsection",
+          "detailed": "\n        ",
+          "name": "printsection",
+          "params": [
+            "msg",
+            "sectionid",
+            "section_name",
+            "headers",
+            "query"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg, dns_rdataset_t *rdataset, const dns_name_t *owner, const char *set_name, bool headers)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t printrdata",
+          "detailed": "\n        ",
+          "name": "printrdata",
+          "params": [
+            "msg",
+            "rdataset",
+            "owner",
+            "set_name",
+            "headers"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_message_t *msg, dns_name_t *qname)",
+          "brief": "\n        ",
+          "definition": "static void chase_cnamechain",
+          "detailed": "\n        ",
+          "name": "chase_cnamechain",
+          "params": [
+            "msg",
+            "qname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dig_query_t *query, const isc_buffer_t *msgbuf, dns_message_t *msg, bool headers)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t printmessage",
+          "detailed": "\n        ",
+          "name": "printmessage",
+          "params": [
+            "query",
+            "msgbuf",
+            "msg",
+            "headers"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void pre_parse_args",
+          "detailed": "\n        ",
+          "name": "pre_parse_args",
+          "params": [
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(bool is_batchfile, int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "static void parse_args",
+          "detailed": "\n        ",
+          "name": "parse_args",
+          "params": [
+            "is_batchfile",
+            "argc",
+            "argv"
+          ],
+          "static": true
+        },
+        {
+          "args": "(int argc, char **argv)",
+          "brief": "\n        ",
+          "definition": "int main",
+          "detailed": "\n        ",
+          "name": "main",
+          "params": [
+            "argc",
+            "argv"
           ],
           "static": false
         }
@@ -176,33 +5354,131 @@
       "typedefs": [],
       "variables": [
         {
-          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "args": "",
           "brief": "\n        ",
-          "definition": "char dig_server::servername[(DNS_NAME_MAXTEXT+1)]",
+          "definition": "bool short_form",
           "detailed": "\n        ",
-          "name": "servername",
+          "name": "short_form",
           "params": [],
           "static": false
         },
         {
-          "args": "[(DNS_NAME_MAXTEXT+1)]",
+          "args": "",
           "brief": "\n        ",
-          "definition": "char dig_server::userarg[(DNS_NAME_MAXTEXT+1)]",
+          "definition": "bool listed_server",
           "detailed": "\n        ",
-          "name": "userarg",
+          "name": "listed_server",
           "params": [],
           "static": false
-        }
-      ]
-    },
-    "bin/dig/host.c": {
-      "enum_values": [],
-      "enums": [],
-      "functions": [],
-      "macros": [],
-      "structs": [],
-      "typedefs": [],
-      "variables": [
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool default_lookups",
+          "detailed": "\n        ",
+          "name": "default_lookups",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int seen_error",
+          "detailed": "\n        ",
+          "name": "seen_error",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool list_addresses",
+          "detailed": "\n        ",
+          "name": "list_addresses",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool list_almost_all",
+          "detailed": "\n        ",
+          "name": "list_almost_all",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_rdatatype_t list_type",
+          "detailed": "\n        ",
+          "name": "list_type",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool printed_server",
+          "detailed": "\n        ",
+          "name": "printed_server",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ipv4only",
+          "detailed": "\n        ",
+          "name": "ipv4only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool ipv6only",
+          "detailed": "\n        ",
+          "name": "ipv6only",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* opcodetext[]",
+          "detailed": "\n        ",
+          "name": "opcodetext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* rcodetext[]",
+          "detailed": "\n        ",
+          "name": "rcodetext",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "struct rtype rtypes[]",
+          "detailed": "\n        ",
+          "name": "rtypes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* optstring",
+          "detailed": "\n        ",
+          "name": "optstring",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",

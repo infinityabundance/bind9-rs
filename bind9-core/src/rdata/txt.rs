@@ -37,6 +37,11 @@ impl Txt {
     }
 
     pub fn from_wire(buf: &[u8], pos: &mut usize, end: usize) -> Result<Txt> {
+        if *pos == end {
+            // BIND generic_fromwire_txt: an empty rdata is rejected (the
+            // do/while body runs once and txt_fromwire fails).
+            return Err(Error::UnexpectedEnd);
+        }
         let mut strings = Vec::new();
         while *pos < end {
             let len = buf[*pos] as usize;
@@ -61,11 +66,25 @@ impl Txt {
     /// BIND's `generic_fromtext_txt`: one token per character-string;
     /// both quoted and unquoted tokens are accepted; escapes resolved.
     pub fn from_text(lex: &mut Lexer) -> Result<Txt> {
+        Self::from_text_prefix(lex, None)
+    }
+
+    /// Like [`Txt::from_text`] but with a pre-supplied first string — the
+    /// DNS_RDATA_UNKNOWNESCAPE path where `\#` becomes a literal "#"
+    /// string (BIND writes it directly; the lexer pushback is single-slot,
+    /// so the marker token cannot be returned).
+    pub(crate) fn from_text_prefix(lex: &mut Lexer, first: Option<Vec<u8>>) -> Result<Txt> {
         let mut strings = Vec::new();
+        if let Some(f) = first {
+            strings.push(f);
+        }
         loop {
             let t = lex.next()?;
             match &t {
                 Token::String(_) | Token::Quoted(_) => {}
+                Token::Eof => break,
+                // BIND's gettoken loop also stops on eol/eof tokens; the
+                // lexer has no distinct Eol variant.
                 _ => break,
             }
             strings.push(resolve_escapes(t.bytes())?);
@@ -120,6 +139,31 @@ mod tests {
     fn unquoted_accepted() {
         let t = Txt::from_text(&mut lex("hello")).unwrap();
         assert_eq!(t.to_text(), "\"hello\"");
+    }
+
+    #[test]
+    fn space_is_literal_inside_quotes() {
+        // Oracle-verified (WIRE-RDATA-0001): BIND's commatxt_totext only
+        // escapes octets < 0x20 or >= 0x7f inside quotes — the space is
+        // literal, and the escaped quote is backslash-escaped.
+        let t = Txt::from_text(&mut lex("\"with \\\"quotes\\\"\"")).unwrap();
+        assert_eq!(t.to_text(), "\"with \\\"quotes\\\"\"");
+    }
+
+    #[test]
+    fn decimal_escapes_in_totext() {
+        // Octets outside 0x20..=0x7e render as \DDD with DECIMAL digits
+        // (9.20 semantics; WIRE-RDATA-0001).
+        let t = Txt::from_text(&mut lex("\"\\001\\127\\255\"")).unwrap();
+        assert_eq!(t.to_text(), "\"\\001\\127\\255\"");
+    }
+
+    #[test]
+    fn hash_marker_literal_for_txt() {
+        // BIND DNS_RDATA_UNKNOWNESCAPE: TXT `\#` followed by a non-number
+        // is a literal '#' string (oracle-verified).
+        let t = Txt::from_text(&mut lex("\\# hello")).unwrap();
+        assert_eq!(t.to_text(), "\"#\" \"hello\"");
     }
 
     #[test]

@@ -137,16 +137,16 @@ impl Rdata {
     pub fn from_wire(type_: RrType, buf: &[u8], pos: &mut usize, end: usize) -> Result<Rdata> {
         let r = match type_ {
             RrType::A => {
-                if end - *pos != 4 {
-                    return Err(Error::FormErr);
+                if end - *pos < 4 {
+                    return Err(Error::UnexpectedEnd);
                 }
                 let ip = Ipv4Addr::new(buf[*pos], buf[*pos + 1], buf[*pos + 2], buf[*pos + 3]);
                 *pos += 4;
                 Rdata::A(ip)
             }
             RrType::Aaaa => {
-                if end - *pos != 16 {
-                    return Err(Error::FormErr);
+                if end - *pos < 16 {
+                    return Err(Error::UnexpectedEnd);
                 }
                 let mut o = [0u8; 16];
                 o.copy_from_slice(&buf[*pos..*pos + 16]);
@@ -161,8 +161,8 @@ impl Rdata {
             RrType::Soa => {
                 let (mname, p1) = parse_rdata_name(buf, *pos, end)?;
                 let (rname, p2) = parse_rdata_name(buf, p1, end)?;
-                if end - p2 != 20 {
-                    return Err(Error::FormErr);
+                if end - p2 < 20 {
+                    return Err(Error::UnexpectedEnd);
                 }
                 let soa = Soa {
                     mname,
@@ -228,7 +228,9 @@ impl Rdata {
             }
         };
         if *pos != end {
-            return Err(Error::FormErr);
+            // BIND dns_rdata_fromwire: unconsumed source bytes are
+            // DNS_R_EXTRADATA ("extra input data").
+            return Err(Error::ExtraData);
         }
         Ok(r)
     }
@@ -335,41 +337,73 @@ impl Rdata {
     pub fn from_text(type_: RrType, lex: &mut Lexer, origin: Option<&Name>) -> Result<Rdata> {
         let first = lex.next()?;
         if matches!(&first, Token::String(b) if b.as_slice() == b"\\#") {
-            // Generic form: `\# <length> <hex>` (RFC 3597).  The TXT
-            // special case — where `\#` may be an escaped '#' string — is
-            // handled by the TXT parser receiving `\#` as a token when the
-            // generic parse fails; courted by MASTERFILE-TXT-HASH.
+            // RFC 3597 generic form.  BIND (rdata.c `dns_rdata_fromtext`):
+            // for TXT, `\#` is only the generic marker when followed by a
+            // NUMBER token; otherwise it is an escaped '#' string
+            // (DNS_RDATA_UNKNOWNESCAPE — BIND injects the literal "#"
+            // string instead of ungetting, because the lexer pushback is
+            // single-slot).  For every other type `\#` is always generic.
+            if TXT_TYPES.contains(&type_) {
+                let next = lex.next()?;
+                if matches!(&next, Token::String(b) if is_pure_number(b)) {
+                    lex.unget(next);
+                    // Fall through to the generic form with the number as
+                    // the length token.
+                } else {
+                    lex.unget(next);
+                    let value = Txt::from_text_prefix(lex, Some(b"#".to_vec()))?;
+                    return Ok(Rdata::Txt {
+                        type_: type_,
+                        value,
+                    });
+                }
+            }
+            // BIND unknown_fromtext: type 0 and meta-types are rejected.
+            if type_ == RrType::Reserved0 || type_.is_meta() {
+                return Err(Error::MetaType);
+            }
             let data = UnknownRdata::from_text(lex)?.with_type(type_);
-            return Ok(Rdata::Unknown(data));
+            let r = Self::validate_generic(type_, data)?;
+            // The consume-to-eol wrapper applies to the generic form too.
+            expect_eof(lex)?;
+            return Ok(r);
         }
         lex.unget(first);
-        match type_ {
+        Self::from_text_typed(type_, lex, origin)
+    }
+
+    /// Type-specific text parsing (BIND's `FROMTEXTSWITCH`).  Callers must
+    /// consume the `\#` generic-marker decision first.
+    fn from_text_typed(type_: RrType, lex: &mut Lexer, origin: Option<&Name>) -> Result<Rdata> {
+        let r = match type_ {
             RrType::A => {
                 let t = lex.next()?;
-                let ip: Ipv4Addr = parse_ipv4(&t.bytes())?;
-                Ok(Rdata::A(ip))
+                let ip = parse_ipv4(t.bytes())?;
+                Rdata::A(ip)
             }
             RrType::Aaaa => {
                 let t = lex.next()?;
-                let ip: Ipv6Addr = parse_ipv6(&t.bytes())?;
-                Ok(Rdata::Aaaa(ip))
+                let ip = parse_ipv6(t.bytes())?;
+                Rdata::Aaaa(ip)
             }
             t if SINGLE_NAME_TYPES.contains(&t) => {
                 let tok = lex.next()?;
-                let name = parse_text_name(&tok.bytes(), origin)?;
-                Ok(Rdata::Name { type_: t, name })
+                let name = parse_text_name(&tok, origin)?;
+                Rdata::Name { type_: t, name }
             }
             RrType::Soa => {
                 let mname_t = lex.next()?;
-                let mname = parse_text_name(&mname_t.bytes(), origin)?;
+                let mname = parse_text_name(&mname_t, origin)?;
                 let rname_t = lex.next()?;
-                let rname = parse_text_name(&rname_t.bytes(), origin)?;
+                let rname = parse_text_name(&rname_t, origin)?;
                 let serial = parse_u32_token(lex)?;
-                let refresh = parse_u32_token(lex)?;
-                let retry = parse_u32_token(lex)?;
-                let expire = parse_u32_token(lex)?;
-                let minimum = parse_u32_token(lex)?;
-                Ok(Rdata::Soa(Soa {
+                // BIND: refresh/retry/expire/minimum use dns_counter_fromtext
+                // (TTL syntax: digits with optional w/d/h/m/s units).
+                let refresh = parse_counter_token(lex)?;
+                let retry = parse_counter_token(lex)?;
+                let expire = parse_counter_token(lex)?;
+                let minimum = parse_counter_token(lex)?;
+                Rdata::Soa(Soa {
                     mname,
                     rname,
                     serial,
@@ -377,53 +411,70 @@ impl Rdata {
                     retry,
                     expire,
                     minimum,
-                }))
+                })
             }
             t if PREF_NAME_TYPES.contains(&t) => {
-                let pref_t = lex.next()?;
-                let preference: u16 = std::str::from_utf8(&pref_t.bytes())
-                    .ok()
-                    .and_then(|s| s.parse().ok())
-                    .ok_or(Error::BadData)?;
+                let preference: u16 = parse_u16_token(lex)?;
                 let name_t = lex.next()?;
-                let name = parse_text_name(&name_t.bytes(), origin)?;
-                Ok(Rdata::PrefName {
+                let name = parse_text_name(&name_t, origin)?;
+                Rdata::PrefName {
                     type_: t,
                     value: PrefName { preference, name },
-                })
+                }
             }
             RrType::Srv => {
                 let prio = parse_u16_token(lex)?;
                 let weight = parse_u16_token(lex)?;
                 let port = parse_u16_token(lex)?;
                 let name_t = lex.next()?;
-                let target = parse_text_name(&name_t.bytes(), origin)?;
-                Ok(Rdata::Srv(Srv {
+                let target = parse_text_name(&name_t, origin)?;
+                Rdata::Srv(Srv {
                     priority: prio,
                     weight,
                     port,
                     target,
-                }))
+                })
             }
             t if TWO_NAME_TYPES.contains(&t) => {
                 let f = lex.next()?;
-                let first = parse_text_name(&f.bytes(), origin)?;
+                let first = parse_text_name(&f, origin)?;
                 let s = lex.next()?;
-                let second = parse_text_name(&s.bytes(), origin)?;
-                Ok(Rdata::TwoNames {
+                let second = parse_text_name(&s, origin)?;
+                Rdata::TwoNames {
                     type_: t,
                     value: TwoNames { first, second },
-                })
+                }
             }
             t if TXT_TYPES.contains(&t) => {
                 let value = Txt::from_text(lex)?;
-                Ok(Rdata::Txt { type_: t, value })
+                Rdata::Txt { type_: t, value }
             }
-            RrType::Opt => Err(Error::InvalidArgument),
             _ => {
-                let data = UnknownRdata::from_text(lex)?.with_type(type_);
-                Ok(Rdata::Unknown(data))
+                // No concrete fromtext (meta types included).  BIND returns
+                // ISC_R_NOTIMPLEMENTED for the type-specific parse; the
+                // METATYPE rejection applies only to the `\#` generic form.
+                return Err(Error::NotImplemented);
             }
+        };
+        // BIND consumes to end-of-line after the type-specific parse and
+        // reports any further tokens as DNS_R_EXTRATOKEN.
+        expect_eof(lex)?;
+        Ok(r)
+    }
+
+    /// BIND `rdata_validate` (rdata.c): the generic `\#` form for a KNOWN
+    /// type must be valid wire data for that type — a validation failure is
+    /// the fromwire error (e.g. `TYPE16 \# 2 00ff` → "unexpected end of
+    /// input", oracle-verified), and success yields the concrete record
+    /// (rendered with the type's own totext).  Unknown types pass through
+    /// opaque.
+    fn validate_generic(type_: RrType, data: UnknownRdata) -> Result<Rdata> {
+        let wire = data.data();
+        let mut pos = 0;
+        match Rdata::from_wire(type_, wire, &mut pos, wire.len()) {
+            Ok(r) if pos == wire.len() => Ok(r),
+            Ok(_) => Err(Error::ExtraData),
+            Err(e) => Err(e),
         }
     }
 
@@ -492,39 +543,172 @@ fn rd_u32(buf: &[u8], pos: usize) -> u32 {
     u32::from_be_bytes([buf[pos], buf[pos + 1], buf[pos + 2], buf[pos + 3]])
 }
 
-fn parse_text_name(bytes: &[u8], origin: Option<&Name>) -> Result<Name> {
-    let s = std::str::from_utf8(bytes).map_err(|_| Error::BadData)?;
+fn parse_text_name(token: &Token, origin: Option<&Name>) -> Result<Name> {
+    // BIND: getmastertoken(isc_tokentype_string) at end-of-line fails with
+    // ISC_R_UNEXPECTEDEND (a missing field is not a valid name).
+    if matches!(token, Token::Eof) {
+        return Err(Error::UnexpectedEnd);
+    }
+    let s = std::str::from_utf8(token.bytes()).map_err(|_| Error::BadData)?;
     Name::from_text(s, origin)
 }
 
+/// BIND's consume-to-end-of-line check (`dns_rdata_fromtext`): any token
+/// after the parsed fields is DNS_R_EXTRATOKEN ("extra input text").
+fn expect_eof(lex: &mut Lexer) -> Result<()> {
+    match lex.next()? {
+        Token::Eof => Ok(()),
+        _ => Err(Error::ExtraToken),
+    }
+}
+
+/// Is every byte an ASCII digit (BIND's number tokens are digit-only; the
+/// lexer classifies anything else as a string, and a required number token
+/// then fails with ISC_R_BADNUMBER)?
+fn is_pure_number(b: &[u8]) -> bool {
+    !b.is_empty() && b.iter().all(u8::is_ascii_digit)
+}
+
+/// Parse a required NUMBER token (BIND `isc_tokentype_number`): digit-only,
+/// overflow past the 32-bit range is ISC_R_RANGE, anything else is
+/// ISC_R_BADNUMBER.
 fn parse_u32_token(lex: &mut Lexer) -> Result<u32> {
     let t = lex.next()?;
-    std::str::from_utf8(&t.bytes())
-        .ok()
-        .and_then(|s| s.parse().ok())
-        .ok_or(Error::BadData)
+    if matches!(t, Token::Eof) {
+        // BIND getmastertoken at end-of-line: ISC_R_UNEXPECTEDEND.
+        return Err(Error::UnexpectedEnd);
+    }
+    let b = t.bytes();
+    if !is_pure_number(b) {
+        return Err(Error::BadNumber);
+    }
+    let s = std::str::from_utf8(b).map_err(|_| Error::BadNumber)?;
+    s.parse().map_err(|_| Error::Range)
 }
 
+/// Like [`parse_u32_token`] but for the 16-bit fields (MX preference, SRV
+/// priority/weight/port; BIND checks `as_ulong > 0xffff` → ISC_R_RANGE).
 fn parse_u16_token(lex: &mut Lexer) -> Result<u16> {
     let t = lex.next()?;
-    std::str::from_utf8(&t.bytes())
-        .ok()
-        .and_then(|s| s.parse().ok())
-        .ok_or(Error::BadData)
+    if matches!(t, Token::Eof) {
+        return Err(Error::UnexpectedEnd);
+    }
+    let b = t.bytes();
+    if !is_pure_number(b) {
+        return Err(Error::BadNumber);
+    }
+    let s = std::str::from_utf8(b).map_err(|_| Error::BadNumber)?;
+    let v: u32 = s.parse().map_err(|_| Error::Range)?;
+    u16::try_from(v).map_err(|_| Error::Range)
 }
 
+/// Parse a counter field (BIND `dns_counter_fromtext` → `bind_ttl`,
+/// lib/dns/ttl.c): digit groups with optional unit letters `w d h m s`;
+/// a plain number is seconds.  A missing field is ISC_R_UNEXPECTEDEND; a
+/// non-digit start is DNS_R_SYNTAX; a digit group overflowing 32 bits is
+/// DNS_R_SYNTAX (per-group `isc_parse_uint32` failure); the summed total
+/// overflowing 32 bits is ISC_R_RANGE.
+fn parse_counter_token(lex: &mut Lexer) -> Result<u32> {
+    let t = lex.next()?;
+    if matches!(t, Token::Eof) {
+        return Err(Error::UnexpectedEnd);
+    }
+    let s = std::str::from_utf8(t.bytes()).map_err(|_| Error::Syntax)?;
+    let b = s.as_bytes();
+    let mut i = 0;
+    let mut total: u64 = 0;
+    let mut saw_unit = false;
+    loop {
+        let start = i;
+        while i < b.len() && b[i].is_ascii_digit() {
+            i += 1;
+        }
+        if start == i {
+            return Err(Error::Syntax);
+        }
+        let n: u32 = s[start..i].parse().map_err(|_| Error::Syntax)?;
+        match b.get(i) {
+            Some(b'w' | b'W') => {
+                total += u64::from(n) * 7 * 24 * 3600;
+                saw_unit = true;
+                i += 1;
+            }
+            Some(b'd' | b'D') => {
+                total += u64::from(n) * 24 * 3600;
+                saw_unit = true;
+                i += 1;
+            }
+            Some(b'h' | b'H') => {
+                total += u64::from(n) * 3600;
+                saw_unit = true;
+                i += 1;
+            }
+            Some(b'm' | b'M') => {
+                total += u64::from(n) * 60;
+                saw_unit = true;
+                i += 1;
+            }
+            Some(b's' | b'S') => {
+                total += u64::from(n);
+                saw_unit = true;
+                i += 1;
+            }
+            Some(_) => return Err(Error::Syntax),
+            None => {
+                // A trailing plain number is only legal when no units were
+                // seen (BIND: `case '\0': if (tmp != 0) SYNTAX;`).
+                if saw_unit {
+                    return Err(Error::Syntax);
+                }
+                total = u64::from(n);
+            }
+        }
+        if i >= b.len() {
+            break;
+        }
+    }
+    u32::try_from(total).map_err(|_| Error::Range)
+}
+
+/// Strict dotted-quad parser with `inet_pton(AF_INET)` semantics: exactly
+/// four decimal parts, no leading zeros (a lone "0" is allowed), each ≤
+/// 255.  (Rust's `Ipv4Addr::from_str` is not equivalent — it accepts
+/// forms inet_pton rejects.)
 fn parse_ipv4(bytes: &[u8]) -> Result<Ipv4Addr> {
-    let s = std::str::from_utf8(bytes).map_err(|_| Error::BadData)?;
-    s.parse().map_err(|_| Error::BadData)
+    let s = std::str::from_utf8(bytes).map_err(|_| Error::BadDottedQuad)?;
+    let parts: Vec<&str> = s.split('.').collect();
+    if parts.len() != 4 {
+        return Err(Error::BadDottedQuad);
+    }
+    let mut octets = [0u8; 4];
+    for (i, p) in parts.iter().enumerate() {
+        if p.is_empty()
+            || p.len() > 3
+            || !p.bytes().all(|b| b.is_ascii_digit())
+            || (p.len() > 1 && p.starts_with('0'))
+        {
+            return Err(Error::BadDottedQuad);
+        }
+        let v: u16 = p.parse().map_err(|_| Error::BadDottedQuad)?;
+        if v > 255 {
+            return Err(Error::BadDottedQuad);
+        }
+        octets[i] = v as u8;
+    }
+    Ok(Ipv4Addr::new(octets[0], octets[1], octets[2], octets[3]))
 }
 
+/// IPv6 address parse (BIND `inet_pton(AF_INET6)`; failures are
+/// DNS_R_BADAAAAA).  Rust's parser follows the standard textual form.
 fn parse_ipv6(bytes: &[u8]) -> Result<Ipv6Addr> {
-    let s = std::str::from_utf8(bytes).map_err(|_| Error::BadData)?;
-    s.parse().map_err(|_| Error::BadData)
+    let s = std::str::from_utf8(bytes).map_err(|_| Error::BadIpv6)?;
+    s.parse().map_err(|_| Error::BadIpv6)
 }
 
-/// Character-string escaping used by TXT and friends: `"` and `\` are
-/// backslash-escaped, other non-printables use `\DDD`.
+/// Character-string escaping used by TXT and friends — BIND's
+/// `commatxt_totext` with `quote = true` (rdata.c): `"` and `\` are
+/// backslash-escaped, octets outside 0x20..=0x7e use `\DDD` **decimal**
+/// digits, and the space itself is literal inside quotes.
 pub(crate) fn escape_char_string(s: &[u8]) -> String {
     let mut out = String::with_capacity(s.len() + 2);
     out.push('"');
@@ -532,12 +716,12 @@ pub(crate) fn escape_char_string(s: &[u8]) -> String {
         match b {
             b'"' => out.push_str("\\\""),
             b'\\' => out.push_str("\\\\"),
-            0x21..=0x7e => out.push(b as char),
+            0x20..=0x7e => out.push(b as char),
             _ => {
                 out.push('\\');
-                out.push(char::from(b'0' + (b >> 6)));
-                out.push(char::from(b'0' + ((b >> 3) & 7)));
-                out.push(char::from(b'0' + (b & 7)));
+                out.push(char::from(b'0' + (b / 100)));
+                out.push(char::from(b'0' + ((b / 10) % 10)));
+                out.push(char::from(b'0' + (b % 10)));
             }
         }
     }
@@ -732,7 +916,8 @@ mod tests {
 
     #[test]
     fn rdata_length_mismatch_rejected() {
-        // A MX with trailing garbage after the name must be FORMERR.
+        // A MX with trailing garbage after the name: BIND's fromwire
+        // reports DNS_R_EXTRADATA ("extra input data").
         let mut buf = Vec::new();
         buf.extend_from_slice(&10u16.to_be_bytes());
         buf.extend_from_slice(b"\x03com\x00");
@@ -740,7 +925,7 @@ mod tests {
         let mut pos = 0;
         assert_eq!(
             Rdata::from_wire(RrType::Mx, &buf, &mut pos, buf.len()).map(|_| ()),
-            Err(Error::FormErr)
+            Err(Error::ExtraData)
         );
     }
 }

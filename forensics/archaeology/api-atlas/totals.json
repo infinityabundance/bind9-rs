@@ -1,7 +1,7 @@
 {
-  "enum_value_count": 1035,
+  "enum_value_count": 1581,
   "file_count": 888,
-  "function_count": 6794,
+  "function_count": 13012,
   "libraries": [
     "bin/check",
     "bin/confgen",
@@ -42,7 +42,7 @@
     "tests/libtest",
     "tests/ns"
   ],
-  "macro_count": 1863,
+  "macro_count": 3770,
   "schema_version": 1,
   "skipped_xml_files": [],
   "version": "9.20.26"

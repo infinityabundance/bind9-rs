@@ -459,8 +459,11 @@ mod tests {
 
     #[test]
     fn rdata_length_mismatch_is_formerr() {
-        // An A record whose rdlength exceeds the actual rdata (BIND:
-        // dns_rdata_fromwire returns DNS_R_EXTRADATA → FORMERR response).
+        // An A record whose rdlength exceeds the actual rdata: BIND's
+        // dns_rdata_fromwire returns DNS_R_EXTRADATA ("extra input data"),
+        // which the server layer maps to a FORMERR response (the message
+        // parse itself surfaces the underlying error — courted by
+        // WIRE-MESSAGE-*).
         let mut wire = Vec::new();
         wire.extend_from_slice(&[0x12, 0x34]);
         wire.extend_from_slice(&[0x81, 0x00]);
@@ -478,7 +481,7 @@ mod tests {
         wire.extend_from_slice(&[0, 0, 0, 60]); // ttl
         wire.extend_from_slice(&[0, 5]); // rdlen=5
         wire.extend_from_slice(&[192, 0, 2, 1, 0xde]); // 5 bytes
-        assert_eq!(Message::parse(&wire).map(|_| ()), Err(Error::FormErr));
+        assert_eq!(Message::parse(&wire).map(|_| ()), Err(Error::ExtraData));
     }
 
     #[test]

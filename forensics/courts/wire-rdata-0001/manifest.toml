@@ -1,0 +1,20 @@
+schema_version = 1
+court_id = "WIRE-RDATA-0001"
+question = "dns_rdata_fromtext/totext/towire/digest/fromwire equivalence for A, AAAA, NS, CNAME, PTR, SOA, MX, TXT, SRV, MINFO, RP and unknown RFC 3597 types"
+subsystem = "dns/rdata"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "totext (origin NULL), uncompressed wire hex, DNSSEC canonical digest hex, and the wire->text round-trip must each match byte-for-byte",
+    "fromtext failure result codes must match (error text is part of the surface)",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/rdata.c dns_rdata_fromtext/towire/totext (9.20.26)",
+    "lib/dns/include/dns/rdata.h dns_rdata_digest: DNSSEC canonical form",
+    "RFC 3597 generic \\# form",
+    "spec §17, §79",
+]

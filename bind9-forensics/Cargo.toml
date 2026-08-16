@@ -53,6 +53,10 @@ path = "src/bin/probe-name-compare.rs"
 name = "probe-compress"
 path = "src/bin/probe-compress.rs"
 
+[[bin]]
+name = "probe-rdata"
+path = "src/bin/probe-rdata.rs"
+
 [features]
 default = ["court-runner"]
 court-runner = []

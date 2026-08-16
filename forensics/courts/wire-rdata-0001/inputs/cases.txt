@@ -1,0 +1,103 @@
+A 192.0.2.1
+A 0.0.0.0
+A 255.255.255.255
+A 1.2.3.4
+A 192.0.2.256
+A 192.0.2
+A 1.2.3.4.5
+A 1.2.3.4.extra
+A 1.2.3.4.
+A not-an-address
+A 1.2.3.04
+AAAA 2001:db8::1
+AAAA ::
+AAAA ::1
+AAAA 2001:db8:0:0:0:0:2:1
+AAAA 2001:db8::2:1
+AAAA fe80::1%eth0
+AAAA 12345::1
+AAAA 1:2:3:4:5:6:7:8:9
+AAAA not-ipv6
+AAAA 2001:db8:::1
+AAAA ::ffff:192.0.2.1
+NS ns1.example.com.
+NS ns1.example.com
+NS .
+NS a.b.c.d.e.f.g.h.i.j.k.l.example.net.
+CNAME ns1.example.com.
+CNAME ns1.example.com
+CNAME .
+CNAME a.b.c.d.e.f.g.h.i.j.k.l.example.net.
+PTR ns1.example.com.
+PTR ns1.example.com
+PTR .
+PTR a.b.c.d.e.f.g.h.i.j.k.l.example.net.
+NS ns1.example.com..
+NS ..example.com.
+CNAME \097.example.com.
+PTR in-addr.arpa.
+SOA ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 300
+SOA ns1.example.com. hostmaster.example.com. 0 0 0 0 0
+SOA ns1.example.com. hostmaster.example.com. 4294967295 2147483647 2147483647 2147483647 2147483647
+SOA ns1.example.com. hostmaster.example.com. 4294967296 1 1 1 1
+SOA ns1.example.com. hostmaster.example.com. -1 1 1 1 1
+SOA ns1.example.com. hostmaster.example.com. 1 2 3 4
+SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5 6
+SOA ns1.example.com. hostmaster 1 2 3 4 5
+MX 10 mail.example.com.
+MX 0 example.com.
+MX 65535 example.com.
+MX 65536 example.com.
+MX -1 example.com.
+MX 10
+MX 10 20 30
+TXT "hello"
+TXT "hello" "world"
+TXT ""
+TXT hello
+TXT "with \"quotes\""
+TXT "with \097 escapes"
+TXT "with ; comment chars"
+TXT "a" "b" "c" "d" "e"
+TXT \000
+TXT "unterminated
+TXT \097\098\099
+TXT "dots.in.string"
+SRV 1 2 5060 sip.example.com.
+SRV 0 0 0 example.com.
+SRV 65535 65535 65535 example.com.
+SRV 65536 0 0 example.com.
+SRV 0 0 65536 example.com.
+SRV 0 0 -1 example.com.
+SRV 1 2 5060
+MINFO rmbox.example.com. embx.example.com.
+MINFO . .
+RP admin.example.com. txt.example.com.
+RP . .
+RP admin.example.com.
+TYPE65280 \# 4 01020304
+TYPE65280 \# 0
+TYPE65280 \# 4 0102030405
+TYPE65280 \# 4 0102
+TYPE65280 \# 4 zz0102
+TYPE65280 \# 65535 01
+TYPE0 \# 1 00
+TYPE123 \# 2 00ff
+TYPE65280 \#
+TYPE1 \# 4 01020304
+TYPE1 \# 1 00
+TYPE1 \# 5 0102030405
+TYPE16 \# 1 00
+TYPE16 \# 0
+TYPE2 \# 1 00
+TYPE6 \# 22 01 02 03 04
+TYPE65280 \# 0 00
+TXT \# hello
+TXT \# 2 00ff
+TXT \#
+SOA ns1.example.com. hostmaster.example.com. 1 1h 2 3 4
+SOA ns1.example.com. hostmaster.example.com. 1 2w3d 2 3 4
+SOA ns1.example.com. hostmaster.example.com. 1 10000w 2 3 4
+SOA ns1.example.com. hostmaster.example.com. 1 4294967296 2 3 4
+SOA ns1.example.com. hostmaster.example.com. 1 1h2 2 3 4
+SOA ns1.example.com. hostmaster.example.com. 1 x 2 3 4

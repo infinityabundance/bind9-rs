@@ -93,3 +93,32 @@ bind9-forensics/
     twice yields `example` + pointer to `com.@8`, never `\xc0\x00`).
     Real messages never hit this because the header pushes every name past
     offset 12.
+14. `dns_rdata_fromtext` (rdata.c) has a **consume-to-end-of-line wrapper**:
+    after the type-specific parse, any further token is `DNS_R_EXTRATOKEN`
+    ("extra input text").  Number fields are lexed as NUMBER tokens
+    (digit-only): a non-number is `ISC_R_BADNUMBER`, overflow is
+    `ISC_R_RANGE`.  The SOA serial is such a number token, but
+    refresh/retry/expire/minimum use `dns_counter_fromtext` → `bind_ttl`
+    (lib/dns/ttl.c): digit groups with `w d h m s` units ("1h" = 3600),
+    per-group overflow → `DNS_R_SYNTAX`, summed overflow → `ISC_R_RANGE`.
+15. The RFC 3597 generic form is validated for KNOWN types
+    (`rdata_validate` runs `dns_rdata_fromwire` over the hex):
+    `TYPE1 \# 1 00` → "unexpected end of input", `TYPE16 \# 1 00` →
+    the concrete TXT `""`.  For TXT, `\#` is generic only when followed
+    by a number token, otherwise it is a literal `#` string
+    (`DNS_RDATA_UNKNOWNESCAPE`).  Meta types (and type 0) are rejected
+    with `DNS_R_METATYPE` in the generic form; without `\#` a meta type
+    is "not implemented".
+16. Unknown-rdata text form: `\# <len> <hex>` with **uppercase** hex
+    (`isc_hex_totext`), no trailing space for length 0; hex errors:
+    non-hex digit or odd digit count → `DNS_R_BADHEX`; a decoded byte past
+    the declared length → `ISC_R_NOSPACE`; fewer bytes than declared →
+    `ISC_R_UNEXPECTEDEND`; length > 65535 → `ISC_R_RANGE`.
+17. `dns_rdata_totext` for character-strings (`commatxt_totext`) escapes
+    only octets < 0x20 or >= 0x7f inside quotes (space is literal); `\DDD`
+    uses **decimal** digits.  `dns_rdata_fromwire` reports unconsumed
+    rdata bytes as `DNS_R_EXTRADATA` ("extra input data") and short
+    rdata as `ISC_R_UNEXPECTEDEND`.
+18. `dns_rdata_ismeta` rejects type 0 and {OPT, TKEY, TSIG, IXFR, AXFR,
+    MAILB, MAILA, ANY} in the generic form (oracle-verified via
+    `TYPE0`/`TYPE41`/... → "invalid use of a meta type").

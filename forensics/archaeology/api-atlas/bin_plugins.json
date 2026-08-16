@@ -1,28 +1,596 @@
 {
   "files": {
     "bin/plugins/filter-a.c": {
-      "enum_values": [],
-      "enums": [],
-      "functions": [],
-      "macros": [],
-      "structs": [],
-      "typedefs": [],
-      "variables": [
+      "enum_values": [
+        {
+          "args": "= 0",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "NONE",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 1",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "FILTER",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "= 2",
+          "brief": "\n          ",
+          "definition": "enum value",
+          "detailed": "",
+          "name": "BREAK_DNSSEC",
+          "params": [],
+          "static": false
+        }
+      ],
+      "enums": [
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "query_ctx_t * section_filter::qctx",
+          "definition": "",
           "detailed": "\n        ",
-          "name": "qctx",
+          "name": "filter_a_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "functions": [
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t filter_qctx_initialize",
+          "detailed": "\n        ",
+          "name": "filter_qctx_initialize",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t filter_respond_begin",
+          "detailed": "\n        ",
+          "name": "filter_respond_begin",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t filter_respond_any_found",
+          "detailed": "\n        ",
+          "name": "filter_respond_any_found",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t filter_prep_response_begin",
+          "detailed": "\n        ",
+          "name": "filter_prep_response_begin",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t filter_query_done_send",
+          "detailed": "\n        ",
+          "name": "filter_query_done_send",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *arg, void *cbdata, isc_result_t *resp)",
+          "brief": "\n        ",
+          "definition": "static ns_hookresult_t filter_qctx_destroy",
+          "detailed": "\n        ",
+          "name": "filter_qctx_destroy",
+          "params": [
+            "arg",
+            "cbdata",
+            "resp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_hooktable_t *hooktable, isc_mem_t *mctx, filter_instance_t *inst)",
+          "brief": "Register the functions to be called at each hook point in 'hooktable', using memory context 'mctx' for allocating copies of stack-allocated structures passed to ns_hook_add(). Make sure 'inst' will be passed as the 'cbdata' argument to every callback.",
+          "definition": "static void install_hooks",
+          "detailed": "\n        ",
+          "name": "install_hooks",
+          "params": [
+            "hooktable",
+            "mctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cfg_parser_t *pctx, const cfg_type_t *type, cfg_obj_t **ret)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_filter_a",
+          "detailed": "\n        ",
+          "name": "parse_filter_a",
+          "params": [
+            "pctx",
+            "type",
+            "ret"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cfg_printer_t *pctx, const cfg_type_t *type)",
+          "brief": "\n        ",
+          "definition": "static void doc_filter_a",
+          "detailed": "\n        ",
+          "name": "doc_filter_a",
+          "params": [
+            "pctx",
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const cfg_obj_t *param_obj, const char *param_name, filter_a_t *dstp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_filter_a_on",
+          "detailed": "\n        ",
+          "name": "parse_filter_a_on",
+          "params": [
+            "param_obj",
+            "param_name",
+            "dstp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(cfg_obj_t *fmap, const void *cfg, isc_mem_t *mctx, isc_log_t *lctx, void *actx)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t check_syntax",
+          "detailed": "\n        ",
+          "name": "check_syntax",
+          "params": [
+            "fmap",
+            "cfg",
+            "mctx",
+            "lctx",
+            "actx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(filter_instance_t *inst, const char *parameters, const void *cfg, const char *cfg_file, unsigned long cfg_line, isc_mem_t *mctx, isc_log_t *lctx, void *actx)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t parse_parameters",
+          "detailed": "\n        ",
+          "name": "parse_parameters",
+          "params": [
+            "inst",
+            "parameters",
+            "cfg",
+            "cfg_file",
+            "cfg_line",
+            "mctx",
+            "lctx",
+            "actx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *parameters, const void *cfg, const char *cfg_file, unsigned long cfg_line, isc_mem_t *mctx, isc_log_t *lctx, void *actx, ns_hooktable_t *hooktable, void **instp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t plugin_register",
+          "detailed": "Mandatory plugin API functions:\n\nplugin_destroy\nplugin_register\nplugin_version\nplugin_check \n\n\nplugin_destroy\nplugin_register\nplugin_version\nplugin_check",
+          "name": "plugin_register",
+          "params": [
+            "parameters",
+            "cfg",
+            "cfg_file",
+            "cfg_line",
+            "mctx",
+            "lctx",
+            "actx",
+            "hooktable",
+            "instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *parameters, const void *cfg, const char *cfg_file, unsigned long cfg_line, isc_mem_t *mctx, isc_log_t *lctx, void *actx)",
+          "brief": "\n        ",
+          "definition": "isc_result_t plugin_check",
+          "detailed": "\n        ",
+          "name": "plugin_check",
+          "params": [
+            "parameters",
+            "cfg",
+            "cfg_file",
+            "cfg_line",
+            "mctx",
+            "lctx",
+            "actx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **instp)",
+          "brief": "\n        ",
+          "definition": "void plugin_destroy",
+          "detailed": "\n        ",
+          "name": "plugin_destroy",
+          "params": [
+            "instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "int plugin_version",
+          "detailed": "\n        ",
+          "name": "plugin_version",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(ns_client_t *client)",
+          "brief": "\n        ",
+          "definition": "static bool is_v4_client",
+          "detailed": "\n        ",
+          "name": "is_v4_client",
+          "params": [
+            "client"
+          ],
+          "static": true
+        },
+        {
+          "args": "(ns_client_t *client)",
+          "brief": "\n        ",
+          "definition": "static bool is_v6_client",
+          "detailed": "\n        ",
+          "name": "is_v6_client",
+          "params": [
+            "client"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const query_ctx_t *qctx, filter_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "static filter_data_t * client_state_get",
+          "detailed": "\n        ",
+          "name": "client_state_get",
+          "params": [
+            "qctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const query_ctx_t *qctx, filter_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "static void client_state_create",
+          "detailed": "\n        ",
+          "name": "client_state_create",
+          "params": [
+            "qctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const query_ctx_t *qctx, filter_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "static void client_state_destroy",
+          "detailed": "\n        ",
+          "name": "client_state_destroy",
+          "params": [
+            "qctx",
+            "inst"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_rdataset_t *rdataset, dns_rdataset_t *sigrdataset)",
+          "brief": "Mark 'rdataset' and 'sigrdataset' as rendered, gracefully handling NULL pointers and non-associated rdatasets.",
+          "definition": "static void mark_as_rendered",
+          "detailed": "\n        ",
+          "name": "mark_as_rendered",
+          "params": [
+            "rdataset",
+            "sigrdataset"
+          ],
+          "static": true
+        },
+        {
+          "args": "(query_ctx_t *qctx, filter_a_t mode, const dns_name_t *name, dns_rdatatype_t type, bool only_if_aaaa_exists)",
+          "brief": "Check whether an RRset of given 'type' is present at given 'name'. If it is found and either it is not signed or the combination of query flags and configured processing 'mode' allows it, mark the RRset and its associated signatures as already rendered to prevent them from appearing in the response message stored in 'qctx'. If 'only_if_aaaa_exists' is true, an RRset of type AAAA must also exist at 'name' in order for the above processing to happen.",
+          "definition": "static bool process_name",
+          "detailed": "\n        ",
+          "name": "process_name",
+          "params": [
+            "qctx",
+            "mode",
+            "name",
+            "type",
+            "only_if_aaaa_exists"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const section_filter_t *filter)",
+          "brief": "Apply the requested section filter, i.e. prevent (when possible, as determined by process_name()) RRsets of given 'type' from being rendered in the given 'section' of the response message stored in 'qctx'. Clear the AD bit if the answer and/or authority section was modified. If 'name' is NULL, all names in the given 'section' are processed; otherwise, only 'name' is. 'only_if_aaaa_exists' is passed through to process_name().",
+          "definition": "static void process_section",
+          "detailed": "\n        ",
+          "name": "process_section",
+          "params": [
+            "filter"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FILTER_A_RECURSING",
           "params": [],
           "static": false
         },
         {
           "args": "",
           "brief": "\n        ",
-          "definition": "filter_a_t section_filter::mode",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FILTER_A_FILTERED",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "WANTDNSSEC",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "RECURSIONOK",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
+      "structs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct filter_data filter_data_t",
+          "detailed": "\n        ",
+          "name": "filter_data_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct filter_instance filter_instance_t",
+          "detailed": "\n        ",
+          "name": "filter_instance_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Structure describing the filtering to be applied by process_section().",
+          "definition": "typedef struct section_filter section_filter_t",
+          "detailed": "\"filter-a\" feature implementation begins here.",
+          "name": "section_filter_t",
+          "params": [],
+          "static": false
+        }
+      ],
+      "variables": [
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "const char* filter_a_enums[]",
+          "detailed": "Support for parsing of parameters and configuration of the module.",
+          "name": "filter_a_enums",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cfg_type_t cfg_type_filter_a",
+          "detailed": "\n        ",
+          "name": "cfg_type_filter_a",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "cfg_clausedef_t param_clauses[]",
+          "detailed": "\n        ",
+          "name": "param_clauses",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[]",
+          "brief": "\n        ",
+          "definition": "cfg_clausedef_t* param_clausesets[]",
+          "detailed": "\n        ",
+          "name": "param_clausesets",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "cfg_type_t cfg_type_parameters",
+          "detailed": "\n        ",
+          "name": "cfg_type_parameters",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "filter_a_t filter_data::mode",
           "detailed": "\n        ",
           "name": "mode",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "uint32_t filter_data::flags",
+          "detailed": "\n        ",
+          "name": "flags",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_plugin_t * filter_instance::module",
+          "detailed": "\n        ",
+          "name": "module",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mem_t * filter_instance::mctx",
+          "detailed": "\n        ",
+          "name": "mctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_ht_t * filter_instance::ht",
+          "detailed": "\n        ",
+          "name": "ht",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "isc_mutex_t filter_instance::hlock",
+          "detailed": "\n        ",
+          "name": "hlock",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "filter_a_t filter_instance::v4_a",
+          "detailed": "\n        ",
+          "name": "v4_a",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "filter_a_t filter_instance::v6_a",
+          "detailed": "\n        ",
+          "name": "v6_a",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_acl_t* filter_instance::a_acl",
+          "detailed": "\n        ",
+          "name": "a_acl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "filter_aaaa_t filter_instance::v4_aaaa",
+          "detailed": "\n        ",
+          "name": "v4_aaaa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "filter_aaaa_t filter_instance::v6_aaaa",
+          "detailed": "\n        ",
+          "name": "v6_aaaa",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_acl_t* filter_instance::aaaa_acl",
+          "detailed": "\n        ",
+          "name": "aaaa_acl",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "query_ctx_t * section_filter::qctx",
+          "detailed": "\n        ",
+          "name": "qctx",
           "params": [],
           "static": false
         },
@@ -59,15 +627,6 @@
           "definition": "bool section_filter::only_if_aaaa_exists",
           "detailed": "\n        ",
           "name": "only_if_aaaa_exists",
-          "params": [],
-          "static": false
-        },
-        {
-          "args": "",
-          "brief": "\n        ",
-          "definition": "filter_aaaa_t section_filter::mode",
-          "detailed": "\n        ",
-          "name": "mode",
           "params": [],
           "static": false
         },

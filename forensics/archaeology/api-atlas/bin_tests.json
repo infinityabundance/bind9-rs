@@ -3,11 +3,537 @@
     "bin/tests/system/dlzexternal/driver/driver.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(const char *type)",
+          "brief": "\n        ",
+          "definition": "static bool single_valued",
+          "detailed": "\n        ",
+          "name": "single_valued",
+          "params": [
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct dlz_example_data *state, struct record *list, const char *name, const char *type, dns_ttl_t ttl, const char *data)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_name",
+          "detailed": "\n        ",
+          "name": "add_name",
+          "params": [
+            "state",
+            "list",
+            "name",
+            "type",
+            "ttl",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(struct dlz_example_data *state, struct record *list, const char *name, const char *type, dns_ttl_t ttl, const char *data)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t del_name",
+          "detailed": "\n        ",
+          "name": "del_name",
+          "params": [
+            "state",
+            "list",
+            "name",
+            "type",
+            "ttl",
+            "data"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_sockaddr_t *addr, char *buffer, size_t size)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t fmt_address",
+          "detailed": "\n        ",
+          "name": "fmt_address",
+          "params": [
+            "addr",
+            "buffer",
+            "size"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned int *flags)",
+          "brief": "\n        ",
+          "definition": "int dlz_version",
+          "detailed": "\n        ",
+          "name": "dlz_version",
+          "params": [
+            "flags"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct dlz_example_data *state, const char *helper_name, void *ptr)",
+          "brief": "\n        ",
+          "definition": "static void b9_add_helper",
+          "detailed": "\n        ",
+          "name": "b9_add_helper",
+          "params": [
+            "state",
+            "helper_name",
+            "ptr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *dlzname, unsigned int argc, char *argv[], void **dbdata,...)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_create",
+          "detailed": "\n        ",
+          "name": "dlz_create",
+          "params": [
+            "dlzname",
+            "argc",
+            "argv",
+            "dbdata",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *dbdata)",
+          "brief": "\n        ",
+          "definition": "void dlz_destroy",
+          "detailed": "\n        ",
+          "name": "dlz_destroy",
+          "params": [
+            "dbdata"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *dbdata, const char *name, dns_clientinfomethods_t *methods, dns_clientinfo_t *clientinfo)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_findzonedb",
+          "detailed": "\n        ",
+          "name": "dlz_findzonedb",
+          "params": [
+            "dbdata",
+            "name",
+            "methods",
+            "clientinfo"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zone, const char *name, void *dbdata, dns_sdlzlookup_t *lookup, dns_clientinfomethods_t *methods, dns_clientinfo_t *clientinfo)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_lookup",
+          "detailed": "\n        ",
+          "name": "dlz_lookup",
+          "params": [
+            "zone",
+            "name",
+            "dbdata",
+            "lookup",
+            "methods",
+            "clientinfo"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *dbdata, const char *name, const char *client)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_allowzonexfr",
+          "detailed": "\n        ",
+          "name": "dlz_allowzonexfr",
+          "params": [
+            "dbdata",
+            "name",
+            "client"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zone, void *dbdata, dns_sdlzallnodes_t *allnodes)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_allnodes",
+          "detailed": "\n        ",
+          "name": "dlz_allnodes",
+          "params": [
+            "zone",
+            "dbdata",
+            "allnodes"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zone, void *dbdata, void **versionp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_newversion",
+          "detailed": "\n        ",
+          "name": "dlz_newversion",
+          "params": [
+            "zone",
+            "dbdata",
+            "versionp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zone, bool commit, void *dbdata, void **versionp)",
+          "brief": "\n        ",
+          "definition": "void dlz_closeversion",
+          "detailed": "\n        ",
+          "name": "dlz_closeversion",
+          "params": [
+            "zone",
+            "commit",
+            "dbdata",
+            "versionp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_view_t *view, dns_dlzdb_t *dlzdb, void *dbdata)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_configure",
+          "detailed": "\n        ",
+          "name": "dlz_configure",
+          "params": [
+            "view",
+            "dlzdb",
+            "dbdata"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *signer, const char *name, const char *tcpaddr, const char *type, const char *key, uint32_t keydatalen, unsigned char *keydata, void *dbdata)",
+          "brief": "\n        ",
+          "definition": "bool dlz_ssumatch",
+          "detailed": "\n        ",
+          "name": "dlz_ssumatch",
+          "params": [
+            "signer",
+            "name",
+            "tcpaddr",
+            "type",
+            "key",
+            "keydatalen",
+            "keydata",
+            "dbdata"
+          ],
+          "static": false
+        },
+        {
+          "args": "(struct dlz_example_data *state, const char *name, const char *rdatastr, struct record *list)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t modrdataset",
+          "detailed": "\n        ",
+          "name": "modrdataset",
+          "params": [
+            "state",
+            "name",
+            "rdatastr",
+            "list"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *name, const char *rdatastr, void *dbdata, void *version)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_addrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_addrdataset",
+          "params": [
+            "name",
+            "rdatastr",
+            "dbdata",
+            "version"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *name, const char *rdatastr, void *dbdata, void *version)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_subrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_subrdataset",
+          "params": [
+            "name",
+            "rdatastr",
+            "dbdata",
+            "version"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *name, const char *type, void *dbdata, void *version)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dlz_delrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_delrdataset",
+          "params": [
+            "name",
+            "type",
+            "dbdata",
+            "version"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "loginfo",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "logerr",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "MAX_RECORDS",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "(int level, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "typedef void log_t(int level, const char *fmt,...)",
+          "detailed": "\n        ",
+          "name": "log_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_version_t dlz_version",
+          "detailed": "\n        ",
+          "name": "dlz_version",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_create_t dlz_create",
+          "detailed": "\n        ",
+          "name": "dlz_create",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_destroy_t dlz_destroy",
+          "detailed": "\n        ",
+          "name": "dlz_destroy",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_findzonedb_t dlz_findzonedb",
+          "detailed": "\n        ",
+          "name": "dlz_findzonedb",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_lookup_t dlz_lookup",
+          "detailed": "\n        ",
+          "name": "dlz_lookup",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_allowzonexfr_t dlz_allowzonexfr",
+          "detailed": "\n        ",
+          "name": "dlz_allowzonexfr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_allnodes_t dlz_allnodes",
+          "detailed": "\n        ",
+          "name": "dlz_allnodes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_newversion_t dlz_newversion",
+          "detailed": "\n        ",
+          "name": "dlz_newversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_closeversion_t dlz_closeversion",
+          "detailed": "\n        ",
+          "name": "dlz_closeversion",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_configure_t dlz_configure",
+          "detailed": "\n        ",
+          "name": "dlz_configure",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_ssumatch_t dlz_ssumatch",
+          "detailed": "\n        ",
+          "name": "dlz_ssumatch",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_addrdataset_t dlz_addrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_addrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_subrdataset_t dlz_subrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_subrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dlz_dlopen_delrdataset_t dlz_delrdataset",
+          "detailed": "\n        ",
+          "name": "dlz_delrdataset",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* dlz_example_data::zone_name",
+          "detailed": "\n        ",
+          "name": "zone_name",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[100]",
+          "brief": "\n        ",
+          "definition": "struct record dlz_example_data::current[100]",
+          "detailed": "\n        ",
+          "name": "current",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[100]",
+          "brief": "\n        ",
+          "definition": "struct record dlz_example_data::adds[100]",
+          "detailed": "\n        ",
+          "name": "adds",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[100]",
+          "brief": "\n        ",
+          "definition": "struct record dlz_example_data::deletes[100]",
+          "detailed": "\n        ",
+          "name": "deletes",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool dlz_example_data::transaction_started",
+          "detailed": "\n        ",
+          "name": "transaction_started",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "log_t* dlz_example_data::log",
+          "detailed": "\n        ",
+          "name": "log",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_sdlz_putrr_t* dlz_example_data::putrr",
+          "detailed": "\n        ",
+          "name": "putrr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_sdlz_putnamedrr_t* dlz_example_data::putnamedrr",
+          "detailed": "\n        ",
+          "name": "putnamedrr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dlz_writeablezone_t* dlz_example_data::writeable_zone",
+          "detailed": "\n        ",
+          "name": "writeable_zone",
+          "params": [],
+          "static": false
+        },
         {
           "args": "[100]",
           "brief": "\n        ",
@@ -185,11 +711,526 @@
     "bin/tests/system/dyndb/driver/db.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(dns_db_t *db)",
+          "brief": "\n        ",
+          "definition": "static void destroy",
+          "detailed": "\n        ",
+          "name": "destroy",
+          "params": [
+            "db"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t **versionp)",
+          "brief": "\n        ",
+          "definition": "static void currentversion",
+          "detailed": "\n        ",
+          "name": "currentversion",
+          "params": [
+            "db",
+            "versionp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t **versionp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t newversion",
+          "detailed": "\n        ",
+          "name": "newversion",
+          "params": [
+            "db",
+            "versionp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *source, dns_dbversion_t **targetp)",
+          "brief": "\n        ",
+          "definition": "static void attachversion",
+          "detailed": "\n        ",
+          "name": "attachversion",
+          "params": [
+            "db",
+            "source",
+            "targetp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t **versionp, bool commit DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static void closeversion",
+          "detailed": "\n        ",
+          "name": "closeversion",
+          "params": [
+            "db",
+            "versionp",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, bool create, dns_dbnode_t **nodep DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t findnode",
+          "detailed": "\n        ",
+          "name": "findnode",
+          "params": [
+            "db",
+            "name",
+            "create",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, dns_dbversion_t *version, dns_rdatatype_t type, unsigned int options, isc_stdtime_t now, dns_dbnode_t **nodep, dns_name_t *foundname, dns_rdataset_t *rdataset, dns_rdataset_t *sigrdataset DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t find",
+          "detailed": "\n        ",
+          "name": "find",
+          "params": [
+            "db",
+            "name",
+            "version",
+            "type",
+            "options",
+            "now",
+            "nodep",
+            "foundname",
+            "rdataset",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, unsigned int options, isc_stdtime_t now, dns_dbnode_t **nodep, dns_name_t *foundname, dns_name_t *dcname, dns_rdataset_t *rdataset, dns_rdataset_t *sigrdataset DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t findzonecut",
+          "detailed": "\n        ",
+          "name": "findzonecut",
+          "params": [
+            "db",
+            "name",
+            "options",
+            "now",
+            "nodep",
+            "foundname",
+            "dcname",
+            "rdataset",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *source, dns_dbnode_t **targetp DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static void attachnode",
+          "detailed": "\n        ",
+          "name": "attachnode",
+          "params": [
+            "db",
+            "source",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t **targetp DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static void detachnode",
+          "detailed": "\n        ",
+          "name": "detachnode",
+          "params": [
+            "db",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, unsigned int options, dns_dbiterator_t **iteratorp)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t createiterator",
+          "detailed": "\n        ",
+          "name": "createiterator",
+          "params": [
+            "db",
+            "options",
+            "iteratorp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_dbversion_t *version, dns_rdatatype_t type, dns_rdatatype_t covers, isc_stdtime_t now, dns_rdataset_t *rdataset, dns_rdataset_t *sigrdataset DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t findrdataset",
+          "detailed": "\n        ",
+          "name": "findrdataset",
+          "params": [
+            "db",
+            "node",
+            "version",
+            "type",
+            "covers",
+            "now",
+            "rdataset",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_dbversion_t *version, unsigned int options, isc_stdtime_t now, dns_rdatasetiter_t **iteratorp DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t allrdatasets",
+          "detailed": "\n        ",
+          "name": "allrdatasets",
+          "params": [
+            "db",
+            "node",
+            "version",
+            "options",
+            "now",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_dbversion_t *version, isc_stdtime_t now, dns_rdataset_t *rdataset, unsigned int options, dns_rdataset_t *addedrdataset DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t addrdataset",
+          "detailed": "\n        ",
+          "name": "addrdataset",
+          "params": [
+            "db",
+            "node",
+            "version",
+            "now",
+            "rdataset",
+            "options",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_dbversion_t *version, dns_rdataset_t *rdataset, unsigned int options, dns_rdataset_t *newrdataset DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t subtractrdataset",
+          "detailed": "\n        ",
+          "name": "subtractrdataset",
+          "params": [
+            "db",
+            "node",
+            "version",
+            "rdataset",
+            "options",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_dbversion_t *version, dns_rdatatype_t type, dns_rdatatype_t covers DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t deleterdataset",
+          "detailed": "\n        ",
+          "name": "deleterdataset",
+          "params": [
+            "db",
+            "node",
+            "version",
+            "type",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db)",
+          "brief": "\n        ",
+          "definition": "static bool issecure",
+          "detailed": "\n        ",
+          "name": "issecure",
+          "params": [
+            "db"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbtree_t tree)",
+          "brief": "\n        ",
+          "definition": "static unsigned int nodecount",
+          "detailed": "\n        ",
+          "name": "nodecount",
+          "params": [
+            "db",
+            "tree"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, isc_loop_t *loop)",
+          "brief": "\n        ",
+          "definition": "static void setloop",
+          "detailed": "\n        ",
+          "name": "setloop",
+          "params": [
+            "db",
+            "loop"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t **nodep DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t getoriginnode",
+          "detailed": "\n        ",
+          "name": "getoriginnode",
+          "params": [
+            "db",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *version, dns_hash_t *hash, uint8_t *flags, uint16_t *iterations, unsigned char *salt, size_t *salt_length)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t getnsec3parameters",
+          "detailed": "\n        ",
+          "name": "getnsec3parameters",
+          "params": [
+            "db",
+            "version",
+            "hash",
+            "flags",
+            "iterations",
+            "salt",
+            "salt_length"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, bool create, dns_dbnode_t **nodep DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t findnsec3node",
+          "detailed": "\n        ",
+          "name": "findnsec3node",
+          "params": [
+            "db",
+            "name",
+            "create",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_rdataset_t *rdataset, isc_stdtime_t resign)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t setsigningtime",
+          "detailed": "\n        ",
+          "name": "setsigningtime",
+          "params": [
+            "db",
+            "rdataset",
+            "resign"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, isc_stdtime_t *resign, dns_name_t *name, dns_typepair_t *type)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t getsigningtime",
+          "detailed": "\n        ",
+          "name": "getsigningtime",
+          "params": [
+            "db",
+            "resign",
+            "name",
+            "type"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db)",
+          "brief": "\n        ",
+          "definition": "static dns_stats_t * getrrsetstats",
+          "detailed": "\n        ",
+          "name": "getrrsetstats",
+          "params": [
+            "db"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, bool create, dns_clientinfomethods_t *methods, dns_clientinfo_t *clientinfo, dns_dbnode_t **nodep DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t findnodeext",
+          "detailed": "\n        ",
+          "name": "findnodeext",
+          "params": [
+            "db",
+            "name",
+            "create",
+            "methods",
+            "clientinfo",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, const dns_name_t *name, dns_dbversion_t *version, dns_rdatatype_t type, unsigned int options, isc_stdtime_t now, dns_dbnode_t **nodep, dns_name_t *foundname, dns_clientinfomethods_t *methods, dns_clientinfo_t *clientinfo, dns_rdataset_t *rdataset, dns_rdataset_t *sigrdataset DNS__DB_FLARG)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t findext",
+          "detailed": "\n        ",
+          "name": "findext",
+          "params": [
+            "db",
+            "name",
+            "version",
+            "type",
+            "options",
+            "now",
+            "nodep",
+            "foundname",
+            "methods",
+            "clientinfo",
+            "rdataset",
+            "DNS__DB_FLARG"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, isc_stats_t *stats)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t setcachestats",
+          "detailed": "\n        ",
+          "name": "setcachestats",
+          "params": [
+            "db",
+            "stats"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbnode_t *node, dns_name_t *name)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t nodefullname",
+          "detailed": "\n        ",
+          "name": "nodefullname",
+          "params": [
+            "db",
+            "node",
+            "name"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *version, const dns_name_t *name, const dns_name_t *origin, const dns_name_t *contact)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_soa",
+          "detailed": "\n        ",
+          "name": "add_soa",
+          "params": [
+            "db",
+            "version",
+            "name",
+            "origin",
+            "contact"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *version, const dns_name_t *name, const dns_name_t *nsname)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_ns",
+          "detailed": "\n        ",
+          "name": "add_ns",
+          "params": [
+            "db",
+            "version",
+            "name",
+            "nsname"
+          ],
+          "static": true
+        },
+        {
+          "args": "(dns_db_t *db, dns_dbversion_t *version, const dns_name_t *name, struct in_addr addr)",
+          "brief": "\n        ",
+          "definition": "static isc_result_t add_a",
+          "detailed": "\n        ",
+          "name": "add_a",
+          "params": [
+            "db",
+            "version",
+            "name",
+            "addr"
+          ],
+          "static": true
+        },
+        {
+          "args": "(isc_mem_t *mctx, const dns_name_t *origin, dns_dbtype_t type, dns_rdataclass_t rdclass, unsigned int argc, char *argv[], void *driverarg, dns_db_t **dbp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t create_db",
+          "detailed": "Database API implementation.",
+          "name": "create_db",
+          "params": [
+            "mctx",
+            "origin",
+            "type",
+            "rdclass",
+            "argc",
+            "argv",
+            "driverarg",
+            "dbp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "SAMPLEDB_MAGIC",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "VALID_SAMPLEDB",
+          "params": [
+            ""
+          ],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct sampledb sampledb_t",
+          "detailed": "\n        ",
+          "name": "sampledb_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dbmethods_t sampledb_methods",
+          "detailed": "\n        ",
+          "name": "sampledb_methods",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -390,10 +1431,59 @@
     "bin/tests/system/dyndb/driver/instance.h": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
+      "functions": [
+        {
+          "args": "(isc_mem_t *mctx, const char *db_name, int argc, char **argv, const dns_dyndbctx_t *dctx, sample_instance_t **sample_instp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t new_sample_instance",
+          "detailed": "\n        ",
+          "name": "new_sample_instance",
+          "params": [
+            "mctx",
+            "db_name",
+            "argc",
+            "argv",
+            "dctx",
+            "sample_instp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(sample_instance_t *inst)",
+          "brief": "\n        ",
+          "definition": "isc_result_t load_sample_instance_zones",
+          "detailed": "\n        ",
+          "name": "load_sample_instance_zones",
+          "params": [
+            "inst"
+          ],
+          "static": false
+        },
+        {
+          "args": "(sample_instance_t **sample_instp)",
+          "brief": "\n        ",
+          "definition": "void destroy_sample_instance",
+          "detailed": "\n        ",
+          "name": "destroy_sample_instance",
+          "params": [
+            "sample_instp"
+          ],
+          "static": false
+        }
+      ],
       "macros": [],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct sample_instance sample_instance_t",
+          "detailed": "\n        ",
+          "name": "sample_instance_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
         {
           "args": "",
@@ -1446,11 +2536,735 @@
     "bin/tests/system/rpz/testlib/dummylib.c": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(trpz_rsp_t *trsp)",
+          "brief": "\n        ",
+          "definition": "static int apply_all_updates",
+          "detailed": "\n        ",
+          "name": "apply_all_updates",
+          "params": [
+            "trsp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(trpz_rsp_t *trsp)",
+          "brief": "\n        ",
+          "definition": "static void clear_all_updates",
+          "detailed": "\n        ",
+          "name": "clear_all_updates",
+          "params": [
+            "trsp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const u_char *src, char *dst, size_t dstsiz)",
+          "brief": "\n        ",
+          "definition": "static bool domain_ntop",
+          "detailed": "\n        ",
+          "name": "domain_ntop",
+          "params": [
+            "src",
+            "dst",
+            "dstsiz"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *src, u_char *dst, size_t dstsiz, size_t *dstlen, bool lower)",
+          "brief": "\n        ",
+          "definition": "static bool domain_pton2",
+          "detailed": "\n        ",
+          "name": "domain_pton2",
+          "params": [
+            "src",
+            "dst",
+            "dstsiz",
+            "dstlen",
+            "lower"
+          ],
+          "static": true
+        },
+        {
+          "args": "(librpz_log_fnc_t *new_log, const char *prog_nm)",
+          "brief": "\n        ",
+          "definition": "void trpz_set_log",
+          "detailed": "\n        ",
+          "name": "trpz_set_log",
+          "params": [
+            "new_log",
+            "prog_nm"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_log_level_t level, void *ctx, const char *p, va_list args)",
+          "brief": "\n        ",
+          "definition": "void trpz_vlog",
+          "detailed": "\n        ",
+          "name": "trpz_vlog",
+          "params": [
+            "level",
+            "ctx",
+            "p",
+            "args"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_log_level_t level, void *ctx, const char *p,...)",
+          "brief": "\n        ",
+          "definition": "void trpz_log",
+          "detailed": "\n        ",
+          "name": "trpz_log",
+          "params": [
+            "level",
+            "ctx",
+            "p",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_log_level_t level)",
+          "brief": "\n        ",
+          "definition": "librpz_log_level_t trpz_log_level_val",
+          "detailed": "\n        ",
+          "name": "trpz_log_level_val",
+          "params": [
+            "level"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, const char *p, va_list args)",
+          "brief": "\n        ",
+          "definition": "void trpz_vpemsg",
+          "detailed": "\n        ",
+          "name": "trpz_vpemsg",
+          "params": [
+            "emsg",
+            "p",
+            "args"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, const char *fmt,...)",
+          "brief": "\n        ",
+          "definition": "void trpz_pemsg",
+          "detailed": "\n        ",
+          "name": "trpz_pemsg",
+          "params": [
+            "emsg",
+            "fmt",
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_mutex_t *lock, librpz_mutex_t *unlock, librpz_mutex_t *mutex_destroy, void *mutex_ctx, void *log_ctx)",
+          "brief": "\n        ",
+          "definition": "librpz_clist_t * trpz_clist_create",
+          "detailed": "\n        ",
+          "name": "trpz_clist_create",
+          "params": [
+            "emsg",
+            "lock",
+            "unlock",
+            "mutex_destroy",
+            "mutex_ctx",
+            "log_ctx"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_clist_t **clistp)",
+          "brief": "\n        ",
+          "definition": "void trpz_clist_detach",
+          "detailed": "\n        ",
+          "name": "trpz_clist_detach",
+          "params": [
+            "clistp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_client_t *client, bool optional)",
+          "brief": "\n        ",
+          "definition": "bool trpz_connect",
+          "detailed": "\n        ",
+          "name": "trpz_connect",
+          "params": [
+            "emsg",
+            "client",
+            "optional"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_clist_t *clist, const char *cstr, bool use_expired)",
+          "brief": "\n        ",
+          "definition": "librpz_client_t * trpz_client_create",
+          "detailed": "\n        ",
+          "name": "trpz_client_create",
+          "params": [
+            "emsg",
+            "clist",
+            "cstr",
+            "use_expired"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_client_t **clientp)",
+          "brief": "\n        ",
+          "definition": "void trpz_client_detach",
+          "detailed": "\n        ",
+          "name": "trpz_client_detach",
+          "params": [
+            "clientp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_rsp_t **rspp, int *min_ns_dotsp, librpz_client_t *client, bool have_rd, bool have_do)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_create",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_create",
+          "params": [
+            "emsg",
+            "rspp",
+            "min_ns_dotsp",
+            "client",
+            "have_rd",
+            "have_do"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_rsp_t **rspp)",
+          "brief": "\n        ",
+          "definition": "void trpz_rsp_detach",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_detach",
+          "params": [
+            "rspp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_push",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_push",
+          "params": [
+            "emsg",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_result_t *result, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_pop",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_pop",
+          "params": [
+            "emsg",
+            "result",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_pop_discard",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_pop_discard",
+          "params": [
+            "emsg",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_domain_buf_t *owner, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_domain",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_domain",
+          "params": [
+            "emsg",
+            "owner",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_result_t *result, bool recursed, const librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_result",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_result",
+          "params": [
+            "emsg",
+            "result",
+            "recursed",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, uint32_t *ttlp, librpz_rr_t **rrp, librpz_domain_buf_t *origin, librpz_result_t *result, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_soa",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_soa",
+          "params": [
+            "emsg",
+            "ttlp",
+            "rrp",
+            "origin",
+            "result",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, uint16_t *typep, uint16_t *classp, uint32_t *ttlp, librpz_rr_t **rrp, librpz_result_t *result, const uint8_t *qname, size_t qname_size, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_rr",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_rr",
+          "params": [
+            "emsg",
+            "typep",
+            "classp",
+            "ttlp",
+            "rrp",
+            "result",
+            "qname",
+            "qname_size",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, const uint8_t *domain, size_t domain_size, librpz_trig_t trig, librpz_result_id_t hit_id, bool recursed, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_ck_domain",
+          "detailed": "\n        ",
+          "name": "trpz_ck_domain",
+          "params": [
+            "emsg",
+            "domain",
+            "domain_size",
+            "trig",
+            "hit_id",
+            "recursed",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, const void *addr, uint family, librpz_trig_t trig, librpz_result_id_t hit_id, bool recursed, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_ck_ip",
+          "detailed": "\n        ",
+          "name": "trpz_ck_ip",
+          "params": [
+            "emsg",
+            "addr",
+            "family",
+            "trig",
+            "hit_id",
+            "recursed",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_prefix_t *prefix, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_clientip_prefix",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_clientip_prefix",
+          "params": [
+            "emsg",
+            "prefix",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_trig_t trig, bool ipv6, const librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_have_trig",
+          "detailed": "\n        ",
+          "name": "trpz_have_trig",
+          "params": [
+            "trig",
+            "ipv6",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_cznum_t znum, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_rsp_forget_zone",
+          "detailed": "\n        ",
+          "name": "trpz_rsp_forget_zone",
+          "params": [
+            "emsg",
+            "znum",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "char * trpz_vers_stats",
+          "detailed": "\n        ",
+          "name": "trpz_vers_stats",
+          "params": [
+            "emsg",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_emsg_t *emsg, uint32_t *serialp, const char *domain_nm, librpz_rsp_t *rsp)",
+          "brief": "\n        ",
+          "definition": "bool trpz_soa_serial",
+          "detailed": "\n        ",
+          "name": "trpz_soa_serial",
+          "params": [
+            "emsg",
+            "serialp",
+            "domain_nm",
+            "rsp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(librpz_policy_t policy, char *buf, size_t buf_size)",
+          "brief": "\n        ",
+          "definition": "const char * trpz_policy2str",
+          "detailed": "\n        ",
+          "name": "trpz_policy2str",
+          "params": [
+            "policy",
+            "buf",
+            "buf_size"
+          ],
+          "static": false
+        },
+        {
+          "args": "(trpz_rsp_t *trsp, ssize_t zone)",
+          "brief": "\n        ",
+          "definition": "static bool has_base_zone",
+          "detailed": "\n        ",
+          "name": "has_base_zone",
+          "params": [
+            "trsp",
+            "zone"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char *rdatap, size_t rbufsz, size_t *rdlenp, const rpz_soa_t *psoa)",
+          "brief": "\n        ",
+          "definition": "static bool pack_soa_record",
+          "detailed": "\n        ",
+          "name": "pack_soa_record",
+          "params": [
+            "rdatap",
+            "rbufsz",
+            "rdlenp",
+            "psoa"
+          ],
+          "static": true
+        },
+        {
+          "args": "(librpz_log_level_t level, void *ctx, const char *fmt, va_list args)",
+          "brief": "\n        ",
+          "definition": "static void do_log",
+          "detailed": "\n        ",
+          "name": "do_log",
+          "params": [
+            "level",
+            "ctx",
+            "fmt",
+            "args"
+          ],
+          "static": true
+        },
+        {
+          "args": "(void *lctx)",
+          "brief": "\n        ",
+          "definition": "static void scan_data_file_for_errors",
+          "detailed": "\n        ",
+          "name": "scan_data_file_for_errors",
+          "params": [
+            "lctx"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *cstr, trpz_rsp_t *trsp, size_t *pnzones)",
+          "brief": "\n        ",
+          "definition": "static ssize_t * get_cstr_zones",
+          "detailed": "\n        ",
+          "name": "get_cstr_zones",
+          "params": [
+            "cstr",
+            "trsp",
+            "pnzones"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *query, const char *record, bool *wildp)",
+          "brief": "\n        ",
+          "definition": "static int domain_cmp",
+          "detailed": "\n        ",
+          "name": "domain_cmp",
+          "params": [
+            "query",
+            "record",
+            "wildp"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *domain)",
+          "brief": "\n        ",
+          "definition": "static size_t count_labels",
+          "detailed": "\n        ",
+          "name": "count_labels",
+          "params": [
+            "domain"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const trpz_result_t *new, const trpz_result_t *old)",
+          "brief": "\n        ",
+          "definition": "static bool result_supercedes",
+          "detailed": "\n        ",
+          "name": "result_supercedes",
+          "params": [
+            "new",
+            "old"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const trpz_result_t *new, const trpz_result_t *old)",
+          "brief": "\n        ",
+          "definition": "static bool result_supercedes_address",
+          "detailed": "\n        ",
+          "name": "result_supercedes_address",
+          "params": [
+            "new",
+            "old"
+          ],
+          "static": true
+        },
+        {
+          "args": "(char *buf)",
+          "brief": "\n        ",
+          "definition": "static void rpzify_ipv6_str",
+          "detailed": "\n        ",
+          "name": "rpzify_ipv6_str",
+          "params": [
+            "buf"
+          ],
+          "static": true
+        },
+        {
+          "args": "(unsigned char prefix)",
+          "brief": "\n        ",
+          "definition": "static uint32_t get_mask",
+          "detailed": "\n        ",
+          "name": "get_mask",
+          "params": [
+            "prefix"
+          ],
+          "static": true
+        },
+        {
+          "args": "(const char *addrstr, const void *addr, uint family, unsigned int *pmask)",
+          "brief": "\n        ",
+          "definition": "static int address_cmp",
+          "detailed": "\n        ",
+          "name": "address_cmp",
+          "params": [
+            "addrstr",
+            "addr",
+            "family",
+            "pmask"
+          ],
+          "static": true
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BASE_ZONE_ANY",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "BASE_ZONE_INVALID",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "librpz_log_fnc_t* g_log_fnc",
+          "detailed": "\n        ",
+          "name": "g_log_fnc",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* g_prog_nm",
+          "detailed": "\n        ",
+          "name": "g_prog_nm",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool g_scan_data_file_for_errors",
+          "detailed": "\n        ",
+          "name": "g_scan_data_file_for_errors",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "librpz_log_level_t g_log_level",
+          "detailed": "\n        ",
+          "name": "g_log_level",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "FILE* g_log_outf",
+          "detailed": "\n        ",
+          "name": "g_log_outf",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "librpz_0_t librpz_def_0",
+          "detailed": "\n        ",
+          "name": "librpz_def_0",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "char* trpz_client_t::cstr",
+          "detailed": "\n        ",
+          "name": "cstr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "bool trpz_client_t::uses_expired",
+          "detailed": "\n        ",
+          "name": "uses_expired",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "trpz_clist_t* trpz_client_t::pclist",
+          "detailed": "\n        ",
+          "name": "pclist",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* trpz_clist_t::mutex_ctx",
+          "detailed": "\n        ",
+          "name": "mutex_ctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "void* trpz_clist_t::log_ctx",
+          "detailed": "\n        ",
+          "name": "log_ctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "librpz_mutex_t* trpz_clist_t::mutex_lock_fn",
+          "detailed": "\n        ",
+          "name": "mutex_lock_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "librpz_mutex_t* trpz_clist_t::mutex_unlock_fn",
+          "detailed": "\n        ",
+          "name": "mutex_unlock_fn",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "librpz_mutex_t* trpz_clist_t::mutex_destroy_fn",
+          "detailed": "\n        ",
+          "name": "mutex_destroy_fn",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -2205,7 +4019,17 @@
       "enum_values": [],
       "enums": [],
       "functions": [],
-      "macros": [],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "TARGET_ZONE",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [

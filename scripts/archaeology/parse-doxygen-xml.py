@@ -236,7 +236,6 @@ def main():
         if not srcfile.endswith((".c", ".h")):
             continue
         lib = library_of(srcfile)
-        data = parse_compound(path)
         inv = inventories.setdefault(
             lib,
             {
@@ -246,7 +245,37 @@ def main():
                 "files": {},
             },
         )
-        inv["files"][srcfile] = data
+        data = parse_compound(path)
+        if kind == "file":
+            # The file compound is the canonical per-file inventory.
+            inv["files"][srcfile] = data
+        else:
+            # Doxygen 1.16 keeps class/struct/union/namespace definitions
+            # in separate compounds whose location is their defining file.
+            # MERGE their members into the file entry (never overwrite): a
+            # struct compound carries the struct definition and its fields,
+            # which the file compound does not nest.  Without this, the
+            # last-sorted compound clobbered the file entry and whole
+            # files lost their functions (e.g. lib/dns/rdata.c).
+            existing = inv["files"].get(srcfile)
+            if existing is None:
+                existing = {
+                    "functions": [],
+                    "typedefs": [],
+                    "enums": [],
+                    "enum_values": [],
+                    "structs": [],
+                    "macros": [],
+                    "variables": [],
+                }
+                inv["files"][srcfile] = existing
+            for key in ("functions", "typedefs", "enums", "enum_values",
+                        "structs", "macros", "variables"):
+                known = {m["name"] for m in existing[key]}
+                for m in data.get(key, []):
+                    if m["name"] not in known:
+                        existing[key].append(m)
+                        known.add(m["name"])
 
     os.makedirs(out_dir, exist_ok=True)
     totals = {

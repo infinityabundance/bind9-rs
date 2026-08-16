@@ -3,11 +3,198 @@
     "tests/include/tests/dns.h": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(const char *name, bool with_dispatchmgr, bool with_cache, dns_view_t **viewp)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dns_test_makeview",
+          "detailed": "\n        ",
+          "name": "dns_test_makeview",
+          "params": [
+            "name",
+            "with_dispatchmgr",
+            "with_cache",
+            "viewp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *name, dns_zone_t **zonep, dns_view_t *view, bool createview)",
+          "brief": "Create a zone with origin 'name', return a pointer to the zone object in 'zonep'.",
+          "definition": "isc_result_t dns_test_makezone",
+          "detailed": "If 'view' is set, the returned zone will be assigned to the passed view. 'createview' must be set to false when 'view' is non-NULL.\nIf 'view' is not set and 'createview' is true, a new view is also created and the returned zone is assigned to it. This imposes two requirements on the caller: 1) the returned zone has to be subsequently assigned to a zone manager, otherwise its cleanup will fail, 2) the created view has to be cleaned up by the caller.\nIf 'view' is not set and 'createview' is false, the returned zone will not be assigned to any view.",
+          "name": "dns_test_makezone",
+          "params": [
+            "name",
+            "zonep",
+            "view",
+            "createview"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void dns_test_setupzonemgr",
+          "detailed": "\n        ",
+          "name": "dns_test_setupzonemgr",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_zone_t *zone)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dns_test_managezone",
+          "detailed": "\n        ",
+          "name": "dns_test_managezone",
+          "params": [
+            "zone"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_zone_t *zone)",
+          "brief": "\n        ",
+          "definition": "void dns_test_releasezone",
+          "detailed": "\n        ",
+          "name": "dns_test_releasezone",
+          "params": [
+            "zone"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "\n        ",
+          "definition": "void dns_test_closezonemgr",
+          "detailed": "\n        ",
+          "name": "dns_test_closezonemgr",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(uint32_t usec)",
+          "brief": "\n        ",
+          "definition": "void dns_test_nap",
+          "detailed": "\n        ",
+          "name": "dns_test_nap",
+          "params": [
+            "usec"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_db_t **db, dns_dbtype_t dbtype, const char *origin, const char *testfile)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dns_test_loaddb",
+          "detailed": "\n        ",
+          "name": "dns_test_loaddb",
+          "params": [
+            "db",
+            "dbtype",
+            "origin",
+            "testfile"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, unsigned char *buf, size_t bufsiz, size_t *sizep)",
+          "brief": "\n        ",
+          "definition": "isc_result_t dns_test_getdata",
+          "detailed": "\n        ",
+          "name": "dns_test_getdata",
+          "params": [
+            "file",
+            "buf",
+            "bufsiz",
+            "sizep"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const unsigned char *data, size_t len, char *buf, size_t buflen)",
+          "brief": "\n        ",
+          "definition": "char * dns_test_tohex",
+          "detailed": "\n        ",
+          "name": "dns_test_tohex",
+          "params": [
+            "data",
+            "len",
+            "buf",
+            "buflen"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_rdata_t *rdata, dns_rdataclass_t rdclass, dns_rdatatype_t rdtype, unsigned char *dst, size_t dstlen, const char *src, bool warnings)",
+          "brief": "Try parsing text form RDATA in \"src\" (of class \"rdclass\" and type \"rdtype\") into a structure representing that RDATA at \"rdata\", storing the uncompressed wire form of that RDATA at \"dst\", which is \"dstlen\" bytes long. Set 'warnings' to true to print logged warnings from dns_rdata_fromtext().",
+          "definition": "isc_result_t dns_test_rdatafromstring",
+          "detailed": "\n        ",
+          "name": "dns_test_rdatafromstring",
+          "params": [
+            "rdata",
+            "rdclass",
+            "rdtype",
+            "dst",
+            "dstlen",
+            "src",
+            "warnings"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *namestr, dns_fixedname_t *fname)",
+          "brief": "\n        ",
+          "definition": "void dns_test_namefromstring",
+          "detailed": "\n        ",
+          "name": "dns_test_namefromstring",
+          "params": [
+            "namestr",
+            "fname"
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_diff_t *diff, const zonechange_t *changes, bool warnings)",
+          "brief": "Given a pointer to an uninitialized dns_diff_t structure in 'diff', make it contain diff tuples representing zone database changes listed in 'changes'. Set 'warnings' to true to print logged warnings from dns_rdata_fromtext().",
+          "definition": "isc_result_t dns_test_difffromchanges",
+          "detailed": "\n        ",
+          "name": "dns_test_difffromchanges",
+          "params": [
+            "diff",
+            "changes",
+            "warnings"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "ZONECHANGE_SENTINEL",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
       "typedefs": [],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_zonemgr_t* zonemgr",
+          "detailed": "\n        ",
+          "name": "zonemgr",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",
@@ -614,11 +801,249 @@
     "tests/include/tests/ns.h": {
       "enum_values": [],
       "enums": [],
-      "functions": [],
-      "macros": [],
+      "functions": [
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int setup_server",
+          "detailed": "\n        ",
+          "name": "setup_server",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void **state)",
+          "brief": "\n        ",
+          "definition": "int teardown_server",
+          "detailed": "\n        ",
+          "name": "teardown_server",
+          "params": [
+            "state"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg ISC_ATTR_UNUSED)",
+          "brief": "\n        ",
+          "definition": "void shutdown_interfacemgr",
+          "detailed": "\n        ",
+          "name": "shutdown_interfacemgr",
+          "params": [
+            "ISC_ATTR_UNUSED"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *zonename, const char *filename, dns_view_t *view)",
+          "brief": "Load data for zone \"zonename\" from file \"filename\" and start serving it to clients matching \"view\". Only one zone loaded using this function can be served at any given time.",
+          "definition": "isc_result_t ns_test_serve_zone",
+          "detailed": "\n        ",
+          "name": "ns_test_serve_zone",
+          "params": [
+            "zonename",
+            "filename",
+            "view"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void)",
+          "brief": "Release the zone loaded by ns_test_serve_zone().",
+          "definition": "void ns_test_cleanup_zone",
+          "detailed": "\n        ",
+          "name": "ns_test_cleanup_zone",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "(dns_db_t **db, dns_dbtype_t dbtype, const char *origin, const char *testfile)",
+          "brief": "\n        ",
+          "definition": "isc_result_t ns_test_loaddb",
+          "detailed": "\n        ",
+          "name": "ns_test_loaddb",
+          "params": [
+            "db",
+            "dbtype",
+            "origin",
+            "testfile"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const char *file, unsigned char *buf, size_t bufsiz, size_t *sizep)",
+          "brief": "\n        ",
+          "definition": "isc_result_t ns_test_getdata",
+          "detailed": "\n        ",
+          "name": "ns_test_getdata",
+          "params": [
+            "file",
+            "buf",
+            "bufsiz",
+            "sizep"
+          ],
+          "static": false
+        },
+        {
+          "args": "(ns_interface_t *ifp0, bool tcp, ns_client_t **clientp)",
+          "brief": "\n        ",
+          "definition": "void ns_test_getclient",
+          "detailed": "\n        ",
+          "name": "ns_test_getclient",
+          "params": [
+            "ifp0",
+            "tcp",
+            "clientp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(const ns_test_qctx_create_params_t *params, query_ctx_t **qctxp)",
+          "brief": "Prepare a query context identical with one that would be prepared if a query with given QNAME, QTYPE and flags was received from a client. Recursion is assumed to be allowed for this client. If \"with_cache\" is set to true, a cache database will be created and associated with the view matching the incoming query.",
+          "definition": "isc_result_t ns_test_qctx_create",
+          "detailed": "\n        ",
+          "name": "ns_test_qctx_create",
+          "params": [
+            "params",
+            "qctxp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(query_ctx_t **qctxp)",
+          "brief": "Destroy a query context created by ns_test_qctx_create().",
+          "definition": "void ns_test_qctx_destroy",
+          "detailed": "\n        ",
+          "name": "ns_test_qctx_destroy",
+          "params": [
+            "qctxp"
+          ],
+          "static": false
+        },
+        {
+          "args": "(void *arg, void *data, isc_result_t *resultp)",
+          "brief": "A hook callback interrupting execution at given hook's insertion point.",
+          "definition": "ns_hookresult_t ns_test_hook_catch_call",
+          "detailed": "\n        ",
+          "name": "ns_test_hook_catch_call",
+          "params": [
+            "arg",
+            "data",
+            "resultp"
+          ],
+          "static": false
+        }
+      ],
+      "macros": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "NS_TEST_ID",
+          "params": [
+            ""
+          ],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "",
+          "detailed": "\n        ",
+          "name": "FLARG",
+          "params": [],
+          "static": false
+        }
+      ],
       "structs": [],
-      "typedefs": [],
+      "typedefs": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "typedef struct ns_test_id ns_test_id_t",
+          "detailed": "\n        ",
+          "name": "ns_test_id_t",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "Structure containing parameters for ns_test_qctx_create().",
+          "definition": "typedef struct ns_test_qctx_create_params ns_test_qctx_create_params_t",
+          "detailed": "\n        ",
+          "name": "ns_test_qctx_create_params_t",
+          "params": [],
+          "static": false
+        }
+      ],
       "variables": [
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "dns_dispatchmgr_t* dispatchmgr",
+          "detailed": "\n        ",
+          "name": "dispatchmgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_interfacemgr_t* interfacemgr",
+          "detailed": "\n        ",
+          "name": "interfacemgr",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "ns_server_t* sctx",
+          "detailed": "\n        ",
+          "name": "sctx",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "atomic_uint_fast32_t client_refs[32]",
+          "detailed": "\n        ",
+          "name": "client_refs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "[32]",
+          "brief": "\n        ",
+          "definition": "atomic_uintptr_t client_addrs[32]",
+          "detailed": "\n        ",
+          "name": "client_addrs",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "const char* ns_test_id::description",
+          "detailed": "\n        ",
+          "name": "description",
+          "params": [],
+          "static": false
+        },
+        {
+          "args": "",
+          "brief": "\n        ",
+          "definition": "int ns_test_id::lineno",
+          "detailed": "\n        ",
+          "name": "lineno",
+          "params": [],
+          "static": false
+        },
         {
           "args": "",
           "brief": "\n        ",

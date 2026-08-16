@@ -12,13 +12,13 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | bin/check | 4 | 26 | 6 | 10 | 2 | 0 | 0 | 29 |
 | bin/confgen | 8 | 19 | 8 | 2 | 1 | 0 | 0 | 11 |
 | bin/delv | 1 | 31 | 7 | 0 | 0 | 0 | 0 | 74 |
-| bin/dig | 6 | 30 | 4 | 0 | 0 | 0 | 0 | 45 |
-| bin/dnssec | 12 | 74 | 10 | 0 | 0 | 0 | 1 | 134 |
-| bin/named | 37 | 139 | 69 | 9 | 2 | 0 | 7 | 122 |
-| bin/nsupdate | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 2 |
-| bin/plugins | 2 | 24 | 4 | 3 | 1 | 0 | 3 | 13 |
+| bin/dig | 6 | 209 | 50 | 0 | 0 | 0 | 6 | 332 |
+| bin/dnssec | 12 | 195 | 36 | 2 | 1 | 0 | 6 | 248 |
+| bin/named | 37 | 493 | 139 | 17 | 4 | 0 | 19 | 291 |
+| bin/nsupdate | 1 | 58 | 14 | 0 | 0 | 0 | 1 | 76 |
+| bin/plugins | 2 | 48 | 8 | 6 | 2 | 0 | 6 | 28 |
 | bin/rndc | 3 | 15 | 5 | 0 | 0 | 0 | 0 | 32 |
-| bin/tests | 28 | 110 | 42 | 12 | 2 | 0 | 3 | 115 |
+| bin/tests | 28 | 210 | 50 | 12 | 2 | 0 | 6 | 153 |
 | bin/tools | 7 | 51 | 18 | 0 | 0 | 0 | 1 | 56 |
 | fuzz/dns_master_load.c | 1 | 2 | 0 | 0 | 0 | 0 | 0 | 1 |
 | fuzz/dns_message_checksig.c | 1 | 3 | 1 | 0 | 0 | 0 | 0 | 17 |
@@ -35,51 +35,119 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | fuzz/main.c | 1 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
 | fuzz/old.c | 1 | 1 | 4 | 3 | 1 | 0 | 0 | 0 |
 | fuzz/old.h | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-| lib/dns | 396 | 3755 | 766 | 469 | 33 | 0 | 74 | 1150 |
-| lib/isc | 193 | 1012 | 500 | 446 | 18 | 0 | 87 | 324 |
-| lib/isccc | 15 | 107 | 56 | 0 | 0 | 0 | 2 | 24 |
-| lib/isccfg | 16 | 178 | 20 | 0 | 0 | 0 | 6 | 392 |
-| lib/ns | 26 | 292 | 84 | 77 | 4 | 0 | 17 | 189 |
-| tests/bench | 9 | 51 | 6 | 0 | 0 | 0 | 1 | 18 |
-| tests/dns | 39 | 272 | 67 | 0 | 0 | 0 | 0 | 128 |
-| tests/include | 4 | 21 | 34 | 0 | 0 | 0 | 0 | 17 |
-| tests/isc | 54 | 463 | 144 | 0 | 0 | 0 | 3 | 172 |
-| tests/isccfg | 3 | 19 | 2 | 0 | 0 | 0 | 0 | 7 |
+| lib/dns | 396 | 6665 | 1916 | 821 | 98 | 0 | 530 | 2463 |
+| lib/isc | 193 | 2267 | 841 | 557 | 38 | 0 | 158 | 672 |
+| lib/isccc | 15 | 137 | 63 | 3 | 1 | 0 | 11 | 26 |
+| lib/isccfg | 16 | 492 | 70 | 13 | 3 | 0 | 19 | 547 |
+| lib/ns | 26 | 504 | 178 | 119 | 8 | 0 | 39 | 334 |
+| tests/bench | 9 | 101 | 15 | 12 | 1 | 0 | 1 | 63 |
+| tests/dns | 39 | 435 | 117 | 0 | 0 | 0 | 4 | 189 |
+| tests/include | 4 | 45 | 37 | 0 | 0 | 0 | 2 | 25 |
+| tests/isc | 54 | 843 | 176 | 0 | 0 | 0 | 11 | 284 |
+| tests/isccfg | 3 | 23 | 3 | 0 | 0 | 0 | 1 | 8 |
 | tests/libtest | 4 | 60 | 0 | 0 | 0 | 0 | 0 | 12 |
-| tests/ns | 5 | 6 | 3 | 4 | 1 | 0 | 0 | 16 |
+| tests/ns | 5 | 46 | 5 | 4 | 1 | 0 | 2 | 32 |
 
-**Total: 888 files, 13090 members** (pinned oracle version, see `sources/manifest-*.json`).  Kind totals: enum=65, enum_value=1035, function=6794, macro=1863, typedef=205, variable=3128.
+**Total: 888 files, 25380 members** (pinned oracle version, see `sources/manifest-*.json`).  Kind totals: enum=163, enum_value=1581, function=13012, macro=3770, typedef=823, variable=6031.
 
 ## Status summary
 
 | Status | Count |
 |---|---|
-| ARCHAEOLOGY | 1557 |
-| INTERNAL | 1811 |
-| ORACLE-TESTED | 7 |
-| PARTIAL | 21 |
-| SCAFFOLDED | 1 |
-| UNKNOWN | 9693 |
+| ARCHAEOLOGY | 4843 |
+| INTERNAL | 2991 |
+| ORACLE-TESTED | 27 |
+| PARTIAL | 57 |
+| SCAFFOLDED | 2 |
+| UNKNOWN | 17460 |
 
 ## Surfaces with court or rust coverage
 
 | Member | Kind | Library | Status | Court | Rust module |
 |---|---|---|---|---|---|
+| `dig_error` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_warning` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_comments` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_setup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_query_setup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_startup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_shutdown` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_idnsetup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_lookup_is_tls` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_ednsoptname_t` | typedef | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dighost_printmessage` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_error` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_warning` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_comments` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_received` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_trying` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_shutdown` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dig_setup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_query_setup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_startup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_idnsetup` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_shutdown` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_lookup_is_tls` | function | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_lookup_t` | typedef | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_query_t` | typedef | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_server_t` | typedef | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dig_searchlist_t` | typedef | bin/dig | PARTIAL |  | `bind9-tools::dig` |
+| `dighost_printmessage` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_error` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_warning` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_comments` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_received` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_trying` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_shutdown` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
+| `dighost_pre_exit_hook` | variable | bin/dig | ARCHAEOLOGY |  | `bind9-tools::dig` |
 | `dns_compress_init` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_compress_invalidate` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_compress_setpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_compress_getpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_compress_name` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_compress_rollback` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_init` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_invalidate` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_setpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_getpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_name` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_rollback` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_flags` | enum | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
 | `dns_master_stylecreate` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
+| `dns_message_sectiontotext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
+| `dns_message_pseudosectiontotext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
+| `dns_message_parse` | function | lib/dns | PARTIAL |  | `bind9-core::message` |
+| `dns_name_isabsolute` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
+| `dns_name_fullcompare` | function | lib/dns | ARCHAEOLOGY | CORE-NAME-COMPARE-0001 | `bind9-core::name` |
+| `dns_name_compare` | function | lib/dns | PARTIAL | CORE-NAME-COMPARE-0001 | `bind9-core::name` |
+| `dns_name_rdatacompare` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
+| `dns_name_issubdomain` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
+| `dns_name_countlabels` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
+| `dns_name_fromwire` | function | lib/dns | PARTIAL | CORE-NAME-WIRE-0001 | `bind9-core::name::wire` |
+| `dns_name_towire` | function | lib/dns | PARTIAL |  | `bind9-core::name::wire` |
+| `dns_name_fromtext` | function | lib/dns | PARTIAL | CORE-NAME-TEXT-0001 | `bind9-core::name` |
+| `dns_name_totext` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
 | `dns_rcode_fromtext` | function | lib/dns | SCAFFOLDED |  | `bind9-core::rcode` |
 | `dns_rcode_totext` | function | lib/dns | PARTIAL |  | `bind9-core::rcode` |
+| `dns_rdata_fromwire` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_towire` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_fromtext` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_totext` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_digest` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
 | `dns_rdataclass_fromtext` | function | lib/dns | PARTIAL |  | `bind9-core::class` |
 | `dns_rdataclass_totext` | function | lib/dns | PARTIAL |  | `bind9-core::class` |
 | `dns_rdatatype_fromtext` | function | lib/dns | PARTIAL |  | `bind9-core::rrtype` |
 | `dns_rdatatype_totext` | function | lib/dns | PARTIAL |  | `bind9-core::rrtype` |
 | `dns_ttl_totext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-core::ttl` |
 | `dns_ttl_fromtext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-core::ttl` |
+| `dns_compress_t` | typedef | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_flags_t` | typedef | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_compress_slot_t` | typedef | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
+| `dns_ttl_t` | typedef | lib/dns | ARCHAEOLOGY |  | `bind9-core::ttl` |
+| `dns_master_stylecreate` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
+| `dns_message_parse` | function | lib/dns | PARTIAL |  | `bind9-core::message` |
+| `dns_message_sectiontotext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
+| `dns_message_pseudosectiontotext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-tools::dig::output` |
 | `dns_name_isabsolute` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
 | `dns_name_fullcompare` | function | lib/dns | ARCHAEOLOGY | CORE-NAME-COMPARE-0001 | `bind9-core::name` |
 | `dns_name_compare` | function | lib/dns | PARTIAL | CORE-NAME-COMPARE-0001 | `bind9-core::name` |
@@ -89,17 +157,80 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | `dns_name_totext` | function | lib/dns | PARTIAL |  | `bind9-core::name` |
 | `dns_name_fromwire` | function | lib/dns | PARTIAL | CORE-NAME-WIRE-0001 | `bind9-core::name::wire` |
 | `dns_name_towire` | function | lib/dns | PARTIAL |  | `bind9-core::name::wire` |
+| `dns_rcode_fromtext` | function | lib/dns | SCAFFOLDED |  | `bind9-core::rcode` |
+| `dns_rcode_totext` | function | lib/dns | PARTIAL |  | `bind9-core::rcode` |
+| `dns_rdataclass_fromtext` | function | lib/dns | PARTIAL |  | `bind9-core::class` |
+| `dns_rdataclass_totext` | function | lib/dns | PARTIAL |  | `bind9-core::class` |
+| `dns_rdata_fromwire` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_towire` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_fromtext` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_totext` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdata_digest` | function | lib/dns | ORACLE-TESTED | WIRE-RDATA-0001 | `bind9-core::rdata` |
+| `dns_rdatatype_fromtext` | function | lib/dns | PARTIAL |  | `bind9-core::rrtype` |
+| `dns_rdatatype_totext` | function | lib/dns | PARTIAL |  | `bind9-core::rrtype` |
 | `dns_compress_setpermitted` | function | lib/dns | ORACLE-TESTED | RENDER-COMPRESS-0001, RENDER-COMPRESS-0002, RENDER-COMPRESS-0003, RENDER-COMPRESS-0004, RENDER-COMPRESS-0005 | `bind9-core::message::compression` |
-| `dns_rdata_txt_first` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_next` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_current` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_first` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_next` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_current` | function | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_string_t` | typedef | lib/dns | PARTIAL |  | `bind9-core::rdata` |
-| `dns_rdata_txt_t` | typedef | lib/dns | PARTIAL |  | `bind9-core::rdata` |
+| `dns_rdata_txt_first` | function | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_next` | function | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_current` | function | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_first` | function | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_next` | function | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_current` | function | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_string_t` | typedef | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
+| `dns_rdata_txt_t` | typedef | lib/dns | PARTIAL |  | `bind9-core::rdata::txt` |
 | `dns_ttl_totext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-core::ttl` |
 | `dns_ttl_fromtext` | function | lib/dns | ARCHAEOLOGY |  | `bind9-core::ttl` |
+| `isc_sockaddr_compare` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_equal` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_eqaddr` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_eqaddrprefix` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_hash_ex` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_hash` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_any` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_any6` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_anyofpf` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_fromin` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_fromin6` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_v6fromin` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_fromnetaddr` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_pf` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_setport` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_getport` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_totext` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_format` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_ismulticast` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_isexperimental` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_islinklocal` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_issitelocal` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_isnetzero` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_fromsockaddr` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_sockaddr_disabled` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
+| `isc_time_set` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_settoepoch` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_isepoch` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_monotonic` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_now` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_now_hires` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_nowplusinterval` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_compare` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_add` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_subtract` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_microdiff` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_seconds` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_secondsastimet` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_nanoseconds` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_miliseconds` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formattimestamp` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formathttptimestamp` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_parsehttptimestamp` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatISO8601L` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatISO8601Lms` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatISO8601Lus` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatISO8601` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatISO8601ms` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatISO8601us` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_formatshorttimestamp` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_fromnanosecs` | macro | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
+| `isc_time_epoch` | variable | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
 | `isc_sockaddr_t` | typedef | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
 | `isc_time_t` | typedef | lib/isc | ARCHAEOLOGY |  | `bind9-platform::clock` |
 | `isc_sockaddr_equal` | function | lib/isc | ARCHAEOLOGY |  | `bind9-platform` |
@@ -162,7 +293,110 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | `count_acl_elements` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_acl_fromconfig` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `LOOP_MAGIC` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `fileexist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `keydirexist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `find_maplist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `validate_remotes` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `freekey` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_orderent` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_order` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_dual_stack` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `validate_tls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_forward` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `disabled_algorithms` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `disabled_ds_digests` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `exists` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `mustbesecure` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `checkacl` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_viewacls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `dns64_error` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_dns64` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_ratelimit` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_fetchlimit` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_recursionacls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_name` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `kasp_name_allowed` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_listener` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_listeners` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_port` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_options` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_remoteserverlist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_remoteserverlists` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_tls_definition` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_tls_definitions` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `get_remotes` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `get_remoteservers_def` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `lookup_key` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `validate_remotes_key` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `validate_remotes_tls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_update_policy` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_nonzero` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_mirror_zone_notify` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_recursion` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_keydir` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_zoneconf` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `isccfg_check_key` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_keylist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `rndckey_exists` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_servers` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_trust_anchor` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `record_static_keys` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_initializing_keys` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `record_ds_keys` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_ta_conflicts` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_rpz_catz` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_rpz` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_catz` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_one_plugin` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_dnstap` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_viewconf` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_logging` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_controlskeys` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_controls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `isccfg_check_namedconf` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `NAMED_CONTROL_PORT` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CHECK_RRL` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CHECK_RRL_RATE` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ROOT_KSK_STATIC` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ROOT_KSK_MANAGED` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ROOT_KSK_ANY` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ROOT_KSK_2010` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ROOT_KSK_2017` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `optlevel_config` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `optlevel_options` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `optlevel_view` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `optlevel_zone` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `special_zonetype_rpz` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `special_zonetype_catz` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacnone` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacmd5` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacsha1` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacsha224` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacsha256` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacsha384` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmacsha512` | enum_value | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `optlevel_t` | enum | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `special_zonetype_t` | enum | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `@043006152100137206237067042227065110370336000055` | enum | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `algorithmtable` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `dnsport` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `v4` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `v6` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `sources` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `name` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `set` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `bools` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `default_channels` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `mctx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `lctx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `actx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_result` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `scale` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `max` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `size` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `str` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `hmac` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `type` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `allowed` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `trustedkey_fields` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_type_trustedkey` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
@@ -173,7 +407,12 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | `isccfg_duration_fromtext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `isccfg_parse_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `isccfg_duration_toseconds` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_aclconfctx_create` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_aclconfctx_detach` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_aclconfctx_attach` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_acl_fromconfig` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `ISC_LIST` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_aclconfctx_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `mctx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `references` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_parser_attach` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
@@ -246,11 +485,220 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | `BIND_CHECK_PLUGINS` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `BIND_CHECK_ALGORITHMS` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `BIND_CHECK_KEYS` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `isccfg_duration_fromtext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `isccfg_parse_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `isccfg_duration_toseconds` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_DURATION_MAXLEN` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `isccfg_duration_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `parts` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `iso8601` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `unlimited` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ISC_LIST` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_gettoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_peektoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_ungettoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_create_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_rawuint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_uint32` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_uint32` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_uint64` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_qstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_ustring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_astring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_sstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_rawaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_rawaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_lookingat_netaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_rawport` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_sockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_sockaddrtls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_boolean` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_sockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_boolean` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_sockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_netprefix` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_special` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_create_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_create_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_listelt` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_bracketed_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_bracketed_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_bracketed_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_spacelist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_spacelist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_enum_or_other` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_enum_or_other` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_chars` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_cstr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_named_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_addressed_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_netprefix_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_mapbody` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_mapbody` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_mapbody` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_void` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_void` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_void` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_fixedpoint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_fixedpoint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_percentage` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_percentage` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_duration_or_unlimited` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_duration_or_unlimited` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_terminal` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_error` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_warning` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_is_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_clause_validforzone` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_zonegrammar` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_clauseflags` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_indent` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ISC_LINK` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_MULTI` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_OBSOLETE` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_CALLBACK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_TESTONLY` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_NOTCONFIGURED` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_EXPERIMENTAL` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_NODOC` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_DEPRECATED` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_CLAUSEFLAG_ANCIENT` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_PRIMARY` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_SECONDARY` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_STUB` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_HINT` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_FORWARD` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_STATICSTUB` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_REDIRECT` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_DELEGATION` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_INVIEW` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ZONE_MIRROR` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_PCTX_SKIP` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_PCTX_NODEPRECATED` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_PCTX_NOOBSOLETE` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_PCTX_NOEXPERIMENTAL` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_V4OK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_V4PREFIXOK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_V6OK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_WILDOK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_PORTOK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_TLSOK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_ADDR_MASK` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_LEXOPT_QSTRING` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_LOG_NEAR` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_LOG_BEFORE` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CFG_LOG_NOPREP` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_clausedef_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_tuplefielddef_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_printer_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_map_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parsefunc_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_printfunc_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_docfunc_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_freefunc_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_netprefix_t` | typedef | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_uint32` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_uint64` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_string` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_boolean` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_map` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_list` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_tuple` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_sockaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_sockaddrtls` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_netprefix` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_void` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_fixedpoint` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_percentage` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_duration` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_boolean` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_uint32` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_uint64` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_qstring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_astring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_ustring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_sstring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_bracketed_aml` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_bracketed_text` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_optional_bracketed_text` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_keyref` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_sockaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_sockaddrtls` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr4` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr4wild` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr6` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr6wild` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netprefix` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_void` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_token` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_unsupported` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_fixedpoint` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_percentage` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_duration` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_duration_or_unlimited` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `name` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `type` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `obj` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `id` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `clausesets` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `symtab` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `address` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `prefixlen` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `uint32` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `uint64` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `string` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `boolean` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `map` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `list` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `tuple` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `sockaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `tls` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `sockaddrtls` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `netprefix` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `duration` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `value` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `references` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `file` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `line` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `pctx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `mctx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `lctx` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `lexer` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `errors` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `warnings` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `token` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `seen_eof` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ungotten` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `open_files` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `closed_files` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `buf_name` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `callback` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `callbackarg` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `f` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `closure` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `indent` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `doc` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `rep` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `of` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_kasp_fromconfig` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_kasp_builtinconfig` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_keystore_fromconfig` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
@@ -747,5 +1195,236 @@ Every C/H surface of the pinned oracle tree is inventoried (custodian mandate: n
 | `tls_kw` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `cfg_http_description_clauses` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `http_description_clausesets` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `create_listelt` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `create_string` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_string` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `copy_string` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_sockaddrtls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `create_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_symtab_elt` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_noop` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_getstringtoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parser_complain` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_chars` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_open` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_indent` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_close` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_printx` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_create_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_tuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_istuple` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_tuple_get` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_special` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_semicolon` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_eof` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_create` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_setflags` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parser_openfile` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_setcallback` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_reset` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse2` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_file` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_buffer` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_attach` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_destroy` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_void` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_void` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_void` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isvoid` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_percentage` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_percentage` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_aspercentage` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_ispercentage` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_fixedpoint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_fixedpoint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asfixedpoint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isfixedpoint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_uint32` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_cstr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_rawuint` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_uint32` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isuint32` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asuint32` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isuint64` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asuint64` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_uint64` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `numlen` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_duration_or_unlimited` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isduration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asduration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_duration` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_duration_or_unlimited` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_qstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_ustring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_astring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_sstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_btext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_btext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `doc_btext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_is_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `check_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_enum` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_enum_or_other` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_enum_or_other` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_ustring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_rawqstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_qstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_sstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asstring` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_addrmatchelt` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_negated` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_optional_btext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_optional_btext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `doc_optional_btext` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isboolean` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asboolean` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_boolean` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_boolean` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_create_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `free_listelt` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_listelt` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_bracketed_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_bracketed_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_bracketed_list` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_spacelist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_spacelist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_islist` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_list_first` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_list_next` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_list_length` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_listelt_value` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_mapbody` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_any_named_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_named_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_addressed_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_netprefix_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_symval` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_mapbody` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_clauseflags` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_mapbody` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_map` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_ismap` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_map_get` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_map_getname` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_map_count` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_map_firstclause` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_map_nextclause` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_token` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_unsupported` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `token_addr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_rawaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_lookingat_netaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_rawport` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_rawaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_netaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_netaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_netprefix` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `print_netprefix` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_isnetprefix` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_asnetprefix` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `parse_sockaddrsub` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_sockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parse_sockaddrtls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_sockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_sockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_issockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_issockaddrtls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_assockaddr` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_getsockaddrtls` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_gettoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_ungettoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_peektoken` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_error` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_warning` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `have_current_file` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `current_file` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_log` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_file` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_line` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_create_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `map_symtabitem_destroy` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_istype` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_destroy` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_obj_attach` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_obj` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_doc_terminal` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_print_grammar` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_parser_mapadd` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_pluginlist_foreach` | function | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CAT` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `MOD` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `MAP_SYM` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `TOKEN_STRING` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `CLEANUP_OBJ` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `MAX_LOG_TOKEN` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `ELLIPSIS` | macro | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_uint32` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_uint64` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_string` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_boolean` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_map` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_list` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_tuple` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_sockaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_sockaddrtls` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_netprefix` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_void` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_fixedpoint` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_percentage` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_rep_duration` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_implicitlist` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_filelist` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_void` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_percentage` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_fixedpoint` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_uint32` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_uint64` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_duration` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_duration_or_unlimited` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_qstring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_ustring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_astring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_sstring` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_bracketed_text` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_addrmatchelt` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_negated` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `negated_fields` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_bracketed_aml` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_optional_bracketed_text` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_boolean` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `flagtexts` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_token` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_unsupported` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `netaddr_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `netaddr4_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `netaddr4wild_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `netaddr6_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `netaddr6wild_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr4` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr4wild` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr6` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netaddr6wild` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_netprefix` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `sockaddr_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_sockaddr` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `sockaddrtls_flags` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
+| `cfg_type_sockaddrtls` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `flag` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |
 | `text` | variable | lib/isccfg | ARCHAEOLOGY |  | `bind9-server::config` |

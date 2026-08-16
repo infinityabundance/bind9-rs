@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "residual_id": "WIRE-RDATA-0001-0099",
+  "court_id": "WIRE-RDATA-0001",
+  "kind": "TEXT",
+  "oracle_raw": "OK ns1.example.com. hostmaster.example.com. 1 1468800 2 3 4|036e7331076578616d706c6503636f6d000a686f73746d6173746572076578616d706c6503636f6d000000000100166980000000020000000300000004|036e7331076578616d706c6503636f6d000a686f73746d6173746572076578616d706c6503636f6d000000000100166980000000020000000300000004|ns1.example.com. hostmaster.example.com. 1 1468800 2 3 4",
+  "rust_raw": "",
+  "normalized_oracle": null,
+  "normalized_rust": null,
+  "classification": "unknown",
+  "explanation": "",
+  "minimized_reproducer": null,
+  "regression_invariant": null
+}

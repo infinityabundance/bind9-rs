@@ -46,6 +46,25 @@ pub enum Error {
     InvalidArgument,
     /// Bad/invalid data (BIND: `ISC_R_BADBASE64`, `DNS_R_BADDB`, ...).
     BadData,
+    /// A malformed IPv4 dotted quad (BIND: `DNS_R_BADDOTTEDQUAD`, text
+    /// "bad dotted quad" — `inet_pton` semantics: exactly four decimal
+    /// parts, no leading zeros except "0", each ≤ 255).
+    BadDottedQuad,
+    /// A malformed IPv6 address (BIND: `DNS_R_BADAAAAA`, text
+    /// "bad IPv6 address" — `inet_pton` AF_INET6 semantics).
+    BadIpv6,
+    /// A numeric field outside its legal range (BIND: `ISC_R_RANGE`, text
+    /// "out of range" — e.g. MX preference 65536, SOA serial 2^32).
+    Range,
+    /// A token that is not a valid number (BIND: `ISC_R_BADNUMBER`, text
+    /// "not a valid number" — e.g. a negative serial).
+    BadNumber,
+    /// Bad hexadecimal encoding (BIND: `DNS_R_BADHEX`, text
+    /// "bad hex encoding" — non-hex digit or odd digit count).
+    BadHex,
+    /// Syntax error in a TTL/counter (BIND: `DNS_R_SYNTAX`, text
+    /// "syntax error" — `bind_ttl`'s non-digit start).
+    Syntax,
     /// Truncated input (BIND: `ISC_R_UNEXPECTEDEND` — the probe-visible
     /// text is "unexpected end of input").
     UnexpectedEnd,
@@ -82,9 +101,13 @@ pub enum Error {
     /// Compression used where disallowed (BIND: `DNS_R_DISALLOWED`,
     /// "disallowed (by application policy)").
     Disallowed,
-    /// RDATA that does not consume its declared length (BIND:
+    /// RDATA that does not consume its declared length on the wire (BIND:
     /// `DNS_R_EXTRADATA`, "extra input data").
     ExtraData,
+    /// Trailing tokens after the RDATA fields in text form (BIND:
+    /// `DNS_R_EXTRATOKEN`, text "extra input text" — emitted by
+    /// `dns_rdata_fromtext`'s consume-to-eol wrapper).
+    ExtraToken,
     /// Invalid use of a meta type (BIND: `DNS_R_METATYPE`,
     /// "invalid use of a meta type").
     MetaType,
@@ -116,6 +139,12 @@ impl fmt::Display for Error {
             Error::Exists => f.write_str("already exists"),
             Error::InvalidArgument => f.write_str("invalid argument"),
             Error::BadData => f.write_str("bad data"),
+            Error::BadDottedQuad => f.write_str("bad dotted quad"),
+            Error::BadIpv6 => f.write_str("bad IPv6 address"),
+            Error::Range => f.write_str("out of range"),
+            Error::BadNumber => f.write_str("not a valid number"),
+            Error::BadHex => f.write_str("bad hex encoding"),
+            Error::Syntax => f.write_str("syntax error"),
             Error::UnexpectedEnd => f.write_str("unexpected end of input"),
             Error::MessageTooLong => f.write_str("message too long"),
             Error::PermissionDenied => f.write_str("permission denied"),
@@ -130,6 +159,7 @@ impl fmt::Display for Error {
             Error::BadPointer => f.write_str("bad compression pointer"),
             Error::Disallowed => f.write_str("disallowed (by application policy)"),
             Error::ExtraData => f.write_str("extra input data"),
+            Error::ExtraToken => f.write_str("extra input text"),
             Error::MetaType => f.write_str("invalid use of a meta type"),
             Error::Dnssec => f.write_str("DNSSEC error"),
             Error::Network => f.write_str("network failure"),
