@@ -1,0 +1,757 @@
+== control types ==
+  type 0x00000001 FSTRM_CONTROL_ACCEPT
+  type 0x00000002 FSTRM_CONTROL_START
+  type 0x00000003 FSTRM_CONTROL_STOP
+  type 0x00000004 FSTRM_CONTROL_READY
+  type 0x00000005 FSTRM_CONTROL_FINISH
+  type 0x000000ff FSTRM_CONTROL_UNKNOWN
+  field 0x00000001 FSTRM_CONTROL_FIELD_CONTENT_TYPE
+  field 0x000000ff FSTRM_CONTROL_FIELD_UNKNOWN
+== control corpus ==
+====> The following tests must succeed. <====
+Running test_control_tests().
+
+Running test_control_test().
+Successfully decoded frame (4 bytes):
+  "\x00\x00\x00\x01"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  Control frame is compatible with CONTENT_TYPE (0 bytes): ""
+Running test_reencode_frame().
+Need 4 bytes for new frame.
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x01"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x01"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x01"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  Control frame is compatible with CONTENT_TYPE (0 bytes): ""
+Running test_reencode_frame().
+Need 12 bytes for new frame.
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x01"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x01"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (23 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 23 bytes for new frame.
+Successfully encoded a new frame (23 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (23 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (31 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 31 bytes for new frame.
+Successfully encoded a new frame (31 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (31 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x17\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (43 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  The control frame has a CONTENT_TYPE field (12 bytes): "wharrgarblv2"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 43 bytes for new frame.
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (51 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  The control frame has a CONTENT_TYPE field (12 bytes): "wharrgarblv2"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 51 bytes for new frame.
+Successfully encoded a new frame (51 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (51 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (43 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  The control frame has a CONTENT_TYPE field (12 bytes): "wharrgarblv2"
+  Control frame is compatible with CONTENT_TYPE (12 bytes): "wharrgarblv2"
+Running test_reencode_frame().
+Need 43 bytes for new frame.
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (51 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+  The control frame is of type FSTRM_CONTROL_ACCEPT (0x00000001).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  The control frame has a CONTENT_TYPE field (12 bytes): "wharrgarblv2"
+  Control frame is compatible with CONTENT_TYPE (12 bytes): "wharrgarblv2"
+Running test_reencode_frame().
+Need 51 bytes for new frame.
+Successfully encoded a new frame (51 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (51 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00+\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (43 bytes):
+  "\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+  The control frame is of type FSTRM_CONTROL_READY (0x00000004).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  The control frame has a CONTENT_TYPE field (12 bytes): "wharrgarblv2"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 43 bytes for new frame.
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (43 bytes):
+  "\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+  The control frame is of type FSTRM_CONTROL_READY (0x00000004).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  The control frame has a CONTENT_TYPE field (12 bytes): "wharrgarblv2"
+  Control frame is compatible with CONTENT_TYPE (12 bytes): "wharrgarblv2"
+Running test_reencode_frame().
+Need 43 bytes for new frame.
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (43 bytes):
+  "\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl\x00\x00\x00\x01\x00\x00\x00\x0cwharrgarblv2"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (4 bytes):
+  "\x00\x00\x00\x02"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  Control frame is compatible with CONTENT_TYPE (0 bytes): ""
+Running test_reencode_frame().
+Need 4 bytes for new frame.
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x02"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x02"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x02"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  Control frame is compatible with CONTENT_TYPE (0 bytes): ""
+Running test_reencode_frame().
+Need 12 bytes for new frame.
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x02"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x02"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (4 bytes):
+  "\x00\x00\x00\x02"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 4 bytes for new frame.
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x02"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x02"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x02"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 12 bytes for new frame.
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x02"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x02"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (23 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 23 bytes for new frame.
+Successfully encoded a new frame (23 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (23 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (23 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  Control frame is NOT compatible with CONTENT_TYPE (12 bytes): "wharrgarblv2"
+Running test_reencode_frame().
+Need 23 bytes for new frame.
+Successfully encoded a new frame (23 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (23 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (31 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x17\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+  The control frame is of type FSTRM_CONTROL_START (0x00000002).
+  The control frame has a CONTENT_TYPE field (11 bytes): "wharr\x00garbl"
+  Control frame is compatible with CONTENT_TYPE (11 bytes): "wharr\x00garbl"
+Running test_reencode_frame().
+Need 31 bytes for new frame.
+Successfully encoded a new frame (31 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x17\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (31 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x17\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garbl"
+New frame is identical to original frame.
+
+Running test_control_test().
+Successfully decoded frame (4 bytes):
+  "\x00\x00\x00\x03"
+  The control frame is of type FSTRM_CONTROL_STOP (0x00000003).
+  Control frame is NOT compatible with CONTENT_TYPE (0 bytes): ""
+Running test_reencode_frame().
+Need 4 bytes for new frame.
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x03"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (4 bytes):
+  "\x00\x00\x00\x03"
+New frame is identical to original frame.
+
+Running test_control_test().
+Control frames include escape sequence and control frame length.
+  (FSTRM_CONTROL_FLAG_WITH_HEADER enabled.)
+Successfully decoded frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x03"
+  The control frame is of type FSTRM_CONTROL_STOP (0x00000003).
+  Control frame is NOT compatible with CONTENT_TYPE (0 bytes): ""
+Running test_reencode_frame().
+Need 12 bytes for new frame.
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x03"
+New frame is identical to original frame.
+Running test_reencode_frame_static().
+Successfully encoded a new frame (12 bytes):
+  "\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x03"
+New frame is identical to original frame.
+
+====> The following tests must fail. <====
+Running test_invalid().
+Failed to decode frame (1 bytes):
+  "\xff"
+Failed to decode frame (2 bytes):
+  "\xff\xff"
+Failed to decode frame (3 bytes):
+  "\xff\xff\xff"
+Failed to decode frame (3 bytes):
+  "\xff\xff\xff"
+Failed to decode frame (4 bytes):
+  "\xff\xff\xff\xff"
+Failed to decode frame (5 bytes):
+  "\xff\xff\xff\xff\xff"
+Failed to decode frame (4 bytes):
+  "\xab\xad\x1d\xea"
+Failed to decode frame (22 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garb"
+Failed to decode frame (24 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01\x00\x00\x00\x0bwharr\x00garblz"
+Failed to decode frame (5 bytes):
+  "\x00\x00\x00\x02\x00"
+Failed to decode frame (7 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00"
+Failed to decode frame (8 bytes):
+  "\x00\x00\x00\x02\x00\x00\x00\x01"
+== file writer/reader round trip ==
+  writer_options_add_content_type(test:hello) -> 0 (success)
+  writer_options_add_content_type(257 bytes) -> 1 (failure)
+  file_writer_init -> non-NULL
+  writer_open -> 0 (success)
+  writer_open (double) -> 0 (success)
+  writer_close -> 0 (success)
+  writer_close (again) -> 1 (failure)
+  writer_destroy -> 1 (failure)
+  file size 672
+  file bytes 000000000000001600000002000000010000000a746573743a68656c6c6f0000000f48656c6c6f20776f726c64202330000000000f48656c6c6f20776f726c64202331000000000f48656c6c6f20776f726c64202332000000000f48656c6c6f20776f726c64202333000000000f48656c6c6f20776f726c64202334000000000f48656c6c6f20776f726c64202335000000000f48656c6c6f20776f726c64202336000000000f48656c6c6f20776f726c64202337000000000f48656c6c6f20776f726c64202338000000000f48656c6c6f20776f726c64202339000000001048656c6c6f20776f726c6420233130000000001048656c6c6f20776f726c6420233131000000001048656c6c6f20776f726c6420233132000000001048656c6c6f20776f726c6420233133000000001048656c6c6f20776f726c6420233134000000001048656c6c6f20776f726c6420233135000000001048656c6c6f20776f726c6420233136000000001048656c6c6f20776f726c6420233137000000001048656c6c6f20776f726c6420233138000000001048656c6c6f20776f726c6420233139000000001048656c6c6f20776f726c6420233230000000001048656c6c6f20776f726c6420233231000000001048656c6c6f20776f726c6420233232000000001048656c6c6f20776f726c6420233233000000001048656c6c6f20776f726c6420233234000000001048656c6c6f20776f726c6420233235000000001048656c6c6f20776f726c6420233236000000001048656c6c6f20776f726c6420233237000000001048656c6c6f20776f726c6420233238000000001048656c6c6f20776f726c6420233239000000001048656c6c6f20776f726c6420233330000000001048656c6c6f20776f726c642023333100000000000000000400000003
+  reader_options_add_content_type(test:hello) -> 0 (success)
+  file_reader_init -> non-NULL
+  reader_open -> 0 (success)
+  reader_open (double) -> 1 (failure)
+  read #0 -> 0 (success), 15 bytes: "Hello world #0\x00"
+  read #1 -> 0 (success), 15 bytes: "Hello world #1\x00"
+  read #2 -> 0 (success), 15 bytes: "Hello world #2\x00"
+  read #3 -> 0 (success), 15 bytes: "Hello world #3\x00"
+  read #4 -> 0 (success), 15 bytes: "Hello world #4\x00"
+  read #5 -> 0 (success), 15 bytes: "Hello world #5\x00"
+  read #6 -> 0 (success), 15 bytes: "Hello world #6\x00"
+  read #7 -> 0 (success), 15 bytes: "Hello world #7\x00"
+  read #8 -> 0 (success), 15 bytes: "Hello world #8\x00"
+  read #9 -> 0 (success), 15 bytes: "Hello world #9\x00"
+  read #10 -> 0 (success), 16 bytes: "Hello world #10\x00"
+  read #11 -> 0 (success), 16 bytes: "Hello world #11\x00"
+  read #12 -> 0 (success), 16 bytes: "Hello world #12\x00"
+  read #13 -> 0 (success), 16 bytes: "Hello world #13\x00"
+  read #14 -> 0 (success), 16 bytes: "Hello world #14\x00"
+  read #15 -> 0 (success), 16 bytes: "Hello world #15\x00"
+  read #16 -> 0 (success), 16 bytes: "Hello world #16\x00"
+  read #17 -> 0 (success), 16 bytes: "Hello world #17\x00"
+  read #18 -> 0 (success), 16 bytes: "Hello world #18\x00"
+  read #19 -> 0 (success), 16 bytes: "Hello world #19\x00"
+  read #20 -> 0 (success), 16 bytes: "Hello world #20\x00"
+  read #21 -> 0 (success), 16 bytes: "Hello world #21\x00"
+  read #22 -> 0 (success), 16 bytes: "Hello world #22\x00"
+  read #23 -> 0 (success), 16 bytes: "Hello world #23\x00"
+  read #24 -> 0 (success), 16 bytes: "Hello world #24\x00"
+  read #25 -> 0 (success), 16 bytes: "Hello world #25\x00"
+  read #26 -> 0 (success), 16 bytes: "Hello world #26\x00"
+  read #27 -> 0 (success), 16 bytes: "Hello world #27\x00"
+  read #28 -> 0 (success), 16 bytes: "Hello world #28\x00"
+  read #29 -> 0 (success), 16 bytes: "Hello world #29\x00"
+  read #30 -> 0 (success), 16 bytes: "Hello world #30\x00"
+  read #31 -> 0 (success), 16 bytes: "Hello world #31\x00"
+  reader_read past end -> 4 (stop)
+  reader_read (closing state) -> 1 (failure)
+  reader_close -> 0 (success)
+  reader_close (again) -> 1 (failure)
+  reader_get_control(START) -> 0 (success), control non-NULL
+    type FSTRM_CONTROL_START n_ctype 1
+    ct[0] "test:hello"
+  reader_get_control(FINISH) -> 1 (failure)
+  reader_destroy -> 1 (failure)
+== reader limits ==
+  set_max_frame_size(511) -> 1 (failure)
+  set_max_frame_size(512) -> 0 (success)
+  set_max_frame_size(UINT32_MAX-1) -> 0 (success)
+  set_max_frame_size(UINT32_MAX) -> 1 (failure)
+  reader open (max 512) -> 0 (success)
+  reader read 600-byte frame (max 512) -> 0 (success)
+  reader close after failure -> 1 (failure)
+  reader open (default max) -> 0 (success)
+  reader read 600-byte frame (default max) -> 0 (success), 600 bytes
+  reader open (content-type mismatch) -> 1 (failure)
+  reader open (no content types configured) -> 0 (success)
+  reader read (no content types) -> 0 (success), 600 bytes
+== writer errors ==
+  writer_init (no write method) -> NULL
+  writer_close before open -> 1 (failure)
+  writer_writev(iovcnt=0) -> 0 (success)
+  writer_open -> 0 (success)
+  writer_write -> 0 (success)
+  writer_close -> 0 (success)
+  writer_write after close -> 1 (failure)
+  writer_get_control(STOP) -> 1 (failure)
+  writer_get_control(READY) -> 0 (success), control NULL
+== writev chunked ==
+  writer_writev(200 frames) -> 0 (success)
+  read #0 -> 0 (success), 4 bytes: "m000"
+  read #1 -> 0 (success), 4 bytes: "m001"
+  read #2 -> 0 (success), 4 bytes: "m002"
+  read #3 -> 0 (success), 4 bytes: "m003"
+  read #4 -> 0 (success), 4 bytes: "m004"
+  read #5 -> 0 (success), 4 bytes: "m005"
+  read #6 -> 0 (success), 4 bytes: "m006"
+  read #7 -> 0 (success), 4 bytes: "m007"
+  read #8 -> 0 (success), 4 bytes: "m008"
+  read #9 -> 0 (success), 4 bytes: "m009"
+  read #10 -> 0 (success), 4 bytes: "m010"
+  read #11 -> 0 (success), 4 bytes: "m011"
+  read #12 -> 0 (success), 4 bytes: "m012"
+  read #13 -> 0 (success), 4 bytes: "m013"
+  read #14 -> 0 (success), 4 bytes: "m014"
+  read #15 -> 0 (success), 4 bytes: "m015"
+  read #16 -> 0 (success), 4 bytes: "m016"
+  read #17 -> 0 (success), 4 bytes: "m017"
+  read #18 -> 0 (success), 4 bytes: "m018"
+  read #19 -> 0 (success), 4 bytes: "m019"
+  read #20 -> 0 (success), 4 bytes: "m020"
+  read #21 -> 0 (success), 4 bytes: "m021"
+  read #22 -> 0 (success), 4 bytes: "m022"
+  read #23 -> 0 (success), 4 bytes: "m023"
+  read #24 -> 0 (success), 4 bytes: "m024"
+  read #25 -> 0 (success), 4 bytes: "m025"
+  read #26 -> 0 (success), 4 bytes: "m026"
+  read #27 -> 0 (success), 4 bytes: "m027"
+  read #28 -> 0 (success), 4 bytes: "m028"
+  read #29 -> 0 (success), 4 bytes: "m029"
+  read #30 -> 0 (success), 4 bytes: "m030"
+  read #31 -> 0 (success), 4 bytes: "m031"
+  read #32 -> 0 (success), 4 bytes: "m032"
+  read #33 -> 0 (success), 4 bytes: "m033"
+  read #34 -> 0 (success), 4 bytes: "m034"
+  read #35 -> 0 (success), 4 bytes: "m035"
+  read #36 -> 0 (success), 4 bytes: "m036"
+  read #37 -> 0 (success), 4 bytes: "m037"
+  read #38 -> 0 (success), 4 bytes: "m038"
+  read #39 -> 0 (success), 4 bytes: "m039"
+  read #40 -> 0 (success), 4 bytes: "m040"
+  read #41 -> 0 (success), 4 bytes: "m041"
+  read #42 -> 0 (success), 4 bytes: "m042"
+  read #43 -> 0 (success), 4 bytes: "m043"
+  read #44 -> 0 (success), 4 bytes: "m044"
+  read #45 -> 0 (success), 4 bytes: "m045"
+  read #46 -> 0 (success), 4 bytes: "m046"
+  read #47 -> 0 (success), 4 bytes: "m047"
+  read #48 -> 0 (success), 4 bytes: "m048"
+  read #49 -> 0 (success), 4 bytes: "m049"
+  read #50 -> 0 (success), 4 bytes: "m050"
+  read #51 -> 0 (success), 4 bytes: "m051"
+  read #52 -> 0 (success), 4 bytes: "m052"
+  read #53 -> 0 (success), 4 bytes: "m053"
+  read #54 -> 0 (success), 4 bytes: "m054"
+  read #55 -> 0 (success), 4 bytes: "m055"
+  read #56 -> 0 (success), 4 bytes: "m056"
+  read #57 -> 0 (success), 4 bytes: "m057"
+  read #58 -> 0 (success), 4 bytes: "m058"
+  read #59 -> 0 (success), 4 bytes: "m059"
+  read #60 -> 0 (success), 4 bytes: "m060"
+  read #61 -> 0 (success), 4 bytes: "m061"
+  read #62 -> 0 (success), 4 bytes: "m062"
+  read #63 -> 0 (success), 4 bytes: "m063"
+  read #64 -> 0 (success), 4 bytes: "m064"
+  read #65 -> 0 (success), 4 bytes: "m065"
+  read #66 -> 0 (success), 4 bytes: "m066"
+  read #67 -> 0 (success), 4 bytes: "m067"
+  read #68 -> 0 (success), 4 bytes: "m068"
+  read #69 -> 0 (success), 4 bytes: "m069"
+  read #70 -> 0 (success), 4 bytes: "m070"
+  read #71 -> 0 (success), 4 bytes: "m071"
+  read #72 -> 0 (success), 4 bytes: "m072"
+  read #73 -> 0 (success), 4 bytes: "m073"
+  read #74 -> 0 (success), 4 bytes: "m074"
+  read #75 -> 0 (success), 4 bytes: "m075"
+  read #76 -> 0 (success), 4 bytes: "m076"
+  read #77 -> 0 (success), 4 bytes: "m077"
+  read #78 -> 0 (success), 4 bytes: "m078"
+  read #79 -> 0 (success), 4 bytes: "m079"
+  read #80 -> 0 (success), 4 bytes: "m080"
+  read #81 -> 0 (success), 4 bytes: "m081"
+  read #82 -> 0 (success), 4 bytes: "m082"
+  read #83 -> 0 (success), 4 bytes: "m083"
+  read #84 -> 0 (success), 4 bytes: "m084"
+  read #85 -> 0 (success), 4 bytes: "m085"
+  read #86 -> 0 (success), 4 bytes: "m086"
+  read #87 -> 0 (success), 4 bytes: "m087"
+  read #88 -> 0 (success), 4 bytes: "m088"
+  read #89 -> 0 (success), 4 bytes: "m089"
+  read #90 -> 0 (success), 4 bytes: "m090"
+  read #91 -> 0 (success), 4 bytes: "m091"
+  read #92 -> 0 (success), 4 bytes: "m092"
+  read #93 -> 0 (success), 4 bytes: "m093"
+  read #94 -> 0 (success), 4 bytes: "m094"
+  read #95 -> 0 (success), 4 bytes: "m095"
+  read #96 -> 0 (success), 4 bytes: "m096"
+  read #97 -> 0 (success), 4 bytes: "m097"
+  read #98 -> 0 (success), 4 bytes: "m098"
+  read #99 -> 0 (success), 4 bytes: "m099"
+  read #100 -> 0 (success), 4 bytes: "m100"
+  read #101 -> 0 (success), 4 bytes: "m101"
+  read #102 -> 0 (success), 4 bytes: "m102"
+  read #103 -> 0 (success), 4 bytes: "m103"
+  read #104 -> 0 (success), 4 bytes: "m104"
+  read #105 -> 0 (success), 4 bytes: "m105"
+  read #106 -> 0 (success), 4 bytes: "m106"
+  read #107 -> 0 (success), 4 bytes: "m107"
+  read #108 -> 0 (success), 4 bytes: "m108"
+  read #109 -> 0 (success), 4 bytes: "m109"
+  read #110 -> 0 (success), 4 bytes: "m110"
+  read #111 -> 0 (success), 4 bytes: "m111"
+  read #112 -> 0 (success), 4 bytes: "m112"
+  read #113 -> 0 (success), 4 bytes: "m113"
+  read #114 -> 0 (success), 4 bytes: "m114"
+  read #115 -> 0 (success), 4 bytes: "m115"
+  read #116 -> 0 (success), 4 bytes: "m116"
+  read #117 -> 0 (success), 4 bytes: "m117"
+  read #118 -> 0 (success), 4 bytes: "m118"
+  read #119 -> 0 (success), 4 bytes: "m119"
+  read #120 -> 0 (success), 4 bytes: "m120"
+  read #121 -> 0 (success), 4 bytes: "m121"
+  read #122 -> 0 (success), 4 bytes: "m122"
+  read #123 -> 0 (success), 4 bytes: "m123"
+  read #124 -> 0 (success), 4 bytes: "m124"
+  read #125 -> 0 (success), 4 bytes: "m125"
+  read #126 -> 0 (success), 4 bytes: "m126"
+  read #127 -> 0 (success), 4 bytes: "m127"
+  read #128 -> 0 (success), 4 bytes: "m128"
+  read #129 -> 0 (success), 4 bytes: "m129"
+  read #130 -> 0 (success), 4 bytes: "m130"
+  read #131 -> 0 (success), 4 bytes: "m131"
+  read #132 -> 0 (success), 4 bytes: "m132"
+  read #133 -> 0 (success), 4 bytes: "m133"
+  read #134 -> 0 (success), 4 bytes: "m134"
+  read #135 -> 0 (success), 4 bytes: "m135"
+  read #136 -> 0 (success), 4 bytes: "m136"
+  read #137 -> 0 (success), 4 bytes: "m137"
+  read #138 -> 0 (success), 4 bytes: "m138"
+  read #139 -> 0 (success), 4 bytes: "m139"
+  read #140 -> 0 (success), 4 bytes: "m140"
+  read #141 -> 0 (success), 4 bytes: "m141"
+  read #142 -> 0 (success), 4 bytes: "m142"
+  read #143 -> 0 (success), 4 bytes: "m143"
+  read #144 -> 0 (success), 4 bytes: "m144"
+  read #145 -> 0 (success), 4 bytes: "m145"
+  read #146 -> 0 (success), 4 bytes: "m146"
+  read #147 -> 0 (success), 4 bytes: "m147"
+  read #148 -> 0 (success), 4 bytes: "m148"
+  read #149 -> 0 (success), 4 bytes: "m149"
+  read #150 -> 0 (success), 4 bytes: "m150"
+  read #151 -> 0 (success), 4 bytes: "m151"
+  read #152 -> 0 (success), 4 bytes: "m152"
+  read #153 -> 0 (success), 4 bytes: "m153"
+  read #154 -> 0 (success), 4 bytes: "m154"
+  read #155 -> 0 (success), 4 bytes: "m155"
+  read #156 -> 0 (success), 4 bytes: "m156"
+  read #157 -> 0 (success), 4 bytes: "m157"
+  read #158 -> 0 (success), 4 bytes: "m158"
+  read #159 -> 0 (success), 4 bytes: "m159"
+  read #160 -> 0 (success), 4 bytes: "m160"
+  read #161 -> 0 (success), 4 bytes: "m161"
+  read #162 -> 0 (success), 4 bytes: "m162"
+  read #163 -> 0 (success), 4 bytes: "m163"
+  read #164 -> 0 (success), 4 bytes: "m164"
+  read #165 -> 0 (success), 4 bytes: "m165"
+  read #166 -> 0 (success), 4 bytes: "m166"
+  read #167 -> 0 (success), 4 bytes: "m167"
+  read #168 -> 0 (success), 4 bytes: "m168"
+  read #169 -> 0 (success), 4 bytes: "m169"
+  read #170 -> 0 (success), 4 bytes: "m170"
+  read #171 -> 0 (success), 4 bytes: "m171"
+  read #172 -> 0 (success), 4 bytes: "m172"
+  read #173 -> 0 (success), 4 bytes: "m173"
+  read #174 -> 0 (success), 4 bytes: "m174"
+  read #175 -> 0 (success), 4 bytes: "m175"
+  read #176 -> 0 (success), 4 bytes: "m176"
+  read #177 -> 0 (success), 4 bytes: "m177"
+  read #178 -> 0 (success), 4 bytes: "m178"
+  read #179 -> 0 (success), 4 bytes: "m179"
+  read #180 -> 0 (success), 4 bytes: "m180"
+  read #181 -> 0 (success), 4 bytes: "m181"
+  read #182 -> 0 (success), 4 bytes: "m182"
+  read #183 -> 0 (success), 4 bytes: "m183"
+  read #184 -> 0 (success), 4 bytes: "m184"
+  read #185 -> 0 (success), 4 bytes: "m185"
+  read #186 -> 0 (success), 4 bytes: "m186"
+  read #187 -> 0 (success), 4 bytes: "m187"
+  read #188 -> 0 (success), 4 bytes: "m188"
+  read #189 -> 0 (success), 4 bytes: "m189"
+  read #190 -> 0 (success), 4 bytes: "m190"
+  read #191 -> 0 (success), 4 bytes: "m191"
+  read #192 -> 0 (success), 4 bytes: "m192"
+  read #193 -> 0 (success), 4 bytes: "m193"
+  read #194 -> 0 (success), 4 bytes: "m194"
+  read #195 -> 0 (success), 4 bytes: "m195"
+  read #196 -> 0 (success), 4 bytes: "m196"
+  read #197 -> 0 (success), 4 bytes: "m197"
+  read #198 -> 0 (success), 4 bytes: "m198"
+  read #199 -> 0 (success), 4 bytes: "m199"
+  reader_read past end -> 4 (stop)
+== unix writer init validation ==
+  unix_writer_init(NULL path) -> NULL
+  unix_writer_init(108-char path) -> NULL
+  unix_writer_init(107-char path) -> non-NULL
+== tcp writer init validation ==
+  tcp_writer_init(no addr/port) -> NULL
+  tcp_writer_init(addr, no port) -> NULL
+  tcp_writer_init(127.0.0.1, 8080) -> non-NULL
+  tcp_writer_init("127.0.0.1", "8080") -> non-NULL
+  tcp_writer_init("::1", "8080") -> non-NULL
+  tcp_writer_init("1.2.3.999", "8080") -> NULL
+  tcp_writer_init("notanaddress", "8080") -> NULL
+  tcp_writer_init("010.0.0.1", "8080") -> NULL
+  tcp_writer_init("127.0.0.1:8080", "8080") -> NULL
+  tcp_writer_init("127.0.0.1", "65535") -> non-NULL
+  tcp_writer_init("127.0.0.1", "65536") -> NULL
+  tcp_writer_init("127.0.0.1", "8080junk") -> NULL
+  tcp_writer_init("127.0.0.1", "-1") -> NULL
+  tcp_writer_init("127.0.0.1", "") -> non-NULL
+  tcp_writer_init("127.0.0.1", "0x1F90") -> non-NULL
+  tcp_writer_init("127.0.0.1", " 8080") -> non-NULL
+  tcp_writer_init("127.0.0.1", "010") -> non-NULL
+  tcp_writer_init("127.0.0.1", "+8080") -> non-NULL
+== unix socket interop ==
+accepted a connection
+reader open -> 0 (success)
+ready: type FSTRM_CONTROL_READY n_ctype 1
+  ready ct[0] "test:hello"
+start: type FSTRM_CONTROL_START n_ctype 1
+  start ct[0] "test:hello"
+frame 0: 8 bytes "msg-0000"
+frame 1: 8 bytes "msg-0001"
+frame 2: 8 bytes "msg-0002"
+frame 3: 8 bytes "msg-0003"
+frame 4: 8 bytes "msg-0004"
+frame 5: 8 bytes "msg-0005"
+frame 6: 8 bytes "msg-0006"
+frame 7: 8 bytes "msg-0007"
+read -> stop
+reader close -> 0 (success)
+== tcp socket interop ==
+accepted a connection
+reader open -> 0 (success)
+ready: type FSTRM_CONTROL_READY n_ctype 1
+  ready ct[0] "test:hello"
+start: type FSTRM_CONTROL_START n_ctype 1
+  start ct[0] "test:hello"
+frame 0: 8 bytes "msg-0000"
+frame 1: 8 bytes "msg-0001"
+frame 2: 8 bytes "msg-0002"
+frame 3: 8 bytes "msg-0003"
+frame 4: 8 bytes "msg-0004"
+frame 5: 8 bytes "msg-0005"
+frame 6: 8 bytes "msg-0006"
+frame 7: 8 bytes "msg-0007"
+read -> stop
+reader close -> 0 (success)
+== iothr options ==
+  set_buffer_hint(1023) -> 1 (failure)
+  set_buffer_hint(1024) -> 0 (success)
+  set_buffer_hint(8192) -> 0 (success)
+  set_buffer_hint(65536) -> 0 (success)
+  set_buffer_hint(65537) -> 1 (failure)
+  set_flush_timeout(0) -> 1 (failure)
+  set_flush_timeout(1) -> 0 (success)
+  set_flush_timeout(600) -> 0 (success)
+  set_flush_timeout(601) -> 1 (failure)
+  set_input_queue_size(1) -> 1 (failure)
+  set_input_queue_size(2) -> 0 (success)
+  set_input_queue_size(3) -> 1 (failure)
+  set_input_queue_size(4) -> 0 (success)
+  set_input_queue_size(6) -> 0 (success)
+  set_input_queue_size(16384) -> 0 (success)
+  set_input_queue_size(16385) -> 1 (failure)
+  set_num_input_queues(0) -> 1 (failure)
+  set_num_input_queues(1) -> 0 (success)
+  set_num_input_queues(4) -> 0 (success)
+  set_output_queue_size(1) -> 1 (failure)
+  set_output_queue_size(2) -> 0 (success)
+  set_output_queue_size(1024) -> 0 (success)
+  set_output_queue_size(1025) -> 1 (failure)
+  set_queue_model(SPSC) -> 0 (success)
+  set_queue_model(MPSC) -> 0 (success)
+  set_queue_model(2) -> 1 (failure)
+  set_queue_notify_threshold(0) -> 1 (failure)
+  set_queue_notify_threshold(1) -> 0 (success)
+  set_reopen_interval(0) -> 1 (failure)
+  set_reopen_interval(1) -> 0 (success)
+  set_reopen_interval(600) -> 0 (success)
+  set_reopen_interval(601) -> 1 (failure)
+== iothr init + submit ==
+  iothr_init(input_queue_size=8) -> non-NULL
+  get_input_queue #1 -> non-NULL
+  get_input_queue #2 (beyond num_input_queues) -> NULL
+  get_input_queue_idx(0) -> non-NULL
+  get_input_queue_idx(1) -> NULL
+  submit(len=0) -> 3 (invalid)
+  submit(empty, len=0) -> 3 (invalid)
+  submit #0 -> 0 (success)
+  submit #1 -> 0 (success)
+  submit #2 -> 0 (success)
+  submit #3 -> 0 (success)
+  submit #4 -> 0 (success)
+  submit #5 -> 0 (success)
+  submit #6 -> 0 (success)
+  submit #7 -> 0 (success)
+  submit #8 -> 0 (success)
+  submit #9 -> 0 (success)
+  submit #10 -> 0 (success)
+  submit #11 -> 0 (success)
+  submit #12 -> 0 (success)
+  submit #13 -> 0 (success)
+  submit #14 -> 0 (success)
+  submit #15 -> 0 (success)
+  iothr file size 318
+  iothr file bytes 0000000000000004000000020000000e68656c6c6f20776f726c642023300000000e68656c6c6f20776f726c642023310000000e68656c6c6f20776f726c642023320000000e68656c6c6f20776f726c642023330000000e68656c6c6f20776f726c642023340000000e68656c6c6f20776f726c642023350000000e68656c6c6f20776f726c642023360000000e68656c6c6f20776f726c642023370000000e68656c6c6f20776f726c642023380000000e68656c6c6f20776f726c642023390000000f68656c6c6f20776f726c64202331300000000f68656c6c6f20776f726c64202331310000000f68656c6c6f20776f726c64202331320000000f68656c6c6f20776f726c64202331330000000f68656c6c6f20776f726c64202331340000000f68656c6c6f20776f726c6420233135000000000000000400000003
+== iothr discard on unopenable writer ==
+  freed 4 frames (discarded on shutdown)

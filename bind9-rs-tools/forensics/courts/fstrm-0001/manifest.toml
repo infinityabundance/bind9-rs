@@ -1,0 +1,42 @@
+schema_version = 1
+court_id = "FSTRM-0001"
+question = "Does the Rust fstrm module (compat/fstrm/) reproduce fstrm 0.6.1 observable behavior byte-exactly: the control codec (the complete t/test_control.c frame corpus — decode with/without FSTRM_CONTROL_FLAG_WITH_HEADER, get_type/set_type, the clamped get_num_field_content_type, field enumeration, content-type matching incl. the empty-field match rule and the STOP/FINISH-never-match rule, byte-exact re-encode into dynamic and 512-byte buffers); the writer (options bounds, unidirectional + bidirectional open state machines incl. the ACCEPT content-type negotiation, writev incl. the >128-frame chunked path, close/destroy/get_control result taxonomy incl. the NULL-control returns); the reader (options incl. the max_frame_size bounds 512..UINT32_MAX-1, the double-open failure, content-type mismatch and no-config-accepts-any opens, the max-frame-size violation quirk, the closing-state read failure, get_control); the file transports (a 32-message round trip with a byte-exact full-file dump, the double-open/destroy result taxonomy); the unix/tcp writer transports (init validation: sun_path length, inet_pton AF_INET/AF_INET6 address parsing, strtoul base-0 port parsing incl. trailing garbage/65536/-1/empty/hex/octal/whitespace/plus); the fstrm_iothr async pipeline (every option bound, the submit invalid/again taxonomy, the one-shot get_input_queue handles, a byte-exact file pipeline, the discard-on-unopenable-writer free-callback path, and the full four-corner bidirectional READY/ACCEPT/START/data/STOP/FINISH handshake over AF_UNIX and TCP loopback with an fstrm_reader on the accepting end)?"
+subsystem = "compat/fstrm"
+oracle_versions = ["0.6.1"]
+harness = "fstrm"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-fstrm-0.6.1 container against the same /tmp/fstrm_work files (each probe starts from a clean directory); the socket-consumer thread writes its transcript to a file that the main thread prints after join, so the interleaving is deterministic",
+]
+invariants = [
+    "the control type/field string renderers match for the valid types and for out-of-range raw values",
+    "every valid control-frame decode (19 cases, with and without header) matches: the decoded byte dump, the reported type, the field enumeration, and the re-encoded frame is byte-identical to the input (dynamic and 512-byte buffers)",
+    "the content-type match results match for every control-test entry, incl. the empty-field match (n_ctype == 0 succeeds), the NULL match, the exact-match loop, and the STOP/FINISH never-match rule",
+    "every invalid control frame (12 cases) fails to decode",
+    "writer_options_add_content_type bounds (>256 fails) match",
+    "file_writer_init/file_reader_init NULL contracts and the writer open/double-open/close/close-again/destroy result sequence match",
+    "the 32-message hello file is byte-exact (full-file hex dump) and reads back with identical per-message results",
+    "reader open/double-open/read/stop/closing-read/close/close-again/destroy results match, incl. get_control(START) content and get_control(FINISH) failure",
+    "set_max_frame_size bounds (511/512/UINT32_MAX-1/UINT32_MAX) match",
+    "the max-frame-size violation returns success with unspecified output while the reader enters the failed state (close then fails), exactly like reader.c's stale-`res` goto-fail",
+    "the content-type mismatch open fails and the no-configured-content-types open accepts",
+    "writer errors match: init-without-write-method NULL, close-before-open failure, writev(0) success, write-after-close failure, get_control(STOP) failure and get_control(READY) NULL-control success",
+    "writer_writev with 200 frames (the >128 chunked path) produces 200 byte-exact frames read back in order",
+    "unix writer init validation matches: NULL path, 108-char path (fail), 107-char path (ok)",
+    "tcp writer init validation matches for 15 address/port combinations incl. inet_pton strictness (leading zeros, trailing garbage, >255 octets) and strtoul base-0 port semantics (hex, octal, whitespace, empty, negative, >65535)",
+    "every iothr option setter bound matches (buffer_hint 1024..65536, flush_timeout 1..600, input_queue_size even 2..16384, num_input_queues >=1, output_queue_size 2..IOV_MAX, queue_model SPSC/MPSC/2, queue_notify_threshold >=1, reopen_interval 1..600)",
+    "iothr submit taxonomy matches: len==0 invalid, again on a draining queue handled, get_input_queue one-shot exhaustion, get_input_queue_idx bounds",
+    "the iothr file pipeline output is byte-exact (START + 16 framed payloads + STOP)",
+    "the discard-on-unopenable-writer path frees exactly the submitted frames on shutdown",
+    "the AF_UNIX and TCP four-corner handshakes match: the reader's open, the READY/START content-type transcripts, the 8 frames in order, the stop, and the close",
+    "fstrm_iothr_init with a non-power-of-2 input_queue_size is excluded from the corpus: the C's goto-fail path joins an uninitialized condvar/thread and segfaults (see FSTRM-LORE-0005); the Rust conserves the documented return-NULL contract instead",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are fixed buffers/strings and fixed socket paths; nothing wall-clock, address or pointer dependent is printed (the TCP ephemeral port is never printed); the consumer-thread transcript is joined before printing; submit loops retry on fstrm_res_again so the outcome is deterministic regardless of thread timing"
+security_classification = "the control-frame decoder is the parser-facing attack surface (length validation, field iteration, the 512/256 limits); the reader's max-frame-size path and the iothr queue arithmetic are the memory-safety boundaries; both implementations must reject rather than crash"
+references = [
+    "fstrm-0.6.1 control.c/h, writer.c/h, reader.c/h, file.c/h, unix_writer.c/h, tcp_writer.c/h, rdwr.c/h, iothr.c/h, fstrm.h, fstrm-private.h, libmy/{my_queue.h,my_queue_mb.c,my_queue_mutex.c,read_bytes.h,my_alloc.h} (pinned archive sha256 4f0f7ad2b760119c441aba58271e84de683b3cc138530d02710896641866e2d2)",
+    "forensics/oracle/probes/probe-fstrm.c",
+    "bind9-rs-tools/src/bin/fstrm-probe.rs",
+    "bind9-rs-tools/src/compat/fstrm/{mod,control,frame,stream,rdwr,writer,reader,file,unix,tcp,queue,iothr}.rs",
+    "addendum §26 (fstrm), §37 (C probe courts)",
+]
