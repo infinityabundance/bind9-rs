@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "court_id": "JSON-0001",
-  "git_commit": "pending",
+  "git_commit": "6abd9d43",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
   "cargo_lock_sha256": "8b51282949344b6f52591e68bb51e39f8c530c4cb4801faf076d376cac3cf649",
   "oracle_hashes": {
