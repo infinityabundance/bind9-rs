@@ -1,0 +1,47 @@
+schema_version = 1
+court_id = "ZLIB-0001"
+question = "Does the Rust zlib module (compat/zlib/) reproduce zlib 1.3.1 observable behavior byte-exactly: version/compile flags and the zError taxonomy; adler32/crc32 (incl. the NMAX=5552 deferral and the combine formulas); the one-shot API (compress/compress2/uncompress/compressBound, incl. the tiny-dest/garbage/truncated error returns); the deflate stream (all levels x all strategies, zlib/gzip/raw wrappers incl. the windowBits error surface, Z_SYNC_FLUSH/Z_FULL_FLUSH/Z_BLOCK/Z_PARTIAL_FLUSH, preset dictionaries, a full deflateSetHeader<->inflateGetHeader gzip-header round trip, deflatePrime/deflatePending/deflateParams/deflateCopy/deflateReset/deflateResetKeep and the uninitialized/bad-param errors); the inflate stream (wrapper matrix incl. auto-detect, one-shot/small-out/byte-at-a-time feeding, truncation/corruption error taxonomy with message strings, inflateSync/inflateSyncPoint/inflatePrime/inflateMark/inflateCopy/inflateReset/inflateReset2, dictionary paths); and the gz* file layer (gzopen/gzdopen write+read round trips with byte-identical file output, a glibc-vsnprintf gzprintf battery, gzseek/gztell/gzoffset/gzrewind, gzungetc, gzsetparams, gzbuffer, gzerror/gzclearerr messages and the wrong-mode error paths)?"
+subsystem = "compat/zlib"
+oracle_versions = ["1.3.1"]
+harness = "zlib"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle container against the same /tmp/zwork files",
+]
+invariants = [
+    "zlibVersion/ZLIB_VERSION/ZLIB_VERNUM/zlibCompileFlags match",
+    "every zError string matches for the full code range and out-of-range codes",
+    "adler32/crc32 values match across the corpus incl. the 5552/5553 NMAX boundary and 20000-byte run",
+    "adler32_combine/crc32_combine results match",
+    "compressBound values match",
+    "compress2 output (err, length, byte-exact hex) matches for all 8 corpora x levels 0..9",
+    "compress (default) matches compress2(6)",
+    "uncompress round trips (err, backlen, verify) match for every corpus",
+    "uncompress error returns match for tiny dest, garbage and truncated input",
+    "deflateInit2 level x strategy matrix output (err, ret, length, hex) matches, incl. level -1",
+    "deflate windowBits matrix (9/15/31/-15/-9/8) and the bad-windowBits errors (7/16/0/48/-16) match",
+    "deflate flush modes Z_SYNC_FLUSH/Z_FULL_FLUSH/Z_BLOCK/Z_PARTIAL_FLUSH produce identical streams",
+    "preset-dictionary deflate output and the inflate Z_NEED_DICT + inflateSetDictionary path match (adler, rets)",
+    "the gzip header round trip is byte-exact: deflateSetHeader fields, emitted bytes, inflateGetHeader-filled done/text/time/xflags/os/hcrc/extra_len/name/comment/extra",
+    "deflatePending/deflateParams/deflatePrime/deflateCopy/deflateReset/deflateResetKeep results match",
+    "deflate errors match for bad level, bad windowBits, uninitialized stream",
+    "inflate wrapper matrix (15/31/47/-15 and raw-as-zlib) rets, totals, avail_in, adler and msg match",
+    "small-out and byte-at-a-time inflate feeding produce identical totals and returns",
+    "truncated/corrupted/garbage inflate returns and message strings match",
+    "inflateSync/inflateSyncPoint/inflatePrime/inflateMark/inflateCopy/inflateReset/inflateReset2 results match",
+    "inflateSetDictionary without a pending dictionary error matches",
+    "gzopen/gzwrite/gzputs/gzputc/gzprintf/gzflush/gzclose_w produce a byte-identical raw gzip file",
+    "the gzprintf battery (glibc vsnprintf formats: d/i/u/o/x/X with flags/width/precision, s/c/p/%, l/ll/z lengths, f/e/g floats, * width/precision) writes byte-identical decompressed content and returns matching lengths",
+    "gzread/gzgets/gzgetc/gzungetc/gzseek/gztell/gzoffset/gzrewind/gzeof behaviors match over the read-back sequence",
+    "gz open-error (nonexistent), wrong-mode error paths, gzerror messages and gzclearerr match",
+    "gzdopen and gzbuffer behaviors match",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are fixed buffers/strings; %p pointer arguments are fixed constants (0x1234 and NULL); no wall-clock or address data is printed"
+security_classification = "the inflate decoder is the parser-facing attack surface (header parsing, code-length validation, distance checks, the sync-search); both implementations must reject rather than crash"
+references = [
+    "zlib-1.3.1 deflate.c, inflate.c, inftrees.c, inffast.c, trees.c, compress.c, uncompr.c, adler32.c, crc32.c, gzlib.c, gzread.c, gzwrite.c, gzclose.c, zutil.c, zlib.h, zconf.h (pinned archive sha256 17e88863f3600672ab49182f217281b6fc4d3c762bde361935e436a95214d05c)",
+    "forensics/oracle/probes/probe-zlib.c",
+    "bind9-rs-tools/src/bin/zlib-probe.rs",
+    "bind9-rs-tools/src/compat/zlib/{checksum,deflate,gz,inflate,inftrees,trees,mod}.rs",
+    "addendum §34 (zlib), §37 (C probe courts)",
+]

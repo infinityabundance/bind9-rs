@@ -35,6 +35,7 @@ form via `bind9-api-coverage regen` (per-function detail lives in
 | libcap VFS file xattr (`cap_get_file`/`cap_set_file`/rootid, v2+v3) | PROVEN | CAP-FILE-0001 (0 residuals; four-corner C↔Rust xattr interop, byte-exact) |
 | libmaxminddb metadata + decoder + search tree (`MMDB_*`) | PROVEN | MMDB-0001 (0 residuals; 41-address GAI corpus, decoder DB, corrupt-DB corpus, byte-exact) |
 | json-c tokener + object model + serializer (`json_tokener_*`, `json_object_*`) | PROVEN | JSON-0001 (0 residuals; 90+ input parse corpus, strict mode, depth limit, %.17g/NOZERO double path, COLOR, int/uint boundaries, byte-exact) |
+| zlib (`compress`/`uncompress`, `deflate*`/`inflate*`, `adler32`/`crc32`, `gz*` incl. gzprintf) | PROVEN | ZLIB-0001 (0 residuals; level x strategy matrix, wrapper matrix, flush modes, dictionaries, gzip-header round trip, error taxonomy, glibc-vsnprintf gzprintf battery, gz file layer, byte-exact) |
 | `named` runtime | UNKNOWN | |
 | Recursive resolver | UNKNOWN | |
 | DNSSEC | UNKNOWN | |

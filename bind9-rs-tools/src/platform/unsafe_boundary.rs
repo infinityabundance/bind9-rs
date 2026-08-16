@@ -35,6 +35,8 @@
 //! | U-0023| linux.rs `chdir_root` | NUL-terminated literal                           | libcap launcher tests    |
 //! | U-0024| linux.rs `read_fd`  | fd caller-owned; buf live slice bounded by len      | libcap launcher tests    |
 //! | U-0025| linux.rs `write_fd` | fd caller-owned; buf live slice of declared length   | libcap launcher tests    |
+//! | U-0026| linux.rs `open_mode`| NUL-terminated path; flags/mode from constants      | zlib gz* courts          |
+//! | U-0027| linux.rs `lseek`    | fd caller-owned; plain integer offset/whence        | zlib gz* courts          |
 //!
 //! Miri cannot execute the kernel calls themselves (they are FFI); the
 //! surrounding pointer/buffer construction is exercised by the unit and
@@ -133,6 +135,16 @@ pub mod inventory {
             "U-0025",
             "linux.rs write_fd",
             "fd caller-owned; buf live slice of declared length",
+        ),
+        (
+            "U-0026",
+            "linux.rs open_mode",
+            "NUL-terminated path; flags/mode from constants",
+        ),
+        (
+            "U-0027",
+            "linux.rs lseek",
+            "fd caller-owned; plain integer offset/whence",
         ),
     ];
 }

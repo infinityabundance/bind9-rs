@@ -391,4 +391,23 @@ pub fn write_fd(fd: c_int, buf: &[u8]) -> Result<usize, Errno> {
     }
 }
 
+/// `open(path, flags, mode)` (U-0026): like `open` but with a creation mode
+/// (used when O_CREAT is set, e.g. the gz* layer opening files for writing;
+/// gzlib.c passes 0666).
+pub fn open_mode(path: &CString, flags: c_int, mode: u32) -> Result<c_int, Errno> {
+    // SAFETY (U-0026): path is a NUL-terminated CString; flags and mode are
+    // caller-chosen constants.  Returns the owned fd (caller must close it).
+    let ret = unsafe { libc::open(path.as_ptr(), flags, mode as libc::c_uint) };
+    check(ret as c_long).map(|fd| fd as c_int)
+}
+
+/// `lseek(fd, offset, whence)` (U-0027): returns the resulting file offset.
+/// `offset` is i64 (the libc off_t on 64-bit Linux); whence is SEEK_SET /
+/// SEEK_CUR / SEEK_END.
+pub fn lseek(fd: c_int, offset: i64, whence: c_int) -> Result<i64, Errno> {
+    // SAFETY (U-0027): fd is caller-owned; offset/whence are plain integers.
+    let ret = unsafe { libc::lseek(fd, offset, whence) };
+    check(ret as c_long)
+}
+
 use std::ffi::c_char;
