@@ -189,9 +189,22 @@ fn compare_custom(court: &Court) -> Result<Vec<Residual>, String> {
             String::from_utf8_lossy(&out.stderr)
         ));
     }
+    // Runner-native format: the custom comparator writes a `residuals.json`
+    // at the court root.
     let residuals_path = court.dir.join("residuals.json");
     if residuals_path.exists() {
         let text = std::fs::read_to_string(&residuals_path).map_err(|e| e.to_string())?;
+        let residuals: Vec<Residual> = serde_json::from_str(&text).map_err(|e| e.to_string())?;
+        return Ok(residuals);
+    }
+    // Dependency-court comparator format (fstrm/zlib/lz/... compare.sh):
+    // mismatches are written as §13 residual objects to
+    // `residuals/summary.json` while the comparator exits 0.  Reading only
+    // `residuals.json` would report a mismatched run as a clean run (0
+    // residuals) and mint a green receipt for failing evidence.
+    let summary_path = court.dir.join("residuals").join("summary.json");
+    if summary_path.exists() {
+        let text = std::fs::read_to_string(&summary_path).map_err(|e| e.to_string())?;
         let residuals: Vec<Residual> = serde_json::from_str(&text).map_err(|e| e.to_string())?;
         return Ok(residuals);
     }
@@ -270,6 +283,43 @@ mod tests {
         );
         std::fs::write(&path, text).unwrap();
         assert!(load_manifest(&path).is_err());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn custom_compare_reads_summary_json() {
+        // Regression: the dependency-court comparators (fstrm/zlib/lz/...
+        // compare.sh) write mismatches as §13 residual objects to
+        // `residuals/summary.json` and exit 0.  compare_custom must surface
+        // those residuals instead of returning an empty vector (which would
+        // mint a green receipt for failing evidence).
+        let dir = temp_court("TEST-0003");
+        std::fs::create_dir_all(dir.join("residuals")).unwrap();
+        let mut c = std::fs::File::create(dir.join("compare.sh")).unwrap();
+        writeln!(
+            c,
+            "#!/bin/sh\ncat > residuals/summary.json << 'EOF'\n[\n  {{\"schema_version\": 1, \"residual_id\": \"TEST-0003-STDOUT-0001\", \"court_id\": \"TEST-0003\", \"kind\": \"TEXT\", \"surface\": \"stdout\", \"oracle_raw\": \"oracle line\", \"rust_raw\": \"rust line\", \"classification\": \"unknown\", \"explanation\": \"\"}}\n]\nEOF\nexit 0"
+        )
+        .unwrap();
+        let courts = discover(&dir).unwrap();
+        let residuals = compare(&courts[0], CompareMode::Custom).unwrap();
+        assert_eq!(residuals.len(), 1);
+        assert_eq!(residuals[0].residual_id, "TEST-0003-STDOUT-0001");
+        assert_eq!(residuals[0].oracle_raw, "oracle line");
+        assert_eq!(residuals[0].rust_raw, "rust line");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn custom_compare_green_without_summary_json() {
+        // A green custom comparator removes residuals/summary.json; the
+        // runner must then report no residuals.
+        let dir = temp_court("TEST-0004");
+        let mut c = std::fs::File::create(dir.join("compare.sh")).unwrap();
+        writeln!(c, "#!/bin/sh\nrm -f residuals/summary.json\nexit 0").unwrap();
+        let courts = discover(&dir).unwrap();
+        let residuals = compare(&courts[0], CompareMode::Custom).unwrap();
+        assert!(residuals.is_empty());
         let _ = std::fs::remove_dir_all(&dir);
     }
 }
