@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-08-16T00:56:14Z",
+  "images": {
+    "oracle-bind-9.20.26": {
+      "built_at": "2026-08-16T00:56:14Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-bind-9.20.26/Dockerfile",
+      "image_id": "178b80eef338",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-fstrm-0.6.1": {
+      "built_at": "2026-08-16T00:56:14Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-fstrm-0.6.1/Dockerfile",
+      "image_id": "4f2a8c895b28",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-json-c-0.19": {
+      "built_at": "2026-08-16T00:56:14Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-json-c-0.19/Dockerfile",
+      "image_id": "6f8a24447d6c",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-libcap-2.78": {
+      "built_at": "2026-08-16T00:56:14Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libcap-2.78/Dockerfile",
+      "image_id": "76543c29fa98",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-libidn2-2.3.8": {
+      "built_at": "2026-08-16T00:56:14Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libidn2-2.3.8/Dockerfile",
+      "image_id": "74c356544490",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-libmaxminddb-1.13.3": {
+      "built_at": "2026-08-16T00:56:14Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libmaxminddb-1.13.3/Dockerfile",
+      "image_id": "1ec5a62807e1",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    }
+  },
+  "schema_version": 1
+}
