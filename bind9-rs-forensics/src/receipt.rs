@@ -12,7 +12,7 @@ use crate::court::Court;
 use crate::hashing::sha256_file;
 use crate::schemas::{Receipt, Residual, SCHEMA_VERSION};
 use std::collections::BTreeMap;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 /// Compute the environment digest: kernel, arch, OS, locale-relevant vars.
 #[must_use]
@@ -170,7 +170,14 @@ pub fn verify_receipt(path: &Path) -> Result<Vec<String>, String> {
     }
     // Locate the court and re-check what we can.
     let repo_root = repo_root_of(path.parent().unwrap_or(Path::new(".")));
-    let court_dir = repo_root.join("forensics/courts");
+    // The runner honors BIND9_COURTS_ROOT for courts living in the tools
+    // forensics tree (bind9-rs-tools/forensics/courts); verify against the
+    // same search root so dependency-court receipts are actually checkable.
+    let court_dir = if let Ok(root) = std::env::var("BIND9_COURTS_ROOT") {
+        PathBuf::from(root)
+    } else {
+        repo_root.join("forensics/courts")
+    };
     // Find court by id (subsystem unknown from receipt; scan).
     let courts = crate::court::discover(&court_dir).unwrap_or_default();
     if let Some(court) = courts.iter().find(|c| c.id == receipt.court_id) {

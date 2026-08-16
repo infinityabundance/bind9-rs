@@ -36,6 +36,7 @@ form via `bind9-api-coverage regen` (per-function detail lives in
 | libmaxminddb metadata + decoder + search tree (`MMDB_*`) | PROVEN | MMDB-0001 (0 residuals; 41-address GAI corpus, decoder DB, corrupt-DB corpus, byte-exact) |
 | json-c tokener + object model + serializer (`json_tokener_*`, `json_object_*`) | PROVEN | JSON-0001 (0 residuals; 90+ input parse corpus, strict mode, depth limit, %.17g/NOZERO double path, COLOR, int/uint boundaries, byte-exact) |
 | zlib (`compress`/`uncompress`, `deflate*`/`inflate*`, `adler32`/`crc32`, `gz*` incl. gzprintf) | PROVEN | ZLIB-0001 (0 residuals; level x strategy matrix, wrapper matrix, flush modes, dictionaries, gzip-header round trip, error taxonomy, glibc-vsnprintf gzprintf battery, gz file layer, byte-exact) |
+| fstrm (control codec, `fstrm_writer`/`fstrm_reader`/`fstrm_rdwr`, file/unix/tcp transports, `fstrm_iothr` + queues) | PROVEN | FSTRM-0001 (0 residuals; upstream test_control corpus, writer/reader state machines incl. bidirectional handshake + negotiation, max-frame-size quirk, writev chunking, inet_pton/strtoul init validation, iothr option/submit taxonomy, discard path, AF_UNIX + TCP four-corner interop, byte-exact) |
 | `named` runtime | UNKNOWN | |
 | Recursive resolver | UNKNOWN | |
 | DNSSEC | UNKNOWN | |
