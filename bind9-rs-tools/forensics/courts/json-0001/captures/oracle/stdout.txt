@@ -1,0 +1,814 @@
+== version ==
+0.19 4864
+== error descs ==
+  0: success
+  1: continue
+  2: nesting too deep
+  3: unexpected end of data
+  4: unexpected character
+  5: null expected
+  6: boolean expected
+  7: number expected
+  8: array value separator ',' expected
+  9: quoted object property name expected
+  10: object property name separator ':' expected
+  11: object value separator ',' expected
+  12: invalid string sequence
+  13: expected comment
+  14: invalid utf-8 string
+  15: buffer size overflow
+  16: out of memory
+  99: Unknown error, invalid json_tokener_error value passed to json_tokener_error_desc()
+== parse corpus ==
+  null                         -> NULL err=0 success
+  true                         -> type=boolean
+    PLAIN        -> true
+    SPACED       -> true
+    PRETTY       -> true
+    PRETTY|TAB   -> true
+    PRETTY|SPACED -> true
+    NOZERO       -> true
+    NOSLASH      -> true
+    COLOR        -> [0;35mtrue[0m
+    SPACED|NOSLASH -> true
+  false                        -> type=boolean
+    PLAIN        -> false
+    SPACED       -> false
+    PRETTY       -> false
+    PRETTY|TAB   -> false
+    PRETTY|SPACED -> false
+    NOZERO       -> false
+    NOSLASH      -> false
+    COLOR        -> [0;35mfalse[0m
+    SPACED|NOSLASH -> false
+  TRUE                         -> type=boolean
+    PLAIN        -> true
+    SPACED       -> true
+    PRETTY       -> true
+    PRETTY|TAB   -> true
+    PRETTY|SPACED -> true
+    NOZERO       -> true
+    NOSLASH      -> true
+    COLOR        -> [0;35mtrue[0m
+    SPACED|NOSLASH -> true
+  FALSE                        -> type=boolean
+    PLAIN        -> false
+    SPACED       -> false
+    PRETTY       -> false
+    PRETTY|TAB   -> false
+    PRETTY|SPACED -> false
+    NOZERO       -> false
+    NOSLASH      -> false
+    COLOR        -> [0;35mfalse[0m
+    SPACED|NOSLASH -> false
+  Null                         -> NULL err=0 success
+  nulll                        -> NULL err=0 success
+  123                          -> type=int
+    PLAIN        -> 123
+    SPACED       -> 123
+    PRETTY       -> 123
+    PRETTY|TAB   -> 123
+    PRETTY|SPACED -> 123
+    NOZERO       -> 123
+    NOSLASH      -> 123
+    COLOR        -> 123
+    SPACED|NOSLASH -> 123
+  -123                         -> type=int
+    PLAIN        -> -123
+    SPACED       -> -123
+    PRETTY       -> -123
+    PRETTY|TAB   -> -123
+    PRETTY|SPACED -> -123
+    NOZERO       -> -123
+    NOSLASH      -> -123
+    COLOR        -> -123
+    SPACED|NOSLASH -> -123
+  0                            -> type=int
+    PLAIN        -> 0
+    SPACED       -> 0
+    PRETTY       -> 0
+    PRETTY|TAB   -> 0
+    PRETTY|SPACED -> 0
+    NOZERO       -> 0
+    NOSLASH      -> 0
+    COLOR        -> 0
+    SPACED|NOSLASH -> 0
+  -0                           -> type=int
+    PLAIN        -> 0
+    SPACED       -> 0
+    PRETTY       -> 0
+    PRETTY|TAB   -> 0
+    PRETTY|SPACED -> 0
+    NOZERO       -> 0
+    NOSLASH      -> 0
+    COLOR        -> 0
+    SPACED|NOSLASH -> 0
+  01                           -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  1.5                          -> type=double
+    PLAIN        -> 1.5
+    SPACED       -> 1.5
+    PRETTY       -> 1.5
+    PRETTY|TAB   -> 1.5
+    PRETTY|SPACED -> 1.5
+    NOZERO       -> 1.5
+    NOSLASH      -> 1.5
+    COLOR        -> 1.5
+    SPACED|NOSLASH -> 1.5
+  1.50                         -> type=double
+    PLAIN        -> 1.50
+    SPACED       -> 1.50
+    PRETTY       -> 1.50
+    PRETTY|TAB   -> 1.50
+    PRETTY|SPACED -> 1.50
+    NOZERO       -> 1.50
+    NOSLASH      -> 1.50
+    COLOR        -> 1.50
+    SPACED|NOSLASH -> 1.50
+  -1.5e-3                      -> type=double
+    PLAIN        -> -1.5e-3
+    SPACED       -> -1.5e-3
+    PRETTY       -> -1.5e-3
+    PRETTY|TAB   -> -1.5e-3
+    PRETTY|SPACED -> -1.5e-3
+    NOZERO       -> -1.5e-3
+    NOSLASH      -> -1.5e-3
+    COLOR        -> -1.5e-3
+    SPACED|NOSLASH -> -1.5e-3
+  1e10                         -> type=double
+    PLAIN        -> 1e10
+    SPACED       -> 1e10
+    PRETTY       -> 1e10
+    PRETTY|TAB   -> 1e10
+    PRETTY|SPACED -> 1e10
+    NOZERO       -> 1e10
+    NOSLASH      -> 1e10
+    COLOR        -> 1e10
+    SPACED|NOSLASH -> 1e10
+  1e+                          -> type=double
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  1E10                         -> type=double
+    PLAIN        -> 1E10
+    SPACED       -> 1E10
+    PRETTY       -> 1E10
+    PRETTY|TAB   -> 1E10
+    PRETTY|SPACED -> 1E10
+    NOZERO       -> 1E10
+    NOSLASH      -> 1E10
+    COLOR        -> 1E10
+    SPACED|NOSLASH -> 1E10
+  123e+                        -> type=double
+    PLAIN        -> 123
+    SPACED       -> 123
+    PRETTY       -> 123
+    PRETTY|TAB   -> 123
+    PRETTY|SPACED -> 123
+    NOZERO       -> 123
+    NOSLASH      -> 123
+    COLOR        -> 123
+    SPACED|NOSLASH -> 123
+  9223372036854775807          -> type=int
+    PLAIN        -> 9223372036854775807
+    SPACED       -> 9223372036854775807
+    PRETTY       -> 9223372036854775807
+    PRETTY|TAB   -> 9223372036854775807
+    PRETTY|SPACED -> 9223372036854775807
+    NOZERO       -> 9223372036854775807
+    NOSLASH      -> 9223372036854775807
+    COLOR        -> 9223372036854775807
+    SPACED|NOSLASH -> 9223372036854775807
+  9223372036854775808          -> type=int
+    PLAIN        -> 9223372036854775808
+    SPACED       -> 9223372036854775808
+    PRETTY       -> 9223372036854775808
+    PRETTY|TAB   -> 9223372036854775808
+    PRETTY|SPACED -> 9223372036854775808
+    NOZERO       -> 9223372036854775808
+    NOSLASH      -> 9223372036854775808
+    COLOR        -> 9223372036854775808
+    SPACED|NOSLASH -> 9223372036854775808
+  18446744073709551615         -> type=int
+    PLAIN        -> 18446744073709551615
+    SPACED       -> 18446744073709551615
+    PRETTY       -> 18446744073709551615
+    PRETTY|TAB   -> 18446744073709551615
+    PRETTY|SPACED -> 18446744073709551615
+    NOZERO       -> 18446744073709551615
+    NOSLASH      -> 18446744073709551615
+    COLOR        -> 18446744073709551615
+    SPACED|NOSLASH -> 18446744073709551615
+  18446744073709551616         -> type=int
+    PLAIN        -> 18446744073709551615
+    SPACED       -> 18446744073709551615
+    PRETTY       -> 18446744073709551615
+    PRETTY|TAB   -> 18446744073709551615
+    PRETTY|SPACED -> 18446744073709551615
+    NOZERO       -> 18446744073709551615
+    NOSLASH      -> 18446744073709551615
+    COLOR        -> 18446744073709551615
+    SPACED|NOSLASH -> 18446744073709551615
+  -9223372036854775808         -> type=int
+    PLAIN        -> -9223372036854775808
+    SPACED       -> -9223372036854775808
+    PRETTY       -> -9223372036854775808
+    PRETTY|TAB   -> -9223372036854775808
+    PRETTY|SPACED -> -9223372036854775808
+    NOZERO       -> -9223372036854775808
+    NOSLASH      -> -9223372036854775808
+    COLOR        -> -9223372036854775808
+    SPACED|NOSLASH -> -9223372036854775808
+  -9223372036854775809         -> type=int
+    PLAIN        -> -9223372036854775808
+    SPACED       -> -9223372036854775808
+    PRETTY       -> -9223372036854775808
+    PRETTY|TAB   -> -9223372036854775808
+    PRETTY|SPACED -> -9223372036854775808
+    NOZERO       -> -9223372036854775808
+    NOSLASH      -> -9223372036854775808
+    COLOR        -> -9223372036854775808
+    SPACED|NOSLASH -> -9223372036854775808
+  NaN                          -> type=double
+    PLAIN        -> NaN
+    SPACED       -> NaN
+    PRETTY       -> NaN
+    PRETTY|TAB   -> NaN
+    PRETTY|SPACED -> NaN
+    NOZERO       -> NaN
+    NOSLASH      -> NaN
+    COLOR        -> NaN
+    SPACED|NOSLASH -> NaN
+  Infinity                     -> type=double
+    PLAIN        -> Infinity
+    SPACED       -> Infinity
+    PRETTY       -> Infinity
+    PRETTY|TAB   -> Infinity
+    PRETTY|SPACED -> Infinity
+    NOZERO       -> Infinity
+    NOSLASH      -> Infinity
+    COLOR        -> Infinity
+    SPACED|NOSLASH -> Infinity
+  -Infinity                    -> type=double
+    PLAIN        -> -Infinity
+    SPACED       -> -Infinity
+    PRETTY       -> -Infinity
+    PRETTY|TAB   -> -Infinity
+    PRETTY|SPACED -> -Infinity
+    NOZERO       -> -Infinity
+    NOSLASH      -> -Infinity
+    COLOR        -> -Infinity
+    SPACED|NOSLASH -> -Infinity
+  iNFINITY                     -> type=double
+    PLAIN        -> Infinity
+    SPACED       -> Infinity
+    PRETTY       -> Infinity
+    PRETTY|TAB   -> Infinity
+    PRETTY|SPACED -> Infinity
+    NOZERO       -> Infinity
+    NOSLASH      -> Infinity
+    COLOR        -> Infinity
+    SPACED|NOSLASH -> Infinity
+  123abc                       -> type=int
+    PLAIN        -> 123
+    SPACED       -> 123
+    PRETTY       -> 123
+    PRETTY|TAB   -> 123
+    PRETTY|SPACED -> 123
+    NOZERO       -> 123
+    NOSLASH      -> 123
+    COLOR        -> 123
+    SPACED|NOSLASH -> 123
+  nullx                        -> NULL err=0 success
+  truefalse                    -> type=boolean
+    PLAIN        -> true
+    SPACED       -> true
+    PRETTY       -> true
+    PRETTY|TAB   -> true
+    PRETTY|SPACED -> true
+    NOZERO       -> true
+    NOSLASH      -> true
+    COLOR        -> [0;35mtrue[0m
+    SPACED|NOSLASH -> true
+  nul                          -> NULL err=3 unexpected end of data
+  tru                          -> NULL err=3 unexpected end of data
+  nuX                          -> NULL err=5 null expected
+  truX                         -> NULL err=6 boolean expected
+  01.                          -> type=double
+    PLAIN        -> 01.
+    SPACED       -> 01.
+    PRETTY       -> 01.
+    PRETTY|TAB   -> 01.
+    PRETTY|SPACED -> 01.
+    NOZERO       -> 01.
+    NOSLASH      -> 01.
+    COLOR        -> 01.
+    SPACED|NOSLASH -> 01.
+  .5                           -> NULL err=4 unexpected character
+  1.2.3                        -> type=double
+    PLAIN        -> 1.2
+    SPACED       -> 1.2
+    PRETTY       -> 1.2
+    PRETTY|TAB   -> 1.2
+    PRETTY|SPACED -> 1.2
+    NOZERO       -> 1.2
+    NOSLASH      -> 1.2
+    COLOR        -> 1.2
+    SPACED|NOSLASH -> 1.2
+  -                            -> NULL err=3 unexpected end of data
+  -x                           -> NULL err=7 number expected
+  1e                           -> type=double
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  1e-                          -> type=double
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  1e+5                         -> type=double
+    PLAIN        -> 1e+5
+    SPACED       -> 1e+5
+    PRETTY       -> 1e+5
+    PRETTY|TAB   -> 1e+5
+    PRETTY|SPACED -> 1e+5
+    NOZERO       -> 1e+5
+    NOSLASH      -> 1e+5
+    COLOR        -> 1e+5
+    SPACED|NOSLASH -> 1e+5
+  1.5e                         -> type=double
+    PLAIN        -> 1.5
+    SPACED       -> 1.5
+    PRETTY       -> 1.5
+    PRETTY|TAB   -> 1.5
+    PRETTY|SPACED -> 1.5
+    NOZERO       -> 1.5
+    NOSLASH      -> 1.5
+    COLOR        -> 1.5
+    SPACED|NOSLASH -> 1.5
+  "hello"                      -> type=string
+    PLAIN        -> "hello"
+    SPACED       -> "hello"
+    PRETTY       -> "hello"
+    PRETTY|TAB   -> "hello"
+    PRETTY|SPACED -> "hello"
+    NOZERO       -> "hello"
+    NOSLASH      -> "hello"
+    COLOR        -> [0;32m"hello"[0m
+    SPACED|NOSLASH -> "hello"
+  ""                           -> type=string
+    PLAIN        -> ""
+    SPACED       -> ""
+    PRETTY       -> ""
+    PRETTY|TAB   -> ""
+    PRETTY|SPACED -> ""
+    NOZERO       -> ""
+    NOSLASH      -> ""
+    COLOR        -> [0;32m""[0m
+    SPACED|NOSLASH -> ""
+  'single'                     -> type=string
+    PLAIN        -> "single"
+    SPACED       -> "single"
+    PRETTY       -> "single"
+    PRETTY|TAB   -> "single"
+    PRETTY|SPACED -> "single"
+    NOZERO       -> "single"
+    NOSLASH      -> "single"
+    COLOR        -> [0;32m"single"[0m
+    SPACED|NOSLASH -> "single"
+  "a\nb\tc\r\fd\\e\/f"         -> type=string
+    PLAIN        -> "a\nb\tc\r\fd\\e\/f"
+    SPACED       -> "a\nb\tc\r\fd\\e\/f"
+    PRETTY       -> "a\nb\tc\r\fd\\e\/f"
+    PRETTY|TAB   -> "a\nb\tc\r\fd\\e\/f"
+    PRETTY|SPACED -> "a\nb\tc\r\fd\\e\/f"
+    NOZERO       -> "a\nb\tc\r\fd\\e\/f"
+    NOSLASH      -> "a\nb\tc\r\fd\\e/f"
+    COLOR        -> [0;32m"a\nb\tc\r\fd\\e\/f"[0m
+    SPACED|NOSLASH -> "a\nb\tc\r\fd\\e/f"
+  "\u0041\u00e9\ud83d\ude00"   -> type=string
+    PLAIN        -> "Aé😀"
+    SPACED       -> "Aé😀"
+    PRETTY       -> "Aé😀"
+    PRETTY|TAB   -> "Aé😀"
+    PRETTY|SPACED -> "Aé😀"
+    NOZERO       -> "Aé😀"
+    NOSLASH      -> "Aé😀"
+    COLOR        -> [0;32m"Aé😀"[0m
+    SPACED|NOSLASH -> "Aé😀"
+  "\ud83d"                     -> type=string
+    PLAIN        -> "�"
+    SPACED       -> "�"
+    PRETTY       -> "�"
+    PRETTY|TAB   -> "�"
+    PRETTY|SPACED -> "�"
+    NOZERO       -> "�"
+    NOSLASH      -> "�"
+    COLOR        -> [0;32m"�"[0m
+    SPACED|NOSLASH -> "�"
+  "\ude00"                     -> type=string
+    PLAIN        -> "�"
+    SPACED       -> "�"
+    PRETTY       -> "�"
+    PRETTY|TAB   -> "�"
+    PRETTY|SPACED -> "�"
+    NOZERO       -> "�"
+    NOSLASH      -> "�"
+    COLOR        -> [0;32m"�"[0m
+    SPACED|NOSLASH -> "�"
+  "a\u0000b"                   -> type=string
+    PLAIN        -> "a\u0000b"
+    SPACED       -> "a\u0000b"
+    PRETTY       -> "a\u0000b"
+    PRETTY|TAB   -> "a\u0000b"
+    PRETTY|SPACED -> "a\u0000b"
+    NOZERO       -> "a\u0000b"
+    NOSLASH      -> "a\u0000b"
+    COLOR        -> [0;32m"a\u0000b"[0m
+    SPACED|NOSLASH -> "a\u0000b"
+  "a\q"                        -> NULL err=12 invalid string sequence
+  "abc                         -> NULL err=3 unexpected end of data
+  "a\u12"                      -> NULL err=12 invalid string sequence
+  []                           -> type=array
+    PLAIN        -> []
+    SPACED       -> [ ]
+    PRETTY       -> []
+    PRETTY|TAB   -> []
+    PRETTY|SPACED -> []
+    NOZERO       -> []
+    NOSLASH      -> []
+    COLOR        -> []
+    SPACED|NOSLASH -> [ ]
+  [1,2,3]                      -> type=array
+    PLAIN        -> [1,2,3]
+    SPACED       -> [ 1, 2, 3 ]
+    PRETTY       -> [
+  1,
+  2,
+  3
+]
+    PRETTY|TAB   -> [
+	1,
+	2,
+	3
+]
+    PRETTY|SPACED -> [
+  1,
+  2,
+  3
+]
+    NOZERO       -> [1,2,3]
+    NOSLASH      -> [1,2,3]
+    COLOR        -> [1,2,3]
+    SPACED|NOSLASH -> [ 1, 2, 3 ]
+  [1,]                         -> type=array
+    PLAIN        -> [1]
+    SPACED       -> [ 1 ]
+    PRETTY       -> [
+  1
+]
+    PRETTY|TAB   -> [
+	1
+]
+    PRETTY|SPACED -> [
+  1
+]
+    NOZERO       -> [1]
+    NOSLASH      -> [1]
+    COLOR        -> [1]
+    SPACED|NOSLASH -> [ 1 ]
+  [,1]                         -> NULL err=4 unexpected character
+  [1 2]                        -> NULL err=8 array value separator ',' expected
+  [1,2                         -> NULL err=3 unexpected end of data
+  [[[1]]]                      -> type=array
+    PLAIN        -> [[[1]]]
+    SPACED       -> [ [ [ 1 ] ] ]
+    PRETTY       -> [
+  [
+    [
+      1
+    ]
+  ]
+]
+    PRETTY|TAB   -> [
+	[
+		[
+			1
+		]
+	]
+]
+    PRETTY|SPACED -> [
+  [
+    [
+      1
+    ]
+  ]
+]
+    NOZERO       -> [[[1]]]
+    NOSLASH      -> [[[1]]]
+    COLOR        -> [[[1]]]
+    SPACED|NOSLASH -> [ [ [ 1 ] ] ]
+  {}                           -> type=object
+    PLAIN        -> {}
+    SPACED       -> { }
+    PRETTY       -> {}
+    PRETTY|TAB   -> {}
+    PRETTY|SPACED -> {}
+    NOZERO       -> {}
+    NOSLASH      -> {}
+    COLOR        -> {}
+    SPACED|NOSLASH -> { }
+  {"a":1}                      -> type=object
+    PLAIN        -> {"a":1}
+    SPACED       -> { "a": 1 }
+    PRETTY       -> {
+  "a":1
+}
+    PRETTY|TAB   -> {
+	"a":1
+}
+    PRETTY|SPACED -> {
+  "a": 1
+}
+    NOZERO       -> {"a":1}
+    NOSLASH      -> {"a":1}
+    COLOR        -> {[0;34m"a"[0m:1}
+    SPACED|NOSLASH -> { "a": 1 }
+  {"a":1,"b":[true,null,"x/y"]} -> type=object
+    PLAIN        -> {"a":1,"b":[true,null,"x\/y"]}
+    SPACED       -> { "a": 1, "b": [ true, null, "x\/y" ] }
+    PRETTY       -> {
+  "a":1,
+  "b":[
+    true,
+    null,
+    "x\/y"
+  ]
+}
+    PRETTY|TAB   -> {
+	"a":1,
+	"b":[
+		true,
+		null,
+		"x\/y"
+	]
+}
+    PRETTY|SPACED -> {
+  "a": 1,
+  "b": [
+    true,
+    null,
+    "x\/y"
+  ]
+}
+    NOZERO       -> {"a":1,"b":[true,null,"x\/y"]}
+    NOSLASH      -> {"a":1,"b":[true,null,"x/y"]}
+    COLOR        -> {[0;34m"a"[0m:1,[0;34m"b"[0m:[[0;35mtrue[0m,[0;35mnull[0m,[0;32m"x\/y"[0m]}
+    SPACED|NOSLASH -> { "a": 1, "b": [ true, null, "x/y" ] }
+  {'a':1}                      -> type=object
+    PLAIN        -> {"a":1}
+    SPACED       -> { "a": 1 }
+    PRETTY       -> {
+  "a":1
+}
+    PRETTY|TAB   -> {
+	"a":1
+}
+    PRETTY|SPACED -> {
+  "a": 1
+}
+    NOZERO       -> {"a":1}
+    NOSLASH      -> {"a":1}
+    COLOR        -> {[0;34m"a"[0m:1}
+    SPACED|NOSLASH -> { "a": 1 }
+  {a:1}                        -> NULL err=9 quoted object property name expected
+  {"a" 1}                      -> NULL err=10 object property name separator ':' expected
+  {"a":1 "b":2}                -> NULL err=11 object value separator ',' expected
+  {"a":1,"a":2}                -> type=object
+    PLAIN        -> {"a":2}
+    SPACED       -> { "a": 2 }
+    PRETTY       -> {
+  "a":2
+}
+    PRETTY|TAB   -> {
+	"a":2
+}
+    PRETTY|SPACED -> {
+  "a": 2
+}
+    NOZERO       -> {"a":2}
+    NOSLASH      -> {"a":2}
+    COLOR        -> {[0;34m"a"[0m:2}
+    SPACED|NOSLASH -> { "a": 2 }
+  {"a":1,}                     -> type=object
+    PLAIN        -> {"a":1}
+    SPACED       -> { "a": 1 }
+    PRETTY       -> {
+  "a":1
+}
+    PRETTY|TAB   -> {
+	"a":1
+}
+    PRETTY|SPACED -> {
+  "a": 1
+}
+    NOZERO       -> {"a":1}
+    NOSLASH      -> {"a":1}
+    COLOR        -> {[0;34m"a"[0m:1}
+    SPACED|NOSLASH -> { "a": 1 }
+  {,"a":1}                     -> NULL err=9 quoted object property name expected
+  {"a"}                        -> NULL err=10 object property name separator ':' expected
+  {"a":}                       -> NULL err=4 unexpected character
+  /* hi */1                    -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  // hi
+1                      -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  1/*x*/2                      -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  /*x*/                        -> NULL err=3 unexpected end of data
+  /x                           -> NULL err=13 expected comment
+  1 /*a*/ + 2                  -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+   1                           -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  	1
+                          -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  "\u00e9"x                    -> type=string
+    PLAIN        -> "é"
+    SPACED       -> "é"
+    PRETTY       -> "é"
+    PRETTY|TAB   -> "é"
+    PRETTY|SPACED -> "é"
+    NOZERO       -> "é"
+    NOSLASH      -> "é"
+    COLOR        -> [0;32m"é"[0m
+    SPACED|NOSLASH -> "é"
+  1 2                          -> type=int
+    PLAIN        -> 1
+    SPACED       -> 1
+    PRETTY       -> 1
+    PRETTY|TAB   -> 1
+    PRETTY|SPACED -> 1
+    NOZERO       -> 1
+    NOSLASH      -> 1
+    COLOR        -> 1
+    SPACED|NOSLASH -> 1
+  "a" "b"                      -> type=string
+    PLAIN        -> "a"
+    SPACED       -> "a"
+    PRETTY       -> "a"
+    PRETTY|TAB   -> "a"
+    PRETTY|SPACED -> "a"
+    NOZERO       -> "a"
+    NOSLASH      -> "a"
+    COLOR        -> [0;32m"a"[0m
+    SPACED|NOSLASH -> "a"
+== strict ==
+  STRICT 01                     -> NULL err=3 unexpected end of data
+  STRICT 1e+                    -> NULL err=3 unexpected end of data
+  STRICT 1 2                    -> NULL err=4 unexpected character
+  STRICT [1,]                   -> NULL err=4 unexpected character
+  STRICT 'a'                    -> NULL err=4 unexpected character
+  STRICT NaN                    -> NaN err=0 success
+  STRICT Infinity               -> Infinity err=0 success
+  STRICT iNFINITY               -> NULL err=4 unexpected character
+  STRICT null                   -> NULL err=0 success
+  STRICT "a\nb"                 -> "a\nb" err=0 success
+  STRICT /*x*/1                 -> NULL err=4 unexpected character
+  STRICT 123                    -> 123 err=0 success
+  STRICT 1.5                    -> 1.5 err=0 success
+  STRICT true                   -> true err=0 success
+  STRICT {}                     -> { } err=0 success
+== depth ==
+  depth 31 -> OK err=0 success
+  depth 32 -> OK err=0 success
+  depth 33 -> NULL err=2 nesting too deep
+  depth 34 -> NULL err=2 nesting too deep
+== programmatic ==
+    dbl PLAIN    -> 0.0
+    dbl NOZERO   -> 0.0
+    dbl value   -> 0
+    dbl PLAIN    -> -0.0
+    dbl NOZERO   -> -0.0
+    dbl value   -> -0
+    dbl PLAIN    -> 1.5
+    dbl NOZERO   -> 1.5
+    dbl value   -> 1.5
+    dbl PLAIN    -> 42.0
+    dbl NOZERO   -> 42.0
+    dbl value   -> 42
+    dbl PLAIN    -> 0.10000000000000001
+    dbl NOZERO   -> 0.10000000000000001
+    dbl value   -> 0.10000000000000001
+    dbl PLAIN    -> 1.0000000000000001e+300
+    dbl NOZERO   -> 1.0000000000000001e+3
+    dbl value   -> 1.0000000000000001e+300
+    dbl PLAIN    -> 1.0000000000000001e-05
+    dbl NOZERO   -> 1.0000000000000001e-05
+    dbl value   -> 1.0000000000000001e-05
+    dbl PLAIN    -> 1000000000000000.0
+    dbl NOZERO   -> 1000000000000000.0
+    dbl value   -> 1000000000000000
+    dbl PLAIN    -> 3.1415926535897931
+    dbl NOZERO   -> 3.1415926535897931
+    dbl value   -> 3.1415926535897931
+    dbl PLAIN    -> 123456789.12345679
+    dbl NOZERO   -> 123456789.12345679
+    dbl value   -> 123456789.12345679
+    dbl PLAIN    -> 2.2250738585072014e-308
+    dbl NOZERO   -> 2.2250738585072014e-308
+    dbl value   -> 2.2250738585072014e-308
+    dbl PLAIN    -> 1.7976931348623157e+308
+    dbl NOZERO   -> 1.7976931348623157e+308
+    dbl value   -> 1.7976931348623157e+308
+    dbl PLAIN    -> 0.00025000000000000001
+    dbl NOZERO   -> 0.00025000000000000001
+    dbl value   -> 0.00025000000000000001
+    dbl PLAIN    -> 0.0001
+    dbl NOZERO   -> 0.0001
+    dbl value   -> 0.0001
+    dbl PLAIN    -> 123456.789
+    dbl NOZERO   -> 123456.789
+    dbl value   -> 123456.789
+    dbl PLAIN    -> -1.5e+20
+    dbl NOZERO   -> -1.5e+2
+    dbl value   -> -1.5e+20
+    ints         -> { "i64max": 9223372036854775807, "i64min": -9223372036854775808, "u64max": 18446744073709551615, "zero": 0, "neg": -42 }
+    strings      -> {"s":"x\/y\\z\"q\nb","ctrl":"a\u0001b\u001fc"}
+    strings NOSLASH -> {"s":"x/y\\z\"q\nb","ctrl":"a\u0001b\u001fc"}
+== done ==

@@ -1,0 +1,28 @@
+schema_version = 1
+court_id = "JSON-0001"
+question = "Does the Rust json_c module (compat/json_c.rs) reproduce the json-c 0.19 observable behavior byte-exactly: the tokener state machine over a broad parse corpus (scalars, number boundaries, escapes/surrogates, comments, NaN/Infinity, strict mode, depth limits, malformed inputs), the serialization with every flag combination (PLAIN/SPACED/PRETTY/PRETTY_TAB/NOZERO/NOSLASHESCAPE/COLOR), and the programmatic constructors (doubles incl. the %.17g path and NOZERO trimming, int64/uint64 boundaries, control-char strings)?"
+subsystem = "compat/json_c"
+oracle_versions = ["0.19"]
+harness = "jsonc"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle container",
+]
+invariants = [
+    "json_c_version and every json_tokener_error_desc string match",
+    "parse results and error codes match for the 90+ input corpus (the out: label turns errors reached at the NUL terminator into EOF exactly like the C)",
+    "strict-mode parse results and error codes match (leading zeros, 1e+, trailing chars, NaN/Infinity acceptance, comments)",
+    "the nesting depth limit matches (32 accepted, 33 rejected)",
+    "serialization output is byte-identical for every flag combination",
+    "the %.17g double path matches (17 significant digits, %e/%f selection, the '.0' append, negative zero)",
+    "the NOZERO trimming matches, including its scan through exponent digits",
+    "int64/uint64 boundary values and control-char string escaping (incl. \\u00NN) match",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are fixed strings and values; no wall-clock or random data is printed"
+security_classification = "the tokener is the parser-facing attack surface (depth limits, malformed escapes, surrogate handling); both implementations must reject rather than crash"
+references = [
+    "json-c-0.19 json_tokener.c, json_object.c, json_util.c (pinned archive; see forensics/sources)",
+    "forensics/oracle/probes/probe-jsonc.c",
+    "bind9-rs-tools/src/bin/jsonc-probe.rs",
+    "addendum §35 (json-c), §37 (C probe courts)",
+]

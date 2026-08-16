@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "court_id": "JSON-0001",
+  "git_commit": "pending",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "8b51282949344b6f52591e68bb51e39f8c530c4cb4801faf076d376cac3cf649",
+  "oracle_hashes": {
+    "oracle-json-c-0.19": "sha256:6f8a24447d6c399d4e6e1d8847dbfd1c02fae8d02412613ec1ee19172127f73b",
+    "probe-jsonc.c": "21fc87169e7f097a7508035149be45018c56c231c6d10c462b8422e8095a5304",
+    "jsonc-probe.rs": "1f0271becc80fa0fcb51cd9efbc28217a02194af891f2b241c157c2f8253c53f",
+    "compat/json_c.rs": "75147347e59c7c2bb63def985a57d74f67b29ef6344eb5afafba391b2a1a3865"
+  },
+  "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
+  "completed_at": "2026-08-16T03:54:13Z",
+  "input_hashes": {
+    "oracle_stdout_sha256": "00d2907f5ba517e167017a0adcb855f0753603dcd2fdf99638303c6af53b3356",
+    "rust_stdout_sha256": "00d2907f5ba517e167017a0adcb855f0753603dcd2fdf99638303c6af53b3356"
+  },
+  "residual_ids": [],
+  "invariants_passed": [
+    "json_c_version and every json_tokener_error_desc string match",
+    "parse results and error codes match for the 90+ input corpus (the out: label turns errors reached at the NUL terminator into EOF exactly like the C)",
+    "strict-mode parse results and error codes match (leading zeros, 1e+, trailing chars, NaN/Infinity acceptance, comments)",
+    "the nesting depth limit matches (32 accepted, 33 rejected)",
+    "serialization output is byte-identical for every flag combination",
+    "the %.17g double path matches (17 significant digits, %e/%f selection, the '.0' append, negative zero)",
+    "the NOZERO trimming matches, including its scan through exponent digits",
+    "int64/uint64 boundary values and control-char string escaping (incl. \\u00NN) match",
+    "the COLOR flag wraps booleans and null in magenta, keys in blue, strings in green, numbers uncolored (byte-identical ANSI sequences)"
+  ],
+  "captures_sha256": "ce919f967a7206bef3ad68b339459fc5bba0bde3dda06088f443e7f0d8a6f6c7",
+  "repro_command": "sh bind9-rs-tools/forensics/courts/json-0001/harness.sh && sh bind9-rs-tools/forensics/courts/json-0001/compare.sh"
+}

@@ -57,5 +57,12 @@ path = "src/bin/cap-file-probe.rs"
 name = "maxminddb-probe"
 path = "src/bin/maxminddb-probe.rs"
 
+# jsonc-probe: forensic diagnostic for the JSON-0001 courts (mirrors
+# forensics/oracle/probes/probe-jsonc.c byte-for-byte); not a BIND-compat
+# tool.
+[[bin]]
+name = "jsonc-probe"
+path = "src/bin/jsonc-probe.rs"
+
 [lints]
 workspace = true
