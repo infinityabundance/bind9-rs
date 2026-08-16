@@ -19,11 +19,11 @@ Exactly six first-party crates:
 | Crate | Responsibility |
 |---|---|
 | `bind9-rs` | Public compatibility façade, version reporting, profiles (§4.1) |
-| `bind9-core` | DNS semantics and protocol machinery (§4.2) |
-| `bind9-server` | The `named` runtime (§4.3) |
-| `bind9-tools` | All command-line utilities (dig, host, ..., dnssec-*) (§4.4) |
-| `bind9-forensics` | Courts, residuals, receipts, archaeology, oracle machinery (§4.5) |
-| `bind9-platform` | OS-specific behavior and audited unsafe boundaries (§4.6) |
+| `bind9-rs-core` | DNS semantics and protocol machinery (§4.2) |
+| `bind9-rs-server` | The `named` runtime (§4.3) |
+| `bind9-rs-tools` | All command-line utilities (dig, host, ..., dnssec-*) (§4.4) |
+| `bind9-rs-forensics` | Courts, residuals, receipts, archaeology, oracle machinery (§4.5) |
+| `bind9-rs-platform` | OS-specific behavior and audited unsafe boundaries (§4.6) |
 
 Feature decomposition happens through modules; there are no other first-party
 crates.
@@ -51,11 +51,11 @@ cargo test --workspace
 scripts/oracle/build-oracle-probes.sh
 
 # Run courts
-cargo run -p bind9-forensics --bin bind9-court -- list
-cargo run -p bind9-forensics --bin bind9-court -- run CORE-NAME-TEXT-0001
+cargo run -p bind9-rs-forensics --bin bind9-court -- list
+cargo run -p bind9-rs-forensics --bin bind9-court -- run CORE-NAME-TEXT-0001
 
 # Coverage ledger
-cargo run -p bind9-forensics --bin bind9-api-coverage -- summary
+cargo run -p bind9-rs-forensics --bin bind9-api-coverage -- summary
 
 # API atlas regeneration (needs a configured BIND tree)
 scripts/archaeology/doxygen-atlas.sh

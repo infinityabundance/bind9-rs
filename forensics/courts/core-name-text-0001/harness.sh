@@ -20,7 +20,7 @@ case "$side" in
         ;;
     rust)
         probe="$repo/target/debug/probe-name"
-        [ -x "$probe" ] || { echo "rust probe missing; run cargo build -p bind9-forensics --bins" >&2; exit 1; }
+        [ -x "$probe" ] || { echo "rust probe missing; run cargo build -p bind9-rs-forensics --bins" >&2; exit 1; }
         ;;
     *)
         echo "unknown side: $side" >&2

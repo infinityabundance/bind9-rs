@@ -1,0 +1,38 @@
+# bind9-rs-platform — operating-system-specific behavior and unsafe
+# boundaries (spec §4.6).
+#
+# This is the ONLY crate that may contain unsafe Rust.  The workspace lint
+# policy forbids unsafe everywhere else, mechanically enforcing the §55 goal:
+# DNS semantics contain effectively no unsafe Rust; unsafe terminates at
+# well-understood platform/ABI boundaries, and every use is isolated,
+# justified, documented with its safety invariant, tested and audited.
+#
+# No convenience `unsafe` may leak upward (§4.6): the rest of the codebase
+# consumes safe abstractions with explicit invariants.
+
+[package]
+name = "bind9-rs-platform"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "bind9-rs OS-specific behavior and audited unsafe boundaries"
+
+[dependencies]
+# Justified (spec §54): the audited OS-CSPRNG interface.  Alternatives
+# considered: /dev/urandom file reads (fragile across platforms), bespoke
+# entropy (forbidden).  See docs/supply-chain/dependency-ledger.md.
+getrandom.workspace = true
+
+[lints]
+# Cannot inherit workspace lints partially (cargo limitation): this crate
+# declares the same lint set as the workspace EXCEPT `unsafe_code`, which is
+# `allow` here because bind9-platform is the designated unsafe boundary crate
+# (§4.6, §55).  Keep the clippy rules in sync with the workspace table.
+# Every unsafe item is registered in docs/unsafe/unsafe-inventory.md.
+rust.unsafe_code = "allow"
+clippy.all = "warn"
+clippy.pedantic = "warn"
+clippy.nursery = "warn"
+clippy.cargo = "warn"

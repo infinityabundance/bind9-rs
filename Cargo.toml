@@ -6,19 +6,20 @@
 # courts are modules, bin targets, or files under forensics/ — not new crates.
 #
 # The workspace root is a virtual manifest; the compatibility facade lives in
-# bind9-rs/ (section 4.1), DNS semantics in bind9-core/, the named runtime in
-# bind9-server/, the utilities in bind9-tools/, the forensic machinery in
-# bind9-forensics/, and OS/unsafe boundaries in bind9-platform/ (section 4.6).
+# bind9-rs/ (section 4.1), DNS semantics in bind9-rs-core/, the named runtime
+# in bind9-rs-server/, the utilities in bind9-rs-tools/, the forensic
+# machinery in bind9-rs-forensics/, and OS/unsafe boundaries in
+# bind9-rs-platform/ (section 4.6).
 
 [workspace]
 resolver = "2"
 members = [
     "bind9-rs",
-    "bind9-core",
-    "bind9-server",
-    "bind9-tools",
-    "bind9-forensics",
-    "bind9-platform",
+    "bind9-rs-core",
+    "bind9-rs-server",
+    "bind9-rs-tools",
+    "bind9-rs-forensics",
+    "bind9-rs-platform",
 ]
 
 [workspace.package]
@@ -27,14 +28,14 @@ edition = "2021"
 rust-version = "1.96"
 license = "MPL-2.0"
 authors = ["bind9-rs custodians"]
-repository = "https://example.invalid/bind9-rs" # placeholder until upstream exists
+repository = "https://github.com/infinityabundance/bind9-rs"
 
 [workspace.dependencies]
-bind9-core = { path = "bind9-core" }
-bind9-server = { path = "bind9-server" }
-bind9-tools = { path = "bind9-tools" }
-bind9-forensics = { path = "bind9-forensics" }
-bind9-platform = { path = "bind9-platform" }
+bind9-rs-core = { path = "bind9-rs-core" }
+bind9-rs-server = { path = "bind9-rs-server" }
+bind9-rs-tools = { path = "bind9-rs-tools" }
+bind9-rs-forensics = { path = "bind9-rs-forensics" }
+bind9-rs-platform = { path = "bind9-rs-platform" }
 
 # Deliberate, audited external dependencies only (spec §54).  Each entry below
 # is justified in the crate that consumes it.  The dependency ledger lives in

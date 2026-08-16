@@ -18,10 +18,10 @@ authors.workspace = true
 description = "Native Rust BIND 9 reimplementation — public compatibility facade"
 
 [dependencies]
-bind9-core.workspace = true
-bind9-server.workspace = true
-bind9-tools.workspace = true
-bind9-platform.workspace = true
+bind9-rs-core.workspace = true
+bind9-rs-server.workspace = true
+bind9-rs-tools.workspace = true
+bind9-rs-platform.workspace = true
 
 [lints]
 workspace = true

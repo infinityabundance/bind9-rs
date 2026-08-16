@@ -1,0 +1,65 @@
+# bind9-rs-forensics — the methodological heart of the project (spec §4.5).
+#
+# Archaeology, source manifests, release index, version deltas, behavior
+# atlas, oracle orchestration, experiments, courts, captures, normalizers,
+# comparators, residuals, classifiers, minimizers, receipts, evidence and
+# provenance.  This crate is test/evidence tooling: it is NOT a dependency of
+# the production runtime and contains no production path that requires BIND.
+# The reference BIND implementation may exist only on the oracle/testing side
+# (§2).
+#
+# External dependencies here are deliberate and audited: serde/serde_json/toml
+# for the machine-readable archive schemas (§70) and sha2 for evidence hashing
+# (§45, §46).
+
+[package]
+name = "bind9-rs-forensics"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+description = "bind9-rs forensic evidence machinery: courts, residuals, receipts"
+
+[dependencies]
+bind9-rs-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+sha2.workspace = true
+
+[[bin]]
+name = "bind9-court"
+path = "src/bin/bind9-court.rs"
+required-features = ["court-runner"]
+
+[[bin]]
+name = "bind9-api-coverage"
+path = "src/bin/bind9-api-coverage.rs"
+
+[[bin]]
+name = "probe-name"
+path = "src/bin/probe-name.rs"
+
+[[bin]]
+name = "probe-name-wire"
+path = "src/bin/probe-name-wire.rs"
+
+[[bin]]
+name = "probe-name-compare"
+path = "src/bin/probe-name-compare.rs"
+
+[[bin]]
+name = "probe-compress"
+path = "src/bin/probe-compress.rs"
+
+[[bin]]
+name = "probe-rdata"
+path = "src/bin/probe-rdata.rs"
+
+[features]
+default = ["court-runner"]
+court-runner = []
+
+[lints]
+workspace = true

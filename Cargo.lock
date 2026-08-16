@@ -3,14 +3,24 @@
 version = 4
 
 [[package]]
-name = "bind9-core"
+name = "bind9-rs"
+version = "0.1.0"
+dependencies = [
+ "bind9-rs-core",
+ "bind9-rs-platform",
+ "bind9-rs-server",
+ "bind9-rs-tools",
+]
+
+[[package]]
+name = "bind9-rs-core"
 version = "0.1.0"
 
 [[package]]
-name = "bind9-forensics"
+name = "bind9-rs-forensics"
 version = "0.1.0"
 dependencies = [
- "bind9-core",
+ "bind9-rs-core",
  "serde",
  "serde_json",
  "sha2",
@@ -18,36 +28,26 @@ dependencies = [
 ]
 
 [[package]]
-name = "bind9-platform"
+name = "bind9-rs-platform"
 version = "0.1.0"
 dependencies = [
  "getrandom",
 ]
 
 [[package]]
-name = "bind9-rs"
+name = "bind9-rs-server"
 version = "0.1.0"
 dependencies = [
- "bind9-core",
- "bind9-platform",
- "bind9-server",
- "bind9-tools",
+ "bind9-rs-core",
+ "bind9-rs-platform",
 ]
 
 [[package]]
-name = "bind9-server"
+name = "bind9-rs-tools"
 version = "0.1.0"
 dependencies = [
- "bind9-core",
- "bind9-platform",
-]
-
-[[package]]
-name = "bind9-tools"
-version = "0.1.0"
-dependencies = [
- "bind9-core",
- "bind9-platform",
+ "bind9-rs-core",
+ "bind9-rs-platform",
 ]
 
 [[package]]

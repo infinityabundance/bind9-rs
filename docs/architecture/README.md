@@ -14,7 +14,7 @@
 ## Current module map
 
 ```text
-bind9-core/
+bind9-rs-core/
   error.rs        shared result-code taxonomy with BIND text strings
   class.rs        classes (IN/CH/HS/NONE/ANY/CLASS<n>)
   rrtype.rs       full known-type table incl. historical types
@@ -33,11 +33,11 @@ bind9-core/
   presentation/   isc_lex-faithful lexer (raw tokens; consumers resolve
                   escapes)
 
-bind9-tools/
+bind9-rs-tools/
   dig/            CLI parsing (FULLCHECK prefix semantics), output rendering
                   (masterdump indent(), 24/32/40/48 columns), UDP/TCP client
 
-bind9-forensics/
+bind9-rs-forensics/
   schemas.rs      release index / source manifest / behavior records /
                   version deltas / court manifests / residuals / receipts
   court.rs        court discovery + runner (oracle/rust sides, compare)

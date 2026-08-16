@@ -20,7 +20,7 @@ pub mod profiles;
 /// Version reporting: BIND version lines whose shape we reproduce.
 pub mod version;
 
-pub use bind9_core as core;
-pub use bind9_platform as platform;
-pub use bind9_server as server;
-pub use bind9_tools as tools;
+pub use bind9_rs_core as core;
+pub use bind9_rs_platform as platform;
+pub use bind9_rs_server as server;
+pub use bind9_rs_tools as tools;
