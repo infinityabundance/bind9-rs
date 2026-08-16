@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "court_id": "LZ-0001",
+  "git_commit": "2cb0e2b5f9cd7889187a4448ff951a11412a212b",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "2e6150009bf4fee972b5651842ed575c62852d6004c62dfa7775378a7f60d609",
+  "oracle_hashes": {
+    "oracle-libidn2-2.3.8": "sha256:29e9743696873c9027c773c1152b7f770973724cbd16291a4c380070f53f025c",
+    "libidn2-2.3.8.tar.gz": "f557911bf6171621e1f72ff35f5b1825bb35b52ed45325dcdee931e5d3c0787a",
+    "probe-libidn2-lz.c": "c328f8da0cb782d8eb0d9a41cea22b276edbe1c703909c9a7d95c5f7103b7efa",
+    "libidn2-lz-probe.rs": "344aa2110e4ea8ad23ba8b7c1ec18f4aadcf1fd6e2de5e144c53eac3a716db9e",
+    "compat/libidn2.rs": "d93bbf925435dac3d36d99160fac3b94198b5da3d837df26e732557507257a4e",
+    "compat/libidn2_tr46map.rs": "a7b328aa0d16333c52426f2b5437ca33f6cfdc7d13ae6a12a21a937785a602d1",
+    "compat/libidn2_data.rs": "39b6378220d7f63c62e489c0397baf374bcbd87123e7b345a03ad80d83508a7b",
+    "gen-libidn2-tr46map.py": "692226b8783148d29561ceed24c4848393e4e968d819b83a5d3e5a26eb34725a"
+  },
+  "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
+  "completed_at": "2026-08-16T09:36:45Z",
+  "input_hashes": {
+    "oracle_stdout_sha256": "bec79a46b58ac20b80d5120c8b76d05706bb1aa717b378bb1e5fe937fba700f9",
+    "rust_stdout_sha256": "bec79a46b58ac20b80d5120c8b76d05706bb1aa717b378bb1e5fe937fba700f9"
+  },
+  "residual_ids": [],
+  "invariants_passed": [
+    "the `== locale <codeset> ==` header matches for every pinned locale (UTF-8, ANSI_X3.4-1968, ISO-8859-1)",
+    "the lz conversions match for the UTF-8 and ISO-8859-1 byte inputs under every locale, incl. IDN2_ICONV_FAIL for bytes undecodable in the active codeset (the latin1 bytes under C.UTF-8/C, the UTF-8 bytes under C, the high bytes under C)",
+    "the 8zlz decodes match, incl. IDN2_ENCODING_ERROR when the U-label has no representation in the active codeset (münchen.de under C), and the case-preserving decode of mixed-case A-labels",
+    "the NO_TR46 pure-IDNA2008 path matches: uppercase and deviations preserved (MÜNCHEN.de, faß.de, ς.gr, ßß.com), soft hyphen/ZWNJ/ZWJ/emoji disallowed, the A-label round-trip of existing xn-- labels",
+    "the flag taxonomy matches: TRANSITIONAL|NONTRANSITIONAL, NONTRANSITIONAL|NO_TR46, TRANSITIONAL|NO_TR46 and ALABEL_ROUNDTRIP|NO_ALABEL_ROUNDTRIP are IDN2_INVALID_FLAGS; 0 flags default to NONTRANSITIONAL; NO_ALABEL_ROUNDTRIP disables the A-label re-test",
+    "the label tests match on both paths: leading combining mark → IDN2_LEADING_COMBINING; 2-hyphen on non-ASCII labels → IDN2_2HYPHEN; hyphen-start/end fails the TR46 set but passes NO_TR46; unassigned (U+0378) → IDN2_UNASSIGNED; RFC 5893 bidi ok/bad; ZWNJ between joining Arabic letters passes and ZWJ without a virama fails (IDN2_CONTEXTJ); the middle-dot/keraia/katakana ContextO rules; STD3 rules dropping '_'",
+    "the length limits match: a 64-byte ASCII label is IDN2_TOO_BIG_LABEL and a long non-ASCII label overflows the punycode buffer (IDN2_PUNYCODE_BIG_OUTPUT)",
+    "stderr is empty and the exit status is 0 for every run on both sides"
+  ],
+  "captures_sha256": "8e4336ba1f09be30637dd12fdb1564b05e99b87cc564ae0bbc8db8be1a66a375",
+  "repro_command": "sh bind9-rs-tools/forensics/courts/lz-0001/harness.sh && sh bind9-rs-tools/forensics/courts/lz-0001/compare.sh"
+}
