@@ -1,0 +1,366 @@
+=== protobuf-c 1.5.2 probe ===
+--- version ---
+version: 1.5.2
+version_number: 1005002
+--- sizes ---
+TestMessPacked=264
+TestMess=312
+TestMessOptional=232
+TestMessOneof=56
+SubMess=80
+SubSubMess=104
+TestMessageCheck=144
+CheckSub=32
+DefaultRequiredValues=80
+DefaultOptionalValues=112
+TestRequiredFieldsBitmap=1056
+TestMessSubMess=64
+EmptyMess=24
+proto3 Person=64
+proto3 PhoneNumber=48
+proto3 Comment=32
+proto3 Name=32
+proto3 LookupResult=32
+desc TestMessPacked sizeof_message=264
+desc TestMessOneof sizeof_message=56
+desc proto3 Person sizeof_message=64
+--- packed ---
+size=1633 wrote=1633
+hex: 0a 70 00 ff ff ff ff ff ff ff ff ff 01 01 7f 80 01 ff 7f 80 80 01 ff ff 7f 80 80 80 01 81 80 80 80 f8 ff ff ff ff 01 ff ff ff ff 07 eb e5 90 c5 ff ff ff ff ff 01 2a d6 ff ff ff ff ff ff ff ff 01 ac 02 d4 fd ff ff ff ff ff ff ff 01 f0 a2 04 90 dd fb ff ff ff ff ff ff 01 05 fb ff ff ff ff ff ff ff ff 01 06 07 08 f8 ff ff ff ff ff ff ff ff 01 12 35 00 01 02 fe 01 80 02 fe ff 01 80 80 02 fe ff ff 01 80 80 80 02 ff ff ff ff 0f fe ff ff ff 0f a9 b4 de 75 54 53 d8 04 d7 04 e0 c5 08 df c5 08 0a 09 0c 0e 10 0f 1a 60 ff ff ff ff 00 00 00 00 01 00 00 00 7f 00 00 00 80 00 00 00 ff 3f 00 00 00 40 00 00 ff ff 1f 00 00 00 20 00 00 00 00 80 ff ff ff 7f eb 32 a4 f8 2a 00 00 00 d6 ff ff ff 2c 01 00 00 d4 fe ff ff 70 11 01 00 90 ee fe ff 05 00 00 00 fb ff ff ff 06 00 00 00 07 00 00 00 08 00 00 00 f8 ff ff ff 22 81 01 00 ff ff ff ff ff ff ff ff ff 01 01 7f 80 01 ff 7f 80 80 01 ff ff 7f 80 80 80 01 ff ff ff 7f 80 80 80 80 01 ff ff ff ff 0f 80 80 80 80 10 ff ff ff ff ff 1f 80 80 80 80 80 20 ff ff ff ff ff ff 3f 80 80 80 80 80 80 40 ff ff ff ff ff ff ff 7f 80 80 80 80 80 80 80 80 01 81 80 80 80 80 80 80 80 80 01 ff ff ff ff ff ff ff ff 7f b5 f6 93 f0 88 dc ff ff ff 01 2a f8 ff ff ff ff ff ff ff ff 01 2a 72 00 01 02 fe 01 80 02 fe ff 01 80 80 02 fe ff ff 01 80 80 80 02 fe ff ff ff 01 80 80 80 80 02 fe ff ff ff 1f 80 80 80 80 20 fe ff ff ff ff 3f 80 80 80 80 80 40 fe ff ff ff ff ff 7f 80 80 80 80 80 80 80 01 fe ff ff ff ff ff ff ff 01 80 80 80 80 80 80 80 80 02 fd ff ff ff ff ff ff ff ff 01 fe ff ff ff ff ff ff ff ff 01 95 93 d8 9f ee 47 54 0f 32 c0 01 00 00 00 00 00 00 00 00 ff ff ff ff ff ff ff ff 01 00 00 00 00 00 00 00 7f 00 00 00 00 00 00 00 80 00 00 00 00 00 00 00 ff 3f 00 00 00 00 00 00 00 40 00 00 00 00 00 00 ff ff 1f 00 00 00 00 00 00 00 20 00 00 00 00 00 ff ff ff 0f 00 00 00 00 00 00 00 10 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff ff 00 00 00 00 00 00 00 00 01 00 00 ff ff ff ff ff ff 00 00 00 00 00 00 00 00 01 00 ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 01 01 00 00 00 00 00 00 80 ff ff ff ff ff ff ff 7f 35 fb 04 8e e0 fe ff ff 2a 00 00 00 00 00 00 00 f8 ff ff ff ff ff ff ff 3a 2f 00 01 7f 80 01 ff 7f 80 80 01 ff ff 7f 80 80 80 01 ff ff ff 7f 80 80 80 80 01 ff ff ff ff 0f ac 02 f0 a2 04 2a 05 06 07 08 09 0a 0b 0c 0d 0e 42 60 00 00 00 00 01 00 00 00 7f 00 00 00 80 00 00 00 ff 3f 00 00 00 40 00 00 ff ff 1f 00 00 00 20 00 ff ff ff 0f 00 00 00 10 ff ff ff ff 2c 01 00 00 70 11 01 00 2a 00 00 00 05 00 00 00 06 00 00 00 07 00 00 00 08 00 00 00 09 00 00 00 0a 00 00 00 0b 00 00 00 0c 00 00 00 0d 00 00 00 0e 00 00 00 4a 5f 00 01 7f 80 01 ff 7f 80 80 01 ff ff 7f 80 80 80 01 ff ff ff 7f 80 80 80 80 01 ff ff ff ff 0f 80 80 80 80 10 ff ff ff ff ff 1f 80 80 80 80 80 20 ff ff ff ff ff ff 3f 80 80 80 80 80 80 40 ff ff ff ff ff ff ff 7f 80 80 80 80 80 80 80 80 01 ff ff ff ff ff ff ff ff ff 01 ac 02 2a 05 06 07 52 c0 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 7f 00 00 00 00 00 00 00 80 00 00 00 00 00 00 00 ff 3f 00 00 00 00 00 00 00 40 00 00 00 00 00 00 ff ff 1f 00 00 00 00 00 00 00 20 00 00 00 00 00 ff ff ff 0f 00 00 00 00 00 00 00 10 00 00 00 00 ff ff ff ff 00 00 00 00 00 00 00 00 01 00 00 00 ff ff ff ff ff 00 00 00 00 00 00 00 00 01 00 00 ff ff ff ff ff ff 00 00 00 00 00 00 00 00 01 00 ff ff ff ff ff ff ff 00 00 00 00 00 00 00 00 01 ff ff ff ff ff ff ff ff 2c 01 00 00 00 00 00 00 2a 00 00 00 00 00 00 00 05 00 00 00 00 00 00 00 06 00 00 00 00 00 00 00 07 00 00 00 00 00 00 00 5a 60 00 00 00 00 00 00 80 3f db 0f 49 40 00 00 80 7f 00 00 80 ff 00 00 c0 3f 00 00 80 bf 01 00 00 00 ab aa aa 3e 00 00 00 3f 00 00 00 40 db 0f 49 40 00 00 20 41 00 00 c8 42 00 ff 7f 47 00 00 00 3f 00 00 80 3f cd cc cc 3d 29 5c 8f 3d 0a d7 a3 3b 00 00 00 00 00 00 00 00 00 00 00 80 00 00 00 3f 62 c0 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 f0 3f 18 2d 44 54 fb 21 09 40 00 00 00 00 00 00 f0 7f 00 00 00 00 00 00 f0 ff 00 00 00 00 00 00 f8 3f 00 00 00 00 00 00 f0 bf 01 00 00 00 00 00 00 00 55 55 55 55 55 55 d5 3f 00 00 00 00 00 00 e0 3f 00 00 00 00 00 00 00 40 18 2d 44 54 fb 21 09 40 00 00 00 00 00 00 24 40 00 00 00 00 00 00 59 40 00 00 00 00 e0 ff ef 40 00 00 00 00 00 00 e0 3f 00 00 00 00 00 00 f0 3f 9a 99 99 99 99 99 b9 3f ec 51 b8 1e 85 eb b1 3f 7b 14 ae 47 e1 7a 74 3f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 00 00 00 00 e0 3f 6a 18 01 00 01 01 00 01 00 01 00 00 01 01 01 00 00 01 00 01 01 00 01 00 01 01 72 45 ff ff ff ff ff ff ff ff ff 01 00 01 00 01 ff ff ff ff ff ff ff ff ff 01 01 00 01 00 ff ff ff ff ff ff ff ff ff 01 01 00 01 00 ff ff ff ff ff ff ff ff ff 01 01 00 01 ff ff ff ff ff ff ff ff ff 01 00 01 00 01 7a 5c c0 bb f8 ff ff ff ff ff ff 01 ff ff ff ff ff ff ff ff ff 01 00 01 7f 80 01 ff 7f 80 80 01 ff ff 7f 80 80 80 01 ff ff ff 7f 80 80 80 80 01 00 01 7f 80 01 ff 7f 80 80 01 ff ff 7f 80 80 80 01 ff ff ff 7f 80 80 80 80 01 ff ff ff ff ff ff ff ff ff 01 c0 bb f8 ff ff ff ff ff ff 01
+unpack=ok
+int32 n=24 [0, -1, 1, 127, 128, 16383, 16384, 2097151, 2097152, -2147483647, 2147483647, -123456789, 42, -42, 300, -300, 70000, -70000, 5, -5, 6, 7, 8, -8]
+sint32 n=24 [0, -1, 1, 127, 128, 16383, 16384, 2097151, 2097152, -2147483648, 2147483647, -123456789, 42, -42, 300, -300, 70000, -70000, 5, -5, 6, 7, 8, -8]
+sfixed32 n=24 [-1, 0, 1, 127, 128, 16383, 16384, 2097151, 2097152, -2147483648, 2147483647, -123456789, 42, -42, 300, -300, 70000, -70000, 5, -5, 6, 7, 8, -8]
+int64 n=24 [0, -1, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 4294967296, 1099511627775, 1099511627776, 281474976710655, 281474976710656, 72057594037927935, 72057594037927936, -9223372036854775807, 9223372036854775807, -1234567890123, 42, -8]
+sint64 n=24 [0, -1, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 4294967296, 1099511627775, 1099511627776, 281474976710655, 281474976710656, 72057594037927935, 72057594037927936, -9223372036854775807, 9223372036854775807, -1234567890123, 42, -8]
+sfixed64 n=24 [0, -1, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 4294967296, 1099511627775, 1099511627776, 281474976710655, 281474976710656, 72057594037927935, 72057594037927936, -9223372036854775807, 9223372036854775807, -1234567890123, 42, -8]
+uint32 n=24 [0, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 300, 70000, 42, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+fixed32 n=24 [0, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 300, 70000, 42, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+uint64 n=24 [0, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 4294967296, 1099511627775, 1099511627776, 281474976710655, 281474976710656, 72057594037927935, 72057594037927936, 18446744073709551615, 300, 42, 5, 6, 7]
+fixed64 n=24 [0, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 4294967295, 4294967296, 1099511627775, 1099511627776, 281474976710655, 281474976710656, 72057594037927935, 72057594037927936, 18446744073709551615, 300, 42, 5, 6, 7]
+float n=24 [0x00000000, 0x3f800000, 0x40490fdb, 0x7f800000, 0xff800000, 0x3fc00000, 0xbf800000, 0x00000001, 0x3eaaaaab, 0x3f000000, 0x40000000, 0x40490fdb, 0x41200000, 0x42c80000, 0x477fff00, 0x3f000000, 0x3f800000, 0x3dcccccd, 0x3d8f5c29, 0x3ba3d70a, 0x00000000, 0x00000000, 0x80000000, 0x3f000000]
+double n=24 [0x0000000000000000, 0x3ff0000000000000, 0x400921fb54442d18, 0x7ff0000000000000, 0xfff0000000000000, 0x3ff8000000000000, 0xbff0000000000000, 0x0000000000000001, 0x3fd5555555555555, 0x3fe0000000000000, 0x4000000000000000, 0x400921fb54442d18, 0x4024000000000000, 0x4059000000000000, 0x40efffe000000000, 0x3fe0000000000000, 0x3ff0000000000000, 0x3fb999999999999a, 0x3fb1eb851eb851ec, 0x3f747ae147ae147b, 0x0000000000000000, 0x0000000000000000, 0x8000000000000000, 0x3fe0000000000000]
+bool n=24 [1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1]
+enum_small n=24 [-1, 0, 1, 0, 1, -1, 1, 0, 1, 0, -1, 1, 0, 1, 0, -1, 1, 0, 1, -1, 0, 1, 0, 1]
+enum n=24 [-123456, -1, 0, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, 0, 1, 127, 128, 16383, 16384, 2097151, 2097152, 268435455, 268435456, -1, -123456]
+repack size=1633 match=yes
+--- repeated ---
+size=306 wrote=306
+hex: 08 01 08 ff ff ff ff ff ff ff ff ff 01 08 ac 02 10 02 10 01 10 d8 04 1d 01 00 00 00 1d ff ff ff ff 1d 2c 01 00 00 20 01 20 ff ff ff ff ff ff ff ff ff 01 20 80 80 80 80 10 28 02 28 01 28 80 80 80 80 20 31 01 00 00 00 00 00 00 00 31 ff ff ff ff ff ff ff ff 31 00 00 00 00 01 00 00 00 38 01 38 ac 02 38 ff ff ff ff 0f 45 01 00 00 00 45 2c 01 00 00 45 ff ff ff ff 48 01 48 ac 02 48 ff ff ff ff ff ff ff ff ff 01 51 01 00 00 00 00 00 00 00 51 2c 01 00 00 00 00 00 00 51 ff ff ff ff ff ff ff ff 5d 00 00 80 3f 5d 00 00 00 40 5d db 0f 49 40 61 00 00 00 00 00 00 f0 3f 61 00 00 00 00 00 00 00 40 61 18 2d 44 54 fb 21 09 40 68 01 68 00 68 01 70 ff ff ff ff ff ff ff ff ff 01 70 00 70 01 78 c0 bb f8 ff ff ff ff ff ff 01 78 00 78 80 80 80 80 01 82 01 03 61 62 63 82 01 00 82 01 0b 68 65 6c 6c 6f 20 77 6f 72 6c 64 8a 01 03 61 62 63 8a 01 00 8a 01 05 68 65 6c 6c 6f 92 01 02 20 05 92 01 0d 20 f7 ff ff ff ff ff ff ff ff 01 30 4d
+unpack=ok
+int32 [1, -1, 300]
+sint32 [1, -1, 300]
+sfixed32 [1, -1, 300]
+int64 [1, -1, 4294967296]
+sint64 [1, -1, 4294967296]
+sfixed64 [1, -1, 4294967296]
+uint32 [1, 300, 4294967295]
+fixed32 [1, 300, 4294967295]
+uint64 [1, 300, 18446744073709551615]
+fixed64 [1, 300, 18446744073709551615]
+float [0x3f800000, 0x40000000, 0x40490fdb]
+double [0x3ff0000000000000, 0x4000000000000000, 0x400921fb54442d18]
+bool [1, 0, 1]
+enum_small [-1, 0, 1]
+enum [-123456, 0, 268435456]
+string n=3
+  [0] str:abc (len=3)
+  [1] str: (len=0)
+  [2] str:hello world (len=11)
+bytes n=3
+  [0] len=3 hex: 61 62 63
+  [1] len=0 hex:
+  [2] len=5 hex: 68 65 6c 6c 6f
+message n=2
+  [0] test=5 has_val1=0 val1=0
+  [1] test=-9 has_val1=1 val1=77
+--- optional ---
+size=139 wrote=139
+hex: 08 fb ff ff ff ff ff ff ff ff 01 10 09 1d fb ff ff ff 20 b5 f6 93 f0 88 dc ff ff ff 01 28 95 93 d8 9f ee 47 31 35 fb 04 8e e0 fe ff ff 38 ff ff ff ff 0f 45 ff ff ff ff 48 ff ff ff ff ff ff ff ff ff 01 51 ff ff ff ff ff ff ff ff 5d db 0f 49 40 61 18 2d 44 54 fb 21 09 40 68 01 70 ff ff ff ff ff ff ff ff ff 01 78 80 80 80 80 01 82 01 0c 6f 70 74 69 6f 6e 61 6c 20 73 74 72 8a 01 05 6f 70 74 73 21 92 01 04 20 2a 30 09
+repack size=139 wrote=139 match=yes
+unpack=ok
+int32 has=1 val=-5
+sint32 has=1 val=-5
+sfixed32 has=1 val=-5
+int64 has=1 val=-1234567890123
+sint64 has=1 val=-1234567890123
+sfixed64 has=1 val=-1234567890123
+uint32 has=1 val=4294967295
+fixed32 has=1 val=4294967295
+uint64 has=1 val=18446744073709551615
+fixed64 has=1 val=18446744073709551615
+float has=1 val=0x40490fdb
+double has=1 val=0x400921fb54442d18
+bool has=1 val=1
+enum_small has=1 val=-1
+enum has=1 val=268435456
+string str:optional str (len=12)
+bytes has=1 len=5 hex: 6f 70 74 73 21
+message test=42 has_val1=1 val1=9
+unset size=0
+unset pack=0
+--- oneof ---
+none size=0
+size=2 wrote=2
+hex: 08 2a
+repack size=2 wrote=2 match=yes
+case=1 int32=42
+size=15 wrote=15
+hex: 82 01 0c 6f 6e 65 6f 66 20 73 74 72 69 6e 67
+repack size=15 wrote=15 match=yes
+case=16 string=str:oneof string (len=12)
+size=8 wrote=8
+hex: 8a 01 05 62 79 74 65 73
+repack size=8 wrote=8 match=yes
+case=17 bytes len=5 hex: 62 79 74 65 73
+size=5 wrote=5
+hex: 92 01 02 20 03
+repack size=5 wrote=5 match=yes
+case=18 message test=3
+size=9 wrote=9
+hex: 61 00 00 00 00 00 00 f0 ff
+repack size=9 wrote=9 match=yes
+both case=16 string=str:abc (len=3)
+--- defaults ---
+size=60 wrote=60
+hex: 08 d6 ff ff ff ff ff ff ff ff 01 10 9a 05 18 a0 8d 06 20 a1 8d 06 2d 00 00 20 40 31 00 00 00 00 00 00 12 40 3a 07 68 69 20 6d 6f 6d 0a 42 0d 61 20 00 20 63 68 61 72 61 63 74 65 72
+repack size=60 wrote=60 match=yes
+empty-unpack=ok
+v_int32=-42 v_uint32=666 v_int64=100000 v_uint64=100001
+v_float=0x40200000
+v_double=0x4012000000000000
+v_string str:hi mom\n (len=7)
+v_bytes len=13 hex: 61 20 00 20 63 68 61 72 61 63 74 65 72
+optional-fresh size=0
+optional-fresh pack=0
+size=11 wrote=11
+hex: 08 07 31 18 2d 44 54 fb 21 09 40
+repack size=11 wrote=11 match=yes
+unpack v_int32 has=1 val=7
+unpack v_uint32 has=0 val=666
+unpack v_double has=1 val=0x400921fb54442d18
+subsub-fresh size=0
+subsub val1=100 has=0
+subsub bytes1 len=8 hex: 61 20 00 20 63 68 61 72
+subsub str1 str:hello world\n (len=12)
+subsub str2 len=12 hex: 68 65 6c 6c 6f 00 77 6f 72 6c 64 0a
+size=21 wrote=21
+hex: 08 05 1a 0a 63 75 73 74 6f 6d 20 73 74 72 2a 05 61 62 63 64 65
+repack size=21 wrote=21 match=yes
+readback val1=5 has=1 bytes1 len=8 str1 str:custom str (len=10)
+readback str2 len=5 hex: 61 62 63 64 65
+size=24 wrote=24
+hex: 20 05 40 01 40 02 40 03 4a 02 08 0b 52 0a 08 16 1a 06 73 32 20 73 74 72
+repack size=24 wrote=24 match=yes
+readback test=5 n_rep=3 rep=[1, 2, 3] sub1=1 sub2=1
+sub1 val1=11 sub2 val1=22 sub2 str1 str:s2 str (len=6)
+--- fieldno ---
+15 size=3 pack=3 hex: 7a 01 78
+16 size=4 pack=4 hex: 82 01 01 78
+2047 size=4 pack=4 hex: fa 7f 01 78
+2048 size=5 pack=5 hex: 82 80 01 01 78
+262143 size=5 pack=5 hex: fa ff 7f 01 78
+262144 size=6 pack=6 hex: 82 80 80 01 01 78
+33554431 size=6 pack=6 hex: fa ff ff 7f 01 78
+33554432 size=7 pack=7 hex: 82 80 80 80 01 01 78
+--- check ---
+valid check=1
+missing-req-string check=0
+missing-req-message check=0
+req-bytes-null-data check=0
+repeated-msg-null-array check=0
+repeated-string-null-array check=0
+repeated-bytes-null-data check=0
+opt-bytes-null-data check=0
+opt-set-valid check=1
+oneof-unset check=1
+oneof-string-null check=1
+oneof-string-set check=1
+nested-req-missing check=0
+--- enums ---
+by_name VALUE0 -> VALUE0 0
+by_name VALUENEG123456 -> VALUENEG123456 -123456
+by_name VALUE268435456 -> VALUE268435456 268435456
+by_name NOPE -> NULL
+by_name  -> NULL
+by_value -123456 -> VALUENEG123456 -123456
+by_value -1 -> VALUENEG1 -1
+by_value 0 -> VALUE0 0
+by_value 1 -> VALUE1 1
+by_value 127 -> VALUE127 127
+by_value 128 -> VALUE128 128
+by_value 16383 -> VALUE16383 16383
+by_value 16384 -> VALUE16384 16384
+by_value 2097151 -> VALUE2097151 2097151
+by_value 2097152 -> VALUE2097152 2097152
+by_value 268435455 -> VALUE268435455 268435455
+by_value 268435456 -> VALUE268435456 268435456
+by_value 2 -> NULL
+by_value -2 -> NULL
+by_value 1000000000 -> NULL
+dup by_name VALUE_A -> VALUE_A 42
+dup by_name VALUE_B -> VALUE_A 42
+dup by_name VALUE_D -> VALUE_D 666
+dup by_name VALUE_E -> VALUE_D 666
+dup by_name VALUE_F -> VALUE_F 1000
+dup by_name VALUE_AA -> VALUE_F 1000
+dup by_name VALUE_BB -> VALUE_BB 1001
+dup by_name VALUE_X -> NULL
+dup by_value 42 -> VALUE_A 42
+dup by_value 666 -> VALUE_D 666
+dup by_value 1000 -> VALUE_F 1000
+dup by_value 1001 -> VALUE_BB 1001
+dup by_value 41 -> NULL
+dup by_value 43 -> NULL
+dup by_value 667 -> NULL
+dup by_value 999 -> NULL
+dup by_value 1002 -> NULL
+small by_name NEG_VALUE -> NEG_VALUE -1
+small by_value 1 -> OTHER_VALUE 1
+small by_value 2 -> NULL
+--- descriptor-lookups ---
+by_name test_int32 -> id=1 type=0 label=2 flags=1
+by_name test_uint64 -> id=9 type=8 label=2 flags=1
+by_name test_boolean -> id=13 type=12 label=2 flags=1
+by_name nope -> NULL
+by_name  -> NULL
+by_tag 1 -> test_int32 id=1
+by_tag 7 -> test_uint32 id=7
+by_tag 15 -> test_enum id=15
+by_tag 0 -> NULL
+by_tag 16 -> NULL
+by_tag 1000000 -> NULL
+oneof test_int32 flags=4
+oneof test_string flags=4
+--- services ---
+method ByName -> ByName (in=Name out=LookupResult)
+method Nope -> NULL
+invoke:
+  handler input name=str:alice (len=5)
+  handler closure_data=0x1234
+  closure called closure_data=0x1234 person=0
+destroyed before destroy=0
+destroyed after destroy=1
+--- proto3 ---
+fresh size=0
+fresh pack=0
+size=54 wrote=54
+hex: 0a 06 64 61 76 65 20 62 10 2a 1a 10 64 61 76 65 40 65 78 61 6d 70 6c 65 2e 63 6f 6d 22 10 0a 04 31 32 33 34 10 02 1a 06 0a 04 6e 69 63 65 22 06 0a 04 35 36 37 38
+repack size=54 wrote=54 match=yes
+readback name str:dave b (len=6)
+readback id=42
+readback email str:dave@example.com (len=16)
+readback n_phone=2
+  phone[0] number str:1234 (len=4)
+  phone[0] type=2 comment=1
+  phone[0] comment str:nice (len=4)
+  phone[1] number str:5678 (len=4)
+  phone[1] type=0 comment=0
+size=9 wrote=9
+hex: 0a 07 7a 65 72 6f 69 73 68
+repack size=9 wrote=9 match=yes
+--- unknown-fields ---
+unpack=ok
+known int32 has=1 val=7
+n_unknown=6
+  unknown[0] tag=99 wire=0 len=2 hex: 96 01
+  unknown[1] tag=100 wire=5 len=4 hex: 01 02 03 04
+  unknown[2] tag=101 wire=1 len=8 hex: 01 02 03 04 05 06 07 08
+  unknown[3] tag=102 wire=2 len=6 hex: 05 68 65 6c 6c 6f
+  unknown[4] tag=104 wire=2 len=1 hex: 00
+  unknown[5] tag=103 wire=0 len=1 hex: 01
+repack size=36 match=yes
+repack hex: 08 07 98 06 96 01 a5 06 01 02 03 04 a9 06 01 02 03 04 05 06 07 08 b2 06 05 68 65 6c 6c 6f c2 06 00 b8 06 01
+--- merge ---
+unpack=ok
+int32=6 (last wins)
+sub test=2 has_val1=1 val1=5 n_rep=3 rep=[1, 2, 3]
+--- errors ---
+bad-tag0: NULL
+truncated-varint: NULL
+wiretype-3: NULL
+wiretype-4: NULL
+wiretype-6: NULL
+wiretype-7: NULL
+short-64bit: NULL
+short-32bit: NULL
+len-over-intmax: NULL
+len-too-long: NULL
+len-truncated: NULL
+packed-fixed32-badlen: NULL
+packed-varint-bad-tail: NULL
+wrong-wiretype: NULL
+missing-required: NULL
+missing-required-int32: NULL
+empty-unpack: ok
+bool-2byte-varint: has=1 val=1
+required-with-default empty: ok v_int32=-42
+--- allocator ---
+  alloc 232
+  alloc 1024
+  alloc 12
+  alloc 5
+  alloc 80
+  alloc 12
+  free
+unpack=ok
+  free
+  free
+  free
+  free
+  free
+totals allocs=6 frees=6 bytes=1365
+bitmap-message size=7
+  alloc 1056
+  alloc 17
+  alloc 2
+  alloc 2
+  free
+bitmap unpack=ok field1=a field129=b
+  free
+  free
+  free
+bitmap totals allocs=4 frees=4 bytes=1077
+  alloc 1056
+  alloc 17
+  free
+  free
+bitmap missing-129: NULL
+--- buffer-simple ---
+pack_to_buffer size=1633
+buffer alloced=2048 len=1633 must_free=1
+buffer matches pack: yes
+small message: alloced=4 len=2 must_free=0
+--- dynamic ---
+unpack-empty=ok
+f_i32=-7 has=0
+f_i64=1234567890123 has=0
+f_bool=1 has=0
+f_str str:dyn-default (len=11)
+f_bytes len=3 hex: 01 02 03
+fresh size=0
+size=33 wrote=33 hex: 08 f9 ff ff ff ff ff ff ff ff 01 10 cb 89 ec 8f f7 23 18 01 22 06 63 75 73 74 6f 6d 2a 03 01 02 03
+freed ok
+by_name f_i32 -> id=1
+by_tag 5 -> f_bytes
+by_tag 6 -> NULL
+--- empty ---
+size=0
+pack=0 hex:
+check=1
+free-NULL ok
+null-string size=2
+null-string hex: 0a 00
+null-message size=2 null-message hex: 0a 00
+--- nested ---
+size=49 wrote=49
+hex: 0a 1f 08 01 08 02 10 05 38 07 68 01 68 00 82 01 06 6e 65 73 74 65 64 8a 01 02 de ad 92 01 02 20 01 12 02 08 0b 1a 02 08 16 22 02 20 01 2a 02 08 21
+repack size=49 wrote=49 match=yes
+readback rep.n_int32=2 rep.n_str=1 rep.n_bytes=1 rep.n_msg=1
+readback rep.int32[0]=1 rep.sint32[0]=-3 rep.bool[0]=1
+readback rep.str[0] str:nested (len=6)
+readback rep.bytes[0] len=2 hex: de ad
+readback rep.msg[0] test=1
+readback opt.int32 has=1 val=11
+readback oneof case=1 int32=22
+readback defs.v_int32 has=1 val=33

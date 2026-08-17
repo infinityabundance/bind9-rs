@@ -1,0 +1,48 @@
+schema_version = 1
+court_id = "PBC-0001"
+question = "Does the Rust protobuf-c module (compat/protobuf_c/) reproduce libprotobuf-c 1.5.2 observable behavior byte-exactly: the runtime the generated code links against — protobuf_c_version/version_number, get_packed_size/pack/pack_to_buffer/unpack/free_unpacked, the varint/fixed/ZigZag encoders (int32 negatives as 10-byte two's complement, the uint64 hi/lo pack, the 1->2-byte packed-length memmove, the prefixed-message memmove), the length-prefix stack (scan_length_prefixed_data's INT_MAX and hdr_len+val>len rejections), wire-type validation (bad tag 0, unsupported wiretypes 3/4/6/7, short 32/64-bit payloads), the required-field bitmap (incl. the heap path at 129 fields and the required-with-default exemption), the scanned-member slab growth (the 16-member stack slab and the observable 32<<(slab+4) heap slab), unknown-field passthrough with re-pack byte identity, merge_messages (repeated concat, last-wins scalars, earlier-only zero-copy, embedded recursion), protobuf_c_message_check (required/repeated/bytes/data-null failures and the oneof-skip rule), the allocator hooks (the exact do_alloc/do_free sequence and sizes incl. sizeof_message, string len+1, bytes, message structs, repeated arrays, the unknown-field array, the heap bitmap), buffer-simple's exponential growth, message_init_generic's default copying (dynamic descriptor with message_init=NULL), the descriptor lookups (get_field/get_field_by_name incl. the by-name binary searches), the enum lookups (get_value_by_name/get_value incl. the alias-compressed value_ranges and the negative-value ranges), and service dispatch (generated_init zeroing the handler slots, invoke_internal, destroy)?"
+subsystem = "compat/protobuf_c"
+oracle_versions = ["1.5.2"]
+harness = "protobuf-c"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-protobuf-c-1.5.2 container, the oracle compiling the checked-in protoc-gen-c 1.5.2 fixtures (protobuf-c-gen/*.pb-c.{c,h}, generated from the pinned tarball's own t/test-full.proto and t/test-proto3.proto with protoc 3.21.12) against the runtime built from the pinned tarball",
+    "floats/doubles are printed as exact bit patterns and the corpus values are exact-bit constants, so no float formatting is involved",
+    "the C's pointer-vs-default comparisons are value comparisons in the Rust; the corpus never sets a field to its default content, so the two are observationally identical here",
+]
+invariants = [
+    "version string '1.5.2' and version_number 1005002 match",
+    "every struct sizeof and the descriptor sizeof_message values match (the x86-64 SysV layout is recomputed from the generated structs by gen_descriptors.py)",
+    "the packed-repeated battery (15 arrays x 24 exact values incl. negatives, big int64s, exact-bit floats/doubles, alias enums) produces byte-identical pack output, sizes and readbacks; the payload crosses 128 bytes so the packed 1->2-byte length memmove path is exercised",
+    "the unpacked-repeated battery (all 17 types + strings + bytes + nested messages) matches: size, hex, readbacks incl. the empty-string and empty-bytes elements",
+    "the optional battery (all 18 fields set incl. the optional-bytes has quantifier) matches: size 139, hex, readbacks, repack; the all-unset message packs to 0 bytes",
+    "the oneof battery matches: NOT_SET size 0, int32/string/bytes/message/double members, switching members clears the shared storage, and a wire with two members keeps the last (case=16)",
+    "the defaults battery matches: required-with-defaults init roundtrip (v_int32=-42 ... v_bytes 13 bytes incl. embedded NUL), optional-with-defaults has=0 -> size 0, unpack of an empty wire applies the INIT defaults, SubSubMess defaults (val1=100 has=0, bytes1 8 bytes, str1 'hello world\\n', str2 12 bytes with embedded NUL), packed defaults readback",
+    "the field-number header boundaries (tags 15/16/2047/2048/262143/262144/33554431/33554432) produce the exact tag sizes and bytes",
+    "message_check matches for all 12 cases: valid, missing required string/message, required bytes data=NULL, repeated n>0 array=NULL (msg/string), repeated bytes data=NULL, optional bytes data=NULL, optional set valid, oneof unset/set/NULL, nested required missing",
+    "enum lookups match: by_name for 5 names (incl. misses), by_value for 15 values (incl. 2, -2, 1e9 misses), the dup-values enum by_name (aliases resolve to the first value) and by_value (42->VALUE_A, 666->VALUE_D, 1000->VALUE_F, 1001->VALUE_BB, misses at 41/43/667/999/1002), TestEnumSmall",
+    "descriptor lookups match: by_name for 5 names, by_tag for 1/7/15/0/16/1000000, and the oneof fields' flags=4",
+    "service dispatch matches: method lookup, the user-installed handler receives the input and closure_data 0x1234, the closure fires with person=0, destroy runs",
+    "the proto3 (unlabeled) battery matches: fresh Person size 0, the 2-phone roundtrip (WORK=2 packed, MOBILE=0 zeroish-skipped, comment recursion), and the zeroish-skipping of id=0 and email=''",
+    "the unknown-fields battery matches: 6 unknowns (varint/fixed32/fixed64/length-prefixed incl. an empty length-prefixed unknown) with exact tag/wire/len/data, and the re-pack is byte-identical to the input",
+    "the merge battery matches: int32 last-wins, and the double test_message merges (required last-wins test=2, earlier-only val1=5 zero-copied with has=1, repeated rep concat [1,2,3])",
+    "the error taxonomy matches: bad tag 0, truncated varint, wiretypes 3/4/6/7, short 64/32-bit payloads, length prefix > INT_MAX, length prefix too long, truncated length varint, packed fixed32 len%4, packed varint bad tail, wrong wiretype, missing required (string + int32); empty input is VALID for empty/required-with-default messages; a 2-byte varint bool parses TRUE",
+    "the counting-allocator trace matches exactly: the all-set TestMessOptional unpack (sizeof_message=232, the 1024-byte scanned-member slab, string len+1=12, bytes 5, SubMess 80 + its rep array 12) and free sequence (slab, string, bytes, rep, subm, message), the 129-field bitmap message (1056, heap bitmap 17, two string allocs 2+2) incl. the missing-129 failure path (1056 + 17 then the error cleanup frees), and the totals",
+    "buffer-simple matches: the packed battery (1633 bytes) grows the 8-byte pad to alloced 2048 with must_free=1 and data identical to pack; a 2-byte message fits a 4-byte pad without growth",
+    "the dynamic descriptor (message_init=NULL) matches: unpack of an empty wire applies message_init_generic defaults (f_i32=-7, f_i64=1234567890123, f_bool=1, f_str='dyn-default', f_bytes={3, 01 02 03}) with has=0 and fresh size 0, then with has flags set packs 33 bytes (the default bytes are included because optional bytes pack on has), freed ok, and the descriptor lookups",
+    "the empty battery matches: EmptyMess size 0 / empty hex / check 1, free(NULL) is a no-op, and the NULL required string/message pack as a single 0x00 length byte",
+    "the nested whole-tree battery matches: TestMessSubMess roundtrip (rep_mess with 2 int32s + sint32 + uint32 + 2 bools + string + bytes + message, opt_mess, oneof_mess, req_mess, def_mess) with full readbacks",
+    "stderr is empty and the exit status is 0 for every run on both sides",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are fixed byte/string constants; floats and doubles are printed as exact bit patterns; no pointers, addresses or wall-clock data are printed (the one closure_data value is the fixed constant 0x1234); both sides run in the same container against the same descriptor fixtures"
+security_classification = "the unpacker is the parser-facing attack surface (tag/wire validation, length-prefix limits, packed-element counting, the required-field bitmap); both implementations must reject rather than crash on malformed input, and the error taxonomy is part of the contract"
+references = [
+    "protobuf-c-1.5.2 protobuf-c/protobuf-c.c + protobuf-c.h (pinned archive sha256 e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24)",
+    "forensics/oracle/probes/probe-protobuf-c.c",
+    "forensics/oracle/probes/protobuf-c-gen/*.pb-c.{c,h} (generated by protoc-gen-c 1.5.2 from the pinned tarball's t/test-full.proto + t/test-proto3.proto with protoc 3.21.12)",
+    "forensics/oracle/probes/gen_descriptors.py",
+    "bind9-rs-tools/src/bin/protobuf-c-probe.rs",
+    "bind9-rs-tools/src/bin/protobuf_c_gen.rs",
+    "bind9-rs-tools/src/compat/protobuf_c.rs",
+    "addendum §26 (protobuf-c), §38 (C probe courts)",
+]

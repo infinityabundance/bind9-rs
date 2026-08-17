@@ -76,5 +76,12 @@ path = "src/bin/jsonc-probe.rs"
 name = "lmdb-probe"
 path = "src/bin/lmdb-probe.rs"
 
+# protobuf-c-probe: forensic diagnostic for the PBC-0001 court (mirrors
+# forensics/oracle/probes/probe-protobuf-c.c byte-for-byte); not a
+# BIND-compat tool.
+[[bin]]
+name = "protobuf-c-probe"
+path = "src/bin/protobuf-c-probe.rs"
+
 [lints]
 workspace = true
