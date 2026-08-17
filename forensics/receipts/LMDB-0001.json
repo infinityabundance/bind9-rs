@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "court_id": "LMDB-0001",
+  "git_commit": "4a8ec613acba882766ff0fd7b7aeaee02c487484",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "ea9f9bc0b5b79d26e3c40e9871946c1dc808d411571f510663deb69c5dbf862e",
+  "oracle_hashes": {
+    "oracle-lmdb-0.9.35": "sha256:dc6b4b3dd6546f11805de1785679b3224b304f8b63045555d2bdbd0f4f261738",
+    "LMDB_0.9.35.tar.gz": "18b021fd589d30cc08860a9550a30ae51637117451385e9581616da751326632",
+    "probe-lmdb.c": "320f0dfdf09fa92506f5eefd4a01c3e866840a5a88eda23ed72fee297b3f06c0",
+    "lmdb-probe.rs": "013eff08242a1e005dcf9c9370f535679900aefcf74b4d5f9206c52f4dc5e3a4",
+    "compat/lmdb/mod.rs": "a854076b47c47afac06dff17adf76384c4ac4671f6b7183a22593bef267c2988",
+    "compat/lmdb/core.rs": "a547fa01dd9ce5a7bde43ebbbe7395ab794d9b15cb24b7b30833189b5f19775a"
+  },
+  "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
+  "completed_at": "2026-08-17T00:24:13Z",
+  "input_hashes": {},
+  "residual_ids": [],
+  "invariants_passed": [
+    "env_create/env_open/commit result codes and the stat (entries/depth/leaf/branch/overflow/psize) match for every phase",
+    "the basic put/get/del roundtrip matches: overwrite in place, NOOVERWRITE → MDB_KEYEXIST, missing key → MDB_NOTFOUND, delete + re-get",
+    "the named sub-DB lifecycle matches: create, put/get, reopen from a fresh txn, drop with delete, reopen-after-drop → MDB_NOTFOUND",
+    "the overflow phase matches: 9000-byte and 3000-byte values (2- and 1-page overflow blocks), readbacks (first/last 16 bytes), same-size overwrite and shrink-to-1000, stat overflow pages, delete frees the blocks",
+    "the dupsort phase matches: the sub-page conversion (k/b → a,b,c order), NODUPDATA → MDB_KEYEXIST, the no-op re-put of an existing dup, the cursor sequence FIRST/NEXT/NEXT_DUP/NEXT/NEXT_NODUP/PREV/COUNT/GET_BOTH/FIRST_DUP/LAST_DUP, dup deletes (sub-page shrink), the whole-key delete, and the sub-page → sub-DB conversion with 120 dups on `many` plus 60 on `even`",
+    "the dupfixed phase matches: 8 fixed 4-byte dups in sorted order (the (i*7)%8 insertion order), the leaf2 sub-page layout in the page dump",
+    "the many-keys phase matches: 400 sequential + 400 reverse inserts (splits both ways), the 500-step cursor traversals forward and backward, SET/SET_RANGE (exact, in-range, past-end, beyond-max), 200 deletes (rebalance/merge), re-insertion reusing the freeDB pages, and draining the tree to depth 0",
+    "the reader phase matches: read-only txn begin, the second same-thread read txn → MDB_BAD_RSLOT (the C's TLS-bound reader slot), the rdonly-write EACCES, the masked reader list (one row), reader_check dead=0, and a new read txn succeeding after the abort",
+    "the copy phase matches: mdb_env_copy2(MDB_CP_COMPACT) and mdb_env_copy sizes, the compact copy's structured page dump (renumbered pages, meta0 empty + meta1 txnid 1), and the compact copy reopens with matching stat/get",
+    "the freeDB dump matches in every phase: the txnid-keyed records and their IDL page lists (the exact freed-pgno sets, hence the exact COW allocation order)",
+    "stderr is empty and the exit status is 0 for every run on both sides"
+  ],
+  "captures_sha256": "9e3b466afeaf66c6bf0ceed9b81d8fb0a0fe5112812db6f34993094208a7cc65",
+  "repro_command": "bind9-court run LMDB-0001"
+}
