@@ -850,5 +850,5 @@ for prefix, st, src, hdr, key in MESSAGES:
     w(f'    ("{name}", {size}),')
 w("];")
 
-open("bind9-rs-tools/src/bin/protobuf_c_gen.rs", "w").write("\n".join(out) + "\n")
+open("bind9-rs-tools/src/bin/protobuf_c_gen/mod.rs", "w").write("\n".join(out) + "\n")
 print(f"wrote bind9-rs-tools/src/bin/protobuf_c_gen.rs ({len(out)} lines)")
