@@ -1,0 +1,34 @@
+schema_version = 1
+court_id = "LMDB-0001"
+question = "Does the Rust LMDB module (compat/lmdb/) reproduce LMDB 0.9.35 observable behavior byte-exactly: the B+tree engine (put/get/del with the NOOVERWRITE/NODUPDATA taxonomy, overwrite-in-place, delete-and-reinsert on size change), the copy-on-write page model with the exact pgno allocation order (loose-page reuse, me_pghead/freeDB reuse, next_pgno growth), page splits (sequential right-hand splits, reverse left-hand splits, the root-split depth increase, the APPEND path), rebalance (node move, page merge, root collapse, the subpage no-rebalance rule), the sorted-duplicates machinery (single-item → inline sub-page conversion with the exact region sizing, the always-grow-by-one-node sub-page growth, the sub-page → sub-DB conversion, the sub-page shrink on dup delete, sub-DB record persistence, dup counting), DUPFIXED/INTEGERDUP leaf2 sub-pages, overflow pages (multi-page blocks, same-size/shrink overwrites, free on delete), named sub-DBs (create/reopen/drop), the freeDB txnid-keyed records, the reader table (read-only txn begin/end, reader list with pid/tid masked, reader check), and mdb_env_copy2(MDB_CP_COMPACT)/mdb_env_copy with a byte-exact compact layout (renumbered pages, fresh meta0/meta1, txnid 0/1)?  The structured page dump parses data.mdb directly (MDB_page/MDB_node/MDB_db/MDB_meta layouts are part of the on-disk contract) so the whole tree structure — split points, node order, sub-page regions, sub-DB records, freeDB records — is compared, not just the readbacks."
+subsystem = "compat/lmdb"
+oracle_versions = ["0.9.35"]
+harness = "lmdb"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-lmdb-0.9.35 container, each side rebuilding its own /tmp/lmdb_work tree before running the same op sequence",
+    "the reader-list rows mask pid and tid (`reader pid=<pid> tid=<tid> txnid=<n>`): the C's mdb_reader_list prints the claiming pid and pthread id, which differ per run; the deterministic txnid column is kept",
+    "the page dump never prints raw page bytes: overflow-page tails are uninitialized malloc memory in the C (mdb_page_malloc's num>1 path) and zeroed in the Rust, so the court compares the structured layout (pgno/flags/lower/upper/node keys/data sizes) and the readbacks instead",
+]
+invariants = [
+    "env_create/env_open/commit result codes and the stat (entries/depth/leaf/branch/overflow/psize) match for every phase",
+    "the basic put/get/del roundtrip matches: overwrite in place, NOOVERWRITE → MDB_KEYEXIST, missing key → MDB_NOTFOUND, delete + re-get",
+    "the named sub-DB lifecycle matches: create, put/get, reopen from a fresh txn, drop with delete, reopen-after-drop → MDB_NOTFOUND",
+    "the overflow phase matches: 9000-byte and 3000-byte values (2- and 1-page overflow blocks), readbacks (first/last 16 bytes), same-size overwrite and shrink-to-1000, stat overflow pages, delete frees the blocks",
+    "the dupsort phase matches: the sub-page conversion (k/b → a,b,c order), NODUPDATA → MDB_KEYEXIST, the no-op re-put of an existing dup, the cursor sequence FIRST/NEXT/NEXT_DUP/NEXT/NEXT_NODUP/PREV/COUNT/GET_BOTH/FIRST_DUP/LAST_DUP, dup deletes (sub-page shrink), the whole-key delete, and the sub-page → sub-DB conversion with 120 dups on `many` plus 60 on `even`",
+    "the dupfixed phase matches: 8 fixed 4-byte dups in sorted order (the (i*7)%8 insertion order), the leaf2 sub-page layout in the page dump",
+    "the many-keys phase matches: 400 sequential + 400 reverse inserts (splits both ways), the 500-step cursor traversals forward and backward, SET/SET_RANGE (exact, in-range, past-end, beyond-max), 200 deletes (rebalance/merge), re-insertion reusing the freeDB pages, and draining the tree to depth 0",
+    "the reader phase matches: read-only txn begin, the second same-thread read txn → MDB_BAD_RSLOT (the C's TLS-bound reader slot), the rdonly-write EACCES, the masked reader list (one row), reader_check dead=0, and a new read txn succeeding after the abort",
+    "the copy phase matches: mdb_env_copy2(MDB_CP_COMPACT) and mdb_env_copy sizes, the compact copy's structured page dump (renumbered pages, meta0 empty + meta1 txnid 1), and the compact copy reopens with matching stat/get",
+    "the freeDB dump matches in every phase: the txnid-keyed records and their IDL page lists (the exact freed-pgno sets, hence the exact COW allocation order)",
+    "stderr is empty and the exit status is 0 for every run on both sides",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are fixed strings and fixed per-phase directories; the op sequence is deterministic and single-threaded; the reader-list pid/tid are masked by both probes; the page dump prints the structured layout, never the raw trailing bytes of overflow pages (uninitialized in the C's malloc, zeroed in the Rust); nothing pointer, address or wall-clock dependent is printed"
+security_classification = "the on-disk parser surface (MDB_page/MDB_node/MDB_db/MDB_meta layouts, the freeDB IDL records, the reader table) is the file-facing attack surface of the catalog/runtime-zone persistence; the engine must reject rather than crash on malformed structures, and both implementations must produce byte-identical trees for identical op sequences"
+references = [
+    "LMDB_0.9.35 mdb.c, midl.c, lmdb.h, midl.h (pinned archive sha256 18b021fd589d30cc08860a9550a30ae51637117451385e9581616da751326632)",
+    "forensics/oracle/probes/probe-lmdb.c",
+    "bind9-rs-tools/src/bin/lmdb-probe.rs",
+    "bind9-rs-tools/src/compat/lmdb/{mod.rs,core.rs}",
+    "addendum §24 (LMDB), §25 (file formats), §38 (C probe courts)",
+]

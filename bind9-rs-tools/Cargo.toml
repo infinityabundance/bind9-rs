@@ -69,5 +69,12 @@ path = "src/bin/maxminddb-probe.rs"
 name = "jsonc-probe"
 path = "src/bin/jsonc-probe.rs"
 
+# lmdb-probe: forensic diagnostic for the LMDB-0001 court (mirrors
+# forensics/oracle/probes/probe-lmdb.c byte-for-byte); not a BIND-compat
+# tool.
+[[bin]]
+name = "lmdb-probe"
+path = "src/bin/lmdb-probe.rs"
+
 [lints]
 workspace = true

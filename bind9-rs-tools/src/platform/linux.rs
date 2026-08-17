@@ -21,6 +21,25 @@ use std::os::raw::{c_int, c_long, c_void};
 /// A libc errno value captured from the boundary.
 pub type Errno = i32;
 
+/// `sysconf(_SC_PAGE_SIZE)` (U-0028): the system page size in bytes, used by
+/// the LMDB conservation to size fresh environments (mdb_env_create uses the
+/// page size for `me_psize` when creating a new data file).
+///
+/// # Safety invariant (U-0028)
+/// No arguments; returns a positive `long` on success and -1 on failure.
+/// Callers must tolerate the 4096 fallback (the minimum any supported Linux
+/// page size can be, and what the C's own fallback path effectively yields).
+pub fn page_size() -> u32 {
+    // SAFETY (U-0028): argument-less sysconf query; result copied before any
+    // other call.
+    let ps = unsafe { libc::sysconf(libc::_SC_PAGE_SIZE) };
+    if ps > 0 {
+        ps as u32
+    } else {
+        4096
+    }
+}
+
 /// Translate a libc return into `Result`, capturing errno (U-0001).
 ///
 /// # Safety invariant (U-0001)

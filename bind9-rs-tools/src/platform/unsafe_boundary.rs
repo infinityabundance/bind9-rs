@@ -37,6 +37,7 @@
 //! | U-0025| linux.rs `write_fd` | fd caller-owned; buf live slice of declared length   | libcap launcher tests    |
 //! | U-0026| linux.rs `open_mode`| NUL-terminated path; flags/mode from constants      | zlib gz* courts          |
 //! | U-0027| linux.rs `lseek`    | fd caller-owned; plain integer offset/whence        | zlib gz* courts          |
+//! | U-0028| linux.rs `page_size`| argument-less sysconf; positive result or 4096    | LMDB-0001 court           |
 //!
 //! Miri cannot execute the kernel calls themselves (they are FFI); the
 //! surrounding pointer/buffer construction is exercised by the unit and
@@ -145,6 +146,11 @@ pub mod inventory {
             "U-0027",
             "linux.rs lseek",
             "fd caller-owned; plain integer offset/whence",
+        ),
+        (
+            "U-0028",
+            "linux.rs page_size",
+            "argument-less sysconf; positive result or 4096 fallback",
         ),
     ];
 }
