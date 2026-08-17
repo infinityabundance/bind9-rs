@@ -4,7 +4,7 @@ version = 4
 
 [[package]]
 name = "bind9-rs"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "bind9-rs-core",
  "bind9-rs-platform",
@@ -14,11 +14,11 @@ dependencies = [
 
 [[package]]
 name = "bind9-rs-core"
-version = "0.1.4"
+version = "0.1.5"
 
 [[package]]
 name = "bind9-rs-forensics"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "bind9-rs-core",
  "serde",
@@ -29,14 +29,14 @@ dependencies = [
 
 [[package]]
 name = "bind9-rs-platform"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "getrandom",
 ]
 
 [[package]]
 name = "bind9-rs-server"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "bind9-rs-core",
  "bind9-rs-platform",
@@ -44,7 +44,7 @@ dependencies = [
 
 [[package]]
 name = "bind9-rs-tools"
-version = "0.1.4"
+version = "0.1.5"
 dependencies = [
  "bind9-rs-core",
  "bind9-rs-platform",
