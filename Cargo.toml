@@ -23,7 +23,7 @@ members = [
 ]
 
 [workspace.package]
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 rust-version = "1.96"
 license = "MPL-2.0"
@@ -31,11 +31,11 @@ authors = ["riaan de beer <rdebeer.infinityabundance@gmail.com>"]
 repository = "https://github.com/infinityabundance/bind9-rs"
 
 [workspace.dependencies]
-bind9-rs-core = { path = "bind9-rs-core", version = "0.1.3" }
-bind9-rs-server = { path = "bind9-rs-server", version = "0.1.3" }
-bind9-rs-tools = { path = "bind9-rs-tools", version = "0.1.3" }
-bind9-rs-forensics = { path = "bind9-rs-forensics", version = "0.1.3" }
-bind9-rs-platform = { path = "bind9-rs-platform", version = "0.1.3" }
+bind9-rs-core = { path = "bind9-rs-core", version = "0.1.4" }
+bind9-rs-server = { path = "bind9-rs-server", version = "0.1.4" }
+bind9-rs-tools = { path = "bind9-rs-tools", version = "0.1.4" }
+bind9-rs-forensics = { path = "bind9-rs-forensics", version = "0.1.4" }
+bind9-rs-platform = { path = "bind9-rs-platform", version = "0.1.4" }
 
 # Deliberate, audited external dependencies only (spec §54).  Each entry below
 # is justified in the crate that consumes it.  The dependency ledger lives in
