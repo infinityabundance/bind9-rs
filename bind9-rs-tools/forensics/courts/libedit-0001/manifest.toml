@@ -1,0 +1,35 @@
+schema_version = 1
+court_id = "LE-0001"
+question = "Does the Rust libedit module (compat/libedit/) reproduce NetBSD editline 20260512-3.1 observable behavior byte-exactly: the interactive editor engine (emacs and vi keymaps, insert/delete/motion/word/case/transpose/kill/yank/undo, universal-argument and digit repetition, quoted insert, clear screen, redisplay), the line discipline over a pty (raw termios, 80x24, the terminfo strings libedit loads for TERM=xterm and TERM=dumb, the refresh engine with cursor addressing and in-line editing, prompts with EL_PROMPT_ESC literal spans, right prompts), history (the HistoryW API: setsize/enter/add/append/prev/next/curr/first/last/set/prev_str/next_str/prev_event/next_event/del/clear/setunique/getunique with the exact event-number and error taxonomy), history search (incremental emacs C-r/C-s and vi / search with the match-against-prefix semantics), the readline compatibility layer (readline/add_history/history_get/current/previous/next/history_search_prefix/history_search/history_expand with !n/!! and ^a^b substitution/clear_history/where_history), el_get/el_set (EL_EDITOR/EL_TERMINAL/EL_PROMPT/EL_RPROMPT/EL_EDITMODE/EL_SAFEREAD/EL_SIGNAL/EL_UNBUFFERED/EL_WORDCHARS/EL_GETTC incl. the error paths: unknown editor, unknown terminal), the line ops (el_insertstr/el_deletestr/el_deletestr1/el_replacestr/el_cursor/el_line), el_parse/el_source (the editrc grammar: bind key command, bind -s key string, the escape/control parsing), the tokenizer (tok_init/tok_str/tok_reset/tok_end with the quote/backslash/continuation taxonomy), and NO_TTY behavior (el_init on a pipe, EDIT_DISABLED read)?  The probe drives 29 pty sessions with fixed byte scripts (plain typing, backspace, kill-line, kill-region/yank, mid-line insert, transpose, kill-word, word motion, case ops, EOF, history prev/next, incremental history search, arrow keys, kill-ring, vi editing/search/yank-put/undo, rprompt, prompt-escape spans, dumb terminal, UTF-8, editmode-off, long-line wrap, clear screen, quoted insert, empty prompt, ed-command macros, the readline layer) plus 7 direct API sessions (the HistoryW battery, el_get battery, el_set error taxonomy, line ops, parse/source, tokenizer corpus, NO_TTY), and compares the raw pty transcripts byte-exactly."
+subsystem = "compat/libedit"
+oracle_versions = ["20260512-3.1"]
+harness = "libedit"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-libedit-20260512-3.1 container, the oracle linked against /opt/dep/lib/libedit.so, the Rust probe statically self-contained",
+    "the pty sessions print the captured master-side byte stream escaped (ESC/BS/DEL/\\r/\\n/\\t/BEL/hex), never raw terminal bytes, so the comparison is over the observable transcript text",
+    "no pid, pointer, address, signal-handler state or wall-clock value is printed; the child watchdog's alarm is a run-bound, not an output",
+]
+invariants = [
+    "every pty session transcript is byte-identical: the refresh engine's cursor-addressed output (the terminfo strings for TERM=xterm and TERM=dumb), the prompt+line echo sequence, and the caller's LINE:/readline prints in the exact interleaving a BIND nslookup user sees",
+    "the emacs editing corpus matches: insert, backspace, kill-line (C-k), kill-region + yank (C-u/C-y), mid-line insert with C-a/C-e motion, transpose (C-t), kill-word (M-d, C-w), word motion (M-f/M-b), case ops (M-u/M-c/M-l), EOF (C-d), numeric arguments (M-1 M-d), kill-ring behavior, long-line wrap, clear screen (C-l), quoted insert (C-v), literal prompts (EL_PROMPT_ESC with the \\001..\\002 hidden span), right prompts, empty prompts, dumb-terminal fallback, UTF-8 multi-byte input",
+    "the vi corpus matches: insert-mode typing, ESC to command mode, h/l/x/dd/i/a motions and edits, / search with n repetition, yank/put (P/p), cw change with undo (u), the vi insert/command mode split",
+    "the history corpus matches: prev/next (C-p/C-n) recall, incremental search (C-r with the prefix-match semantics and the terminal bell on failure), and the S11/S12 transcripts",
+    "the readline layer matches: readline() reads lines, add_history/history_get/current_history/previous_history/next_history/where_history, history_search_prefix/history_search return codes, history_expand for !n/!!/^a^b, clear_history, history_base/history_length",
+    "the HistoryW direct API battery matches: every opcode's return code, event number and event string, the exact error taxonomy (_HE_FIRST_NOTFOUND/_HE_LAST_NOTFOUND/_HE_END_REACHED/_HE_START_REACHED/_HE_CURR_INVALID/_HE_NOT_FOUND/_HE_BAD_PARAM/_HE_SIZE_NEGATIVE), setsize trimming, unique-mode dedup, H_DEL renumbering",
+    "the el_get/el_set battery matches: EL_EDITOR/EL_TERMINAL/EL_EDITMODE/EL_SAFEREAD/EL_SIGNAL/EL_UNBUFFERED/EL_WORDCHARS values, EL_GETTC for co/li/am/ce/bl and the unknown-capability error, the unknown-editor (EL_EDITOR junk) and unknown-terminal (EL_TERMINAL nosuchterm) error paths",
+    "the line ops match: el_insertstr/el_deletestr/el_deletestr1/el_replacestr/el_cursor return codes and the resulting buffer/cursor/last offsets, including the empty-string insert/replace no-op semantics",
+    "the parse/source corpus matches: el_parse bind -e switches the editor, el_source applies bind and bind -s lines from an editrc, the bound keys take effect",
+    "the tokenizer corpus matches: tok_str over the quote/backslash/continuation/empty/whitespace taxonomy with the argc/argv split and tok_reset reuse",
+    "the NO_TTY corpus matches: el_init over a pipe reads lines without editing (EDIT_DISABLED), returns the line with its length, and NULL+0 at EOF",
+    "stderr is empty and the exit status is 0 for every run on both sides",
+]
+timeout_secs = 300
+nondeterminism_policy = "all inputs are fixed byte constants; TERM is pinned (xterm for 28 sessions, dumb for S19); the pty winsize is pinned at 80x24; the initial termios is pinned (cfmakeraw, VMIN=1/VTIME=0) and the parent waits for the child's readiness byte so the input lands under the exact termios libedit's t_ex applies; the transcript is captured from the pty master and printed escaped, so no byte depends on pid, pointer, timing or wall clock"
+security_classification = "the editor surface (el_gets/el_set/el_source/el_parse/tok_str/history) is the input-facing attack surface of the interactive tools (nslookup/dig -i/delv -i read from it); the parser must reject rather than crash on malformed editrc and tokenizer input, and both implementations must produce byte-identical transcripts for identical input sequences"
+references = [
+    "libedit 20260512-3.1 (NetBSD editline; pinned archive sha256 432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0)",
+    "forensics/oracle/probes/probe-libedit.c",
+    "bind9-rs-tools/src/bin/libedit-probe.rs",
+    "bind9-rs-tools/src/compat/libedit/{mod.rs,keys.rs}",
+    "addendum §29 (libedit), §64 (Phase 9), §38 (C probe courts)",
+]

@@ -83,5 +83,12 @@ path = "src/bin/lmdb-probe.rs"
 name = "protobuf-c-probe"
 path = "src/bin/protobuf-c-probe.rs"
 
+# libedit-probe: forensic diagnostic for the LE-0001 court (mirrors
+# forensics/oracle/probes/probe-libedit.c byte-for-byte); not a BIND-compat
+# tool.
+[[bin]]
+name = "libedit-probe"
+path = "src/bin/libedit-probe.rs"
+
 [lints]
 workspace = true

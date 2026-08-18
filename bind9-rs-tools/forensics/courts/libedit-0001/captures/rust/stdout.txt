@@ -1,0 +1,405 @@
+=== S01 plain (69 bytes) ===
+p> hello world\r\n
+LINE: hello world\r\n
+ (12)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S02 backspace (68 bytes) ===
+p> abc\rESC[6GESC[K\rp> aESC[Kz\r\n
+LINE: az\r\n
+ (3)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S03 killline (92 bytes) ===
+p> hello world\r\n
+LINE: hello world\r\n
+ (12)\r\n
+p> \rp> \r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S04 killu-yank (81 bytes) ===
+p> abcdef\r\n
+LINE: abcdef\r\n
+ (7)\r\n
+p> \rp> \r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S05 mid-insert (81 bytes) ===
+p> abcdef\r\n
+LINE: abcdef\r\n
+ (7)\r\n
+p> gh\r\n
+LINE: gh\r\n
+ (3)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S06 transpose (70 bytes) ===
+p> ab\r\n
+LINE: ab\r\n
+ (3)\r\n
+p> BEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S07 killword (94 bytes) ===
+p> one two three\r\n
+LINE: one two three\r\n
+ (14)\r\n
+p> BELBEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S08 word-motion (95 bytes) ===
+p> one two three\r\n
+LINE: one two three\r\n
+ (14)\r\n
+p> BELBELBEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S09 case (100 bytes) ===
+p> hello world\r\n
+LINE: hello world\r\n
+ (12)\r\n
+p> \rp> \rp> \rp> \r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S10 ctrl-d (54 bytes) ===
+p> abcBELBEL\r\n
+LINE: abc\r\n
+ (4)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S11 history (136 bytes) ===
+p> one\r\n
+LINE: one\r\n
+ (4)\r\n
+p> two\r\n
+LINE: two\r\n
+ (4)\r\n
+p> three\r\n
+LINE: three\r\n
+ (6)\r\n
+p> \rp> BEL\rp> BELBEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S12 hist-search (123 bytes) ===
+p> hello one\r\n
+LINE: hello one\r\n
+ (10)\r\n
+p> hello two\r\n
+LINE: hello two\r\n
+ (10)\r\n
+p> BEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S13 arrows (93 bytes) ===
+p> ab\r\n
+LINE: ab\r\n
+ (3)\r\n
+p> BELBELc\r\n
+LINE: c\r\n
+ (2)\r\n
+p> BEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S14 kill-ring (83 bytes) ===
+p> abc def\r\n
+LINE: abc def\r\n
+ (8)\r\n
+p> \rp> \r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S15 vi (95 bytes) ===
+p> hello world\r\n
+LINE: hello world\r\n
+ (12)\r\n
+p> BELBELBELXX\r\n
+LINE: XX\r\n
+ (3)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S16 vi-search (132 bytes) ===
+p> hello\r\n
+LINE: hello\r\n
+ (6)\r\n
+p> world\r\n
+LINE: world\r\n
+ (6)\r\n
+p> \r\r\n
+/\r/e\r/el\r/ell\rESC[KESC[Ap> BELBEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S17 rprompt (238 bytes) ===
+p>                                                                           <<ESC[4G\rp> h\rp> hi\r\n
+LINE: hi\r\n
+ (3)\r\n
+p>                                                                           <<ESC[4G\rp> q\rp> qu\rESC[6Gi\rESC[7Gt\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S18 prompt-esc (46 bytes) ===
+axy\r\n
+LINE: xy\r\n
+ (3)\r\n
+aquit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S19 dumb (92 bytes) ===
+p> hello world\r\n
+LINE: hello world\r\n
+ (12)\r\n
+p> BELBEL!\r\n
+LINE: !\r\n
+ (2)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S20 utf8 (65 bytes) ===
+p> hllo wrld\r\n
+LINE: hllo wrld\r\n
+ (10)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S21 noedit (44 bytes) ===
+p> LINE: raw line\r (9)\r\n
+p> LINE: quit\r (5)\r\n
+
+=== S22 longline (249 bytes) ===
+p> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa BSaaaaaaaaaaaaa\r\n
+LINE: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\r\n
+ (91)\r\n
+p> BEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S23 clearscreen (81 bytes) ===
+p> abc\r\n
+LINE: abc\r\n
+ (4)\r\n
+p> ESC[HESC[2Jp> \r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S24 quoted-insert (76 bytes) ===
+p> ab\r\n
+LINE: ab\r\n
+ (3)\r\n
+p> ^[cd\r\n
+LINE: ESCcd\r\n
+ (4)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S25 empty-prompt (46 bytes) ===
+abc\r\n
+LINE: abc\r\n
+ (4)\r\n
+quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S26 vi-yank-put (84 bytes) ===
+p> one two\r\n
+LINE: one two\r\n
+ (8)\r\n
+p> BELBELBELBELBEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S27 vi-undo (84 bytes) ===
+p> abc def\r\n
+LINE: abc def\r\n
+ (8)\r\n
+p> BELBELBELBELBEL\r\n
+LINE: \r\n
+ (1)\r\n
+p> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S28 ed-command (101 bytes) ===
+p> abc\r\n
+LINE: abc\r\n
+ (4)\r\n
+p> \r\r\n
+: \r: e\r: ec\r: ech\rESC[6Go\rESC[8G\rESC[8Gh\rESC[9Gi\r\n
+BELp> quit\r\n
+LINE: quit\r\n
+ (5)\r\n
+
+=== S29 readline (381 bytes) ===
+> rl1=alpha\r point=0 end=0\r\n
+> rl2=beta\r point=0 end=0\r\n
+history_length=2 history_base=1\r\n
+where_history=2\r\n
+history_get(1)=alpha\r\n
+history_get(2)=beta\r\n
+current=(null)\r\n
+previous=beta where=1\r\n
+previous=alpha where=0\r\n
+next=beta where=1\r\n
+search_prefix(al)=0\r\n
+search(bet)=0\r\n
+expand(!1) -> r=1 out=alpha\r\n
+expand(!!) -> r=1 out=beta\r\n
+expand(^a^A) -> r=-1 out=\r\n
+after clear: length=0 where=0\r\n
+
+=== D01 history API ===
+getsize -> 0 num=0 str=OK
+setsize(5) -> 0 num=0 str=OK
+enter alpha -> 1 num=1 str=alpha
+enter beta -> 1 num=2 str=beta
+enter gamma -> 1 num=3 str=gamma
+add 2 -> 0 num=3 str=gamma2
+after enter x3 + add: size=3 first=3:gamma2 | 2:beta | 1:alpha
+append -> 0 num=3 str=gamma2!?
+after append: size=3 first=3:gamma2!? | 2:beta | 1:alpha
+prev -> 0 num=2 str=beta
+prev -> 0 num=3 str=gamma2!?
+prev -> -1 num=7 str=no previous event
+prev -> -1 num=7 str=no previous event
+prev -> -1 num=7 str=no previous event
+next -> 0 num=2 str=beta
+curr -> 0 num=2 str=beta
+first -> 0 num=3 str=gamma2!?
+last -> 0 num=1 str=alpha
+set(2) -> 0 num=0 str=OK
+curr -> 0 num=2 str=beta
+prev_str(b) -> 0 num=2 str=beta
+next_str(g) -> 0 num=3 str=gamma2!?
+prev_event(1) -> -1 num=9 str=event not found
+next_event(3) -> 0 num=3 str=gamma2!?
+del(2) -> 0 num=2 str=beta
+after del: size=2 first=3:gamma2!? | 1:alpha
+clear -> 0
+after clear: size=0 first=ERR(3 f)
+setsize(-1) -> -1 num=15 str=bad parameters
+setunique(1) -> 0
+enter dup -> 1 num=1
+enter dup -> 0 num=0
+getunique -> 0 num=1
+after unique: size=1 first=1:dup
+=== D02 el_get battery ===
+editor=terminal=xterm
+signal=0
+editmode=1
+saferead=0
+unbuffered=0
+wordchars=gettc co=80
+gettc li=24
+gettc am=yes
+gettc ce=[K
+gettc bl=
+gettc nosuch=ERR
+=== D03 el_set errors ===
+editor junk -> -1
+editor emacs -> 0
+editor=terminal nosuchterm -> -1
+editmode 0 -> 0
+editmode=0
+editmode 1 -> 0
+saferead 1 -> 0
+saferead=256
+=== D04 line ops ===
+insertstr hello -> 0
+line buf=<hello> cur=5 last=5
+insertstr ' world' -> 0
+line buf=<hello world> cur=11 last=11
+deletestr(6): buf=<hello> cur=5 last=5
+cursor(-1) -> 4
+deletestr1(1,3) -> 2
+line buf=<hlolo> cur=4 last=3
+replacestr -> 0
+line buf=<replaced> cur=4 last=8
+insertstr '' -> -1
+replacestr '' -> -1
+=== D05 parse + source ===
+el_parse bind -e -> 0
+editor=el_source -> 0
+=== D06 tokenizer ===
+tok_str(one two three) -> r=0 argc=3: [one] [two] [three]
+tok_str(  spaced   out  ) -> r=0 argc=2: [spaced] [out]
+tok_str(a 'quoted string' here) -> r=0 argc=3: [a] [quoted string] [here]
+tok_str(pre"mid"post) -> r=0 argc=1: [premidpost]
+tok_str(back\slash and \'quote\') -> r=0 argc=3: [backslash] [and] ['quote']
+tok_str(unterminated 'quote) -> r=1 argc=3: [unterminated] [(null)] [uotete']
+tok_str(under"double) -> r=2 argc=3: [underdoubled] [(null)] [uotete']
+tok_str() -> r=0 argc=0:
+tok_str(tab	here) -> r=0 argc=2: [tab] [here]
+tok_str(a\
+continuation) -> r=0 argc=1: [acontinuation]
+tok_str(x''y) -> r=0 argc=1: [xy]
+tok_str(M-a b) -> r=0 argc=2: [M-a] [b]
+=== D07 NO_TTY ===
+gets1=line one
+(9)
+gets2=line two
+(9)
+gets3=(nil)(0)
