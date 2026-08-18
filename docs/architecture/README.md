@@ -25,13 +25,20 @@ bind9-rs-core/
                   pointer rule), compare (right-to-left from root),
                   rdatacompare (case-insensitive bytewise), countlabels
   wire.rs         hex helpers
-  rdata/          Rdata enum + A/AAAA/NS/CNAME/PTR/SOA/MX/SRV/MINFO/RP/
-                  TXT/unknown, canonical forms, \# generic path
-  message/        Header, Question, Message parse/render, Compressor
-                  (BIND 9.20 dns_compress semantics)
-  edns/           OPT with ext-rcode/version/DO/Z packing
-  presentation/   isc_lex-faithful lexer (raw tokens; consumers resolve
-                  escapes)
+  rdata/          Rdata enum + A/AAAA/CH-A/NS/PTR/DNAME/SOA/MX/SRV/MINFO/RP/
+                  TXT/SPF/RRSIG/SIG/NSEC3/TSIG/TKEY/OPT/unknown, canonical
+                  forms, \# generic path, fromtext/towire/totext
+  message/        Header, Question, Message parse/render with per-section
+                  rrset merging (min-TTL, singletons, class rules), rcode
+                  ext-merge, TSIG/SIG(0)/TKEY placement, RRSIG covers,
+                  best-effort recovery, Compressor (BIND 9.20 dns_compress
+                  semantics, CASE/LARGE/disabled flags)
+  edns/           OPT with ext-rcode/version/DO/Z packing and option
+                  validation (OPTERR)
+  presentation/   isc_lex-faithful tokenizer: LexToken/LexOptions mirroring
+                  isc_lex_gettoken (comments, paren/multiline, qstrings,
+                  numbers, escapes, CRLF, specials), the master-token view
+                  used by the rdata layer, and escape resolution
 
 bind9-rs-tools/
   dig/            CLI parsing (FULLCHECK prefix semantics), output rendering

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "court_id": "CORE-NAME-COMPARE-0001",
+  "court_id": "ISC-LEX-0001",
   "git_commit": "15a7ccc94bd6360bd45b84092b43152ee0e87b13",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
   "cargo_lock_sha256": "2f270b04ebed4a7bc8b08e40d116165cfcaed70825d960088f4b490705480b4f",
@@ -8,12 +8,12 @@
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
   "completed_at": "2026-08-18T12:07:10Z",
   "input_hashes": {
-    "pairs.txt": "7886bcee5c80bed073fc4254b7113cc3e65e5c0278cae7c0c5f8ba0b33a05020"
+    "cases.txt": "7260da5d6f2145cff4b5d0f29c666ba0d7bb1dcc0f943cf326295c92f7e12a09"
   },
   "residual_ids": [],
   "invariants_passed": [
-    "compare order, namereln, common-label count, subdomain, equality and rdatacompare must match byte-for-byte"
+    "the full token stream (STRING/QSTRING/NUMBER/SPECIAL/EOL/EOF, raw token bytes incl. NULs and escaped delimiters, MASTER-token rejection, and the error taxonomy with result texts) must match byte-for-byte"
   ],
-  "captures_sha256": "25c36318f162ad8705a87991d583d2a92da52561776a6e822a8d8cf04e91ecce",
-  "repro_command": "bind9-court run CORE-NAME-COMPARE-0001"
+  "captures_sha256": "59ca3d887ab2c06e5ceadabe95c17dfcea695704d29fe67ffbebf5eef63ca578",
+  "repro_command": "bind9-court run ISC-LEX-0001"
 }

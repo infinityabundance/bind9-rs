@@ -14,18 +14,18 @@ form via `bind9-api-coverage regen` (per-function detail lives in
 
 | Surface | Status | Evidence |
 |---|---|---|
-| DNS name text parsing (`dns_name_fromtext`) | PARTIAL | CORE-NAME-TEXT-0001 (0 residuals) |
-| DNS name text rendering (`dns_name_totext`) | PARTIAL | CORE-NAME-TEXT-0001 |
-| DNS name wire parsing (`dns_name_fromwire`) | PARTIAL | CORE-NAME-WIRE-0001 |
-| DNS name comparison (`dns_name_compare`) | PARTIAL | archaeology of `dns_name_fullcompare`; court pending |
-| DNS name canonical comparison (`dns_name_rdatacompare`) | PARTIAL | archaeology; court pending |
-| DNS name compression (`dns_compress_*`) | PARTIAL | archaeology of 9.20 `compress.c`; RENDER-COMPRESS court pending |
-| DNS message parse (`dns_message_parse`) | PARTIAL | archaeology of `getsection`; WIRE-MESSAGE court pending |
-| DNS message render (`dns_message_render`) | PARTIAL | archaeology of `dns_name_towire`; court pending |
-| RDATA framework (A/AAAA/NS/CNAME/SOA/MX/TXT/SRV/unknown/...) | PARTIAL | unit tests; court pending |
-| EDNS OPT | PARTIAL | unit tests; court pending |
-| RCODE/class/type tables | PARTIAL | archaeology of `rcode.c`; court pending |
-| Masterfile lexer (`isc_lex` semantics) | PARTIAL | archaeology of `lex.c`/`rdata.c`; court pending |
+| DNS name text parsing (`dns_name_fromtext`) | PROVEN | CORE-NAME-TEXT-0001 (0 residuals; fromtext/totext/towire against the root origin, escape forms, byte-exact) |
+| DNS name text rendering (`dns_name_totext`) | PROVEN | CORE-NAME-TEXT-0001 |
+| DNS name wire parsing (`dns_name_fromwire`) | PROVEN | CORE-NAME-WIRE-0001 (0 residuals; labels, compression pointers, bounds, error codes) |
+| DNS name comparison (`dns_name_compare`) | PROVEN | CORE-NAME-COMPARE-0001 (0 residuals; fullcompare order, namereln, common labels, subdomain, equality) |
+| DNS name canonical comparison (`dns_name_rdatacompare`) | PROVEN | CORE-NAME-COMPARE-0001 |
+| DNS name compression (`dns_compress_*`) | PROVEN | RENDER-COMPRESS-0001..0005 (0 residuals; default/disabled/case/large 1024-slot/RFC 3597-not-permitted, byte-exact) |
+| DNS message parse (`dns_message_parse`) | PROVEN | WIRE-MESSAGE-0001 (0 residuals; header, question semantics, section merging and class rules, compression incl. pointers into the header, OPT placement and option validation, TSIG/SIG(0)/TKEY placement, RRSIG covers, NSEC3 owners, update meta classes, truncation, parse→render→reparse) |
+| DNS message render (`dns_message_render`) | PROVEN | WIRE-MESSAGE-0001 |
+| RDATA framework (A/AAAA/NS/CNAME/PTR/SOA/MX/TXT/SRV/MINFO/RP + RFC 3597 unknown) | PROVEN | WIRE-RDATA-0001 (0 residuals; fromtext/totext/towire/digest/fromwire, error taxonomy, byte-exact) |
+| EDNS OPT | PROVEN | WIRE-MESSAGE-0001 (OPT placement, ext-rcode/version/DO/Z packing, option validation incl. OPTERR) |
+| RCODE/class/type tables | PROVEN | TABLES-0001 (0 residuals; rcode/tsigrcode/rdatatype/rdataclass totext+fromtext, ismeta/issingleton/isknown, RESERVED11..15 TOTEXTONLY and KEYDATA asymmetries) |
+| Masterfile lexer (`isc_lex` semantics) | PROVEN | ISC-LEX-0001 (0 residuals; gettoken + getmastertoken, DNSMASTERFILE comments, paren/multiline, quoted strings, numbers incl. overflow, escapes, CRLF, NUL specials, byte-exact) |
 | dig CLI + output | PARTIAL | archaeology of `dig.c`/`dighost.c`/`masterdump.c`; CLI-DIG-0001..0003 (0 residuals) |
 | libcap text grammar (`cap_from_text`/`cap_to_text`) | PROVEN | CAP-PROBE-0001 (0 residuals; byte-identical to C oracle) |
 | libcap external format (`cap_copy_ext`/`cap_copy_int`) | PROVEN | CAP-PROBE-0001 |
