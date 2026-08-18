@@ -57,7 +57,8 @@ impl Class {
     /// Text mnemonic exactly as BIND's `dns_class_totext` renders it.
     ///
     /// Unknown classes render as `CLASS<num>` — the same form BIND's
-    /// `dns_class_totext` produces for out-of-range classes.  Court
+    /// `dns_class_totext` produces for out-of-range classes; class 0 is
+    /// `RESERVED0` (BIND `dns_rdataclass_reserved0`).  Court
     /// `PRESENTATION-CLASS-UNKNOWN` covers this against the oracle.
     #[must_use]
     pub fn to_text(self) -> String {
@@ -67,30 +68,51 @@ impl Class {
             Class::Hs => "HS".to_string(),
             Class::None => "NONE".to_string(),
             Class::Any => "ANY".to_string(),
+            Class::Unknown(0) => "RESERVED0".to_string(),
             Class::Unknown(n) => format!("CLASS{n}"),
         }
     }
 
     /// Parse a class mnemonic the way `dns_class_fromtext` does:
-    /// case-insensitive mnemonics; numeric `CLASS<num>` forms accepted.
+    /// case-insensitive mnemonics (CH/CHAOS, HS/HESIOD, IN, NONE, ANY,
+    /// RESERVED0); numeric `CLASS<num>` forms follow BIND's `strtoul`
+    /// semantics (a leading `+` is accepted); anything else is
+    /// `DNS_R_UNKNOWN`.
     pub fn from_text(s: &str) -> Result<Self> {
-        let upper = s.to_ascii_uppercase();
-        match upper.as_str() {
-            "IN" => Ok(Class::In),
-            "CH" => Ok(Class::Ch),
-            "HS" => Ok(Class::Hs),
-            "NONE" => Ok(Class::None),
-            "ANY" => Ok(Class::Any),
+        let lower = s.to_ascii_lowercase();
+        match lower.as_str() {
+            "in" => Ok(Class::In),
+            "ch" | "chaos" => Ok(Class::Ch),
+            "hs" | "hesiod" => Ok(Class::Hs),
+            "none" => Ok(Class::None),
+            "any" => Ok(Class::Any),
+            "reserved0" => Ok(Class::Unknown(0)),
             _ => {
-                if let Some(num) = upper.strip_prefix("CLASS") {
-                    let n: u16 = num.parse().map_err(|_| Error::BadData)?;
-                    Ok(Class::from_u16(n))
-                } else {
-                    Err(Error::BadData)
+                if let Some(num) = lower.strip_prefix("class") {
+                    // BIND: `source->length > 5 && < 5 + sizeof("65000")`
+                    // (lengths 6..=10) then strtoul; the value must be
+                    // <= 0xffff.
+                    if (6..=10).contains(&s.len()) {
+                        if let Some(n) = strtoul_u16(num) {
+                            return Ok(Class::from_u16(n));
+                        }
+                    }
                 }
+                Err(Error::UnknownClassType)
             }
         }
     }
+}
+
+/// BIND's `strtoul(s, 10)` acceptance for small unsigned values: optional
+/// leading `+`, digits only, no trailing junk, <= 0xffff.
+fn strtoul_u16(s: &str) -> Option<u16> {
+    let digits = s.strip_prefix('+').unwrap_or(s);
+    if digits.is_empty() || !digits.bytes().all(|b| b.is_ascii_digit()) {
+        return None;
+    }
+    let n: u32 = digits.parse().ok()?;
+    u16::try_from(n).ok()
 }
 
 #[cfg(test)]

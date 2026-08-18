@@ -204,9 +204,9 @@ fn query_once(
     // The query message (dighost.c setup_lookup: RD is suppressed for
     // AXFR/IXFR; AD/AA/RA/TC/Z flags come from the lookup flags).
     let build_query = |id: u16| -> Result<Message, String> {
-        let msg = Message {
+        let msg = Message::build(
             id,
-            flags: header::Flags {
+            header::Flags {
                 qr: false,
                 opcode: 0,
                 aa: parsed.aaonly,
@@ -217,17 +217,17 @@ fn query_once(
                 ad: parsed.adflag,
                 cd: parsed.cdflag,
             },
-            header_rcode: 0,
-            question: Some(Question {
+            0,
+            Some(Question {
                 qname: qname.clone(),
                 qtype,
                 qclass,
             }),
-            answer: Vec::new(),
-            authority: Vec::new(),
-            additional: Vec::new(),
-            opt: edns_opt(parsed),
-        };
+            Vec::new(),
+            Vec::new(),
+            Vec::new(),
+            edns_opt(parsed),
+        );
         Ok(msg)
     };
 

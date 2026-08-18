@@ -1,0 +1,20 @@
+schema_version = 1
+court_id = "TABLES-0001"
+question = "rcode/tsigrcode/rdatatype/rdataclass tables: dns_rcode_totext/fromtext, dns_tsigrcode_totext/fromtext, dns_rdatatype_totext/fromtext with the ismeta/issingleton/isknown predicates, and dns_rdataclass_totext/fromtext"
+subsystem = "dns/tables"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "totext and fromtext result lines (mnemonics, RESERVED11..15 TOTEXTONLY asymmetry, KEYDATA/type-0 name asymmetry, numeric forms with strtoul semantics, error texts) must match byte-for-byte",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/rcode.c RCODENAMES/ERCODENAMES/TSIGRCODENAMES, dns_mnemonic_fromtext/totext, maybe_numeric, dns_rdataclass_fromtext/totext (9.20.26)",
+    "lib/dns/rdata.c dns_rdatatype_fromtext/totext/isknown, dns_rdatatype_ismeta/issingleton",
+    "lib/dns/code.h RDATATYPE_TOTEXT_SW / RDATATYPE_ATTRIBUTE_SW",
+    "lib/isc/parseint.c isc_parse_uint32",
+    "spec §17, §79",
+]

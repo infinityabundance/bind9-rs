@@ -18,13 +18,24 @@ fn hex_nibble(c: u8) -> Option<u8> {
     }
 }
 
-/// Uppercase hex, exactly like BIND's `isc_hex_totext` ("0123456789ABCDEF").
-fn to_hex_upper(data: &[u8]) -> String {
+/// Uppercase hex like BIND's `isc_hex_totext`: `wordlength` characters per
+/// word separated by `wordbreak` (the break fires when the *next* word
+/// would reach `wordlength`, so a 58 threshold yields 56-character words);
+/// `wordlength < 2` clamps to 2.  An empty `wordbreak` makes the splits
+/// invisible.
+pub(crate) fn to_hex_upper(data: &[u8], wordlength: usize, wordbreak: &str) -> String {
     const DIGITS: &[u8; 16] = b"0123456789ABCDEF";
+    let wl = wordlength.max(2);
     let mut out = String::with_capacity(data.len() * 2);
-    for &b in data {
+    let mut loops = 0usize;
+    for (i, &b) in data.iter().enumerate() {
         out.push(DIGITS[(b >> 4) as usize] as char);
         out.push(DIGITS[(b & 0x0f) as usize] as char);
+        loops += 1;
+        if i + 1 < data.len() && (loops + 1) * 2 >= wl {
+            loops = 0;
+            out.push_str(wordbreak);
+        }
     }
     out
 }
@@ -107,10 +118,10 @@ impl UnknownRdata {
                 let t = lex.next()?;
                 let raw = match &t {
                     Token::String(_) | Token::Quoted(_) => resolve_escapes(t.bytes())?,
+                    // BIND's loop also stops on the eol token; the
+                    // masterfile view skips EOLs internally, so EOF is the
+                    // only terminal here.
                     Token::Eof => break 'tokens,
-                    // BIND's loop also stops on eol tokens; no distinct
-                    // Eol variant exists in this lexer.
-                    _ => break 'tokens,
                 };
                 for &c in &raw {
                     let Some(v) = hex_nibble(c) else {
@@ -146,14 +157,19 @@ impl UnknownRdata {
     }
 
     /// Render as `\# <len> <hex>` (BIND `unknown_totext`): the hex digits
-    /// are UPPERCASE (`isc_hex_totext`), and the trailing space appears
-    /// only when there is data.
+    /// are UPPERCASE (`isc_hex_totext`), split into 56-character words with
+    /// a single space (the `tctx->width - 2` threshold), and the trailing
+    /// space appears only when there is data.
     #[must_use]
     pub fn to_text(&self) -> String {
         if self.data.is_empty() {
             return format!("\\# {}", self.data.len());
         }
-        format!("\\# {} {}", self.data.len(), to_hex_upper(&self.data))
+        format!(
+            "\\# {} {}",
+            self.data.len(),
+            to_hex_upper(&self.data, 58, " ")
+        )
     }
 }
 

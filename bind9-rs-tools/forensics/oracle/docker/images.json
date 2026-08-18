@@ -1,52 +1,80 @@
 {
-  "generated_at": "2026-08-16T06:03:22Z",
+  "generated_at": "2026-08-18T12:04:43Z",
   "images": {
     "oracle-bind-9.20.26": {
-      "built_at": "2026-08-16T00:56:14Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-bind-9.20.26/Dockerfile",
-      "image_id": "178b80eef338",
+      "image_id": "c8cbc0126981",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-bind-9.20.26-idn": {
+      "built_at": "2026-08-18T12:04:43Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-bind-9.20.26-idn/Dockerfile",
+      "image_id": "0ee73815d837",
       "repo_digest": "<none>",
       "tag": "latest"
     },
     "oracle-fstrm-0.6.1": {
-      "built_at": "2026-08-16T00:56:14Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-fstrm-0.6.1/Dockerfile",
-      "image_id": "4f2a8c895b28",
+      "image_id": "6fcb6becc56d",
       "repo_digest": "<none>",
       "tag": "latest"
     },
     "oracle-json-c-0.19": {
-      "built_at": "2026-08-16T00:56:14Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-json-c-0.19/Dockerfile",
-      "image_id": "6f8a24447d6c",
+      "image_id": "4dc6c9fc7cb4",
       "repo_digest": "<none>",
       "tag": "latest"
     },
     "oracle-libcap-2.78": {
-      "built_at": "2026-08-16T00:56:14Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libcap-2.78/Dockerfile",
-      "image_id": "76543c29fa98",
+      "image_id": "5d919f9b07d0",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-libedit-20260512-3.1": {
+      "built_at": "2026-08-18T12:04:43Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libedit-20260512-3.1/Dockerfile",
+      "image_id": "cfa6447ffe33",
       "repo_digest": "<none>",
       "tag": "latest"
     },
     "oracle-libidn2-2.3.8": {
-      "built_at": "2026-08-16T08:20:00Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libidn2-2.3.8/Dockerfile",
-      "image_id": "29e974369687",
+      "image_id": "fad8a7285d3a",
       "repo_digest": "<none>",
       "tag": "latest"
     },
     "oracle-libmaxminddb-1.13.3": {
-      "built_at": "2026-08-16T00:56:14Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libmaxminddb-1.13.3/Dockerfile",
-      "image_id": "1ec5a62807e1",
+      "image_id": "0e73f31cb0b9",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-lmdb-0.9.35": {
+      "built_at": "2026-08-18T12:04:43Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-lmdb-0.9.35/Dockerfile",
+      "image_id": "1745c664e412",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
+    "oracle-protobuf-c-1.5.2": {
+      "built_at": "2026-08-18T12:04:43Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-protobuf-c-1.5.2/Dockerfile",
+      "image_id": "5f25e970b3ed",
       "repo_digest": "<none>",
       "tag": "latest"
     },
     "oracle-zlib-1.3.1": {
-      "built_at": "2026-08-16T04:58:00Z",
+      "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-zlib-1.3.1/Dockerfile",
-      "image_id": "0cfef4c0be0f",
+      "image_id": "22428c6d71e2",
       "repo_digest": "<none>",
       "tag": "latest"
     }

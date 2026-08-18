@@ -59,6 +59,14 @@ path = "src/bin/probe-compress.rs"
 name = "probe-rdata"
 path = "src/bin/probe-rdata.rs"
 
+[[bin]]
+name = "probe-message"
+path = "src/bin/probe-message.rs"
+
+[[bin]]
+name = "probe-lex"
+path = "src/bin/probe-lex.rs"
+
 [features]
 default = ["court-runner"]
 court-runner = []

@@ -85,6 +85,9 @@ pub enum RrType {
     Zonemd,
     Svcb,
     Https,
+    Dsync,
+    Hhit,
+    Brid,
     Spf,
     Uinfo,
     Uid,
@@ -102,6 +105,8 @@ pub enum RrType {
     Avc,
     Doa,
     Amtrelay,
+    Resinfo,
+    Wallet,
     Ta,
     Dlv,
     Tsig,
@@ -110,6 +115,7 @@ pub enum RrType {
     Mailb,
     Maila,
     Any,
+    Keydata,
     /// Any other type, preserved numerically.
     Unknown(u16),
 }
@@ -185,6 +191,9 @@ impl RrType {
             Zonemd => 63,
             Svcb => 64,
             Https => 65,
+            Dsync => 66,
+            Hhit => 67,
+            Brid => 68,
             Spf => 99,
             Uinfo => 100,
             Uid => 101,
@@ -202,6 +211,8 @@ impl RrType {
             Avc => 258,
             Doa => 259,
             Amtrelay => 260,
+            Resinfo => 261,
+            Wallet => 262,
             Ta => 32768,
             Dlv => 32769,
             Tsig => 250,
@@ -210,6 +221,7 @@ impl RrType {
             Mailb => 253,
             Maila => 254,
             Any => 255,
+            Keydata => 65533,
             Unknown(n) => n,
         }
     }
@@ -284,6 +296,9 @@ impl RrType {
             63 => Zonemd,
             64 => Svcb,
             65 => Https,
+            66 => Dsync,
+            67 => Hhit,
+            68 => Brid,
             99 => Spf,
             100 => Uinfo,
             101 => Uid,
@@ -307,8 +322,11 @@ impl RrType {
             258 => Avc,
             259 => Doa,
             260 => Amtrelay,
+            261 => Resinfo,
+            262 => Wallet,
             32768 => Ta,
             32769 => Dlv,
+            65533 => Keydata,
             n => Unknown(n),
         }
     }
@@ -318,7 +336,10 @@ impl RrType {
     pub fn to_text(self) -> String {
         use RrType::*;
         let s = match self {
-            Reserved0 => "RESERVED0",
+            // Type 0 is outside BIND's `dns_rdatatype_totext` switch (the
+            // fromtext side still accepts "RESERVED0"), so the name renders
+            // as `TYPE0` (verified against the oracle).
+            Reserved0 => "TYPE0",
             A => "A",
             Ns => "NS",
             Md => "MD",
@@ -383,6 +404,9 @@ impl RrType {
             Zonemd => "ZONEMD",
             Svcb => "SVCB",
             Https => "HTTPS",
+            Dsync => "DSYNC",
+            Hhit => "HHIT",
+            Brid => "BRID",
             Spf => "SPF",
             Uinfo => "UINFO",
             Uid => "UID",
@@ -400,6 +424,8 @@ impl RrType {
             Avc => "AVC",
             Doa => "DOA",
             Amtrelay => "AMTRELAY",
+            Resinfo => "RESINFO",
+            Wallet => "WALLET",
             Ta => "TA",
             Dlv => "DLV",
             Tsig => "TSIG",
@@ -408,6 +434,10 @@ impl RrType {
             Mailb => "MAILB",
             Maila => "MAILA",
             Any => "ANY",
+            // BIND's `dns_rdatatype_totext` has no mnemonic for KEYDATA
+            // (only its rdata totext exists); the type name renders as
+            // `TYPE65533` (verified against the oracle).
+            Keydata => "TYPE65533",
             Unknown(_) => return format!("TYPE{}", self.to_u16()),
         };
         s.to_string()
@@ -419,7 +449,6 @@ impl RrType {
         let upper = s.to_ascii_uppercase();
         use RrType::*;
         let t = match upper.as_str() {
-            "RESERVED0" => Reserved0,
             "A" => A,
             "NS" => Ns,
             "MD" => Md,
@@ -484,6 +513,9 @@ impl RrType {
             "ZONEMD" => Zonemd,
             "SVCB" => Svcb,
             "HTTPS" => Https,
+            "DSYNC" => Dsync,
+            "HHIT" => Hhit,
+            "BRID" => Brid,
             "SPF" => Spf,
             "UINFO" => Uinfo,
             "UID" => Uid,
@@ -501,6 +533,8 @@ impl RrType {
             "AVC" => Avc,
             "DOA" => Doa,
             "AMTRELAY" => Amtrelay,
+            "RESINFO" => Resinfo,
+            "WALLET" => Wallet,
             "TA" => Ta,
             "DLV" => Dlv,
             "TSIG" => Tsig,
@@ -509,12 +543,24 @@ impl RrType {
             "MAILB" => Mailb,
             "MAILA" => Maila,
             "ANY" => Any,
+            "KEYDATA" => Keydata,
             _ => {
                 if let Some(num) = upper.strip_prefix("TYPE") {
-                    let n: u16 = num.parse().map_err(|_| Error::BadData)?;
-                    return Ok(RrType::from_u16(n));
+                    // BIND `dns_rdatatype_fromtext`: the TYPE<n> form is
+                    // `strtoul` (a leading `+` accepted), lengths 5..=9,
+                    // value <= 0xffff.
+                    if (5..=9).contains(&s.len()) {
+                        let digits = num.strip_prefix('+').unwrap_or(num);
+                        if !digits.is_empty() && digits.bytes().all(|b| b.is_ascii_digit()) {
+                            if let Ok(n) = digits.parse::<u32>() {
+                                if let Ok(n) = u16::try_from(n) {
+                                    return Ok(RrType::from_u16(n));
+                                }
+                            }
+                        }
+                    }
                 }
-                return Err(Error::BadData);
+                return Err(Error::UnknownClassType);
             }
         };
         Ok(t)
@@ -522,21 +568,41 @@ impl RrType {
 
     /// True if this is a meta-type: not a real RR type allowed in zone data.
     /// BIND: `dns_rdatatype_ismeta`.  OPT, TKEY, TSIG, IXFR, AXFR, MAILB,
-    /// MAILA, ANY are meta; URI and CAA are NOT (they are real types that
-    /// happen to have codes ≥ 256).
+    /// MAILA, ANY are meta; types 128..=255 without a concrete
+    /// implementation carry the `UNKNOWN | META` attributes; URI and CAA are
+    /// NOT (they are real types that happen to have codes ≥ 256).
     #[must_use]
     pub const fn is_meta(self) -> bool {
+        match self {
+            RrType::Opt
+            | RrType::Tkey
+            | RrType::Tsig
+            | RrType::Ixfr
+            | RrType::Axfr
+            | RrType::Mailb
+            | RrType::Maila
+            | RrType::Any => true,
+            RrType::Unknown(n) => n >= 128 && n <= 255,
+            _ => false,
+        }
+    }
+
+    /// BIND `dns_rdatatype_issingleton`: the type carries
+    /// `DNS_RDATATYPEATTR_SINGLETON` (CNAME, SOA, DNAME, OPT, RESINFO).
+    #[must_use]
+    pub const fn is_singleton(self) -> bool {
         matches!(
             self,
-            RrType::Opt
-                | RrType::Tkey
-                | RrType::Tsig
-                | RrType::Ixfr
-                | RrType::Axfr
-                | RrType::Mailb
-                | RrType::Maila
-                | RrType::Any
+            RrType::Cname | RrType::Soa | RrType::Dname | RrType::Opt | RrType::Resinfo
         )
+    }
+
+    /// BIND `dns_rdatatype_isknown`: the type has no `UNKNOWN` attribute,
+    /// i.e. BIND has a concrete implementation (type 0 is unknown — its
+    /// attributes are `UNKNOWN`; the type-name totext renders `TYPE0`).
+    #[must_use]
+    pub const fn is_known(self) -> bool {
+        !matches!(self, RrType::Unknown(_) | RrType::Reserved0)
     }
 
     /// True if RDATA of this type may contain domain names that the message
@@ -573,6 +639,7 @@ impl RrType {
                 | L64
                 | Lp
                 | Amtrelay
+                | Dsync
                 | Tsig
         )
     }

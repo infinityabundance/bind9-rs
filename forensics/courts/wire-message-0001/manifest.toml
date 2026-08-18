@@ -1,0 +1,25 @@
+schema_version = 1
+court_id = "WIRE-MESSAGE-0001"
+question = "dns_message_parse / dns_message_render equivalence: header fields, question semantics, per-section record merging and class rules, name compression (incl. pointers into the header), EDNS OPT placement and option validation, TSIG/SIG(0)/TKEY placement, RRSIG covers, NSEC3 owner names, dynamic-update meta classes, truncation, and the parse -> render -> reparse round-trip"
+subsystem = "dns/message"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "the probe transcript (parse result text, header, per-rdataset section lines, OPT fields and options, TSIG/SIG0 names, rendered hex, reparse result and structure) must match byte-for-byte",
+    "parse runs with DNS_MESSAGEPARSE_BESTEFFORT; hard errors abort the transcript exactly where BIND aborts",
+    "render mirrors renderbegin + the four rendersections + renderend, including the class-IN additional-section pass order and the TC+OPT reset",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/dns/message.c dns_message_parse/getquestions/getsection/renderbegin/rendersection/renderend (9.20.26)",
+    "lib/dns/rdata.c dns_rdata_fromwire/totext (class-gated dispatch, unknown_totext)",
+    "lib/dns/rdata/generic/opt_41.c (EDNS option validation), rrsig_46.c, sig_24.c, nsec3_50.c, tkey_249.c",
+    "lib/dns/rdata/any_255/tsig_250.c, lib/dns/rdata/ch_3/a_1.c (CH-class A)",
+    "lib/dns/compress.c dns_decompress_setpermitted (ALWAYS context), lib/dns/rcode.c dns_tsigrcode_totext",
+    "lib/isc/base32.c isc_base32hexnp_decoderegion, lib/isc/utf8.c isc_utf8_valid",
+    "RFC 1035 §4.1, RFC 2136, RFC 2535, RFC 2845, RFC 2930, RFC 3597, RFC 4034, RFC 5155, RFC 6891, RFC 8945",
+    "spec §17, §79",
+]

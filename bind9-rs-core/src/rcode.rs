@@ -4,7 +4,9 @@
 //! (RFC 6891 §6.1.3): the EDNS extended rcode is the high 8 bits, the header
 //! rcode the low 4.  BIND's observable mapping (`dns_rcode_totext`) is:
 //! known mnemonics for 0..23, `RCODE<num>` for unknown values.  The BADCOOKIE
-//! (23) case is documented in the cookie module's courts.
+//! BADCOOKIE (23) case is documented in the cookie module's courts.
+
+use crate::error::{Error, Result};
 
 /// Full 12-bit rcode: header's 4 bits combined with the EDNS extended bits.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord)]
@@ -135,6 +137,7 @@ impl Rcode {
             Rcode::Dsotypeni => "RESERVED11".to_string(),
             Rcode::BadVers => "BADVERS".to_string(),
             Rcode::BadCookie => "BADCOOKIE".to_string(),
+            Rcode::Unknown(12..=15) => format!("RESERVED{}", self.to_u16()),
             Rcode::BadKey
             | Rcode::BadTime
             | Rcode::BadMode
@@ -142,6 +145,109 @@ impl Rcode {
             | Rcode::BadAlg
             | Rcode::BadTrunc => self.to_u16().to_string(),
             Rcode::Unknown(n) => n.to_string(),
+        }
+    }
+
+    /// BIND `dns_rcode_fromtext` (lib/dns/rcode.c `dns_mnemonic_fromtext`
+    /// over `rcodes[]`): a decimal number (first char a digit, `strtoul`
+    /// base 10, <= 0xffff) or a case-insensitive mnemonic; the
+    /// TOTEXTONLY entries RESERVED11..15 are not parseable.  Errors:
+    /// `ISC_R_RANGE` for numeric overflow, `DNS_R_UNKNOWN` for anything
+    /// else.
+    pub fn from_text(s: &str) -> Result<Self> {
+        match maybe_numeric(s, 0xffff)? {
+            Some(n) => Ok(Rcode::from_u16(n)),
+            None => {
+                let upper = s.to_ascii_uppercase();
+                let r = match upper.as_str() {
+                    "NOERROR" => Rcode::NoError,
+                    "FORMERR" => Rcode::FormErr,
+                    "SERVFAIL" => Rcode::ServFail,
+                    "NXDOMAIN" => Rcode::NxDomain,
+                    "NOTIMP" => Rcode::NotImp,
+                    "REFUSED" => Rcode::Refused,
+                    "YXDOMAIN" => Rcode::YxDomain,
+                    "YXRRSET" => Rcode::YxRrset,
+                    "NXRRSET" => Rcode::NxRrset,
+                    "NOTAUTH" => Rcode::NotAuth,
+                    "NOTZONE" => Rcode::NotZone,
+                    "BADVERS" => Rcode::BadVers,
+                    "BADCOOKIE" => Rcode::BadCookie,
+                    _ => return Err(Error::UnknownClassType),
+                };
+                Ok(r)
+            }
+        }
+    }
+}
+
+/// BIND `maybe_numeric` (lib/dns/rcode.c): `None` when the token is not
+/// numeric (the caller falls through to the table lookup — a non-digit
+/// first character, junk after the digits, or an over-long token);
+/// `Err(ISC_R_RANGE)` on numeric overflow; `Some(n)` for a parsed value
+/// <= `max`.
+fn maybe_numeric(s: &str, max: u32) -> Result<Option<u16>> {
+    let b = s.as_bytes();
+    if b.is_empty() || !b[0].is_ascii_digit() || s.len() > 11 {
+        return Ok(None);
+    }
+    if !b.iter().all(|c| c.is_ascii_digit()) {
+        return Ok(None);
+    }
+    let n: u32 = s.parse().map_err(|_| Error::Range)?;
+    if n > max {
+        return Err(Error::Range);
+    }
+    Ok(Some(u16::try_from(n).unwrap_or(0)))
+}
+
+/// The BIND TSIG/TKEY error table (`tsigrcodes[]` = RCODENAMES +
+/// TSIGRCODENAMES): 0-15 as the message-rcode table, 16..22 as
+/// BADSIG/BADKEY/BADTIME/BADMODE/BADNAME/BADALG/BADTRUNC, else decimal.
+#[must_use]
+pub fn tsigrcode_to_text(n: u16) -> String {
+    match n {
+        0..=15 => Rcode::from_u16(n).to_text(),
+        16 => "BADSIG".to_string(),
+        17 => "BADKEY".to_string(),
+        18 => "BADTIME".to_string(),
+        19 => "BADMODE".to_string(),
+        20 => "BADNAME".to_string(),
+        21 => "BADALG".to_string(),
+        22 => "BADTRUNC".to_string(),
+        _ => n.to_string(),
+    }
+}
+
+/// BIND `dns_tsigrcode_fromtext`: like [`Rcode::from_text`] but the
+/// TSIGRCODENAMES entries are parseable too.
+pub fn tsigrcode_from_text(s: &str) -> Result<u16> {
+    match maybe_numeric(s, 0xffff)? {
+        Some(n) => Ok(n),
+        None => {
+            let upper = s.to_ascii_uppercase();
+            let r = match upper.as_str() {
+                "NOERROR" => 0,
+                "FORMERR" => 1,
+                "SERVFAIL" => 2,
+                "NXDOMAIN" => 3,
+                "NOTIMP" => 4,
+                "REFUSED" => 5,
+                "YXDOMAIN" => 6,
+                "YXRRSET" => 7,
+                "NXRRSET" => 8,
+                "NOTAUTH" => 9,
+                "NOTZONE" => 10,
+                "BADSIG" => 16,
+                "BADKEY" => 17,
+                "BADTIME" => 18,
+                "BADMODE" => 19,
+                "BADNAME" => 20,
+                "BADALG" => 21,
+                "BADTRUNC" => 22,
+                _ => return Err(Error::UnknownClassType),
+            };
+            Ok(r)
         }
     }
 }
@@ -171,11 +277,38 @@ mod tests {
     fn text_forms() {
         assert_eq!(Rcode::NxDomain.to_text(), "NXDOMAIN");
         assert_eq!(Rcode::BadCookie.to_text(), "BADCOOKIE");
-        // BIND renders unknown rcodes as the bare number (dig adds '?').
-        assert_eq!(Rcode::Unknown(12).to_text(), "12");
-        // 11-15 render as RESERVED11..15, not DSOTYPENI.
+        // BIND renders 11-15 as RESERVED11..15 and unknown rcodes as the
+        // bare number (dig adds '?').
         assert_eq!(Rcode::Dsotypeni.to_text(), "RESERVED11");
+        assert_eq!(Rcode::Unknown(12).to_text(), "RESERVED12");
+        assert_eq!(Rcode::Unknown(15).to_text(), "RESERVED15");
+        assert_eq!(Rcode::Unknown(24).to_text(), "24");
         // TSIG-only rcodes (17-22) are not in the message-rcode table.
         assert_eq!(Rcode::BadKey.to_text(), "17");
+        // RESERVED11 is TOTEXTONLY: not parseable; numbers and mnemonics
+        // are.
+        assert!(Rcode::from_text("RESERVED11").is_err());
+        assert_eq!(Rcode::from_text("17").unwrap().to_u16(), 17);
+        assert_eq!(Rcode::from_text("badvers").unwrap(), Rcode::BadVers);
+        assert_eq!(Rcode::from_text("012").unwrap().to_u16(), 12);
+        assert_eq!(Rcode::from_text("65536"), Err(crate::error::Error::Range));
+        assert_eq!(
+            Rcode::from_text("BADSIG"),
+            Err(crate::error::Error::UnknownClassType)
+        );
+    }
+
+    #[test]
+    fn tsigrcode_table() {
+        assert_eq!(tsigrcode_to_text(16), "BADSIG");
+        assert_eq!(tsigrcode_to_text(17), "BADKEY");
+        assert_eq!(tsigrcode_to_text(22), "BADTRUNC");
+        assert_eq!(tsigrcode_to_text(15), "RESERVED15");
+        assert_eq!(tsigrcode_to_text(23), "23");
+        assert_eq!(tsigrcode_from_text("badsig").unwrap(), 16);
+        assert_eq!(
+            tsigrcode_from_text("BADVERS"),
+            Err(crate::error::Error::UnknownClassType)
+        );
     }
 }

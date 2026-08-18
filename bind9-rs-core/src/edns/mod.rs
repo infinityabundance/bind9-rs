@@ -47,6 +47,173 @@ pub mod option_code {
     pub const EDE: u16 = 15;
 }
 
+/// BIND's per-option length/shape validation (`fromwire_opt` in
+/// lib/dns/rdata/generic/opt_41.c).  Returns `DNS_R_OPTERR` on violation.
+pub(crate) fn validate_opt_option(code: u16, data: &[u8]) -> Result<()> {
+    let len = data.len();
+    match code {
+        option_code::LLQ => {
+            if len != 18 {
+                return Err(Error::Opterr);
+            }
+        }
+        option_code::UL => {
+            if len != 4 && len != 8 {
+                return Err(Error::Opterr);
+            }
+        }
+        option_code::ECS => {
+            if len < 4 {
+                return Err(Error::Opterr);
+            }
+            let family = u16::from_be_bytes([data[0], data[1]]);
+            let addrlen = data[2];
+            let scope = data[3];
+            match family {
+                0 => {
+                    if addrlen != 0 || scope != 0 {
+                        return Err(Error::Opterr);
+                    }
+                }
+                1 => {
+                    if addrlen > 32 || scope > 32 {
+                        return Err(Error::Opterr);
+                    }
+                }
+                2 => {
+                    if addrlen > 128 || scope > 128 {
+                        return Err(Error::Opterr);
+                    }
+                }
+                _ => return Err(Error::Opterr),
+            }
+            let addrbytes = (usize::from(addrlen) + 7) / 8;
+            if addrbytes + 4 != len {
+                return Err(Error::Opterr);
+            }
+            if addrbytes != 0 && addrlen % 8 != 0 {
+                let bits = !0u8 << (8 - addrlen % 8);
+                if bits & data[4 + addrbytes - 1] != data[4 + addrbytes - 1] {
+                    return Err(Error::Opterr);
+                }
+            }
+        }
+        option_code::EXPIRE => {
+            if len != 0 && len != 4 {
+                return Err(Error::Opterr);
+            }
+        }
+        option_code::COOKIE => {
+            if len != 8 && !(16..=40).contains(&len) {
+                return Err(Error::Opterr);
+            }
+        }
+        option_code::KEY_TAG => {
+            if len == 0 || len % 2 != 0 {
+                return Err(Error::Opterr);
+            }
+        }
+        option_code::EDE => {
+            if len < 2 {
+                return Err(Error::Opterr);
+            }
+            // BIND `isc_utf8_bom`: the UTF-8 byte order mark is not
+            // permitted (RFC 5198).
+            if len >= 5 && data[2..5] == [0xef, 0xbb, 0xbf] {
+                return Err(Error::Opterr);
+            }
+            if !isc_utf8_valid(&data[2..]) {
+                return Err(Error::Opterr);
+            }
+        }
+        16 | 17 => {
+            // DNS_OPT_CLIENT_TAG / DNS_OPT_SERVER_TAG
+            if len != 2 {
+                return Err(Error::Opterr);
+            }
+        }
+        _ => {}
+    }
+    Ok(())
+}
+
+/// Validate a whole OPT RDATA region (the option framing plus each
+/// option's payload) — BIND `fromwire_opt`.  A truncated option header or
+/// an option length overrunning the region is `ISC_R_UNEXPECTEDEND`;
+/// shape violations of known options are `DNS_R_OPTERR` ("malformed OPT
+/// option").  The wire bytes are preserved verbatim.
+pub(crate) fn validate_opt_data(rdata: &[u8]) -> Result<()> {
+    let mut pos = 0usize;
+    while pos < rdata.len() {
+        if pos + 4 > rdata.len() {
+            return Err(Error::UnexpectedEnd);
+        }
+        let code = u16::from_be_bytes([rdata[pos], rdata[pos + 1]]);
+        let len = u16::from_be_bytes([rdata[pos + 2], rdata[pos + 3]]) as usize;
+        pos += 4;
+        if pos + len > rdata.len() {
+            return Err(Error::UnexpectedEnd);
+        }
+        validate_opt_option(code, &rdata[pos..pos + len])?;
+        pos += len;
+    }
+    Ok(())
+}
+
+/// BIND `isc_utf8_valid` (lib/isc/utf8.c, 9.20.26) reproduced exactly:
+/// RFC 3629 ranges with overlong and > U+10FFFF rejections — but *without*
+/// a surrogate check (a 3-byte U+D800..U+DFFF encoding is accepted, which
+/// `std::str::from_utf8` would reject).
+fn isc_utf8_valid(buf: &[u8]) -> bool {
+    let mut i = 0usize;
+    while i < buf.len() {
+        if buf[i] <= 0x7f {
+            i += 1;
+            continue;
+        }
+        if i + 1 < buf.len() && buf[i] & 0xe0 == 0xc0 && buf[i + 1] & 0xc0 == 0x80 {
+            let w = ((u16::from(buf[i]) & 0x1f) << 6) | u16::from(buf[i + 1] & 0x3f);
+            if w < 0x80 {
+                return false;
+            }
+            i += 2;
+            continue;
+        }
+        if i + 2 < buf.len()
+            && buf[i] & 0xf0 == 0xe0
+            && buf[i + 1] & 0xc0 == 0x80
+            && buf[i + 2] & 0xc0 == 0x80
+        {
+            let w = ((u32::from(buf[i]) & 0x0f) << 12)
+                | ((u32::from(buf[i + 1]) & 0x3f) << 6)
+                | u32::from(buf[i + 2] & 0x3f);
+            if w < 0x0800 {
+                return false;
+            }
+            i += 3;
+            continue;
+        }
+        if i + 3 < buf.len()
+            && buf[i] & 0xf8 == 0xf0
+            && buf[i + 1] & 0xc0 == 0x80
+            && buf[i + 2] & 0xc0 == 0x80
+            && buf[i + 3] & 0xc0 == 0x80
+        {
+            let w = ((u32::from(buf[i]) & 0x07) << 18)
+                | ((u32::from(buf[i + 1]) & 0x3f) << 12)
+                | ((u32::from(buf[i + 2]) & 0x3f) << 6)
+                | u32::from(buf[i + 3] & 0x3f);
+            if !(0x10000..=0x10ffff).contains(&w) {
+                return false;
+            }
+            i += 4;
+            continue;
+        }
+        return false;
+    }
+    true
+}
+
 /// The OPT pseudo-record.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Opt {
@@ -137,6 +304,15 @@ impl Opt {
         &self.options
     }
 
+    /// The raw OPT TTL field (ext-rcode | version | DO | Z).
+    #[must_use]
+    pub fn raw_ttl(&self) -> u32 {
+        ((u32::from(self.ext_rcode)) << 24)
+            | ((u32::from(self.version)) << 16)
+            | (u32::from(self.do_flag) << 15)
+            | (self.z as u32 & 0x7fff)
+    }
+
     /// The full 12-bit rcode given the header's low 4 bits.
     #[must_use]
     pub fn full_rcode(&self, header_low: u8) -> Rcode {
@@ -144,25 +320,24 @@ impl Opt {
     }
 
     /// Parse from the wire form: class (udp size), TTL (ext/version/DO/Z)
-    /// and the raw option bytes.
+    /// and the raw option bytes.  Option payloads are validated per BIND's
+    /// `fromwire_opt` (lib/dns/rdata/generic/opt_41.c): known option codes
+    /// must satisfy their length/shape rules or the parse fails with
+    /// `DNS_R_OPTERR` ("malformed OPT option"); unknown codes pass through
+    /// opaquely.
     pub fn from_wire(class: u16, ttl: u32, rdata: &[u8]) -> Result<Opt> {
         let ext_rcode = ((ttl >> 24) & 0xff) as u8;
         let version = ((ttl >> 16) & 0xff) as u8;
         let do_flag = ttl & 0x8000 != 0;
         let z = (ttl & 0x7fff) as u16;
 
+        validate_opt_data(rdata)?;
         let mut options = Vec::new();
         let mut pos = 0usize;
         while pos < rdata.len() {
-            if pos + 4 > rdata.len() {
-                return Err(Error::FormErr);
-            }
             let code = u16::from_be_bytes([rdata[pos], rdata[pos + 1]]);
             let len = u16::from_be_bytes([rdata[pos + 2], rdata[pos + 3]]) as usize;
             pos += 4;
-            if pos + len > rdata.len() {
-                return Err(Error::FormErr);
-            }
             options.push(EdnsOption {
                 code,
                 data: rdata[pos..pos + len].to_vec(),
@@ -181,14 +356,21 @@ impl Opt {
     }
 
     /// Render into the message (owner = root, type = OPT).
-    pub fn render(&self, out: &mut Vec<u8>, _comp: Option<&mut Compressor>) -> Result<()> {
+    pub fn render(&self, out: &mut Vec<u8>, comp: Option<&mut Compressor>) -> Result<()> {
+        self.render_with_ttl(out, self.raw_ttl(), comp)
+    }
+
+    /// Render with an explicit TTL — the message renderer folds the merged
+    /// extended rcode into the TTL before writing (BIND `dns_message_renderend`).
+    pub fn render_with_ttl(
+        &self,
+        out: &mut Vec<u8>,
+        ttl: u32,
+        _comp: Option<&mut Compressor>,
+    ) -> Result<()> {
         out.push(0); // root name
         out.extend_from_slice(&RrType::Opt.to_u16().to_be_bytes());
         out.extend_from_slice(&self.udp_size.to_be_bytes());
-        let ttl: u32 = ((self.ext_rcode as u32) << 24)
-            | ((self.version as u32) << 16)
-            | (u32::from(self.do_flag) << 15)
-            | (self.z as u32 & 0x7fff);
         out.extend_from_slice(&ttl.to_be_bytes());
         let len_pos = out.len();
         out.extend_from_slice(&0u16.to_be_bytes());
@@ -252,5 +434,16 @@ mod tests {
         assert_eq!(o.options.len(), 1);
         assert_eq!(o.options[0].code, 0xfeed);
         assert_eq!(o.options[0].data, vec![0xab, 0xcd]);
+    }
+
+    #[test]
+    fn bind_utf8_accepts_surrogates() {
+        // Oracle-pinned (WIRE-MESSAGE): BIND's isc_utf8_valid accepts a
+        // 3-byte surrogate encoding, unlike std::str::from_utf8.
+        assert!(isc_utf8_valid(&[0xed, 0xa0, 0x80]));
+        assert!(isc_utf8_valid(b"hi"));
+        assert!(!isc_utf8_valid(&[0xff]));
+        assert!(!isc_utf8_valid(&[0xc0, 0x80])); // overlong
+        assert!(!isc_utf8_valid(&[0xf4, 0x90, 0x80, 0x80])); // > U+10FFFF
     }
 }

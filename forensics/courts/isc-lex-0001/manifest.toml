@@ -1,0 +1,20 @@
+schema_version = 1
+court_id = "ISC-LEX-0001"
+question = "masterfile lexer: isc_lex_gettoken and isc_lex_getmastertoken(STRING, eol=true) semantics with the masterfile specials (NUL, (, ), \") and ISC_LEXCOMMENT_DNSMASTERFILE comments"
+subsystem = "dns/presentation"
+oracle_versions = ["9.20.26"]
+harness = "probe"
+normalization = []
+invariants = [
+    "the full token stream (STRING/QSTRING/NUMBER/SPECIAL/EOL/EOF, raw token bytes incl. NULs and escaped delimiters, MASTER-token rejection, and the error taxonomy with result texts) must match byte-for-byte",
+]
+timeout_secs = 60
+nondeterminism_policy = "none"
+security_classification = "none"
+references = [
+    "lib/isc/lex.c isc_lex_gettoken (9.20.26): lexstate_start/crlf/string/number/eatline/qstring, the DNSMASTERFILE comment check before every state switch, IWSEOL suppression inside parens, pushback of delimiters, at_eof paren check, ISC_R_UNEXPECTEDEND for a trailing backslash",
+    "lib/isc/lex.c isc_lex_getmastertoken: EOL|EOF|DNSMULTILINE|ESCAPE options, token-type rejection as ISC_R_UNEXPECTEDTOKEN, eol/eof acceptance with eol=true",
+    "lib/isc/parseint.c isc_parse_uint32: base-10 overflow is ISC_R_RANGE",
+    "lib/isc/result.c result texts",
+    "spec §17, §79",
+]

@@ -762,6 +762,10 @@ mod tests {
     fn rcode_text_with_question_prefix() {
         assert_eq!(rcode_dig_text(Rcode::NoError), "NOERROR");
         assert_eq!(rcode_dig_text(Rcode::BadCookie), "BADCOOKIE");
-        assert_eq!(rcode_dig_text(Rcode::Unknown(12)), "?12");
+        // RESERVED11..15 are real table entries (TOTEXTONLY), so dig prints
+        // them without the numeric-rcode '?' prefix.
+        assert_eq!(rcode_dig_text(Rcode::Unknown(12)), "RESERVED12");
+        // Only genuinely numeric rcodes get the prefix.
+        assert_eq!(rcode_dig_text(Rcode::Unknown(24)), "?24");
     }
 }

@@ -1,0 +1,1867 @@
+PARSE success
+HEADER id=0x0000 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+RENDER 000000000000000000000000
+REPARSE success
+HEADER id=0x0000 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+RENDER 123400000000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+PARSE success
+HEADER id=0xbeef opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+RENDER beef00000000000000000000
+REPARSE success
+HEADER id=0xbeef opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+PARSE success
+HEADER id=0xffff opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+RENDER ffff00000000000000000000
+REPARSE success
+HEADER id=0xffff opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=0
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=1 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123408000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=1 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=2 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123410000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=2 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=3 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123418000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=3 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123420000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123428000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=6 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123430000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=6 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=7 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123438000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=7 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=8 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123440000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=8 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=9 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123448000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=9 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=10 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123450000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=10 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=11 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123458000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=11 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=12 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123460000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=12 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=13 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123468000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=13 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=14 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123470000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=14 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=15 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123478000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=15 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=1 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400010001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=1 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=2 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400020001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=2 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=3 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400030001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=3 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=4 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400040001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=4 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=5 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400050001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=5 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=6 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400060001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=6 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=7 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400070001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=7 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=8 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400080001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=8 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=9 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400090001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=9 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=10 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 1234000a0001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=10 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=11 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 1234000b0001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=11 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=12 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 1234000c0001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=12 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=13 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 1234000d0001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=13 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=14 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 1234000e0001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=14 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=15 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 1234000f0001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=15 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123480000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0400 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123404000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0400 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0200 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123402000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0200 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0100 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123401000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0100 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0080 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400800001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0080 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0040 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400400001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0040 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0020 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400200001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0020 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0010 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400100001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0010 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8400 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123484000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8400 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x86b0 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123486b00001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x86b0 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=1 rcode=0 flags=0x8ff0 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 12348ff00001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=1 rcode=0 flags=0x8ff0 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123481800001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION a.b.c.d.e.f.g.h.i.j.k.l.example.com. IN A
+RENDER 123400000001000000000000016101620163016401650166016701680169016a016b016c076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION a.b.c.d.e.f.g.h.i.j.k.l.example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION www.example.com. IN A
+RENDER 12340000000100000000000003777777076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION www.example.com. IN A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. IN A
+RENDER 123400000002000000000000076578616d706c6503636f6d0000010001c00c00010001
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. IN AAAA
+RENDER 123400000002000000000000076578616d706c6503636f6d0000010001c00c001c0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. IN AAAA
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. CH A
+RENDER 123400000002000000000000076578616d706c6503636f6d0000010001c00c00010003
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. CH A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION other.example.com. IN A
+RENDER 123400000002000000000000076578616d706c6503636f6d0000010001056f74686572c00c00010001
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=2 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION other.example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=3 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. IN AAAA
+QUESTION example.com. IN TXT
+RENDER 123400000003000000000000076578616d706c6503636f6d0000010001c00c001c0001c00c00100001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=3 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+QUESTION example.com. IN AAAA
+QUESTION example.com. IN TXT
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+RENDER 123420000001000000000000076578616d706c6503636f6d00000100fe
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. ANY A
+RENDER 123420000001000000000000076578616d706c6503636f6d00000100ff
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. ANY A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+RENDER 123428000001000000000000076578616d706c6503636f6d00000100fe
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. ANY A
+RENDER 123428000001000000000000076578616d706c6503636f6d00000100ff
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. ANY A
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CH A
+RENDER 123428000001000000000000076578616d706c6503636f6d0000010003
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CH A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+RENDER 123420000001000000000000076578616d706c6503636f6d00000100fe
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=4 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. RESERVED0 A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. RESERVED0 A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS2 A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010002
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS2 A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CH A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010003
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CH A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. HS A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010004
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. HS A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS5 A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010005
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS5 A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+RENDER 123400000001000000000000076578616d706c6503636f6d00000100fe
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. NONE A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. ANY A
+RENDER 123400000001000000000000076578616d706c6503636f6d00000100ff
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. ANY A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS1000 A
+RENDER 123400000001000000000000076578616d706c6503636f6d00000103e8
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS1000 A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS65535 A
+RENDER 123400000001000000000000076578616d706c6503636f6d000001ffff
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. CLASS65535 A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE0
+RENDER 123400000001000000000000076578616d706c6503636f6d0000000001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE0
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN AAAA
+RENDER 123400000001000000000000076578616d706c6503636f6d00001c0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN AAAA
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN IXFR
+RENDER 123400000001000000000000076578616d706c6503636f6d0000fb0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN IXFR
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN AXFR
+RENDER 123400000001000000000000076578616d706c6503636f6d0000fc0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN AXFR
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN MAILB
+RENDER 123400000001000000000000076578616d706c6503636f6d0000fd0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN MAILB
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN MAILA
+RENDER 123400000001000000000000076578616d706c6503636f6d0000fe0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN MAILA
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN ANY
+RENDER 123400000001000000000000076578616d706c6503636f6d0000ff0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN ANY
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE128
+RENDER 123400000001000000000000076578616d706c6503636f6d0000800001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE128
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TKEY
+RENDER 123400000001000000000000076578616d706c6503636f6d0000f90001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TKEY
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE65533
+RENDER 123400000001000000000000076578616d706c6503636f6d00fffd0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE65533
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE65000
+RENDER 123400000001000000000000076578616d706c6503636f6d00fde80001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN TYPE65000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION a. IN TYPE49152
+RENDER 123400000001000000000000016100c0000001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION a. IN TYPE49152
+PARSE bad compression pointer
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE bad label type
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION . IN A
+RENDER 1234000000010000000000000000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION . IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN AAAA 2001:db8::
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c001c00010000012c001020010db8000000000000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN AAAA 2001:db8::
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN NS ns1.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000200010000012c0006036e7331c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN NS ns1.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME www.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000500010000012c000603777777c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME www.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN PTR www.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000c00010000012c000603777777c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN PTR www.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN DNAME www.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002700010000012c001103777777076578616d706c6503636f6d00
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN DNAME www.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000600010000012c0027036e7331c00c0a686f73746d6173746572c00c0000000100000002000000030000000400000005
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MX 10 mail.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000f00010000012c0009000a046d61696cc00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MX 10 mail.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN TXT "hello" "world"
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c001000010000012c000c0568656c6c6f05776f726c64
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN TXT "hello" "world"
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SRV 1 2 3 target.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002100010000012c001a00010002000306746172676574076578616d706c6503636f6d00
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SRV 1 2 3 target.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MINFO a.example.com. b.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000e00010000012c00080161c00c0162c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MINFO a.example.com. b.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN RP a.example.com. b.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c001100010000012c001e0161076578616d706c6503636f6d000162076578616d706c6503636f6d00
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN RP a.example.com. b.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN TYPE65000 \# 4 DEADBEEF
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00cfde800010000012c0004deadbeef
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN TYPE65000 \# 4 DEADBEEF
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MD www.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000300010000012c000603777777c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MD www.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MF www.example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000400010000012c000603777777c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MF www.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN NS example.com.
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000200010000012c0002c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN NS example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER example.com. ttl=300 IN A 192.0.2.2
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201c00c000100010000012c0004c0000202
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER example.com. ttl=300 IN A 192.0.2.2
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION www.example.com. IN A
+ANSWER a.b.example.com. ttl=300 IN A 192.0.2.1
+ANSWER www.example.com. ttl=300 IN A 192.0.2.2
+RENDER 12348180000100020000000003777777076578616d706c6503636f6d000001000101610162c010000100010000012c0004c0000201c00c000100010000012c0004c0000202
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION www.example.com. IN A
+ANSWER a.b.example.com. ttl=300 IN A 192.0.2.1
+ANSWER www.example.com. ttl=300 IN A 192.0.2.2
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+PARSE bad label type
+PARSE bad label type
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=300 IN A 192.0.2.1
+RENDER 123481800001000100000000076578616d706c6503636f6d000001000100000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=300 IN A 192.0.2.1
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER a.example.com. ttl=300 IN A 192.0.2.1
+RENDER 123481800001000100000000076578616d706c6503636f6d00000100010161c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER a.example.com. ttl=300 IN A 192.0.2.1
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE bad label type
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 ANY A \# 4 C0000201
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000100ff0000012c0004c0000201
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 ANY A \# 4 C0000201
+PARSE bad label type
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=0 CLASS1232 OPT 
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002904d0000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=0 CLASS1232 OPT 
+PARSE bad compression pointer
+PARSE bad compression pointer
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN IXFR \# 0
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c00fb00010000012c0000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN IXFR \# 0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN AXFR \# 0
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c00fc00010000012c0000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN AXFR \# 0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MAILB \# 0
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c00fd00010000012c0000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MAILB \# 0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MAILA \# 0
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c00fe00010000012c0000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN MAILA \# 0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN ANY \# 0
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c00ff00010000012c0000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN ANY \# 0
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c000500010000012c00040178c00cc00c000500010000012c0002c029
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+ANSWER example.com. ttl=300 IN CNAME y.example.com.
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c000500010000012c00040178c00cc00c000500010000012c00040179c00c
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+ANSWER example.com. ttl=300 IN CNAME y.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME X.Example.Com.
+ANSWER example.com. ttl=300 IN CNAME x.example.com.
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c000500010000012c00040158c00cc00c000500010000012c0002c029
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN CNAME X.example.com.
+ANSWER example.com. ttl=300 IN CNAME X.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c000600010000012c0027036e7331c00c0a686f73746d6173746572c00c0000000100000002000000030000000400000005c00c000600010000012c0018c029c02f0000000100000002000000030000000400000005
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 9 9 9 9 9
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c000600010000012c0027036e7331c00c0a686f73746d6173746572c00c0000000100000002000000030000000400000005c00c000600010000012c0018c029c02f0000000900000009000000090000000900000009
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+ANSWER example.com. ttl=300 IN SOA ns1.example.com. hostmaster.example.com. 9 9 9 9 9
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN DNAME x.example.com.
+ANSWER example.com. ttl=300 IN DNAME y.example.com.
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c002700010000012c000f0178076578616d706c6503636f6d00c00c002700010000012c000f0179076578616d706c6503636f6d00
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN DNAME x.example.com.
+ANSWER example.com. ttl=300 IN DNAME y.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=3 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER example.com. ttl=300 IN AAAA 2001:db8::
+ANSWER example.com. ttl=300 IN TXT "abc"
+RENDER 123481800001000300000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201c00c001c00010000012c001020010db8000000000000000000000000c00c001000010000012c000403616263
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=3 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER example.com. ttl=300 IN AAAA 2001:db8::
+ANSWER example.com. ttl=300 IN TXT "abc"
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=3 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=100 IN A 192.0.2.1
+ANSWER example.com. ttl=100 IN A 192.0.2.2
+ANSWER example.com. ttl=100 IN A 192.0.2.3
+RENDER 123481800001000300000000076578616d706c6503636f6d0000010001c00c00010001000000640004c0000201c00c00010001000000640004c0000202c00c00010001000000640004c0000203
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=3 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=100 IN A 192.0.2.1
+ANSWER example.com. ttl=100 IN A 192.0.2.2
+ANSWER example.com. ttl=100 IN A 192.0.2.3
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=100 IN TXT "abc"
+ANSWER example.com. ttl=100 IN TXT "def"
+RENDER 123481800001000200000000076578616d706c6503636f6d0000010001c00c0010000100000064000403616263c00c0010000100000064000403646566
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=100 IN TXT "abc"
+ANSWER example.com. ttl=100 IN TXT "def"
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION Www.Example.Com. IN A
+ANSWER Www.Example.Com. ttl=100 IN A 192.0.2.1
+ANSWER Www.Example.Com. ttl=100 IN A 192.0.2.2
+RENDER 12348180000100020000000003577777074578616d706c6503436f6d0000010001c00c00010001000000640004c0000201c00c00010001000000640004c0000202
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=0 ar=0
+QUESTION Www.Example.Com. IN A
+ANSWER Www.Example.Com. ttl=100 IN A 192.0.2.1
+ANSWER Www.Example.Com. ttl=100 IN A 192.0.2.2
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=4
+QUESTION example.com. IN A
+ADDITIONAL example.com. ttl=300 IN TXT "abc"
+ADDITIONAL example.com. ttl=300 IN A 192.0.2.1
+ADDITIONAL example.com. ttl=300 IN RRSIG A 8 2 3600 19700101000140 19700101000140 1 example.com. AQ==
+ADDITIONAL example.com. ttl=300 IN NS ns1.example.com.
+RENDER 123481800001000000000004076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201c00c002e00010000012c00200001080200000e1000000064000000640001076578616d706c6503636f6d0001c00c001000010000012c000403616263c00c000200010000012c0006036e7331c00c
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=4
+QUESTION example.com. IN A
+ADDITIONAL example.com. ttl=300 IN A 192.0.2.1
+ADDITIONAL example.com. ttl=300 IN RRSIG A 8 2 3600 19700101000140 19700101000140 1 example.com. AQ==
+ADDITIONAL example.com. ttl=300 IN TXT "abc"
+ADDITIONAL example.com. ttl=300 IN NS ns1.example.com.
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+RENDER 123400000001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+RENDER 123400000001000100000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 1234000000000000000000010000291000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=0 extrcode=0 version=0 do=0 z=0x0000
+RENDER 1234000000000000000000010000290000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=0 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=65535 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123400000000000000000001000029ffff000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=65535 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=16 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=1 version=0 do=0 z=0x0000
+RENDER 1234000000000000000000010000291000010000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=16 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=1 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=288 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=18 version=0 do=0 z=0x0000
+RENDER 1234000000000000000000010000291000120000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=288 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=18 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=4080 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=255 version=0 do=0 z=0x0000
+RENDER 1234000000000000000000010000291000ff0000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=4080 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=255 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 1234000000000000000000010000291000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=1 do=0 z=0x0000
+RENDER 1234000000000000000000010000291000000100000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=1 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=255 do=0 z=0x0000
+RENDER 123400000000000000000001000029100000ff00000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=255 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=1 z=0x0000
+RENDER 1234000000000000000000010000291000000080000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=1 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x7fff
+RENDER 123400000000000000000001000029100000007fff0000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x7fff
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x4000
+RENDER 1234000000000000000000010000291000000040000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x4000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123481800001000000000001076578616d706c6503636f6d00000100010000291000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0280 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123402800001000000000001076578616d706c6503636f6d00000100010000291000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0280 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0280 qd=1 an=1 ns=0 ar=1
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123402800001000000000001076578616d706c6503636f6d00000100010000291000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0280 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=0 CLASS4096 OPT 
+RENDER 123481800001000100000000076578616d706c6503636f6d00000100010000291000000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=0 CLASS4096 OPT 
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY . ttl=0 CLASS4096 OPT 
+RENDER 123481800001000000010000076578616d706c6503636f6d00000100010000291000000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY . ttl=0 CLASS4096 OPT 
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL opt.example.com. ttl=0 CLASS4096 OPT 
+RENDER 123481800001000000000001076578616d706c6503636f6d0000010001036f7074c00c00291000000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL opt.example.com. ttl=0 CLASS4096 OPT 
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL www.example.com. ttl=0 CLASS4096 OPT 
+RENDER 123481800001000000000001076578616d706c6503636f6d000001000103777777c00c00291000000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL www.example.com. ttl=0 CLASS4096 OPT 
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 CLASS4096 OPT 
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123481800001000000000002076578616d706c6503636f6d000001000100002910000000000000000000291000000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 CLASS4096 OPT 
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 CLASS4096 OPT 
+OPT udpsize=1232 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123481800001000000000002076578616d706c6503636f6d0000010001000029100000000000000000002904d0000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 CLASS1232 OPT 
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 CLASS4096 OPT 10 8 AQEBAQEBAQE=
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123481800001000000000002076578616d706c6503636f6d0000010001000029100000000000000c000a000801010101010101010000291000000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 CLASS4096 OPT 
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101
+RENDER 123481800001000000000001076578616d706c6503636f6d0000010001000029100000000000000c000a00080101010101010101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=1:18:000000000000000000000000000000000000
+RENDER 123400000000000000000001000029100000000000001600010012000000000000000000000000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=1:18:000000000000000000000000000000000000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=2:4:00000000
+RENDER 12340000000000000000000100002910000000000000080002000400000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=2:4:00000000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=2:8:0000000000000000
+RENDER 123400000000000000000001000029100000000000000c000200080000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=2:8:0000000000000000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=3:4:6e736964
+RENDER 1234000000000000000000010000291000000000000008000300046e736964
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=3:4:6e736964
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=5:1:01
+RENDER 12340000000000000000000100002910000000000000050005000101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=5:1:01
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=6:1:01
+RENDER 12340000000000000000000100002910000000000000050006000101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=6:1:01
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=7:1:01
+RENDER 12340000000000000000000100002910000000000000050007000101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=7:1:01
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=8:7:00011800c00002
+RENDER 123400000000000000000001000029100000000000000b0008000700011800c00002
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=8:7:00011800c00002
+PARSE malformed OPT option
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=8:4:00000000
+RENDER 12340000000000000000000100002910000000000000080008000400000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=8:4:00000000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=9:0:
+RENDER 123400000000000000000001000029100000000000000400090000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=9:0:
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=9:4:00000001
+RENDER 12340000000000000000000100002910000000000000080009000400000001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=9:4:00000001
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101
+RENDER 123400000000000000000001000029100000000000000c000a00080101010101010101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:16:01010101010101010101010101010101
+RENDER 1234000000000000000000010000291000000000000014000a001001010101010101010101010101010101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:16:01010101010101010101010101010101
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:40:01010101010101010101010101010101010101010101010101010101010101010101010101010101
+RENDER 123400000000000000000001000029100000000000002c000a002801010101010101010101010101010101010101010101010101010101010101010101010101010101
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:40:01010101010101010101010101010101010101010101010101010101010101010101010101010101
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=11:0:
+RENDER 1234000000000000000000010000291000000000000004000b0000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=11:0:
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=11:2:0064
+RENDER 1234000000000000000000010000291000000000000006000b00020064
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=11:2:0064
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=12:16:00000000000000000000000000000000
+RENDER 1234000000000000000000010000291000000000000014000c001000000000000000000000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=12:16:00000000000000000000000000000000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=13:1:00
+RENDER 1234000000000000000000010000291000000000000005000d000100
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=13:1:00
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=14:4:00010002
+RENDER 1234000000000000000000010000291000000000000008000e000400010002
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=14:4:00010002
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:4:00036869
+RENDER 1234000000000000000000010000291000000000000008000f000400036869
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:4:00036869
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:6:00036869c3a9
+RENDER 123400000000000000000001000029100000000000000a000f000600036869c3a9
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:6:00036869c3a9
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=16:2:0001
+RENDER 1234000000000000000000010000291000000000000006001000020001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=16:2:0001
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=17:2:0001
+RENDER 1234000000000000000000010000291000000000000006001100020001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=17:2:0001
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=18:1:00
+RENDER 12340000000000000000000100002910000000000000050012000100
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=18:1:00
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=19:4:00000001
+RENDER 12340000000000000000000100002910000000000000080013000400000001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=19:4:00000001
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=65001:4:deadbeef
+RENDER 1234000000000000000000010000291000000000000008fde90004deadbeef
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=65001:4:deadbeef
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=65001:0:
+RENDER 1234000000000000000000010000291000000000000004fde90000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=65001:0:
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=0:0:
+RENDER 123400000000000000000001000029100000000000000400000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=0:0:
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101,8:7:00011800c00002,65001:1:ab
+RENDER 123400000000000000000001000029100000000000001c000a000801010101010101010008000700011800c00002fde90001ab
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=10:8:0101010101010101,8:7:00011800c00002,65001:1:ab
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=8:7:00011701c00002
+RENDER 123400000000000000000001000029100000000000000b0008000700011701c00002
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=8:7:00011701c00002
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:2:0003
+RENDER 1234000000000000000000010000291000000000000006000f00020003
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:2:0003
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:5:0003eda080
+RENDER 1234000000000000000000010000291000000000000009000f00050003eda080
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x0000 qd=0 an=0 ns=0 ar=1
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000 options=15:5:0003eda080
+PARSE malformed OPT option
+PARSE malformed OPT option
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+TSIG .
+RENDER 123481800001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=1
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+TSIG .
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 IN TSIG \# 29 0B686D61632D73686132353600030405060708012C00001234000000 00
+RENDER 123481800001000000000001076578616d706c6503636f6d00000100010000fa000100000000001d0b686d61632d73686132353600030405060708012c0000123400000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 IN TSIG \# 29 0B686D61632D73686132353600030405060708012C00001234000000 00
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=0 ANY TSIG hmac-sha256. 3315799033608 300 0 4660 NOERROR 0 
+RENDER 123481800001000100000000076578616d706c6503636f6d00000100010000fa00ff00000000001d0b686d61632d73686132353600030405060708012c0000123400000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=0 ANY TSIG hmac-sha256. 3315799033608 300 0 4660 NOERROR 0 
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY . ttl=0 ANY TSIG hmac-sha256. 3315799033608 300 0 4660 NOERROR 0 
+RENDER 123481800001000000010000076578616d706c6503636f6d00000100010000fa00ff00000000001d0b686d61632d73686132353600030405060708012c0000123400000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY . ttl=0 ANY TSIG hmac-sha256. 3315799033608 300 0 4660 NOERROR 0 
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+TSIG tsig.example.com.
+RENDER 123481800001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE unexpected end of input
+PARSE unexpected end of input
+PARSE extra input data
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+SIG0 .
+RENDER 123481800001000000000000076578616d706c6503636f6d0000010001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=0
+QUESTION example.com. IN A
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 ANY SIG 0 0 0 0 19700101000000 19700101000000 0 . ERERERERERE=
+ADDITIONAL example.com. ttl=300 IN A 192.0.2.1
+RENDER 123481800001000000000002076578616d706c6503636f6d000001000100001800ff00000000001b000000000000000000000000000000000000001111111111111111c00c000100010000012c0004c0000201
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=2
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 ANY SIG 0 0 0 0 19700101000000 19700101000000 0 . ERERERERERE=
+ADDITIONAL example.com. ttl=300 IN A 192.0.2.1
+PARSE unexpected end of input
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=0 ANY SIG 0 0 0 0 19700101000000 19700101000000 0 . ERERERERERE=
+RENDER 123481800001000100000000076578616d706c6503636f6d000001000100001800ff00000000001b000000000000000000000000000000000000001111111111111111
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER . ttl=0 ANY SIG 0 0 0 0 19700101000000 19700101000000 0 . ERERERERERE=
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 ANY SIG A 0 0 0 19700101000000 19700101000000 0 . ERERERERERE=
+RENDER 123481800001000000000001076578616d706c6503636f6d000001000100001800ff00000000001b000100000000000000000000000000000000001111111111111111
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL . ttl=0 ANY SIG A 0 0 0 19700101000000 19700101000000 0 . ERERERERERE=
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG A 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200001080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG A 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG NS 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200002080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG NS 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG SOA 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200006080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG SOA 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG OPT 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200029080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG OPT 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG TYPE200 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e10002000c8080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG TYPE200 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG IXFR 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e10002000fb080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG IXFR 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG TYPE0 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200000080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG TYPE0 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG TYPE65533 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e100020fffd080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG TYPE65533 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG A 8 5 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200001080500000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG A 8 5 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE FORMERR
+PARSE unexpected end of input
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG A 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c002e000100000e1000200001080200000e1000000064000000643039076578616d706c6503636f6d0001
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=3600 IN RRSIG A 8 2 3600 19700101000140 19700101000140 12345 example.com. AQ==
+PARSE unexpected end of input
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER abcdefghijklmnopqrstuv0123456789.example.com. ttl=3600 IN NSEC3 1 0 0 - 248H248H248H248H248H248H248H248H A NS
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001206162636465666768696a6b6c6d6e6f7071727374757630313233343536373839c00c0032000100000e10001d0100000000141111111111111111111111111111111111111111000160
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER abcdefghijklmnopqrstuv0123456789.example.com. ttl=3600 IN NSEC3 1 0 0 - 248H248H248H248H248H248H248H248H A NS
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE FORMERR
+PARSE FORMERR
+PARSE FORMERR
+PARSE FORMERR
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE bad owner name (check-names)
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+RENDER 123481800001000000000001076578616d706c6503636f6d0000010001c00c00f9000100000000001a086773732d747369670000000000000000000003000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+RENDER 123481800001000000010000076578616d706c6503636f6d0000010001c00c00f9000100000000001a086773732d747369670000000000000000000003000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+RENDER 123481800001000100000000076578616d706c6503636f6d0000010001c00c00f9000100000000001a086773732d747369670000000000000000000003000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN TKEY
+ADDITIONAL example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+RENDER 123481800001000000000001076578616d706c6503636f6d0000f90001c00c00f9000100000000001a086773732d747369670000000000000000000003000000000000
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN TKEY
+ADDITIONAL example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 0  0
+PARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 4 3q2+7w== 4 AQIDBA==
+RENDER 123481800001000000000001076578616d706c6503636f6d0000010001c00c00f90001000000000022086773732d74736967000000000000000000000300000004deadbeef000401020304
+REPARSE recoverable error occurred
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=0 ns=0 ar=1
+QUESTION example.com. IN A
+ADDITIONAL example.com. ttl=0 IN TKEY gss-tsig. 0 0 3 NOERROR 4 3q2+7w== 4 AQIDBA==
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+RENDER 123428000001000100000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+PARSE FORMERR
+PARSE FORMERR
+PARSE FORMERR
+PARSE FORMERR
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 NONE CNAME 
+RENDER 123428000001000100000000076578616d706c6503636f6d0000010001c00c000500fe0000012c0000
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 NONE CNAME 
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 NONE A 
+RENDER 123428000001000100000000076578616d706c6503636f6d0000010001c00c000100fe0000012c0000
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 NONE A 
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 ANY TXT 
+RENDER 123428000001000100000000076578616d706c6503636f6d0000010001c00c001000ff0000012c0000
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 ANY TXT 
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 NONE A 
+ANSWER example.com. ttl=300 NONE A 
+RENDER 123428000001000200000000076578616d706c6503636f6d0000010001c00c000100fe0000012c0000c00c000100fe0000012c0000
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=2 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 NONE A 
+ANSWER example.com. ttl=300 NONE A 
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY example.com. ttl=300 ANY A 
+RENDER 123428000001000000010000076578616d706c6503636f6d0000010001c00c000100ff0000012c0000
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY example.com. ttl=300 ANY A 
+PARSE FORMERR
+PARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY example.com. ttl=300 NONE A \# 4 C0000201
+RENDER 123428000001000000010000076578616d706c6503636f6d0000010001c00c000100fe0000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=5 rcode=0 flags=0x0800 qd=1 an=0 ns=1 ar=0
+QUESTION example.com. IN A
+AUTHORITY example.com. ttl=300 NONE A \# 4 C0000201
+PARSE unexpected end of input
+PARSE FORMERR
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=1 ar=2
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+AUTHORITY example.com. ttl=300 IN NS ns1.example.com.
+ADDITIONAL example.com. ttl=300 IN MX 10 mail.example.com.
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+RENDER 123481800001000100010002076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201c00c000200010000012c0006036e7331c00cc00c000f00010000012c0009000a046d61696cc00c0000291000000000000000
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=1 ar=2
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+AUTHORITY example.com. ttl=300 IN NS ns1.example.com.
+ADDITIONAL example.com. ttl=300 IN MX 10 mail.example.com.
+OPT udpsize=4096 extrcode=0 version=0 do=0 z=0x0000
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=1 ar=1
+QUESTION www.example.com. IN A
+ANSWER www.example.com. ttl=3600 IN CNAME www.example.com.
+ANSWER www.example.com. ttl=300 IN A 192.0.2.1
+AUTHORITY www.example.com. ttl=3600 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+TSIG .
+RENDER 12348180000100020001000003777777076578616d706c6503636f6d0000010001c00c0005000100000e100002c00cc00c000100010000012c0004c0000201c00c0006000100000e100027036e7331c0100a686f73746d6173746572c0100000000100000002000000030000000400000005
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=2 ns=1 ar=0
+QUESTION www.example.com. IN A
+ANSWER www.example.com. ttl=3600 IN CNAME www.example.com.
+ANSWER www.example.com. ttl=300 IN A 192.0.2.1
+AUTHORITY www.example.com. ttl=3600 IN SOA ns1.example.com. hostmaster.example.com. 1 2 3 4 5
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=4 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER example.com. ttl=300 IN A 192.0.2.2
+ANSWER example.com. ttl=300 IN A 192.0.2.3
+ANSWER example.com. ttl=300 IN A 192.0.2.4
+RENDER 123481800001000400000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c0000201c00c000100010000012c0004c0000202c00c000100010000012c0004c0000203c00c000100010000012c0004c0000204
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=4 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER example.com. ttl=300 IN A 192.0.2.2
+ANSWER example.com. ttl=300 IN A 192.0.2.3
+ANSWER example.com. ttl=300 IN A 192.0.2.4
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=4 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER a.example.com. ttl=300 IN A 192.0.2.2
+ANSWER b.example.com. ttl=300 IN A 192.0.2.3
+ANSWER c.example.com. ttl=300 IN A 192.0.2.4
+RENDER 123481800001000400000000076578616d706c6503636f6d0000010001c00c000100010000012c0004c00002010161c00c000100010000012c0004c00002020162c00c000100010000012c0004c00002030163c00c000100010000012c0004c0000204
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=4 ns=0 ar=0
+QUESTION example.com. IN A
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+ANSWER a.example.com. ttl=300 IN A 192.0.2.2
+ANSWER b.example.com. ttl=300 IN A 192.0.2.3
+ANSWER c.example.com. ttl=300 IN A 192.0.2.4
+PARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN IXFR
+ANSWER example.com. ttl=300 IN A 192.0.2.1
+RENDER 123481800001000100000000076578616d706c6503636f6d0000fb0001c00c000100010000012c0004c0000201
+REPARSE success
+HEADER id=0x1234 opcode=0 rcode=0 flags=0x8180 qd=1 an=1 ns=0 ar=0
+QUESTION example.com. IN IXFR
+ANSWER example.com. ttl=300 IN A 192.0.2.1

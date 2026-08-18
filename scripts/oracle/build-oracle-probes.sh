@@ -23,7 +23,10 @@ mkdir -p "$OUT"
 CFLAGS="-O2 -Wall -I$INSTALL/include -I$SRC/lib/dns/include -I$SRC/lib/isc/include -I$SRC/include"
 LIBS="-L$INSTALL/lib -ldns -lisc -Wl,-rpath,$INSTALL/lib"
 
-for probe in "$PROBES"/*.c; do
+# Only the BIND-tree probes (probe_*.c) link against this install; the
+# hyphenated probes (probe-fstrm, probe-lmdb, ...) build inside their own
+# oracle containers.
+for probe in "$PROBES"/probe_*.c; do
     name=$(basename "$probe" .c)
     echo "building oracle probe: $name"
     gcc $CFLAGS -o "$OUT/$name" "$probe" $LIBS

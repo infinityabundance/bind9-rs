@@ -58,6 +58,21 @@ impl From<NameWireError> for Error {
 /// When `allow_compression` is false (zone-file contexts), any pointer bits
 /// in a label length octet are a format error.
 pub fn from_wire(buf: &[u8], offset: usize, allow_compression: bool) -> Result<FromWire> {
+    from_wire_bounded(buf, offset, buf.len(), allow_compression)
+}
+
+/// Like [`from_wire`] but the parse region ends at `end`: labels running
+/// past `end` are `ISC_R_UNEXPECTEDEND` (BIND's name parse inside RDATA is
+/// bounded by the rdlength region), while compression-pointer targets
+/// resolve against the *whole* buffer (BIND `dns_name_fromwire` reads the
+/// pointer target from the message base — pointers must be strictly before
+/// the current segment, hence before `end`).
+pub fn from_wire_bounded(
+    buf: &[u8],
+    offset: usize,
+    end: usize,
+    allow_compression: bool,
+) -> Result<FromWire> {
     let mut labels: Vec<&[u8]> = Vec::new();
     let mut total = 1usize; // root octet
     let mut consumed = offset;
@@ -71,12 +86,12 @@ pub fn from_wire(buf: &[u8], offset: usize, allow_compression: bool) -> Result<F
     // dns_name_fromwire: `if (pointer >= marker) return DNS_R_BADPOINTER`).
     let mut segment_start = offset;
 
-    if offset >= buf.len() {
+    if offset >= end {
         return Err(Error::UnexpectedEnd);
     }
 
     loop {
-        if pos >= buf.len() {
+        if pos >= end {
             return Err(Error::UnexpectedEnd);
         }
         if visited[pos] {
@@ -96,7 +111,7 @@ pub fn from_wire(buf: &[u8], offset: usize, allow_compression: bool) -> Result<F
                 return Err(Error::Disallowed);
             }
             // Compression pointer.
-            if pos + 1 >= buf.len() {
+            if pos + 1 >= end {
                 return Err(Error::UnexpectedEnd);
             }
             let target = (((len & 0x3f) as usize) << 8) | buf[pos + 1] as usize;
@@ -118,8 +133,8 @@ pub fn from_wire(buf: &[u8], offset: usize, allow_compression: bool) -> Result<F
             // length (BIND: DNS_R_BADLABELTYPE, "bad label type").
             return Err(Error::BadLabelType);
         }
-        let end = pos + 1 + len as usize;
-        if end > buf.len() {
+        let l_end = pos + 1 + len as usize;
+        if l_end > end {
             return Err(Error::UnexpectedEnd);
         }
         total += 1 + len as usize;
@@ -130,8 +145,8 @@ pub fn from_wire(buf: &[u8], offset: usize, allow_compression: bool) -> Result<F
         if labels.len() >= MAX_LABELS {
             return Err(Error::FormErr);
         }
-        labels.push(&buf[pos + 1..end]);
-        pos = end;
+        labels.push(&buf[pos + 1..l_end]);
+        pos = l_end;
     }
 
     let data_len: usize = labels.iter().map(|l| l.len() + 1).sum();

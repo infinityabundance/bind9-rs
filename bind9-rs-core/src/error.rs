@@ -68,6 +68,40 @@ pub enum Error {
     /// Truncated input (BIND: `ISC_R_UNEXPECTEDEND` — the probe-visible
     /// text is "unexpected end of input").
     UnexpectedEnd,
+    /// The message parser recovered from one or more malformed records in
+    /// best-effort mode (BIND: `DNS_R_RECOVERABLE`, text "recoverable
+    /// error occurred").
+    Recoverable,
+    /// A TSIG record in the wrong place (BIND: `DNS_R_BADTSIG`, text "TSIG
+    /// in wrong location").
+    BadTsig,
+    /// A SIG(0) record in the wrong place (BIND: `DNS_R_BADSIG0`, text
+    /// "SIG(0) in wrong location").
+    BadSig0,
+    /// An owner name failing the NSEC3 base32hex first-label rule (BIND:
+    /// `DNS_R_BADOWNERNAME`, text "bad owner name (check-names)").
+    BadOwnerName,
+    /// A malformed EDNS option (BIND: `DNS_R_OPTERR`, text "malformed OPT
+    /// option").
+    Opterr,
+    /// An RR of a singleton type with conflicting RDATA in one RRset
+    /// (BIND: `DNS_R_SINGLETON`, text "multiple RRs of singleton type").
+    Singleton,
+    /// A name/type/class token that matches no table entry (BIND:
+    /// `DNS_R_UNKNOWN`, text "unknown class/type" — fromtext lookups).
+    UnknownClassType,
+    /// An unmatched `)` in multiline mode (BIND: `ISC_R_UNBALANCED`, text
+    /// "unbalanced parentheses").
+    Unbalanced,
+    /// A newline inside an unterminated quoted string (BIND:
+    /// `ISC_R_UNBALANCEDQUOTES`, text "unbalanced quotes").
+    UnbalancedQuotes,
+    /// End of input without the EOF-token option (BIND: `ISC_R_EOF`, text
+    /// "end of file").
+    Eof,
+    /// A token of an unexpected type (BIND: `ISC_R_UNEXPECTEDTOKEN`, text
+    /// "unexpected token").
+    UnexpectedToken,
     /// The message is too long / over an allowed bound
     /// (BIND: `ISC_R_MESSAGETOOLONG`, `DNS_R_FORMERR`-adjacent).
     MessageTooLong,
@@ -156,7 +190,18 @@ impl Error {
             Error::BadNumber => "not a valid number",
             Error::BadHex => "bad hex encoding",
             Error::Syntax => "syntax error",
-            Error::UnexpectedEnd => "unexpected end",
+            Error::UnexpectedEnd => "unexpected end of input",
+            Error::Recoverable => "recoverable error occurred",
+            Error::BadTsig => "TSIG in wrong location",
+            Error::BadSig0 => "SIG(0) in wrong location",
+            Error::BadOwnerName => "bad owner name (check-names)",
+            Error::Opterr => "malformed OPT option",
+            Error::Singleton => "multiple RRs of singleton type",
+            Error::UnknownClassType => "unknown class/type",
+            Error::Unbalanced => "unbalanced parentheses",
+            Error::UnbalancedQuotes => "unbalanced quotes",
+            Error::Eof => "end of file",
+            Error::UnexpectedToken => "unexpected token",
             Error::MessageTooLong => "message too long",
             Error::PermissionDenied => "permission denied",
             Error::OutOfZone => "out of zone",
