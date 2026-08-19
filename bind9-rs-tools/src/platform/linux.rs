@@ -429,4 +429,400 @@ pub fn lseek(fd: c_int, offset: i64, whence: c_int) -> Result<i64, Errno> {
     check(ret as c_long)
 }
 
+// ---------------------------------------------------------------------------
+// The event-loop boundary (compat::libuv, court LIBUV-0001) — U-0029..U-0049
+// ---------------------------------------------------------------------------
+//
+// The libuv conservation is a loop of nonblocking syscalls over a small set
+// of kernel objects (eventfd, self-pipe, UDP/TCP sockets).  Every libc call
+// is admitted here with the same doctrine as the rest of this module:
+// well-formed arguments (valid pointers into live buffers of the declared
+// size, caller-owned fds), errno captured immediately, results translated
+// into `Result`.
+
+/// `eventfd(0, EFD_CLOEXEC|EFD_NONBLOCK)` (U-0029): the loop's async-wakeup
+/// descriptor (libuv 1.52.1 `uv_loop_init`).  Returns the caller-owned fd.
+pub fn eventfd() -> Result<c_int, Errno> {
+    // SAFETY (U-0029): no pointer arguments; flags are constants.
+    let ret = unsafe { libc::eventfd(0, libc::EFD_CLOEXEC | libc::EFD_NONBLOCK) };
+    check(ret as c_long).map(|fd| fd as c_int)
+}
+
+/// `poll(fds, timeout)` (U-0030): the loop's I/O wait.  `fds` is a live
+/// slice; the kernel reads the `events` fields and writes the `revents`
+/// fields.  Returns the number of fds with nonzero `revents` (0 on timeout).
+pub fn poll(fds: &mut [libc::pollfd], timeout: c_int) -> Result<usize, Errno> {
+    // SAFETY (U-0030): fds is a live slice of the declared length; the
+    // kernel only touches `events`/`revents` within each element.
+    let ret = unsafe { libc::poll(fds.as_mut_ptr(), fds.len() as libc::nfds_t, timeout) };
+    match check(ret as c_long) {
+        Ok(n) => Ok(n as usize),
+        Err(e) => Err(e),
+    }
+}
+
+/// `socket(domain, type, protocol)` (U-0031): returns the caller-owned,
+/// nonblocking, close-on-exec fd (the flags are caller constants).
+pub fn socket(domain: c_int, ty: c_int, proto: c_int) -> Result<c_int, Errno> {
+    // SAFETY (U-0031): no pointer arguments; domain/type/protocol are
+    // caller-chosen constants.
+    let ret = unsafe { libc::socket(domain, ty, proto) };
+    check(ret as c_long).map(|fd| fd as c_int)
+}
+
+/// `bind(fd, addr)` (U-0032): `addr` is a fully initialized `sockaddr_in`
+/// (family, port, address); the kernel reads it synchronously.
+pub fn bind(fd: c_int, addr: &libc::sockaddr_in) -> Result<(), Errno> {
+    // SAFETY (U-0032): addr is a live, fully initialized ABI struct; fd is
+    // caller-owned; the kernel copies the address during the call.
+    let ret = unsafe {
+        libc::bind(
+            fd,
+            addr as *const libc::sockaddr_in as *const libc::sockaddr,
+            std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t,
+        )
+    };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `getsockname(fd)` (U-0033): returns the kernel-assigned port in host
+/// byte order (the loop consumes it internally; the court never prints it).
+pub fn getsockname(fd: c_int) -> Result<u16, Errno> {
+    let mut sa: libc::sockaddr_in = unsafe { std::mem::zeroed() };
+    let mut len = std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t;
+    // SAFETY (U-0033): sa is a valid zeroed out-parameter of the exact ABI
+    // type; fd is caller-owned; the kernel writes at most len bytes.
+    let ret = unsafe {
+        libc::getsockname(
+            fd,
+            &mut sa as *mut libc::sockaddr_in as *mut libc::sockaddr,
+            &mut len,
+        )
+    };
+    check(ret as c_long)?;
+    Ok(u16::from_be(sa.sin_port))
+}
+
+/// `connect(fd, addr)` (U-0034): `addr` is a fully initialized
+/// `sockaddr_in`; the UDP disconnect path passes a zeroed struct (family 0 =
+/// AF_UNSPEC), exactly like libuv's `uv__udp_disconnect`.
+pub fn connect(fd: c_int, addr: &libc::sockaddr_in) -> Result<(), Errno> {
+    // SAFETY (U-0034): addr is a live, fully initialized ABI struct; the
+    // kernel reads it synchronously; fd is caller-owned.
+    let ret = unsafe {
+        libc::connect(
+            fd,
+            addr as *const libc::sockaddr_in as *const libc::sockaddr,
+            std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t,
+        )
+    };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `sendmsg(fd, bufs, addr)` (U-0035): one datagram per call; the iovec
+/// covers all `bufs` (a scatter send is a single datagram, matching libuv's
+/// `uv__udp_sendmsg1`).  Returns the byte count sent.
+pub fn sendmsg(
+    fd: c_int,
+    bufs: &[&[u8]],
+    addr: Option<&libc::sockaddr_in>,
+) -> Result<usize, Errno> {
+    let mut iov: Vec<libc::iovec> = bufs
+        .iter()
+        .map(|b| libc::iovec {
+            iov_base: b.as_ptr() as *mut c_void,
+            iov_len: b.len(),
+        })
+        .collect();
+    let mut sa = match addr {
+        Some(a) => *a,
+        None => unsafe { std::mem::zeroed() },
+    };
+    let mut hdr: libc::msghdr = unsafe { std::mem::zeroed() };
+    if addr.is_some() {
+        hdr.msg_name = &mut sa as *mut libc::sockaddr_in as *mut c_void;
+        hdr.msg_namelen = std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t;
+    }
+    hdr.msg_iov = iov.as_mut_ptr();
+    hdr.msg_iovlen = iov.len() as _;
+    // SAFETY (U-0035): bufs are live slices whose pointers/lengths are
+    // copied into the iovec; the kernel reads them synchronously; sa (when
+    // used) is a fully initialized copy.
+    let ret = unsafe { libc::sendmsg(fd, &hdr, 0) };
+    match check(ret as c_long) {
+        Ok(n) => Ok(n as usize),
+        Err(e) => Err(e),
+    }
+}
+
+/// `recvmsg(fd, buf)` (U-0036): receives one datagram into `buf`;
+/// returns `(nread, peer_port)`.  `nread == 0` is the EAGAIN drain marker
+/// (the peer port is meaningless then).
+pub fn recvmsg(fd: c_int, buf: &mut [u8]) -> Result<(usize, u16), Errno> {
+    let mut sa: libc::sockaddr_in = unsafe { std::mem::zeroed() };
+    let mut iov = libc::iovec {
+        iov_base: buf.as_mut_ptr() as *mut c_void,
+        iov_len: buf.len(),
+    };
+    let mut hdr: libc::msghdr = unsafe { std::mem::zeroed() };
+    hdr.msg_name = &mut sa as *mut libc::sockaddr_in as *mut c_void;
+    hdr.msg_namelen = std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t;
+    hdr.msg_iov = &mut iov;
+    hdr.msg_iovlen = 1;
+    // SAFETY (U-0036): buf is a live slice bounded by buf.len(); sa is a
+    // valid out-parameter of the exact ABI type; the kernel fills both.
+    let ret = unsafe { libc::recvmsg(fd, &mut hdr, 0) };
+    match check(ret as c_long) {
+        Ok(n) => Ok((n as usize, u16::from_be(sa.sin_port))),
+        Err(e) => Err(e),
+    }
+}
+
+/// `listen(fd, backlog)` (U-0037): fd is a caller-owned bound socket.
+pub fn listen(fd: c_int, backlog: c_int) -> Result<(), Errno> {
+    // SAFETY (U-0037): plain integer arguments; fd is caller-owned.
+    let ret = unsafe { libc::listen(fd, backlog) };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `accept(fd)` (U-0038): returns the accepted fd (still blocking until
+/// the caller sets O_NONBLOCK, exactly like libuv's uv__accept).
+pub fn accept(fd: c_int) -> Result<c_int, Errno> {
+    // SAFETY (U-0038): fd is caller-owned; no out-parameters.
+    let ret = unsafe { libc::accept(fd, std::ptr::null_mut(), std::ptr::null_mut()) };
+    check(ret as c_long).map(|fd| fd as c_int)
+}
+
+/// `fcntl(fd, F_SETFL, O_NONBLOCK)` (U-0039): the accepted-socket and
+/// signal-pipe nonblocking mode (uv__nonblock).
+pub fn set_nonblock(fd: c_int) -> Result<(), Errno> {
+    // SAFETY (U-0039): fd is caller-owned; the mode is a constant.
+    let ret = unsafe { libc::fcntl(fd, libc::F_SETFL, libc::O_NONBLOCK) };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `shutdown(fd, how)` (U-0040): `how` is SHUT_RD/SHUT_WR/SHUT_RDWR.
+pub fn shutdown(fd: c_int, how: c_int) -> Result<(), Errno> {
+    // SAFETY (U-0040): fd is caller-owned; how is a constant.
+    let ret = unsafe { libc::shutdown(fd, how) };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `setsockopt(fd, SOL_SOCKET, SO_LINGER, {1,0})` (U-0041): the
+/// close-with-RST path (uv_tcp_close_reset).
+pub fn setsockopt_linger(fd: c_int, l: &libc::linger) -> Result<(), Errno> {
+    // SAFETY (U-0041): l is a live, fully initialized ABI struct; fd is
+    // caller-owned; the kernel copies it synchronously.
+    let ret = unsafe {
+        libc::setsockopt(
+            fd,
+            libc::SOL_SOCKET,
+            libc::SO_LINGER,
+            l as *const libc::linger as *const c_void,
+            std::mem::size_of::<libc::linger>() as libc::socklen_t,
+        )
+    };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `uv__socket_sockopt` (U-0042): `*value == 0` -> getsockopt (the kernel
+/// writes the value); otherwise setsockopt with `*value`.  Used for
+/// SO_SNDBUF/SO_RCVBUF and the connect-completion SO_ERROR query.
+pub fn socket_sockopt(fd: c_int, optname: c_int, value: &mut i32) -> Result<(), Errno> {
+    // SAFETY (U-0042): fd is caller-owned; value is a live i32; the kernel
+    // reads or writes exactly one int through it.
+    let ret = if *value == 0 {
+        let mut len = std::mem::size_of::<i32>() as libc::socklen_t;
+        unsafe {
+            libc::getsockopt(
+                fd,
+                libc::SOL_SOCKET,
+                optname,
+                value as *mut i32 as *mut c_void,
+                &mut len,
+            )
+        }
+    } else {
+        unsafe {
+            libc::setsockopt(
+                fd,
+                libc::SOL_SOCKET,
+                optname,
+                value as *const i32 as *const c_void,
+                std::mem::size_of::<i32>() as libc::socklen_t,
+            )
+        }
+    };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `sigaction(signum, SA_RESTART handler)` (U-0043): installs the
+/// event-loop signal handler over an empty mask; the handler must be an
+/// async-signal-safe `extern "C" fn(i32)`.  Returns the previous disposition
+/// via the standard libc convention.
+pub fn sigaction_install(signum: i32, handler: extern "C" fn(i32)) -> Result<(), Errno> {
+    let mut sa: libc::sigaction = unsafe { std::mem::zeroed() };
+    // SAFETY (U-0043): sa is a fully zeroed ABI struct, filled below;
+    // sigemptyset initializes the mask; the handler is a plain function
+    // pointer with the exact `sighandler_t` ABI.
+    sa.sa_sigaction = handler as usize;
+    sa.sa_flags = libc::SA_RESTART;
+    unsafe {
+        libc::sigemptyset(&mut sa.sa_mask);
+    }
+    // SAFETY (U-0043): sa is fully initialized; the old action out-param is
+    // NULL (not needed); signum is a valid signal number.
+    let ret = unsafe { libc::sigaction(signum, &sa, std::ptr::null_mut()) };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `clock_gettime(CLOCK_MONOTONIC)` (U-0044): the loop clock in
+/// milliseconds (libuv's uv__hrtime / 1e6).
+pub fn monotonic_ms() -> u64 {
+    let mut ts = libc::timespec {
+        tv_sec: 0,
+        tv_nsec: 0,
+    };
+    // SAFETY (U-0044): ts is a valid out-parameter of the exact ABI type;
+    // clock_gettime cannot fail for CLOCK_MONOTONIC.
+    unsafe {
+        libc::clock_gettime(libc::CLOCK_MONOTONIC, &mut ts);
+    }
+    (ts.tv_sec as u64) * 1000 + (ts.tv_nsec as u64) / 1_000_000
+}
+
+/// `getrandom(0)` (U-0045): fills `buf` from the kernel CSPRNG; returns the
+/// bytes written (a partial fill is not an error and must be re-issued).
+pub fn getrandom(buf: &mut [u8]) -> Result<usize, Errno> {
+    // SAFETY (U-0045): buf is a live slice bounded by buf.len(); the kernel
+    // writes at most that many bytes.
+    let ret = unsafe {
+        libc::syscall(
+            libc::SYS_getrandom,
+            buf.as_mut_ptr() as *mut c_void,
+            buf.len(),
+            0,
+        )
+    };
+    match check(ret) {
+        Ok(n) => Ok(n as usize),
+        Err(e) => Err(e),
+    }
+}
+
+/// An opaque dlopen'd library handle (U-0046).  The raw pointer never
+/// crosses back into safe code; every operation on it lives in this module.
+pub struct DlHandle {
+    handle: *mut c_void,
+}
+
+/// `dlopen(path, RTLD_LAZY)` (U-0046): on failure returns -1 with the exact
+/// glibc `dlerror` text (libuv's `uv__dlerror` contract).
+pub fn dlopen(path: &str) -> Result<DlHandle, (c_int, String)> {
+    // SAFETY (U-0046): dlerror() has no preconditions; it resets the error
+    // state so the message below belongs to dlopen.
+    unsafe {
+        libc::dlerror();
+    }
+    let cpath = CString::new(path).unwrap_or_default();
+    // SAFETY (U-0046): cpath is a NUL-terminated owned CString; dlopen
+    // copies it synchronously; the returned handle is stored opaque.
+    let h = unsafe { libc::dlopen(cpath.as_ptr(), libc::RTLD_LAZY) };
+    if h.is_null() {
+        Err((-1, dl_error_string()))
+    } else {
+        Ok(DlHandle { handle: h })
+    }
+}
+
+/// `dlsym(handle, name)` (U-0047): returns whether the symbol resolves;
+/// on failure returns -1 with the exact glibc `dlerror` text.  The symbol
+/// value itself is never dereferenced by the conservation.
+pub fn dlsym(handle: &DlHandle, name: &str) -> Result<(), (c_int, String)> {
+    // SAFETY (U-0047): dlerror() resets the error state so the message
+    // below belongs to dlsym.
+    unsafe {
+        libc::dlerror();
+    }
+    let csym = CString::new(name).unwrap_or_default();
+    // SAFETY (U-0047): csym is a NUL-terminated owned CString; handle is a
+    // live library handle; the returned symbol pointer is only NULL-tested.
+    let p = unsafe { libc::dlsym(handle.handle, csym.as_ptr()) };
+    if p.is_null() {
+        Err((-1, dl_error_string()))
+    } else {
+        Ok(())
+    }
+}
+
+/// `dlclose(handle)` (U-0048): ignores the result (libuv's contract).
+pub fn dlclose(handle: DlHandle) {
+    if !handle.handle.is_null() {
+        // SAFETY (U-0048): handle is a live library handle; dlclose is the
+        // matching destructor; the result is ignored per libuv.
+        unsafe {
+            libc::dlclose(handle.handle);
+        }
+    }
+}
+
+/// `raise(signum)` (U-0050): the probe's signal-raise op; the handler is
+/// installed by `sigaction_install` on the same thread.
+pub fn raise(signum: i32) -> Result<(), Errno> {
+    // SAFETY (U-0050): plain integer argument; raises the signal on the
+    // calling thread, which runs the installed handler synchronously.
+    let ret = unsafe { libc::raise(signum) };
+    check(ret as c_long).map(|_| ())
+}
+
+/// `calloc(n, size)` (U-0052): the allocator fallback when no custom
+/// allocator is installed (libuv's default `uv__allocator`).
+pub fn alloc_calloc(n: usize, size: usize) -> *mut c_void {
+    // SAFETY (U-0052): plain size arguments; returns an owned, zeroed block
+    // that the caller frees through `alloc_free`.
+    unsafe { libc::calloc(n, size) }
+}
+
+/// `realloc(ptr, size)` (U-0053): the allocator fallback; `ptr` may be
+/// NULL (malloc semantics), exactly like libuv's default realloc.
+pub fn alloc_realloc(p: *mut c_void, size: usize) -> *mut c_void {
+    // SAFETY (U-0053): p is either NULL or a block previously returned by
+    // the allocator; the result is owned by the caller.
+    unsafe { libc::realloc(p, size) }
+}
+
+/// `free(ptr)` (U-0054): the allocator fallback; NULL is a no-op.
+pub fn alloc_free(p: *mut c_void) {
+    // SAFETY (U-0054): p is NULL or a block previously returned by the
+    // allocator, not used afterwards.
+    unsafe { libc::free(p) }
+}
+
+/// `write(fd, one byte)` (U-0051): the async-signal-safe pipe write used by
+/// the event-loop signal handler.  Deliberately does NOT read errno or touch
+/// any std machinery (the handler may interrupt any thread).
+pub fn signal_write(fd: i32, byte: u8) {
+    // SAFETY (U-0051): fd is a caller-owned nonblocking pipe write end; the
+    // single byte is copied synchronously; the result is ignored because
+    // errno must not be read inside a signal handler.
+    unsafe {
+        libc::write(fd, &byte as *const u8 as *const c_void, 1);
+    }
+}
+
+/// Reads and clears the glibc `dlerror` text (U-0049): the last dl error as
+/// an owned String, or empty when the state was clean.
+pub fn dl_error_string() -> String {
+    // SAFETY (U-0049): dlerror() returns a pointer to glibc-owned memory
+    // valid until the next dlerror call; copied out immediately.
+    let p = unsafe { libc::dlerror() };
+    if p.is_null() {
+        String::new()
+    } else {
+        unsafe { std::ffi::CStr::from_ptr(p) }
+            .to_string_lossy()
+            .into_owned()
+    }
+}
+
 use std::ffi::c_char;

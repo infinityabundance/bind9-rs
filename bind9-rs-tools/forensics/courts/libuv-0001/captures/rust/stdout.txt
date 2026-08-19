@@ -1,0 +1,267 @@
+=== PHASE 0: version ===
+  uv_version=78849
+  uv_version_string=1.52.1
+=== PHASE 1: loop basics ===
+  uv_loop_init=0
+  uv_run(NOWAIT, empty)=0
+  uv_loop_alive=0
+  uv_loop_close=0
+=== PHASE 2: timers ===
+  uv_timer_start(NULL cb) rc=EINVAL (invalid argument)
+    t2 fired (due 10)
+    t3 fired (due 10)
+    t1 fired (due 50)
+  uv_run(DEFAULT) returned 0
+  uv_timer_get_repeat(rep)=10
+    repeat fired (1)
+    repeat fired (2)
+    repeat fired (3)
+    repeat fired (4)
+    stopper fired; stopping repeat
+  uv_run(DEFAULT) returned 0
+    a fired (starting b with 5ms)
+    b fired (5ms after a)
+  uv_run(DEFAULT) returned 0
+    t8 fired (1); uv_timer_again -> no repeat, no re-arm
+  uv_run(DEFAULT) returned 0
+  uv_timer_stop(inactive)=0
+  uv_run(DEFAULT) returned 0 (stopped/closed timers never fired)
+=== PHASE 3: idle/prepare/check ===
+    idle
+    prepare
+    check; stopping idle/prepare/check
+  uv_run(DEFAULT) returned 0
+  uv_idle_start(active)=0
+    idle2
+  run1(NOWAIT) returned 1
+    idle2
+  run2(NOWAIT) returned 1
+  run3(NOWAIT) returned 0
+=== PHASE 4: async ===
+    a1 fired (3 sends coalesced into one callback)
+  uv_run(NOWAIT) returned 1
+  uv_run(NOWAIT) returned 1 (a2 still active)
+    timer fired; releasing helper thread
+    a2 fired (cross-thread send)
+  uv_run(DEFAULT) returned 1
+  helper thread joined
+  uv_run(NOWAIT) returned 0 (a2 closed)
+=== PHASE 5: signal ===
+  uv_signal_start(signum=0) rc=EINVAL (invalid argument)
+  uv_signal_start(SIGUSR1)=0
+    signal 10 caught (1)
+    signal 10 caught (2)
+  uv_run(DEFAULT) returned 1
+  uv_signal_stop=0
+  uv_signal_start(same signum)=0
+  uv_run(NOWAIT) returned 0
+=== PHASE 6: UDP ===
+  uv_udp_init_ex(bad domain) rc=EINVAL (invalid argument)
+  uv_udp_init_ex(bad extra flags) rc=EINVAL (invalid argument)
+  uv_run(NOWAIT) returned 0
+  uv_udp_bind(ua)=0
+  uv_udp_getsockname(ua)=0
+  ub try_send(no addr, unconnected) rc=EDESTADDRREQ (destination address required)
+  ub try_send(to ua) sent=4
+  uv_udp_connect(ub)=0
+  ub send(addr, connected) rc=EISCONN (socket is already connected)
+  ub try_send(addr, connected) rc=EISCONN (socket is already connected)
+    alloc suggested=65536
+    ua recv nread=4 content=ping addr=127.0.0.1
+    alloc suggested=65536
+    ua recv nread=0 addr=null(eagain-drain)
+  uv_run1(DEFAULT) returned 1
+  queue size after 2 bufs=4
+  queue size after 600b=604
+    send_cb (1) status=0 queue=600
+    send_cb (2) status=0 queue=0
+    alloc suggested=65536
+    ua recv nread=4 content=abcd addr=127.0.0.1
+    alloc suggested=65536
+    ua recv nread=600 content=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx addr=127.0.0.1
+    alloc suggested=65536
+    ua recv nread=0 addr=null(eagain-drain)
+  uv_run2(DEFAULT) returned 1
+  uv_udp_connect(ub, NULL)=0
+  uv_udp_connect(ub, NULL) again rc=ENOTCONN (socket is not connected)
+  ub send(NULL addr, unconnected) rc=EDESTADDRREQ (destination address required)
+  uv_udp_recv_stop(ua)=0
+  uv_udp_recv_stop again=0
+  uv_udp_connect(ua)=0
+  uv_udp_connect(ub)=0
+    send_cb (3) status=0 queue=0
+  uv_run3(DEFAULT) returned 1
+  uv_run(NOWAIT) returned 0
+=== PHASE 7: TCP ===
+  uv_tcp_bind(srv)=0
+  uv_tcp_getsockname(srv)=0
+  uv_listen(srv)=0
+  uv_listen(srv) again=0
+  uv_accept(no pending) rc=EAGAIN (resource temporarily unavailable)
+  uv_recv_buffer_size(get)=0 value=131072
+  uv_recv_buffer_size(set 65536)=0
+  uv_recv_buffer_size(get after set)=0 value=131072
+  uv_send_buffer_size(get)=0 value=16384
+  uv_run1(DEFAULT) returned 1
+  [run1 fixed order] cli connect_cb status=0
+  [run1 fixed order] srv accept_cb status=0; uv_accept rc=0
+  [run1] conn read total=0 content= (nothing yet)
+  queue size before uv_write=0
+  queue size after uv_write=0 (immediate write path)
+  cli try_write returned 4 (second ping)
+    cli write_cb status=0 queue=0
+  uv_run2(DEFAULT) returned 1
+  [run2] conn read total=8 content=pingping
+  conn try_write returned 4
+  uv_shutdown(conn)=0
+  uv_run3(DEFAULT) returned 1
+  [run3] conn shutdown_cb status=0
+  [run3] cli read total=4 content=pong
+  [run3] cli read nread=UV_EOF (EOF)
+    cli2 connect_cb status=ECONNREFUSED
+    cli2 close_cb
+  uv_run4(DEFAULT) returned 1
+    srv close_cb
+    cli close_cb
+    conn close_cb
+  uv_run5(DEFAULT) returned 0
+=== PHASE 8: handle utilities ===
+    walk: timer active=1 closing=0
+    walk: prepare active=1 closing=0
+    walk: async active=1 closing=0
+  walked 3 handles
+  is_closing before run=1
+  uv_run(NOWAIT) returned 0
+    close_cb: timer
+    close_cb: timer
+    close_cb: timer
+  uv_run(NOWAIT) returned 0
+  uv_fileno(timer) rc=EINVAL (invalid argument)
+  uv_fileno(closed tcp)=-9
+  uv_recv_buffer_size(closed) rc=EBADF
+  uv_loop_close(walk loop)=0
+=== PHASE 9: dl ===
+  uv_dlopen(libc)=0
+  uv_dlsym(getpid)=0
+  uv_dlsym(bogus symbol)=-1
+  uv_dlerror: /lib/x86_64-linux-gnu/libc.so.6: undefined symbol: getpid_bogus
+  dlclose ok
+  uv_dlopen(nonexistent)=-1
+  uv_dlerror: /nonexistent/lib.so: cannot open shared object file: No such file or directory
+  dlclose ok
+=== PHASE 10: random + sleep ===
+  uv_random=0
+    random cb status=0 len=16
+  uv_run(DEFAULT) returned 0
+  slept 30ms
+=== PHASE 12: barrier ===
+  uv_barrier_init(&b, 0) rc=EINVAL (invalid argument)
+  uv_barrier_init(&b, 2)=0
+  main uv_barrier_wait=1
+  helper uv_barrier_wait=0 (serial=1 on the last releaser)
+  barrier destroyed
+=== PHASE 15: uv_stop ===
+    st1 fired; calling uv_stop
+    st2 fired
+  uv_run(DEFAULT) returned 1 (alive: st2 still pending)
+  uv_run(DEFAULT) returned 0
+  st1 fired 1 time(s)
+=== PHASE 16: uv_cancel ===
+  uv_cancel(completed WRITE req) rc=EINVAL (invalid argument)
+  uv_cancel(completed RANDOM req) rc=EBUSY (resource busy or locked)
+  uv_loop_close(loop2 with leftover handles)=-16 (EBUSY)
+=== PHASE 17: error battery ===
+  UV_E2BIG          -7     E2BIG | argument list too long
+  UV_EACCES         -13    EACCES | permission denied
+  UV_EADDRINUSE     -98    EADDRINUSE | address already in use
+  UV_EADDRNOTAVAIL  -99    EADDRNOTAVAIL | address not available
+  UV_EAFNOSUPPORT   -97    EAFNOSUPPORT | address family not supported
+  UV_EAGAIN         -11    EAGAIN | resource temporarily unavailable
+  UV_EAI_ADDRFAMILY -3000  EAI_ADDRFAMILY | address family not supported
+  UV_EAI_AGAIN      -3001  EAI_AGAIN | temporary failure
+  UV_EAI_BADFLAGS   -3002  EAI_BADFLAGS | bad ai_flags value
+  UV_EAI_BADHINTS   -3013  EAI_BADHINTS | invalid value for hints
+  UV_EAI_CANCELED   -3003  EAI_CANCELED | request canceled
+  UV_EAI_FAIL       -3004  EAI_FAIL | permanent failure
+  UV_EAI_FAMILY     -3005  EAI_FAMILY | ai_family not supported
+  UV_EAI_MEMORY     -3006  EAI_MEMORY | out of memory
+  UV_EAI_NODATA     -3007  EAI_NODATA | no address
+  UV_EAI_NONAME     -3008  EAI_NONAME | unknown node or service
+  UV_EAI_OVERFLOW   -3009  EAI_OVERFLOW | argument buffer overflow
+  UV_EAI_PROTOCOL   -3014  EAI_PROTOCOL | resolved protocol is unknown
+  UV_EAI_SERVICE    -3010  EAI_SERVICE | service not available for socket type
+  UV_EAI_SOCKTYPE   -3011  EAI_SOCKTYPE | socket type not supported
+  UV_EALREADY       -114   EALREADY | connection already in progress
+  UV_EBADF          -9     EBADF | bad file descriptor
+  UV_EBUSY          -16    EBUSY | resource busy or locked
+  UV_ECANCELED      -125   ECANCELED | operation canceled
+  UV_ECHARSET       -4080  ECHARSET | invalid Unicode character
+  UV_ECONNABORTED   -103   ECONNABORTED | software caused connection abort
+  UV_ECONNREFUSED   -111   ECONNREFUSED | connection refused
+  UV_ECONNRESET     -104   ECONNRESET | connection reset by peer
+  UV_EDESTADDRREQ   -89    EDESTADDRREQ | destination address required
+  UV_EEXIST         -17    EEXIST | file already exists
+  UV_EFAULT         -14    EFAULT | bad address in system call argument
+  UV_EFBIG          -27    EFBIG | file too large
+  UV_EHOSTUNREACH   -113   EHOSTUNREACH | host is unreachable
+  UV_EINTR          -4     EINTR | interrupted system call
+  UV_EINVAL         -22    EINVAL | invalid argument
+  UV_EIO            -5     EIO | i/o error
+  UV_EISCONN        -106   EISCONN | socket is already connected
+  UV_EISDIR         -21    EISDIR | illegal operation on a directory
+  UV_ELOOP          -40    ELOOP | too many symbolic links encountered
+  UV_EMFILE         -24    EMFILE | too many open files
+  UV_EMSGSIZE       -90    EMSGSIZE | message too long
+  UV_ENAMETOOLONG   -36    ENAMETOOLONG | name too long
+  UV_ENETDOWN       -100   ENETDOWN | network is down
+  UV_ENETUNREACH    -101   ENETUNREACH | network is unreachable
+  UV_ENFILE         -23    ENFILE | file table overflow
+  UV_ENOBUFS        -105   ENOBUFS | no buffer space available
+  UV_ENODEV         -19    ENODEV | no such device
+  UV_ENOENT         -2     ENOENT | no such file or directory
+  UV_ENOMEM         -12    ENOMEM | not enough memory
+  UV_ENONET         -64    ENONET | machine is not on the network
+  UV_ENOPROTOOPT    -92    ENOPROTOOPT | protocol not available
+  UV_ENOSPC         -28    ENOSPC | no space left on device
+  UV_ENOSYS         -38    ENOSYS | function not implemented
+  UV_ENOTCONN       -107   ENOTCONN | socket is not connected
+  UV_ENOTDIR        -20    ENOTDIR | not a directory
+  UV_ENOTEMPTY      -39    ENOTEMPTY | directory not empty
+  UV_ENOTSOCK       -88    ENOTSOCK | socket operation on non-socket
+  UV_ENOTSUP        -95    ENOTSUP | operation not supported on socket
+  UV_EOVERFLOW      -75    EOVERFLOW | value too large for defined data type
+  UV_EPERM          -1     EPERM | operation not permitted
+  UV_EPIPE          -32    EPIPE | broken pipe
+  UV_EPROTO         -71    EPROTO | protocol error
+  UV_EPROTONOSUPPORT -93    EPROTONOSUPPORT | protocol not supported
+  UV_EPROTOTYPE     -91    EPROTOTYPE | protocol wrong type for socket
+  UV_ERANGE         -34    ERANGE | result too large
+  UV_EROFS          -30    EROFS | read-only file system
+  UV_ESHUTDOWN      -108   ESHUTDOWN | cannot send after transport endpoint shutdown
+  UV_ESPIPE         -29    ESPIPE | invalid seek
+  UV_ESRCH          -3     ESRCH | no such process
+  UV_ETIMEDOUT      -110   ETIMEDOUT | connection timed out
+  UV_ETXTBSY        -26    ETXTBSY | text file is busy
+  UV_EXDEV          -18    EXDEV | cross-device link not permitted
+  UV_UNKNOWN        -4094  UNKNOWN | unknown error
+  UV_EOF            -4095  EOF | end of file
+  UV_ENXIO          -6     ENXIO | no such device or address
+  UV_EMLINK         -31    EMLINK | too many links
+  UV_EHOSTDOWN      -112   EHOSTDOWN | host is down
+  UV_EREMOTEIO      -121   EREMOTEIO | remote I/O error
+  UV_ENOTTY         -25    ENOTTY | inappropriate ioctl for device
+  UV_EFTYPE         -4028  EFTYPE | inappropriate file type or format
+  UV_EILSEQ         -84    EILSEQ | illegal byte sequence
+  UV_ESOCKTNOSUPPORT -94    ESOCKTNOSUPPORT | socket type not supported
+  UV_ENODATA        -61    ENODATA | no data available
+  UV_EUNATCH        -49    EUNATCH | protocol driver not attached
+  UV_ENOEXEC        -8     ENOEXEC | exec format error
+  UV_UNKNOWN-12345   -12345 Unknown system error -12345 | Unknown system error -12345
+=== PHASE 13: allocator ===
+  uv_replace_allocator(NULLs) rc=EINVAL (invalid argument)
+  uv_replace_allocator(custom)=0
+  uv_loop_init after replace=0
+  counts after loop_init malloc=0 realloc=1 calloc=1 free=0
+  uv_loop_close after replace=0
+  counts after loop_close malloc=0 realloc=1 calloc=1 free=2
+  uv_library_shutdown called

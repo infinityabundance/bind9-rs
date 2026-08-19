@@ -38,6 +38,32 @@
 //! | U-0026| linux.rs `open_mode`| NUL-terminated path; flags/mode from constants      | zlib gz* courts          |
 //! | U-0027| linux.rs `lseek`    | fd caller-owned; plain integer offset/whence        | zlib gz* courts          |
 //! | U-0028| linux.rs `page_size`| argument-less sysconf; positive result or 4096    | LMDB-0001 court           |
+//! | U-0029| linux.rs `eventfd`  | no pointer args; flags from constants              | LIBUV-0001 court          |
+//! | U-0030| linux.rs `poll`     | live pollfd slice; kernel touches events/revents  | LIBUV-0001 court          |
+//! | U-0031| linux.rs `socket`   | no pointer args; constants                         | LIBUV-0001 court          |
+//! | U-0032| linux.rs `bind`     | fully initialized sockaddr_in; fd caller-owned    | LIBUV-0001 court          |
+//! | U-0033| linux.rs `getsockname` | zeroed out-param; port read once                | LIBUV-0001 court          |
+//! | U-0034| linux.rs `connect`  | initialized sockaddr or NULL; fd caller-owned     | LIBUV-0001 court          |
+//! | U-0035| linux.rs `sendmsg`  | live slices in iovecs; kernel reads synchronously | LIBUV-0001 court          |
+//! | U-0036| linux.rs `recvmsg`  | live slice bounded by len; zeroed sockaddr out    | LIBUV-0001 court          |
+//! | U-0037| linux.rs `listen`   | plain integers; fd caller-owned                   | LIBUV-0001 court          |
+//! | U-0038| linux.rs `accept`   | fd caller-owned; no out-params                    | LIBUV-0001 court          |
+//! | U-0039| linux.rs `set_nonblock` | fd caller-owned; mode constant                 | LIBUV-0001 court          |
+//! | U-0040| linux.rs `shutdown` | fd caller-owned; how constant                     | LIBUV-0001 court          |
+//! | U-0041| linux.rs `setsockopt_linger` | initialized linger struct                  | LIBUV-0001 court          |
+//! | U-0042| linux.rs `socket_sockopt` | live i32; kernel reads/writes one int          | LIBUV-0001 court          |
+//! | U-0043| linux.rs `sigaction_install` | zeroed then filled sigaction; fn ptr ABI   | LIBUV-0001 court          |
+//! | U-0044| linux.rs `monotonic_ms` | zeroed timespec out-param                     | LIBUV-0001 court          |
+//! | U-0045| linux.rs `getrandom`| live slice bounded by len                        | LIBUV-0001 court          |
+//! | U-0046| linux.rs `dlopen`   | NUL-terminated CString; handle stored opaque     | LIBUV-0001 court          |
+//! | U-0047| linux.rs `dlsym`    | NUL-terminated CString; live library handle      | LIBUV-0001 court          |
+//! | U-0048| linux.rs `dlclose`  | live library handle; matching destructor         | LIBUV-0001 court          |
+//! | U-0049| linux.rs `dl_error_string` | glibc-owned text copied out immediately   | LIBUV-0001 court          |
+//! | U-0050| linux.rs `raise`    | plain integer argument                          | LIBUV-0001 court          |
+//! | U-0051| linux.rs `signal_write` | async-signal-safe; errno never read      | LIBUV-0001 court          |
+//! | U-0052| linux.rs `alloc_calloc` | plain sizes; owned zeroed block            | LIBUV-0001 court          |
+//! | U-0053| linux.rs `alloc_realloc` | ptr from the allocator or NULL           | LIBUV-0001 court          |
+//! | U-0054| linux.rs `alloc_free` | ptr from the allocator or NULL              | LIBUV-0001 court          |
 //!
 //! Miri cannot execute the kernel calls themselves (they are FFI); the
 //! surrounding pointer/buffer construction is exercised by the unit and
@@ -151,6 +177,124 @@ pub mod inventory {
             "U-0028",
             "linux.rs page_size",
             "argument-less sysconf; positive result or 4096 fallback",
+        ),
+        (
+            "U-0029",
+            "linux.rs eventfd",
+            "no pointer args; flags from constants",
+        ),
+        (
+            "U-0030",
+            "linux.rs poll",
+            "live pollfd slice; kernel touches events/revents",
+        ),
+        ("U-0031", "linux.rs socket", "no pointer args; constants"),
+        (
+            "U-0032",
+            "linux.rs bind",
+            "fully initialized sockaddr_in; fd caller-owned",
+        ),
+        (
+            "U-0033",
+            "linux.rs getsockname",
+            "zeroed out-param; port read once",
+        ),
+        (
+            "U-0034",
+            "linux.rs connect",
+            "initialized sockaddr or NULL; fd caller-owned",
+        ),
+        (
+            "U-0035",
+            "linux.rs sendmsg",
+            "live slices in iovecs; kernel reads synchronously",
+        ),
+        (
+            "U-0036",
+            "linux.rs recvmsg",
+            "live slice bounded by len; zeroed sockaddr out",
+        ),
+        (
+            "U-0037",
+            "linux.rs listen",
+            "plain integers; fd caller-owned",
+        ),
+        (
+            "U-0038",
+            "linux.rs accept",
+            "fd caller-owned; no out-params",
+        ),
+        (
+            "U-0039",
+            "linux.rs set_nonblock",
+            "fd caller-owned; mode constant",
+        ),
+        (
+            "U-0040",
+            "linux.rs shutdown",
+            "fd caller-owned; how constant",
+        ),
+        (
+            "U-0041",
+            "linux.rs setsockopt_linger",
+            "initialized linger struct",
+        ),
+        (
+            "U-0042",
+            "linux.rs socket_sockopt",
+            "live i32; kernel reads/writes one int",
+        ),
+        (
+            "U-0043",
+            "linux.rs sigaction_install",
+            "zeroed then filled sigaction; fn ptr ABI",
+        ),
+        (
+            "U-0044",
+            "linux.rs monotonic_ms",
+            "zeroed timespec out-param",
+        ),
+        ("U-0045", "linux.rs getrandom", "live slice bounded by len"),
+        (
+            "U-0046",
+            "linux.rs dlopen",
+            "NUL-terminated CString; handle stored opaque",
+        ),
+        (
+            "U-0047",
+            "linux.rs dlsym",
+            "NUL-terminated CString; live library handle",
+        ),
+        (
+            "U-0048",
+            "linux.rs dlclose",
+            "live library handle; matching destructor",
+        ),
+        (
+            "U-0049",
+            "linux.rs dl_error_string",
+            "glibc-owned text copied out immediately",
+        ),
+        ("U-0050", "linux.rs raise", "plain integer argument"),
+        (
+            "U-0051",
+            "linux.rs signal_write",
+            "async-signal-safe; errno never read",
+        ),
+        (
+            "U-0052",
+            "linux.rs alloc_calloc",
+            "plain sizes; owned zeroed block",
+        ),
+        (
+            "U-0053",
+            "linux.rs alloc_realloc",
+            "ptr from the allocator or NULL",
+        ),
+        (
+            "U-0054",
+            "linux.rs alloc_free",
+            "ptr from the allocator or NULL",
         ),
     ];
 }

@@ -57,6 +57,13 @@
       "repo_digest": "<none>",
       "tag": "latest"
     },
+    "oracle-libuv-1.52.1": {
+      "built_at": "2026-08-19T23:05:01Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-libuv-1.52.1/Dockerfile",
+      "image_id": "725ee3eea853",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
     "oracle-lmdb-0.9.35": {
       "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-lmdb-0.9.35/Dockerfile",

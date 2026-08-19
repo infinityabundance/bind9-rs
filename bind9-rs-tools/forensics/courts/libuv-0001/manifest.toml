@@ -1,0 +1,42 @@
+schema_version = 1
+court_id = "LIBUV-0001"
+question = "Does the Rust libuv module (compat/libuv/) reproduce libuv 1.52.1 observable behavior byte-exactly over the surface BIND 9.20's netmgr/isc depends on: version/library lifecycle (uv_version/uv_version_string/uv_library_shutdown), loop init/run/close semantics (DEFAULT/ONCE/NOWAIT modes, uv_stop, uv_loop_alive, uv_now, the pre-loop timer pass for DEFAULT, the pending immediate-callback pass after the poll round, close_cb LIFO order, uv_loop_close UV_EBUSY with leftover handles), timers (heap ordering by timeout then start_id, repeat re-arm before the callback, restart-from-callback, the NULL-cb EINVAL, get_repeat, stop-inactive), idle/prepare/check (idle before prepare in 1.52.1, once-per-iteration, no-op start of an active watcher), async (coalescing of N sends into one callback, cross-thread wakeup), signal (EINVAL for signum 0, one callback per raised signal, same-signum restart, stop), UDP (init_ex domain/flag validation, bind/getsockname, try_send EDESTADDRREQ/EISCONN taxonomy, connect/disconnect EISCONN/ENOTCONN, the send queue bytes, the EAGAIN drain marker, the 64K alloc suggestion, scatter sends, connected recv), TCP (bind/getsockname/listen incl. the second-listen no-op, accept EAGAIN, connect ECONNREFUSED, the immediate-write path, try_write, shutdown/EOF, close_reset, buffer-size get/set/get roundtrip, EBADF on closed handles), handle utilities (walk init order, active/closing states, uv_fileno EINVAL/EBADF, uv_is_closing), dl (dlopen/dlsym/dlerror including the exact glibc messages), uv_random via the threadpool, uv_sleep, the barrier (count-0 EINVAL, the serial-thread return), uv_replace_allocator (NULL-func EINVAL, the exact custom-allocator call counts for loop init/close incl. the watchers-array realloc), uv_cancel (EINVAL for non-work reqs, EBUSY for a completed work req), and the complete UV_ERRNO_MAP name/strerror battery"
+subsystem = "compat/libuv"
+oracle_versions = ["1.52.1"]
+harness = "libuv"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-libuv-1.52.1 container, each running the same deterministic op sequence",
+    "the transcript never prints wall-clock values, kernel-assigned ports, fds, pointers, pids or thread ids; every address is the loopback literal 127.0.0.1",
+    "TCP stream reads are accumulated before printing (the kernel may deliver a stream in arbitrary chunk sizes)",
+    "the one genuinely unspecified intra-round order (the TCP connect_cb vs accept_cb of two different fds in one epoll round) is printed in a fixed documented order",
+]
+invariants = [
+    "uv_version/uv_version_string and the library-shutdown sequence match",
+    "loop basics match: init, run(NOWAIT) on an empty loop returns 0, loop_alive 0, close 0; the final uv_loop_close with leftover handles is UV_EBUSY (-16)",
+    "the timer heap order matches: same-timeout timers fire in start order, longer timeouts later; the repeat timer re-arms before the callback (fires at 10/20/30/40 then the stopper at 45 stops it)",
+    "the watcher iteration order matches: idle, prepare, check within one iteration (the check handle stops all three, so the run cannot spin), and one idle callback per NOWAIT iteration",
+    "async coalescing matches: 3 sends before the run produce exactly one callback; the cross-thread send fires exactly once",
+    "signal dispatch matches: signum-0 EINVAL, two raises -> two callbacks, same-signum restart, stop",
+    "the UDP taxonomy matches: EDESTADDRREQ/EISCONN/ENOTCONN, the send-queue byte counts (4 then 604), the EAGAIN drain marker, the 65536-byte alloc suggestion, datagram order (ping, abcd, 600 x's, pong)",
+    "the TCP flow matches: second uv_listen is a no-op, accept with no pending is EAGAIN, the immediate-write path (queue size stays 0, write_cb via the pending pass), try_write byte counts, shutdown then EOF, ECONNREFUSED on a closed port, the LIFO close_cb order",
+    "the socket buffer-size roundtrip matches (get 131072, set 65536, get 131072) and closed-handle ops are EBADF",
+    "the walk order, active/closing states, uv_fileno EINVAL (timer) and EBADF (closed tcp), and the fresh-loop close 0 match",
+    "the dl phase matches including the exact glibc dlerror messages, uv_dlopen/uv_dlsym return values (-1 on failure)",
+    "uv_random completes with status 0 and len 16; uv_sleep returns void",
+    "the barrier matches: count-0 EINVAL, main (last releaser) returns 1, the helper 0",
+    "uv_replace_allocator: NULL funcs EINVAL; after replacement the loop init/close allocator counts are exactly malloc=0 realloc=1 calloc=1 free=0 then free=2 (the loop-internal-fields calloc and the watchers-array realloc from the internal wq_async registration, and the two frees)",
+    "uv_cancel: EINVAL for the completed WRITE req (non-work type), EBUSY for the completed RANDOM req",
+    "the full UV_ERRNO_MAP name/value/strerror battery matches, including the Unknown system error forms",
+    "stderr is empty and the exit status is 0 for every run on both sides",
+]
+timeout_secs = 120
+nondeterminism_policy = "the op sequence is fixed and single-threaded (plus one helper thread that prints nothing and is joined before its results are printed); the only wall-clock dependence is the silent stop timer that bounds each uv_run, and its 30ms horizon is far beyond the loopback I/O and timer events it bounds; nothing pointer, address, pid, tid or raw-time dependent is printed"
+security_classification = "the event-loop surface is the netmgr's scheduler (BIND 9.20 lib/isc/netmgr): timer/async/signal dispatch ordering and the error taxonomy are the interface named's responsiveness depends on; the transcript asserts the exact callback orderings and error codes"
+references = [
+    "libuv 1.52.1 src/unix/{core.c,loop.c,loop-watcher.c,async.c,signal.c,udp.c,stream.c,tcp.c,dl.c}, src/{timer.c,uv-common.c,threadpool.c,thread-common.c,version.c}, include/uv.h (pinned archive sha256 478baf2599bfbc882c355288c9cb6f92e0e7dda435fa04031fa5b607cf3f414c)",
+    "forensics/oracle/probes/probe-libuv.c",
+    "bind9-rs-tools/src/bin/libuv-probe.rs",
+    "bind9-rs-tools/src/compat/libuv.rs",
+    "bind9-rs-tools/forensics/atlas/doxygen/libuv/api-atlas (function-level doxygen archaeology)",
+    "addendum §30 (libuv), §38 (C probe courts)",
+]
