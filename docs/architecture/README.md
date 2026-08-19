@@ -41,8 +41,15 @@ bind9-rs-core/
                   used by the rdata layer, and escape resolution
 
 bind9-rs-tools/
-  dig/            CLI parsing (FULLCHECK prefix semantics), output rendering
-                  (masterdump indent(), 24/32/40/48 columns), UDP/TCP client
+  dig/            CLI parsing (FULLCHECK prefix semantics, per-lookup
+                  transport snapshots, +opcode/+qid/+ednsopt machinery),
+                  output rendering (masterdump indent() and the 24/24/24/32
+                  .. 24/32/40/48 style matrix, multiline SOA/RRSIG,
+                  +unknownformat/\# and expandaaaa, +ttlunits, +identify,
+                  +yaml, the OPT pseudo-section and statistics blocks,
+                  rcode/opcode display tables), UDP/TCP client with EDNS
+                  cookie carry-forward, BADVERS negotiation, +padding
+                  alignment, opcode-mismatch/truncation retries
 
 bind9-rs-forensics/
   schemas.rs      release index / source manifest / behavior records /

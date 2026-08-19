@@ -1,44 +1,44 @@
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '192.0.2.256': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '192.0.2': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1.2.3.4.5': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1.2.3.4.extra': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1.2.3.4.': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near 'not-an-address': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1.2.3.04': bad dotted quad
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near 'fe80::1%eth0': bad IPv6 address
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '12345::1': bad IPv6 address
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1:2:3:4:5:6:7:8:9': bad IPv6 address
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near 'not-ipv6': bad IPv6 address
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '2001:db8:::1': bad IPv6 address
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near 'ns1.example.com..': empty label
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '..example.com.': empty label
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '4294967296': out of range
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '-1': not a valid number
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '6': extra input text
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '65536': out of range
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '-1': not a valid number
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '30': extra input text
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '65536': out of range
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '65536': out of range
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '-1': not a valid number
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: ran out of space
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: bad hex encoding
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1': invalid use of a meta type
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: extra input data
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '00': extra input text
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near eof: unexpected end of input
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '10000w': out of range
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '4294967296': syntax error
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near '1h2': syntax error
-dns_rdata_fromtext: buffer-0x7ffd15d38360:1: near 'x': syntax error
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '192.0.2.256': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '192.0.2': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1.2.3.4.5': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1.2.3.4.extra': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1.2.3.4.': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near 'not-an-address': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1.2.3.04': bad dotted quad
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near 'fe80::1%eth0': bad IPv6 address
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '12345::1': bad IPv6 address
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1:2:3:4:5:6:7:8:9': bad IPv6 address
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near 'not-ipv6': bad IPv6 address
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '2001:db8:::1': bad IPv6 address
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near 'ns1.example.com..': empty label
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '..example.com.': empty label
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '4294967296': out of range
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '-1': not a valid number
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '6': extra input text
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '65536': out of range
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '-1': not a valid number
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '30': extra input text
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '65536': out of range
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '65536': out of range
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '-1': not a valid number
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: ran out of space
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: bad hex encoding
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1': invalid use of a meta type
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: extra input data
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '00': extra input text
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near eof: unexpected end of input
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '10000w': out of range
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '4294967296': syntax error
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near '1h2': syntax error
+dns_rdata_fromtext: buffer-0x7ffc34b47560:1: near 'x': syntax error

@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "court_id": "CLI-DIG-0002",
+  "court_id": "CLI-DIG-0004",
   "git_commit": "62d3b2afec84d9996c34d022af92287e91f1a380",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
   "cargo_lock_sha256": "c62e3d70d3ead09db2b33781b2697f70abf1dd8c419d10b1616d8f9e75ade8f6",
   "oracle_hashes": {},
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
-  "completed_at": "2026-08-19T21:46:36Z",
+  "completed_at": "2026-08-19T21:46:25Z",
   "input_hashes": {
-    "cases.txt": "7fd5b264d9c59e3d68ec050794f6f3126834dd3b56ca2d2768d6064dc2e53da6"
+    "cases.txt": "d89b987ac2f5a20cdee57036d7b7c1709e096cade2c105804988eb09f480fc0f"
   },
   "residual_ids": [],
   "invariants_passed": [
     "all deterministic stdout lines match byte-for-byte after normalization",
     "outbound query behavior (proto, qname, qtype, qclass) matches the responder log"
   ],
-  "captures_sha256": "4b4e8b7c894bd94897d5bf70f64599aec23d9c23372e5107dafc8eeeabea9d60",
-  "repro_command": "bind9-court run CLI-DIG-0002"
+  "captures_sha256": "428b440a7dc859ee2ce0d392672c8c0dd4239245be45fdb329830cede728ea05",
+  "repro_command": "bind9-court run CLI-DIG-0004"
 }

@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "court_id": "CORE-NAME-TEXT-0001",
-  "git_commit": "15a7ccc94bd6360bd45b84092b43152ee0e87b13",
+  "git_commit": "62d3b2afec84d9996c34d022af92287e91f1a380",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
-  "cargo_lock_sha256": "2f270b04ebed4a7bc8b08e40d116165cfcaed70825d960088f4b490705480b4f",
+  "cargo_lock_sha256": "c62e3d70d3ead09db2b33781b2697f70abf1dd8c419d10b1616d8f9e75ade8f6",
   "oracle_hashes": {},
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
-  "completed_at": "2026-08-18T12:07:10Z",
+  "completed_at": "2026-08-19T20:43:14Z",
   "input_hashes": {
     "names.txt": "a1ebf4b7d22f52d7bf927923d62e8fc0e6eed90db76abd233d5aadc3258c001a"
   },

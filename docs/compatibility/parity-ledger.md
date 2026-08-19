@@ -26,7 +26,7 @@ form via `bind9-api-coverage regen` (per-function detail lives in
 | EDNS OPT | PROVEN | WIRE-MESSAGE-0001 (OPT placement, ext-rcode/version/DO/Z packing, option validation incl. OPTERR) |
 | RCODE/class/type tables | PROVEN | TABLES-0001 (0 residuals; rcode/tsigrcode/rdatatype/rdataclass totext+fromtext, ismeta/issingleton/isknown, RESERVED11..15 TOTEXTONLY and KEYDATA asymmetries) |
 | Masterfile lexer (`isc_lex` semantics) | PROVEN | ISC-LEX-0001 (0 residuals; gettoken + getmastertoken, DNSMASTERFILE comments, paren/multiline, quoted strings, numbers incl. overflow, escapes, CRLF, NUL specials, byte-exact) |
-| dig CLI + output | PARTIAL | archaeology of `dig.c`/`dighost.c`/`masterdump.c`; CLI-DIG-0001..0003 (0 residuals) |
+| dig CLI + output | PROVEN | archaeology of `dig.c`/`dighost.c`/`masterdump.c`; CLI-DIG-0001..0004 (0 residuals; 125-case option matrix over the scripted responder: masterfile styles incl. multiline SOA/RRSIG, +nottl/+noclass/+ttlunits/+onesoa/+unknownformat/+expandaaaa/+split/+header-only/+identify/+yaml, EDNS options incl. cookie states + carry-forward and BADCOOKIE, DO/CO flags, +opcode/+qid, per-lookup transports, truncation/EDNS-negotiation/opcode-mismatch retries, bad-packet/besteffort, -4/-6 resolution, byte-exact) |
 | libcap text grammar (`cap_from_text`/`cap_to_text`) | PROVEN | CAP-PROBE-0001 (0 residuals; byte-identical to C oracle) |
 | libcap external format (`cap_copy_ext`/`cap_copy_int`) | PROVEN | CAP-PROBE-0001 |
 | libcap flag/compare (`cap_set_flag`/`cap_get_flag`/`cap_compare`) | PROVEN | CAP-PROBE-0001 |
