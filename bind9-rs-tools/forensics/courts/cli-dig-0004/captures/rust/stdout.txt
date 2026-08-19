@@ -1,0 +1,3238 @@
+### CASE 1: @127.0.0.1 -p 5333 example.com +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54402
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: a12ff409a7326d0b0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN A
+
+;; ANSWER SECTION:
+example.com.		3600 IN	A 192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 2: @127.0.0.1 -p 5333 example.com SOA +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com SOA +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16691
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0981696240483eb80123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN SOA
+
+;; ANSWER SECTION:
+example.com.		3600 IN	SOA ns1.example.com. hostmaster.example.com. (
+				2024010101 ; serial
+				7200       ; refresh (2 hours)
+				3600       ; retry (1 hour)
+				1209600    ; expire (2 weeks)
+				3600       ; minimum (1 hour)
+				)
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 152
+
+--- STDERR
+--- EXIT 0
+### CASE 3: @127.0.0.1 -p 5333 example.com MX +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com MX +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 64639
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0b591b655a7244da0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN MX
+
+;; ANSWER SECTION:
+example.com.		3600 IN	MX 10 mail.example.com.
+
+;; ADDITIONAL SECTION:
+mail.example.com.	3600 IN	A 192.0.2.10
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 143
+
+--- STDERR
+--- EXIT 0
+### CASE 4: @127.0.0.1 -p 5333 example.com TXT +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com TXT +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57918
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 3bf051882aa3c3e00123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN TXT
+
+;; ANSWER SECTION:
+example.com.		3600 IN	TXT "hello world"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 103
+
+--- STDERR
+--- EXIT 0
+### CASE 5: @127.0.0.1 -p 5333 multi.example.com TXT +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 multi.example.com TXT +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39333
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 1612b164420cca020123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;multi.example.com.	IN TXT
+
+;; ANSWER SECTION:
+multi.example.com.	3600 IN	TXT "first" "second" "third"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 122
+
+--- STDERR
+--- EXIT 0
+### CASE 6: @127.0.0.1 -p 5333 any.example.com ANY +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 any.example.com ANY +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30719
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: ef036e09d0c5d6340123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;any.example.com.	IN ANY
+
+;; ANSWER SECTION:
+any.example.com.	3600 IN	A 192.0.2.4
+any.example.com.	3600 IN	AAAA 2001:db8::2
+any.example.com.	3600 IN	MX 20 mail.any.example.com.
+any.example.com.	3600 IN	TXT "any text"
+
+;; ADDITIONAL SECTION:
+mail.any.example.com.	3600 IN	A 192.0.2.20
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 269
+
+--- STDERR
+--- EXIT 0
+### CASE 7: @127.0.0.1 -p 5333 long.example.com +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 long.example.com +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2632
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: e7ea3ac617675dd90123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;long.example.com.	IN A
+
+;; ANSWER SECTION:
+a-very-long-owner-name.example.com. 3600 IN A 192.0.2.3
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 123
+
+--- STDERR
+--- EXIT 0
+### CASE 8: @127.0.0.1 -p 5333 example.com +nottl
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nottl
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33219
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c208ea31446923f40123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN	A
+
+;; ANSWER SECTION:
+example.com.		IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 9: @127.0.0.1 -p 5333 example.com +noclass
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +noclass
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65459
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0f9b8671586ca2d40123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 10: @127.0.0.1 -p 5333 example.com +nottl +noclass
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nottl +noclass
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1174
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0e7ed942a622648b0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN A
+
+;; ANSWER SECTION:
+example.com.		A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 11: @127.0.0.1 -p 5333 example.com +ttlunits
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +ttlunits
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60614
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 73509226dd243b130123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		1h	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 12: @127.0.0.1 -p 5333 example.com +multiline +nottl
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +multiline +nottl
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6353
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 15b35c86a02f7ab50123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN A
+
+;; ANSWER SECTION:
+example.com.		IN A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 13: @127.0.0.1 -p 5333 example.com +multiline +ttlunits
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +multiline +ttlunits
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2541
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 727ad9e6489fa7600123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN A
+
+;; ANSWER SECTION:
+example.com.		1h IN A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 14: @127.0.0.1 -p 5333 example.com +onesoa
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +onesoa
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 46940
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 6b225957664c3cad0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 15: @127.0.0.1 -p 5333 example.com +onesoa +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +onesoa +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60908
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 42779783b1bc8a3c0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN A
+
+;; ANSWER SECTION:
+example.com.		3600 IN	A 192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 16: @127.0.0.1 -p 5333 nonexistent.example.com +onesoa
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 nonexistent.example.com +onesoa
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 41498
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 04b48097a968a5d30123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;nonexistent.example.com.	IN	A
+
+;; AUTHORITY SECTION:
+example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 3600
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 164
+
+--- STDERR
+--- EXIT 0
+### CASE 17: @127.0.0.1 -p 5333 example.com +unknownformat
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +unknownformat
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43323
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 86dc14c8821cdd7f0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			CLASS1	TYPE1
+
+;; ANSWER SECTION:
+example.com.		3600	CLASS1	TYPE1	\# 4 C0000201
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 18: @127.0.0.1 -p 5333 example.com AAAA +expandaaaa
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com AAAA +expandaaaa
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37656
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 773c4eaa806eeb9b0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	AAAA
+
+;; ANSWER SECTION:
+example.com.		3600	IN	AAAA	2001:0db8:0000:0000:0000:0000:0000:0001
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 107
+
+--- STDERR
+--- EXIT 0
+### CASE 19: @127.0.0.1 -p 5333 example.com +short +expandaaaa
+--- STDOUT
+192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 20: @127.0.0.1 -p 5333 example.com AAAA +short +expandaaaa
+--- STDOUT
+2001:0db8:0000:0000:0000:0000:0000:0001
+--- STDERR
+--- EXIT 0
+### CASE 21: @127.0.0.1 -p 5333 example.com +header-only
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +header-only
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: FORMERR, id: 39985
+;; flags: qr; QUERY: 0, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; WARNING: EDNS query returned status FORMERR - retry with '+noedns'
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 12
+
+--- STDERR
+--- EXIT 0
+### CASE 22: @127.0.0.1 -p 5333 example.com +noall +header-only
+--- STDOUT
+--- STDERR
+--- EXIT 0
+### CASE 23: @127.0.0.1 -p 5333 example.com +identify
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +identify
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23902
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 3d33cf9763cb56520123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 24: @127.0.0.1 -p 5333 example.com a.example.com +identify
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com a.example.com +identify
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25818
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2b06153db756a7c70123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 719
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2b06153db756a7c70123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;a.example.com.			IN	A
+
+;; ANSWER SECTION:
+a.example.com.		3600	IN	A	192.0.2.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 99
+
+--- STDERR
+--- EXIT 0
+### CASE 25: @127.0.0.1 -p 5333 example.com +yaml
+--- STDOUT
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-08-19T21:46:25.296Z
+    response_time: !!timestamp 2026-08-19T21:46:25.296Z
+    message_size: 95b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "127.0.0.1"
+    response_port: 5333
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 14803
+      flags: qr rd ra
+      QUESTION: 1
+      ANSWER: 1
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags:
+          udp: 1232
+          COOKIE:
+            CLIENT: 381932d8d4b33348
+            SERVER: 0123456789abcdef1122334455667788
+            STATUS: good
+      QUESTION_SECTION:
+        - 'example.com. IN A'
+      ANSWER_SECTION:
+        - 'example.com. 3600 IN A 192.0.2.1'
+--- STDERR
+--- EXIT 0
+### CASE 26: @127.0.0.1 -p 5333 example.com SOA +yaml
+--- STDOUT
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-08-19T21:46:25.297Z
+    response_time: !!timestamp 2026-08-19T21:46:25.297Z
+    message_size: 152b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "127.0.0.1"
+    response_port: 5333
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 30502
+      flags: qr rd ra
+      QUESTION: 1
+      ANSWER: 1
+      AUTHORITY: 0
+      ADDITIONAL: 1
+      OPT_PSEUDOSECTION:
+        EDNS:
+          version: 0
+          flags:
+          udp: 1232
+          COOKIE:
+            CLIENT: ac1332bd348222e7
+            SERVER: 0123456789abcdef1122334455667788
+            STATUS: good
+      QUESTION_SECTION:
+        - 'example.com. IN SOA'
+      ANSWER_SECTION:
+        - 'example.com. 3600 IN SOA ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 3600'
+--- STDERR
+--- EXIT 0
+### CASE 27: @127.0.0.1 -p 5333 example.com +yaml +short
+--- STDOUT
+- type: MESSAGE
+  message:
+    type: RECURSIVE_RESPONSE
+    query_time: !!timestamp 2026-08-19T21:46:25.298Z
+    response_time: !!timestamp 2026-08-19T21:46:25.298Z
+    message_size: 95b
+    socket_family: INET
+    socket_protocol: UDP
+    response_address: "127.0.0.1"
+    response_port: 5333
+    query_address: "0.0.0.0"
+    query_port: 0
+    response_message_data:
+      opcode: QUERY
+      status: NOERROR
+      id: 6236
+      flags: qr rd ra
+      QUESTION: 1
+      ANSWER: 1
+      AUTHORITY: 0
+      ADDITIONAL: 1
+192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 28: @127.0.0.1 -p 5333 example.com -u
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com -u
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59962
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 8a50d70d048d2e190123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 54 usec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 29: @127.0.0.1 -p 5333 example.com +short +multiline
+--- STDOUT
+192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 30: @127.0.0.1 -p 5333 example.com SOA +short +multiline
+--- STDOUT
+ns1.example.com. hostmaster.example.com. 2024010101 7200 3600 1209600 3600
+--- STDERR
+--- EXIT 0
+### CASE 31: @127.0.0.1 -p 5333 example.com -t TYPE65280
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com -t TYPE65280
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 64984
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 3705a0c317d5bdeb0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	TYPE65280
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 68
+
+--- STDERR
+--- EXIT 0
+### CASE 32: @127.0.0.1 -p 5333 example.com -t TYPE65280 +unknownformat
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com -t TYPE65280 +unknownformat
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8379
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: cec1caffd55c6a110123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			CLASS1	TYPE65280
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 68
+
+--- STDERR
+--- EXIT 0
+### CASE 33: @127.0.0.1 -p 5333 example.com -t TYPE65280 +split=16
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com -t TYPE65280 +split=16
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51151
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: ebf3b5d91f6d69d10123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	TYPE65280
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 68
+
+--- STDERR
+--- EXIT 0
+### CASE 34: @127.0.0.1 -p 5333 example.com -t TYPE65280 +short
+--- STDOUT
+--- STDERR
+--- EXIT 0
+### CASE 35: @127.0.0.1 -p 5333 dnssec.example.com +dnssec
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 dnssec.example.com +dnssec
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45107
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+; COOKIE: d65ed072c808f8bf0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;dnssec.example.com.		IN	A
+
+;; ANSWER SECTION:
+dnssec.example.com.	3600	IN	A	192.0.2.5
+dnssec.example.com.	3600	IN	RRSIG	A 8 2 3600 20240809082712 20240414234640 12345 example.com. q6urq6urq6urq6urq6urqw==
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 186
+
+--- STDERR
+--- EXIT 0
+### CASE 36: @127.0.0.1 -p 5333 dnssec.example.com +do
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 dnssec.example.com +do
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57002
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+; COOKIE: 7ebe7d575d00100c0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;dnssec.example.com.		IN	A
+
+;; ANSWER SECTION:
+dnssec.example.com.	3600	IN	A	192.0.2.5
+dnssec.example.com.	3600	IN	RRSIG	A 8 2 3600 20240809082712 20240414234640 12345 example.com. q6urq6urq6urq6urq6urqw==
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 186
+
+--- STDERR
+--- EXIT 0
+### CASE 37: @127.0.0.1 -p 5333 dnssec.example.com +dnssec +short
+--- STDOUT
+192.0.2.5
+A 8 2 3600 20240809082712 20240414234640 12345 example.com. q6urq6urq6urq6urq6urqw==
+--- STDERR
+--- EXIT 0
+### CASE 38: @127.0.0.1 -p 5333 dnssec.example.com +dnssec +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 dnssec.example.com +dnssec +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22299
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+; COOKIE: 0a6b85806fc959710123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;dnssec.example.com.	IN A
+
+;; ANSWER SECTION:
+dnssec.example.com.	3600 IN	A 192.0.2.5
+dnssec.example.com.	3600 IN	RRSIG A 8 2 3600 (
+				20240809082712 20240414234640 12345 example.com.
+				q6urq6urq6urq6urq6urqw== )
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 186
+
+--- STDERR
+--- EXIT 0
+### CASE 39: @127.0.0.1 -p 5333 dnssec.example.com +nodnssec
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 dnssec.example.com +nodnssec
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8915
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 6b8381264352edee0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;dnssec.example.com.		IN	A
+
+;; ANSWER SECTION:
+dnssec.example.com.	3600	IN	A	192.0.2.5
+dnssec.example.com.	3600	IN	RRSIG	A 8 2 3600 20240809082712 20240414234640 12345 example.com. q6urq6urq6urq6urq6urqw==
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 186
+
+--- STDERR
+--- EXIT 0
+### CASE 40: @127.0.0.1 -p 5333 example.com +nsid
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nsid
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61064
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; NSID: 72 65 73 70 6f 6e 64 65 72 ("responder")
+; COOKIE: 81a1f5222f9082760123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 108
+
+--- STDERR
+--- EXIT 0
+### CASE 41: @127.0.0.1 -p 5333 example.com +expire
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +expire
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2832
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 19900135d7355c210123456789abcdef1122334455667788 (good)
+; EXPIRE:
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 99
+
+--- STDERR
+--- EXIT 0
+### CASE 42: @127.0.0.1 -p 5333 example.com +keepalive
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +keepalive
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58052
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: fe4ff7c1e94ab8460123456789abcdef1122334455667788 (good)
+; TCP-KEEPALIVE:
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 99
+
+--- STDERR
+--- EXIT 0
+### CASE 43: @127.0.0.1 -p 5333 example.com +padding=64
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +padding=64
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29411
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 091b4949a6cf677b0123456789abcdef1122334455667788 (good)
+; PADDING: (8 bytes)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 107
+
+--- STDERR
+--- EXIT 0
+### CASE 44: @127.0.0.1 -p 5333 example.com +subnet=192.0.2.0/24
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +subnet=192.0.2.0/24
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7104
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; CLIENT-SUBNET: 192.0.2.0/24/0
+; COOKIE: ab0037d89f975bde0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 106
+
+--- STDERR
+--- EXIT 0
+### CASE 45: @127.0.0.1 -p 5333 example.com +subnet=2001:db8::/32
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +subnet=2001:db8::/32
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59867
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; CLIENT-SUBNET: 2001:db8::/32/0
+; COOKIE: c9600fe4ded8e1120123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 107
+
+--- STDERR
+--- EXIT 0
+### CASE 46: @127.0.0.1 -p 5333 example.com +ednsopt=NSID
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +ednsopt=NSID
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32510
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2e96c1ccb977d5900123456789abcdef1122334455667788 (good)
+; NSID: 72 65 73 70 6f 6e 64 65 72 ("responder")
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 108
+
+--- STDERR
+--- EXIT 0
+### CASE 47: @127.0.0.1 -p 5333 example.com +ednsopt=65001:01020304
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +ednsopt=65001:01020304
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57528
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0546cd9a3f42e83f0123456789abcdef1122334455667788 (good)
+; OPT=65001: 01 02 03 04 ("....")
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 103
+
+--- STDERR
+--- EXIT 0
+### CASE 48: @127.0.0.1 -p 5333 example.com +ednsopt=3:0102
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +ednsopt=3:0102
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 34808
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 26cef2a6538503ba0123456789abcdef1122334455667788 (good)
+; NSID: 72 65 73 70 6f 6e 64 65 72 ("responder")
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 108
+
+--- STDERR
+--- EXIT 0
+### CASE 49: @127.0.0.1 -p 5333 example.com +noednsopt
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +noednsopt
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 13209
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 1769de596c32b8a20123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 50: @127.0.0.1 -p 5333 example.com +edns=0
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +edns=0
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63860
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: fb4e3e0a73226cd00123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 51: @127.0.0.1 -p 5333 example.com +edns=1
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +edns=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: ?256, id: 53049
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 67
+
+--- STDERR
+--- EXIT 0
+### CASE 52: @127.0.0.1 -p 5333 example.com +edns=2
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +edns=2
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: ?256, id: 25179
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 67
+
+--- STDERR
+--- EXIT 0
+### CASE 53: @127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0x8000
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0x8000
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29672
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2b940d61bdc861230123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 54: @127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0x4000
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0x4000
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22669
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 5036bd1462cb7b470123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 55: @127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0xffff
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0xffff
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65288
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 3469eae9214414b70123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 56: @127.0.0.1 -p 5333 example.com +noedns
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +noedns
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 34437
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 56
+
+--- STDERR
+--- EXIT 0
+### CASE 57: @127.0.0.1 -p 5333 example.com +bufsize=512
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +bufsize=512
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63317
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+; COOKIE: 8efeaf7a070892ea0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 58: @127.0.0.1 -p 5333 example.com +bufsize=4096 +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +bufsize=4096 +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44123
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 41017e6cbd720b33
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44123
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: 41017e6cbd720b330123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 59: @127.0.0.1 -p 5333 example.com +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16228
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2ba29df041f4bd13
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16228
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2ba29df041f4bd130123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 60: @127.0.0.1 -p 5333 example.com +qr +noall +answer
+--- STDOUT
+example.com.		3600	IN	A	192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 61: @127.0.0.1 -p 5333 example.com +cookie
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +cookie
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2999
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 24c8851ac3775ac50123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 62: @127.0.0.1 -p 5333 example.com +cookie=0102030405060708
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +cookie=0102030405060708
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 64148
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 01020304050607080123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 63: @127.0.0.1 -p 5333 example.com +nocookie
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nocookie
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20271
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 67
+
+--- STDERR
+--- EXIT 0
+### CASE 64: @127.0.0.1 -p 5333 badcookie.example.com
+--- STDOUT
+;; Warning: Client COOKIE mismatch
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 badcookie.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54672
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: deadbeefdeadbeef0123456789abcdef1122334455667788 (bad)
+;; QUESTION SECTION:
+;badcookie.example.com.		IN	A
+
+;; ANSWER SECTION:
+badcookie.example.com.	3600	IN	A	192.0.2.6
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 115
+
+--- STDERR
+--- EXIT 0
+### CASE 65: @127.0.0.1 -p 5333 badcookie.example.com +badcookie
+--- STDOUT
+;; Warning: Client COOKIE mismatch
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 badcookie.example.com +badcookie
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 64858
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: deadbeefdeadbeef0123456789abcdef1122334455667788 (bad)
+;; QUESTION SECTION:
+;badcookie.example.com.		IN	A
+
+;; ANSWER SECTION:
+badcookie.example.com.	3600	IN	A	192.0.2.6
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 115
+
+--- STDERR
+--- EXIT 0
+### CASE 66: @127.0.0.1 -p 5333 badcookie.example.com +nobadcookie
+--- STDOUT
+;; Warning: Client COOKIE mismatch
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 badcookie.example.com +nobadcookie
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60494
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: deadbeefdeadbeef0123456789abcdef1122334455667788 (bad)
+;; QUESTION SECTION:
+;badcookie.example.com.		IN	A
+
+;; ANSWER SECTION:
+badcookie.example.com.	3600	IN	A	192.0.2.6
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 115
+
+--- STDERR
+--- EXIT 0
+### CASE 67: @127.0.0.1 -p 5333 badcookie.example.com +showbadcookie
+--- STDOUT
+;; Warning: Client COOKIE mismatch
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 badcookie.example.com +showbadcookie
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51021
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: deadbeefdeadbeef0123456789abcdef1122334455667788 (bad)
+;; QUESTION SECTION:
+;badcookie.example.com.		IN	A
+
+;; ANSWER SECTION:
+badcookie.example.com.	3600	IN	A	192.0.2.6
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 115
+
+--- STDERR
+--- EXIT 0
+### CASE 68: @127.0.0.1 -p 5333 example.com +aaonly +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +aaonly +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16521
+;; flags: aa rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: fa3372ffefddc548
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16521
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: fa3372ffefddc5480123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 69: @127.0.0.1 -p 5333 example.com +adflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +adflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48406
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4c588790f87293bb
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48406
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4c588790f87293bb0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 70: @127.0.0.1 -p 5333 example.com +cdflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +cdflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42108
+;; flags: rd ad cd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 9ae0138371ef8350
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42108
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 9ae0138371ef83500123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 71: @127.0.0.1 -p 5333 example.com +tcflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +tcflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5238
+;; flags: tc rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 86b6f5cb5e83e5db
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5238
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 86b6f5cb5e83e5db0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 72: @127.0.0.1 -p 5333 example.com +zflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +zflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60567
+;; flags: rd ad; MBZ: 0x4; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 193840efa3dc2331
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60567
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 193840efa3dc23310123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 73: @127.0.0.1 -p 5333 example.com +raflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +raflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 62699
+;; flags: rd ra ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: af1afe200d828b78
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 62699
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: af1afe200d828b780123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 74: @127.0.0.1 -p 5333 example.com +coflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +coflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2462
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: co; udp: 1232
+; COOKIE: 2e8608f2d5d28154
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2462
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2e8608f2d5d281540123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 75: @127.0.0.1 -p 5333 example.com +noaaonly +noadflag +nocdflag +nozflag +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +noaaonly +noadflag +nocdflag +nozflag +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2189
+;; flags: rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b60d50e46cdef0ea
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2189
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b60d50e46cdef0ea0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 76: @127.0.0.1 -p 5333 example.com +opcode=UPDATE +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +opcode=UPDATE +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id: 45051
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2182b7d382190583
+;; ZONE SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: UPDATE, status: NOERROR, id: 45051
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2182b7d3821905830123456789abcdef1122334455667788 (good)
+;; ZONE SECTION:
+;example.com.			IN	A
+
+;; PREREQUISITE SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 77: @127.0.0.1 -p 5333 example.com +opcode=NOTIFY +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +opcode=NOTIFY +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: NOTIFY, status: NOERROR, id: 37583
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 844c2f441bdd7d9b
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: NOTIFY, status: NOERROR, id: 37583
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 844c2f441bdd7d9b0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 78: @127.0.0.1 -p 5333 example.com +opcode=3 +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +opcode=3 +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: RESERVED3, status: NOERROR, id: 1326
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4c261f3d572b0a86
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: RESERVED3, status: NOERROR, id: 1326
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4c261f3d572b0a860123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 79: @127.0.0.1 -p 5333 example.com +opcode=QUERY +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +opcode=QUERY +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51284
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 36fd7e510a06f2de
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51284
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 36fd7e510a06f2de0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 80: @127.0.0.1 -p 5333 example.com +qid=4660 +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +qid=4660 +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4660
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: fb9d7d67d0d09e11
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; QUERY SIZE: 52
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4660
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: fb9d7d67d0d09e110123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 81: @127.0.0.1 -p 5333 example.com +nocomments
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nocomments
+; (1 server found)
+;; global options: +cmd
+;example.com.			IN	A
+example.com.		3600	IN	A	192.0.2.1
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 82: @127.0.0.1 -p 5333 example.com +nostats
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nostats
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36009
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 83d9b2b0374d74560123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+--- STDERR
+--- EXIT 0
+### CASE 83: @127.0.0.1 -p 5333 example.com +nocmd
+--- STDOUT
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42654
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: f9998f00ffdad8c00123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 84: @127.0.0.1 -p 5333 example.com +noall
+--- STDOUT
+--- STDERR
+--- EXIT 0
+### CASE 85: @127.0.0.1 -p 5333 example.com +all
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +all
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47186
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 577521dbbd7327b30123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 86: @127.0.0.1 -p 5333 example.com +noall +question
+--- STDOUT
+;example.com.			IN	A
+--- STDERR
+--- EXIT 0
+### CASE 87: @127.0.0.1 -p 5333 example.com +noall +answer +authority +additional
+--- STDOUT
+example.com.		3600	IN	A	192.0.2.1
+--- STDERR
+--- EXIT 0
+### CASE 88: @127.0.0.1 -p 5333 example.com +comments +noanswer +noquestion
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +comments +noanswer +noquestion
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44322
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 79a6dbbc217952e50123456789abcdef1122334455667788 (good)
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 89: @127.0.0.1 -p 5333 example.com +rrcomments
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +rrcomments
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12227
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 362bf41e68a27d190123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 90: @127.0.0.1 -p 5333 version.bind CH TXT
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 version.bind CH TXT
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32976
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 897e8fdf79c271d70123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;version.bind.			CH	TXT
+
+;; ANSWER SECTION:
+version.bind.		3600	CH	TXT	"9.20.26"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 101
+
+--- STDERR
+--- EXIT 0
+### CASE 91: @127.0.0.1 -p 5333 version.bind -c CH -t TXT
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 version.bind -c CH -t TXT
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52997
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: f3f7dd3169e4267e0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;version.bind.			CH	TXT
+
+;; ANSWER SECTION:
+version.bind.		3600	CH	TXT	"9.20.26"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 101
+
+--- STDERR
+--- EXIT 0
+### CASE 92: @127.0.0.1 -p 5333 example.com -c IN -t A
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com -c IN -t A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 28488
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b85d3757e273a97c0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 93: @127.0.0.1 -p 5333 -q example.com -t A
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 -q example.com -t A
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55252
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 06e404f8176a621b0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 94: @127.0.0.1 -p 5333 example.com A AAAA MX TXT
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com A AAAA MX TXT
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 31972
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 97bbf86cbe294ade0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	TXT
+
+;; ANSWER SECTION:
+example.com.		3600	IN	TXT	"hello world"
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 103
+
+--- STDERR
+;; Warning, extra type option
+;; Warning, extra type option
+;; Warning, extra type option
+--- EXIT 0
+### CASE 95: @127.0.0.1 -p 5333 example.com a.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com a.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32944
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: cb54b3f6546944a20123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45983
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: cb54b3f6546944a20123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;a.example.com.			IN	A
+
+;; ANSWER SECTION:
+a.example.com.		3600	IN	A	192.0.2.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 99
+
+--- STDERR
+--- EXIT 0
+### CASE 96: @127.0.0.1 -p 5333 example.com +tcp +multiline
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +tcp +multiline
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48464
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c6088c8a394912a90123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.		IN A
+
+;; ANSWER SECTION:
+example.com.		3600 IN	A 192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 97: @127.0.0.1 -p 5333 example.com +vc
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +vc
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1112
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4b2aa9571816b7800123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 98: @127.0.0.1 -p 5333 example.com +tcp +keepopen a.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +tcp +keepopen a.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 26100
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 8b092c321913f4d10123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45687
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 8b092c321913f4d10123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;a.example.com.			IN	A
+
+;; ANSWER SECTION:
+a.example.com.		3600	IN	A	192.0.2.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 99
+
+--- STDERR
+--- EXIT 0
+### CASE 99: @127.0.0.1 -p 5333 example.com +retry=1
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +retry=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39920
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: a8c76a04c5eb69bf0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 100: @127.0.0.1 -p 5333 example.com +tries=0
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +tries=0
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35539
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 108be8aaa9fc62610123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 101: @127.0.0.1 -p 5333 example.com +time=0
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +time=0
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8082
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 88a50f8d1c1ec70a0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 102: @127.0.0.1 -p 5333 example.com +timeout=2
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +timeout=2
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51524
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4d01859205c0b1940123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 103: @127.0.0.1 -p 5333 -4 -p 5333 example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 -4 -p 5333 example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7787
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 73866942eab986440123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 104: @127.0.0.1 -p 5333 -6 example.com
+--- STDOUT
+;; Skipping mapped address '::ffff:127.0.0.1'
+;; No acceptable nameservers
+--- STDERR
+--- EXIT 0
+### CASE 105: @127.0.0.1 -p 5333 example.com +search
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +search
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3804
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: f4ab0dbf706c8c950123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 106: @127.0.0.1 -p 5333 example.com +nosearch
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +nosearch
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48409
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 0d8fbf18566f99da0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 107: @127.0.0.1 -p 5333 example.com +ndots=1
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +ndots=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20051
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d453025c341551f20123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 108: @127.0.0.1 -p 5333 example.com +fuzztime=2
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +fuzztime=2
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24882
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b61bc3266f3597e90123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 109: @127.0.0.1 -p 5333 example.com +domain=example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +domain=example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44908
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 9e6e885cac995e670123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 110: @127.0.0.1 -p 5333 example.com +showsearch
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +showsearch
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59287
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 29feabe99fa104490123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 111: @127.0.0.1 -p 5333 example.com +showbadvers
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +showbadvers
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56452
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 58f9cdb45268c8a50123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 112: @127.0.0.1 -p 5333 example.com +cl
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 example.com +cl
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33082
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: a0a186df6ca94dc20123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;example.com.			IN	A
+
+;; ANSWER SECTION:
+example.com.		3600	IN	A	192.0.2.1
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 95
+
+--- STDERR
+--- EXIT 0
+### CASE 113: @127.0.0.1 -p 5333 opcodemismatch.example.com +qr
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 opcodemismatch.example.com +qr
+; (1 server found)
+;; global options: +cmd
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49162
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d1a5888f89f25e59
+;; QUESTION SECTION:
+;opcodemismatch.example.com.	IN	A
+
+;; QUERY SIZE: 67
+
+;; Warning: Opcode mismatch: expected QUERY, got STATUS
+;; communications error to 127.0.0.1#5333: timed out
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49162
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d1a5888f89f25e59
+;; QUESTION SECTION:
+;opcodemismatch.example.com.	IN	A
+
+;; QUERY SIZE: 67
+
+;; Warning: Opcode mismatch: expected QUERY, got STATUS
+;; communications error to 127.0.0.1#5333: timed out
+;; Sending:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49162
+;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d1a5888f89f25e59
+;; QUESTION SECTION:
+;opcodemismatch.example.com.	IN	A
+
+;; QUERY SIZE: 67
+
+;; Warning: Opcode mismatch: expected QUERY, got STATUS
+;; communications error to 127.0.0.1#5333: timed out
+;; no servers could be reached
+--- STDERR
+--- EXIT 9
+### CASE 114: @127.0.0.1 -p 5333 badvers.example.com +edns=1
+--- STDOUT
+;; BADVERS, retrying with EDNS version 0.
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 badvers.example.com +edns=1
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15718
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 8887e3a10181f4af0123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;badvers.example.com.		IN	A
+
+;; ANSWER SECTION:
+badvers.example.com.	3600	IN	A	192.0.2.9
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 111
+
+--- STDERR
+--- EXIT 0
+### CASE 115: @127.0.0.1 -p 5333 ednsneg.example.com
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 ednsneg.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: FORMERR, id: 3095
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+
+;; WARNING: EDNS query returned status FORMERR - retry with '+noedns'
+
+;; QUESTION SECTION:
+;ednsneg.example.com.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 37
+
+--- STDERR
+--- EXIT 0
+### CASE 116: @127.0.0.1 -p 5333 ednsneg.example.com +noedns
+--- STDOUT
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 ednsneg.example.com +noedns
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 11444
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;ednsneg.example.com.		IN	A
+
+;; ANSWER SECTION:
+ednsneg.example.com.	3600	IN	A	192.0.2.7
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 72
+
+--- STDERR
+--- EXIT 0
+### CASE 117: @127.0.0.1 -p 5333 malformed.example.com
+--- STDOUT
+;; Warning: Message parser reports malformed message packet.
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 malformed.example.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 9088
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: Message has 3 extra bytes at end
+
+;; QUESTION SECTION:
+;malformed.example.com.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 75
+
+--- STDERR
+--- EXIT 0
+### CASE 118: @127.0.0.1 -p 5333 malformed.example.com +besteffort
+--- STDOUT
+;; Warning: Message parser reports malformed message packet.
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 malformed.example.com +besteffort
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35055
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: Message has 3 extra bytes at end
+
+;; QUESTION SECTION:
+;malformed.example.com.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:25 UTC 2026
+;; MSG SIZE  rcvd: 75
+
+--- STDERR
+--- EXIT 0
+### CASE 119: @127.0.0.1 -p 5333 example.com +sigchase
+--- STDOUT
+--- STDERR
+dig: +sigchase option no longer supported
+--- EXIT 1
+### CASE 120: @127.0.0.1 -p 5333 example.com +topdown
+--- STDOUT
+--- STDERR
+dig: +topdown option no longer supported
+--- EXIT 1
+### CASE 121: @127.0.0.1 -p 5333 example.com +mapped
+--- STDOUT
+--- STDERR
+dig: +mapped option no longer supported
+--- EXIT 1
+### CASE 122: @127.0.0.1 -p 5333 example.com +trusted-key
+--- STDOUT
+--- STDERR
+dig: +trusted-key option no longer supported
+--- EXIT 1
+### CASE 123: @127.0.0.1 -p 1 example.com
+--- STDOUT
+;; communications error to 127.0.0.1#1: connection refused
+;; communications error to 127.0.0.1#1: connection refused
+;; communications error to 127.0.0.1#1: connection refused
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 1 example.com
+; (1 server found)
+;; global options: +cmd
+;; no servers could be reached
+--- STDERR
+--- EXIT 9
+### CASE 124: @127.0.0.1 -p 1 example.com +tcp
+--- STDOUT
+;; Connection to 127.0.0.1#1(127.0.0.1) for example.com failed: connection refused.
+;; no servers could be reached
+;; Connection to 127.0.0.1#1(127.0.0.1) for example.com failed: connection refused.
+;; no servers could be reached
+;; Connection to 127.0.0.1#1(127.0.0.1) for example.com failed: connection refused.
+;; no servers could be reached
+--- STDERR
+--- EXIT 9
+### RESPONDER QUERY LOG
+udp . 1 1
+udp example.com 1 1
+udp example.com 6 1
+udp example.com 15 1
+udp example.com 16 1
+udp multi.example.com 16 1
+tcp any.example.com 255 1
+udp long.example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp nonexistent.example.com 1 1
+udp example.com 1 1
+udp example.com 28 1
+udp example.com 1 1
+udp example.com 28 1
+udp example.com 1 1
+udp example.com 1 1
+udp a.example.com 1 1
+udp example.com 1 1
+udp example.com 6 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 6 1
+udp example.com 65280 1
+udp example.com 65280 1
+udp example.com 65280 1
+udp example.com 65280 1
+udp dnssec.example.com 1 1
+udp dnssec.example.com 1 1
+udp dnssec.example.com 1 1
+udp dnssec.example.com 1 1
+udp dnssec.example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp badcookie.example.com 1 1
+udp badcookie.example.com 1 1
+udp badcookie.example.com 1 1
+udp badcookie.example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp version.bind 16 3
+udp version.bind 16 3
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 16 1
+udp example.com 1 1
+udp a.example.com 1 1
+tcp example.com 1 1
+tcp example.com 1 1
+tcp example.com 1 1
+udp a.example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp example.com 1 1
+udp opcodemismatch.example.com 1 1
+udp opcodemismatch.example.com 1 1
+udp opcodemismatch.example.com 1 1
+udp badvers.example.com 1 1
+udp badvers.example.com 1 1
+udp ednsneg.example.com 1 1
+udp ednsneg.example.com 1 1
+udp malformed.example.com 1 1
+udp malformed.example.com 1 1

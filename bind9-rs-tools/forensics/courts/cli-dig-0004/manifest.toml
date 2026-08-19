@@ -1,0 +1,27 @@
+schema_version = 1
+court_id = "CLI-DIG-0004"
+question = "dig option matrix and rendering surface against a deterministic scripted DNS responder: +multiline masterfile style, +nottl/+noclass/+ttlunits/+onesoa/+unknownformat/+expandaaaa/+split/+header-only/+identify/+yaml, EDNS options (+nsid/+expire/+tcp-keepalive/+padding/+subnet/+ednsopt/+ednsflags, cookie states incl. carry-forward and BADCOOKIE), +dnssec DO-bit and RRSIG rendering, query flags (+aaonly/+adflag/+cdflag/+tcflag/+zflag/+raflag/+coflag), +opcode/+qid, class/type/name forms, transport/retry/timeout, EDNS negotiation, bad-packet/besteffort, and removed-option diagnostics"
+subsystem = "cli/dig"
+oracle_versions = ["9.20.26"]
+harness = "dig"
+normalization = [
+    "NONDETERMINISTIC-1: DNS transaction ID (`id: N`) — random per run; raw value retained in captures",
+    "NONDETERMINISTIC-2: `;; Query time: N msec` / `N usec` (with -u) — wall clock",
+    "NONDETERMINISTIC-3: `;; WHEN: <date>` — wall clock, locale-dependent",
+    "NONDETERMINISTIC-4: client COOKIE bytes (8 hex octets in `; COOKIE:` lines and the bad-packet hex dump) — per-process OS entropy; the server-cookie suffix and the (good|bad) state are invariant",
+    "NONDETERMINISTIC-5: YAML `query_time`/`response_time` (`!!timestamp`, ISO8601 ms) — wall clock; the values are retained in the captures and normalized to `!!timestamp <ts>`",
+    "NONDETERMINISTIC-6: YAML `CLIENT:` cookie field — the same per-process client cookie as NONDETERMINISTIC-4; normalized to `CLIENT: <client>`",
+]
+invariants = [
+    "all deterministic stdout lines match byte-for-byte after normalization",
+    "outbound query behavior (proto, qname, qtype, qclass) matches the responder log",
+]
+timeout_secs = 300
+nondeterminism_policy = "documented per-field normalization; raw retained"
+security_classification = "none"
+references = [
+    "bin/dig/dig.c + dighost.c + masterdump.c (9.20.26): printmessage, short_answer, received, process_opt/process_cookie, setup_lookup, the master styles and totext flags",
+    "lib/dns/masterdump.c dns_master_stylecreate columns and DSTYLE flags",
+    "addendum §16, §17, §32, §44",
+    "court fixture: bind9-rs-tools/forensics/courts/common/dns-responder.py",
+]

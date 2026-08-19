@@ -21,11 +21,13 @@ pub mod output;
 
 use bind9_rs_core::class::Class;
 use bind9_rs_core::edns::{option_code, Opt};
-use bind9_rs_core::message::{header, question::Question, Message};
+use bind9_rs_core::message::{header, question::Question, Message, ParseStatus};
 use bind9_rs_core::name::Name;
 use bind9_rs_core::rrtype::RrType;
 use options::{parse_args, DigOptions, ParseError, Transport};
-use output::{render_message, render_send_message, render_statistics, StatisticsInfo};
+use output::{
+    render_message, render_send_message, render_statistics, render_yaml_message, StatisticsInfo,
+};
 use std::io::Write;
 use std::net::{SocketAddr, ToSocketAddrs, UdpSocket};
 use std::sync::OnceLock;
@@ -144,6 +146,13 @@ pub struct Lookup {
     /// escaped to-text form is never fed to libidn2).
     pub text: String,
     pub names: Vec<(Name, RrType, Class)>,
+    /// The transport snapshot at name-parse time (dig.c `lookup->tcp_mode`):
+    /// `+tcp` after a name applies to that lookup only; later names clone
+    /// the default lookup and keep the original transport.
+    pub transport: Transport,
+    /// dig.c `lookup->tcp_mode_set`: whether +tcp/+vc (or +notcp) was given
+    /// for this lookup; AXFR/IXFR/ANY force TCP only when it is unset.
+    pub tcp_mode_set: bool,
 }
 
 /// Build a lookup from a raw name argument.
@@ -159,11 +168,24 @@ pub fn build_lookup(
         server: server.to_string(),
         text: name_text.to_string(),
         names: vec![(qname, qtype, qclass)],
+        transport: Transport::Udp,
+        tcp_mode_set: false,
     })
 }
 
 fn resolve_server(server: &str, port: u16, v4: bool, v6: bool) -> Result<SocketAddr, String> {
     let host = server.trim_start_matches('[').trim_end_matches(']');
+    // dig.c getaddresses: under -6 an IPv4 literal resolves to its
+    // v4-mapped form (getaddrinfo AF_INET6), which start_tcp/start_udp then
+    // skip with the mapped-address warning.
+    if v6 && !v4 {
+        if let Ok(v4addr) = host.parse::<std::net::Ipv4Addr>() {
+            let mapped: std::net::Ipv6Addr = format!("::ffff:{v4addr}").parse().unwrap();
+            return Ok(SocketAddr::V6(std::net::SocketAddrV6::new(
+                mapped, port, 0, 0,
+            )));
+        }
+    }
     let addrs: Vec<SocketAddr> = (host, port)
         .to_socket_addrs()
         .map_err(|e| format!("couldn't get address for '{server}': {e}"))?
@@ -201,79 +223,241 @@ fn query_once(
     let server_addr = resolve_server(&lookup.server, port, parsed.ipv4_only, parsed.ipv6_only)
         .map_err(|e| (e, 1))?;
 
-    // The query message (dighost.c setup_lookup: RD is suppressed for
-    // AXFR/IXFR; AD/AA/RA/TC/Z flags come from the lookup flags).
-    let build_query = |id: u16| -> Result<Message, String> {
-        let msg = Message::build(
-            id,
-            header::Flags {
-                qr: false,
-                opcode: 0,
-                aa: parsed.aaonly,
-                tc: parsed.tcflag,
-                rd: parsed.recurse && qtype != RrType::Axfr && qtype != RrType::Ixfr,
-                ra: parsed.raflag,
-                z: parsed.zflag,
-                ad: parsed.adflag,
-                cd: parsed.cdflag,
-            },
-            0,
-            Some(Question {
-                qname: qname.clone(),
-                qtype,
-                qclass,
-            }),
-            Vec::new(),
-            Vec::new(),
-            Vec::new(),
-            edns_opt(parsed),
-        );
-        Ok(msg)
-    };
+    // dighost.c start_tcp/start_udp: under -6 an IPv4 literal resolves to a
+    // v4-mapped address, which is skipped with a warning; an all-skipped
+    // address list prints `;; No acceptable nameservers` and the lookup is
+    // cancelled with exit code 0 (no greeting, no message).
+    if parsed.ipv6_only {
+        if let SocketAddr::V6(a) = &server_addr {
+            if a.ip().to_ipv4_mapped().is_some() {
+                let mut stdout = std::io::stdout().lock();
+                if parsed.comments {
+                    let _ = writeln!(stdout, ";; Skipping mapped address '{}'", a.ip());
+                    let _ = writeln!(stdout, ";; No acceptable nameservers");
+                }
+                return Ok(());
+            }
+        }
+    }
 
-    let mut msg = build_query(rand_id()).map_err(|e| (e, 1))?;
+    // The query message (dighost.c setup_lookup: RD is suppressed for
+    // AXFR/IXFR; AD/AA/RA/TC/Z flags come from the lookup flags; the
+    // carried cookie is the server cookie learned from the previous
+    // exchange (process_cookie → l->cookie)).
+    let build_query =
+        |id: u16, carried: Option<&[u8]>, edns_ver: Option<u8>| -> Result<Message, String> {
+            let msg = Message::build(
+                id,
+                header::Flags {
+                    qr: false,
+                    opcode: parsed.opcode,
+                    aa: parsed.aaonly,
+                    tc: parsed.tcflag,
+                    rd: parsed.recurse && qtype != RrType::Axfr && qtype != RrType::Ixfr,
+                    ra: parsed.raflag,
+                    z: parsed.zflag,
+                    ad: parsed.adflag,
+                    cd: parsed.cdflag,
+                },
+                0,
+                // +header-only builds the query without a question (dighost.c
+                // setup_lookup skips the question section; the observed wire has
+                // qd=0, which the fixture answers with FORMERR).
+                if parsed.header_only {
+                    None
+                } else {
+                    Some(Question {
+                        qname: qname.clone(),
+                        qtype,
+                        qclass,
+                    })
+                },
+                Vec::new(),
+                Vec::new(),
+                Vec::new(),
+                edns_opt(parsed, carried, edns_ver),
+            );
+            let msg = if parsed.padding.is_some() {
+                pad_query(msg, parsed.padding.unwrap_or(0))
+            } else {
+                msg
+            };
+            Ok(msg)
+        };
+
+    // The server cookie learned from a verified response, carried into the
+    // next query for the same lookup (dighost.c process_cookie: `copy` on a
+    // good echo stores the received cookie in l->cookie).
+    let mut carried_cookie: Option<Vec<u8>> = None;
+    // The EDNS version negotiated by a BADVERS retry (dighost.c ednsneg).
+    let mut negotiated_edns: Option<u8> = None;
+    let mut msg = build_query(parsed.qid.unwrap_or_else(rand_id), None, negotiated_edns)
+        .map_err(|e| (e, 1))?;
     let mut wire = Vec::new();
     msg.render(&mut wire, true)
         .map_err(|e| (format!("render: {e:?}"), 1))?;
 
     let mut stdout = std::io::stdout().lock();
 
-    // The +qr path prints the send message via printmessage (dig.c
-    // send_udp/send_tcp), then `;; QUERY SIZE: N` when stats are on.  The
-    // greeting rides along with the first printmessage call.
-    if parsed.print_qr && parsed.comments && !parsed.short {
-        render_send_message(&msg, parsed, &mut *cmdline, &mut stdout)
+    // The response loop (dighost.c launch/recv_done): each iteration prints
+    // the +qr send block, exchanges, and applies the response checks —
+    // opcode mismatch (warning + timed-out + retry with the same wire),
+    // BADVERS version negotiation (comment + retry with the lower version),
+    // truncation (requeue in TCP mode with a fresh message), and the
+    // recoverable/bad-packet paths.  UDP send/recv failures print
+    // `;; communications error to <addr#port>: <reason>` and retry up to
+    // `tries` attempts re-sending the same rendered message (dighost.c
+    // send_done/recv_done: the retry query reuses the lookup's renderbuf, so
+    // the transaction ID is reused); exhaustion then prints the pending
+    // cmdline (dighost.c:4139 prints it unconditionally — archived quirk:
+    // `dig example.com +noall` still shows the greeting here) plus
+    // `;; no servers could be reached` once.  TCP connect failures print
+    // `;; Connection to <addr#port>(<server>) for <name> failed: <reason>.`
+    // *and* `;; no servers could be reached` per attempt
+    // (dighost.c:3642/3687 — observed: tries=3 prints the pair three times),
+    // retry `tries` times, and never print the greeting.
+    let mut attempts_left: u32 = parsed.tries.max(1);
+    let (response, rtt, proto) = loop {
+        if parsed.print_qr && parsed.comments && !parsed.short {
+            render_send_message(
+                &msg,
+                parsed,
+                &mut *cmdline,
+                &server_addr,
+                wire.len(),
+                lookup.transport,
+                &mut stdout,
+            )
             .map_err(|e| (e.to_string(), 1))?;
-        if parsed.statistics {
-            let _ = write!(stdout, ";; QUERY SIZE: {}\n\n", wire.len());
+            if parsed.statistics {
+                let _ = write!(stdout, ";; QUERY SIZE: {}\n\n", wire.len());
+            }
         }
-    }
 
-    // The exchange.  UDP send/recv failures print `;; communications error
-    // to <addr#port>: <reason>` and retry up to `tries` attempts, re-sending
-    // the same rendered message (dighost.c send_done/recv_done: the retry
-    // query reuses the lookup's renderbuf, so the transaction ID is reused);
-    // exhaustion then prints the pending cmdline (dighost.c:4139 prints it
-    // unconditionally — archived quirk: `dig example.com +noall` still shows
-    // the greeting here) plus `;; no servers could be reached` once.  TCP
-    // connect failures print `;; Connection to <addr#port>(<server>) for
-    // <name> failed: <reason>.` *and* `;; no servers could be reached` per
-    // attempt (dighost.c:3642/3687 — observed: tries=3 prints the pair three
-    // times), retry `tries` times, and never print the greeting.
-    let exchange: Result<(Vec<u8>, std::time::Duration), ()> = (|| {
-        let mut attempt = 0usize;
-        loop {
-            attempt += 1;
-            let res = match parsed.transport {
-                Transport::Udp => udp_exchange(&server_addr, &wire, parsed).map_err(|e| {
-                    let _ = writeln!(
-                        stdout,
-                        ";; communications error to {}: {}",
-                        server_text(&server_addr),
-                        io_reason(&e)
-                    );
-                }),
-                Transport::Tcp => tcp_exchange(&server_addr, &wire, &lookup.text).map_err(|e| {
+        let exchanged: Result<(Vec<u8>, std::time::Duration), ()> = match lookup.transport {
+            Transport::Udp => udp_exchange(&server_addr, &wire, parsed).map_err(|e| {
+                let _ = writeln!(
+                    stdout,
+                    ";; communications error to {}: {}",
+                    server_text(&server_addr),
+                    io_reason(&e)
+                );
+            }),
+            Transport::Tcp => tcp_exchange(&server_addr, &wire, &lookup.text).map_err(|e| {
+                let _ = writeln!(
+                    stdout,
+                    ";; Connection to {}({}) for {} failed: {}.",
+                    server_text(&server_addr),
+                    lookup.server,
+                    lookup.text,
+                    io_reason(&e)
+                );
+                let _ = writeln!(stdout, ";; no servers could be reached");
+            }),
+        };
+        let (r, t) = match exchanged {
+            Ok(v) => v,
+            Err(()) => {
+                attempts_left -= 1;
+                if attempts_left == 0 {
+                    if lookup.transport == Transport::Udp {
+                        if let Some(g) = cmdline.take() {
+                            let _ = write!(stdout, "{g}");
+                        }
+                        let _ = writeln!(stdout, ";; no servers could be reached");
+                    }
+                    return Err((String::new(), 9));
+                }
+                continue;
+            }
+        };
+
+        let m = match Message::parse(&r) {
+            Ok(m) => m,
+            Err(e) => {
+                // An unparseable reply prints BIND's `;; Got bad packet:`
+                // diagnostic and cancels (exit 0).
+                print_bad_packet(&r, &e, &mut stdout);
+                return Ok(());
+            }
+        };
+
+        // dighost.c recv_done: a response whose opcode differs from the
+        // query's is discarded with a warning and the query waits (the
+        // receive timeout then reports `timed out` and the retry re-sends
+        // the same wire).
+        if m.flags.opcode != parsed.opcode {
+            let _ = writeln!(
+                stdout,
+                ";; Warning: Opcode mismatch: expected {}, got {}",
+                opcode_name(parsed.opcode),
+                opcode_name(m.flags.opcode)
+            );
+            let _ = writeln!(
+                stdout,
+                ";; communications error to {}: timed out",
+                server_text(&server_addr)
+            );
+            attempts_left -= 1;
+            if attempts_left == 0 {
+                let _ = writeln!(stdout, ";; no servers could be reached");
+                return Err((String::new(), 9));
+            }
+            continue;
+        }
+
+        // dighost.c ednsneg: BADVERS (full rcode 16) with an OPT whose
+        // version is lower than ours → retry with that version.
+        if m.rcode == 16 && parsed.ednsneg {
+            if let Some(opt) = &m.opt {
+                let ver = opt.version();
+                if (u16::from(ver)) < u16::from(parsed.edns.unwrap_or(0)) {
+                    if parsed.comments {
+                        let _ = writeln!(stdout, ";; BADVERS, retrying with EDNS version {}.", ver);
+                    }
+                    negotiated_edns = Some(ver);
+                    msg = build_query(
+                        parsed.qid.unwrap_or_else(rand_id),
+                        carried_cookie.as_deref(),
+                        negotiated_edns,
+                    )
+                    .map_err(|e| (e, 1))?;
+                    wire.clear();
+                    msg.render(&mut wire, true)
+                        .map_err(|e| (format!("render: {e:?}"), 1))?;
+                    attempts_left -= 1;
+                    if attempts_left == 0 {
+                        let _ = writeln!(stdout, ";; no servers could be reached");
+                        return Err((String::new(), 9));
+                    }
+                    continue;
+                }
+            }
+        }
+
+        // A truncated UDP reply requeues in TCP mode with a fresh message
+        // (dighost.c recv_done: `;; Truncated, retrying in TCP mode.` — the
+        // greeting is still pending and prints with the TCP answer).
+        if lookup.transport == Transport::Udp && m.flags.tc && !parsed.ignore {
+            // process_opt runs on this truncated response too, so the server
+            // cookie is learned before the TCP retry is built.
+            let (_, tc_cookie) = verify_response_cookie(parsed, &m, &mut stdout);
+            carried_cookie = tc_cookie;
+            if parsed.comments {
+                let _ = writeln!(stdout, ";; Truncated, retrying in TCP mode.");
+            }
+            msg = build_query(
+                parsed.qid.unwrap_or_else(rand_id),
+                carried_cookie.as_deref(),
+                negotiated_edns,
+            )
+            .map_err(|e| (e, 1))?;
+            wire.clear();
+            msg.render(&mut wire, true)
+                .map_err(|e| (format!("render: {e:?}"), 1))?;
+            match tcp_exchange(&server_addr, &wire, &lookup.text) {
+                Ok((resp2, rtt2)) => break (resp2, rtt2, "TCP"),
+                Err(e) => {
                     let _ = writeln!(
                         stdout,
                         ";; Connection to {}({}) for {} failed: {}.",
@@ -283,88 +467,40 @@ fn query_once(
                         io_reason(&e)
                     );
                     let _ = writeln!(stdout, ";; no servers could be reached");
-                }),
-            };
-            match res {
-                Ok(v) => return Ok(v),
-                Err(()) => {
-                    if attempt >= usize::try_from(parsed.tries.max(1)).unwrap_or(usize::MAX) {
-                        return Err(());
-                    }
+                    return Err((String::new(), 9));
                 }
             }
         }
-    })();
 
-    // Response handling: a truncated UDP reply requeues in TCP mode with a
-    // fresh message (dighost.c recv_done: `;; Truncated, retrying in TCP
-    // mode.` — the greeting is still pending and prints with the TCP
-    // answer); an unparseable reply prints BIND's `;; Got bad packet:`
-    // diagnostic and cancels (exit 0).  Total UDP failure prints the pending
-    // cmdline then `;; no servers could be reached`, exit 9 (dighost.c
-    // exitcode = 9: "No reply from server"); total TCP failure already
-    // printed the per-attempt messages, exit 9.
-    let (response, rtt, proto) = match exchange {
-        Ok((r, t)) => match Message::parse(&r) {
-            Ok(m) if parsed.transport == Transport::Udp && m.flags.tc && !parsed.ignore => {
-                if parsed.comments {
-                    let _ = writeln!(stdout, ";; Truncated, retrying in TCP mode.");
-                }
-                // Re-setup: new ID, same question/options (setup_lookup runs
-                // again; the responder sends no server cookie).
-                msg = build_query(rand_id()).map_err(|e| (e, 1))?;
-                wire.clear();
-                msg.render(&mut wire, true)
-                    .map_err(|e| (format!("render: {e:?}"), 1))?;
-                match tcp_exchange(&server_addr, &wire, &lookup.text) {
-                    Ok((resp2, rtt2)) => (resp2, rtt2, "TCP"),
-                    Err(e) => {
-                        let _ = writeln!(
-                            stdout,
-                            ";; Connection to {}({}) for {} failed: {}.",
-                            server_text(&server_addr),
-                            lookup.server,
-                            lookup.text,
-                            io_reason(&e)
-                        );
-                        let _ = writeln!(stdout, ";; no servers could be reached");
-                        return Err((String::new(), 9));
-                    }
-                }
-            }
-            Ok(_) => (
-                r,
-                t,
-                if parsed.transport == Transport::Tcp {
-                    "TCP"
-                } else {
-                    "UDP"
-                },
-            ),
-            Err(e) => {
-                print_bad_packet(&r, &e, &mut stdout);
-                return Ok(());
-            }
-        },
-        Err(()) => {
-            if parsed.transport == Transport::Udp {
-                if let Some(g) = cmdline.take() {
-                    let _ = write!(stdout, "{g}");
-                }
-                let _ = writeln!(stdout, ";; no servers could be reached");
-            }
-            return Err((String::new(), 9));
-        }
+        break (
+            r,
+            t,
+            if lookup.transport == Transport::Tcp {
+                "TCP"
+            } else {
+                "UDP"
+            },
+        );
     };
     let recv_bytes = response.len();
 
-    let resp = match Message::parse(&response) {
-        Ok(m) => m,
+    // dig's parse flags (PRESERVEORDER|BESTEFFORT|IGNORETRUNCATION): a
+    // DNS_R_RECOVERABLE parse prints BIND's malformed-packet warning and
+    // proceeds with the message; the unparsed tail is the extrabytes.
+    let (resp, status, consumed) = match Message::parse_dig(&response) {
+        Ok(v) => v,
         Err(e) => {
             print_bad_packet(&response, &e, &mut stdout);
             return Ok(());
         }
     };
+    let extrabytes = response.len() - consumed;
+    if status == ParseStatus::Recoverable {
+        let _ = writeln!(
+            stdout,
+            ";; Warning: Message parser reports malformed message packet."
+        );
+    }
 
     // The rcode shown is the full rcode (header + EDNS ext).
     let full_rcode = match &resp.opt {
@@ -372,41 +508,50 @@ fn query_once(
         None => bind9_rs_core::rcode::Rcode::from_u16(resp.header_rcode as u16),
     };
 
-    // process_opt (dighost.c): when we sent a cookie and the response has an
-    // OPT, verify the echoed cookie; a mismatch prints the client-cookie
-    // warning (stdout, `;; ` prefix) and marks the COOKIE option `(bad)`.
-    let mut cookie_state = output::CookieState::None;
-    if parsed.sendcookie && resp.opt.is_some() {
-        if let Some(opt) = &resp.opt {
-            for o in opt.options() {
-                if o.code == option_code::COOKIE {
-                    cookie_state = if o.data.len() >= 8 && o.data[..8] == *client_cookie() {
-                        if o.data.len() >= 16 {
-                            output::CookieState::Good
-                        } else {
-                            output::CookieState::Echoed
-                        }
-                    } else if o.data.len() < 8 {
-                        let _ = writeln!(stdout, ";; Warning: COOKIE bad token (too short)");
-                        output::CookieState::Bad
-                    } else {
-                        let _ = writeln!(stdout, ";; Warning: Client COOKIE mismatch");
-                        output::CookieState::Bad
-                    };
-                }
-            }
-        }
-    }
+    // process_opt (dighost.c): verify the response's COOKIE option and carry
+    // a verified echo into the next query for this lookup.
+    let (cookie_state, final_cookie) = verify_response_cookie(parsed, &resp, &mut stdout);
+    carried_cookie = final_cookie;
 
-    render_message(
-        &resp,
-        full_rcode,
-        parsed,
-        cookie_state,
-        &mut *cmdline,
-        &mut stdout,
-    )
-    .map_err(|e| (e.to_string(), 1))?;
+    let identify = output::IdentifyInfo {
+        addr_text: server_text(&server_addr),
+        server_arg: lookup.server.clone(),
+        rtt_usec: rtt.as_micros() as u64,
+        bytes: recv_bytes,
+    };
+
+    if parsed.yaml {
+        let mut yaml_out = Vec::new();
+        render_yaml_message(
+            &mut yaml_out,
+            &resp,
+            full_rcode,
+            parsed,
+            cookie_state,
+            &server_addr,
+            recv_bytes,
+            if lookup.transport == Transport::Tcp {
+                "TCP"
+            } else {
+                "UDP"
+            },
+        );
+        stdout
+            .write_all(&yaml_out)
+            .map_err(|e| (e.to_string(), 1))?;
+    } else {
+        render_message(
+            &resp,
+            full_rcode,
+            parsed,
+            cookie_state,
+            &mut *cmdline,
+            extrabytes,
+            Some(&identify),
+            &mut stdout,
+        )
+        .map_err(|e| (e.to_string(), 1))?;
+    }
 
     if parsed.statistics && !parsed.short {
         let info = StatisticsInfo {
@@ -420,6 +565,59 @@ fn query_once(
     }
 
     Ok(())
+}
+
+/// dighost.c process_opt/process_cookie: verify the response's COOKIE option
+/// against the sent client cookie (the `+cookie=hex` override when given,
+/// else the per-process random cookie — dighost.c `sent = l->cookie ?:
+/// cookie`, where the `cookie` buffer holds the +cookie override).  A
+/// mismatch prints the client-cookie warning (gated on comments) and marks
+/// the COOKIE option `(bad)`; a good (or echoed) echo returns the received
+/// bytes for carry-forward (process_cookie stores them in l->cookie).
+fn verify_response_cookie(
+    parsed: &DigOptions,
+    resp: &Message,
+    w: &mut impl Write,
+) -> (output::CookieState, Option<Vec<u8>>) {
+    let mut cookie_state = output::CookieState::None;
+    let mut carried = None;
+    if parsed.sendcookie {
+        let sent: Vec<u8> = match &parsed.cookie_hex {
+            Some(hex) => crate::tools::dig::options::hex_decode(hex)
+                .unwrap_or_else(|_| client_cookie().to_vec()),
+            None => client_cookie().to_vec(),
+        };
+        if let Some(opt) = &resp.opt {
+            for o in opt.options() {
+                if o.code == option_code::COOKIE {
+                    cookie_state = if o.data.len() >= 8 && o.data[..8] == sent[..] {
+                        if o.data.len() >= 16 {
+                            output::CookieState::Good
+                        } else {
+                            output::CookieState::Echoed
+                        }
+                    } else if o.data.len() < 8 {
+                        if parsed.comments {
+                            let _ = writeln!(w, ";; Warning: COOKIE bad token (too short)");
+                        }
+                        output::CookieState::Bad
+                    } else {
+                        if parsed.comments {
+                            let _ = writeln!(w, ";; Warning: Client COOKIE mismatch");
+                        }
+                        output::CookieState::Bad
+                    };
+                    if matches!(
+                        cookie_state,
+                        output::CookieState::Good | output::CookieState::Echoed
+                    ) {
+                        carried = Some(o.data.clone());
+                    }
+                }
+            }
+        }
+    }
+    (cookie_state, carried)
 }
 
 /// Map an `io::Error` to BIND's `isc_result_totext` string for the
@@ -490,35 +688,157 @@ fn tcp_exchange(
 
 /// The OPT for the query (dighost.c setup_lookup): added when `udpsize > -1
 /// || dnssec || edns > -1 || ecs_addr != NULL`; the udp size defaults to
-/// 1232; DO/CO come from ednsflags/dnssec/coflag; options are added in
-/// order: +nsid, +subnet, COOKIE, +expire, +padding, +keepalive, +ednsopt.
-fn edns_opt(opts: &DigOptions) -> Option<Opt> {
-    if opts.udp_size.is_none() && !opts.dnssec && opts.edns.is_none() && !opts.nsid {
+/// 1232; the EDNS version comes from `+edns=N` (or the negotiated BADVERS
+/// version); the flags word is assembled exactly like dighost.c: the
+/// `+ednsflags` DO/CO bits are stripped, then dnssec ORs DO back in and
+/// coflag ORs CO (`flags &= ~(DO|CO); if dnssec flags |= DO; if coflag
+/// flags |= CO`); options are added in order: +nsid, +subnet, COOKIE,
+/// +expire, +padding (0-length placeholder, filled by `pad_query` at
+/// render-time size), +keepalive, +ednsopt.  The COOKIE data is the carried
+/// server cookie when one was learned (dighost.c: `l->cookie`), else the
+/// per-process 8-byte client cookie, else the `+cookie=hex` override.
+/// `negotiated` overrides the EDNS version after a BADVERS retry.
+fn edns_opt(opts: &DigOptions, carried: Option<&[u8]>, negotiated: Option<u8>) -> Option<Opt> {
+    if opts.udp_size.is_none()
+        && !opts.dnssec
+        && opts.edns.is_none()
+        && !opts.nsid
+        && opts.subnet.is_none()
+    {
         return None;
     }
     let size = opts.udp_size.unwrap_or(1232);
-    let mut o = Opt::new(size);
-    if opts.dnssec || (opts.ednsflags & 0x8000) != 0 {
+    let version = negotiated.unwrap_or(opts.edns.unwrap_or(0));
+    // dighost.c: `flags = ednsflags; flags &= ~(DO|CO); if (dnssec) flags
+    // |= DO; if (coflag) flags |= CO;` — DO (0x8000) renders as the
+    // do_flag field, the rest ride the 15-bit Z field.
+    let mut z = opts.ednsflags & !(0x8000 | 0x4000);
+    if opts.coflag {
+        z |= 0x4000;
+    }
+    let mut o = Opt::new(size).with_version(version);
+    if opts.dnssec {
         o = o.with_do();
     }
-    if opts.coflag || (opts.ednsflags & 0x4000) != 0 {
-        o = o.with_co();
-    }
+    o = o.with_z(z);
     if opts.nsid {
         o = o.with_option(option_code::NSID, Vec::new());
+    }
+    if let Some(subnet) = &opts.subnet {
+        if let Some(data) = ecs_option_data(subnet) {
+            o = o.with_option(option_code::ECS, data);
+        }
     }
     if opts.sendcookie {
         let data = match &opts.cookie_hex {
             Some(hex) => crate::tools::dig::options::hex_decode(hex)
                 .unwrap_or_else(|_| client_cookie().to_vec()),
-            None => client_cookie().to_vec(),
+            None => carried.unwrap_or(client_cookie()).to_vec(),
         };
         o = o.with_option(option_code::COOKIE, data);
+    }
+    if opts.expire {
+        o = o.with_option(option_code::EXPIRE, Vec::new());
+    }
+    if opts.padding.is_some() {
+        // A 0-length PAD placeholder: BIND adds `opts[i].length = 0` at
+        // build (dighost.c) and dns_message_renderend fills it so the total
+        // message is a multiple of the padding size.  `pad_query` patches
+        // the payload from the rendered size.
+        o = o.with_option(option_code::PADDING, Vec::new());
+    }
+    if opts.tcp_keepalive {
+        o = o.with_option(option_code::TCP_KEEPALIVE, Vec::new());
     }
     for (code, data) in &opts.ednsopts {
         o = o.with_option(*code, data.clone());
     }
     Some(o)
+}
+
+/// BIND `dns_message_opt_setpadding` / `dns_message_renderend`: the PAD
+/// option was reserved with a 0-length payload at build; renderend computes
+/// `padsize = padding - ((used + reserved) % padding)` where `used`
+/// INCLUDES the 4-byte PAD option header, and fills the payload (an
+/// already-aligned message gets padsize 0 and keeps the empty PAD).  The
+/// query message has no other sections, so the size is deterministic: 12
+/// (header) + question + OPT (with the empty PAD).
+fn pad_query(mut msg: Message, pad: u16) -> Message {
+    let opt = match msg.opt.take() {
+        Some(o) => o,
+        None => return msg,
+    };
+    let question_len = msg
+        .question
+        .as_ref()
+        .map(|q| q.qname.wire_len_full() + 4)
+        .unwrap_or(0);
+    let opt_len = 11
+        + opt
+            .options()
+            .iter()
+            .map(|o| 4 + o.data.len())
+            .sum::<usize>();
+    let used = 12 + question_len + opt_len;
+    let padsize = if used % usize::from(pad) == 0 {
+        0
+    } else {
+        usize::from(pad) - used % usize::from(pad)
+    };
+    let opt = opt.with_padding_payload(vec![0u8; padsize]);
+    msg.opt = Some(opt);
+    msg
+}
+
+/// Encode an ECS option for `+subnet=addr/len` (RFC 7871: family, source
+/// prefix length, scope 0, the address bits).  An unparseable prefix is
+/// dropped, mirroring BIND's parse_netprefix failure to set ecs_addr.
+fn ecs_option_data(text: &str) -> Option<Vec<u8>> {
+    let (addr, plen) = match text.split_once('/') {
+        Some((a, p)) => (a, p.parse::<u8>().ok()?),
+        None => (text, 24),
+    };
+    let (family, bytes, max): (u16, Vec<u8>, u8) =
+        if let Ok(v4) = addr.parse::<std::net::Ipv4Addr>() {
+            (1, v4.octets().to_vec(), 32)
+        } else if let Ok(v6) = addr.parse::<std::net::Ipv6Addr>() {
+            (2, v6.octets().to_vec(), 128)
+        } else {
+            return None;
+        };
+    if plen > max {
+        return None;
+    }
+    let nbytes = usize::from(plen + 7) / 8;
+    let mut data = Vec::with_capacity(4 + nbytes);
+    data.extend_from_slice(&family.to_be_bytes());
+    data.push(plen);
+    data.push(0); // scope
+    data.extend_from_slice(&bytes[..nbytes]);
+    Some(data)
+}
+
+/// The opcode text table (dighost.c opcodetext).
+fn opcode_name(opcode: u8) -> &'static str {
+    match opcode {
+        0 => "QUERY",
+        1 => "IQUERY",
+        2 => "STATUS",
+        3 => "RESERVED3",
+        4 => "NOTIFY",
+        5 => "UPDATE",
+        6 => "RESERVED6",
+        7 => "RESERVED7",
+        8 => "RESERVED8",
+        9 => "RESERVED9",
+        10 => "RESERVED10",
+        11 => "RESERVED11",
+        12 => "RESERVED12",
+        13 => "RESERVED13",
+        14 => "RESERVED14",
+        15 => "RESERVED15",
+        _ => "RESERVED?",
+    }
 }
 
 fn rand_id() -> u16 {

@@ -12,6 +12,12 @@
 #                       OS entropy (dighost.c `isc_nonce_buf(cookie_secret)`
 #                       + `compute_cookie`); raw values are preserved in the
 #                       captures; the invariant tested is `^[0-9a-f]{16}$`.
+#   NONDETERMINISTIC-5: YAML `query_time`/`response_time` (`!!timestamp`
+#                       ISO8601 with milliseconds): wall-clock values, raw
+#                       in the captures; normalized to `!!timestamp <ts>`.
+#   NONDETERMINISTIC-6: YAML `CLIENT: <16 hex>`: the same per-process client
+#                       cookie as NONDETERMINISTIC-4; normalized to
+#                       `CLIENT: <client>`.
 #
 # Usage: compare-dig.sh <court-dir>
 
@@ -48,8 +54,14 @@ def norm(t):
         t = line
         t = re.sub(r"id: \d+", "id: N", t)
         t = re.sub(r";; Query time: \d+ msec", ";; Query time: N msec", t)
+        t = re.sub(r";; Query time: \d+ usec", ";; Query time: N usec", t)
         t = re.sub(r";; WHEN: .*", ";; WHEN: <date>", t)
         t = re.sub(r"; COOKIE: [0-9a-f]{16}", "; COOKIE: <cookie>", t)
+        # NONDETERMINISTIC-5: YAML timestamps (wall clock, ms precision).
+        t = re.sub(r"!!timestamp \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z",
+                   "!!timestamp <ts>", t)
+        # NONDETERMINISTIC-6: the YAML CLIENT cookie field.
+        t = re.sub(r"CLIENT: [0-9a-f]{16}", "CLIENT: <client>", t)
         lines.append(t)
     return "\n".join(lines)
     # Note: the bad-packet dump's *first* line is "N bytes" (deterministic);

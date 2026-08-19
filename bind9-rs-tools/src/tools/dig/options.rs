@@ -100,6 +100,15 @@ pub struct DigOptions {
     pub nsid: bool,
     pub expire: bool,
     pub tcp_keepalive: bool,
+    /// `+padding=N`: pad the query to a multiple of N octets.
+    pub padding: Option<u16>,
+    /// `+subnet=addr/len`: the ECS prefix (address source); parsed at
+    /// option time, encoded into the ECS option at query build.
+    pub subnet: Option<String>,
+    /// `+opcode=NAME|N`: the query opcode (0..15).
+    pub opcode: u8,
+    /// `+qid=N`: a fixed transaction ID.
+    pub qid: Option<u16>,
     pub keep_open: bool,
     pub onesoa: bool,
     pub expandaaaa: bool,
@@ -111,6 +120,8 @@ pub struct DigOptions {
     /// `-u`: display times in usec.
     pub use_usec: bool,
     pub print_unknown_format: bool,
+    /// `+yaml`: the YAML output format (dig.c `yaml` global).
+    pub yaml: bool,
     pub server: String,
     /// IDN conversion of query names (dighost.c make_empty_lookup: default
     /// on unless IDN_DISABLE is set; `+idnin`/`+noidnin` override).
@@ -186,6 +197,10 @@ impl Default for DigOptions {
             nsid: false,
             expire: false,
             tcp_keepalive: false,
+            padding: None,
+            subnet: None,
+            opcode: 0,
+            qid: None,
             keep_open: false,
             onesoa: false,
             expandaaaa: false,
@@ -195,6 +210,7 @@ impl Default for DigOptions {
             ednsopts: Vec::new(),
             use_usec: false,
             print_unknown_format: false,
+            yaml: false,
             server: "127.0.0.1".to_string(),
             // dighost.c make_empty_lookup(): IDN defaults depend on the
             // IDN_DISABLE environment variable and on stdout being a TTY
@@ -207,6 +223,18 @@ impl Default for DigOptions {
             cmdline: String::new(),
             server_explicit: false,
             first_name_greeting: None,
+        }
+    }
+}
+
+impl DigOptions {
+    /// The socket protocol name for the YAML/stats output (dighost.c
+    /// `tcp_mode ? "TCP" : "UDP"`).
+    #[must_use]
+    pub fn transport_name(&self) -> &'static str {
+        match self.transport {
+            Transport::Tcp => "TCP",
+            Transport::Udp => "UDP",
         }
     }
 }
@@ -246,10 +274,74 @@ impl std::fmt::Display for ParseError {
 ///   (`dns_rdatatype_fromtext`), then as a class, and only then as a name;
 ///   a type/class applies to the current (last) lookup.
 /// - each name starts a new lookup carrying the accumulated type/class state.
+/// One pending name (dig.c: a cloned `dig_lookup_t` per command-line name).
+/// `transport`/`tcp_mode_set` snapshot the lookup-transport state at the
+/// moment the name was parsed: `+tcp`/`+vc` mutate the *current* lookup only
+/// (dig.c `case 't'`: `lookup->tcp_mode = state` on the current lookup), so
+/// `dig example.com +tcp a.example.com` sends the first query over TCP and
+/// the second over UDP (a later name clones the default lookup, whose
+/// tcp_mode was never touched).
+#[derive(Debug, Clone)]
+struct PendingName {
+    text: String,
+    rdtype: RrType,
+    rdclass: Class,
+    transport: Transport,
+    tcp_mode_set: bool,
+}
+
+/// Apply a transport change to the current lookup: the last parsed name if
+/// any, else the pending default (dig.c mutates `lookup`, which is the
+/// default lookup until the first name clones it).
+fn set_transport(opts: &mut DigOptions, names: &mut [PendingName], t: Transport, set: bool) {
+    if let Some(last) = names.last_mut() {
+        last.transport = t;
+        if set {
+            last.tcp_mode_set = true;
+        }
+    } else {
+        opts.transport = t;
+        if set {
+            opts.tcp_mode_set = true;
+        }
+    }
+}
+
+/// dig.c `if (!lookup->tcp_mode_set) { lookup->tcp_mode = true; }` for
+/// AXFR/IXFR/ANY: force TCP on the current lookup unless it opted out.
+fn force_tcp(opts: &mut DigOptions, names: &mut [PendingName]) {
+    if let Some(last) = names.last_mut() {
+        if !last.tcp_mode_set {
+            last.transport = Transport::Tcp;
+        }
+    } else if !opts.tcp_mode_set {
+        opts.transport = Transport::Tcp;
+    }
+}
+
+/// Push a name as a new lookup, snapshotting the transport state (dig.c:
+/// `*lookup = clone_lookup(default_lookup, true)` — the clone inherits the
+/// default lookup's current tcp_mode/tcp_mode_set).
+fn push_name(
+    opts: &mut DigOptions,
+    names: &mut Vec<PendingName>,
+    text: &str,
+    rdtype: RrType,
+    rdclass: Class,
+) {
+    names.push(PendingName {
+        text: text.to_string(),
+        rdtype,
+        rdclass,
+        transport: opts.transport,
+        tcp_mode_set: opts.tcp_mode_set,
+    });
+}
+
 pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
     let mut opts = DigOptions::default();
     let mut server = String::new();
-    let mut names: Vec<(String, RrType, Class)> = Vec::new();
+    let mut names: Vec<PendingName> = Vec::new();
 
     // The lookup state that positionals mutate (dig.c `lookup`):
     let mut open_type_class = true;
@@ -268,7 +360,7 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
             server = rest.to_string();
             opts.server_explicit = true;
         } else if arg.starts_with('+') {
-            parse_plus(&mut opts, &arg[1..])?;
+            parse_plus(&mut opts, &mut names, &arg[1..])?;
         } else if let Some(rest) = arg.strip_prefix('-') {
             // Short options: -t, -c, -p, -q, -x, -4, -6, -v, -h, -b.
             if rest.is_empty() {
@@ -350,15 +442,18 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
                                 rdtype = t;
                                 rdtypeset = true;
                                 opts.ixfr_serial = None;
+                                // dig.c mutates the *current* lookup: `-t`
+                                // after a name applies to that name.
+                                if let Some(last) = names.last_mut() {
+                                    last.rdtype = t;
+                                }
                                 if t == RrType::Axfr {
                                     opts.section_question = true;
                                     opts.comments = true;
                                     // dighost.c setup_lookup: AXFR forces TCP.
-                                    if !opts.tcp_mode_set {
-                                        opts.transport = Transport::Tcp;
-                                    }
-                                } else if t == RrType::Any && !opts.tcp_mode_set {
-                                    opts.transport = Transport::Tcp;
+                                    force_tcp(&mut opts, &mut names);
+                                } else if t == RrType::Any {
+                                    force_tcp(&mut opts, &mut names);
                                 }
                             }
                             // `-t ixfr` without a serial is treated as an
@@ -378,6 +473,11 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
                             }
                             rdclass = c;
                             rdclassset = true;
+                            // dig.c mutates the *current* lookup: `-c` after
+                            // a name applies to that name.
+                            if let Some(last) = names.last_mut() {
+                                last.rdclass = c;
+                            }
                         }
                         Err(_) => eprintln!(";; Warning, ignoring invalid class {value}"),
                     }
@@ -415,7 +515,7 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
                     // dig.c case 'q': sets the name directly.
                     let value = next_value(argv, &mut i, value)?;
                     capture_first_greeting(&mut opts, &names);
-                    names.push((value, rdtype, rdclass));
+                    push_name(&mut opts, &mut names, &value, rdtype, rdclass);
                 }
                 "x" => {
                     // dig.c case 'x' -> get_reverse(value, strict=false):
@@ -429,13 +529,13 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
                         let t = if rdtypeset { rdtype } else { RrType::Ptr };
                         let c = if rdclassset { rdclass } else { Class::In };
                         capture_first_greeting(&mut opts, &names);
-                        names.push((rev, t, c));
+                        push_name(&mut opts, &mut names, &rev, t, c);
                     } else {
                         let rev = reverse_octets(&value);
                         let t = if rdtypeset { rdtype } else { RrType::Ptr };
                         let c = if rdclassset { rdclass } else { Class::In };
                         capture_first_greeting(&mut opts, &names);
-                        names.push((rev, t, c));
+                        push_name(&mut opts, &mut names, &rev, t, c);
                     }
                 }
                 _other => {
@@ -477,16 +577,14 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
                         opts.section_question = true;
                         opts.comments = true;
                         // dighost.c setup_lookup: AXFR forces TCP.
-                        if !opts.tcp_mode_set {
-                            opts.transport = Transport::Tcp;
-                        }
-                    } else if t == RrType::Any && !opts.tcp_mode_set {
-                        opts.transport = Transport::Tcp;
+                        force_tcp(&mut opts, &mut names);
+                    } else if t == RrType::Any {
+                        force_tcp(&mut opts, &mut names);
                     }
                     // A type parsed after a name was created applies to that
                     // lookup (dig.c mutates `lookup` directly).
                     if let Some(last) = names.last_mut() {
-                        last.1 = t;
+                        last.rdtype = t;
                     }
                 } else if let Ok(c) = Class::from_text(arg) {
                     if rdclassset {
@@ -495,15 +593,15 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
                     rdclass = c;
                     rdclassset = true;
                     if let Some(last) = names.last_mut() {
-                        last.2 = c;
+                        last.rdclass = c;
                     }
                 } else {
                     capture_first_greeting(&mut opts, &names);
-                    names.push((arg.clone(), rdtype, rdclass));
+                    push_name(&mut opts, &mut names, arg, rdtype, rdclass);
                 }
             } else {
                 capture_first_greeting(&mut opts, &names);
-                names.push((arg.clone(), rdtype, rdclass));
+                push_name(&mut opts, &mut names, arg, rdtype, rdclass);
             }
         }
         i += 1;
@@ -519,7 +617,7 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
         // dig.c: the no-name fallback calls printgreeting at the end of
         // parse_args with the final global values.
         opts.first_name_greeting = Some((opts.print_cmd, opts.short, opts.server_explicit));
-        names.push((String::from("."), RrType::Ns, Class::In));
+        push_name(&mut opts, &mut names, ".", RrType::Ns, Class::In);
     }
     if server.is_empty() {
         server = "127.0.0.1".to_string();
@@ -527,14 +625,18 @@ pub fn parse_args(argv: &[String]) -> Result<DigOptions, ParseError> {
 
     let lookups: Vec<Lookup> = names
         .iter()
-        .map(|(n, t, c)| {
-            let qname =
-                bind9_rs_core::name::Name::from_text(n, Some(&bind9_rs_core::name::Name::root()))
-                    .map_err(|_| ParseError::Usage(format!("invalid name '{n}'")))?;
+        .map(|n| {
+            let qname = bind9_rs_core::name::Name::from_text(
+                &n.text,
+                Some(&bind9_rs_core::name::Name::root()),
+            )
+            .map_err(|_| ParseError::Usage(format!("invalid name '{}'", n.text)))?;
             Ok(Lookup {
                 server: server.clone(),
-                text: n.clone(),
-                names: vec![(qname, *t, *c)],
+                text: n.text.clone(),
+                names: vec![(qname, n.rdtype, n.rdclass)],
+                transport: n.transport,
+                tcp_mode_set: n.tcp_mode_set,
             })
         })
         .collect::<Result<_, ParseError>>()?;
@@ -556,7 +658,7 @@ fn parse_serial(s: &str) -> Result<u32, ParseError> {
 /// dig.c: printgreeting fires when the first name is parsed (`firstarg`);
 /// record the globals it reads at that moment (including `addresscount`,
 /// which is only nonzero once an @server argument has been resolved).
-fn capture_first_greeting(opts: &mut DigOptions, names: &[(String, RrType, Class)]) {
+fn capture_first_greeting(opts: &mut DigOptions, names: &[PendingName]) {
     if names.is_empty() && opts.first_name_greeting.is_none() {
         opts.first_name_greeting = Some((opts.print_cmd, opts.short, opts.server_explicit));
     }
@@ -706,7 +808,11 @@ fn parse_xint(what: &str, s: &str, max: u64) -> Result<u64, &'static str> {
 ///   (`warn` + `exit_or_usage` → `digexit()`);
 /// - removed options (`+mapped`, `+topdown`, `+sigchase`, `+trusted-key`,
 ///   `+unexpected`) `fatal()` with exit 1.
-pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError> {
+pub fn parse_plus(
+    opts: &mut DigOptions,
+    names: &mut [PendingName],
+    option: &str,
+) -> Result<(), ParseError> {
     let (raw_cmd, value) = match option.split_once('=') {
         Some((c, v)) => (c, Some(v.to_string())),
         None => (option, None),
@@ -1094,7 +1200,7 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
                 if !state {
                     // https_mode = false (accepted; no transport yet)
                 } else if !opts.tcp_mode_set {
-                    opts.transport = Transport::Tcp;
+                    set_transport(opts, names, Transport::Tcp, false);
                 }
             }
             _ => return Err(plus_invalid(option)),
@@ -1239,14 +1345,38 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
                     return Err(plus_invalid(option));
                 }
                 if !state {
-                    // opcode = 0 (QUERY)
+                    opts.opcode = 0; // opcode = 0 (QUERY)
                 } else {
                     let v = value.ok_or_else(|| plus_invalid(option))?;
-                    // opcodetext table match, then numeric.
-                    let names = ["QUERY", "IQUERY", "STATUS", "NOTIFY", "UPDATE"];
+                    // opcodetext table match (dig.c: the full 16-entry table
+                    // in order: QUERY IQUERY STATUS RESERVED3 NOTIFY UPDATE
+                    // RESERVED6..RESERVED15), then numeric.
+                    let names = [
+                        "QUERY",
+                        "IQUERY",
+                        "STATUS",
+                        "RESERVED3",
+                        "NOTIFY",
+                        "UPDATE",
+                        "RESERVED6",
+                        "RESERVED7",
+                        "RESERVED8",
+                        "RESERVED9",
+                        "RESERVED10",
+                        "RESERVED11",
+                        "RESERVED12",
+                        "RESERVED13",
+                        "RESERVED14",
+                        "RESERVED15",
+                    ];
                     let found = names.iter().position(|n| n.eq_ignore_ascii_case(&v));
-                    if found.is_none() {
-                        let _ = parse_uint("opcode", &v, 15).map_err(|_| warn_exit("opcode"))?;
+                    match found {
+                        Some(i) => opts.opcode = i as u8,
+                        None => {
+                            let n =
+                                parse_uint("opcode", &v, 15).map_err(|_| warn_exit("opcode"))?;
+                            opts.opcode = n as u8;
+                        }
                     }
                 }
             }
@@ -1260,8 +1390,13 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
                 if state && opts.edns.is_none() {
                     opts.edns = Some(0);
                 }
-                let v = value.ok_or_else(|| plus_invalid(option))?;
-                let _ = parse_uint("padding", &v, 512).map_err(|_| warn_exit("padding"))?;
+                if state {
+                    let v = value.ok_or_else(|| plus_invalid(option))?;
+                    let n = parse_uint("padding", &v, 512).map_err(|_| warn_exit("padding"))?;
+                    opts.padding = Some(n as u16);
+                } else {
+                    opts.padding = None;
+                }
             }
             Some(b'r') => {
                 // +proxy* (plus_proxy_options): accepted, transport-level.
@@ -1278,7 +1413,10 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
                 }
                 if state {
                     let v = value.ok_or_else(|| plus_invalid(option))?;
-                    let _ = parse_uint("qid", &v, 0xffff).map_err(|_| warn_exit("qid"))?;
+                    let n = parse_uint("qid", &v, 0xffff).map_err(|_| warn_exit("qid"))?;
+                    opts.qid = Some(n as u16);
+                } else {
+                    opts.qid = None;
                 }
             }
             Some(b'r') => {
@@ -1443,9 +1581,12 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
                         opts.edns = Some(0);
                     }
                     let v = value.unwrap();
-                    // parse_netprefix: accepted; ECS wiring lands with the ECS
-                    // courts.
-                    let _ = v;
+                    // parse_netprefix: accepted; the ECS option is encoded
+                    // from this text at query build (dighost.c setup_lookup
+                    // stores the parsed prefix in ecs_addr).
+                    opts.subnet = Some(v);
+                } else {
+                    opts.subnet = None;
                 }
             }
             _ => return Err(plus_invalid(option)),
@@ -1461,12 +1602,16 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
                 }
                 Some(b'p') => {
                     if matches(cmd, "tcp") {
-                        opts.transport = if state {
-                            Transport::Tcp
-                        } else {
-                            Transport::Udp
-                        };
-                        opts.tcp_mode_set = true;
+                        set_transport(
+                            opts,
+                            names,
+                            if state {
+                                Transport::Tcp
+                            } else {
+                                Transport::Udp
+                            },
+                            true,
+                        );
                     } else {
                         return Err(plus_invalid(option));
                     }
@@ -1592,17 +1737,22 @@ pub fn parse_plus(opts: &mut DigOptions, option: &str) -> Result<(), ParseError>
             if !matches(cmd, "vc") {
                 return Err(plus_invalid(option));
             }
-            opts.transport = if state {
-                Transport::Tcp
-            } else {
-                Transport::Udp
-            };
-            opts.tcp_mode_set = true;
+            set_transport(
+                opts,
+                names,
+                if state {
+                    Transport::Tcp
+                } else {
+                    Transport::Udp
+                },
+                true,
+            );
         }
         b'y' => {
             if !matches(cmd, "yaml") {
                 return Err(plus_invalid(option));
             }
+            opts.yaml = state;
             if state {
                 opts.print_cmd = false;
                 opts.statistics = false;
@@ -1715,9 +1865,9 @@ mod tests {
         assert_eq!(o.lookups[0].names[0].1, RrType::Mx);
         assert_eq!(o.lookups[0].names[0].2, Class::In);
 
-        // AXFR forces TCP (dig.c).
+        // AXFR forces TCP (dig.c) on the *current lookup*.
         let o = parse_args(&["example.com".to_string(), "AXFR".to_string()]).unwrap();
-        assert_eq!(o.transport, Transport::Tcp);
+        assert_eq!(o.lookups[0].transport, Transport::Tcp);
 
         // -q sets the name directly.
         let o = parse_args(&["-q".to_string(), "example.com".to_string()]).unwrap();

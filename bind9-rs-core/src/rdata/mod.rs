@@ -195,6 +195,36 @@ const TWO_NAME_TYPES: &[RrType] = &[RrType::Minfo, RrType::Rp];
 const TXT_TYPES: &[RrType] = &[RrType::Tx, RrType::Spf];
 
 impl Rdata {
+    /// The verbose TTL for the multiline SOA comments (`dns_ttl_totext(src,
+    /// true, true)`): `2 hours`, `1 hour`, ...
+    fn ttl_units_verbose(src: u32) -> String {
+        let secs = src % 60;
+        let mut v = src / 60;
+        let mins = v % 60;
+        v /= 60;
+        let hours = v % 24;
+        v /= 24;
+        let days = v % 7;
+        let weeks = v / 7;
+        let mut parts: Vec<String> = Vec::new();
+        if weeks != 0 {
+            parts.push(format!("{weeks} week{}", if weeks == 1 { "" } else { "s" }));
+        }
+        if days != 0 {
+            parts.push(format!("{days} day{}", if days == 1 { "" } else { "s" }));
+        }
+        if hours != 0 {
+            parts.push(format!("{hours} hour{}", if hours == 1 { "" } else { "s" }));
+        }
+        if mins != 0 {
+            parts.push(format!("{mins} minute{}", if mins == 1 { "" } else { "s" }));
+        }
+        if secs != 0 || parts.is_empty() {
+            parts.push(format!("{secs} second{}", if secs == 1 { "" } else { "s" }));
+        }
+        parts.join(" ")
+    }
+
     /// The RR type of this RDATA.
     #[must_use]
     pub fn rrtype(&self) -> RrType {
@@ -759,6 +789,83 @@ impl Rdata {
     #[must_use]
     pub fn to_text(&self) -> String {
         self.to_text_filtered(&mut |s| s.to_string())
+    }
+
+    /// The DSTYLE_MULTILINE form of RDATA text (dig `+multiline`): SOA
+    /// expands its fields onto continuation lines at the rdata column with
+    /// the `; serial` / `; refresh (2 hours)` comments; RRSIG/SIG wrap the
+    /// `( ... )` parenthesized form (rrsig_46.c `totext_rrsig`: `" ("`
+    /// after the original TTL, the base64 signature at `width - 2` with
+    /// the linebreak); every other type stays single-line (`None`).
+    #[must_use]
+    pub fn to_text_multiline(&self) -> Option<String> {
+        match self {
+            Rdata::Soa(soa) => {
+                // masterdump.c totext_ctx_init: the multiline linebreak is
+                // "\n" plus indent to the rdata column (32 -> four tabs);
+                // soa_6.c prints `%-10lu ; <name>` and, for the timers,
+                // ` (<verbose units>)`.
+                let linebreak = "\n\t\t\t\t";
+                let fields = [soa.serial, soa.refresh, soa.retry, soa.expire, soa.minimum];
+                let names = ["serial", "refresh", "retry", "expire", "minimum"];
+                let mut out = format!("{} {} (", soa.mname.to_text(), soa.rname.to_text());
+                for (i, (f, n)) in fields.iter().zip(names).enumerate() {
+                    out.push_str(linebreak);
+                    out.push_str(&format!("{f:<10} ; {n}"));
+                    if i >= 1 {
+                        out.push_str(&format!(" ({})", Self::ttl_units_verbose(*f)));
+                    }
+                }
+                out.push_str(linebreak);
+                out.push(')');
+                Some(out)
+            }
+            Rdata::Rrsig(r) | Rdata::Sig(r) => {
+                // rrsig_46.c totext_rrsig: covered `TYPE<n>` for unknown
+                // (SIG prints the bare number); ` (" + linebreak after the
+                // original TTL; then expiration, time-signed, key tag,
+                // signer; linebreak; base64 at width-2 (30); closing " )".
+                let is_sig = matches!(self, Rdata::Sig(_));
+                let linebreak = "\n\t\t\t\t";
+                let covered = if r.covered != 0 && rrtype_known(r.covered) {
+                    RrType::from_u16(r.covered).to_text()
+                } else if is_sig {
+                    r.covered.to_string()
+                } else {
+                    format!("TYPE{}", r.covered)
+                };
+                let mut out = format!(
+                    "{} {} {} {} (",
+                    covered, r.algorithm, r.labels, r.original_ttl
+                );
+                out.push_str(linebreak);
+                out.push_str(&format!(
+                    "{} {} {} {}",
+                    time32_totext(r.expiration),
+                    time32_totext(r.time_signed),
+                    r.key_tag,
+                    r.signer.to_text()
+                ));
+                out.push_str(linebreak);
+                out.push_str(&base64_bind(&r.signature, 30, linebreak));
+                out.push_str(" )");
+                Some(out)
+            }
+            _ => None,
+        }
+    }
+
+    /// The RFC 3597 generic form (`\# len HEX`) — dig `+unknownformat`
+    /// (dns_rdata_tofmttext with DSTYLE_UNKNOWNFORMAT), uppercase hex with
+    /// single spaces.
+    #[must_use]
+    pub fn to_unknown_format(&self) -> String {
+        let mut wire = Vec::new();
+        if self.to_wire(&mut wire, None).is_err() {
+            return "\\# 0".to_string();
+        }
+        let hex: String = wire.iter().map(|b| format!("{b:02X}")).collect();
+        format!("\\# {} {}", wire.len(), hex)
     }
 
     /// Like `to_text`, but every name field is passed through `filter`

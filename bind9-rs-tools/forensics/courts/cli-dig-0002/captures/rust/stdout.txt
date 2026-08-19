@@ -5,9 +5,12 @@
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1621
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49856
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 9150547bc326b42d0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -16,8 +19,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -28,9 +31,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37273
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18084
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c506317c31b8c4c00123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -39,8 +45,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -51,9 +57,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58228
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 17681
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 5be0663b0aef36de0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	AAAA
 
@@ -62,8 +71,8 @@ example.com.		3600	IN	AAAA	2001:db8::1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 68
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 107
 
 --- STDERR
 --- EXIT 0
@@ -74,9 +83,12 @@ example.com.		3600	IN	AAAA	2001:db8::1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47742
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44004
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b3542e853cd3eb430123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	MX
 
@@ -88,8 +100,8 @@ mail.example.com.	3600	IN	A	192.0.2.10
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 104
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 143
 
 --- STDERR
 --- EXIT 0
@@ -100,9 +112,12 @@ mail.example.com.	3600	IN	A	192.0.2.10
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18833
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12111
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d0ff9d6e66720e420123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	TXT
 
@@ -111,8 +126,8 @@ example.com.		3600	IN	TXT	"hello world"
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 64
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 103
 
 --- STDERR
 --- EXIT 0
@@ -123,9 +138,12 @@ example.com.		3600	IN	TXT	"hello world"
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38191
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53435
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 4fedfb649c3ce9990123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	NS
 
@@ -137,8 +155,8 @@ ns1.example.com.	3600	IN	A	192.0.2.53
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 100
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 139
 
 --- STDERR
 --- EXIT 0
@@ -149,9 +167,12 @@ ns1.example.com.	3600	IN	A	192.0.2.53
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42279
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40609
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 30ea98777aac9d370123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	SOA
 
@@ -160,8 +181,8 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 113
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 152
 
 --- STDERR
 --- EXIT 0
@@ -172,9 +193,12 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22802
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 28013
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b6ea6be60d34635a0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	ANY
 
@@ -183,8 +207,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -195,9 +219,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38428
-;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 42176
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 67e09271ef7f751a0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;nonexistent.example.com.	IN	A
 
@@ -206,8 +233,8 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 125
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 164
 
 --- STDERR
 --- EXIT 0
@@ -218,9 +245,12 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4675
-;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30550
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: f5484b425bc46e030123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;nodata.example.com.		IN	A
 
@@ -229,8 +259,8 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 120
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 159
 
 --- STDERR
 --- EXIT 0
@@ -241,16 +271,19 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55534
-;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 32273
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 12a791c9f946a97f0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;servfail.example.com.		IN	A
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 38
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 77
 
 --- STDERR
 --- EXIT 0
@@ -261,16 +294,19 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29775
-;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: REFUSED, id: 50117
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 80c25fd0ac03d77a0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;refused.example.com.		IN	A
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 37
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 76
 
 --- STDERR
 --- EXIT 0
@@ -281,16 +317,19 @@ example.com.		3600	IN	SOA	ns1.example.com. hostmaster.example.com. 2024010101 72
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37404
-;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: FORMERR, id: 6012
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 1f5c59c5db65a9d20123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;formerr.example.com.		IN	A
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 37
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 76
 
 --- STDERR
 --- EXIT 0
@@ -315,21 +354,24 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Sending:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43790
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52325
 ;; flags: rd ad; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 1232
-; COOKIE: c5ffcc780669c904
+; COOKIE: 6bec8d6d4a7a5ed0
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
 ;; QUERY SIZE: 52
 
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43790
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52325
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 6bec8d6d4a7a5ed00123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -338,8 +380,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -350,9 +392,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3299
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23343
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: aea47820caf6a2a30123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -361,8 +406,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -373,9 +418,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15631
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47357
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 5fa3fed9ea201bf30123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -384,8 +432,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -396,16 +444,19 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5671
-;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54515
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 2709882c515a6d550123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;1.2.0.192.in-addr.arpa.		IN	PTR
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 40
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 79
 
 --- STDERR
 --- EXIT 0
@@ -417,9 +468,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4271
-;; flags: qr tc rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19546
+;; flags: qr tc rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 3aaeb124378cd4bb0123456789abcdef11223344556677880123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;big.example.com.		IN	TXT
 
@@ -432,8 +486,8 @@ big.example.com.	3600	IN	TXT	"record number 4"
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (TCP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 248
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 303
 
 --- STDERR
 --- EXIT 0
@@ -444,9 +498,12 @@ big.example.com.	3600	IN	TXT	"record number 4"
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18531
-;; flags: qr tc rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42167
+;; flags: qr tc rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c8bfafc1f4b749d30123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;big.example.com.		IN	TXT
 
@@ -459,8 +516,8 @@ big.example.com.	3600	IN	TXT	"record number 4"
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 248
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 287
 
 --- STDERR
 --- EXIT 0
@@ -471,7 +528,7 @@ big.example.com.	3600	IN	TXT	"record number 4"
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20746
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2426
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 
 ;; QUESTION SECTION:
@@ -482,7 +539,7 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
 ;; MSG SIZE  rcvd: 56
 
 --- STDERR
@@ -494,9 +551,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4505
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 46950
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: c2fc845566b5678b0123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -505,8 +565,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0
@@ -517,9 +577,12 @@ example.com.		3600	IN	A	192.0.2.1
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44542
-;; flags: qr ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 31024
+;; flags: qr ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: b33c29b9160995220123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;example.com.			IN	A
 
@@ -528,8 +591,8 @@ example.com.		3600	IN	A	192.0.2.1
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:23 UTC 2026
-;; MSG SIZE  rcvd: 56
+;; WHEN: Wed Aug 19 21:46:36 UTC 2026
+;; MSG SIZE  rcvd: 95
 
 --- STDERR
 --- EXIT 0

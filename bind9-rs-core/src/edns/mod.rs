@@ -259,11 +259,41 @@ impl Opt {
         self
     }
 
+    /// A copy with the EDNS version set (dig's `+edns=N` and the BADVERS
+    /// negotiation retry).
+    #[must_use]
+    pub fn with_version(mut self, version: u8) -> Self {
+        self.version = version;
+        self
+    }
+
+    /// A copy with the raw Z field set (dig's `+ednsflags` bits after the
+    /// DO/CO bits are stripped).
+    #[must_use]
+    pub fn with_z(mut self, z: u16) -> Self {
+        self.z = z & 0x7fff;
+        self
+    }
+
     /// A copy with an EDNS option appended (dig's `+ednsopt`/`+cookie`
     /// machinery and the resolver's option-forwarding path).
     #[must_use]
     pub fn with_option(mut self, code: u16, data: Vec<u8>) -> Self {
         self.options.push(EdnsOption { code, data });
+        self
+    }
+
+    /// A copy with the PADDING option's payload replaced (dig `+padding`:
+    /// dighost.c reserves a 0-length PAD at build; `dns_message_renderend`
+    /// fills it so the message is a multiple of the padding size).
+    #[must_use]
+    pub fn with_padding_payload(mut self, data: Vec<u8>) -> Self {
+        for o in &mut self.options {
+            if o.code == option_code::PADDING {
+                o.data = data;
+                break;
+            }
+        }
         self
     }
 

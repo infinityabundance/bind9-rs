@@ -5,9 +5,12 @@
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19033
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8377
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 660dea0d413816680123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;www.xn--mnchen-3ya.de.		IN	A
 
@@ -16,18 +19,32 @@ www.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.2
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:25 UTC 2026
-;; MSG SIZE  rcvd: 76
+;; WHEN: Wed Aug 19 21:46:38 UTC 2026
+;; MSG SIZE  rcvd: 115
 
 --- STDERR
 --- EXIT 0
 ### CASE 2: @127.0.0.1 -p 5333 www.münchen.de +noidnin
 --- STDOUT
-;; Got bad packet: bad label type
-33 bytes
-ff 25 81 80 00 01 00 00 00 00 00 00 03 77 77 77          .%...........www
-07 6d c3 bc 6e 63 68 65 6e 02 64 65 00 00 01 00          .m..nchen.de....
-01                                                       .
+
+; <<>> DiG 9.20.26 <<>> @127.0.0.1 -p 5333 www.münchen.de +noidnin
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6535
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d47054c2375ae8c50123456789abcdef1122334455667788 (good)
+;; QUESTION SECTION:
+;www.m\195\188nchen.de.		IN	A
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
+;; WHEN: Wed Aug 19 21:46:38 UTC 2026
+;; MSG SIZE  rcvd: 72
+
 --- STDERR
 --- EXIT 0
 ### CASE 3: @127.0.0.1 -p 5333 www.xn--mnchen-3ya.de +idnout
@@ -37,9 +54,12 @@ ff 25 81 80 00 01 00 00 00 00 00 00 03 77 77 77          .%...........www
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39072
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5608
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 117700395840eca40123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;www.münchen.de.		IN	A
 
@@ -48,8 +68,8 @@ www.münchen.de.	3600	IN	A	192.0.2.2
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:25 UTC 2026
-;; MSG SIZE  rcvd: 76
+;; WHEN: Wed Aug 19 21:46:38 UTC 2026
+;; MSG SIZE  rcvd: 115
 
 --- STDERR
 --- EXIT 0
@@ -60,9 +80,12 @@ www.münchen.de.	3600	IN	A	192.0.2.2
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55982
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60259
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 82192b11cc6f34510123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;www.xn--mnchen-3ya.de.		IN	A
 
@@ -71,8 +94,8 @@ www.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.2
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:25 UTC 2026
-;; MSG SIZE  rcvd: 76
+;; WHEN: Wed Aug 19 21:46:38 UTC 2026
+;; MSG SIZE  rcvd: 115
 
 --- STDERR
 --- EXIT 0
@@ -83,9 +106,12 @@ www.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.2
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5843
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8124
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: c1368507ad9c8a340123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;idn.example.com.		IN	NS
 
@@ -97,8 +123,8 @@ ns.münchen.de.		3600	IN	A	192.0.2.77
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:25 UTC 2026
-;; MSG SIZE  rcvd: 118
+;; WHEN: Wed Aug 19 21:46:38 UTC 2026
+;; MSG SIZE  rcvd: 157
 
 --- STDERR
 --- EXIT 0
@@ -109,9 +135,12 @@ ns.münchen.de.		3600	IN	A	192.0.2.77
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5902
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 21824
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: ed5e1106124672310123456789abcdef1122334455667788 (good)
 ;; QUESTION SECTION:
 ;idn.example.com.		IN	NS
 
@@ -123,8 +152,8 @@ ns.xn--mnchen-3ya.de.	3600	IN	A	192.0.2.77
 
 ;; Query time: 0 msec
 ;; SERVER: 127.0.0.1#5333(127.0.0.1) (UDP)
-;; WHEN: Sun Aug 16 02:32:25 UTC 2026
-;; MSG SIZE  rcvd: 118
+;; WHEN: Wed Aug 19 21:46:38 UTC 2026
+;; MSG SIZE  rcvd: 157
 
 --- STDERR
 --- EXIT 0

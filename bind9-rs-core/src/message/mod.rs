@@ -210,10 +210,27 @@ impl Message {
     /// Parse with explicit options.  On `DNS_R_RECOVERABLE` the message is
     /// returned with [`ParseStatus::Recoverable`]; hard errors are `Err`.
     pub fn parse_full(buf: &[u8], options: ParseOptions) -> Result<(Message, ParseStatus)> {
+        let (m, s, _) = Self::parse_full_len(buf, options)?;
+        Ok((m, s))
+    }
+
+    /// Parse like [`Self::parse`] and additionally report the number of
+    /// bytes consumed, so dig can print BIND's `;; WARNING: Message has N
+    /// extra bytes at end` (dighost.c `extrabytes` = the unparsed tail).
+    pub fn parse_dig(buf: &[u8]) -> Result<(Message, ParseStatus, usize)> {
+        Self::parse_full_len(buf, DIG_PARSE_OPTIONS)
+    }
+
+    /// Parse with explicit options plus the consumed length.
+    pub fn parse_full_len(
+        buf: &[u8],
+        options: ParseOptions,
+    ) -> Result<(Message, ParseStatus, usize)> {
         let mut parser = Parser {
             buf,
             options,
             seen_problem: false,
+            consumed: 0,
         };
         let m = parser.parse()?;
         let status = if parser.seen_problem {
@@ -221,7 +238,7 @@ impl Message {
         } else {
             ParseStatus::Success
         };
-        Ok((m, status))
+        Ok((m, status, parser.consumed))
     }
 
     /// Render the message.  `compression` enables name compression; names
@@ -503,6 +520,9 @@ struct Parser<'a> {
     options: ParseOptions,
     /// Any DO_ERROR recorded (BIND's `seen_problem`, message-wide).
     seen_problem: bool,
+    /// Bytes consumed by the parse (BIND's buffer position after
+    /// `dns_message_parse`); the remainder is dig's `extrabytes`.
+    consumed: usize,
 }
 
 impl<'a> Parser<'a> {
@@ -548,6 +568,7 @@ impl<'a> Parser<'a> {
         ) {
             if self.options.ignore_truncation && e == Error::UnexpectedEnd {
                 self.seen_problem = true;
+                self.consumed = pos;
                 return Ok(self.finish(
                     id,
                     tmpflags,
@@ -589,6 +610,7 @@ impl<'a> Parser<'a> {
             match r {
                 Err(e) if self.options.ignore_truncation && e == Error::UnexpectedEnd => {
                     self.seen_problem = true;
+                    self.consumed = pos;
                     break;
                 }
                 Err(e) => return Err(e),
@@ -600,6 +622,7 @@ impl<'a> Parser<'a> {
             }
         }
 
+        self.consumed = pos;
         Ok(self.finish(
             id,
             tmpflags,

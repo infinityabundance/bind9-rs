@@ -1,0 +1,124 @@
+@127.0.0.1 -p 5333 example.com +multiline
+@127.0.0.1 -p 5333 example.com SOA +multiline
+@127.0.0.1 -p 5333 example.com MX +multiline
+@127.0.0.1 -p 5333 example.com TXT +multiline
+@127.0.0.1 -p 5333 multi.example.com TXT +multiline
+@127.0.0.1 -p 5333 any.example.com ANY +multiline
+@127.0.0.1 -p 5333 long.example.com +multiline
+@127.0.0.1 -p 5333 example.com +nottl
+@127.0.0.1 -p 5333 example.com +noclass
+@127.0.0.1 -p 5333 example.com +nottl +noclass
+@127.0.0.1 -p 5333 example.com +ttlunits
+@127.0.0.1 -p 5333 example.com +multiline +nottl
+@127.0.0.1 -p 5333 example.com +multiline +ttlunits
+@127.0.0.1 -p 5333 example.com +onesoa
+@127.0.0.1 -p 5333 example.com +onesoa +multiline
+@127.0.0.1 -p 5333 nonexistent.example.com +onesoa
+@127.0.0.1 -p 5333 example.com +unknownformat
+@127.0.0.1 -p 5333 example.com AAAA +expandaaaa
+@127.0.0.1 -p 5333 example.com +short +expandaaaa
+@127.0.0.1 -p 5333 example.com AAAA +short +expandaaaa
+@127.0.0.1 -p 5333 example.com +header-only
+@127.0.0.1 -p 5333 example.com +noall +header-only
+@127.0.0.1 -p 5333 example.com +identify
+@127.0.0.1 -p 5333 example.com a.example.com +identify
+@127.0.0.1 -p 5333 example.com +yaml
+@127.0.0.1 -p 5333 example.com SOA +yaml
+@127.0.0.1 -p 5333 example.com +yaml +short
+@127.0.0.1 -p 5333 example.com -u
+@127.0.0.1 -p 5333 example.com +short +multiline
+@127.0.0.1 -p 5333 example.com SOA +short +multiline
+@127.0.0.1 -p 5333 example.com -t TYPE65280
+@127.0.0.1 -p 5333 example.com -t TYPE65280 +unknownformat
+@127.0.0.1 -p 5333 example.com -t TYPE65280 +split=16
+@127.0.0.1 -p 5333 example.com -t TYPE65280 +short
+@127.0.0.1 -p 5333 dnssec.example.com +dnssec
+@127.0.0.1 -p 5333 dnssec.example.com +do
+@127.0.0.1 -p 5333 dnssec.example.com +dnssec +short
+@127.0.0.1 -p 5333 dnssec.example.com +dnssec +multiline
+@127.0.0.1 -p 5333 dnssec.example.com +nodnssec
+@127.0.0.1 -p 5333 example.com +nsid
+@127.0.0.1 -p 5333 example.com +expire
+@127.0.0.1 -p 5333 example.com +keepalive
+@127.0.0.1 -p 5333 example.com +padding=64
+@127.0.0.1 -p 5333 example.com +subnet=192.0.2.0/24
+@127.0.0.1 -p 5333 example.com +subnet=2001:db8::/32
+@127.0.0.1 -p 5333 example.com +ednsopt=NSID
+@127.0.0.1 -p 5333 example.com +ednsopt=65001:01020304
+@127.0.0.1 -p 5333 example.com +ednsopt=3:0102
+@127.0.0.1 -p 5333 example.com +noednsopt
+@127.0.0.1 -p 5333 example.com +edns=0
+@127.0.0.1 -p 5333 example.com +edns=1
+@127.0.0.1 -p 5333 example.com +edns=2
+@127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0x8000
+@127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0x4000
+@127.0.0.1 -p 5333 example.com +edns=0 +ednsflags=0xffff
+@127.0.0.1 -p 5333 example.com +noedns
+@127.0.0.1 -p 5333 example.com +bufsize=512
+@127.0.0.1 -p 5333 example.com +bufsize=4096 +qr
+@127.0.0.1 -p 5333 example.com +qr
+@127.0.0.1 -p 5333 example.com +qr +noall +answer
+@127.0.0.1 -p 5333 example.com +cookie
+@127.0.0.1 -p 5333 example.com +cookie=0102030405060708
+@127.0.0.1 -p 5333 example.com +nocookie
+@127.0.0.1 -p 5333 badcookie.example.com
+@127.0.0.1 -p 5333 badcookie.example.com +badcookie
+@127.0.0.1 -p 5333 badcookie.example.com +nobadcookie
+@127.0.0.1 -p 5333 badcookie.example.com +showbadcookie
+@127.0.0.1 -p 5333 example.com +aaonly +qr
+@127.0.0.1 -p 5333 example.com +adflag +qr
+@127.0.0.1 -p 5333 example.com +cdflag +qr
+@127.0.0.1 -p 5333 example.com +tcflag +qr
+@127.0.0.1 -p 5333 example.com +zflag +qr
+@127.0.0.1 -p 5333 example.com +raflag +qr
+@127.0.0.1 -p 5333 example.com +coflag +qr
+@127.0.0.1 -p 5333 example.com +noaaonly +noadflag +nocdflag +nozflag +qr
+@127.0.0.1 -p 5333 example.com +opcode=UPDATE +qr
+@127.0.0.1 -p 5333 example.com +opcode=NOTIFY +qr
+@127.0.0.1 -p 5333 example.com +opcode=3 +qr
+@127.0.0.1 -p 5333 example.com +opcode=QUERY +qr
+@127.0.0.1 -p 5333 example.com +qid=4660 +qr
+@127.0.0.1 -p 5333 example.com +nocomments
+@127.0.0.1 -p 5333 example.com +nostats
+@127.0.0.1 -p 5333 example.com +nocmd
+@127.0.0.1 -p 5333 example.com +noall
+@127.0.0.1 -p 5333 example.com +all
+@127.0.0.1 -p 5333 example.com +noall +question
+@127.0.0.1 -p 5333 example.com +noall +answer +authority +additional
+@127.0.0.1 -p 5333 example.com +comments +noanswer +noquestion
+@127.0.0.1 -p 5333 example.com +rrcomments
+@127.0.0.1 -p 5333 version.bind CH TXT
+@127.0.0.1 -p 5333 version.bind -c CH -t TXT
+@127.0.0.1 -p 5333 example.com -c IN -t A
+@127.0.0.1 -p 5333 -q example.com -t A
+@127.0.0.1 -p 5333 example.com A AAAA MX TXT
+@127.0.0.1 -p 5333 example.com a.example.com
+@127.0.0.1 -p 5333 example.com +tcp +multiline
+@127.0.0.1 -p 5333 example.com +vc
+@127.0.0.1 -p 5333 example.com +tcp +keepopen a.example.com
+@127.0.0.1 -p 5333 example.com +retry=1
+@127.0.0.1 -p 5333 example.com +tries=0
+@127.0.0.1 -p 5333 example.com +time=0
+@127.0.0.1 -p 5333 example.com +timeout=2
+@127.0.0.1 -p 5333 -4 -p 5333 example.com
+@127.0.0.1 -p 5333 -6 example.com
+@127.0.0.1 -p 5333 example.com +search
+@127.0.0.1 -p 5333 example.com +nosearch
+@127.0.0.1 -p 5333 example.com +ndots=1
+@127.0.0.1 -p 5333 example.com +fuzztime=2
+@127.0.0.1 -p 5333 example.com +domain=example.com
+@127.0.0.1 -p 5333 example.com +showsearch
+@127.0.0.1 -p 5333 example.com +showbadvers
+@127.0.0.1 -p 5333 example.com +cl
+@127.0.0.1 -p 5333 opcodemismatch.example.com +qr
+@127.0.0.1 -p 5333 badvers.example.com +edns=1
+@127.0.0.1 -p 5333 ednsneg.example.com
+@127.0.0.1 -p 5333 ednsneg.example.com +noedns
+@127.0.0.1 -p 5333 malformed.example.com
+@127.0.0.1 -p 5333 malformed.example.com +besteffort
+@127.0.0.1 -p 5333 example.com +sigchase
+@127.0.0.1 -p 5333 example.com +topdown
+@127.0.0.1 -p 5333 example.com +mapped
+@127.0.0.1 -p 5333 example.com +trusted-key
+@127.0.0.1 -p 1 example.com
+@127.0.0.1 -p 1 example.com +tcp
