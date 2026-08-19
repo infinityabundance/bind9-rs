@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "court_id": "LIBUV-0001",
+  "git_commit": "5b7355df2226f82269b893467832c41463bc1080",
+  "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo_lock_sha256": "d3bd461bbee0b42047d63a1612734ed4b374ab8f0c411596f5bc20766f9bb07a",
+  "oracle_hashes": {},
+  "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
+  "completed_at": "2026-08-19T23:18:34Z",
+  "input_hashes": {},
+  "residual_ids": [],
+  "invariants_passed": [
+    "uv_version/uv_version_string and the library-shutdown sequence match",
+    "loop basics match: init, run(NOWAIT) on an empty loop returns 0, loop_alive 0, close 0; the final uv_loop_close with leftover handles is UV_EBUSY (-16)",
+    "the timer heap order matches: same-timeout timers fire in start order, longer timeouts later; the repeat timer re-arms before the callback (fires at 10/20/30/40 then the stopper at 45 stops it)",
+    "the watcher iteration order matches: idle, prepare, check within one iteration (the check handle stops all three, so the run cannot spin), and one idle callback per NOWAIT iteration",
+    "async coalescing matches: 3 sends before the run produce exactly one callback; the cross-thread send fires exactly once",
+    "signal dispatch matches: signum-0 EINVAL, two raises -> two callbacks, same-signum restart, stop",
+    "the UDP taxonomy matches: EDESTADDRREQ/EISCONN/ENOTCONN, the send-queue byte counts (4 then 604), the EAGAIN drain marker, the 65536-byte alloc suggestion, datagram order (ping, abcd, 600 x's, pong)",
+    "the TCP flow matches: second uv_listen is a no-op, accept with no pending is EAGAIN, the immediate-write path (queue size stays 0, write_cb via the pending pass), try_write byte counts, shutdown then EOF, ECONNREFUSED on a closed port, the LIFO close_cb order",
+    "the socket buffer-size roundtrip matches (get 131072, set 65536, get 131072) and closed-handle ops are EBADF",
+    "the walk order, active/closing states, uv_fileno EINVAL (timer) and EBADF (closed tcp), and the fresh-loop close 0 match",
+    "the dl phase matches including the exact glibc dlerror messages, uv_dlopen/uv_dlsym return values (-1 on failure)",
+    "uv_random completes with status 0 and len 16; uv_sleep returns void",
+    "the barrier matches: count-0 EINVAL, main (last releaser) returns 1, the helper 0",
+    "uv_replace_allocator: NULL funcs EINVAL; after replacement the loop init/close allocator counts are exactly malloc=0 realloc=1 calloc=1 free=0 then free=2 (the loop-internal-fields calloc and the watchers-array realloc from the internal wq_async registration, and the two frees)",
+    "uv_cancel: EINVAL for the completed WRITE req (non-work type), EBUSY for the completed RANDOM req",
+    "the full UV_ERRNO_MAP name/value/strerror battery matches, including the Unknown system error forms",
+    "stderr is empty and the exit status is 0 for every run on both sides"
+  ],
+  "captures_sha256": "2ebffc29dac9268d2cebc0035c1804251c163400fef868224dbfff7e0f72bdb0",
+  "repro_command": "bind9-court run LIBUV-0001"
+}
