@@ -3207,6 +3207,11 @@ static SIGNAL_PIPE_W: AtomicI32 = AtomicI32::new(-1);
 mod tests {
     use super::*;
 
+    /// `uv_replace_allocator` is process-global (like libuv's), so every
+    /// test that creates a loop serializes on this lock — otherwise the
+    /// allocator-count contract test races with the other loop tests.
+    static TEST_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
     #[test]
     fn version_oracle_vectors() {
         // probe-libuv.c PHASE 0 (oracle libuv 1.52.1).
@@ -3285,6 +3290,7 @@ mod tests {
 
     #[test]
     fn allocator_contract_counts() {
+        let _guard = TEST_LOCK.lock().unwrap();
         // probe-libuv.c PHASE 13: with the customs installed, uv_loop_init
         // does exactly calloc(1,448) + realloc(NULL,128) and uv_loop_close
         // frees both; the mirror stores the pointers opaquely (the loop's
@@ -3345,6 +3351,7 @@ mod tests {
 
     #[test]
     fn loop_close_ebusy_with_leftover_handles() {
+        let _guard = TEST_LOCK.lock().unwrap();
         // probe-libuv.c: the final uv_loop_close on loop2 with the never-
         // closed timers is UV_EBUSY; a fully-closed loop closes clean.
         let mut l = UvLoop::default();
@@ -3360,6 +3367,7 @@ mod tests {
 
     #[test]
     fn timer_einval_and_repeat() {
+        let _guard = TEST_LOCK.lock().unwrap();
         let mut l = UvLoop::default();
         l.uv_loop_init();
         let mut t = Handle(0);
@@ -3376,6 +3384,7 @@ mod tests {
 
     #[test]
     fn udp_send_taxonomy_without_socket() {
+        let _guard = TEST_LOCK.lock().unwrap();
         // uv__udp_check_before_send (uv-common.c): the EISCONN / EDESTADDRREQ
         // taxonomy fires before any socket exists (deferred bind).
         let mut l = UvLoop::default();

@@ -97,5 +97,12 @@ path = "src/bin/libedit-probe.rs"
 name = "libuv-probe"
 path = "src/bin/libuv-probe.rs"
 
+# liburcu-probe: forensic diagnostic for the LIBURCU-0001 court (mirrors
+# forensics/oracle/probes/probe-liburcu.c byte-for-byte); not a BIND-compat
+# tool.
+[[bin]]
+name = "liburcu-probe"
+path = "src/bin/liburcu-probe.rs"
+
 [lints]
 workspace = true

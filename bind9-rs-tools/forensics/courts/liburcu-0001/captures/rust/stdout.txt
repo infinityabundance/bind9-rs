@@ -1,0 +1,35 @@
+=== PHASE 0: thread registration ===
+  rcu_read_ongoing before register=0
+  rcu_register_thread -> ok
+  rcu_read_ongoing after register=0
+=== PHASE 1: read-side nesting ===
+  rcu_read_lock -> ongoing=1
+  rcu_read_lock -> ongoing=2
+  rcu_read_unlock -> ongoing=1
+  rcu_read_unlock -> ongoing=0
+  rcu_quiescent_state (membar no-op) -> ongoing=0
+  rcu_thread_offline (membar no-op) -> ongoing=0
+  rcu_thread_online (membar no-op) -> ongoing=0
+=== PHASE 2: grace period with no readers ===
+  synchronize_rcu returned
+=== PHASE 3: nested reader blocks the writer ===
+  sync blocked (reader nested)
+  sync completed after reader unlock
+=== PHASE 4: unregister removes the thread from the registry ===
+  sync blocked (reader nested)
+  sync completed after reader unregistered
+  synchronize_rcu (unregistered thread) returned
+=== PHASE 5: call_rcu ordering + rcu_barrier ===
+  queued 3 callbacks
+    call_rcu cb 1
+    call_rcu cb 2
+    call_rcu cb 3
+  rcu_barrier returned
+  rcu_barrier (empty) returned
+  queued 1 callback after the barrier
+    call_rcu cb 4
+  rcu_barrier returned (cb4 ran before it)
+=== PHASE 6: rcu_dereference / rcu_assign_pointer ===
+  assign+deref round trip (plain) ok
+  assign+deref round trip (inside read lock) ok
+  rcu_unregister_thread -> ok

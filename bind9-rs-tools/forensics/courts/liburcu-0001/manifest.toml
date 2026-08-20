@@ -1,0 +1,34 @@
+schema_version = 1
+court_id = "LIBURCU-0001"
+question = "Does the Rust liburcu module (compat/liburcu/) reproduce liburcu 0.15.6 observable behavior byte-exactly over the surface BIND 9.20's netmgr/isc depends on (the membarrier flavor, `-lurcu`, `<urcu.h>` — BIND's default `--with-liburcu=membarrier` build): thread registration (rcu_register_thread/rcu_unregister_thread, the always-on non-nested assertions), the read-side nesting counter (rcu_read_lock/rcu_read_unlock/rcu_read_ongoing returning the exact 0/1/2/1/0 values), the membarrier no-ops (rcu_quiescent_state/rcu_thread_online/rcu_thread_offline), the two-pass grace period (synchronize_rcu returning with no readers; blocked while a snapshot reader is nested; completing when the reader unlocks or unregisters; the unregistered thread never blocking a later grace period), deferred reclamation (call_rcu callbacks running FIFO on the call_rcu thread after a grace period; rcu_barrier returning only after every previously queued callback ran, including the empty-queue case), and the publication pair (rcu_dereference/rcu_assign_pointer round trips inside and outside a read lock)"
+subsystem = "compat/liburcu"
+oracle_versions = ["0.15.6"]
+harness = "liburcu"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-liburcu-0.15.6 container, each running the same deterministic op sequence",
+    "the transcript never prints wall-clock values, addresses, pointers, pids or thread ids; only logical events and the read-side nesting counts",
+    "the grace-period phases are structured so the print order is guaranteed: the writer thread's synchronize_rcu cannot complete while the snapshot reader is nested, so 'sync blocked (reader nested)' always precedes the completion print",
+    "helper threads print nothing and are joined before their results are printed",
+]
+invariants = [
+    "thread registration matches: rcu_read_ongoing is 0 before register, 0 after register, and 0 after unregister; re-registration works",
+    "the read-side nesting values match exactly: 0 -> lock -> 1 -> lock -> 2 -> unlock -> 1 -> unlock -> 0",
+    "rcu_quiescent_state, rcu_thread_online and rcu_thread_offline are no-ops in the membarrier flavor: the nesting state is untouched",
+    "synchronize_rcu with no readers returns; with a nested snapshot reader it blocks until the reader unlocks",
+    "rcu_unregister_thread removes the thread from the registry: an in-flight grace period that already snapshotted the thread still waits for it to quiesce, and a later grace period returns immediately",
+    "call_rcu callbacks fire FIFO on the call_rcu thread after a grace period (cb 1, 2, 3, then 4), and rcu_barrier returns only after every previously queued callback ran, including the empty-queue case",
+    "the rcu_dereference/rcu_assign_pointer round trips match (plain and inside a read lock)",
+    "stderr is empty and the exit status is 0 for every run on both sides",
+]
+timeout_secs = 120
+nondeterminism_policy = "the op sequence is fixed; the only wall-clock dependence is the 50ms sleep that brackets the 'sync blocked' prints, and its print order is structurally guaranteed (the writer cannot finish while the snapshot reader is nested); the call_rcu callback order is FIFO per the default call_rcu_data queue; nothing pointer, address, pid, tid or raw-time dependent is printed"
+security_classification = "the RCU registry/grace-period surface is the concurrency substrate of the netmgr's socket table and the zone/DB object lifetimes: a grace period that returns too early can free memory still being read, and a reader that blocks the grace period indefinitely stalls writers; the transcript asserts the exact block/release semantics of the two-pass membarrier grace period and the FIFO deferred-reclamation ordering"
+references = [
+    "liburcu 0.15.6 src/urcu.c, src/urcu-call-rcu-impl.h, include/urcu/{urcu.h,urcu-memb.h,urcu-common.h,call-rcu.h,pointer.h,assert.h}, include/urcu/static/{urcu-memb.h,urcu-common.h} (pinned archive sha256 15c341ce8b93d3b70bec120c1df90b2b02a219d65593cddeb4b52521a950e45e)",
+    "BIND 9.20.26 lib/isc/{thread.c,loop.c,work.c,lib.c} + lib/isc/include/isc/urcu.h (the membarrier flavor and the isc_qsbr_* developer-option wrappers), configure.ac --with-liburcu",
+    "forensics/oracle/probes/probe-liburcu.c",
+    "bind9-rs-tools/src/bin/liburcu-probe.rs",
+    "bind9-rs-tools/src/compat/liburcu.rs",
+    "bind9-rs-tools/forensics/atlas/doxygen/liburcu/api-atlas (function-level doxygen archaeology)",
+    "addendum §30 (liburcu), §38 (C probe courts)",
+]

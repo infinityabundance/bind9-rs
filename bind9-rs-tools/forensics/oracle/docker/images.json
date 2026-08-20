@@ -64,6 +64,13 @@
       "repo_digest": "<none>",
       "tag": "latest"
     },
+    "oracle-liburcu-0.15.6": {
+      "built_at": "2026-08-20T00:00:00Z",
+      "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-liburcu-0.15.6/Dockerfile",
+      "image_id": "c99dfcaa626b9",
+      "repo_digest": "<none>",
+      "tag": "latest"
+    },
     "oracle-lmdb-0.9.35": {
       "built_at": "2026-08-18T12:04:43Z",
       "dockerfile": "bind9-rs-tools/forensics/oracle/docker/oracle-lmdb-0.9.35/Dockerfile",
