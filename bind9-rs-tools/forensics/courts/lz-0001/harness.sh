@@ -17,7 +17,7 @@ court_dir=$(cd "$(dirname "$0")" && pwd)
 
 mkdir -p "$court_dir/captures/oracle" "$court_dir/captures/rust"
 
-docker run --rm --user "$(id -u):$(id -g)" \
+"$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh --user "$(id -u):$(id -g)" \
     -v "$repo/forensics/oracle/probes:/probes:ro" \
     -v "$repo/target/debug/libidn2-lz-probe:/libidn2-lz-probe:ro" \
     -v "$court_dir/captures:/captures:rw" \

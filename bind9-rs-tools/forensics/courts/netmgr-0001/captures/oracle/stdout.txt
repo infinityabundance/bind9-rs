@@ -1,0 +1,166 @@
+=== PHASE 1: netmgr lifecycle ===
+main: isc_mem_create ok
+main: isc_loopmgr_create(3) ok
+main: isc_netmgr_create ok
+tid=0
+nloops=3
+default timeouts: init=30000 idle=30000 keepalive=30000 advertised=30000
+getloadbalancesockets=true
+settimeouts(700,800,900,1000); gettimeouts: init=700 idle=800 keepalive=900 advertised=1000
+setnetbuffers(1024,2048,4096,8192) ok
+maxudp=0
+netmgr refs=4
+netmgr refs after attach=5
+netmgr refs after detach=4
+=== PHASE 2: isc_nm_checkaddr ===
+checkaddr(127.0.0.1#19153, tcp) -> success
+bound a plain tcp socket to 19153
+checkaddr(127.0.0.1#19153, tcp) -> address in use
+closed the plain socket
+checkaddr(127.0.0.1#19153, tcp) -> success
+checkaddr(127.0.0.1#19153, raw) -> not implemented
+=== PHASE 3: UDP echo (LISTEN_ONE) ===
+listenudp(workers=1, 127.0.0.1#19153) -> success
+  server type=udplistener active=true closing=false closed=false nchildren=1
+  child[0]: tid=0 result=success
+udpconnect(local=127.0.0.1#19155 -> 127.0.0.1#19153, timeout=5000)
+  connect cb: eresult=success
+    handle peer=127.0.0.1#19153 local=127.0.0.1#19155 is_stream=false netmgr_match=true
+    handle refs=1 (entry)
+    handle refs after attach=2
+    client sock: refs=2 active=true connected=true connecting=false reading=false statichandle=true active_handles=1
+    read started; timer_running=true
+  client sent "ping-1"
+  server recv: data="ping-1" peer=127.0.0.1#19155 handle refs=1 sock refs=1 active_handles=1
+  client send cb: eresult=success handle refs=3
+  client send cb: after detach refs=2
+  server send cb: handle refs=2
+  client recv: eresult=success data="Ping-1" handle refs=2
+  client sent "ping-2"
+  client send cb: eresult=success handle refs=3
+  client send cb: after detach refs=2
+  server recv: data="ping-2" peer=127.0.0.1#19155 handle refs=1 sock refs=1 active_handles=1
+  server send cb: handle refs=2
+  client recv: eresult=success data="Ping-2" handle refs=2
+  client sent "ping-3"
+  client send cb: eresult=success handle refs=3
+  client send cb: after detach refs=2
+  server recv: data="ping-3" peer=127.0.0.1#19155 handle refs=1 sock refs=1 active_handles=1
+  server send cb: handle refs=2
+  client recv: eresult=success data="Ping-3" handle refs=2
+  client state: handle refs=2 sock refs=2 statichandle=true active_handles=1
+=== PHASE 4: UDP maxudp firewall ===
+maxudp=4
+  send 10 bytes while maxudp=4: blocked, send cb calls=0
+maxudp=0
+  client sent "ok"
+  client send cb: eresult=success handle refs=3
+  client send cb: after detach refs=2
+  server recv: data="ok" peer=127.0.0.1#19155 handle refs=1 sock refs=1 active_handles=1
+  server send cb: handle refs=2
+  client recv: eresult=success data="Ok"
+=== PHASE 5: UDP read timeout ===
+  connect cb: eresult=success
+  client sent "no-reply" (read timeout=50ms)
+  server recv: data="no-reply" (no reply)
+  client send cb: eresult=success handle refs=3
+  client send cb: after detach refs=2
+  client recv: eresult=timed out handle refs=2
+=== PHASE 6: UDP cancelread ===
+  connect cb: eresult=success
+  read started; calling isc_nm_cancelread
+  client recv: eresult=canceled handle refs=3
+=== PHASE 7: UDP stoplistening ===
+  stoplistening: parent active=false closing=true closed=true
+  child[0]: active=false closing=true closed=false
+  nmsocket_close ok
+=== PHASE 8: TCP echo (LISTEN_ONE) ===
+listentcp(workers=1, 127.0.0.1#19154, backlog=10) -> success
+  server type=tcplistener active=true closing=false closed=false nchildren=1
+  child[0]: tid=0 result=success
+  connect cb: eresult=success peer=127.0.0.1#19154 local=127.0.0.1#19160 is_stream=true handle refs=1 sock refs=2 connected=true active_handles=1
+  accept cb: eresult=success peer=127.0.0.1#19160 local=127.0.0.1#19154 is_stream=true client=false active_handles=1
+  client sent "tcp-1"
+  client send cb: eresult=success handle refs=3
+  server recv: data="tcp-1" handle refs=2
+  server send cb: eresult=success handle refs=3
+  client recv: eresult=success data="Tcp-1" handle refs=2
+  client handle: timer_running=true read_timeout=800
+  cleartimeout: timer_running=false read_timeout=0
+  settimeout(500): timer_running=true read_timeout=500
+  keepalive(true): read_timeout=900
+  keepalive(false): read_timeout=800
+  client handle closed
+  server recv: eresult=eof
+=== PHASE 8b: TCP large echo (uv_write path) ===
+  connect cb: eresult=success peer=127.0.0.1#19154 local=127.0.0.1#19161 is_stream=true handle refs=1 sock refs=2 connected=true active_handles=1
+  accept cb: eresult=success peer=127.0.0.1#19161 local=127.0.0.1#19154 is_stream=true client=false active_handles=1
+  client sent 131072 bytes
+  client send cb: eresult=success handle refs=4
+  server: received full message (131072 bytes)
+  server send cb: eresult=success handle refs=4
+  client: received full echo (131072 bytes)
+  client handle closed
+  server recv: eresult=eof
+=== PHASE 8c: TCP read_stop ===
+  connect cb: eresult=success peer=127.0.0.1#19154 local=127.0.0.1#19162 is_stream=true handle refs=1 sock refs=2 connected=true active_handles=1
+  accept cb: eresult=success peer=127.0.0.1#19162 local=127.0.0.1#19154 is_stream=true client=false active_handles=1
+  client sent "stop-test"
+  client send cb: eresult=success handle refs=3
+  client read_stop ok
+  server recv: data="stop-test" (holding handle)
+  server sent "STOP1"
+  server send cb: eresult=success handle refs=3
+  state: client recv calls=0 (read stopped)
+  client re-read: data arrives
+  client recv: eresult=success data="STOP1" calls=1
+  client handle closed
+  server recv: eresult=eof
+=== PHASE 9: TCP read timeout ===
+  client sent "slow" (read timeout=50ms)
+  client send cb: eresult=success handle refs=3
+  connect cb: eresult=success peer=127.0.0.1#19154 local=127.0.0.1#19163 is_stream=true handle refs=1 sock refs=2 connected=true active_handles=1
+  accept cb: eresult=success peer=127.0.0.1#19163 local=127.0.0.1#19154 is_stream=true client=false active_handles=1
+  server recv: data="slow" (no reply)
+  client recv: eresult=timed out handle refs=2
+=== PHASE 10: TCP connect refused ===
+  server recv: eresult=eof
+  connect cb: eresult=connection refused handle=non-null refs=1
+=== PHASE 11: TCP stoplistening ===
+  stoplistening: parent active=false closing=true closed=true
+  child[0]: active=false closing=true closed=false
+  nmsocket_close ok
+=== PHASE 12: load-balanced listeners (LISTEN_ALL) ===
+  UDP listen: success nchildren=3 child tids: 0 1 2 
+  connect cb: eresult=success
+  client sent "lb-1"
+  client recv: data="lb-1"
+  client sent "lb-2"
+  client recv: data="lb-2"
+  client sent "lb-3"
+  client recv: data="lb-3"
+  UDP load balance: echoes=3
+  TCP listen: success nchildren=3 child tids: 0 1 2 
+  client connect 1 (local=127.0.0.1#19170 -> 127.0.0.1#19167)
+  connect cb 1: eresult=success
+  client sent "lt-1"
+  client recv: data="Lt-1"
+  client connect 2 (local=127.0.0.1#19171 -> 127.0.0.1#19167)
+  connect cb 2: eresult=success
+  client sent "lt-2"
+  client recv: data="Lt-2"
+  client connect 3 (local=127.0.0.1#19172 -> 127.0.0.1#19167)
+  connect cb 3: eresult=success
+  client sent "lt-3"
+  client recv: data="Lt-3"
+  client connect 4 (local=127.0.0.1#19173 -> 127.0.0.1#19167)
+  connect cb 4: eresult=success
+  client sent "lt-4"
+  client recv: data="Lt-4"
+  TCP load balance: connects=4 echoes=4 accepts=4
+=== PHASE 13: teardown ===
+loop 0 teardown cb
+main: isc_loopmgr_run returned
+main: isc_loopmgr_destroy ok
+main: isc_netmgr_destroy ok
+main: isc_mem_destroy ok

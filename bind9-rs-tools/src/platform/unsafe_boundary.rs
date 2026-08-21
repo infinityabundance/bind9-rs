@@ -296,5 +296,10 @@ pub mod inventory {
             "linux.rs alloc_free",
             "ptr from the allocator or NULL",
         ),
+        (
+            "U-0055",
+            "linux.rs getpeername",
+            "zeroed sockaddr_in out-param; live connected fd",
+        ),
     ];
 }

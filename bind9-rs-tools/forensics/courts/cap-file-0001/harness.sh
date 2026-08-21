@@ -29,7 +29,7 @@ court_dir=$(cd "$(dirname "$0")" && pwd)
 
 mkdir -p "$court_dir/captures/oracle" "$court_dir/captures/rust"
 
-docker run --rm \
+"$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh \
     --cap-add CAP_SETFCAP \
     -v "$repo/forensics/oracle/probes:/probes:ro" \
     -v "$repo/target/debug/cap-file-probe:/cap-file-probe:ro" \

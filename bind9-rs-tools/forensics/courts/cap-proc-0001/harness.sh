@@ -14,7 +14,7 @@ court_dir=$(dirname "$0")
 
 case "$side" in
     oracle)
-        docker run --rm \
+        "$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh \
             -v "$repo/forensics/oracle/probes:/probes" \
             oracle-libcap-2.78 sh -c \
             'gcc -I/opt/dep/include -o /tmp/proc /probes/probe-libcap-proc.c \
@@ -23,7 +23,7 @@ case "$side" in
     rust)
         # Run the Rust mirror inside the SAME oracle container (equivalent
         # capability context) via a static build copied in.
-        docker run --rm \
+        "$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh \
             -v "$repo/target/debug/cap-proc-probe:/proc-probe:ro" \
             -v "$repo/forensics/oracle/probes:/probes" \
             oracle-libcap-2.78 sh -c '/proc-probe'

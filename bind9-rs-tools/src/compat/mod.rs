@@ -26,5 +26,6 @@ pub mod liburcu;
 pub mod libuv;
 pub mod lmdb;
 pub mod maxminddb;
+pub mod netmgr;
 pub mod protobuf_c;
 pub mod zlib;

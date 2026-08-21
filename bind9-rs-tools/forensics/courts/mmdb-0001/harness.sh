@@ -32,7 +32,7 @@ mkdir -p "$stage/bad-data"
 cp -al "$test_data"/. "$stage/"
 cp -al "$bad_data"/. "$stage/bad-data/"
 
-docker run --rm \
+"$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh \
     -v "$stage:/opt/test-data:ro" \
     -v "$repo/forensics/oracle/probes:/probes:ro" \
     -v "$repo/target/debug/maxminddb-probe:/maxminddb-probe:ro" \

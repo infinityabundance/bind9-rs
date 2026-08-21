@@ -104,5 +104,9 @@ path = "src/bin/libuv-probe.rs"
 name = "liburcu-probe"
 path = "src/bin/liburcu-probe.rs"
 
+[[bin]]
+name = "netmgr-probe"
+path = "src/bin/netmgr-probe.rs"
+
 [lints]
 workspace = true

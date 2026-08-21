@@ -1,0 +1,44 @@
+schema_version = 1
+court_id = "NETMGR-0001"
+question = "Does the Rust netmgr module (compat/netmgr/, on the compat/libuv event-loop substrate) reproduce BIND 9.20.26's isc_nm_* observable behavior byte-exactly over the surface the query pipeline depends on: the netmgr lifecycle (isc_netmgr_create/attach/detach refcounts, timeouts, netbuffers, load-balance flag), isc_nm_checkaddr's bind-probe taxonomy, UDP listeners (LISTEN_ONE child sockets on the creating loop, the listen barrier, connect/read/echo with the per-datagram re-arm, the per-read send/recv cb handle refs, the maxudp firewall with its no-callback blocked send, the read timeout, cancelread, stoplistening's parent/child states), TCP listeners and streams (LISTEN_ONE accept/connect pair ordering, the small-echo with the settimeout/cleartimeout/keepalive read-timeout observations, the 131072-byte uv_write path with the write-timeout-timer handle ref, read_stop with the held server handle and the re-read, the read timeout, connect-refused, stoplistening), and the load-balanced listeners (LISTEN_ALL: nloops children on their own worker loops with SO_REUSEPORT, the UDP echoes and the 4-connection TCP round-robin with the aggregate accept counter), through the full loopmgr teardown"
+subsystem = "compat/netmgr"
+oracle_versions = ["9.20.26"]
+harness = "netmgr"
+normalization = [
+    "none: stdout, stderr and exit status are compared byte-exactly; both probes run in the same oracle-bind-9.20.26 container, each running the same deterministic op sequence",
+    "the transcript never prints wall-clock values, kernel-assigned ports, fds, pointers, pids or thread ids (the loop tids 0/1/2 are fixed by construction); every address is the loopback literal 127.0.0.1 with a fixed port and fixed client source ports",
+    "TCP stream reads are accumulated to a known message length before printing (the kernel may deliver a stream in arbitrary chunks)",
+    "the one genuinely unspecified intra-round order (the client's TCP connect_cb vs the server's accept_cb, two events of one poll round on the same loop) is recorded by each callback and printed by a chained loop-0 job in a fixed documented order (connect first, then accept)",
+    "every internal-state print (refs, active_handles_cur, statichandle, connected, timer_running, read_timeout, nchildren, child states) happens on the socket's owning thread at a quiescent point",
+    "the load-balance phases' worker-loop callbacks never print; only aggregate counters (echoes, connects, accepts) are printed from the loop-0 client side",
+]
+invariants = [
+    "phase 1 lifecycle matches: isc_loopmgr_create(3), isc_netmgr_create with netmgr refs 1 + 3 worker attaches = 4, attach -> 5, detach -> 4; the default timeouts (init/idle/keepalive/advertised 30000), settimeouts(700,800,900,1000) roundtrip, setnetbuffers(1024,2048,4096,8192), getloadbalancesockets=true, maxudp=0",
+    "phase 2 isc_nm_checkaddr matches: a free loopback port is success, the second check while bound is address in use, after close it is success again, raw is not implemented",
+    "phase 3 UDP echo matches: listenudp(workers=1) with the parent/child states and child[0] tid=0 result=success; udpconnect connect cb with peer/local/is_stream=false/netmgr_match=true, handle refs 1 entry / 2 after attach, the client sock state (refs=2 active connected statichandle active_handles=1), read started with the timer running; three ping-N echoes with the server recv refs (handle refs=1 sock refs=1 active_handles=1), the client send cb refs 3 -> after detach 2, the server send cb refs 2, and the final client state (handle refs=2 sock refs=2 statichandle=true active_handles=1)",
+    "phase 4 maxudp firewall matches: with maxudp=4 a 10-byte send is blocked with no send cb; after maxudp=0 the send works",
+    "phase 5 UDP read timeout matches: a no-reply datagram is received by the server (no reply) and the client recv fires timed out after the 50ms read timeout",
+    "phase 6 cancelread matches: isc_nm_cancelread fires the client recv cb with canceled",
+    "phase 7 UDP stoplistening matches: parent active=false closing=true closed=true, child active=false closing=true closed=false, nmsocket_close ok",
+    "phase 8 TCP echo matches: listentcp(workers=1) success with the listener states; the connect/accept pair prints in the fixed documented order (connect first then accept) with handle refs=1 sock refs=2 connected=true active_handles=1 on the client and client=false active_handles=1 on the accepted side; the tcp-1 echo; the client handle timer observations (timer_running=true read_timeout=800, cleartimeout 0, settimeout(500) 500, keepalive(true) 900, keepalive(false) 800); client handle closed then server eof",
+    "phase 8b large echo matches: the 131072-byte send takes the uv_write path (partial uv_try_write under the 2048-byte SO_SNDBUF), the write-timeout timer holds an extra handle ref so both send cbs print refs=4, the server receives the full message and echoes it, the client receives the full echo and closes, then server eof",
+    "phase 8c read_stop matches: the server holds the handle across the read (holding handle), the client read_stop ok, the server sends STOP1, the state print shows the client recv calls=0 (read stopped), the re-read delivers STOP1 (calls=1), close, then server eof",
+    "phase 9 TCP read timeout matches: slow arrives (no reply) and the client recv fires timed out",
+    "phase 10 connect refused matches: connecting to a closed port fires the connect cb with connection refused, handle=non-null refs=1",
+    "phase 11 TCP stoplistening matches: parent active=false closing=true closed=true, child active=false closing=true closed=false, nmsocket_close ok",
+    "phase 12 load balance matches: LISTEN_ALL UDP gives nchildren=3 with child tids 0 1 2 and echoes=3; LISTEN_ALL TCP gives nchildren=3 with child tids 0 1 2 and 4 sequential client connects each echoing upper-cased, with connects=4 echoes=4 accepts=4",
+    "phase 13 teardown matches: loop 0 teardown cb, isc_loopmgr_run returned, isc_loopmgr_destroy ok, isc_netmgr_destroy ok, isc_mem_destroy ok",
+    "stderr is empty and the exit status is 0 for every run on both sides",
+]
+timeout_secs = 120
+nondeterminism_policy = "the op sequence is fixed and driven by chained loop-0 jobs; loops 1 and 2 are idle except for the load-balance phases, whose callbacks never print (only aggregate atomics are printed from loop 0); every address is the loopback literal with fixed ports and fixed client source ports; TCP stream reads are accumulated to a known length before printing; the only cross-thread ordering (which worker accepts a load-balanced connection) is aggregated into counters; nothing pointer, address, pid, tid or raw-time dependent is printed"
+security_classification = "the netmgr is named's I/O scheduler (BIND 9.20 lib/isc/netmgr): the socket state machine, handle refcount lifecycle, the accept/connect/read/send callback ordering and the read/connect timeout taxonomy are the interface the query pipeline's responsiveness and resource accounting depend on; the transcript asserts the exact refcount observations and callback orderings"
+references = [
+    "BIND 9.20.26 lib/isc/netmgr/{netmgr.c,tcp.c,udp.c,socket.c,timer.c,netmgr-int.h} (pinned oracle-bind-9.20.26 container)",
+    "libuv 1.52.1 src/unix/{core.c,loop.c,async.c,udp.c,stream.c,tcp.c} (the event-loop substrate, courted by LIBUV-0001)",
+    "forensics/oracle/probes/probe-netmgr.c",
+    "bind9-rs-tools/src/bin/netmgr-probe.rs",
+    "bind9-rs-tools/src/compat/netmgr.rs",
+    "bind9-rs-tools/src/compat/libuv.rs",
+    "addendum §30 (libuv), §38 (C probe courts)",
+]

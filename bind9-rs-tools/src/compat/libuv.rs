@@ -820,6 +820,9 @@ struct SendReq {
     nbytes: usize,
     cb: UdpSendCb,
     status: i32,
+    /// The destination for unconnected sends (`req->u.storage` in
+    /// uv__udp_send); None for connected sockets.
+    addr: Option<Addr>,
 }
 
 struct TcpState {
@@ -1904,27 +1907,65 @@ impl UvLoop {
         if r == 0 {
             return;
         }
-        // Pass 1: writable/error — the round's sends and connect completes.
+        // Single pass in pollfd order.  Real libuv's uv__io_poll iterates the
+        // epoll ready-list in kernel order and dispatches each fd's full
+        // event set immediately (`uv__io_cb`), with each watcher's own order
+        // (uv__udp_io/uv__stream_io: read first, then write; a pending
+        // connect consumes the round).  poll(2) returns revents in pollfd
+        // order, and the set is built in handle-registration order — the
+        // listener always precedes its clients — which reproduces the
+        // loopback kernel order the netmgr court's connect/accept pair
+        // depends on (accept_cb must run before the connect_cb that chains
+        // the pair print).
         for (i, pf) in pollfds.iter().enumerate() {
-            if pf.revents & (libc::POLLOUT | libc::POLLERR | libc::POLLHUP) == 0 {
+            if pf.revents == 0 {
                 continue;
             }
             match owners[i] {
-                IoKind::Udp(h) => self.udp_sendmsg(h),
-                IoKind::Tcp(h) => self.tcp_poll_out(h),
-                _ => {}
-            }
-        }
-        // Pass 2: readable — data, accepts, wakeups, signals.
-        for (i, pf) in pollfds.iter().enumerate() {
-            if pf.revents & (libc::POLLIN | libc::POLLERR | libc::POLLHUP) == 0 {
-                continue;
-            }
-            match owners[i] {
-                IoKind::Async => self.uv__async_io(),
-                IoKind::Signal => self.uv__signal_event(),
-                IoKind::Udp(h) => self.udp_recv(h),
-                IoKind::Tcp(h) => self.tcp_poll_in(h),
+                IoKind::Async => {
+                    if pf.revents & (libc::POLLIN | libc::POLLERR | libc::POLLHUP) != 0 {
+                        self.uv__async_io();
+                    }
+                }
+                IoKind::Signal => {
+                    if pf.revents & (libc::POLLIN | libc::POLLERR | libc::POLLHUP) != 0 {
+                        self.uv__signal_event();
+                    }
+                }
+                IoKind::Udp(h) => {
+                    // uv__udp_io: POLLIN (recv) first, then POLLOUT (send).
+                    if pf.revents & (libc::POLLIN | libc::POLLERR | libc::POLLHUP) != 0 {
+                        self.udp_recv(h);
+                    }
+                    if pf.revents & (libc::POLLOUT | libc::POLLERR | libc::POLLHUP) != 0 {
+                        let closing = matches!(
+                            self.handles.get(h.0),
+                            Some(HandleState::Udp(u)) if u.closing
+                        );
+                        if !closing {
+                            self.udp_sendmsg(h);
+                        }
+                    }
+                }
+                IoKind::Tcp(h) => {
+                    // uv__stream_io: a pending connect consumes the round.
+                    let connecting = matches!(
+                        self.handles.get(h.0),
+                        Some(HandleState::Tcp(t)) if t.connect_req.is_some() && !t.listening
+                    );
+                    if connecting {
+                        if pf.revents & (libc::POLLOUT | libc::POLLERR | libc::POLLHUP) != 0 {
+                            self.tcp_poll_out(h);
+                        }
+                    } else {
+                        if pf.revents & (libc::POLLIN | libc::POLLERR | libc::POLLHUP) != 0 {
+                            self.tcp_poll_in(h);
+                        }
+                        if pf.revents & (libc::POLLOUT | libc::POLLERR | libc::POLLHUP) != 0 {
+                            self.tcp_poll_out(h);
+                        }
+                    }
+                }
             }
         }
     }
@@ -1966,6 +2007,22 @@ impl UvLoop {
         self.uv_udp_init_ex(h, libc::AF_UNSPEC as u32)
     }
 
+    /// `uv_udp_open` (unix/udp.c): attach an existing fd to the handle.
+    pub fn uv_udp_open(&mut self, h: Udp, fd: i32) -> i32 {
+        match self.handles.get_mut(h.0) {
+            Some(HandleState::Udp(u)) => {
+                if u.fd != -1 {
+                    return EBUSY;
+                }
+                u.fd = fd;
+                // uv_udp_open does NOT start the handle (unix/udp.c):
+                // activation comes from recv_start/send.
+                0
+            }
+            _ => EINVAL,
+        }
+    }
+
     pub fn uv_udp_bind(&mut self, h: Udp, addr: &Addr) -> i32 {
         let fd = match self.udp_socket(h) {
             Ok(fd) => fd,
@@ -1978,12 +2035,7 @@ impl UvLoop {
         if let Err(e) = lx::bind(fd, &sa) {
             return -e;
         }
-        if let Some(HandleState::Udp(u)) = self.handles.get_mut(h.0) {
-            if !u.active {
-                u.active = true;
-                self.active_handles += 1;
-            }
-        }
+        // uv__udp_bind does not start the handle.
         0
     }
 
@@ -2118,8 +2170,10 @@ impl UvLoop {
         }
     }
 
-    /// `uv_udp_send`: validate, queue, wake the writer.  The socket is
-    /// created on first use (uv__udp_maybe_deferred_bind).
+    /// `uv_udp_send`: validate, then send immediately when the queue was
+    /// empty (`uv_udp_send` calls `uv__udp_sendmsg` synchronously in that
+    /// case), otherwise queue and wake the writer.  The socket is created on
+    /// first use (uv__udp_maybe_deferred_bind).
     pub fn uv_udp_send(
         &mut self,
         h: Udp,
@@ -2135,6 +2189,10 @@ impl UvLoop {
             return e;
         }
         let nbytes: usize = bufs.iter().map(|b| b.len()).sum();
+        let empty_queue = match self.handles.get(h.0) {
+            Some(HandleState::Udp(u)) => u.write_queue.is_empty(),
+            _ => false,
+        };
         if let Some(HandleState::Udp(u)) = self.handles.get_mut(h.0) {
             u.send_queue_size += nbytes;
             u.write_queue.push_back(SendReq {
@@ -2142,9 +2200,23 @@ impl UvLoop {
                 nbytes,
                 cb,
                 status: 0,
+                addr: addr.cloned(),
             });
+            // uv__udp_send (udp.c): uv__handle_start.
+            if !u.active {
+                u.active = true;
+                self.active_handles += 1;
+            }
         }
         self.active_reqs += 1;
+        if empty_queue {
+            /* uv_udp_send (udp.c): with an empty queue the sendmsg happens
+             * synchronously inside the call, so the datagram is in the
+             * kernel before this round's poll snapshot: the peer's recv
+             * fires in this round's poll and the completion (fed via
+             * uv__io_feed) in the next round's pending pass. */
+            self.udp_sendmsg(h);
+        }
         0
     }
 
@@ -2163,6 +2235,11 @@ impl UvLoop {
             u.alloc_cb = Some(alloc);
             u.recv_cb = Some(recv);
             u.recv_started = true;
+            // uv_udp_recv_start: uv__handle_start.
+            if !u.active {
+                u.active = true;
+                self.active_handles += 1;
+            }
         }
         0
     }
@@ -2173,6 +2250,11 @@ impl UvLoop {
         }
         if let Some(HandleState::Udp(u)) = self.handles.get_mut(h.0) {
             u.recv_started = false;
+            // uv__udp_recv_stop: uv__handle_stop when no POLLOUT is pending.
+            if u.write_queue.is_empty() && u.active {
+                u.active = false;
+                self.active_handles -= 1;
+            }
         }
         0
     }
@@ -2196,7 +2278,10 @@ impl UvLoop {
                 None => break,
                 Some(mut r) => {
                     let refs: Vec<&[u8]> = r.bufs.iter().map(|b| b.as_slice()).collect();
-                    match lx::sendmsg(fd, &refs, None) {
+                    let sa = r.addr.map(|a| match a {
+                        Addr::Inet4 { port } => sockaddr_in_loopback(port),
+                    });
+                    match lx::sendmsg(fd, &refs, sa.as_ref()) {
                         Ok(_) => {
                             r.status = 0;
                             if let Some(HandleState::Udp(u)) = self.handles.get_mut(h.0) {
@@ -2329,6 +2414,21 @@ impl UvLoop {
 
     // -- TCP / streams ----------------------------------------------------
 
+    /// `uv_tcp_open` (unix/tcp.c): attach an existing fd to the handle.
+    pub fn uv_tcp_open(&mut self, h: Tcp, fd: i32) -> i32 {
+        match self.handles.get_mut(h.0) {
+            Some(HandleState::Tcp(t)) => {
+                if t.fd != -1 {
+                    return EBUSY;
+                }
+                t.fd = fd;
+                // uv_tcp_open -> uv__stream_open: does not start the handle.
+                0
+            }
+            _ => EINVAL,
+        }
+    }
+
     pub fn uv_tcp_init(&mut self, h: &mut Tcp) -> i32 {
         let ix = self.handles.len();
         self.handles.push(HandleState::Tcp(TcpState {
@@ -2378,6 +2478,11 @@ impl UvLoop {
             Ok(fd) => fd,
             Err(e) => return e,
         };
+        // uv__tcp_bind (unix/tcp.c): SO_REUSEADDR is set unconditionally,
+        // before bind — without it a listener restart after a TIME_WAIT
+        // close races EADDRINUSE (the court's listentcp -> unset flake).
+        let mut on = 1;
+        let _ = lx::socket_sockopt(fd, libc::SO_REUSEADDR, &mut on);
         let port = match addr {
             Addr::Inet4 { port } => *port,
         };
@@ -2385,12 +2490,7 @@ impl UvLoop {
         if let Err(e) = lx::bind(fd, &sa) {
             return -e;
         }
-        if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
-            if !t.active {
-                t.active = true;
-                self.active_handles += 1;
-            }
-        }
+        // uv__tcp_bind does not start the handle.
         0
     }
 
@@ -2407,8 +2507,18 @@ impl UvLoop {
                 *port_out = port;
                 0
             }
-            Err(e) => -e,
+            Err(_) => EINVAL,
         }
+    }
+
+    /// `uv_tcp_getpeername`: the peer port of the connected/accepted stream
+    /// (the netmgr's accept path reads it through the loop).
+    pub fn uv_tcp_getpeername(&mut self, h: Tcp) -> u16 {
+        let fd = match self.handles.get(h.0) {
+            Some(HandleState::Tcp(t)) => t.fd,
+            _ => return 0,
+        };
+        lx::getpeername(fd).unwrap_or(0)
     }
 
     /// `uv_listen` (unix/stream.c + tcp.c): EINVAL when closing; the second
@@ -2463,20 +2573,16 @@ impl UvLoop {
         if let Some(HandleState::Tcp(t)) = self.handles.get_mut(server.0) {
             t.accepted_fd = -1;
         }
-        let mut open = false;
         let mut err = EINVAL;
         if let Some(HandleState::Tcp(t)) = self.handles.get_mut(client.0) {
             if t.fd == -1 {
                 t.fd = accepted;
-                t.active = true;
-                open = true;
+                // uv_accept does not start the stream (activation comes
+                // from uv_read_start / uv_listen).
                 err = 0;
             } else {
                 err = EBUSY;
             }
-        }
-        if open {
-            self.active_handles += 1;
         }
         if err != 0 {
             lx::close(accepted);
@@ -2512,10 +2618,9 @@ impl UvLoop {
         if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
             t.connect_status = status;
             t.connect_req = Some(cb);
-            if !t.active {
-                t.active = true;
-                self.active_handles += 1;
-            }
+            // uv_tcp_connect does not start the handle; the connect req
+            // keeps the loop alive (uv__req_init).
+            self.active_reqs += 1;
         }
         if status != 0 {
             // delayed_error: the cb fires via the pending pass next tick.
@@ -2525,7 +2630,12 @@ impl UvLoop {
     }
 
     /// `uv_write` (unix/stream.c): the immediate-write fast path first; a
-    /// full immediate write completes via the pending pass.
+    /// full immediate write completes via the pending pass.  A partial
+    /// write queues only the REMAINDER (the head already went out), so the
+    /// drain never resends a prefix — the LIBUV-0001 observation
+    /// "queue size after uv_write=0 (immediate write path)" holds for
+    /// full writes, and the netmgr's 131072-byte sends (small SO_SNDBUF)
+    /// drain correctly.
     pub fn uv_write(&mut self, h: Stream, bufs: &[Vec<u8>], cb: WriteCb) -> i32 {
         let nbytes: usize = bufs.iter().map(|b| b.len()).sum();
         let fd = match self.handles.get(h.0) {
@@ -2536,6 +2646,7 @@ impl UvLoop {
             return EINVAL;
         }
         let mut written = 0usize;
+        let mut err = 0;
         for b in bufs {
             match lx::write_fd(fd, b) {
                 Ok(n) => {
@@ -2544,7 +2655,10 @@ impl UvLoop {
                         break;
                     }
                 }
-                Err(_) => break,
+                Err(e) => {
+                    err = e;
+                    break;
+                }
             }
         }
         if written >= nbytes {
@@ -2558,19 +2672,40 @@ impl UvLoop {
             }
             self.pending.push_back(h);
             0
-        } else {
-            // Partial write: queue the remainder (not courted by LIBUV-0001;
-            // the probe's payloads always fit the loopback buffer).
+        } else if err == 0 || err == libc::EAGAIN || err == libc::EWOULDBLOCK {
+            // Partial: queue the remainder (uv__write's write_index).
+            let mut rem = Vec::new();
+            let mut skip = written;
+            for b in bufs {
+                if skip >= b.len() {
+                    skip -= b.len();
+                } else {
+                    rem.push(b[skip..].to_vec());
+                    skip = 0;
+                }
+            }
             if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
-                t.write_queue_size += nbytes;
+                t.write_queue_size += nbytes - written;
                 t.write_queue.push_back(WriteReq {
-                    bufs: bufs.to_vec(),
-                    nbytes,
+                    bufs: rem,
+                    nbytes: nbytes - written,
                     cb,
                     status: 0,
                 });
             }
             self.active_reqs += 1;
+            0
+        } else {
+            // uv_write: a real error completes immediately.
+            if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
+                t.write_completed.push_back(WriteReq {
+                    bufs: bufs.to_vec(),
+                    nbytes,
+                    cb,
+                    status: -err,
+                });
+            }
+            self.pending.push_back(h);
             0
         }
     }
@@ -2605,6 +2740,11 @@ impl UvLoop {
             t.read_alloc = Some(alloc);
             t.read_cb = Some(read);
             t.reading = true;
+            // uv_read_start: uv__handle_start.
+            if !t.active {
+                t.active = true;
+                self.active_handles += 1;
+            }
         }
         0
     }
@@ -2612,6 +2752,11 @@ impl UvLoop {
     pub fn uv_read_stop(&mut self, h: Stream) -> i32 {
         if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
             t.reading = false;
+            // uv_read_stop: uv__handle_stop.
+            if t.active {
+                t.active = false;
+                self.active_handles -= 1;
+            }
         }
         0
     }
@@ -2878,7 +3023,25 @@ impl UvLoop {
                 self.active_reqs -= 1;
                 self.pending.push_back(h);
             } else if err == 0 || err == libc::EAGAIN || err == libc::EWOULDBLOCK {
-                // Partial: requeue the remainder; POLLOUT refires.
+                // Partial write: advance past what was written (uv__write's
+                // write_index) and refire on POLLOUT; write_queue_size
+                // tracks the remaining bytes.  Requeueing the whole request
+                // would resend the written prefix forever.
+                if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
+                    t.write_queue_size = t.write_queue_size.saturating_sub(written);
+                }
+                let mut rem = Vec::new();
+                let mut skip = written;
+                for b in r.bufs {
+                    if skip >= b.len() {
+                        skip -= b.len();
+                    } else {
+                        rem.push(b[skip..].to_vec());
+                        skip = 0;
+                    }
+                }
+                r.bufs = rem;
+                r.nbytes -= written;
                 if let Some(HandleState::Tcp(t)) = self.handles.get_mut(h.0) {
                     t.write_queue.push_front(r);
                 }
@@ -2919,6 +3082,9 @@ impl UvLoop {
             }
             _ => None,
         };
+        if connect.is_some() {
+            self.active_reqs = self.active_reqs.saturating_sub(1);
+        }
         if let Some((status, mut cb)) = connect {
             cb(self, status);
         }
@@ -3394,16 +3560,21 @@ mod tests {
         let addr = Addr::v4_loopback(9999);
         assert_eq!(l.uv_udp_try_send(u, b"x", None), EDESTADDRREQ);
         let cb = |_l: &mut UvLoop, _s: i32| {};
+        // uv__udp_send (unix/udp.c): the deferred bind creates the socket
+        // and, with an empty queue, the sendmsg runs synchronously — the
+        // call returns 0 and the completion is fed for the next pending
+        // pass.
         assert_eq!(
             l.uv_udp_send(u, &[b"x".to_vec()], Some(&addr), Box::new(cb)),
             0
         );
-        // connecting an already-connected handle is EISCONN; the send with
-        // an address on the connected handle is EISCONN too.
+        // connecting an already-connected handle is EISCONN; a disconnect
+        // on a never-connected handle is ENOTCONN.
         assert_eq!(l.uv_udp_connect(u, None), ENOTCONN);
         l.uv_close(u, None);
         let _ = l.uv_run(RunMode::Nowait);
-        // the queued send is a leftover req: the loop stays alive/EBUSY.
-        assert_eq!(l.uv_loop_close(), EBUSY);
+        // The completed send (and the close) are drained by the nowait run;
+        // with no leftover reqs the loop closes clean (0), not EBUSY.
+        assert_eq!(l.uv_loop_close(), 0);
     }
 }

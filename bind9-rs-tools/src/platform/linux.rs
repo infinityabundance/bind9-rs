@@ -503,6 +503,26 @@ pub fn getsockname(fd: c_int) -> Result<u16, Errno> {
     Ok(u16::from_be(sa.sin_port))
 }
 
+/// `getpeername(fd)` (U-0055): the peer port in host byte order; the netmgr
+/// accept path (`uv_tcp_getpeername`) reads it for the accepted handle's
+/// peer address.  The court only prints the loopback literal + fixed ports.
+pub fn getpeername(fd: c_int) -> Result<u16, Errno> {
+    let mut sa: libc::sockaddr_in = unsafe { std::mem::zeroed() };
+    let mut len = std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t;
+    // SAFETY (U-0055): sa is a valid zeroed out-parameter of the exact ABI
+    // type; fd is a live connected socket; the kernel writes at most len
+    // bytes.
+    let ret = unsafe {
+        libc::getpeername(
+            fd,
+            &mut sa as *mut libc::sockaddr_in as *mut libc::sockaddr,
+            &mut len,
+        )
+    };
+    check(ret as c_long)?;
+    Ok(u16::from_be(sa.sin_port))
+}
+
 /// `connect(fd, addr)` (U-0034): `addr` is a fully initialized
 /// `sockaddr_in`; the UDP disconnect path passes a zeroed struct (family 0 =
 /// AF_UNSPEC), exactly like libuv's `uv__udp_disconnect`.

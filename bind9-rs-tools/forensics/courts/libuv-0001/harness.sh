@@ -23,7 +23,7 @@ mkdir -p "$court_dir/captures/oracle" "$court_dir/captures/rust"
 side="${1:-both}"
 
 if [ "$side" = both ]; then
-    docker run --rm --user "$(id -u):$(id -g)" \
+    "$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh --user "$(id -u):$(id -g)" \
         -v "$repo/forensics/oracle/probes:/probes:ro" \
         -v "$repo/target/debug/libuv-probe:/libuv-probe:ro" \
         -v "$court_dir/captures:/captures:rw" \
@@ -37,7 +37,7 @@ if [ "$side" = both ]; then
             printf "%s\n" "$?" > /captures/rust/exit.txt
         '
 elif [ "$side" = oracle ]; then
-    docker run --rm --user "$(id -u):$(id -g)" \
+    "$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh --user "$(id -u):$(id -g)" \
         -v "$repo/forensics/oracle/probes:/probes:ro" \
         -v "$court_dir/captures:/captures:rw" \
         oracle-libuv-1.52.1 sh -c '
@@ -47,7 +47,7 @@ elif [ "$side" = oracle ]; then
             exec /tmp/cprobe
         '
 elif [ "$side" = rust ]; then
-    docker run --rm --user "$(id -u):$(id -g)" \
+    "$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh --user "$(id -u):$(id -g)" \
         -v "$repo/target/debug/libuv-probe:/libuv-probe:ro" \
         -v "$court_dir/captures:/captures:rw" \
         oracle-libuv-1.52.1 sh -c '

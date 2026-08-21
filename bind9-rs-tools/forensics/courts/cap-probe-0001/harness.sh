@@ -18,7 +18,7 @@ repo=$(cd "$(dirname "$0")/../../../.." && pwd)
 
 case "$side" in
     oracle)
-        docker run --rm \
+        "$repo"/bind9-rs-tools/forensics/courts/common/docker-run.sh \
             -v "$repo/forensics/oracle/probes:/probes" \
             oracle-libcap-2.78 sh -c \
             'gcc -I/opt/dep/include -o /tmp/probe /probes/probe-libcap.c \
