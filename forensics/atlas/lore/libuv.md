@@ -43,8 +43,14 @@ only that snapshot — data written during the dispatch loop cannot mark a
 receiver ready in the same round.  The probe relies on this: the UDP
 `send_cb`s fire in the pending pass of the round that writes them
 (`queue=600` then `queue=0`), the `recv_cb`s in later rounds, in
-datagram order (`ping`, `abcd`, 600 x's, `pong`).  The mirror additionally
-dispatches writable fds before readable ones in the same round.
+datagram order (`ping`, `abcd`, 600 x's, `pong`).
+
+The mirror dispatches the round in a single pass over the pollfd array in
+array order, each fd's full event set in libuv's per-watcher order
+(uv__udp_io/uv__stream_io: read first, then write; a pending connect
+consumes the round) — see NETMGR-LORE-0002 for why the old
+"writables-then-readables" two-pass dispatch reversed the kernel's ready
+order and broke the netmgr court's connect/accept pair.
 
 ## LIBUV-LORE-0005 — the EAGAIN drain marker is recv_cb(0, NULL)
 

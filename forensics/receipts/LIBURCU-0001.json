@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "court_id": "LIBURCU-0001",
-  "git_commit": "ed64d6871ec42b12223022bc2fa8bd9b877d5606",
+  "git_commit": "e28d00a8caa5be935b1301ff087bb537a956d094",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
-  "cargo_lock_sha256": "725f1b8e0e67537b48bae473b63b29b25ccabab4903d7f2272eb8ce2ab611b32",
+  "cargo_lock_sha256": "1d70bd47bd072c8d0555a3f30e4e32d30bb29154d22317a0a0800efbd0b829a9",
   "oracle_hashes": {},
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
-  "completed_at": "2026-08-20T01:02:45Z",
+  "completed_at": "2026-08-21T11:56:01Z",
   "input_hashes": {},
   "residual_ids": [],
   "invariants_passed": [

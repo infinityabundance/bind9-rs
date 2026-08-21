@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "court_id": "LIBUV-0001",
-  "git_commit": "5b7355df2226f82269b893467832c41463bc1080",
+  "git_commit": "e28d00a8caa5be935b1301ff087bb537a956d094",
   "rustc_version": "rustc 1.96.0 (ac68faa20 2026-05-25)",
-  "cargo_lock_sha256": "d3bd461bbee0b42047d63a1612734ed4b374ab8f0c411596f5bc20766f9bb07a",
+  "cargo_lock_sha256": "1d70bd47bd072c8d0555a3f30e4e32d30bb29154d22317a0a0800efbd0b829a9",
   "oracle_hashes": {},
   "environment_digest": "2f13aae7fbad1c8cb8f4eb0928b47c96f316671419a4d2d752fecb0f6b5a6b3d",
-  "completed_at": "2026-08-19T23:18:34Z",
+  "completed_at": "2026-08-21T11:56:00Z",
   "input_hashes": {},
   "residual_ids": [],
   "invariants_passed": [

@@ -55,15 +55,9 @@ for surface, op, rp in pairs:
             })
 os.makedirs(os.path.join(court, "residuals"), exist_ok=True)
 with open(os.path.join(court, "residuals", "summary.json"), "w") as f:
-    json.dump({
-        "schema_version": 1,
-        "court_id": cid,
-        "count": len(residuals),
-        "residuals": residuals,
-    }, f, indent=2)
+    # Bare §13 residual array (the bind9-court runner reads
+    # residuals/summary.json as Vec<Residual>; a green run removes it).
+    json.dump(residuals, f, indent=2)
 print(f"{len(residuals)} residuals")
-# Dependency-court pattern: the comparator writes the §13 residuals and
-# exits 0 so the bind9-court runner's compare_custom() reads
-# residuals/summary.json and reports them; a green run removes the file.
 sys.exit(0)
 PYEOF

@@ -31,7 +31,7 @@ if [ "$side" = both ]; then
         -v "$court_dir/captures:/captures:rw" \
         oracle-bind-9.20.26 sh -c '
             set -eu
-            gcc -Wall -Wextra -DHAVE_LIBNGHTTP2=1 -DRCU_MEMBARRIER \
+            gcc -w -DHAVE_LIBNGHTTP2=1 -DRCU_MEMBARRIER \
                 -I/opt/bind/include -I/probes/netmgr-include \
                 -I/usr/include/x86_64-linux-gnu -o /tmp/cprobe \
                 /probes/probe-netmgr.c -L/opt/bind/lib -lisc -lpthread
@@ -46,7 +46,7 @@ elif [ "$side" = oracle ]; then
         -v "$court_dir/captures:/captures:rw" \
         oracle-bind-9.20.26 sh -c '
             set -eu
-            gcc -Wall -Wextra -DHAVE_LIBNGHTTP2=1 -DRCU_MEMBARRIER \
+            gcc -w -DHAVE_LIBNGHTTP2=1 -DRCU_MEMBARRIER \
                 -I/opt/bind/include -I/probes/netmgr-include \
                 -I/usr/include/x86_64-linux-gnu -o /tmp/cprobe \
                 /probes/probe-netmgr.c -L/opt/bind/lib -lisc -lpthread
